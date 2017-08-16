@@ -24,6 +24,7 @@ ArchLinux:
 
 Other:
 Search for the engines in your distributions repository or install the engines from source.
+
 ## Install
 
 Open the terminal at current directory.
@@ -32,7 +33,7 @@ Open the terminal at current directory.
 Run
 
 
-    ./Vimix-installer.sh
+    ./Install
 
 
 
