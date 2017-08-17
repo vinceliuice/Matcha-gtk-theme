@@ -86,10 +86,53 @@ srcdir=${repodir}/src
 		metacity-theme${color}-3.xml \
 		${themedir}/metacity-1
 
-# Set Matcha Gtk Themes
-  echo "Setting the theme..."
-  gsettings set org.gnome.desktop.interface gtk-theme Matcha
-  gsettings set org.gnome.desktop.wm.preferences theme Matcha
-  echo "Done!"
+	# Install xfwm4 Theme
+	install -d ${themedir}/xfwm4
+	cd ${srcdir}/xfwm4
+	cp -ur \
+		assets \
+		themerc \
+		${themedir}/xfwm4
+
+# Copying Matcha-Dark-shell files
+	echo -e "   Installing Matcha-Dark ..."
+
+	themedir=$DEST_DIR/Matcha-Dark
+	install -d ${themedir}
+
+	# Install index.theme
+	cd ${srcdir}
+	cp -ur \
+	index.theme \
+	${themedir}/index.theme
+
+	# Install GNOME Shell Theme
+	install -d ${themedir}/gnome-shell
+	cd ${srcdir}/gnome-shell
+	cp -ur \
+	extensions \
+	no-events.svg \
+	no-notifications.svg \
+	process-working.svg \
+	${themedir}/gnome-shell
+
+	cp -ur \
+		assets-dark \
+		${themedir}/gnome-shell/assets
+
+	cp -ur \
+		gnome-shell-dark.css \
+		${themedir}/gnome-shell/gnome-shell.css
+
+		glib-compile-resources \
+		--sourcedir=${themedir}/gnome-shell \
+		--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
+		gnome-shell-theme.gresource.xml
+
+//# Set Matcha Gtk Themes
+//  echo "Setting the theme..."
+//  gsettings set org.gnome.desktop.interface gtk-theme Matcha
+//  gsettings set org.gnome.desktop.wm.preferences theme Matcha
+//  echo "Done!"
 
 

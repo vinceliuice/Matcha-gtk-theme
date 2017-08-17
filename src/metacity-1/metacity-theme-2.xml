@@ -1,42 +1,42 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>Arc</name>
-	<author>horst3180</author>
-	<copyright>horst3180</copyright>
-	<date>2015</date>
-	<description>Arc Metacity theme</description>
+	<name>Matcha</name>
+	<author>VinceLiuice</author>
+	<copyright>VinceLiuice</copyright>
+	<date>2017</date>
+	<description>Matcha Metacity theme</description>
 </info>
 
 <!-- meaningfull constants -->
 
-<constant name="C_title_focused" value="#70788d" />
-<constant name="C_title_unfocused" value="#979dac" />
+<constant name="C_title_focused" value="#afc5c6" />
+<constant name="C_title_unfocused" value="#8a9f9e" />
 
-<constant name="C_wm_bg_focused" value="#e7e8eb" />
-<constant name="C_wm_bg_unfocused" value="#e7e8eb" />
+<constant name="C_wm_bg_focused" value="#1b2224" />
+<constant name="C_wm_bg_unfocused" value="#1b2224" />
 
-<constant name="C_wm_highlight" value="#eeeff1" />
+<constant name="C_wm_highlight" value="#2a3839" />
 
 <!-- window button colors -->
 
 <!-- close -->
-<constant name="C_button_close_bg_focused" value="#f46067" />
-<constant name="C_button_close_bg_hover" value="#f68086" />
-<constant name="C_button_close_bg_active" value="#f13039" />
+<constant name="C_button_close_bg_focused" value="#cc575d" />
+<constant name="C_button_close_bg_hover" value="#d7787d" />
+<constant name="C_button_close_bg_active" value="#be3841" />
 
-<constant name="C_icon_close_bg" value="#F8F8F9" />
+<constant name="C_icon_close_bg" value="#2f343f" />
 
 <!-- minimize, maximize -->
-<constant name="C_button_bg_hover" value="#fdfdfd" />
-<constant name="C_button_bg_active" value="#5294e2" />
+<constant name="C_button_bg_hover" value="#455c50" />
+<constant name="C_button_bg_active" value="#2eb398" />
 
-<constant name="C_button_border_hover" value="#D1D3DA" />
+<constant name="C_button_border_hover" value="#26322e" />
 
-<constant name="C_icon_bg_focused" value="#90949E" />
-<constant name="C_icon_bg_unfocused" value="#B6B8C0" />
-<constant name="C_icon_bg_hover" value="#7A7F8B" />
-<constant name="C_icon_bg_active" value="#5294e2" />
+<constant name="C_icon_bg_focused" value="#909b97" />
+<constant name="C_icon_bg_unfocused" value="#66746f" />
+<constant name="C_icon_bg_hover" value="#c4ccca" />
+<constant name="C_icon_bg_active" value="#2eb398" />
 
 <!-- geometries -->
 

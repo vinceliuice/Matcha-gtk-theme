@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>Arc</name>
-	<author>horst3180</author>
-	<copyright>horst3180</copyright>
-	<date>2015</date>
-	<description>Arc Metacity theme</description>
+	<name>Matcha</name>
+	<author>VinceLiuice</author>
+	<copyright>VinceLiuice</copyright>
+	<date>2017</date>
+	<description>Matcha Metacity theme</description>
 </info>
 
 <!-- meaningfull constants -->
 
-<constant name="C_title_focused" value="gtk:custom(wm_title,#70788d)" />
-<constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,#979dac)" />
+<constant name="C_title_focused" value="gtk:custom(wm_title,#afc5c6)" />
+<constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,#8a9f9e)" />
 
-<constant name="C_wm_bg_focused" value="gtk:custom(wm_bg,#e7e8eb)" />
-<constant name="C_wm_bg_unfocused" value="gtk:custom(wm_bg,#e7e8eb)" />
+<constant name="C_wm_bg_focused" value="gtk:custom(wm_bg,#1b2224)" />
+<constant name="C_wm_bg_unfocused" value="gtk:custom(wm_bg,#1b2224)" />
 
-<constant name="C_wm_highlight" value="gtk:custom(wm_highlight,#eeeff1)" />
+<constant name="C_wm_highlight" value="gtk:custom(wm_highlight,#2a3839)" />
 
 <!-- window button colors -->
 
@@ -28,15 +28,15 @@
 <constant name="C_icon_close_bg" value="gtk:custom(wm_icon_close_bg,#F8F8F9)" />
 
 <!-- minimize, maximize -->
-<constant name="C_button_bg_hover" value="gtk:custom(wm_button_hover_bg,#fdfdfd)" />
-<constant name="C_button_bg_active" value="gtk:custom(wm_button_active_bg,#5294E2)" />
+<constant name="C_button_bg_hover" value="gtk:custom(wm_button_hover_bg,#455c50)" />
+<constant name="C_button_bg_active" value="gtk:custom(wm_button_active_bg,#2eb398)" />
 
-<constant name="C_button_border_hover" value="gtk:custom(wm_button_hover_border,#D1D3DA)" />
+<constant name="C_button_border_hover" value="gtk:custom(wm_button_hover_border,#26322e)" />
 
-<constant name="C_icon_bg_focused" value="gtk:custom(wm_icon_bg,#90949E)" />
-<constant name="C_icon_bg_unfocused" value="gtk:custom(wm_icon_unfocused_bg,#B6B8C0)" />
-<constant name="C_icon_bg_hover" value="gtk:custom(wm_icon_hover_bg,#7A7F8B)" />
-<constant name="C_icon_bg_active" value="gtk:custom(wm_icon_active_bg,#ffffff)" />
+<constant name="C_icon_bg_focused" value="gtk:custom(wm_icon_bg,#909b97)" />
+<constant name="C_icon_bg_unfocused" value="gtk:custom(wm_icon_unfocused_bg,#66746f)" />
+<constant name="C_icon_bg_hover" value="gtk:custom(wm_icon_hover_bg,#c4ccca)" />
+<constant name="C_icon_bg_active" value="gtk:custom(wm_icon_active_bg,#2eb398)" />
 
 <!-- geometries -->
 
