@@ -723,7 +723,7 @@ StScrollBar {
 
 /* Tiled window previews */
 .tile-preview {
-  background-color: rgba(51, 199, 169, 0.3);
+  background-color: rgba(51, 199, 169, 1);
   border: 1px solid #33c7a9; }
 
 .tile-preview-left.on-primary {
@@ -737,7 +737,7 @@ StScrollBar {
 
 /* TOP BAR */
 #panel {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(22, 29, 31, 1);
   font-weight: bold;
   height: 28px;
   box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.35); }
