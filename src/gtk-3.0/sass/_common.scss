@@ -1787,7 +1787,7 @@ notebook {
   }
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
-    background-color: $bg_color;
+    background-color: $base_color;
   }
 
   > header {
@@ -1910,14 +1910,11 @@ notebook {
 
       &:hover:not(:checked) {
         color: mix($fg_color, $insensitive_fg_color, 50%);
-        background-color: $bg_color;
-        border-color: $borders_color;
       }
       &:checked {
         color: $fg_color;
-        background-color: $bg_color;
-        border-color: $borders_color;
       }
+
       // close button
       button.flat {
         border-radius: 10px;
@@ -2259,26 +2256,26 @@ scale {
   }
 
   slider {
-    $_slider_border: if($variant=='light', transparentize(darken($button_border,25%), 0.5), darken($button_border,2%));
+    $_slider_border: if($variant=='light', transparentize(darken($button_border,25%), 0.5), transparentize($button_border, 0.5));
 
-    background-color: $button_bg;
+    background-color: $selected_fg_color;
     border: 1px solid $_slider_border;
     border-radius: 100%;
 
     transition: $button_transition;
     transition-property: background, border;
 
-    &:hover { background-color: lighten($button_bg, 5%); }
+    &:hover { background-color: lighten($selected_bg_color, 3%); border-color: $selected_bg_color;}
 
     &:active {
       background-clip: border-box;
-      background-color: $selected_bg_color;
+      background-color: darken($selected_bg_color, 3%);
       border-color: $selected_bg_color;
     }
 
     &:disabled {
-      background-color: mix($entry_bg, $bg_color, 55%);
-      border-color: transparentize($_slider_border, 0.2);
+      background-color: darken($selected_fg_color, 10%);
+      border-color: darken($_slider_border, 5%);
     }
 
     // Selected list-row and infobar sliders
@@ -2736,7 +2733,7 @@ stacksidebar {
   }
 
   row {
-    padding: 10px 4px;
+    padding: 4px 4px;
 
     > label {
       padding-left: 6px;
@@ -2754,8 +2751,8 @@ placessidebar {
 
   row {
     // Needs overriding of the GtkListBoxRow padding
-    min-height: 30px;
-    padding: 3px 2px 3px 10px;
+    min-height: 28px;
+    padding: 2px 2px 2px 10px;
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump
     > revealer {
