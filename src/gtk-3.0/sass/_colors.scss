@@ -10,7 +10,7 @@ $fg_color: if($variant =='light', #1b2224, #ffffff);
 $selected_fg_color: #ffffff;
 $selected_bg_color: #2eb398;
 $selected_borders_color: darken($selected_bg_color, 20%);
-$borders_color: if($variant =='light', darken($bg_color,10%), lighten($bg_color,5%));
+$borders_color: if($variant =='light', darken($bg_color,10%), darken($bg_color,3%));
 
 $link_color: if($variant == 'light', darken($selected_bg_color,10%),
                                      lighten($selected_bg_color,20%));
