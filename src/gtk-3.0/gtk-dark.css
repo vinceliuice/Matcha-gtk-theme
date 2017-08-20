@@ -1459,6 +1459,7 @@ menubar,
     color: rgba(255, 255, 255, 0.7); }
   menubar > menuitem,
   .menubar > menuitem {
+    transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
     padding: 4px 8px;
     border: solid transparent;
     border-width: 0;
