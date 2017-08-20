@@ -855,7 +855,7 @@ toolbar, .inline-toolbar {
     margin-right: 0; }
 
 .primary-toolbar:not(.libreoffice-toolbar) {
-  color: selected_fg_color;
+  color: #ffffff;
   background-color: #1b2224;
   box-shadow: none;
   border-width: 0 0 1px 0;
@@ -1669,7 +1669,7 @@ notebook {
         border-bottom: none;
         border-radius: 0; }
         notebook > header.top > tabs > tab + tab {
-          margin-left: 0x; }
+          margin-left: 0; }
     notebook > header.bottom {
       padding-top: 0; }
       notebook > header.bottom > tabs > tab {
@@ -1681,7 +1681,7 @@ notebook {
         border-top: none;
         border-radius: 0; }
         notebook > header.bottom > tabs > tab + tab {
-          margin-left: 0x; }
+          margin-left: 0; }
     notebook > header.right {
       padding-left: 0; }
       notebook > header.right > tabs > tab {

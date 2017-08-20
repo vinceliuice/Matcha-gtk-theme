@@ -945,7 +945,7 @@ toolbar {
 }
 
 .primary-toolbar:not(.libreoffice-toolbar) {  // LO messes up the toolbar styling, so exclude LO toolbars
-  color: selected_fg_color;
+  color: $selected_fg_color;
   background-color: opacify($header_bg, 1);
   box-shadow: none;
   border-width: 0 0 1px 0;
@@ -1863,7 +1863,7 @@ notebook {
 
           // tab overlap
           + tab {
-            @if $_pos==top or $_pos==bottom { margin-left: 0x; }
+            @if $_pos==top or $_pos==bottom { margin-left: 0; }
             @else { margin-top: 0; }
           }
 
