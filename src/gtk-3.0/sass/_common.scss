@@ -1133,15 +1133,15 @@ headerbar {
 }
 
 %header_separator {
-  min-width: 1px;
-  min-height: 1px;
+  min-width: 0;
+  min-height: 0;
   background: none;
-  border-width: 0 1px;
+  border-width: 0 0;
   border-image: linear-gradient(to bottom,
                                 transparentize($header_fg, 1) 25%,
                                 transparentize($header_fg, 0.65) 25%,
                                 transparentize($header_fg, 0.65) 75%,
-                                transparentize($header_fg, 1) 75%) 0 1/0 1px stretch;
+                                transparentize($header_fg, 1) 75%) 0 1/0 0 stretch;
 
   &:backdrop { opacity: 0.6; }
 }
