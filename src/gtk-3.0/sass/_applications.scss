@@ -146,15 +146,21 @@ $disk_space_free: darken($bg_color, 3%);
   .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) {
 
     > button {
-      &:not(:last-child):not(:only-child) { margin: 0 0 1px 0; }
+      &:not(:last-child):not(:only-child) { margin: 0 0 3px 0; }
 
-      @include button(header-hover);
+    margin: 0 0 3px 0;
+    color: darken($selected_fg_color, 20%);
+    background-color: $header_bg;
 
-      &:hover { background-color: lighten($header_button_bg, 15%); }
-      &:active, &:checked { @include button(header-active); }
-      &:disabled { color: transparentize($header_fg, 0.4); }
+      &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
+      &:active, &:checked { 
+          transition: background-color 0.00001s 0.3s;
+          animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+          color: $selected_fg_color; background-color: darken($header_bg, 10%); box-shadow: 0 3px lighten($selected_bg_color, 10%); 
+        }
+      &:disabled { color: transparentize($selected_fg_color, 0.4); }
 
-      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+      &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
     }
 
     @include pathbar_linking_rules($sep_color:$header_button_border);

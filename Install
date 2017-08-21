@@ -70,6 +70,7 @@ srcdir=${repodir}/src
 	install -d ${themedir}/gtk-3.0
 	cd ${srcdir}/gtk-3.0
 	cp -ur \
+		thumbnail.png \
 		assets \
 		gtk.css \
 		gtk-dark.css \
