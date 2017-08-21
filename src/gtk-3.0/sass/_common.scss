@@ -1158,7 +1158,7 @@ headerbar {
       @include entry(header-focus);
       background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
 
-      image { color: $selected_fg_color; }
+      image { color: $selected_bg_color; }
     }
     &:disabled { @include entry(header-insensitive); }
 

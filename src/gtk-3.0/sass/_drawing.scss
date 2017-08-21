@@ -80,9 +80,9 @@
   //
   // focused header-bar entry
   //
-    color: $selected_fg_color;
-    border-color: if($darker=='false' and $variant=='light', $selected_bg_color, transparent);
-    background-color: $selected_bg_color;
+    color: $header_fg;
+    border-color: if($darker=='false' and $variant=='light', $selected_bg_color, $selected_bg_color);
+    background-color: darken($header_bg, 2%);
   }
 
   @if $t==header-insensitive {

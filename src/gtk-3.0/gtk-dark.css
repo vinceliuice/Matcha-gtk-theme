@@ -1010,12 +1010,12 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
   .primary-toolbar entry:backdrop, headerbar entry:backdrop {
     opacity: 0.85; }
   .primary-toolbar entry:focus, headerbar entry:focus {
-    color: #ffffff;
-    border-color: transparent;
-    background-color: #2eb398;
+    color: rgba(255, 255, 255, 0.8);
+    border-color: #2eb398;
+    background-color: #101415;
     background-clip: padding-box; }
     .primary-toolbar entry:focus image, headerbar entry:focus image {
-      color: #ffffff; }
+      color: #2eb398; }
   .primary-toolbar entry:disabled, headerbar entry:disabled {
     color: rgba(255, 255, 255, 0.35);
     border-color: rgba(0, 0, 0, 0.4);
@@ -1285,9 +1285,9 @@ headerbar spinbutton:not(.vertical) > entry + button:not(:active):hover {
   .primary-toolbar combobox > .linked > button.combo image, headerbar combobox > .linked > button.combo image, .primary-toolbar combobox > .linked > button.combo image:hover, headerbar combobox > .linked > button.combo image:hover {
     color: inherit; }
   .primary-toolbar combobox > .linked > button.combo:hover, headerbar combobox > .linked > button.combo:hover {
-    color: #ffffff;
-    border-color: transparent;
-    background-color: #2eb398;
+    color: rgba(255, 255, 255, 0.8);
+    border-color: #2eb398;
+    background-color: #101415;
     box-shadow: none; }
   .primary-toolbar combobox > .linked > button.combo:disabled, headerbar combobox > .linked > button.combo:disabled {
     color: rgba(255, 255, 255, 0.35);
@@ -3515,9 +3515,9 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
   .marlin-pathbar.pathbar image, .marlin-pathbar.pathbar image:hover {
     color: inherit; }
   .marlin-pathbar.pathbar:focus {
-    color: #ffffff;
-    border-color: transparent;
-    background-color: #2eb398; }
+    color: rgba(255, 255, 255, 0.8);
+    border-color: #2eb398;
+    background-color: #101415; }
   .marlin-pathbar.pathbar:disabled {
     color: rgba(255, 255, 255, 0.35);
     border-color: rgba(0, 0, 0, 0.4);
