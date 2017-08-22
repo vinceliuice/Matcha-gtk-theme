@@ -95,6 +95,16 @@ srcdir=${repodir}/src
 		themerc \
 		${themedir}/xfwm4
 
+	# Install CINNAMON Theme
+	install -d ${themedir}/cinnamon
+	cd ${srcdir}/cinnamon
+	cp -ur \
+		common-assets \
+		light-assets \
+		cinnamon.css \
+		thumbnail.png \
+		${themedir}/cinnamon
+
 # Copying Matcha-Dark-shell files
 	echo -e "   Installing Matcha-Dark ..."
 
@@ -129,6 +139,22 @@ srcdir=${repodir}/src
 		--sourcedir=${themedir}/gnome-shell \
 		--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
 		gnome-shell-theme.gresource.xml
+
+	# Install CINNAMON Theme
+	install -d ${themedir}/cinnamon
+	cd ${srcdir}/cinnamon
+	cp -ur \
+		common-assets \
+		dark-assets \
+		${themedir}/cinnamon
+
+	cp -ur \
+		cinnamon-dark.css \
+		${themedir}/cinnamon/cinnamon.css
+
+	cp -ur \
+		thumbnail-dark.png \
+		${themedir}/cinnamon/thumbnail.png
 
 # Set Matcha Gtk Themes
   echo "Setting the theme..."

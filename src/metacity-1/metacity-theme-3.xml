@@ -10,8 +10,8 @@
 
 <!-- meaningfull constants -->
 
-<constant name="C_title_focused" value="gtk:custom(wm_title,#afc5c6)" />
-<constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,#8a9f9e)" />
+<constant name="C_title_focused" value="gtk:custom(wm_title,#f3f3f3)" />
+<constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,#d3d7cf)" />
 
 <constant name="C_wm_bg_focused" value="gtk:custom(wm_bg,#1b2224)" />
 <constant name="C_wm_bg_unfocused" value="gtk:custom(wm_bg,#1b2224)" />
