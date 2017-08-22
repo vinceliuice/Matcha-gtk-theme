@@ -443,6 +443,16 @@ configurationview {
 //}
 
 //
+// Eog
+//
+eog-thumb-nav {
+  scrolledwindow { border-top: none; }
+
+  button { -gtk-outline-radius: 2px;
+           border-radius: 2px; }
+}
+
+//
 // Gnome Documents
 //
 .documents-scrolledwin.frame { border-width: 0; }

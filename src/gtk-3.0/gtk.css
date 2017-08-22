@@ -3298,6 +3298,12 @@ configurationview entry.flat {
 configurationview list {
   border-width: 0; }
 
+eog-thumb-nav scrolledwindow {
+  border-top: none; }
+eog-thumb-nav button {
+  -gtk-outline-radius: 2px;
+  border-radius: 2px; }
+
 .documents-scrolledwin.frame {
   border-width: 0; }
 

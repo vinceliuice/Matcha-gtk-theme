@@ -130,10 +130,10 @@ srcdir=${repodir}/src
 		--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
 		gnome-shell-theme.gresource.xml
 
-//# Set Matcha Gtk Themes
-//  echo "Setting the theme..."
-//  gsettings set org.gnome.desktop.interface gtk-theme Matcha
-//  gsettings set org.gnome.desktop.wm.preferences theme Matcha
-//  echo "Done!"
+# Set Matcha Gtk Themes
+  echo "Setting the theme..."
+  gsettings set org.gnome.desktop.interface gtk-theme Matcha
+  gsettings set org.gnome.desktop.wm.preferences theme Matcha
+  echo "Done!"
 
 
