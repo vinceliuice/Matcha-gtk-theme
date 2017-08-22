@@ -79,13 +79,10 @@ srcdir=${repodir}/src
 
 	# Install Metacity Theme
 	install -d ${themedir}/metacity-1
-	cd ${srcdir}/metacity-1
+	cd ${srcdir}
 	cp -ur \
-		*.svg \
-		metacity-theme${color}-1.xml \
-		metacity-theme${color}-2.xml \
-		metacity-theme${color}-3.xml \
-		${themedir}/metacity-1
+		metacity-1 \
+		${themedir}
 
 	# Install xfwm4 Theme
 	install -d ${themedir}/xfwm4
