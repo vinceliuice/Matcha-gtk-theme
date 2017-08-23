@@ -36,5 +36,12 @@ Run
     ./Install
 
 
+## Screenshots
 
+### GNOME Shell
+![01](https://github.com/vinceliuice/matcha/blob/imgs/img-01.jpg?raw=true) 
+![02](https://github.com/vinceliuice/matcha/blob/imgs/img-02.jpg?raw=true) 
+![03](https://github.com/vinceliuice/matcha/blob/imgs/img-03.jpg?raw=true) 
+![04](https://github.com/vinceliuice/matcha/blob/imgs/img-04.jpg?raw=true) 
+![05](https://github.com/vinceliuice/matcha/blob/imgs/img-05.jpg?raw=true) 
 
