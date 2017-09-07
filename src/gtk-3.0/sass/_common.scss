@@ -915,7 +915,7 @@ toolbar {
 
   &.osd {
     padding: 7px;
-    border: 1px solid transparentize(black, 0.5);
+    border: 1px solid transparentize(black, 0.85);
     border-radius: 3px;
     background-color: transparentize($osd_bg_color, 0.1);
 
@@ -1001,7 +1001,7 @@ headerbar,
 
   color: $selected_fg_color;
   background-color: opacify($header_bg, 1);
-  box-shadow: inset 0  0 lighten($header_bg, 3%);
+//  box-shadow: inset 0 0 lighten($header_bg, 3%);
 
   .csd & {  // Transparent header-bars only in csd windows
     background-color: $header_bg;
@@ -1258,8 +1258,9 @@ headerbar {
   .linked:not(.vertical).path-bar {
 
     > button {
-
-    margin: 0 0 3px 0;
+    padding-top: 3px;
+    padding-bottom: 6px;
+    margin: 0 0 0 0;
     color: darken($selected_fg_color, 20%);
     background-color: $header_bg;
 
@@ -1267,7 +1268,7 @@ headerbar {
       &:active, &:checked { 
           transition: background-color 0.00001s 0.3s;
           animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-          color: $selected_fg_color; background-color: darken($header_bg, 10%); box-shadow: 0 3px lighten($selected_bg_color, 10%); 
+          color: $selected_fg_color; background-color: darken($header_bg, 10%); box-shadow: inset 0 -3px lighten($selected_bg_color, 10%);
         }
       &:disabled { color: transparentize($selected_fg_color, 0.4); }
 
@@ -1801,9 +1802,13 @@ notebook {
         margin-bottom: 0;
         > tab {
 
-          &:hover { background-color: $bg_color; box-shadow: inset 0 -3px gtkalpha($selected_bg_color, 0.6); }
+          &:hover {
+              background-color: $bg_color;
+              box-shadow: inset 0 -2px gtkalpha($selected_bg_color, 0.6),
+                          0 1px gtkalpha($selected_bg_color, 0.6);
+            }
 
-          &:checked { background-color: $bg_color; box-shadow: inset 0 -3px $selected_bg_color; }
+          &:checked { background-color: $bg_color; box-shadow: inset 0 -2px $selected_bg_color, 0 1px $selected_bg_color; }
         }
       }
     }
@@ -1814,9 +1819,12 @@ notebook {
         margin-top: 0;
         > tab {
 
-          &:hover { background-color: $bg_color; box-shadow: inset 0 3px gtkalpha($selected_bg_color, 0.6); }
+          &:hover {
+              background-color: $bg_color;
+              box-shadow: inset 0 2px gtkalpha($selected_bg_color, 0.6),
+                          0 -1px gtkalpha($selected_bg_color, 0.6); }
 
-          &:checked { background-color: $bg_color; box-shadow: inset 0 3px $selected_bg_color; }
+          &:checked { background-color: $bg_color; box-shadow: inset 0 2px $selected_bg_color, 0 -1px $selected_bg_color; }
         }
       }
     }
@@ -1827,9 +1835,13 @@ notebook {
         margin-right: 0;
         > tab {
 
-          &:hover { background-color: $bg_color; box-shadow: inset -3px 0 gtkalpha($selected_bg_color, 0.6); }
+          &:hover {
+              background-color: $bg_color;
+              box-shadow: inset -2px 0 gtkalpha($selected_bg_color, 0.6),
+                          1px 0 gtkalpha($selected_bg_color, 0.6);
+            }
 
-          &:checked { background-color: $bg_color; box-shadow: inset -3px 0 $selected_bg_color; }
+          &:checked { background-color: $bg_color; box-shadow: inset -2px 0 $selected_bg_color, 1px 0 $selected_bg_color; }
         }
       }
     }
@@ -1840,9 +1852,13 @@ notebook {
         margin-left: 0;
         > tab {
 
-          &:hover { background-color: $bg_color; box-shadow: inset 3px 0 gtkalpha($selected_bg_color, 0.6); }
+          &:hover {
+              background-color: $bg_color;
+              box-shadow: inset 2px 0 gtkalpha($selected_bg_color, 0.6),
+                          -1px 0 gtkalpha($selected_bg_color, 0.6);
+            }
 
-          &:checked { background-color: $bg_color; box-shadow: inset 3px 0 $selected_bg_color; }
+          &:checked { background-color: $bg_color; box-shadow: inset 2px 0 $selected_bg_color, -1px 0 $selected_bg_color; }
          }
        }
      }
