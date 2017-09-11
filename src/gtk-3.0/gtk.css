@@ -1076,6 +1076,11 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
   background-image: none;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0); }
+.selection-mode.primary-toolbar button:hover, headerbar.selection-mode button:hover {
+  background-color: alpha(#ffffff,0.3); }
+.selection-mode.primary-toolbar button:backdrop, headerbar.selection-mode button:backdrop {
+  opacity: 0.7;
+  background: none; }
 .primary-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:last-child):not(:only-child), headerbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:last-child):not(:only-child) {
   margin-right: 1px; }
 .primary-toolbar .linked:not(.vertical):not(.path-bar) > button, headerbar .linked:not(.vertical):not(.path-bar) > button, .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:hover, headerbar .linked:not(.vertical):not(.path-bar) > button:hover, .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:active, headerbar .linked:not(.vertical):not(.path-bar) > button:active, .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:checked, headerbar .linked:not(.vertical):not(.path-bar) > button:checked, .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:disabled, headerbar .linked:not(.vertical):not(.path-bar) > button:disabled {
@@ -1596,6 +1601,18 @@ popover.background {
   popover.background > .inline-toolbar {
     border-style: none;
     background-color: transparent; }
+  popover button:not(.suggested-action):not(.destructive-action):hover,
+  popover.background button:not(.suggested-action):not(.destructive-action):hover {
+    background-color: #e6e6e6;
+    color: #1b2224; }
+  popover button:not(.suggested-action):not(.destructive-action):checked,
+  popover.background button:not(.suggested-action):not(.destructive-action):checked {
+    background-color: #2eb398;
+    color: #ffffff; }
+  popover button:not(.suggested-action):not(.destructive-action):active,
+  popover.background button:not(.suggested-action):not(.destructive-action):active {
+    background-color: #2eb398;
+    color: #ffffff; }
   popover.menu button:hover,
   popover button.model:hover,
   popover.background.menu button:hover,
@@ -1607,7 +1624,13 @@ popover.background {
   popover.background.menu button:checked,
   popover.background button.model:checked {
     background-color: #2eb398;
-    color: #1b2224; }
+    color: #ffffff; }
+  popover.menu button:active,
+  popover button.model:active,
+  popover.background.menu button:active,
+  popover.background button.model:active {
+    background-color: #2eb398;
+    color: #ffffff; }
 
 cursor-handle {
   background-color: transparent;
@@ -2655,7 +2678,7 @@ infobar {
       color: #2eb398;
       background-color: #ffffff; }
 
-.selection-mode.primary-toolbar button:hover, headerbar.selection-mode button:hover, row:selected button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .nautilus-window .floating-bar button {
+row:selected button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .nautilus-window .floating-bar button {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.5); }

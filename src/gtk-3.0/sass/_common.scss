@@ -1221,7 +1221,7 @@ headerbar {
       color: $selection_mode_fg;
       background-color: transparentize($selection_mode_fg, 1);
     }
-    &:hover { @extend %normal_selected_button; }
+    &:hover { background-color: gtkalpha($selection_mode_fg, 0.3); }
     &:active, &:checked { @extend %selected-button:active; }
 
     &:disabled {
@@ -1229,6 +1229,7 @@ headerbar {
 
       &:checked, &:active { @extend %selected-button:disabled:checked; }
     }
+    &:backdrop { opacity: 0.7; background: none; }
   }
 
   // Linking stuff
@@ -1755,6 +1756,24 @@ popover.background {
     &.osd { @extend %osd; }
   }
     
+   button:not(.suggested-action):not(.destructive-action)
+    {
+      &:hover {
+        background-color: darken($_popover_bg, 10%);
+        color: $text_color;
+    }
+
+      &:checked {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+    }
+
+      &:active {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+    }
+   }
+
   &.menu button,
   button.model {
 
@@ -1765,9 +1784,13 @@ popover.background {
 
     &:checked {
       background-color: $selected_bg_color;
-      color: $text_color;
+      color: $selected_fg_color;
     }
 
+    &:active {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+    }
   }
 }
 
