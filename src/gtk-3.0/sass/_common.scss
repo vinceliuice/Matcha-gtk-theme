@@ -1008,14 +1008,14 @@ headerbar,
     border-color: $header_border;
   }
 
-/*  &:backdrop {
+  &:backdrop {
     transition: $backdrop_transition;
 
     color: transparentize($header_fg, 0.3);
     background-color: opacify($header_bg_backdrop, 1);
 
     .csd & { background-color: $header_bg_backdrop; }
-  }*/
+  }
 
   .title {
     padding-left: 12px;
@@ -1199,7 +1199,7 @@ headerbar {
     border: none;
     background-color: $header_bg;
 
-    &:backdrop { opacity: 0.7; }
+    &:backdrop { opacity: 0.7; background-color: $header_bg_backdrop; }
 
     &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
     &:active, &:checked {
@@ -1211,6 +1211,7 @@ headerbar {
     &:disabled { color: darken($selected_fg_color, 60%); background-color: $header_bg; }
 
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
+    &:backdrop:backdrop { background-color: $header_bg_backdrop; }
   }
 
   &.selection-mode button {
@@ -1273,6 +1274,7 @@ headerbar {
       &:disabled { color: transparentize($selected_fg_color, 0.4); }
 
       &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
+      &:backdrop { opacity: 0.7; background-color: $header_bg_backdrop; }
     }
     @include pathbar_linking_rules($sep_color:$header_button_border);
   }
@@ -1757,13 +1759,13 @@ popover.background {
   button.model {
 
     &:hover {
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
+      background-color: darken($_popover_bg, 10%);
+      color: $text_color;
     }
 
     &:checked {
       background-color: $selected_bg_color;
-      color: $selected_fg_color;
+      color: $text_color;
     }
 
   }

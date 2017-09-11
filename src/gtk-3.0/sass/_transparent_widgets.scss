@@ -177,11 +177,11 @@ filechooser {
 }
 
 %dark_sidebar_button {
-  @include button(osd);
+  @include button(header-normal);
 
-  &:hover { @include button(osd-hover); }
-  &:active, &:checked { @include button(osd-active); }
-  &:disabled { @include button(osd-insensitive); }
+  &:hover { @include button(header-hover); }
+  &:active, &:checked { @include button(header-active); }
+  &:disabled { @include button(header-insensitive); }
 }
 
 %dark_sidebar_entry {

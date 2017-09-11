@@ -890,19 +890,19 @@ headerbar,
   border-style: solid;
   border-color: #0c0f10;
   color: #ffffff;
-  background-color: #1b2224;
-  /*  &:backdrop {
-      transition: $backdrop_transition;
-  
-      color: transparentize($header_fg, 0.3);
-      background-color: opacify($header_bg_backdrop, 1);
-  
-      .csd & { background-color: $header_bg_backdrop; }
-    }*/ }
+  background-color: #1b2224; }
   .csd headerbar, .csd
   .titlebar:not(headerbar) {
     background-color: #1b2224;
     border-color: #0c0f10; }
+  headerbar:backdrop,
+  .titlebar:backdrop:not(headerbar) {
+    transition: 200ms ease-out;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #222a2d; }
+    .csd headerbar:backdrop, .csd
+    .titlebar:backdrop:not(headerbar) {
+      background-color: #222a2d; }
   headerbar .title,
   .titlebar:not(headerbar) .title {
     padding-left: 12px;
@@ -1010,7 +1010,7 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
   .primary-toolbar entry:focus, headerbar entry:focus {
     color: rgba(255, 255, 255, 0.8);
     border-color: #2eb398;
-    background-color: #171c1e;
+    background-color: rgba(75, 95, 100, 0.4);
     background-clip: border-box; }
     .primary-toolbar entry:focus image, headerbar entry:focus image {
       color: #2eb398; }
@@ -1050,7 +1050,8 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
   border: none;
   background-color: #1b2224; }
   .primary-toolbar button:backdrop, headerbar button:backdrop {
-    opacity: 0.7; }
+    opacity: 0.7;
+    background-color: #222a2d; }
   .primary-toolbar button:hover, headerbar button:hover {
     color: #ffffff;
     background-color: #2c383b; }
@@ -1067,6 +1068,8 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
     color: rgba(255, 255, 255, 0.75);
     border-color: rgba(46, 179, 152, 0.65);
     background-color: rgba(46, 179, 152, 0.65); }
+  .primary-toolbar button:backdrop:backdrop, headerbar button:backdrop:backdrop {
+    background-color: #222a2d; }
 .selection-mode.primary-toolbar button, headerbar.selection-mode button, .selection-mode.primary-toolbar button.flat, headerbar.selection-mode button.flat, .selection-mode.primary-toolbar button.sidebar-button, headerbar.selection-mode button.sidebar-button {
   border-color: transparent;
   background-color: transparent;
@@ -1113,6 +1116,11 @@ headerbar .linked:not(.vertical).path-bar > button {
   .primary-toolbar .linked:not(.vertical).path-bar > button:disabled,
   headerbar .linked:not(.vertical).path-bar > button:disabled {
     color: rgba(255, 255, 255, 0.6); }
+  .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop,
+  .primary-toolbar .linked:not(.vertical).path-bar > button:backdrop,
+  headerbar .linked:not(.vertical).path-bar > button:backdrop {
+    opacity: 0.7;
+    background-color: #222a2d; }
 .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button + button, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button + button,
 .primary-toolbar .linked:not(.vertical).path-bar > button + button,
 headerbar .linked:not(.vertical).path-bar > button + button {
@@ -1287,7 +1295,7 @@ headerbar spinbutton:not(.vertical) > entry + button:not(:active):hover {
   .primary-toolbar combobox > .linked > button.combo:hover, headerbar combobox > .linked > button.combo:hover {
     color: rgba(255, 255, 255, 0.8);
     border-color: #2eb398;
-    background-color: #171c1e;
+    background-color: rgba(75, 95, 100, 0.4);
     box-shadow: none; }
   .primary-toolbar combobox > .linked > button.combo:disabled, headerbar combobox > .linked > button.combo:disabled {
     color: rgba(255, 255, 255, 0.35);
@@ -1592,14 +1600,14 @@ popover.background {
   popover button.model:hover,
   popover.background.menu button:hover,
   popover.background button.model:hover {
-    background-color: #2eb398;
-    color: #ffffff; }
+    background-color: #e6e6e6;
+    color: #1b2224; }
   popover.menu button:checked,
   popover button.model:checked,
   popover.background.menu button:checked,
   popover.background button.model:checked {
     background-color: #2eb398;
-    color: #ffffff; }
+    color: #1b2224; }
 
 cursor-handle {
   background-color: transparent;
@@ -3527,7 +3535,7 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
   .marlin-pathbar.pathbar:focus {
     color: rgba(255, 255, 255, 0.8);
     border-color: #2eb398;
-    background-color: #171c1e; }
+    background-color: rgba(75, 95, 100, 0.4); }
   .marlin-pathbar.pathbar:disabled {
     color: rgba(255, 255, 255, 0.35);
     border-color: rgba(1, 1, 1, 0.4);
@@ -4152,21 +4160,23 @@ filechooser actionbar {
       color: #eeeeee; }
 
 filechooser actionbar button {
-  color: #1b2224;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.35); }
+  color: rgba(255, 255, 255, 0.8);
+  outline-offset: -3px;
+  background-color: rgba(27, 34, 36, 0);
+  border-color: rgba(27, 34, 36, 0); }
   .caja-side-pane > box button:hover:not(:active), filechooser actionbar button:hover {
-    color: #1b2224;
-    border-color: rgba(207, 207, 207, 0.35);
-    background-color: rgba(255, 255, 255, 0.45); }
+    color: rgba(255, 255, 255, 0.8);
+    border-color: #1b2224;
+    background-color: #1b2224; }
   filechooser actionbar button:active, filechooser actionbar button:checked {
     color: #ffffff;
-    border-color: rgba(207, 207, 207, 0.35);
+    border-color: #2eb398;
     background-color: #2eb398; }
   filechooser actionbar button:disabled {
-    color: #afb1b1;
-    border-color: rgba(207, 207, 207, 0.35);
-    background-color: rgba(255, 255, 255, 0.2); }
+    background-color: rgba(27, 34, 36, 0);
+    border-color: rgba(27, 34, 36, 0); }
+    filechooser actionbar button:disabled label, filechooser actionbar button:disabled {
+      color: rgba(255, 255, 255, 0.35); }
 
 filechooser actionbar entry {
   color: #1b2224;
