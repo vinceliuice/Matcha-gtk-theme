@@ -946,9 +946,9 @@ toolbar {
 
 .primary-toolbar:not(.libreoffice-toolbar) {  // LO messes up the toolbar styling, so exclude LO toolbars
   color: $selected_fg_color;
-  background-color: opacify($header_bg, 1);
+  background-color: transparent;
   box-shadow: none;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 0 0;
   border-style: solid;
   border-image: linear-gradient(to bottom, opacify($header_bg, 1),
                                            darken($header_bg, 7%)) 1 0 1 0; //temporary hack for rhythmbox 3.1
@@ -958,7 +958,7 @@ toolbar {
   separator { @extend %header_separator; }
 }
 
-.primary-toolbar { @extend %header_widgets; }
+//.primary-toolbar { @extend %header_widgets; }
 
 .inline-toolbar {
   @extend toolbar;

@@ -145,9 +145,9 @@
   //
   // hovered button
   //
-    color: $fg_color;
-    border-color: $button_border;
-    background-color: lighten($button_bg, 5%);
+    color: darken($fg_color, 15%);
+    border-color: darken($button_border, 5%);
+    background-color: lighten($button_bg, 10%);
   }
 
   @else if $t==active {
