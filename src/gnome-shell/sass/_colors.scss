@@ -41,7 +41,7 @@ $topbar_fg_color: #FFFFFF;
 $topbar_secondary_fg_color: #F0F0F0;
 $topbar_overview_color: scale-alpha(#000, 0.01);
 
-$selected_bg_color: #2eb398;
+$selected_bg_color: #FFA54F;
 $secondary_selected_bg_color: lighten($selected_bg_color, 5%);
 $accent_bg_color: lighten($selected_bg_color, 10%);
 $primary_color: $selected_bg_color;

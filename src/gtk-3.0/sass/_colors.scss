@@ -8,7 +8,7 @@ $bg_color: if($variant =='light', #f4f4f4, #303b3e);
 $fg_color: if($variant =='light', #1b2224, #ffffff);
 
 $selected_fg_color: #ffffff;
-$selected_bg_color: #2eb398;
+$selected_bg_color: #FFA54F;
 $selected_borders_color: darken($selected_bg_color, 20%);
 $borders_color: if($variant =='light', darken($bg_color,9%), darken($bg_color,6%));
 
@@ -23,7 +23,7 @@ $warning_color: #F27835;
 $error_color: #FC4138;
 $warning_fg_color: white;
 $error_fg_color: white;
-$success_color: #2eb398;
+$success_color: #FFA54F;
 $destructive_color: #db5b5b;
 $suggested_color: #4DADD4;
 $destructive_fg_color: white;
