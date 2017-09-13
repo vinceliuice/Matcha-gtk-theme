@@ -848,12 +848,12 @@ toolbar, .inline-toolbar {
     margin-right: 0; }
 
 .primary-toolbar:not(.libreoffice-toolbar) {
-  color: #ffffff;
+  color: #eeeeee;
   background-color: transparent;
   box-shadow: none;
-  border-width: 0 0 0 0;
+  border-width: 0 0 1px 0;
   border-style: solid;
-  border-image: linear-gradient(to bottom, #141a1b, #050607) 1 0 1 0; }
+  border-image: linear-gradient(to bottom, #141a1b, #141a1b) 1 0 1 0; }
 
 .inline-toolbar {
   background-color: #141a1b;
