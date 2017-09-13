@@ -65,7 +65,6 @@ srcdir=${repodir}/src
 		menubar-toolbar \
 		${themedir}/gtk-2.0
 
-
 	# Install GTK+ 3 Theme
 	install -d ${themedir}/gtk-3.0
 	cd ${srcdir}/gtk-3.0
@@ -75,7 +74,6 @@ srcdir=${repodir}/src
 		gtk.css \
 		gtk-dark.css \
 		${themedir}/gtk-3.0
-
 
 	# Install Metacity Theme
 	install -d ${themedir}/metacity-1
@@ -101,6 +99,13 @@ srcdir=${repodir}/src
 		cinnamon.css \
 		thumbnail.png \
 		${themedir}/cinnamon
+
+	# Install openbox Theme
+	install -d ${themedir}/openbox-3
+	cd ${srcdir}
+	cp -ur \
+		openbox-3 \
+		${themedir}
 
 # Copying Matcha-Dark-shell files
 	echo -e "   Installing Matcha-Dark ..."
