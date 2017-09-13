@@ -947,8 +947,9 @@ headerbar,
   .default-decoration.titlebar:not(headerbar),
   .default-decoration.titlebar:backdrop:not(headerbar), .csd
   .default-decoration.titlebar:backdrop:not(headerbar) {
-    min-height: 32px;
-    padding: 0 3px;
+    min-width: 32px;
+    min-height: 28px;
+    padding: 0 0;
     background-color: #141a1b;
     border-bottom-width: 0; }
     .maximized headerbar.default-decoration, .maximized .csd headerbar.default-decoration, .maximized headerbar.default-decoration:backdrop, .maximized .csd headerbar.default-decoration:backdrop, .maximized
@@ -2829,13 +2830,14 @@ headerbar.default-decoration button.titlebutton,
 .titlebar.default-decoration button.titlebutton {
   padding: 0;
   min-width: 32px;
-  min-height: 32px;
+  min-height: 28px;
   margin: 0; }
 headerbar button.titlebutton,
 .titlebar button.titlebutton {
   margin: 0;
   padding: 0;
   min-width: 32px;
+  min-height: 28px;
   border-color: transparent;
   background-color: transparent;
   background-image: none;
