@@ -142,7 +142,8 @@
        y1="1032.3622"
        x2="41"
        y2="1050.3622"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.83333338,0,0,0.83333338,6.7083333,173.56037)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#selected_fg_color"
@@ -169,7 +170,8 @@
        y1="1032.3622"
        x2="41"
        y2="1050.3622"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.83333333,0,0,0.83333333,6.9191198,173.56031)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#selected_fg_color"
@@ -333,17 +335,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="277.6331"
-     inkscape:cy="230.14586"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="208.08693"
+     inkscape:cy="176.8087"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="false"
      showborder="false"
      inkscape:window-width="1366"
-     inkscape:window-height="694"
+     inkscape:window-height="708"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="28"
      inkscape:window-maximized="1"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -1464,11 +1466,11 @@
                ry="11"
                rx="11" />
             <circle
-               style="fill:#2eb398;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:#2eb398;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.83333331"
                id="path3759-0-7"
-               cx="41"
+               cx="41.002602"
                cy="1041.3622"
-               r="9" />
+               r="7.5" />
           </g>
         </g>
       </g>
@@ -1510,11 +1512,11 @@
                ry="11"
                rx="11" />
             <circle
-               style="fill:url(#linearGradient6601);fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:url(#linearGradient6601);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.83333331"
                id="path3759-7-1"
-               cx="41"
+               cx="41.085785"
                cy="1041.3622"
-               r="9" />
+               r="7.5" />
           </g>
         </g>
       </g>
@@ -1554,11 +1556,11 @@
                ry="11"
                rx="11" />
             <circle
-               style="fill:#2eb398;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:#2eb398;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.83333337"
                id="path3759-0-8-8"
-               cx="41"
+               cx="41.034771"
                cy="1041.3622"
-               r="9" />
+               r="7.5" />
           </g>
         </g>
       </g>
@@ -1600,11 +1602,11 @@
                ry="11"
                rx="11" />
             <circle
-               style="fill:url(#linearGradient6595);fill-opacity:1;fill-rule:nonzero;stroke:none"
+               style="fill:url(#linearGradient6595);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.83333337"
                id="path3759-7-1-9"
-               cx="41"
+               cx="40.875"
                cy="1041.3622"
-               r="9" />
+               r="7.5" />
           </g>
         </g>
       </g>
