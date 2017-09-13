@@ -3190,7 +3190,7 @@ decoration {
   border-radius: if($darker=='false' and $variant=='light', 2px 2px 0 0, 2px 2px 0 0);
   border-width: 0px;
 
-  $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.45));
+  $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.8));
 
   box-shadow: 0 0 0 0 if($darker=='true' or $variant == 'dark', darken($header_bg, 7%), $_wm_border),
               0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), transparentize($_wm_border, 0.2));
