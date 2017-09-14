@@ -28,8 +28,8 @@ Search for the engines in your distributions repository or install the engines f
 
 ## Install
 
-Open the terminal at current directory.
-
+Double-click to open that script file,
+OrOpen the terminal at current directory.
 
 Run
 

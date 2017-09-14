@@ -994,9 +994,9 @@ headerbar,
   min-height: 42px;
   padding: 0 10px;
 
-  border-width: 0 0 0;
-  border-style: solid;
-  border-color: opacify($header_border, 1);
+//  border-width: 0 0 0;
+//  border-style: solid;
+//  border-color: opacify($header_border, 1);
 
   color: $selected_fg_color;
   background-color: opacify($header_bg, 1);

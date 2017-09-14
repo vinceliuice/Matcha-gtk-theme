@@ -879,9 +879,6 @@ headerbar,
 .titlebar:not(headerbar) {
   min-height: 42px;
   padding: 0 10px;
-  border-width: 0 0 0;
-  border-style: solid;
-  border-color: #0c0f10;
   color: #ffffff;
   background-color: #141a1b; }
   .csd headerbar, .csd
