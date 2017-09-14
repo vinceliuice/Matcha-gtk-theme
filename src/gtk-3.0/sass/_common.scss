@@ -1075,7 +1075,7 @@ headerbar,
     padding: 0 0;
     background-color: opacify($header_bg, 1);
     border-bottom-width: 0;
-    box-shadow: none;
+//    box-shadow: none;
     .maximized & { background-color: opacify($header_bg, 1); }
   }
 
@@ -1645,7 +1645,6 @@ menu,
   .csd & {
     padding: 4px 0px;
     border-radius: 2px;
-    border: none;
   }
 
   separator,
@@ -3210,10 +3209,10 @@ decoration {
   .fullscreen &,
   .tiled & {
     border-radius: 0;
-    box-shadow: none;
+//    box-shadow: none;
   }
   .popup & {
-    box-shadow: none;
+//   box-shadow: none;
     border-radius: 0;
   }
   // server-side decorations as used by mutter
@@ -3230,7 +3229,7 @@ decoration {
   }
   tooltip.csd & {
     border-radius: 2px;
-    box-shadow: 0 1px 3px 1px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.3));
+    box-shadow: 0 1px 3px 0 if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.3));
   }
   messagedialog.csd & {
     border-radius: 3px;

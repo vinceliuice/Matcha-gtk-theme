@@ -947,8 +947,7 @@ headerbar,
     min-height: 28px;
     padding: 0 0;
     background-color: #1b2224;
-    border-bottom-width: 0;
-    box-shadow: none; }
+    border-bottom-width: 0; }
     .maximized headerbar.default-decoration, .maximized .csd headerbar.default-decoration, .maximized headerbar.default-decoration:backdrop, .maximized .csd headerbar.default-decoration:backdrop, .maximized
     .default-decoration.titlebar:not(headerbar), .maximized .csd
     .default-decoration.titlebar:not(headerbar), .maximized
@@ -1450,8 +1449,7 @@ menu,
   .csd menu, .csd
   .menu {
     padding: 4px 0px;
-    border-radius: 2px;
-    border: none; }
+    border-radius: 2px; }
   menu separator, .csd menu separator,
   .menu separator, .csd
   .menu separator {
@@ -2797,10 +2795,8 @@ decoration {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 0 8px 8px 0 transparent, 0 5px 5px 0 rgba(0, 0, 0, 0.2);
     transition: 200ms ease-out; }
   .fullscreen decoration, .tiled decoration {
-    border-radius: 0;
-    box-shadow: none; }
+    border-radius: 0; }
   .popup decoration {
-    box-shadow: none;
     border-radius: 0; }
   .ssd decoration {
     border-radius: 4px 4px 0 0;
@@ -2812,7 +2808,7 @@ decoration {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.1); }
   tooltip.csd decoration {
     border-radius: 2px;
-    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); }
   messagedialog.csd decoration {
     border-radius: 3px; }
   .solid-csd decoration {
