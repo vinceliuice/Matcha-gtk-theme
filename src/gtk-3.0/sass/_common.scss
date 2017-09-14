@@ -1211,7 +1211,7 @@ headerbar {
     &:disabled { color: darken($selected_fg_color, 60%); background-color: $header_bg; }
 
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
-    &:backdrop:backdrop { background-color: $header_bg_backdrop; }
+    &:disabled:backdrop { background-color: $header_bg_backdrop; }
   }
 
   &.selection-mode button {
@@ -1271,6 +1271,9 @@ headerbar {
           transition: background-color 0.00001s 0.3s;
           animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
           color: $selected_fg_color; background-color: darken($header_bg, 10%); box-shadow: inset 0 -3px lighten($selected_bg_color, 10%);
+
+          &:backdrop { transition: none; background-color: darken($header_bg_backdrop, 5%); }
+
         }
       &:disabled { color: transparentize($selected_fg_color, 0.4); }
 

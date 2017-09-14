@@ -1003,7 +1003,7 @@ headerbar entry {
   headerbar entry:focus {
     color: rgba(255, 255, 255, 0.8);
     border-color: #2eb398;
-    background-color: rgba(75, 95, 100, 0.4);
+    background-color: rgba(62, 78, 83, 0.4);
     background-clip: border-box; }
     headerbar entry:focus image {
       color: #2eb398; }
@@ -1061,7 +1061,7 @@ headerbar button {
     color: rgba(255, 255, 255, 0.75);
     border-color: rgba(46, 179, 152, 0.65);
     background-color: rgba(46, 179, 152, 0.65); }
-  headerbar button:backdrop:backdrop {
+  headerbar button:disabled:backdrop {
     background-color: #222a2d; }
 headerbar.selection-mode button, headerbar.selection-mode button.flat, headerbar.selection-mode button.sidebar-button {
   border-color: transparent;
@@ -1103,6 +1103,11 @@ headerbar .linked:not(.vertical).path-bar > button {
     color: #ffffff;
     background-color: #050607;
     box-shadow: inset 0 -3px #45cfb3; }
+    headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active:backdrop, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked:backdrop,
+    headerbar .linked:not(.vertical).path-bar > button:active:backdrop,
+    headerbar .linked:not(.vertical).path-bar > button:checked:backdrop {
+      transition: none;
+      background-color: #171c1e; }
   headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled,
   headerbar .linked:not(.vertical).path-bar > button:disabled {
     color: rgba(255, 255, 255, 0.6); }
@@ -1259,7 +1264,7 @@ headerbar combobox > .linked > button.combo {
   headerbar combobox > .linked > button.combo:hover {
     color: rgba(255, 255, 255, 0.8);
     border-color: #2eb398;
-    background-color: rgba(75, 95, 100, 0.4);
+    background-color: rgba(62, 78, 83, 0.4);
     box-shadow: none; }
   headerbar combobox > .linked > button.combo:disabled {
     color: rgba(255, 255, 255, 0.35);
@@ -3518,7 +3523,7 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
   .marlin-pathbar.pathbar:focus {
     color: rgba(255, 255, 255, 0.8);
     border-color: #2eb398;
-    background-color: rgba(75, 95, 100, 0.4); }
+    background-color: rgba(62, 78, 83, 0.4); }
   .marlin-pathbar.pathbar:disabled {
     color: rgba(255, 255, 255, 0.35);
     border-color: rgba(1, 1, 1, 0.4);
