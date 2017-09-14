@@ -1218,7 +1218,7 @@ headerbar spinbutton:not(.vertical):focus {
 headerbar spinbutton:not(.vertical) button, headerbar spinbutton:not(.vertical) button:disabled {
   color: rgba(255, 255, 255, 0.8);
   border-color: #141a1b;
-  background-color: #141a1b; }
+  background-color: #1f282a; }
 headerbar spinbutton:not(.vertical) button:hover {
   background-color: rgba(101, 128, 135, 0.4); }
 headerbar spinbutton:not(.vertical) button:active, headerbar spinbutton:not(.vertical) button:checked {
@@ -1717,7 +1717,7 @@ notebook {
       notebook > header > tabs > tab:checked {
         color: #ffffff; }
       notebook > header > tabs > tab button.flat, notebook > header > tabs > tab button.sidebar-button {
-        border-radius: 10px;
+        border-radius: 100px;
         min-height: 16px;
         min-width: 22px;
         padding: 0;
@@ -2835,7 +2835,7 @@ headerbar button.titlebutton,
   .titlebar button.titlebutton:hover {
     color: rgba(255, 255, 255, 0.8);
     border-color: #141a1b;
-    background-color: #141a1b; }
+    background-color: #1f282a; }
   headerbar button.titlebutton:active, headerbar button.titlebutton:checked,
   .titlebar button.titlebutton:active,
   .titlebar button.titlebutton:checked {
@@ -3010,7 +3010,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   0% {
     color: rgba(255, 255, 255, 0.8);
     border-color: #141a1b;
-    background-color: #141a1b; }
+    background-color: #1f282a; }
   100% {
     color: #ffffff;
     border-color: transparent;
@@ -4132,7 +4132,7 @@ filechooser actionbar button {
   .caja-side-pane > box button:hover:not(:active), filechooser actionbar button:hover {
     color: rgba(255, 255, 255, 0.8);
     border-color: #141a1b;
-    background-color: #141a1b; }
+    background-color: #1f282a; }
   filechooser actionbar button:active, filechooser actionbar button:checked {
     color: #ffffff;
     border-color: transparent;

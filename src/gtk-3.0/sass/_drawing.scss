@@ -197,7 +197,7 @@
   //
     color: $header_fg;
     border-color: $header_bg;
-    background-color: $header_bg;
+    background-color: lighten($header_bg, 5%);
 
   }
 
