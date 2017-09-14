@@ -915,7 +915,7 @@ toolbar {
 
   &.osd {
     padding: 7px;
-    border: 1px solid transparentize(black, 0.85);
+    border: 1px solid transparentize(black, 0.8);
     border-radius: 3px;
     background-color: transparentize($osd_bg_color, 0.1);
 
@@ -1734,7 +1734,7 @@ popover.background {
   background-clip: border-box;
   background-color: $_popover_bg;
 
-  box-shadow: 0 2px 6px 1px if($variant=='light', transparentize(black, 0.93), transparentize(black, 0.65));
+  box-shadow: 0 2px 6px 0 if($variant=='light', transparentize(black, 0.93), transparentize(black, 0.65));
 
   .csd &, & { border: 1px solid darken($borders_color, 5%); }
 

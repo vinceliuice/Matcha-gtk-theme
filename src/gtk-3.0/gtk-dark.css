@@ -818,7 +818,7 @@ toolbar, .inline-toolbar {
     background-color: transparent; }
   toolbar.osd, .osd.inline-toolbar {
     padding: 7px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 3px;
     background-color: rgba(48, 59, 62, 0.85); }
     toolbar.osd.left, .osd.left.inline-toolbar, toolbar.osd.right, .osd.right.inline-toolbar, toolbar.osd.top, .osd.top.inline-toolbar, toolbar.osd.bottom, .osd.bottom.inline-toolbar {
@@ -1526,7 +1526,7 @@ popover.background {
   border-radius: 3px;
   background-clip: border-box;
   background-color: #1b2224;
-  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.35); }
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35); }
   .csd popover, popover, .csd
   popover.background,
   popover.background {
