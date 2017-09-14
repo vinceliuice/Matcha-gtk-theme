@@ -692,7 +692,7 @@ headerbar .linked:not(.vertical).path-bar > button:only-child:disabled, .nemo-wi
   border-style: solid; }
 
 menuitem.button.flat,
-modelbutton.flat, button:link, button:visited, button:link:hover, button:link:active, button:link:checked, button:visited:hover, button:visited:active, button:visited:checked, notebook > header > tabs > tab button.flat:hover, notebook > header > tabs > tab button.sidebar-button:hover, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.sidebar-button:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.sidebar-button:active:hover, .app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.flat:disabled, .app-notification button.sidebar-button:disabled, calendar.button {
+modelbutton.flat, button:link, button:link:hover, button:link:active, button:link:checked, button:visited, button:visited:hover, button:visited:active, button:visited:checked, notebook > header > tabs > tab button.flat:hover, notebook > header > tabs > tab button.sidebar-button:hover, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.sidebar-button:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.sidebar-button:active:hover, .app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.flat:disabled, .app-notification button.sidebar-button:disabled, calendar.button {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -731,7 +731,7 @@ modelbutton.flat arrow.right {
 *:link, button:link, button:visited {
   color: #6ddac4; }
   *:link:visited, button:visited {
-    color: #e48585; }
+    color: white; }
     *:selected *:link:visited, *:selected button:visited:link, *:selected button:visited {
       color: #abe1d6; }
   *:link:hover, button:hover:link, button:hover:visited {
@@ -746,7 +746,12 @@ modelbutton.flat arrow.right {
   .selection-mode.titlebar:not(headerbar) .subtitle:link, *:selected *:link, *:selected button:link, *:selected button:visited {
     color: #d5f0ea; }
 
-button:link > label, button:visited > label {
+button:link > label {
+  text-decoration-line: underline; }
+
+button:visited:hover, button:visited:active, button:visited:checked {
+  color: white; }
+button:visited > label {
   text-decoration-line: underline; }
 
 spinbutton:drop(active) {

@@ -793,12 +793,23 @@ modelbutton.flat arrow {
   *:selected & { color: mix($selected_fg_color, $selected_bg_color, 80%); }
 }
 
-button:link, button:visited {
+button:link {
   @extend %undecorated_button;
   @extend *:link;
 
   &:hover, &:active, &:checked {
     @extend %undecorated_button;
+  }
+  > label { text-decoration-line: underline; }
+}
+
+button:visited {
+  @extend %undecorated_button;
+  @extend *:link;
+
+  &:hover, &:active, &:checked {
+    @extend %undecorated_button;
+    color: lighten($link_visited_color, 15%);
   }
   > label { text-decoration-line: underline; }
 }
