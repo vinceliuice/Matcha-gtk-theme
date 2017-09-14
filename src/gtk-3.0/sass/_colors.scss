@@ -14,8 +14,8 @@ $borders_color: if($variant =='light', darken($bg_color,10%), darken($bg_color,3
 
 $link_color: if($variant == 'light', darken($selected_bg_color,10%),
                                      lighten($selected_bg_color,20%));
-$link_visited_color: if($variant == 'light', darken($selected_bg_color,20%),
-                                     lighten($selected_bg_color,10%));
+$link_visited_color: if($variant == 'light', darken(#db5b5b,5%),
+                                     lighten(#db5b5b,10%));
 
 $selection_mode_bg: if($transparency == 'true', transparentize($selected_bg_color, 0.05), $selected_bg_color);
 $selection_mode_fg: $selected_fg_color;
