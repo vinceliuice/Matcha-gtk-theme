@@ -1075,7 +1075,7 @@ headerbar,
     padding: 0 0;
     background-color: opacify($header_bg, 1);
     border-bottom-width: 0;
-
+    box-shadow: none;
     .maximized & { background-color: opacify($header_bg, 1); }
   }
 
@@ -1197,9 +1197,9 @@ headerbar {
 
     color: darken($selected_fg_color, 20%);
     border: none;
-    background-color: $header_bg;
+    background-color: transparent;
 
-    &:backdrop { opacity: 0.7; background-color: $header_bg_backdrop; }
+    &:backdrop { opacity: 0.7; }
 
     &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
     &:active, &:checked {
@@ -1208,10 +1208,9 @@ headerbar {
       background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
     }
 
-    &:disabled { color: darken($selected_fg_color, 60%); background-color: $header_bg; }
+    &:disabled { color: darken($selected_fg_color, 60%); background-color: transparent; }
 
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
-    &:disabled:backdrop { background-color: $header_bg_backdrop; }
   }
 
   &.selection-mode button {
@@ -1264,21 +1263,19 @@ headerbar {
     padding-bottom: 6px;
     margin: 0 0 0 0;
     color: darken($selected_fg_color, 20%);
-    background-color: $header_bg;
+    background-color: transparent;
 
       &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
       &:active, &:checked { 
           transition: background-color 0.00001s 0.3s;
           animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-          color: $selected_fg_color; background-color: darken($header_bg, 10%); box-shadow: inset 0 -3px lighten($selected_bg_color, 10%);
-
-          &:backdrop { transition: none; background-color: darken($header_bg_backdrop, 5%); }
-
+          color: $selected_fg_color;
+          background-color: darken($header_bg, 10%);
+          box-shadow: inset 0 -3px lighten($selected_bg_color, 10%);
         }
       &:disabled { color: transparentize($selected_fg_color, 0.4); }
 
       &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
-      &:backdrop { opacity: 0.7; background-color: $header_bg_backdrop; }
     }
     @include pathbar_linking_rules($sep_color:$header_button_border);
   }
@@ -1758,7 +1755,7 @@ popover.background {
 
     &.osd { @extend %osd; }
   }
-    
+
    button:not(.suggested-action):not(.destructive-action)
     {
       &:hover {
@@ -3213,6 +3210,7 @@ decoration {
   .fullscreen &,
   .tiled & {
     border-radius: 0;
+    box-shadow: none;
   }
   .popup & {
     box-shadow: none;
@@ -3221,14 +3219,14 @@ decoration {
   // server-side decorations as used by mutter
   .ssd & {
     border-radius: if($darker=='false' and $variant=='light', 4px 4px 0 0, 3px 3px 0 0);
-    box-shadow: 0 0 0 1px if($darker=='true' or $variant == 'dark', transparentize(black, 0.35), $_wm_border);
+    box-shadow: 0 0 0 0 if($darker=='true' or $variant == 'dark', transparentize(black, 0.35), $_wm_border);
 
     &.maximized { border-radius: 0; }
   }
   .csd.popup & {
     border-radius: 2px;
     box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)),
-                0 0 0 1px if($variant == 'light', $_wm_border, darken($bg_color, 10%));
+                0 0 0 0 if($variant == 'light', $_wm_border, darken($bg_color, 10%));
   }
   tooltip.csd & {
     border-radius: 2px;
