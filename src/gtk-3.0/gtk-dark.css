@@ -948,7 +948,8 @@ headerbar,
     min-height: 28px;
     padding: 0 0;
     background-color: #141a1b;
-    border-bottom-width: 0; }
+    border-bottom-width: 0;
+    box-shadow: none; }
     .maximized headerbar.default-decoration, .maximized .csd headerbar.default-decoration, .maximized headerbar.default-decoration:backdrop, .maximized .csd headerbar.default-decoration:backdrop, .maximized
     .default-decoration.titlebar:not(headerbar), .maximized .csd
     .default-decoration.titlebar:not(headerbar), .maximized
@@ -1530,7 +1531,7 @@ popover.background {
   .csd popover, popover, .csd
   popover.background,
   popover.background {
-    border: 1px solid #0a0c0d; }
+    border: 1px solid #141a1b; }
   popover separator,
   popover.background separator {
     background-color: #1b2224; }
