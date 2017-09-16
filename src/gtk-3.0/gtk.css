@@ -2838,7 +2838,8 @@ decoration {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 0 8px 8px 0 transparent, 0 5px 5px 0 rgba(0, 0, 0, 0.2);
     transition: 200ms ease-out; }
   .fullscreen decoration, .tiled decoration {
-    border-radius: 0; }
+    border-radius: 0;
+    box-shadow: none; }
   .popup decoration {
     border-radius: 0; }
   .ssd decoration {
