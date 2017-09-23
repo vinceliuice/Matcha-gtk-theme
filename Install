@@ -107,6 +107,13 @@ srcdir=${repodir}/src
 		openbox-3 \
 		${themedir}
 
+	# Install Unity Theme
+	install -d ${themedir}/unity
+	cd ${srcdir}
+	cp -ur \
+		unity \
+		${themedir}
+
 # Copying Matcha-Dark-shell files
 	echo -e "   Installing Matcha-Dark ..."
 
