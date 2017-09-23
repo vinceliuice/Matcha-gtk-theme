@@ -1368,7 +1368,7 @@ StScrollBar {
   .window-caption {
     spacing: 25px;
     color: $selected_fg_color;
-    background-color: transparent;
+    background-color: scale-alpha(black, 0.5);
     border-radius: 2px;
     padding: 4px 8px;
     -shell-caption-spacing: 12px;
