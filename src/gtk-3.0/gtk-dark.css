@@ -2418,12 +2418,12 @@ row.activatable:selected.has-open-popup, row.activatable:selected:hover {
 .app-notification {
   padding: 10px;
   color: #eeeeee;
-  background-color: rgba(48, 59, 62, 0.95);
+  background-color: alpha(rgba(48, 59, 62, 0.95),0.9);
   background-clip: border-box;
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
-  border-color: rgba(26, 32, 33, 0.95); }
+  border-color: rgba(21, 26, 28, 0.35); }
   .app-notification border {
     border: none; }
   .app-notification button {

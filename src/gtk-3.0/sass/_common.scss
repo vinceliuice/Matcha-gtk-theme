@@ -2629,13 +2629,13 @@ row {
 //
 .app-notification {
   padding: 10px;
-  color: $dark_sidebar_fg;
-  background-color: $dark_sidebar_bg;
+  color: $osd_fg_color;
+  background-color: gtkalpha($osd_bg_color, 0.9);
   background-clip: border-box;
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
-  border-color: darken($dark_sidebar_bg, 10%);
+  border-color: $osd_button_border;
 
   border { border: none; }
 
