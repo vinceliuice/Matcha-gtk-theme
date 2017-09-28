@@ -1563,7 +1563,7 @@ popover.background {
     background-color: transparent; }
   popover button:not(.suggested-action):not(.destructive-action):hover,
   popover.background button:not(.suggested-action):not(.destructive-action):hover {
-    background-color: #050607;
+    background-color: #101415;
     color: #eeeeee; }
   popover button:not(.suggested-action):not(.destructive-action):checked,
   popover.background button:not(.suggested-action):not(.destructive-action):checked {
@@ -1577,7 +1577,7 @@ popover.background {
   popover button.model:hover,
   popover.background.menu button:hover,
   popover.background button.model:hover {
-    background-color: #050607;
+    background-color: #101415;
     color: #eeeeee; }
   popover.menu button:checked,
   popover button.model:checked,

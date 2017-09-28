@@ -1782,7 +1782,7 @@ popover.background {
    button:not(.suggested-action):not(.destructive-action)
     {
       &:hover {
-        background-color: darken($_popover_bg, 10%);
+        background-color: darken($_popover_bg, 5%);
         color: $text_color;
     }
 
@@ -1801,7 +1801,7 @@ popover.background {
   button.model {
 
     &:hover {
-      background-color: darken($_popover_bg, 10%);
+      background-color: darken($_popover_bg, 5%);
       color: $text_color;
     }
 
