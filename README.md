@@ -6,6 +6,12 @@ Matcha is a flat Design theme for GTK 3, GTK 2 and Gnome-Shell which supports GT
 ## Info
 
 ### GTK+ 3.20 or later
+- Update your gtk(gnome) version on Mint if you want use matcha on Linux Mint.
+
+        sudo add-apt-repository ppa:gnome3-team/gnome3-staging
+        sudo add-apt-repository ppa:gnome3-team/gnome3
+        sudo apt-get update
+        sudo apt-get dist-upgrade
 
 ### GTK2 engines requirment
 - GTK2 engine Murrine 0.98.1.1 or later.
@@ -33,9 +39,7 @@ OrOpen the terminal at current directory.
 
 Run
 
-
     ./Install
-
 
 ## Screenshots
 
