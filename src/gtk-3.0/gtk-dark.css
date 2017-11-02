@@ -1448,7 +1448,7 @@ menubar,
       color: #ffffff; }
     menubar > menuitem:disabled,
     .menubar > menuitem:disabled {
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.7);
       border-color: transparent; }
 
 menu,
@@ -2857,19 +2857,21 @@ headerbar button.titlebutton,
     color: #ffffff;
     border-color: transparent;
     background-color: #2eb398; }
-  headerbar button.titlebutton.close, headerbar button.titlebutton.maximize, headerbar button.titlebutton.minimize,
+  headerbar button.titlebutton.close, headerbar button.titlebutton.maximize, headerbar button.titlebutton.minimize, headerbar button.titlebutton.restore,
   .titlebar button.titlebutton.close,
   .titlebar button.titlebutton.maximize,
-  .titlebar button.titlebutton.minimize {
+  .titlebar button.titlebutton.minimize,
+  .titlebar button.titlebutton.restore {
     color: transparent;
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     border-width: 0; }
-    headerbar button.titlebutton.close:backdrop, headerbar button.titlebutton.maximize:backdrop, headerbar button.titlebutton.minimize:backdrop,
+    headerbar button.titlebutton.close:backdrop, headerbar button.titlebutton.maximize:backdrop, headerbar button.titlebutton.minimize:backdrop, headerbar button.titlebutton.restore:backdrop,
     .titlebar button.titlebutton.close:backdrop,
     .titlebar button.titlebutton.maximize:backdrop,
-    .titlebar button.titlebutton.minimize:backdrop {
+    .titlebar button.titlebutton.minimize:backdrop,
+    .titlebar button.titlebutton.restore:backdrop {
       opacity: 1; }
   headerbar button.titlebutton.close,
   .titlebar button.titlebutton.close {
@@ -2907,6 +2909,18 @@ headerbar button.titlebutton,
   headerbar button.titlebutton.minimize:active,
   .titlebar button.titlebutton.minimize:active {
     background-image: -gtk-scaled(url("assets/titlebutton-minimize-active-dark.png"), url("assets/titlebutton-minimize-active-dark@2.png")); }
+  headerbar button.titlebutton.restore,
+  .titlebar button.titlebutton.restore {
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize-dark.png"), url("assets/titlebutton-maximize-dark@2.png")); }
+  headerbar button.titlebutton.restore:backdrop,
+  .titlebar button.titlebutton.restore:backdrop {
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop-dark.png"), url("assets/titlebutton-maximize-backdrop-dark@2.png")); }
+  headerbar button.titlebutton.restore:hover,
+  .titlebar button.titlebutton.restore:hover {
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover-dark.png"), url("assets/titlebutton-maximize-hover-dark@2.png")); }
+  headerbar button.titlebutton.restore:active,
+  .titlebar button.titlebutton.restore:active {
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize-active-dark.png"), url("assets/titlebutton-maximize-active-dark@2.png")); }
 
 .view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
 .view text:selected,
