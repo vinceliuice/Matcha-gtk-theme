@@ -86,7 +86,7 @@ srcdir=${repodir}/src
 	install -d ${themedir}/xfwm4
 	cd ${srcdir}/xfwm4
 	cp -ur \
-		assets \
+		assets/*.png \
 		themerc \
 		${themedir}/xfwm4
 
