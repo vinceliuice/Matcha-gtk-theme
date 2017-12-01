@@ -3216,7 +3216,7 @@ decoration {
   $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.8));
 
   box-shadow: 0 0 0 0 if($darker=='true' or $variant == 'dark', darken($header_bg, 7%), $_wm_border),
-              0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), transparentize($_wm_border, 0.2));
+              0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.2), transparentize($_wm_border, 0.3));
 
   // this is used for the resize cursor area
   margin: 10px;
