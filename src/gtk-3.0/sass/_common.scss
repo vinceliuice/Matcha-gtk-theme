@@ -793,23 +793,12 @@ modelbutton.flat arrow {
   *:selected & { color: mix($selected_fg_color, $selected_bg_color, 80%); }
 }
 
-button:link {
+button:link, button:visited {
   @extend %undecorated_button;
   @extend *:link;
 
   &:hover, &:active, &:checked {
     @extend %undecorated_button;
-  }
-  > label { text-decoration-line: underline; }
-}
-
-button:visited {
-  @extend %undecorated_button;
-  @extend *:link;
-
-  &:hover, &:active, &:checked {
-    @extend %undecorated_button;
-    color: lighten($link_visited_color, 15%);
   }
   > label { text-decoration-line: underline; }
 }
@@ -1005,13 +994,13 @@ headerbar,
   min-height: 42px;
   padding: 0 10px;
 
-//  border-width: 0 0 0;
+//  border-width: 1px 1px 0 1px;
 //  border-style: solid;
 //  border-color: opacify($header_border, 1);
 
   color: $selected_fg_color;
   background-color: opacify($header_bg, 1);
-//  box-shadow: inset 0 0 lighten($header_bg, 3%);
+  box-shadow: inset 0 1px lighten($header_bg, 8%);
 
   .csd & {  // Transparent header-bars only in csd windows
     background-color: $header_bg;
@@ -1020,7 +1009,6 @@ headerbar,
 
   &:backdrop {
     transition: $backdrop_transition;
-
     color: transparentize($header_fg, 0.3);
     background-color: opacify($header_bg_backdrop, 1);
 
@@ -1086,7 +1074,7 @@ headerbar,
     padding: 0 0;
     background-color: opacify($header_bg, 1);
     border-bottom-width: 0;
-    box-shadow: none;
+    box-shadow: inset 0 1px lighten($header_bg, 8%);
     .maximized & { background-color: opacify($header_bg, 1); }
   }
 
@@ -1265,8 +1253,7 @@ headerbar {
     > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: none; }
   }
 
-  // special case for path-bars and stack-switchers
-//  .linked:not(.vertical):not(.path-bar).stack-switcher,
+  // special case for path-bars
   .linked:not(.vertical).path-bar {
 
     > button {
@@ -1290,19 +1277,6 @@ headerbar {
     }
     @include pathbar_linking_rules($sep_color:$header_button_border);
   }
-
-  .linked:not(.vertical):not(.path-bar).stack-switcher {
-    > button {
-      @include button(header-hover);
-      border-color: darken($header_bg, 15%);
-      background-color: lighten($header_bg, 10%);
-      &:hover { background-color: lighten($header_bg, 15%); }
-      &:active, &:checked { @include button(header-active); }
-      &:disabled { color: transparentize($header_fg, 0.4); }
-
-      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
-    }
- }
 
   // use linking rules for entries only
   .linked:not(.vertical):not(.path-bar) {
@@ -1451,6 +1425,18 @@ headerbar {
     }
   }
 }
+
+  // special case and stack-switchers
+  .linked:not(.vertical):not(.path-bar).stack-switcher {
+    > button {
+      @include button(header-hover);
+      background-color: lighten($header_bg, 10%);
+      &:hover { background-color: lighten($header_bg, 15%); }
+      &:active, &:checked { @include button(header-active); }
+      &:disabled { color: transparentize($header_fg, 0.4); }
+      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+    }
+ }
 
 //
 // Pathbars
@@ -3211,22 +3197,21 @@ stackswitcher button {
 
 decoration {
   border-radius: if($darker=='false' and $variant=='light', 2px 2px 0 0, 2px 2px 0 0);
-  border-width: 0px;
+  border-width: 0;
 
   $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.8));
 
   box-shadow: 0 0 0 0 if($darker=='true' or $variant == 'dark', darken($header_bg, 7%), $_wm_border),
-              0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.2), transparentize($_wm_border, 0.3));
+              0 14px 14px rgba(0, 0, 0, 0.25), 0 10px 5px rgba(0, 0, 0, 0.22), 0 16px 16px transparent;
 
   // this is used for the resize cursor area
-  margin: 10px;
+  margin: 8px;
 
   &:backdrop {
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows
     box-shadow: 0 0 0 0 if($darker=='true' or $variant == 'dark', transparentize(darken($header_bg, 7%), 0.1), $_wm_border),
-                0 8px 8px 0 transparent,
-                0 5px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), transparentize($_wm_border, 0.2));
+                0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23), 0 16px 16px transparent;
 
     transition: $backdrop_transition;
   }
@@ -3260,9 +3245,10 @@ decoration {
   }
   .solid-csd & {
     border-radius: 0;
-    margin: 1px;
+    margin: 0;
+    padding: 4px;
     background-color: $header_bg;
-    box-shadow: none;
+    box-shadow: inset 0 0 0 4px $header_bg;
   }
 }
 
