@@ -1,7 +1,12 @@
-
-## Matcha Gtk Theme
+<img src="https://github.com/vinceliuice/Matcha/blob/images/logo.png" alt="Logo" align="right" /> Matcha Gtk Theme
+======
 
 Matcha is a flat Design theme for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
+
+## Donations
+[![paypal](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png "Donations")](https://www.paypal.me/vinceliuice) 
+
+Thanks for your donations! https://www.paypal.me/vinceliuice
 
 ## Info
 
