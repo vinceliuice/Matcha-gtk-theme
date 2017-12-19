@@ -3600,6 +3600,30 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
 .menu .spinner {
   opacity: 1; }
 
+/****************
+ * Libre-Office *
+ ****************/
+window.background > grid.horizontal > grid.horizontal {
+  background-color: #141a1b; }
+  window.background > grid.horizontal > grid.horizontal > button.flat.small-button, window.background > grid.horizontal > grid.horizontal > button.small-button.sidebar-button {
+    color: rgba(255, 255, 255, 0.8);
+    border: none; }
+    window.background > grid.horizontal > grid.horizontal > button.flat.small-button:hover, window.background > grid.horizontal > grid.horizontal > button.small-button.sidebar-button:hover {
+      background-color: #354347;
+      color: rgba(255, 255, 255, 0.8); }
+    window.background > grid.horizontal > grid.horizontal > button.flat.small-button:active, window.background > grid.horizontal > grid.horizontal > button.small-button.sidebar-button:active, window.background > grid.horizontal > grid.horizontal > button.flat.small-button:checked, window.background > grid.horizontal > grid.horizontal > button.small-button.sidebar-button:checked {
+      background-color: #2eb398;
+      color: rgba(255, 255, 255, 0.8); }
+    window.background > grid.horizontal > grid.horizontal > button.flat.small-button:disabled, window.background > grid.horizontal > grid.horizontal > button.small-button.sidebar-button:disabled {
+      color: alpha(rgba(255, 255, 255, 0.8),0.6); }
+
+window.background:not(.solid-csd) > notebook:not(.frame) {
+  border: 0 none transparent;
+  background-color: #222b2e; }
+  window.background:not(.solid-csd) > notebook:not(.frame) > stack {
+    border: none;
+    box-shadow: none; }
+
 UnityDecoration {
   -UnityDecoration-extents: 28px 1 1 1;
   -UnityDecoration-input-extents: 10px;

@@ -851,6 +851,39 @@ panel-toplevel.background {
 .panel .menu .spinner,
 .menu .spinner { opacity: 1 } // Fixes sound indicator buttons
 
+/****************
+ * Libre-Office *
+ ****************/
+
+window.background {
+// reserved area at the most-right side of GtkMenuBar
+  > grid.horizontal > grid.horizontal {
+    background-color: $header_bg;
+
+    > button.flat.small-button { // 'close' button
+      color: $header_fg;
+      border: none;
+      &:hover { background-color: lighten($header_bg, 15%); color: lighten($header_fg, 5%); }
+      &:active,
+      &:checked { background-color: $selected_bg_color; color: lighten($header_fg, 15%); }
+      &:disabled { color: gtkalpha($header_fg, 0.6); }
+    }
+  }
+}
+
+window.background:not(.solid-csd) {
+  // for 'Notebookbar' toolbar
+  > notebook:not(.frame) {
+    border: 0 none transparent; // unset borders
+    background-color: $base_color;
+
+    > stack {
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+
 //
 // Wingpanel Popover
 //
