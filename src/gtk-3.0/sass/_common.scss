@@ -3244,8 +3244,9 @@ decoration {
     border-radius: 3px;
   }
   .solid-csd & {
+    border: none;
     border-radius: 0;
-    margin: 1px;
+    margin: 0;
     background-color: $header_bg;
     box-shadow: none;
   }

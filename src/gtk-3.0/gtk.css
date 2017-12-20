@@ -2824,8 +2824,9 @@ decoration {
   messagedialog.csd decoration {
     border-radius: 3px; }
   .solid-csd decoration {
+    border: none;
     border-radius: 0;
-    margin: 1px;
+    margin: 0;
     background-color: #1b2224;
     box-shadow: none; }
 
