@@ -2825,10 +2825,9 @@ decoration {
     border-radius: 3px; }
   .solid-csd decoration {
     border-radius: 0;
-    margin: 0;
-    padding: 4px;
+    margin: 1px;
     background-color: #1b2224;
-    box-shadow: inset 0 0 0 4px #1b2224; }
+    box-shadow: none; }
 
 headerbar.default-decoration button.titlebutton,
 .titlebar.default-decoration button.titlebutton {
