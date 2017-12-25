@@ -869,10 +869,10 @@ headerbar,
   .titlebar:backdrop:not(headerbar) {
     transition: 200ms ease-out;
     color: rgba(255, 255, 255, 0.5);
-    background-color: #222a2d; }
+    background-color: #263033; }
     .csd headerbar:backdrop, .csd
     .titlebar:backdrop:not(headerbar) {
-      background-color: #222a2d; }
+      background-color: #263033; }
   headerbar .title,
   .titlebar:not(headerbar) .title {
     padding-left: 12px;
@@ -918,7 +918,7 @@ headerbar,
     border-color: #0c0f10; }
     .maximized headerbar:backdrop, .maximized
     .titlebar:backdrop:not(headerbar) {
-      background-color: #222a2d; }
+      background-color: #263033; }
   headerbar.default-decoration, .csd headerbar.default-decoration, headerbar.default-decoration:backdrop, .csd headerbar.default-decoration:backdrop,
   .default-decoration.titlebar:not(headerbar), .csd
   .default-decoration.titlebar:not(headerbar),
@@ -4100,6 +4100,9 @@ filechooser placessidebar.sidebar,
       filechooser placessidebar.sidebar row.sidebar-row.sidebar-new-bookmark-row .sidebar-icon,
       .nautilus-window placessidebar.sidebar row.sidebar-row.sidebar-new-bookmark-row .sidebar-icon {
         color: inherit; }
+    filechooser placessidebar.sidebar row.sidebar-row:backdrop,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop {
+      opacity: 0.6; }
     filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled), filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) label, filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon,
     .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled),
     .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) label,
@@ -4272,7 +4275,7 @@ filechooser placessidebar.sidebar scrollbar,
 @define-color wm_title alpha(white, 0.8);
 @define-color wm_unfocused_title alpha(white, 0.5);
 @define-color wm_bg #1b2224;
-@define-color wm_bg_unfocused #222a2d;
+@define-color wm_bg_unfocused #263033;
 @define-color wm_highlight #222a2d;
 @define-color wm_shadow alpha(#000000, 0.35);
 @define-color wm_button_close_bg #f46067;
