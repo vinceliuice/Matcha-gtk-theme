@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<style-scheme id="matcha" name="matcha Gedit" filename="matcha.xml" version="1.0">
+  <author>Vince Liuice</author>
+  <description>Gedit material theme matched for matcha GTK theme.</description>
+
+  <!-- Color Palette -->
+  <color name="matcha0"                     value="#1b2224" />
+  <color name="matcha1"                     value="#222b2e" />
+  <color name="matcha2"                     value="#2eb398" />
+  <color name="matcha3"                     value="#7e8e8c" />
+  <color name="matcha4"                     value="#cfdcd8" />
+  <color name="matcha5"                     value="#3ee865" />
+  <color name="matcha6"                     value="#ff994d" />
+  <color name="matcha7"                     value="#15b8d6" />
+  <color name="matcha8"                     value="#1b839b" />
+  <color name="matcha9"                     value="#AB7967" />
+  <color name="matcha10"                    value="#ff996b" />
+  <color name="matcha11"                    value="#C3E88D" />
+  <color name="matcha12"                    value="#C792EA" />
+  <color name="matcha13"                    value="#283334" />
+
+  <!-- GUI Styling -->
+  <style name="background-pattern"          background="matcha1" />
+  <style name="bookmark"                    background="matcha4" />
+  <style name="bracket-match"               foreground="matcha4" background="matcha2" />
+  <style name="bracket-mismatch"            foreground="matcha6" underline="true" />
+  <style name="current-line"                foreground="matcha4" background="matcha13" />
+  <style name="cursor"                      foreground="matcha4" />
+  <style name="draw-spaces"                 foreground="matcha3" />
+  <style name="line-numbers"                foreground="matcha3" background="matcha1" />
+  <style name="search-match"                foreground="matcha4" background="matcha8" />
+  <style name="secondary-cursor"            use-style="cursor" />
+  <style name="selection"                   foreground="matcha4" background="matcha2" />
+  <style name="selection-unfocused"         foreground="matcha4" background="matcha7" />
+  <style name="right-margin"                foreground="matcha4" />
+  <style name="text"                        foreground="matcha4" background="matcha0" />
+
+  <!-- Custom definitions -->
+  <style name="def:annotation"              foreground="matcha9" />
+  <style name="def:escape"                  foreground="matcha9" />
+  <style name="def:regexp"                  foreground="matcha10" />
+  <style name="def:symbol"                  foreground="matcha4" />
+  <style name="def:other"                   foreground="matcha4" />
+  <style name="def:verbatim"                foreground="matcha10" />
+
+  <!-- Variables -->
+  <style name="def:number"                  foreground="matcha12" />
+  <style name="def:string"                  foreground="matcha11" />
+  <style name="def:base-n-integer"          use-style="def:number" />
+  <style name="def:character"               use-style="def:string" />
+  <style name="def:complex"                 use-style="def:number" />
+  <style name="def:decimal"                 use-style="def:number" />
+  <style name="def:floating-point"          use-style="def:number" />
+  <style name="def:special-char"            foreground="matcha9" />
+  <style name="def:variable"                foreground="matcha4" />
+  <style name="def:global-variable"         foreground="matcha4" />
+  <style name="def:class-variable"          foreground="matcha4" />
+  <style name="def:instance-variable"       foreground="matcha4" />
+
+  <!-- Constants -->
+  <style name="def:boolean"                 foreground="matcha7" />
+  <style name="def:constant"                foreground="matcha4" />
+  <style name="def:namespace"               foreground="matcha5" />
+  <style name="def:special-constant"        foreground="matcha7" />
+
+  <!-- Comments -->
+  <style name="def:comment"                 foreground="matcha3" italic="true" />
+  <style name="def:doc-comment"             use-style="def:comment" />
+  <style name="def:doc-comment-element"     foreground="matcha7" />
+  <style name="def:net-address-in-comment"  foreground="matcha3" underline="true" />
+  <style name="def:note"                    use-style="def:comment" />
+
+  <!-- Keywords -->
+  <style name="def:class"                   foreground="matcha5" />
+  <style name="def:keyword"                 foreground="matcha7" />
+  <style name="def:attribute"               use-style="def:class" />
+  <style name="def:builtin"                 use-style="def:keyword" />
+  <style name="def:identifier"              use-style="def:keyword" />
+  <style name="def:preprocessor"            foreground="matcha8" />
+  <style name="def:reserved"                use-style="def:keyword" />
+  <style name="def:shebang"                 foreground="matcha8" />
+  <style name="def:statement"               use-style="def:keyword" />
+  <style name="def:tag"                     use-style="def:keyword" />
+  <style name="def:type"                    use-style="def:class" />
+
+  <!-- Logicals -->
+  <style name="def:error"                   foreground="matcha6" />
+  <style name="def:function"                foreground="matcha6" />
+  <style name="def:operator"                foreground="matcha7" />
+
+  <!-- Headings -->
+  <style name="def:heading0"                foreground="matcha6" />
+  <style name="def:heading1"                use-style="def:heading0" />
+  <style name="def:heading2"                use-style="def:heading0" />
+  <style name="def:heading3"                use-style="def:heading0" />
+  <style name="def:heading4"                use-style="def:heading0" />
+  <style name="def:heading5"                use-style="def:heading0" />
+  <style name="def:heading6"                use-style="def:heading0" />
+
+  <!-- Formats -->
+  <style name="def:underlined"              underline="true" />
+  <style name="def:warning"                 foreground="matcha10" />
+
+  <!-- CSS Styling -->
+  <style name="css:at-rules"                use-style="def:annotation" />
+  <style name="css:block"                   use-style="def:symbol" />
+  <style name="css:color"                   use-style="def:number" />
+  <style name="css:comment"                 use-style="def:comment" />
+  <style name="css:decimal"                 use-style="def:decimal" />
+  <style name="css:dimension"               use-style="def:number" />
+  <style name="css:error"                   use-style="def:error" />
+  <style name="css:function"                use-style="def:function" />
+  <style name="css:keyword"                 use-style="def:attribute" />
+  <style name="css:others-2"                use-style="def:symbol" />
+  <style name="css:others-3"                use-style="def:symbol" />
+  <style name="css:property-values"         use-style="def:keyword" />
+  <style name="css:selector-class"          use-style="def:class" />
+  <style name="css:selector-id"             foreground="matcha5" underline="true" />
+  <style name="css:selector-tagname"        use-style="def:tag" />
+  <style name="css:string"                  use-style="def:string" />
+
+  <!-- Desktop Styling -->
+  <style name="desktop:boolean"             use-style="def:boolean" />
+  <style name="desktop:category-additional" use-style="def:string" />
+  <style name="desktop:category-main"       foreground="matcha11" bold="true" />
+  <style name="desktop:category-reserved"   foreground="matcha7" underline="true" />
+  <style name="desktop:encoding"            use-style="def:keyword" />
+  <style name="desktop:exec-parameter"      use-style="def:escape" />
+  <style name="desktop:group"               use-style="def:keyword" />
+  <style name="desktop:key"                 use-style="def:attribute" />
+  <style name="desktop:language"            use-style="def:string" />
+  <style name="desktop:number"              use-style="def:number" />
+
+  <!-- DIFF Styling -->
+  <style name="diff:added-line"             foreground="matcha11" />
+  <style name="diff:changed-line"           foreground="matcha10" />
+  <style name="diff:diff-file"              foreground="matcha6" />
+  <style name="diff:location"               foreground="matcha7" />
+  <style name="diff:removed-line"           foreground="matcha6" />
+  <style name="diff:special-case"           use-style="def:string" />
+
+  <!-- HTML Styling -->
+  <style name="html:attrib-name"            use-style="def:class" />
+  <style name="html:attrib-value"           use-style="def:string" />
+  <style name="html:comment"                use-style="def:comment" />
+  <style name="html:dtd"                    use-style="def:shebang" />
+  <style name="html:error"                  foreground="def:error" />
+  <style name="html:h1"                     use-style="text" />
+  <style name="html:h2"                     use-style="text" />
+  <style name="html:h3"                     use-style="text" />
+  <style name="html:h4"                     use-style="text" />
+  <style name="html:h5"                     use-style="text" />
+  <style name="html:tag"                    use-style="def:keyword" />
+  <style name="html:title"                  use-style="text" />
+
+  <!-- INI Styling -->
+  <style name="ini:boolean-value"           use-style="def:boolean" />
+  <style name="ini:comment"                 use-style="def:comment" />
+  <style name="ini:decimal"                 use-style="def:number" />
+  <style name="ini:floating-point"          use-style="def:number" />
+  <style name="ini:keyword"                 use-style="def:keyword" />
+  <style name="ini:non-standard-key"        italic="true" />
+  <style name="ini:string"                  use-style="def:string" />
+  <style name="ini:variable"                use-style="def:variable" />
+
+  <!-- JAVA Styling -->
+  <style name="java:boolean"                use-style="def:boolean" />
+  <style name="java:char"                   use-style="def:character" />
+  <style name="java:comment"                use-style="def:comment" />
+  <style name="java:declaration"            use-style="def:variable" />
+  <style name="java:escaped-character"      use-style="def:escape" />
+  <style name="java:external"               use-style="def:preprocessor" />
+  <style name="java:keyword"                use-style="def:keyword" />
+  <style name="java:null-value"             use-style="def:keyword" />
+  <style name="java:number"                 use-style="def:number" />
+  <style name="java:reserved"               use-style="def:constant" />
+  <style name="java:scope-declaration"      use-style="def:keyword" />
+  <style name="java:storage-class"          use-style="def:keyword" />
+  <style name="java:string"                 use-style="def:string" />
+  <style name="java:type"                   use-style="def:keyword" />
+
+  <!-- JS Styling -->
+  <style name="js:boolean"                  use-style="def:boolean" />
+  <style name="js:constructors"             use-style="def:function" />
+  <style name="js:escape"                   use-style="def:escape" />
+  <style name="js:function"                 use-style="def:function" />
+  <style name="js:future-words"             use-style="def:keyword" />
+  <style name="js:keyword"                  use-style="def:keyword" />
+  <style name="js:null-value"               use-style="def:keyword" />
+  <style name="js:properties"               foreground="matcha6" italic="true" />
+  <style name="js:regex"                    use-style="def:regexp" />
+  <style name="js:string"                   use-style="def:string" />
+  <style name="js:type"                     use-style="def:keyword" />
+  <style name="js:undefined-value"          use-style="def:keyword" />
+
+  <!-- JSON Styling -->
+  <style name="json:boolean"                use-style="def:boolean" />
+  <style name="json:decimal"                use-style="def:decimal" />
+  <style name="json:error"                  use-style="def:error" />
+  <style name="json:float"                  use-style="def:floating-point" />
+  <style name="json:keyname"                use-style="def:keyword" />
+  <style name="json:null-value"             use-style="def:keyword" />
+  <style name="json:special-char"           use-style="def:special-char" />
+  <style name="json:string"                 use-style="def:string" />
+
+  <!-- MD Styling -->
+  <style name="markdown:abbreviation"       foreground="matcha9" />
+  <style name="markdown:attribute-value"    use-style="def:attribute" />
+  <style name="markdown:backslash-escape"   use-style="def:escape" />
+  <style name="markdown:blockquote-marker"  foreground="matcha6" />
+  <style name="markdown:code"               foreground="matcha5" />
+  <style name="markdown:emphasis"           foreground="matcha4" italic="true" />
+  <style name="markdown:header"             foreground="matcha6" />
+  <style name="markdown:horizontal-rule"    foreground="matcha7" />
+  <style name="markdown:image-marker"       use-style="def:keyword" />
+  <style name="markdown:label"              use-style="def:attribute" />
+  <style name="markdown:line-break"         use-style="def:comment" />
+  <style name="markdown:link-text"          use-style="def:attribute" />
+  <style name="markdown:list-marker"        foreground="matcha7" />
+  <style name="markdown:strong-emphasis"    foreground="matcha4" bold="true" />
+  <style name="markdown:table-separator"    bold="true" />
+  <style name="markdown:url"                foreground="matcha4" underline="true" />
+
+  <!-- PERL Styling -->
+  <style name="perl:builtin"                use-style="def:builtin" />
+  <style name="perl:comment"                use-style="def:comment" />
+  <style name="perl:control"                foreground="matcha7" underline="true" />
+  <style name="perl:error"                  use-style="def:error" />
+  <style name="perl:file-descriptor"        use-style="def:keyword" />
+  <style name="perl:here-doc-bound"         use-style="def:keyword" />
+  <style name="perl:include-statement"      use-style="def:annotation" />
+  <style name="perl:keyword"                use-style="def:keyword" />
+  <style name="perl:line-directive"         foreground="matcha3" italic="true" />
+  <style name="perl:operator"               use-style="def:operator" />
+  <style name="perl:pod"                    use-style="text" />
+  <style name="perl:pod-escape"             use-style="def:escape" />
+  <style name="perl:pod-heading"            foreground="matcha6" />
+  <style name="perl:pod-keyword"            use-style="def:keyword" />
+  <style name="perl:regex"                  use-style="def:regexp" />
+  <style name="perl:string"                 use-style="def:string" />
+  <style name="perl:system-command"         foreground="matcha6" />
+  <style name="perl:variable"               use-style="def:variable" />
+
+  <!-- PHP Styling -->
+  <style name="php:boolean"                 use-style="def:boolean" />
+  <style name="php:comment"                 use-style="def:comment" />
+  <style name="php:common-function"         use-style="def:function" />
+  <style name="php:decimal"                 use-style="def:number" />
+  <style name="php:error"                   use-style="def:error" />
+  <style name="php:escape"                  use-style="def:escape" />
+  <style name="php:floating-point"          use-style="def:number" />
+  <style name="php:here-doc"                use-style="def:string" />
+  <style name="php:here-doc-bound"          use-style="def:keyword" />
+  <style name="php:hexadecimal"             use-style="def:number" />
+  <style name="php:identifier"              use-style="def:function" />
+  <style name="php:keyword"                 use-style="def:keyword" />
+  <style name="php:null-value"              use-style="def:keyword" />
+  <style name="php:octal"                   foreground="matcha12" italic="true" />
+  <style name="php:operator"                use-style="def:operator" />
+  <style name="php:preprocessor"            use-style="def:preprocessor" />
+  <style name="php:string"                  use-style="def:string" />
+  <style name="php:type"                    use-style="def:class" />
+  <style name="php:variable"                use-style="def:variable" />
+
+  <!-- PYTHON Styling -->
+  <style name="python:base-n-integer"       foreground="matcha12" italic="true" />
+  <style name="python:boolean"              use-style="def:boolean" />
+  <style name="python:builtin-constant"     use-style="def:keyword" />
+  <style name="python:builtin-function"     use-style="def:function" />
+  <style name="python:builtin-object"       use-style="def:class" />
+  <style name="python:class-name"           use-style="def:class" />
+  <style name="python:complex"              foreground="matcha12" italic="true" />
+  <style name="python:decimal"              use-style="def:number" />
+  <style name="python:decorator"            use-style="def:annotation" />
+  <style name="python:escaped-char"         use-style="def:escape" />
+  <style name="python:floating-point"       use-style="def:number" />
+  <style name="python:format"               use-style="def:escape" />
+  <style name="python:function-name"        use-style="def:function" />
+  <style name="python:keyword"              use-style="def:keyword" />
+  <style name="python:module-handler"       use-style="def:keyword" />
+  <style name="python:multiline-string"     use-style="def:string" />
+  <style name="python:special-variable"     use-style="def:keyword" />
+  <style name="python:string"               use-style="def:string" />
+  <style name="python:string-conversion"    use-style="def:keyword" />
+  <style name="python3:base-n-integer"      foreground="matcha12" italic="true" />
+  <style name="python3:boolean"             use-style="def:boolean" />
+  <style name="python3:builtin-constant"    use-style="def:keyword" />
+  <style name="python3:builtin-function"    use-style="def:function" />
+  <style name="python3:builtin-object"      use-style="def:class" />
+  <style name="python3:complex"             foreground="matcha12" italic="true" />
+  <style name="python3:decimal"             use-style="def:number" />
+  <style name="python3:escaped-char"        use-style="def:escape" />
+  <style name="python3:floating-point"      use-style="def:number" />
+  <style name="python3:format"              use-style="def:escape" />
+  <style name="python3:keyword"             use-style="def:keyword" />
+  <style name="python3:module-handler"      use-style="def:keyword" />
+  <style name="python3:multiline-string"    use-style="def:string" />
+  <style name="python3:special-variable"    use-style="def:keyword" />
+  <style name="python3:string"              use-style="def:string" />
+
+  <!-- RUBY Styling -->
+  <style name="ruby:base-n-integer"         use-style="def:number" />
+  <style name="ruby:boolean"                use-style="def:boolean" />
+  <style name="ruby:builtin"                use-style="def:class" />
+  <style name="ruby:comment"                use-style="def:comment" />
+  <style name="ruby:constant"               use-style="def:class" />
+  <style name="ruby:decimal"                use-style="def:number" />
+  <style name="ruby:escape"                 use-style="def:escape" />
+  <style name="ruby:floating-point"         use-style="def:number" />
+  <style name="ruby:here-doc"               use-style="def:string" />
+  <style name="ruby:here-doc-bound"         use-style="def:keyword" />
+  <style name="ruby:keyword"                use-style="def:keyword" />
+  <style name="ruby:literal"                use-style="def:escape" />
+  <style name="ruby:module-handler"         use-style="def:keyword" />
+  <style name="ruby:nil-value"              use-style="def:keyword" />
+  <style name="ruby:numeric-literal"        use-style="def:number" />
+  <style name="ruby:predefined-variable"    use-style="def:keyword" />
+  <style name="ruby:regex"                  use-style="def:regexp" />
+  <style name="ruby:special-variable"       use-style="def:keyword" />
+  <style name="ruby:string"                 use-style="def:string" />
+  <style name="ruby:symbol"                 use-style="def:variable" />
+  <style name="ruby:variable"               use-style="def:variable" />
+
+  <!-- SH Styling -->
+  <style name="sh:comment"                  use-style="def:comment" />
+  <style name="sh:common-command"           foreground="matcha7" italic="true" />
+  <style name="sh:function"                 use-style="def:function" />
+  <style name="sh:here-doc-bound"           use-style="def:keyword" />
+  <style name="sh:keyword"                  use-style="def:keyword" />
+  <style name="sh:others"                   use-style="def:keyword" />
+  <style name="sh:string"                   use-style="def:string" />
+  <style name="sh:variable"                 use-style="def:variable" />
+  <style name="sh:variable-definition"      use-style="def:variable" />
+
+  <!-- XML Styling -->
+  <style name="xml:attribute-name"          use-style="def:attribute" />
+  <style name="xml:attribute-value"         use-style="def:string" />
+  <style name="xml:cdata-delim"             foreground="matcha3" bold="true" />
+  <style name="xml:comment"                 use-style="def:comment" />
+  <style name="xml:doctype"                 foreground="matcha8" />
+  <style name="xml:element-name"            use-style="def:keyword" />
+  <style name="xml:entity"                  use-style="def:escape" />
+  <style name="xml:error"                   use-style="def:error" />
+  <style name="xml:namespace"               use-style="def:namespace" />
+  <style name="xml:processing-instruction"  use-style="def:preprocessor" />
+  <style name="xml:tag"                     use-style="def:tag" />
+
+  <!-- Meld -->
+  <style name="meld:insert" foreground="matcha4" background="#rgba(77, 182, 172, 0.1)" line-background="#rgba(77, 182, 172, 0.1)" />
+  <style name="meld:replace" foreground="matcha4" background="#rgba(3, 169, 244, 0.1)" line-background="#rgba(3, 169, 244, 0.1)" />
+  <style name="meld:conflict" foreground="matcha4" background="#rgba(244, 67, 54, 0.1)" line-background="#rgba(244, 67, 54, 0.1)" />
+  <style name="meld:current-line-highlight" background="#rgba(203, 216, 220, 0.1)" />
+  <style name="meld:current-chunk-highlight" background="#rgba(203, 216, 220, 0.1)" />
+  <style name="meld:inline" background="#rgba(3, 169, 244, 0.4)" />
+  <style name="meld:unknown-text" foreground="matcha4" />
+  <style name="meld:dimmed" foreground="matcha3" />
+
+</style-scheme>

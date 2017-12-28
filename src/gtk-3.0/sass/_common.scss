@@ -197,7 +197,7 @@ entry {
   border-radius: 3px;
   transition: all 200ms $ease-out-quad;
 
-  &.search { border-radius: 20px; }
+  &.search { border-radius: 50px; }
 
   @include entry(normal);
 
@@ -915,7 +915,7 @@ toolbar {
 
   &.osd {
     padding: 7px;
-    border: 1px solid transparentize(black, 0.8);
+    border: 1px solid $borders_color;
     border-radius: 3px;
     background-color: transparentize($osd_bg_color, 0.1);
 
@@ -1000,7 +1000,7 @@ headerbar,
 
   color: $selected_fg_color;
   background-color: opacify($header_bg, 1);
-  box-shadow: inset 0 1px lighten($header_bg, 8%);
+  box-shadow: inset 0 1px lighten($header_bg, 5%), 0 -2px 3px rgba(0, 0, 0, 0.23);
 
   .csd & {  // Transparent header-bars only in csd windows
     background-color: $header_bg;
@@ -1011,7 +1011,7 @@ headerbar,
     transition: $backdrop_transition;
     color: transparentize($header_fg, 0.3);
     background-color: opacify($header_bg_backdrop, 1);
-
+    box-shadow: inset 0 1px lighten($header_bg, 5%), 0 -1px 2px rgba(0, 0, 0, 0.16);
     .csd & { background-color: $header_bg_backdrop; }
   }
 
@@ -1074,7 +1074,7 @@ headerbar,
     padding: 0 0;
     background-color: opacify($header_bg, 1);
     border-bottom-width: 0;
-    box-shadow: inset 0 1px lighten($header_bg, 8%);
+    box-shadow: none;
     .maximized & { background-color: opacify($header_bg, 1); }
   }
 
@@ -1268,7 +1268,7 @@ headerbar {
           transition: background-color 0.00001s 0.3s;
           animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
           color: $selected_fg_color;
-          background-color: darken($header_bg, 10%);
+          background-color: darken($header_bg, 5%);
           box-shadow: inset 0 -3px lighten($selected_bg_color, 10%);
         }
       &:disabled { color: transparentize($selected_fg_color, 0.4); }
@@ -1705,23 +1705,26 @@ menu,
       }
     }
   }
+
   // overflow buttons
+    
   > arrow {
-    @include button(undecorated);
+//    @include button(undecorated);
     min-width: 16px;
     min-height: 16px;
     padding: 4px;
     background-color: $_menu_bg;
     border-radius: 0;
+    border: 1px solid $borders_color;
 
     &.top {
-      margin-top: -6px;
-      border-bottom: 1px solid mix($fg_color, $base_color, 10%);
+      margin-top: -12px;
+//      border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
     &.bottom {
-      margin-bottom: -6px;
-      border-top: 1px solid mix($fg_color, $base_color, 10%);
+      margin-bottom: -12px;
+//      border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
     &:hover { background-color: mix($fg_color, $base_color, 10%); }
@@ -1768,7 +1771,7 @@ popover.background {
    button:not(.suggested-action):not(.destructive-action)
     {
       &:hover {
-        background-color: darken($_popover_bg, 5%);
+        background-color: if($variant=='light', transparentize(black, 0.94), transparentize(white, 0.99));
         color: $text_color;
     }
 
@@ -1785,11 +1788,6 @@ popover.background {
 
   &.menu button,
   button.model {
-
-    &:hover {
-      background-color: darken($_popover_bg, 5%);
-      color: $text_color;
-    }
 
     &:checked {
       background-color: $selected_bg_color;

@@ -183,13 +183,13 @@ StScrollBar {
 .check-box StBin {
   width: 16px;
   height: 16px;
-  background-image: url("light-assets/checkbox/checkbox-unchecked.svg"); }
+  background-image: url("assets/checkbox/checkbox-unchecked.svg"); }
 .check-box:focus StBin {
-  background-image: url("light-assets/checkbox/checkbox-unchecked-focused.svg"); }
+  background-image: url("assets/checkbox/checkbox-unchecked-focused.svg"); }
 .check-box:checked StBin {
-  background-image: url("light-assets/checkbox/checkbox-checked.svg"); }
+  background-image: url("assets/checkbox/checkbox-checked.svg"); }
 .check-box:focus:checked StBin {
-  background-image: url("light-assets/checkbox/checkbox-checked-focused.svg"); }
+  background-image: url("assets/checkbox/checkbox-checked-focused.svg"); }
 
 .radiobutton CinnamonGenericContainer {
   spacing: .2em;
@@ -202,21 +202,21 @@ StScrollBar {
 .radiobutton StBin {
   width: 16px;
   height: 16px;
-  background-image: url("light-assets/checkbox/checkbox-unchecked.svg"); }
+  background-image: url("assets/checkbox/checkbox-unchecked.svg"); }
 .radiobutton:focus StBin {
-  background-image: url("light-assets/checkbox/checkbox-unchecked-focused.svg"); }
+  background-image: url("assets/checkbox/checkbox-unchecked-focused.svg"); }
 .radiobutton:checked StBin {
-  background-image: url("light-assets/checkbox/checkbox-checked.svg"); }
+  background-image: url("assets/checkbox/checkbox-checked.svg"); }
 .radiobutton:focus:checked StBin {
-  background-image: url("light-assets/checkbox/checkbox-checked-focused.svg"); }
+  background-image: url("assets/checkbox/checkbox-checked-focused.svg"); }
 
 .toggle-switch {
   width: 50px;
   height: 20px;
   background-size: contain;
-  background-image: url("light-assets/switch/switch-off.svg"); }
+  background-image: url("assets/switch/switch-off.svg"); }
   .toggle-switch:checked {
-    background-image: url("light-assets/switch/switch-on.svg"); }
+    background-image: url("assets/switch/switch-on.svg"); }
   .popup-menu-item:active .toggle-switch {
     background-image: url("common-assets/switch/switch-off-selected.svg"); }
     .popup-menu-item:active .toggle-switch:checked {
@@ -241,7 +241,7 @@ StScrollBar {
 .popup-menu,
 .popup-combo-menu {
   color: #5c616c;
-  border-image: url("light-assets/menu/menu.svg") 9 9 9 9; }
+  border-image: url("assets/menu/menu.svg") 9 9 9 9; }
   .menu-arrow,
   .popup-menu-arrow {
     icon-size: 16px; }
@@ -250,7 +250,7 @@ StScrollBar {
   .popup-combo-menu .popup-sub-menu {
     background-gradient-direction: none;
     box-shadow: none;
-    border-image: url("light-assets/menu/submenu.svg") 9 9 9 9; }
+    border-image: url("assets/menu/submenu.svg") 9 9 9 9; }
     .menu .popup-sub-menu .popup-menu-item:ltr,
     .popup-menu .popup-sub-menu .popup-menu-item:ltr,
     .popup-combo-menu .popup-sub-menu .popup-menu-item:ltr {
@@ -648,7 +648,7 @@ StScrollBar {
   width: 34em;
   color: #BAC3CF; }
   .menu #notification, .popup-menu #notification {
-    border-image: url("light-assets/misc/message.svg") 9 9 9 9; }
+    border-image: url("assets/misc/message.svg") 9 9 9 9; }
     .menu #notification, .menu #notification.multi-line-notification, .popup-menu #notification, .popup-menu #notification.multi-line-notification {
       color: #5c616c; }
     .menu #notification .notification-button, .menu #notification .notification-icon-button, .popup-menu #notification .notification-button, .popup-menu #notification .notification-icon-button {
@@ -748,7 +748,7 @@ StScrollBar {
   color: #5c616c;
   background-color: rgba(245, 246, 247, 0);
   border: none;
-  border-image: url("light-assets/misc/modal.svg") 9 9 9 67;
+  border-image: url("assets/misc/modal.svg") 9 9 9 67;
   padding: 0 5px 6px 5px; }
   .modal-dialog > StBoxLayout:first-child {
     padding: 20px 10px 10px 10px; }
@@ -758,7 +758,7 @@ StScrollBar {
     padding: 14px 10px;
     background: none;
     border: none;
-    border-image: url("light-assets/misc/button-box.svg") 9 9 9 9; }
+    border-image: url("assets/misc/button-box.svg") 9 9 9 9; }
     .modal-dialog-button-box .modal-dialog-button {
       padding-top: 0;
       padding-bottom: 0;

@@ -59,7 +59,7 @@ filechooser,
         .sidebar-icon { color: inherit; }
       }
 
-     &:backdrop { opacity: 0.6; }
+     &:backdrop { opacity: 0.75; }
 
       &:drop(active):not(:disabled) {
         &, label, .sidebar-icon { color: $drop_target_color; }

@@ -17,9 +17,10 @@ srcdir=${repodir}/src
   rm -rf $DEST_DIR/Matcha*
 
 # Copying files
-	echo -e "   Installing Matcha ..."
+for color in '' '-dark'; do
+	echo -e "   Installing Matcha${color} ..."
 
-	themedir=$DEST_DIR/Matcha
+	themedir=$DEST_DIR/Matcha${color}
 	install -d ${themedir}
 
 	# Install index.theme
@@ -32,18 +33,29 @@ srcdir=${repodir}/src
 	install -d ${themedir}/gnome-shell
 	cd ${srcdir}/gnome-shell
 	cp -ur \
-	extensions \
-	no-events.svg \
-	no-notifications.svg \
-	process-working.svg \
-	${themedir}/gnome-shell
-
-	cp -ur \
 		assets \
-		${themedir}/gnome-shell/assets
+		extensions \
+		process-working.svg \
+		${themedir}/gnome-shell
 
 	cp -ur \
-		gnome-shell.css \
+		no-events${color}.svg \
+		${themedir}/gnome-shell/no-events.svg
+
+	cp -ur \
+		no-notifications${color}.svg \
+		${themedir}/gnome-shell/no-notifications.svg
+
+	cp -ur \
+		calendar-arrow-left${color}.svg \
+		${themedir}/gnome-shell/assets/calendar-arrow-left.svg
+
+	cp -ur \
+		calendar-arrow-right${color}.svg \
+		${themedir}/gnome-shell/assets/calendar-arrow-right.svg
+
+	cp -ur \
+		gnome-shell${color}.css \
 		${themedir}/gnome-shell/gnome-shell.css
 
 		glib-compile-resources \
@@ -54,10 +66,7 @@ srcdir=${repodir}/src
 	# Install GTK+ 2 Theme
 	install -d ${themedir}/gtk-2.0
 	cd ${srcdir}/gtk-2.0
-
 	cp -ur \
-		gtkrc \
-		assets \
 		apps.rc \
 		main.rc \
 		panel.rc \
@@ -65,15 +74,33 @@ srcdir=${repodir}/src
 		menubar-toolbar \
 		${themedir}/gtk-2.0
 
+	cp -ur \
+		gtkrc${color} \
+		${themedir}/gtk-2.0/gtkrc
+
+	cp -ur \
+		assets${color} \
+		${themedir}/gtk-2.0/assets
+
+	cp -ur \
+		menubar-toolbar${color}.rc \
+		${themedir}/gtk-2.0/menubar-toolbar/menubar-toolbar.rc 
+
 	# Install GTK+ 3 Theme
 	install -d ${themedir}/gtk-3.0
 	cd ${srcdir}/gtk-3.0
 	cp -ur \
-		thumbnail.png \
 		assets \
-		gtk.css \
 		gtk-dark.css \
 		${themedir}/gtk-3.0
+
+	cp -ur \
+		gtk${color}.css \
+		${themedir}/gtk-3.0/gtk.css
+
+	cp -ur \
+		thumbnail${color}.png \
+		${themedir}/gtk-3.0/thumbnail.png
 
 	# Install Metacity Theme
 	install -d ${themedir}/metacity-1
@@ -95,10 +122,19 @@ srcdir=${repodir}/src
 	cd ${srcdir}/cinnamon
 	cp -ur \
 		common-assets \
-		light-assets \
-		cinnamon.css \
-		thumbnail.png \
 		${themedir}/cinnamon
+
+	cp -ur \
+		assets${color} \
+		${themedir}/cinnamon/assets
+
+	cp -ur \
+		cinnamon${color}.css \
+		${themedir}/cinnamon/cinnamon.css
+
+	cp -ur \
+		thumbnail${color}.png \
+		${themedir}/cinnamon/thumbnail.png
 
 	# Install openbox Theme
 	install -d ${themedir}/openbox-3
@@ -114,67 +150,5 @@ srcdir=${repodir}/src
 		unity \
 		${themedir}
 
-# Copying Matcha-Dark-shell files
-	echo -e "   Installing Matcha-Dark ..."
-
-	themedir=$DEST_DIR/Matcha-Dark
-	install -d ${themedir}
-
-	# Install index.theme
-	cd ${srcdir}
-	cp -ur \
-	index.theme \
-	${themedir}/index.theme
-
-	# Install GNOME Shell Theme
-	install -d ${themedir}/gnome-shell
-	cd ${srcdir}/gnome-shell
-	cp -ur \
-	extensions \
-	process-working.svg \
-	${themedir}/gnome-shell
-
-	cp -ur \
-	no-notifications-dark.svg \
-	${themedir}/gnome-shell/no-notifications.svg
-
-	cp -ur \
-	no-events-dark.svg \
-	${themedir}/gnome-shell/no-events.svg
-
-	cp -ur \
-		assets-dark \
-		${themedir}/gnome-shell/assets
-
-	cp -ur \
-		gnome-shell-dark.css \
-		${themedir}/gnome-shell/gnome-shell.css
-
-		glib-compile-resources \
-		--sourcedir=${themedir}/gnome-shell \
-		--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
-		gnome-shell-theme.gresource.xml
-
-	# Install CINNAMON Theme
-	install -d ${themedir}/cinnamon
-	cd ${srcdir}/cinnamon
-	cp -ur \
-		common-assets \
-		dark-assets \
-		${themedir}/cinnamon
-
-	cp -ur \
-		cinnamon-dark.css \
-		${themedir}/cinnamon/cinnamon.css
-
-	cp -ur \
-		thumbnail-dark.png \
-		${themedir}/cinnamon/thumbnail.png
-
-# Set Matcha Gtk Themes
-  echo "Setting the theme..."
-  gsettings set org.gnome.desktop.interface gtk-theme Matcha
-  gsettings set org.gnome.desktop.wm.preferences theme Matcha
-  echo "Done!"
-
+done
 

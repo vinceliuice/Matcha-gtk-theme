@@ -601,6 +601,134 @@ gf-candidate-box {
 }
 
 //
+//   Gnome-Logs
+//
+
+// titles inside the button!?
+headerbar > button.flat.popup.title-menu-button.toggle {
+  border-radius: 2px;
+  -gtk-outline-radius: 2px;
+
+  > grid {
+    .title {
+      margin: rem(-2.7px) 0;
+      padding: rem(1.3px) rem(13.3px) 0;
+      font-size: 90%;
+    }
+    .subtitle {
+      margin: rem(-2.7px) 0;
+      padding: 0 rem(13.3px) rem(1.3px);
+      font-size: 80%;
+    }
+  }
+}
+
+window.background > box.vertical box.horizontal {
+  list.categories { // side-pane
+    background-color: $bg_color;
+    border: none;
+    color: $fg_color;
+
+    row.activatable.category { // use side-bar styling
+      // paddings in row were hard-coded with crazy large values...
+      // padding: rem(2.7px) rem(8px) rem(4px);
+      color: $fg_color;
+      background-color: transparent;
+      font-weight: 500;
+      &:hover {
+          color: $fg_color;
+          background-color: rgba($fg_color, 0.08);
+        }
+
+      &:selected {
+        color: $selected_fg_color;
+        background-color: $selected_bg_color;
+
+        label { color: $selected_fg_color; }
+      }
+
+      > label {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  > box.vertical > scrolledwindow > viewport.frame > list { // right-pane
+    > separator {
+      background-color: transparent; // hide single-line separators
+
+      &.compressed-rows-group-separator { // use opaque colour
+        background-image : image($borders_color);
+      }
+    }
+
+    // > 3.25.90
+    row.event.activatable {
+      color: $fg_color;
+      transition-duration: 0.1s;
+      &:hover,
+      &:active { color: $fg_color; }
+
+      label.compressed-entries-label { // hard-coded background-color?
+        background-image: image($suggested_color);
+        color: $selected_fg_color;
+        font-weight: 700;
+      }
+
+      &.compressed-row {
+        background-image: image(darken($bg_color, 3%));
+        color: darken($fg_color, 20%);
+        transition-property: opacity, // exclude background-color
+                             border-image,
+                             background-image,
+                             box-shadow;
+        &:hover {
+          background-image: image(mix($fg_color, $bg_color, 5%));
+          color: $fg_color;
+        }
+        &:active {
+          &, &:focus {
+            background-image: image(mix($fg_color,
+                                        $bg_color, 10%));
+            color: $fg_color;
+            animation: none;
+          }
+        }
+
+        &.popover-activated-row {
+          background-image: image($selected_bg_color);
+          color: $selected_fg_color;
+        }
+
+        &-header {
+          background-image: image($base_color); // stop highlighting
+          color: $selected_bg_color;
+          &:hover {
+            background-image: image(mix($selected_bg_color,
+                                        $base_color, 5%));
+          }
+          &:active {
+            &, &:focus {
+              background-image: image(mix($selected_bg_color,
+                                          $base_color, 10%));
+              color: $selected_bg_color;
+              animation: none;
+            }
+          }
+
+          label.compressed-entries-label {
+            background-image: image($selected_bg_color);
+            color: $selected_fg_color;
+            transition-duration: 0s;
+          }
+        }
+      }
+    }
+  }
+}
+
+//
 // Mate OSD Window
 //
 MsdOsdWindow.background.osd {
@@ -884,45 +1012,3 @@ window.background:not(.solid-csd) {
   }
 }
 
-//
-// Wingpanel Popover
-//
-//WingpanelWidgetsIndicatorPopover.popover {
-//  padding: 0;
-//
-//  text-shadow: none;
-//  -gtk-icon-shadow: none;
-//
-//  menuitem {
-//    padding: 5px;
-//    outline-color: transparent;
-//    text-shadow: none;
-//    -gtk-icon-shadow: none;
-//    border: solid transparent;
-//    border-width: 1px 0;
-//
-//    label, image { padding: 0 3px; }
-//
-//    &:hover, &:active {
-//      background-color: if($variant == 'light', transparentize(black, 0.96), transparentize(white, 0.95));
-//      border: solid if($variant == 'light', transparentize(black, 0.92), transparentize(white, 0.93));
-//      border-width: 1px 0;
-//    }
-//    *:disabled { color: $insensitive_fg_color; }
-//  }
-//}
-
-//
-// Pantheon Terminal
-//
-//PantheonTerminalPantheonTerminalWindow.background {
-//   background-color: transparent;
-//}
-
-//
-// Switchboard
-//
-//SwitchboardCategoryView .view:selected,
-//SwitchboardCategoryView .view:selected:focus {
-//  color: $fg_color;
-//}

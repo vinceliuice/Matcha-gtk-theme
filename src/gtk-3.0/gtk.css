@@ -134,7 +134,7 @@ entry {
   border-color: #cfd6e6;
   background-color: #ffffff; }
   entry.search {
-    border-radius: 20px; }
+    border-radius: 50px; }
   entry image {
     color: #494e50; }
     entry image.left {
@@ -797,7 +797,7 @@ toolbar, .inline-toolbar {
     background-color: transparent; }
   toolbar.osd, .osd.inline-toolbar {
     padding: 7px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid #dedede;
     border-radius: 3px;
     background-color: rgba(238, 238, 238, 0.85); }
     toolbar.osd.left, .osd.left.inline-toolbar, toolbar.osd.right, .osd.right.inline-toolbar, toolbar.osd.top, .osd.top.inline-toolbar, toolbar.osd.bottom, .osd.bottom.inline-toolbar {
@@ -860,7 +860,7 @@ headerbar,
   padding: 0 10px;
   color: #ffffff;
   background-color: #1b2224;
-  box-shadow: inset 0 1px #2c383b; }
+  box-shadow: inset 0 1px #263033, 0 -2px 3px rgba(0, 0, 0, 0.23); }
   .csd headerbar, .csd
   .titlebar:not(headerbar) {
     background-color: #1b2224;
@@ -869,10 +869,11 @@ headerbar,
   .titlebar:backdrop:not(headerbar) {
     transition: 200ms ease-out;
     color: rgba(255, 255, 255, 0.5);
-    background-color: #263033; }
+    background-color: #222a2d;
+    box-shadow: inset 0 1px #263033, 0 -1px 2px rgba(0, 0, 0, 0.16); }
     .csd headerbar:backdrop, .csd
     .titlebar:backdrop:not(headerbar) {
-      background-color: #263033; }
+      background-color: #222a2d; }
   headerbar .title,
   .titlebar:not(headerbar) .title {
     padding-left: 12px;
@@ -918,7 +919,7 @@ headerbar,
     border-color: #0c0f10; }
     .maximized headerbar:backdrop, .maximized
     .titlebar:backdrop:not(headerbar) {
-      background-color: #263033; }
+      background-color: #222a2d; }
   headerbar.default-decoration, .csd headerbar.default-decoration, headerbar.default-decoration:backdrop, .csd headerbar.default-decoration:backdrop,
   .default-decoration.titlebar:not(headerbar), .csd
   .default-decoration.titlebar:not(headerbar),
@@ -929,7 +930,7 @@ headerbar,
     padding: 0 0;
     background-color: #1b2224;
     border-bottom-width: 0;
-    box-shadow: inset 0 1px #2c383b; }
+    box-shadow: none; }
     .maximized headerbar.default-decoration, .maximized .csd headerbar.default-decoration, .maximized headerbar.default-decoration:backdrop, .maximized .csd headerbar.default-decoration:backdrop, .maximized
     .default-decoration.titlebar:not(headerbar), .maximized .csd
     .default-decoration.titlebar:not(headerbar), .maximized
@@ -1076,7 +1077,7 @@ headerbar .linked:not(.vertical).path-bar > button, .nemo-window .primary-toolba
     transition: background-color 0.00001s 0.3s;
     animation: header_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
     color: #ffffff;
-    background-color: #050607;
+    background-color: #101415;
     box-shadow: inset 0 -3px #45cfb3; }
   headerbar .linked:not(.vertical).path-bar > button:disabled, .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:disabled {
     color: rgba(255, 255, 255, 0.6); }
@@ -1507,23 +1508,19 @@ menu,
         margin-right: 2px; }
   menu > arrow,
   .menu > arrow {
-    border-color: transparent;
-    background-color: transparent;
-    background-image: none;
     min-width: 16px;
     min-height: 16px;
     padding: 4px;
     background-color: #ffffff;
-    border-radius: 0; }
+    border-radius: 0;
+    border: 1px solid #dedede; }
     menu > arrow.top,
     .menu > arrow.top {
-      margin-top: -6px;
-      border-bottom: 1px solid #e8e9e9;
+      margin-top: -12px;
       -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
     menu > arrow.bottom,
     .menu > arrow.bottom {
-      margin-bottom: -6px;
-      border-top: 1px solid #e8e9e9;
+      margin-bottom: -12px;
       -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
     menu > arrow:hover,
     .menu > arrow:hover {
@@ -1562,7 +1559,7 @@ popover.background {
     background-color: transparent; }
   popover button:not(.suggested-action):not(.destructive-action):hover,
   popover.background button:not(.suggested-action):not(.destructive-action):hover {
-    background-color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.06);
     color: #1b2224; }
   popover button:not(.suggested-action):not(.destructive-action):checked,
   popover.background button:not(.suggested-action):not(.destructive-action):checked {
@@ -1572,12 +1569,6 @@ popover.background {
   popover.background button:not(.suggested-action):not(.destructive-action):active {
     background-color: #2eb398;
     color: #ffffff; }
-  popover.menu button:hover,
-  popover button.model:hover,
-  popover.background.menu button:hover,
-  popover.background button.model:hover {
-    background-color: #f2f2f2;
-    color: #1b2224; }
   popover.menu button:checked,
   popover button.model:checked,
   popover.background.menu button:checked,
@@ -3423,6 +3414,78 @@ gf-candidate-box:hover, gf-candidate-box:selected {
   background-color: #2eb398;
   border-radius: 2px; }
 
+headerbar > button.flat.popup.title-menu-button.toggle, headerbar > button.popup.title-menu-button.toggle.sidebar-button {
+  border-radius: 2px;
+  -gtk-outline-radius: 2px; }
+  headerbar > button.flat.popup.title-menu-button.toggle > grid .title, headerbar > button.popup.title-menu-button.toggle.sidebar-button > grid .title {
+    margin: rem(-2.7px) 0;
+    padding: rem(1.3px) rem(13.3px) 0;
+    font-size: 90%; }
+  headerbar > button.flat.popup.title-menu-button.toggle > grid .subtitle, headerbar > button.popup.title-menu-button.toggle.sidebar-button > grid .subtitle {
+    margin: rem(-2.7px) 0;
+    padding: 0 rem(13.3px) rem(1.3px);
+    font-size: 80%; }
+
+window.background > box.vertical box.horizontal list.categories {
+  background-color: #f7f7f7;
+  border: none;
+  color: #1b2224; }
+  window.background > box.vertical box.horizontal list.categories row.activatable.category {
+    color: #1b2224;
+    background-color: transparent;
+    font-weight: 500; }
+    window.background > box.vertical box.horizontal list.categories row.activatable.category:hover {
+      color: #1b2224;
+      background-color: rgba(27, 34, 36, 0.08); }
+    window.background > box.vertical box.horizontal list.categories row.activatable.category:selected {
+      color: #ffffff;
+      background-color: #2eb398; }
+      window.background > box.vertical box.horizontal list.categories row.activatable.category:selected label {
+        color: #ffffff; }
+    window.background > box.vertical box.horizontal list.categories row.activatable.category > label {
+      padding-left: 0;
+      padding-right: 0; }
+window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list > separator {
+  background-color: transparent; }
+  window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list > separator.compressed-rows-group-separator {
+    background-image: image(#dedede); }
+window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable {
+  color: #1b2224;
+  transition-duration: 0.1s; }
+  window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable:hover, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable:active {
+    color: #1b2224; }
+  window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable label.compressed-entries-label {
+    background-image: image(#db5b5b);
+    color: #ffffff;
+    font-weight: 700; }
+  window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row {
+    background-image: image(#efefef);
+    color: black;
+    transition-property: opacity, border-image, background-image, box-shadow; }
+    window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row:hover {
+      background-image: image(#ececec);
+      color: #1b2224; }
+    window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row:active, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row:active:focus {
+      background-image: image(#e1e2e2);
+      color: #1b2224;
+      animation: none; }
+    window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row.popover-activated-row {
+      background-image: image(#2eb398);
+      color: #ffffff; }
+    window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header {
+      background-image: image(#ffffff);
+      color: #2eb398; }
+      window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header:hover {
+        background-image: image(#f5fbfa); }
+      window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header:active, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header:active:focus {
+        background-image: image(#eaf7f5);
+        color: #2eb398;
+        animation: none; }
+      window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header label.compressed-entries-label {
+        background-image: image(#2eb398);
+        color: #ffffff;
+        transition-duration: 0s; }
+
 MsdOsdWindow.background.osd {
   border-radius: 2px;
   border: 1px solid rgba(218, 218, 218, 0.95); }
@@ -4102,7 +4165,7 @@ filechooser placessidebar.sidebar,
         color: inherit; }
     filechooser placessidebar.sidebar row.sidebar-row:backdrop,
     .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop {
-      opacity: 0.6; }
+      opacity: 0.75; }
     filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled), filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) label, filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon,
     .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled),
     .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) label,
@@ -4275,7 +4338,7 @@ filechooser placessidebar.sidebar scrollbar,
 @define-color wm_title alpha(white, 0.8);
 @define-color wm_unfocused_title alpha(white, 0.5);
 @define-color wm_bg #1b2224;
-@define-color wm_bg_unfocused #263033;
+@define-color wm_bg_unfocused #222a2d;
 @define-color wm_highlight #222a2d;
 @define-color wm_shadow alpha(#000000, 0.35);
 @define-color wm_button_close_bg #f46067;
