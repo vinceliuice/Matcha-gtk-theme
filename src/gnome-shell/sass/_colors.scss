@@ -52,8 +52,8 @@ $entry_color: #FAFAFA;
 $entry_hover_color: #FFFFFF;
 
 // Misc colors
-$track_color: scale-alpha($fg_color, $lower_opacity);
-$semi_track_color: scale-alpha($fg_color, $lower_opacity / 2);
+$track_color: if($variant == 'light', scale-alpha($fg_color, $lower_opacity), scale-alpha($fg_color, 0.12));
+$semi_track_color: if($variant == 'light', scale-alpha($fg_color, $lower_opacity / 2), scale-alpha($fg_color, 0.06));
 $insensitive_track_color: scale-alpha($insensitive_fg_color, $lower_opacity);
 
 $selected_track_color: scale-alpha($selected_fg_color, $lower_opacity);
