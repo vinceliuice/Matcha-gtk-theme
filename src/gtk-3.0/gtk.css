@@ -1559,26 +1559,11 @@ popover.background {
     background-color: transparent; }
   popover button:not(.suggested-action):not(.destructive-action):hover,
   popover.background button:not(.suggested-action):not(.destructive-action):hover {
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: rgba(0, 0, 0, 0.05);
     color: #1b2224; }
-  popover button:not(.suggested-action):not(.destructive-action):checked,
-  popover.background button:not(.suggested-action):not(.destructive-action):checked {
-    background-color: #2eb398;
-    color: #ffffff; }
-  popover button:not(.suggested-action):not(.destructive-action):active,
+  popover button:not(.suggested-action):not(.destructive-action):checked, popover button:not(.suggested-action):not(.destructive-action):active,
+  popover.background button:not(.suggested-action):not(.destructive-action):checked,
   popover.background button:not(.suggested-action):not(.destructive-action):active {
-    background-color: #2eb398;
-    color: #ffffff; }
-  popover.menu button:checked,
-  popover button.model:checked,
-  popover.background.menu button:checked,
-  popover.background button.model:checked {
-    background-color: #2eb398;
-    color: #ffffff; }
-  popover.menu button:active,
-  popover button.model:active,
-  popover.background.menu button:active,
-  popover.background button.model:active {
     background-color: #2eb398;
     color: #ffffff; }
 
@@ -2483,6 +2468,7 @@ messagedialog.csd .dialog-action-area button {
   border-bottom-style: none; }
 messagedialog.csd .dialog-action-area button {
   border-radius: 0;
+  border-top: 1px solid #dedede;
   border-right-style: none; }
 messagedialog.csd .dialog-action-area button:last-child {
   border-radius: 0 0 3px 0;
