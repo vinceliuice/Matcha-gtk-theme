@@ -46,6 +46,18 @@ Run
 
     ./Install
 
+When running the installer script in ubuntu16.04 or later, if you had this error:
+
+    XMLLINT not set and xmllint not found in path; skipping xml preprocessing.
+
+To fix it you have to install libxml2-utils
+
+    sudo apt install libxml2-utils
+
+When running the installer script in Fedora 24 or later, you need to install 'glib2-devel'.
+
+    sudo dnf install glib2-devel
+
 ## Screenshots
 
 ### GNOME Shell
