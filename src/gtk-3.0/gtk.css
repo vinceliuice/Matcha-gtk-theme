@@ -3400,6 +3400,18 @@ gf-candidate-box:hover, gf-candidate-box:selected {
   background-color: #2eb398;
   border-radius: 2px; }
 
+headerbar > button.flat.popup.title-menu-button.toggle, headerbar > button.popup.title-menu-button.toggle.sidebar-button {
+  border-radius: 2px;
+  -gtk-outline-radius: 2px; }
+  headerbar > button.flat.popup.title-menu-button.toggle > grid .title, headerbar > button.popup.title-menu-button.toggle.sidebar-button > grid .title {
+    margin: -0.16875rem 0;
+    padding: 0.08125rem 0.83125rem 0;
+    font-size: 90%; }
+  headerbar > button.flat.popup.title-menu-button.toggle > grid .subtitle, headerbar > button.popup.title-menu-button.toggle.sidebar-button > grid .subtitle {
+    margin: -0.16875rem 0;
+    padding: 0 0.83125rem 0.08125rem;
+    font-size: 80%; }
+
 window.background > box.vertical box.horizontal list.categories {
   background-color: #f7f7f7;
   border: none;

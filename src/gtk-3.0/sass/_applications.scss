@@ -604,6 +604,40 @@ gf-candidate-box {
 //   Gnome-Logs
 //
 
+$em-base: 16px;
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@function rem($pxval) {
+  $pxval: strip-units($pxval);
+
+  $base: $em-base;
+  $base: strip-units($base);
+
+  @return ($pxval / $base) * 1rem;
+}
+
+// titles inside the button!?
+headerbar > button.flat.popup.title-menu-button.toggle {
+  border-radius: 2px;
+  -gtk-outline-radius: 2px;
+
+  > grid {
+    .title {
+      margin: rem(-2.7px) 0;
+      padding: rem(1.3px) rem(13.3px) 0;
+      font-size: 90%;
+    }
+    .subtitle {
+      margin: rem(-2.7px) 0;
+      padding: 0 rem(13.3px) rem(1.3px);
+      font-size: 80%;
+    }
+  }
+}
+
 window.background > box.vertical box.horizontal {
   list.categories { // side-pane
     background-color: $bg_color;
