@@ -998,7 +998,7 @@ panel-toplevel.background {
  * Libre-Office *
  ****************/
 
-window.background {
+window.background:not(.csd):not(.solid-csd) {
 // reserved area at the most-right side of GtkMenuBar
   > grid.horizontal > grid.horizontal {
     background-color: $header_bg;
