@@ -3,10 +3,8 @@
 
 Matcha is a flat Design theme for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
 
-## Donations
-[![paypal](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png "Donations")](https://www.paypal.me/vinceliuice) 
-
-Thanks for your donations! https://www.paypal.me/vinceliuice
+This theme is based on Arc gtk theme of horst3180. Thanks horst3180 sincerely for his great job! 
+horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 
 ## Info
 
