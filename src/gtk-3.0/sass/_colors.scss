@@ -47,8 +47,7 @@ $header_bg_backdrop: if($darker == 'true' or $variant == 'dark', lighten($header
 
 $header_border: if($variant == 'light' and $darker=='false', darken($header_bg, 7%), darken($header_bg, 4%));
 
-$header_fg: if($variant == 'light', saturate(transparentize($selected_fg_color, 0.2), 10%), saturate(transparentize($selected_fg_color, 0.2), 10%));
-$header_fg: if($darker == 'true', saturate(transparentize(#1b2224, 0.2), 10%), $header_fg);
+$header_fg: if($darker == 'true', saturate(transparentize(#1b2224, 0.2), 10%), saturate(transparentize($selected_fg_color, 0.2), 10%));
 
 $dark_sidebar_bg: if($transparency == 'true', transparentize(#303b3e, 0.05), #303b3e);
 $dark_sidebar_fg: #eeeeee;

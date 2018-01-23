@@ -77,8 +77,6 @@ popover.background label.separator {
 label selection {
   color: #ffffff;
   background-color: #2eb398; }
-label:disabled {
-  color: rgba(27, 34, 36, 0.55); }
 
 .dim-label, label.separator, popover label.separator,
 popover.background label.separator, headerbar .subtitle,
@@ -1431,10 +1429,10 @@ menubar,
   -GtkWidget-window-dragging: true;
   padding: 0px;
   background-color: #1b2224;
-  color: #ffffff; }
+  color: rgba(255, 255, 255, 0.8); }
   menubar:backdrop,
   .menubar:backdrop {
-    color: rgba(255, 255, 255, 0.7); }
+    color: rgba(255, 255, 255, 0.5); }
   menubar > menuitem,
   .menubar > menuitem {
     transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
@@ -1448,7 +1446,7 @@ menubar,
       color: #ffffff; }
     menubar > menuitem:disabled,
     .menubar > menuitem:disabled {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.3);
       border-color: transparent; }
 
 menu,
