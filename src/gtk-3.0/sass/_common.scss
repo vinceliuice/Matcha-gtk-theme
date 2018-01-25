@@ -3184,28 +3184,23 @@ decoration {
 
   $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.8));
 
-  box-shadow: 0 0 0 0 if($darker=='true' or $variant == 'dark', darken($header_bg, 7%), $_wm_border),
-              0 14px 14px rgba(0, 0, 0, 0.25), 0 10px 5px rgba(0, 0, 0, 0.22), 0 16px 16px transparent;
+  box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
+              0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05));
 
   // this is used for the resize cursor area
-  margin: 8px;
+  margin: 6px;
 
   &:backdrop {
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows
-    box-shadow: 0 0 0 0 if($darker=='true' or $variant == 'dark', transparentize(darken($header_bg, 7%), 0.1), $_wm_border),
-                0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23), 0 16px 16px transparent;
-
+    box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
+                0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03));
     transition: $backdrop_transition;
   }
   .fullscreen &,
   .tiled & {
     border-radius: 0;
-    box-shadow: none;
-  }
-  .popup & {
-//   box-shadow: none;
-    border-radius: 0;
+    box-shadow: 0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03));
   }
   // server-side decorations as used by mutter
   .ssd & {
