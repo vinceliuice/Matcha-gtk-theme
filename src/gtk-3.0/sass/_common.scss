@@ -999,19 +999,20 @@ headerbar,
 
   color: $selected_fg_color;
   background-color: opacify($header_bg, 1);
-  box-shadow: inset 0 1px lighten($header_bg, 5%), 0 -2px 3px rgba(0, 0, 0, 0.23);
+  box-shadow: inset 0 1px lighten($header_bg, 5%);
 
   .csd & {  // Transparent header-bars only in csd windows
     background-color: $header_bg;
     border-color: $header_border;
+    box-shadow: inset 0 1px lighten($header_bg, 5%);
   }
 
   &:backdrop {
     transition: $backdrop_transition;
     color: transparentize($header_fg, 0.3);
     background-color: opacify($header_bg_backdrop, 1);
-    box-shadow: inset 0 1px lighten($header_bg, 5%), 0 -1px 2px rgba(0, 0, 0, 0.16);
-    .csd & { background-color: $header_bg_backdrop; }
+    box-shadow: inset 0 1px lighten($header_bg, 5%);
+    .csd & { background-color: $header_bg_backdrop; box-shadow: inset 0 1px lighten($header_bg, 5%); }
   }
 
   .title {
@@ -1121,7 +1122,7 @@ headerbar {
       padding: 0;
       background: none;
       border: none;
-      box-shadow: none;
+//      box-shadow: none;
     }
   }
 
@@ -3205,14 +3206,12 @@ decoration {
   // server-side decorations as used by mutter
   .ssd & {
     border-radius: if($darker=='false' and $variant=='light', 4px 4px 0 0, 3px 3px 0 0);
-    box-shadow: 0 0 0 0 if($darker=='true' or $variant == 'dark', transparentize(black, 0.35), $_wm_border);
 
     &.maximized { border-radius: 0; }
   }
   .csd.popup & {
     border-radius: 2px;
-    box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)),
-                0 0 0 0 if($variant == 'light', $_wm_border, darken($bg_color, 10%));
+    box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1));
   }
   tooltip.csd & {
     border-radius: 2px;

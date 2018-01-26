@@ -861,20 +861,22 @@ headerbar,
   padding: 0 10px;
   color: #ffffff;
   background-color: #141a1b;
-  box-shadow: inset 0 1px #1f282a, 0 -2px 3px rgba(0, 0, 0, 0.23); }
+  box-shadow: inset 0 1px #1f282a; }
   .csd headerbar, .csd
   .titlebar:not(headerbar) {
     background-color: #141a1b;
-    border-color: #0c0f10; }
+    border-color: #0c0f10;
+    box-shadow: inset 0 1px #1f282a; }
   headerbar:backdrop,
   .titlebar:backdrop:not(headerbar) {
     transition: 200ms ease-out;
     color: rgba(255, 255, 255, 0.5);
     background-color: #191f21;
-    box-shadow: inset 0 1px #1f282a, 0 -1px 2px rgba(0, 0, 0, 0.16); }
+    box-shadow: inset 0 1px #1f282a; }
     .csd headerbar:backdrop, .csd
     .titlebar:backdrop:not(headerbar) {
-      background-color: #191f21; }
+      background-color: #191f21;
+      box-shadow: inset 0 1px #1f282a; }
   headerbar .title,
   .titlebar:not(headerbar) .title {
     padding-left: 12px;
@@ -957,8 +959,7 @@ headerbar:last-child, headerbar:last-child:backdrop {
 window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, window.csd > .titlebar:not(headerbar), window.csd > .titlebar:not(headerbar):backdrop {
   padding: 0;
   background: none;
-  border: none;
-  box-shadow: none; }
+  border: none; }
 .titlebar:not(headerbar) > separator {
   background-image: linear-gradient(to bottom, #0c0f10, #0c0f10); }
 
@@ -2786,13 +2787,12 @@ decoration {
     border-radius: 0;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.23); }
   .ssd decoration {
-    border-radius: 3px 3px 0 0;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.65); }
+    border-radius: 3px 3px 0 0; }
     .ssd decoration.maximized {
       border-radius: 0; }
   .csd.popup decoration {
     border-radius: 2px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 0 #050607; }
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); }
   tooltip.csd decoration {
     border-radius: 2px;
     box-shadow: 0 1px 3px 0 transparent; }
