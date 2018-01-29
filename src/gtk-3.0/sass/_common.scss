@@ -2692,11 +2692,29 @@ messagedialog { // Message Dialog styling
     .dialog-action-area button {
       border-bottom-style: none;
 
+      &:active, &:checked {
+        transition: background-color 0.00001s 0.3s;
+        animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+        }
+
       @extend %middle_button;
       &:first-child{ @extend %first_button; }
       &:last-child { @extend %last_button; }
       &:only-child { @extend %single_button; }
     }
+
+    .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
+
+      &:hover {
+        background-color: gtkalpha($fg_color, 0.06);
+       }
+
+      &:active, &:checked {
+        background-color: gtkalpha($fg_color, 0.1);
+        color: $fg_color;
+        }
+    }
+
     %middle_button {
       border-radius: 0;
       border-top: 1px solid $borders_color;

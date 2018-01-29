@@ -3,6 +3,11 @@
     background-image: radial-gradient(circle farthest-corner at center, #1b2224 0%, transparent 0%); }
   to {
     background-image: radial-gradient(circle farthest-corner at center, #1b2224 100%, transparent 0%); } }
+@keyframes ripple_effect {
+  from {
+    background-image: radial-gradient(circle farthest-corner at center, rgba(27, 34, 36, 0.1) 0%, transparent 0%); }
+  to {
+    background-image: radial-gradient(circle farthest-corner at center, rgba(27, 34, 36, 0.1) 100%, transparent 0%); } }
 * {
   background-clip: padding-box;
   -GtkToolButton-icon-spacing: 4;
@@ -2470,6 +2475,14 @@ messagedialog.csd.background {
   border: none; }
 messagedialog.csd .dialog-action-area button {
   border-bottom-style: none; }
+  messagedialog.csd .dialog-action-area button:active, messagedialog.csd .dialog-action-area button:checked {
+    transition: background-color 0.00001s 0.3s;
+    animation: ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1); }
+messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):hover {
+  background-color: alpha(#1b2224,0.06); }
+messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):active, messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked {
+  background-color: alpha(#1b2224,0.1);
+  color: #1b2224; }
 messagedialog.csd .dialog-action-area button {
   border-radius: 0;
   border-top: 1px solid #dedede;
