@@ -3224,7 +3224,7 @@ decoration {
   // server-side decorations as used by mutter
   .ssd & {
     border-radius: if($darker=='false' and $variant=='light', 4px 4px 0 0, 3px 3px 0 0);
-
+    box-shadow: 0 0 0 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
     &.maximized { border-radius: 0; }
   }
   .csd.popup & {

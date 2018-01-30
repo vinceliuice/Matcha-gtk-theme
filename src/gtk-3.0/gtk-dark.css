@@ -2800,7 +2800,8 @@ decoration {
     border-radius: 0;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.23); }
   .ssd decoration {
-    border-radius: 3px 3px 0 0; }
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3); }
     .ssd decoration.maximized {
       border-radius: 0; }
   .csd.popup decoration {
