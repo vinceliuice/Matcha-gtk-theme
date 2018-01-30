@@ -1831,6 +1831,10 @@ notebook {
 
           // tab border shadows
           @if $_pos==top {
+              &:not(:only-child) {
+                &:first-child { margin-left: 6px; }
+                &:last-child { margin-right: 6px; }
+              }
               &:hover {
                 box-shadow: inset 0 -2px gtkalpha($selected_bg_color, 0.6), 0 1px gtkalpha($selected_bg_color, 0.6);
               }
@@ -1839,6 +1843,10 @@ notebook {
               }
           }
           @else if $_pos==bottom {
+              &:not(:only-child) {
+                &:first-child { margin-left: 6px; }
+                &:last-child { margin-right: 6px; }
+              }
               &:hover {
                 box-shadow: inset 0 2px gtkalpha($selected_bg_color, 0.6), 0 -1px gtkalpha($selected_bg_color, 0.6);
               }
@@ -1847,6 +1855,10 @@ notebook {
               }
           }
           @else if $_pos==left {
+              &:not(:only-child) {
+                &:first-child { margin-top: 6px; }
+                &:last-child { margin-bottom: 6px; }
+              }
               &:hover {
                 box-shadow: inset -2px 0 gtkalpha($selected_bg_color, 0.6), 1px 0 gtkalpha($selected_bg_color, 0.6);
               }
@@ -1855,6 +1867,10 @@ notebook {
               }
           }
           @else if $_pos==right {
+              &:not(:only-child) {
+                &:first-child { margin-top: 6px; }
+                &:last-child { margin-bottom: 6px; }
+              }
               &:hover {
                 box-shadow: inset 2px 0 gtkalpha($selected_bg_color, 0.6), -1px 0 gtkalpha($selected_bg_color, 0.6);
               }
@@ -1900,9 +1916,11 @@ notebook {
 
       &:hover:not(:checked) {
         color: mix($fg_color, $insensitive_fg_color, 50%);
+        transition: 200ms $ease-out-quad;
       }
       &:checked {
         color: $fg_color;
+        transition: 300ms $ease-out-quad;
       }
 
       // close button
