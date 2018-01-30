@@ -1590,96 +1590,68 @@ notebook {
   notebook > stack:not(:only-child) {
     background-color: #222b2e; }
   notebook > header {
-    padding: 5px;
+    padding: 0;
     background-color: #1b2224; }
     notebook > header.top {
+      padding-bottom: 0;
       border-bottom: 1px solid #171c1e; }
-      notebook > header.top > tabs {
-        margin-bottom: 0; }
+      notebook > header.top > tabs > tab {
+        padding: 3px 16px 6px 16px;
+        min-width: 16px;
+        min-height: 16px;
+        border-radius: 0;
+        outline-offset: -4px;
+        border: none;
+        border-bottom: none; }
         notebook > header.top > tabs > tab:hover {
-          background-color: #1b2224;
           box-shadow: inset 0 -2px alpha(#2eb398,0.6), 0 1px alpha(#2eb398,0.6); }
         notebook > header.top > tabs > tab:checked {
-          background-color: #1b2224;
           box-shadow: inset 0 -2px #2eb398, 0 1px #2eb398; }
     notebook > header.bottom {
+      padding-top: 0;
       border-top: 1px solid #171c1e; }
-      notebook > header.bottom > tabs {
-        margin-top: 0; }
+      notebook > header.bottom > tabs > tab {
+        padding: 3px 16px 6px 16px;
+        min-width: 16px;
+        min-height: 16px;
+        border-radius: 0;
+        outline-offset: -4px;
+        border: none;
+        border-top: none; }
         notebook > header.bottom > tabs > tab:hover {
-          background-color: #1b2224;
           box-shadow: inset 0 2px alpha(#2eb398,0.6), 0 -1px alpha(#2eb398,0.6); }
         notebook > header.bottom > tabs > tab:checked {
-          background-color: #1b2224;
           box-shadow: inset 0 2px #2eb398, 0 -1px #2eb398; }
-    notebook > header.left {
-      border-right: 1px solid #171c1e; }
-      notebook > header.left > tabs {
-        margin-right: 0; }
-        notebook > header.left > tabs > tab:hover {
-          background-color: #1b2224;
-          box-shadow: inset -2px 0 alpha(#2eb398,0.6), 1px 0 alpha(#2eb398,0.6); }
-        notebook > header.left > tabs > tab:checked {
-          background-color: #1b2224;
-          box-shadow: inset -2px 0 #2eb398, 1px 0 #2eb398; }
     notebook > header.right {
+      padding-left: 0;
       border-left: 1px solid #171c1e; }
-      notebook > header.right > tabs {
-        margin-left: 0; }
+      notebook > header.right > tabs > tab {
+        padding: 3px 16px 6px 16px;
+        min-width: 16px;
+        min-height: 16px;
+        border-radius: 0;
+        outline-offset: -4px;
+        border: none;
+        border-left: none; }
         notebook > header.right > tabs > tab:hover {
-          background-color: #1b2224;
           box-shadow: inset 2px 0 alpha(#2eb398,0.6), -1px 0 alpha(#2eb398,0.6); }
         notebook > header.right > tabs > tab:checked {
-          background-color: #1b2224;
           box-shadow: inset 2px 0 #2eb398, -1px 0 #2eb398; }
-    notebook > header.top {
-      padding-bottom: 0; }
-      notebook > header.top > tabs > tab {
-        padding: 3px 10px 8px 10px;
-        min-width: 20px;
-        min-height: 20px;
-        outline-offset: -4px;
-        border: none;
-        border-bottom: none;
-        border-radius: 0; }
-        notebook > header.top > tabs > tab + tab {
-          margin-left: 0; }
-    notebook > header.bottom {
-      padding-top: 0; }
-      notebook > header.bottom > tabs > tab {
-        padding: 3px 10px 8px 10px;
-        min-width: 20px;
-        min-height: 20px;
-        outline-offset: -4px;
-        border: none;
-        border-top: none;
-        border-radius: 0; }
-        notebook > header.bottom > tabs > tab + tab {
-          margin-left: 0; }
-    notebook > header.right {
-      padding-left: 0; }
-      notebook > header.right > tabs > tab {
-        padding: 3px 10px 8px 10px;
-        min-width: 20px;
-        min-height: 20px;
-        outline-offset: -4px;
-        border: none;
-        border-left: none;
-        border-radius: 0; }
-        notebook > header.right > tabs > tab + tab {
-          margin-top: 0; }
     notebook > header.left {
-      padding-right: 0; }
+      padding-right: 0;
+      border-right: 1px solid #171c1e; }
       notebook > header.left > tabs > tab {
-        padding: 3px 10px 8px 10px;
-        min-width: 20px;
-        min-height: 20px;
+        padding: 3px 16px 6px 16px;
+        min-width: 16px;
+        min-height: 16px;
+        border-radius: 0;
         outline-offset: -4px;
         border: none;
-        border-right: none;
-        border-radius: 0; }
-        notebook > header.left > tabs > tab + tab {
-          margin-top: 0; }
+        border-right: none; }
+        notebook > header.left > tabs > tab:hover {
+          box-shadow: inset -2px 0 alpha(#2eb398,0.6), 1px 0 alpha(#2eb398,0.6); }
+        notebook > header.left > tabs > tab:checked {
+          box-shadow: inset -2px 0 #2eb398, 1px 0 #2eb398; }
     notebook > header.top > tabs > arrow.up, notebook > header.bottom > tabs > arrow.up {
       -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
       notebook > header.top > tabs > arrow.up:last-child, notebook > header.bottom > tabs > arrow.up:last-child {
@@ -1712,10 +1684,10 @@ notebook {
       notebook > header > tabs > tab:checked {
         color: #ffffff; }
       notebook > header > tabs > tab button.flat, notebook > header > tabs > tab button.sidebar-button {
-        border-radius: 100px;
-        min-height: 16px;
-        min-width: 22px;
-        padding: 0;
+        border-radius: 100%;
+        min-height: 0;
+        min-width: 0;
+        padding: 0 3px;
         color: #afb2b2; }
         notebook > header > tabs > tab button.flat:hover, notebook > header > tabs > tab button.sidebar-button:hover {
           color: #ff4d4d;

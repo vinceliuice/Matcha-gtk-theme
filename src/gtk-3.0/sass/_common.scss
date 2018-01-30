@@ -1810,102 +1810,58 @@ notebook {
   }
 
   > header {
-    padding: 5px;
+    padding: 0;
     background-color: $bg_color;
-
-    &.top {
-      border-bottom: 1px solid $borders_color;
-      > tabs {
-        margin-bottom: 0;
-        > tab {
-
-          &:hover {
-              background-color: $bg_color;
-              box-shadow: inset 0 -2px gtkalpha($selected_bg_color, 0.6),
-                          0 1px gtkalpha($selected_bg_color, 0.6);
-            }
-
-          &:checked { background-color: $bg_color; box-shadow: inset 0 -2px $selected_bg_color, 0 1px $selected_bg_color; }
-        }
-      }
-    }
-
-    &.bottom {
-      border-top: 1px solid $borders_color;
-      > tabs {
-        margin-top: 0;
-        > tab {
-
-          &:hover {
-              background-color: $bg_color;
-              box-shadow: inset 0 2px gtkalpha($selected_bg_color, 0.6),
-                          0 -1px gtkalpha($selected_bg_color, 0.6); }
-
-          &:checked { background-color: $bg_color; box-shadow: inset 0 2px $selected_bg_color, 0 -1px $selected_bg_color; }
-        }
-      }
-    }
-
-    &.left {
-      border-right: 1px solid $borders_color;
-      > tabs {
-        margin-right: 0;
-        > tab {
-
-          &:hover {
-              background-color: $bg_color;
-              box-shadow: inset -2px 0 gtkalpha($selected_bg_color, 0.6),
-                          1px 0 gtkalpha($selected_bg_color, 0.6);
-            }
-
-          &:checked { background-color: $bg_color; box-shadow: inset -2px 0 $selected_bg_color, 1px 0 $selected_bg_color; }
-        }
-      }
-    }
-
-    &.right {
-      border-left: 1px solid $borders_color;
-      > tabs {
-        margin-left: 0;
-        > tab {
-
-          &:hover {
-              background-color: $bg_color;
-              box-shadow: inset 2px 0 gtkalpha($selected_bg_color, 0.6),
-                          -1px 0 gtkalpha($selected_bg_color, 0.6);
-            }
-
-          &:checked { background-color: $bg_color; box-shadow: inset 2px 0 $selected_bg_color, -1px 0 $selected_bg_color; }
-         }
-       }
-     }
 
   @each $_pos, $_bpos in (top, bottom), (bottom, top), (right, left), (left, right) {
       // sizing and borders
       &.#{$_pos} {
         padding-#{$_bpos}: 0;
+        border-#{$_bpos}: 1px solid $borders_color;
 
         > tabs > tab {
-          padding: 3px 10px 8px 10px;
-          min-width: 20px;
-          min-height: 20px;
-
+          padding: 3px 16px 6px 16px;
+          min-width: 16px;
+          min-height: 16px;
+          border-radius: 0;
           outline-offset: -4px;
 
           border: none;
           border-#{$_bpos}: none;
 
-          // tab overlap
-          + tab {
-            @if $_pos==top or $_pos==bottom { margin-left: 0; }
-            @else { margin-top: 0; }
+          // tab border shadows
+          @if $_pos==top {
+              &:hover {
+                box-shadow: inset 0 -2px gtkalpha($selected_bg_color, 0.6), 0 1px gtkalpha($selected_bg_color, 0.6);
+              }
+              &:checked {
+                box-shadow: inset 0 -2px $selected_bg_color, 0 1px $selected_bg_color;
+              }
           }
-
-          // tab border radius
-          @if $_pos==top { border-radius: 0; }
-          @else if $_pos==bottom { border-radius: 0; }
-          @else if $_pos==left { border-radius: 0; }
-          @else if $_pos==right { border-radius: 0; }
+          @else if $_pos==bottom {
+              &:hover {
+                box-shadow: inset 0 2px gtkalpha($selected_bg_color, 0.6), 0 -1px gtkalpha($selected_bg_color, 0.6);
+              }
+              &:checked {
+                box-shadow: inset 0 2px $selected_bg_color, 0 -1px $selected_bg_color;
+              }
+          }
+          @else if $_pos==left {
+              &:hover {
+                box-shadow: inset -2px 0 gtkalpha($selected_bg_color, 0.6), 1px 0 gtkalpha($selected_bg_color, 0.6);
+              }
+              &:checked {
+                box-shadow: inset -2px 0 $selected_bg_color, 1px 0 $selected_bg_color;
+              }
+          }
+          @else if $_pos==right {
+              &:hover {
+                box-shadow: inset 2px 0 gtkalpha($selected_bg_color, 0.6), -1px 0 gtkalpha($selected_bg_color, 0.6);
+              }
+              &:checked {
+                box-shadow: inset 2px 0 $selected_bg_color, -1px 0 $selected_bg_color;
+              }
+          }
         }
       }
     }
@@ -1951,10 +1907,10 @@ notebook {
 
       // close button
       button.flat {
-        border-radius: 100px;
-        min-height: 16px;
-        min-width: 22px;
-        padding: 0;
+        border-radius: 100%;
+        min-height: 0;
+        min-width: 0;
+        padding: 0 3px;
         color: mix($bg_color, $fg_color, 35%);
 
         &:hover {
