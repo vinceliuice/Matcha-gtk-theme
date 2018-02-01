@@ -3350,6 +3350,10 @@ button.documents-favorite:active:hover {
   .documents-entry-tag:active, .photos-entry-tag:active {
     color: #ffffff;
     background: #2aa38a; }
+  .documents-entry-tag.button, .button.photos-entry-tag {
+    box-shadow: none;
+    border: none;
+    background-color: transparent; }
 
 .content-view.document-page {
   border-style: solid;
