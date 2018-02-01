@@ -993,6 +993,114 @@ panel-toplevel.background {
 .panel .menu .spinner,
 .menu .spinner { opacity: 1 } // Fixes sound indicator buttons
 
+//
+// * Firefox and Thunderbird *
+//
+
+$firefox_border: if($variant =='light', rgba(black, 0.15), rgba(black, 0.2));
+
+window.background:not(.csd) {
+  > widget {
+    // for the bookmark toolbar's separators
+    > separator { color: $borders_color; }
+
+    // avoid black border
+    > scrollbar { background-clip: border-box; }
+
+    // emphasize borders color
+    > scrollbar,
+    > frame > border { border-color: $firefox_border; }
+
+    > entry,
+    > button > button {
+      border: 1px solid $firefox_border;
+      border-radius: 2px;
+    }
+
+    > entry {
+//      min-height: 26px;
+      border-radius: 2px;
+      background-image: image($base_color);
+      border: 1px solid $firefox_border;
+
+      &:focus { border-color: $selected_bg_color; }
+    }
+
+    > spinbutton {
+      background-image: image($button_bg);
+      border: 1px solid $firefox_border;
+      &:active { background-image: image($selected_bg_color); }
+    }
+  }
+}
+
+// /*******************
+//  * Firefox Quantum *
+//  *******************/
+
+#MozillaGtkWidget.background {
+
+  // blend with weird toolbar backgrounds
+  background-color: $bg_color;
+
+  // FIXME: resetting child elements background is not fully functional yet
+  // because WidgetStyleCache keeps holding initial background-color.
+  // the stem of this incorrect colouring seems to be caused by their
+  // gdk_rgba to ns_rgba conversion. I don't think theme's fault.
+  .background,
+  frame,
+  separator,
+  scrolledwindow { background-color: $bg_color; }
+
+  scrollbar {
+    background-color: if($variant == 'light', $base_color, lighten($bg_color, 15%));
+    slider {
+      background-color: mix($fg_color, $bg_color, 45%);
+      &:hover { background-color: mix($fg_color, $bg_color, 60%); }
+      &:hover:active { background-color: mix($fg_color, $bg_color, 75%); }
+      &:disabled { background-color: transparent; }
+      }
+    }
+
+  *:not(menuitem):hover, // exclude menuitem node
+  *:focus,
+  *:active,
+  *:checked {
+    &, button { color: $fg_color; } // enforce opaque foregrounds
+  }
+
+  > window.background > menu { // context-menus
+    background-color: $base_color;
+
+    // revert to standard separators
+    > separator {
+      padding: 0;
+      border: none;
+      background-color: $firefox_border;
+    }
+  }
+
+  > widget {
+    border { border-color: $firefox_border; }
+
+    separator { background-color: $firefox_border; }
+
+    // FIXME: this affected to popover widget as well,
+    // so we can not set $lighter_bg_color to search-bar...
+    > scrolledwindow > textview {
+      background-color: if($variant == 'light', $base_color, lighten($bg_color, 15%));
+
+      text {
+        background-color: transparent;
+        color: if($variant =='light', #242424, #fdfdfd);
+        &:selected,
+        &:selected:focus,
+        selection { @extend %selected_items; }
+      }
+    }
+  }
+}
+
 /****************
  * Libre-Office *
  ****************/

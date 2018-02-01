@@ -82,3 +82,12 @@ titlebutton-minimize-dark
 titlebutton-minimize-backdrop-dark
 titlebutton-minimize-hover-dark
 titlebutton-minimize-active-dark
+titlebutton-restore
+titlebutton-restore-backdrop
+titlebutton-restore-hover
+titlebutton-restore-active
+titlebutton-restore-dark
+titlebutton-restore-backdrop-dark
+titlebutton-restore-hover-dark
+titlebutton-restore-active-dark
+
