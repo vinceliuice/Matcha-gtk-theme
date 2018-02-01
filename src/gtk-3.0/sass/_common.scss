@@ -125,7 +125,7 @@ label {
   }
 
   &:disabled {
-    color: $insensitive_fg_color;
+//    color: $insensitive_fg_color;
     selection { @extend %selected_items:disabled; }
   }
 }
@@ -1641,7 +1641,7 @@ menubar,
       border-color: transparent;
     }
 
-    label { &:disabled { color: rgba($header_fg, 0.3); } }
+//    label { &:disabled { color: rgba($header_fg, 0.3); } }
 
   }
 }
@@ -2146,6 +2146,8 @@ checkbutton, radiobutton {
     &.text-button {
       padding: 2px 0;
       outline-offset: 0;
+      &:hover { color: darken($fg_color, 15%); }
+      &:disabled { color: $insensitive_fg_color; }
     }
 
   label:not(:only-child) {
