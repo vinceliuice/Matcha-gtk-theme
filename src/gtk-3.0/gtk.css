@@ -3701,6 +3701,10 @@ window.background:not(.csd) > widget > spinbutton {
   border: 1px solid rgba(0, 0, 0, 0.15); }
   window.background:not(.csd) > widget > spinbutton:active {
     background-image: image(#2eb398); }
+window.background:not(.csd) > menu > separator {
+  color: #dedede; }
+window.background:not(.csd) > menu > menuitem > label:disabled {
+  color: rgba(27, 34, 36, 0.55); }
 
 #MozillaGtkWidget.background {
   background-color: #f7f7f7; }

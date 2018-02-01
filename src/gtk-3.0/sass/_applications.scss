@@ -996,7 +996,7 @@ panel-toplevel.background {
 }
 
 .panel .menu .spinner,
-.menu .spinner { opacity: 1 } // Fixes sound indicator buttons
+.menu .spinner { opacity: 1; } // Fixes sound indicator buttons
 
 //
 // * Firefox and Thunderbird *
@@ -1037,6 +1037,9 @@ window.background:not(.csd) {
       &:active { background-image: image($selected_bg_color); }
     }
   }
+
+  > menu > separator { color: $borders_color; }
+  > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
 }
 
 // /*******************
