@@ -868,13 +868,16 @@ panel-toplevel.background {
   &.bottom.left { border-top-left-radius: 0; }
   &.bottom.right { border-top-right-radius: 0; }
 
-  button {
-    border: none;
-    border-radius: 0;
-    min-height: 0;
-
-    @extend %selected-button;
-  }
+    button {
+        border: none;
+        border-radius: 100px;
+        min-height: 0;
+        min-width: 0;
+        padding: 0;
+        margin-right: 6px;
+        -gtk-icon-shadow: none;
+        @extend %selected-button;
+    }
 }
 
 // Elementary Apps

@@ -3596,8 +3596,12 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
     border-top-right-radius: 0; }
   .nautilus-window .floating-bar button {
     border: none;
-    border-radius: 0;
-    min-height: 0; }
+    border-radius: 100px;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin-right: 6px;
+    -gtk-icon-shadow: none; }
 
 .marlin-pathbar.pathbar {
   border-radius: 3px;
