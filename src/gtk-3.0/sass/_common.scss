@@ -304,6 +304,7 @@ treeview entry {
 //
 // stuff for .needs-attention
 $_dot_color: $selected_bg_color;
+$button_transition: all 200ms $ease-out-quad;
 
 @keyframes needs_attention {
   from {
@@ -322,7 +323,6 @@ $_dot_color: $selected_bg_color;
   }
 }
 
-  $button_transition: all 200ms $ease-out-quad;
 button {
   min-height: 22px;
   min-width: 20px;
@@ -2045,18 +2045,17 @@ scrollbar {
 // Switches
 //
 switch {
-  font-size: 1px;
-
+  font-size: 0;
   min-width: 52px;
   min-height: 24px;
-
   background-size: 52px 24px;
   background-repeat: no-repeat;
   background-position: center center;
+  transition: all 350ms $ease-out-quad;
 
   slider {
-    min-width: 1px;
-    min-height: 1px;
+    min-width: 0;
+    min-height: 0;
   }
 
   &, slider {
@@ -2069,6 +2068,8 @@ switch {
 
 @each $k,$l in ('',''),
                (':checked','-active'),
+               (':hover','-hover'),
+               (':checked:hover','-active-hover'),
                (':disabled','-insensitive'),
                (':checked:disabled','-active-insensitive') {
 

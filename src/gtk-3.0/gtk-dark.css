@@ -1778,15 +1778,16 @@ scrollbar {
     min-height: 40px; }
 
 switch {
-  font-size: 1px;
+  font-size: 0;
   min-width: 52px;
   min-height: 24px;
   background-size: 52px 24px;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   switch slider {
-    min-width: 1px;
-    min-height: 1px; }
+    min-width: 0;
+    min-height: 0; }
   switch, switch slider {
     outline-color: transparent;
     color: transparent;
@@ -1816,6 +1817,30 @@ infobar switch:checked {
 headerbar switch:checked,
 .primary-toolbar switch:checked {
   background-image: -gtk-scaled(url("assets/switch-active-header-dark.png"), url("assets/switch-active-header-dark@2.png")); }
+
+switch:hover {
+  background-image: -gtk-scaled(url("assets/switch-hover-dark.png"), url("assets/switch-hover-dark@2.png")); }
+
+menuitem:hover switch:hover,
+row:selected switch:hover,
+infobar switch:hover {
+  background-image: -gtk-scaled(url("assets/switch-hover-selected.png"), url("assets/switch-hover-selected@2.png")); }
+
+headerbar switch:hover,
+.primary-toolbar switch:hover {
+  background-image: -gtk-scaled(url("assets/switch-hover-header-dark.png"), url("assets/switch-hover-header-dark@2.png")); }
+
+switch:checked:hover {
+  background-image: -gtk-scaled(url("assets/switch-active-hover-dark.png"), url("assets/switch-active-hover-dark@2.png")); }
+
+menuitem:hover switch:checked:hover,
+row:selected switch:checked:hover,
+infobar switch:checked:hover {
+  background-image: -gtk-scaled(url("assets/switch-active-hover-selected.png"), url("assets/switch-active-hover-selected@2.png")); }
+
+headerbar switch:checked:hover,
+.primary-toolbar switch:checked:hover {
+  background-image: -gtk-scaled(url("assets/switch-active-hover-header-dark.png"), url("assets/switch-active-hover-header-dark@2.png")); }
 
 switch:disabled {
   background-image: -gtk-scaled(url("assets/switch-insensitive-dark.png"), url("assets/switch-insensitive-dark@2.png")); }

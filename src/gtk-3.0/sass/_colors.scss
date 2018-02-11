@@ -10,12 +10,12 @@ $fg_color: if($variant =='light', #1b2224, #ffffff);
 $selected_fg_color: #ffffff;
 $selected_bg_color: #2eb398;
 $selected_borders_color: darken($selected_bg_color, 20%);
-$borders_color: if($variant =='light', darken($bg_color,10%), darken($bg_color,2%));
+$borders_color: if($variant =='light', darken($bg_color, 15%), darken($bg_color, 2%));
 
-$link_color: if($variant == 'light', darken($selected_bg_color,10%),
-                                     lighten($selected_bg_color,20%));
-$link_visited_color: if($variant == 'light', darken($text_color,5%),
-                                     lighten($text_color,10%));
+$link_color: if($variant == 'light', darken($selected_bg_color, 10%),
+                                     lighten($selected_bg_color, 20%));
+$link_visited_color: if($variant == 'light', darken($text_color, 5%),
+                                     lighten($text_color, 10%));
 
 $selection_mode_bg: if($transparency == 'true', transparentize($selected_bg_color, 0.05), $selected_bg_color);
 $selection_mode_fg: $selected_fg_color;

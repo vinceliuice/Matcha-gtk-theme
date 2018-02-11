@@ -36,6 +36,12 @@ switch-selected
 switch-active-selected
 switch-insensitive-selected
 switch-active-insensitive-selected
+switch-hover
+switch-active-hover
+switch-hover-header
+switch-active-hover-header
+switch-hover-selected
+switch-active-hover-selected
 titlebutton-close
 titlebutton-close-backdrop
 titlebutton-close-hover
@@ -70,6 +76,10 @@ switch-header-dark
 switch-active-header-dark
 switch-insensitive-header-dark
 switch-active-insensitive-header-dark
+switch-hover-dark
+switch-active-hover-dark
+switch-hover-header-dark
+switch-active-hover-header-dark
 titlebutton-close-dark
 titlebutton-close-backdrop-dark
 titlebutton-close-hover-dark
