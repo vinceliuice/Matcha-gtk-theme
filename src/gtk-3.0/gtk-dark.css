@@ -926,14 +926,28 @@ headerbar,
     .maximized headerbar:backdrop, .maximized
     .titlebar:backdrop:not(headerbar) {
       background-color: #191f21; }
+  headerbar.default-decoration,
+  .default-decoration.titlebar:not(headerbar) {
+    min-height: 28px;
+    padding: 0 6px;
+    background-color: #141a1b; }
+    .tiled headerbar.default-decoration, .maximized headerbar.default-decoration, .fullscreen headerbar.default-decoration, .tiled
+    .default-decoration.titlebar:not(headerbar), .maximized
+    .default-decoration.titlebar:not(headerbar), .fullscreen
+    .default-decoration.titlebar:not(headerbar) {
+      box-shadow: none; }
+    headerbar.default-decoration button.titlebutton,
+    .default-decoration.titlebar:not(headerbar) button.titlebutton {
+      border: none;
+      min-height: 22px;
+      min-width: 22px;
+      margin: 0 4px;
+      padding: 0; }
   headerbar.default-decoration, .csd headerbar.default-decoration, headerbar.default-decoration:backdrop, .csd headerbar.default-decoration:backdrop,
   .default-decoration.titlebar:not(headerbar), .csd
   .default-decoration.titlebar:not(headerbar),
   .default-decoration.titlebar:backdrop:not(headerbar), .csd
   .default-decoration.titlebar:backdrop:not(headerbar) {
-    min-width: 32px;
-    min-height: 28px;
-    padding: 0 0;
     background-color: #141a1b;
     border-bottom-width: 0;
     box-shadow: none; }
@@ -2833,17 +2847,11 @@ decoration {
     background-color: #141a1b;
     box-shadow: none; }
 
-headerbar.default-decoration button.titlebutton,
-.titlebar.default-decoration button.titlebutton {
-  padding: 0;
-  min-width: 32px;
-  min-height: 28px;
-  margin: 0; }
 headerbar button.titlebutton,
 .titlebar button.titlebutton {
   margin: 0;
   padding: 0;
-  min-width: 32px;
+  min-width: 28px;
   min-height: 28px;
   border-color: transparent;
   background-color: transparent;
@@ -2865,6 +2873,8 @@ headerbar button.titlebutton,
   .titlebar button.titlebutton.maximize,
   .titlebar button.titlebutton.minimize,
   .titlebar button.titlebutton.restore {
+    min-width: 30px;
+    min-height: 28px;
     color: transparent;
     background-color: transparent;
     background-position: center;
@@ -2953,7 +2963,7 @@ textview text selection, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
@@ -2972,7 +2982,7 @@ modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:
   modelbutton.flat:active,
   modelbutton.flat:active arrow,
   modelbutton.flat:selected,
-  modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
+  modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
   #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
   .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected,
   .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
@@ -2989,7 +2999,7 @@ modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:
     modelbutton.flat:disabled:active,
     modelbutton.flat:active arrow:disabled,
     modelbutton.flat:disabled:selected,
-    modelbutton.flat:selected arrow:disabled, treeview.view:disabled:selected:focus, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
+    modelbutton.flat:selected arrow:disabled, treeview.view:disabled:selected:focus, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .caja-desktop > widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
     #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, filechooser placessidebar.sidebar row.sidebar-row:disabled:selected, filechooser placessidebar.sidebar row.sidebar-row:disabled:active:hover,
     .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:selected,
     .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:active:hover {
@@ -3011,28 +3021,35 @@ terminal-window notebook > header.top,
     min-width: 24px;
     min-height: 24px; }
 
-.nautilus-canvas-item {
+.nautilus-canvas-item, .caja-canvas-item {
   border-radius: 2px; }
 
-.nautilus-desktop.nautilus-canvas-item, .nemo-desktop.nemo-canvas-item, .caja-desktop {
-  color: white;
+.nautilus-desktop.nautilus-canvas-item, .nemo-desktop.nemo-canvas-item, .caja-desktop, .nautilus-desktop.caja-canvas-item, .caja-desktop.caja-canvas-item {
+  color: #ffffff;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
-  .nautilus-desktop.nautilus-canvas-item:active, .nemo-desktop.nemo-canvas-item:active, .caja-desktop:active {
+  .nautilus-desktop.nautilus-canvas-item:active, .nemo-desktop.nemo-canvas-item:active, .caja-desktop:active, .nautilus-desktop.caja-canvas-item:active {
     color: #ffffff; }
-  .nautilus-desktop.nautilus-canvas-item:selected, .nemo-desktop.nemo-canvas-item:selected, .caja-desktop:selected {
+  .nautilus-desktop.nautilus-canvas-item:selected, .nemo-desktop.nemo-canvas-item:selected, .caja-desktop:selected, .nautilus-desktop.caja-canvas-item:selected {
     color: #ffffff;
     text-shadow: none; }
 
 .nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator,
-popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-canvas-item.subtitle,
+popover.background label.nautilus-canvas-item.separator,
+popover.background label.separator.caja-canvas-item, label.separator.caja-canvas-item, headerbar .nautilus-canvas-item.subtitle, headerbar .subtitle.caja-canvas-item,
 .titlebar:not(headerbar) .nautilus-canvas-item.subtitle,
-.nautilus-list-dim-label {
+.titlebar:not(headerbar) .subtitle.caja-canvas-item, .dim-label.caja-canvas-item,
+.nautilus-list-dim-label,
+.caja-list-dim-label {
   color: #8d9192; }
-  .nautilus-canvas-item.dim-label:selected, label.nautilus-canvas-item.separator:selected, headerbar .nautilus-canvas-item.subtitle:selected,
-  .titlebar:not(headerbar) .nautilus-canvas-item.subtitle:selected, .nautilus-canvas-item.dim-label:selected:focus, label.nautilus-canvas-item.separator:selected:focus, headerbar .nautilus-canvas-item.subtitle:selected:focus,
+  .nautilus-canvas-item.dim-label:selected, label.nautilus-canvas-item.separator:selected, label.separator.caja-canvas-item:selected, headerbar .nautilus-canvas-item.subtitle:selected, headerbar .subtitle.caja-canvas-item:selected,
+  .titlebar:not(headerbar) .nautilus-canvas-item.subtitle:selected,
+  .titlebar:not(headerbar) .subtitle.caja-canvas-item:selected, .dim-label.caja-canvas-item:selected, .nautilus-canvas-item.dim-label:selected:focus, label.nautilus-canvas-item.separator:selected:focus, label.separator.caja-canvas-item:selected:focus, headerbar .nautilus-canvas-item.subtitle:selected:focus, headerbar .subtitle.caja-canvas-item:selected:focus,
   .titlebar:not(headerbar) .nautilus-canvas-item.subtitle:selected:focus,
+  .titlebar:not(headerbar) .subtitle.caja-canvas-item:selected:focus, .dim-label.caja-canvas-item:selected:focus,
   .nautilus-list-dim-label:selected,
-  .nautilus-list-dim-label:selected:focus {
+  .caja-list-dim-label:selected,
+  .nautilus-list-dim-label:selected:focus,
+  .caja-list-dim-label:selected:focus {
     color: #d5f0ea; }
 
 .nautilus-window searchbar {
@@ -3132,6 +3149,9 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 
 .caja-notebook .frame {
   border-width: 0 0 1px; }
+
+.caja-desktop > widget.entry, .caja-desktop > widget.entry:focus {
+  transition: none; }
 
 .open-document-selector-treeview.view, iconview.open-document-selector-treeview {
   padding: 3px 6px 3px 6px;
@@ -3716,17 +3736,22 @@ window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget > button > button {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 2px; }
-window.background:not(.csd) > widget > entry {
+window.background:not(.csd) > widget > entry,
+window.background:not(.csd) > widget .entry {
   border-radius: 2px;
   background-image: image(#222b2e);
   border: 1px solid rgba(0, 0, 0, 0.2); }
-  window.background:not(.csd) > widget > entry:focus {
+  window.background:not(.csd) > widget > entry:focus,
+  window.background:not(.csd) > widget .entry:focus {
     border-color: #2eb398; }
 window.background:not(.csd) > widget > spinbutton {
   background-image: image(#263034);
   border: 1px solid rgba(0, 0, 0, 0.2); }
   window.background:not(.csd) > widget > spinbutton:active {
     background-image: image(#2eb398); }
+  window.background:not(.csd) > widget > spinbutton .entry {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
 window.background:not(.csd) > menu > separator {
   color: #171c1e; }
 window.background:not(.csd) > menu > menuitem > label:disabled {
@@ -3768,10 +3793,45 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
   #MozillaGtkWidget.background > widget separator {
     background-color: rgba(0, 0, 0, 0.2); }
   #MozillaGtkWidget.background > widget > scrolledwindow > textview {
-    background-color: #3c4b50; }
+    background-color: #2d393d; }
     #MozillaGtkWidget.background > widget > scrolledwindow > textview text {
       background-color: transparent;
-      color: #fdfdfd; }
+      color: #aaaaaa; }
+
+/***************
+ * Chrome(ium) *
+ ***************/
+window.background.chromium {
+  background-color: #2c383b;
+  color: #eeeeee; }
+  window.background.chromium headerbar.titlebar button.toggle {
+    color: rgba(255, 255, 255, 0.8);
+    outline-offset: -3px;
+    background-color: rgba(20, 26, 27, 0);
+    border-color: rgba(20, 26, 27, 0); }
+    window.background.chromium headerbar.titlebar button.toggle:hover {
+      color: rgba(255, 255, 255, 0.8);
+      border-color: #141a1b;
+      background-color: #1f282a; }
+    window.background.chromium headerbar.titlebar button.toggle:checked, window.background.chromium headerbar.titlebar button.toggle:active {
+      color: #ffffff;
+      border-color: transparent;
+      background-color: #2eb398; }
+  window.background.chromium headerbar.titlebar button.titlebutton {
+    min-width: 22px;
+    min-height: 22px;
+    margin: 0;
+    padding: 0;
+    color: transparent; }
+  window.background.chromium button {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.15); }
+  window.background.chromium entry.chromium {
+    border-image: none;
+    border: 1px solid rgba(255, 255, 255, 0.15); }
+  window.background.chromium > textview.view {
+    background-color: #222b2e; }
 
 /****************
  * Libre-Office *

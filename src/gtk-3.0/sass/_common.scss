@@ -1065,13 +1065,28 @@ headerbar,
     &:backdrop { background-color: opacify($header_bg_backdrop, 1); }
   }
 
+  &.default-decoration {
+    min-height: 28px;
+    padding: 0 6px;
+    background-color: opacify($header_bg, 1);
+
+    .tiled &,
+    .maximized &,
+    .fullscreen & { box-shadow: none; }
+
+    button.titlebutton {
+      border: none;
+      min-height: 22px;
+      min-width: 22px;
+      margin: 0 4px;
+      padding: 0;
+    }
+  }
+
   &.default-decoration,
   .csd &.default-decoration,             // needed under wayland, since all gtk3 windows are csd windows
   &.default-decoration:backdrop,
   .csd &.default-decoration:backdrop {
-    min-width: 32px;
-    min-height: 28px;
-    padding: 0 0;
     background-color: opacify($header_bg, 1);
     border-bottom-width: 0;
     box-shadow: none;
@@ -3230,17 +3245,10 @@ decoration {
 headerbar,
 .titlebar {
 
-  &.default-decoration button.titlebutton { // no vertical padding for ssd buttons
-    padding: 0;                        // already handled by the titlebar-padding
-    min-width: 32px;
-    min-height: 28px;
-    margin: 0;
-  }
-
-  button.titlebutton {
+  button.titlebutton { // csd titlebuttons
     margin: 0;
     padding: 0;
-    min-width: 32px;
+    min-width: 28px;
     min-height: 28px;
 
     @include button(undecorated);
@@ -3252,7 +3260,9 @@ headerbar,
     &:active, &:checked {
       @include button(header-active);
     }
-    &.close, &.maximize, &.minimize, &.restore {
+    &.close, &.maximize, &.minimize, &.restore { // csd windows control titlebuttons
+      min-width: 30px;
+      min-height: 28px;
       color: transparent;
       background-color: transparent;
       background-position: center;
