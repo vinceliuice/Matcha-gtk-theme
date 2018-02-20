@@ -1089,7 +1089,7 @@ headerbar,
   .csd &.default-decoration:backdrop {
     background-color: opacify($header_bg, 1);
     border-bottom-width: 0;
-    box-shadow: none;
+//    box-shadow: none;
     .maximized & { background-color: opacify($header_bg, 1); }
   }
 
@@ -3188,12 +3188,11 @@ stackswitcher button {
 //
 // Window Decorations
 //
+$_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.8));
 
 decoration {
   border-radius: if($darker=='false' and $variant=='light', 2px 2px 0 0, 2px 2px 0 0);
   border-width: 0;
-
-  $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.8));
 
   box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
               0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05));
@@ -3216,7 +3215,7 @@ decoration {
   // server-side decorations as used by mutter
   .ssd & {
     border-radius: if($darker=='false' and $variant=='light', 4px 4px 0 0, 3px 3px 0 0);
-    box-shadow: 0 0 0 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
+    box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
     &.maximized { border-radius: 0; }
   }
   .csd.popup & {
