@@ -1423,9 +1423,7 @@ $bt_radius: 2px;
   border-style: none none solid;
 
   button {
-    border-radius: $bt_radius;
-    -gtk-outline-radius: $bt_radius;
-
+    @extend %linked;
     @extend %budgiebutton.flat;
   }
 }
