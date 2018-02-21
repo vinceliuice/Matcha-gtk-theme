@@ -767,6 +767,196 @@ window.background > box.vertical box.horizontal {
   }
 }
 
+// /************
+//  * Epiphany *
+//  ************/
+
+$question_bg_color: #FFEA00;
+
+// incognito-mode styling
+//
+// most of widget styling are hard-coded by ephy's stylesheet,
+// but we should force using dark foregrounds at least...
+
+headerbar.titlebar.incognito-mode {
+  entry {
+    @include entry(header-normal);
+
+    &:focus { @include entry(header-focus); }
+    &:disabled { @include entry(header-insensitive); }
+  }
+}
+
+// reset inverted foreground colour
+notebook > box > stack > box.vertical > paned.vertical > overlay {
+  > .floating-bar { color: rgba($fg_color, 0.75); }
+}
+
+.background:not(.csd) > box.vertical > headerbar {
+  // conflicts with .primary-toolbar styling?
+  .linked > button.image-button { // = 'back/forward' button
+
+  }
+}
+
+// overrides foregrounds for 3.24's ssd-mode
+.background headerbar entry {
+  &.starred,
+  &.non-starred {
+    @include entry(header-normal);
+
+    &:focus { @include entry(header-focus); }
+    &:disabled { @include entry(header-insensitive); }
+  }
+
+  // render yellow 'star' icon if bookmarked
+  &.starred > image.right {
+    color: darken($question_bg_color, 10%);
+    &:hover,
+    &:active,
+    &:checked { color: $question_bg_color; }
+  }
+}
+
+// popover for downloaded lists
+popover.background:not(.emoji-picker) > box.vertical > scrolledwindow {
+  // re-define background colours for GtkListBox
+  > viewport.frame > list.background {
+    background-color: transparent;
+
+    > row.activatable {
+      background-color: if($variant=='light', $bg_color, lighten($bg_color, 10%));
+      color: rgba($fg_color, 0.85);
+      border-radius: 2px;
+      border: 1px solid $borders_color;
+      margin: 2px;
+
+      &:hover { @include button(hover); }
+    }
+  }
+}
+
+// popover for bookmarks
+popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
+  margin: 0;
+  padding: 0;
+
+  scrolledwindow > viewport.frame {
+    border: 1px solid $borders_color;
+
+    > list.background > row.activatable.bookmarks-row {
+      background-color: rgba($base_color, 0.35);
+      color: rgba($fg_color, 0.85);
+      border-bottom: 1px dashed rgba($borders_color, 0.05);
+      padding: 6px 0;
+      margin: 0;
+
+      &:hover,
+      &:active,
+      &:checked { color: $fg_color; background-color: rgba($fg_color, 0.05); }
+
+      button.flat {
+        min-width: 16px;
+        min-height: 16px;
+        padding: 4px; // Same as of image.sidebar-icon
+        margin: 0 6px;
+        border-radius: 100px;
+        -gtk-outline-radius: 100px;
+      }
+    }
+  }
+}
+
+// bookmark-tag flowbox-childs (almost hard-coded)
+flowboxchild.bookmark-tag-widget {
+  color: $bg_color; // unchecked
+  font-weight: 500;
+
+  label { margin-bottom: 2px; }
+
+  &-selected { color: $selected_fg_color; } // checked
+}
+
+// /*************
+//  * RhythmBox *
+//  *************/
+
+// add top-border to inline-toolbar
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
+  box-shadow: inset 0 1px $borders_color;
+  padding: 4px;
+  background-color: darken($bg_color, 3%);
+
+  button.image-button {
+    > widget > box > image { padding: 0; }
+  }
+}
+
+// tweak sidebar styling
+.sidebar-paned {
+  scrolledwindow { border: none; }
+
+  treeview.view.sidebar { }
+}
+
+// tweak border and frame in alt-toolbar
+window.csd > box.vertical > box.vertical,
+window.solid-csd > box.vertical > box.vertical {
+  > toolbar.horizontal {
+    margin: -1px 0;
+    border-top: 1px solid $borders_color;
+    box-shadow: none;
+    background-color: transparent;
+
+    button {
+      min-height: 36px;
+      min-width: 36px;
+      padding: 0;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+
+  > frame {
+    margin: -1px 0;
+    padding: 0;
+
+    > border { border: none; }
+  }
+}
+
+// hard-coded spacing depends on non-scalable unit,
+// seems cover-art widget is the most biggest thing?
+
+window.background > box.vertical > toolbar.primary-toolbar {
+
+  toolitem {
+    .linked > button.image-button.raised { // 'shuffle/repeat'
+      min-height: 36px;
+      min-width: 36px;
+      padding: 0;
+      margin: 0;
+      > widget > box > image { padding: 0; }
+    }
+
+    button.flat.scale { // 'volume'
+      min-height: 24px;
+      min-width: 36px;
+      padding: 0;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    > box.horizontal:not(.linked) > button.toggle,
+    > .linked > button:not(.toggle):not(.raised):not(.flat) {
+      min-height: 28px;
+      min-width: 28px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
 //
 // Mate OSD Window
 //

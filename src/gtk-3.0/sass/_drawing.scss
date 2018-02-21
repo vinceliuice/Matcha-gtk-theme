@@ -58,15 +58,8 @@
   // focused entry
   //
     color: $text_color;
-    border-color: if($variant=='light', $selected_bg_color, $button_border);
+    border-color: $selected_bg_color;
     background-color: $entry_bg;
-
-    @if $variant == 'dark' {
-      box-shadow: inset 1px 0 $selected_bg_color,
-                  inset -1px 0 $selected_bg_color,
-                  inset 0 1px $selected_bg_color,
-                  inset 0 -1px $selected_bg_color;
-    }
   }
 
   @if $t==insensitive {
@@ -95,7 +88,7 @@
   // focused header-bar entry
   //
     color: lighten($header_fg, 20%);
-    border-color: if($variant=='light', $selected_bg_color, transparent);
+    border-color: $selected_bg_color;
     background-color: if($darker=='false' and $variant=='light', darken($header_entry_bg, 6%), darken($header_entry_bg, 10%));
   }
 
@@ -228,7 +221,7 @@
   //
   // insensitive header-bar button
   //
-    label, & { color: transparentize($header_fg, 0.45); }
+    label, & { color: transparentize($header_fg, 0.5); }
 
     background-color: transparentize($header_bg, 1);
     border-color: transparentize($header_bg, 1);
@@ -238,7 +231,7 @@
   //
   // header-bar insensitive pushed button
   //
-    color: transparentize($selected_fg_color, 0.25);
+    color: transparentize($selected_fg_color, 0.5);
     border-color: transparentize($selected_bg_color, 0.35);
     background-color: transparentize($selected_bg_color, 0.35);
   }
