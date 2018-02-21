@@ -11,7 +11,7 @@ $selected_fg_color: #ffffff;
 $selected_bg_color: #2eb398;
 $selected_borders_color: darken($selected_bg_color, 20%);
 $borders_color: if($variant =='light', darken($bg_color, 15%), darken($bg_color, 2%));
-$highlight: if($variant =='light', rgba(white, 0.25), rgba(white, 0.25));
+$highlight: if($variant =='light', rgba(white, 0.13), rgba(white, 0.10));
 
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%),
                                      lighten($selected_bg_color, 20%));

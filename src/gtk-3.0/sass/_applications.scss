@@ -1873,6 +1873,11 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
         margin: 4px 0;
         min-height: 26px;
         border: none;
+        background-color: lighten($header_bg, 10%);
+        color: $header_fg;
+        &:hover { background-color: lighten($header_bg, 15%); box-shadow: none; }
+        &:active, &:checked { @include button(header-active); }
+        &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
       }
 
       // for <10.4
