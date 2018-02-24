@@ -1545,6 +1545,8 @@ $bt_radius: 2px;
   }
 
   .workspace-add-button {
+    background-color: transparent;
+
     &:hover { box-shadow: none; }
 
     &:active { background-image: none; }

@@ -5,7 +5,6 @@
 $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $backdrop_transition: 200ms ease-out;
 $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
-$darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
 
 * {
   background-clip: padding-box;
@@ -984,7 +983,7 @@ actionbar {
 //
 // Headerbars
 //
-$_header_radius: if($darker=='false' and $variant=='light', 2px, 2px);
+$_header_radius: if($variant=='light', 2px, 2px);
 
 headerbar,
 %titlebar {
@@ -1165,7 +1164,7 @@ headerbar {
 
     &:focus {
       @include entry(header-focus);
-      background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+      background-clip: if($variant=='light', border-box, padding-box);
 
       image { color: $selected_bg_color; }
     }
@@ -1186,7 +1185,7 @@ headerbar {
                                             (error, $error_color, $error_fg_color) {
       &.#{$e_type} {
         color: $e_fg_color;
-        border-color: if($darker=='false' and $variant=='light', $e_color, $header_entry_border);
+        border-color: if($variant=='light', $e_color, $header_entry_border);
         background-color: mix($e_color, $header_bg, 60%);
 
         &:focus {
@@ -1215,7 +1214,7 @@ headerbar {
     &:active, &:checked {
       transition: 200ms $ease-out-quad;
       @include button(header-active);
-      background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+      background-clip: if($variant=='light', border-box, padding-box);
     }
 
     &:disabled { color: rgba($header_fg, 0.4); background-color: transparent; }
@@ -1368,7 +1367,7 @@ headerbar {
     > button:first-child:hover:not(:active),
     > entry + button:not(:active):hover { box-shadow: none; }
 
-    > entry:focus + button { border-left-color: if($variant=='light' and $darker=='false', $selected_bg_color, $header_entry_border); }
+    > entry:focus + button { border-left-color: if($variant=='light', $selected_bg_color, $header_entry_border); }
   }
 
   // Headerbar ComboBoxes
@@ -1387,13 +1386,13 @@ headerbar {
         border-right-style: none;
 
         &:focus { box-shadow: none; }
-        @if $variant=='light' and $darker=='false' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
+        @if $variant=='light' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
       }
       &:dir(rtl) {
         border-left-style: none;
 
         &:focus { box-shadow: none; }
-        @if $variant=='light' and $darker=='false' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
+        @if $variant=='light' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
       }
     }
     > .linked > button.combo {
@@ -1418,20 +1417,20 @@ headerbar {
   }
 
   progressbar {
-    trough { background-color: if($variant=='light' and $darker=='false', darken($header_bg, 10%), $header_button_border); }
+    trough { background-color: if($variant=='light', darken($header_bg, 10%), $header_button_border); }
 
     &:backdrop { opacity: 0.75; }
   }
 
   // Headerbar Scale
   scale {
-    $_trough_bg: if($variant=='light' and $darker=='false', darken($header_bg, 10%), $header_button_border);
+    $_trough_bg: if($variant=='light', darken($header_bg, 10%), $header_button_border);
 
     &:backdrop { opacity: 0.75; }
 
     slider {
-      $_slider_border: if($variant=='light' and $darker=='false', opacify($header_button_border, 0.2), opacify($header_button_border, 0.3));
-      $_slider_bg: if($variant=='light' and $darker=='false', opacify($header_button_bg,1), lighten(opacify($header_bg,1), 10%));
+      $_slider_border: if($variant=='light', opacify($header_button_border, 0.2), opacify($header_button_border, 0.3));
+      $_slider_bg: if($variant=='light', opacify($header_button_bg,1), lighten(opacify($header_bg,1), 10%));
 
       background-color: $_slider_bg;
       border-color: $_slider_border;
@@ -1452,7 +1451,7 @@ headerbar {
     trough {
       background-color: $_trough_bg;
 
-      &:disabled { background-color: if($variant=='light' and $darker=='false', transparentize($_trough_bg, 0.05), transparentize($_trough_bg, 0.1)); }
+      &:disabled { background-color: if($variant=='light', transparentize($_trough_bg, 0.05), transparentize($_trough_bg, 0.1)); }
     }
   }
 }
@@ -2120,7 +2119,7 @@ switch {
 
   headerbar switch#{$k},
   .primary-toolbar switch#{$k} {
-    background-image: -gtk-scaled(url("assets/switch#{$l}-header#{$darker_asset_suffix}.png"),url("assets/switch#{$l}-header#{$darker_asset_suffix}@2.png"));
+    background-image: -gtk-scaled(url("assets/switch#{$l}-header#{$asset_suffix}.png"),url("assets/switch#{$l}-header#{$asset_suffix}@2.png"));
   }
 }
 
@@ -3209,7 +3208,7 @@ stackswitcher button {
 $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.8));
 
 decoration {
-  border-radius: if($darker=='false' and $variant=='light', 2px 2px 0 0, 2px 2px 0 0);
+  border-radius: if($variant=='light', 2px 2px 0 0, 2px 2px 0 0);
   border-width: 0;
 
   box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
@@ -3232,7 +3231,7 @@ decoration {
   }
   // server-side decorations as used by mutter
   .ssd & {
-    border-radius: if($darker=='false' and $variant=='light', 4px 4px 0 0, 3px 3px 0 0);
+    border-radius: if($variant=='light', 4px 4px 0 0, 3px 3px 0 0);
     box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
     &.maximized { border-radius: 0; }
   }
@@ -3293,8 +3292,8 @@ headerbar,
     @each $k in ('close', 'maximize', 'minimize', 'restore') {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
 
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$darker_asset_suffix}.png'),
-                                                        url('assets/titlebutton-#{$k}#{$m}#{$darker_asset_suffix}@2.png')); }
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}.png'),
+                                                        url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}@2.png')); }
       }
     }
   }
@@ -3303,8 +3302,8 @@ headerbar,
   .maximized & {
     button.titlebutton {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$darker_asset_suffix}.png'),
-                                                      url('assets/titlebutton-restore#{$m}#{$darker_asset_suffix}@2.png')); }
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix}.png'),
+                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix}@2.png')); }
       }
     }
   }
