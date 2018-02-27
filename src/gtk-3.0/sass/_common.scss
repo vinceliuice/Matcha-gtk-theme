@@ -593,13 +593,13 @@ toolbar.inline-toolbar toolbutton {
     > entry + entry { border-#{$_border}-color: transparentize($e_border, $a); }
 
     > entry.error + entry,
-    > entry + entry.error { border-#{$_border}-color: if($var=='light', $error_color, transparentize($e_border, $a)); }
+    > entry + entry.error { border-#{$_border}-color: $error_color; }
 
     > entry.warning + entry,
-    > entry + entry.warning { border-#{$_border}-color: if($var=='light', $warning_color, transparentize($e_border, $a)); }
+    > entry + entry.warning { border-#{$_border}-color: $warning_color; }
 
     > entry.error + entry.warning,
-    > entry.warning + entry.error { border-#{$_border}-color: if($var=='light', mix($error_color, $warning_color, 50%), transparentize($e_border, $a));}
+    > entry.warning + entry.error { border-#{$_border}-color: mix($error_color, $warning_color, 50%);}
 
     @each $e_type, $e_color in (':focus',$selected_bg_color),
                                (':drop(active)', $drop_target_color),
@@ -607,16 +607,16 @@ toolbar.inline-toolbar toolbutton {
                                ('.error:focus', $error_color) {
 
       > entry + entry#{$e_type}:not(:last-child),
-      > entry + entry#{$e_type}:last-child { border-#{$_border}-color: if($var=='light', $e_color, $e_border); }
+      > entry + entry#{$e_type}:last-child { border-#{$_border}-color: $e_color; }
 
       > entry#{$e_type}:not(:only-child) {
         + entry,
         + button,
-        + combobox > box > button.combo { border-#{$_border}-color: if($var=='light', $e_color, $e_border); }
+        + combobox > box > button.combo { border-#{$_border}-color: $e_color; }
       }
     }
     > button:active + entry,
-    > button:checked + entry { border-#{$_border}-color: if($var=='light', $selected_bg_color, $e_border); }
+    > button:checked + entry { border-#{$_border}-color: $selected_bg_color; }
   }
   @if $button_rules=='true' {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
@@ -830,7 +830,7 @@ spinbutton {
     > button.up:dir(rtl):hover:not(:active),
     > entry + button:not(:active):hover { box-shadow: none; }
 
-    > entry:focus + button { border-left-color: if($variant=='light', $selected_bg_color, $entry_border); }
+    > entry:focus + button { border-left-color: $selected_bg_color; }
 
     > entry:drop(active) + button { border-left-color: $drop_target_color; }
 
@@ -842,7 +842,7 @@ spinbutton {
       > button.up:dir(rtl):hover:not(:active),
       > entry + button:not(:active):hover { box-shadow: none; }
 
-      > entry:focus + button { border-left-color: $osd_button_border; }
+      > entry:focus + button { border-left-color: $selected_bg_color; }
     }
   }
   &.vertical {
@@ -856,7 +856,7 @@ spinbutton {
 
     button.up { border-radius: 3px 3px 0 0; }
 
-    > entry:focus + button { border-top-color: if($variant=='light', $selected_bg_color, $entry_border); }
+    > entry:focus + button { border-top-color: $selected_bg_color; }
 
     > entry:drop(active) + button { border-top-color: $drop_target_color; }
   }
@@ -1284,7 +1284,7 @@ headerbar {
         animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
         color: $selected_fg_color;
         background-color: darken($header_bg, 5%);
-        box-shadow: inset 0 -3px lighten($selected_bg_color, 10%);
+        box-shadow: inset 0 -3px $alt_selected_bg_color;
       }
 
       &:disabled { color: rgba($header_fg, 0.4); }
@@ -1311,7 +1311,7 @@ headerbar {
     // Reset headerbar linked rules
     > entry {
         border-radius: 3px;
-        border: 1px solid $borders_color;
+        border: 1px solid $header_entry_border;
         &:focus { border-color: $selected_bg_color; }
       }
   }
@@ -1367,7 +1367,7 @@ headerbar {
     > button:first-child:hover:not(:active),
     > entry + button:not(:active):hover { box-shadow: none; }
 
-    > entry:focus + button { border-left-color: if($variant=='light', $selected_bg_color, $header_entry_border); }
+    > entry:focus + button { border-left-color: $selected_bg_color; }
   }
 
   // Headerbar ComboBoxes
@@ -1385,14 +1385,12 @@ headerbar {
       &:dir(ltr) {
         border-right-style: none;
 
-        &:focus { box-shadow: none; }
-        @if $variant=='light' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
+        &:focus { box-shadow: 1px 0 $selected_bg_color; }
       }
       &:dir(rtl) {
         border-left-style: none;
 
-        &:focus { box-shadow: none; }
-        @if $variant=='light' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
+        &:focus { box-shadow: -1px 0 $selected_bg_color; }
       }
     }
     > .linked > button.combo {

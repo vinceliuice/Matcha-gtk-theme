@@ -12,11 +12,20 @@ if [ ! -z "${COLOR_VARIANTS:-}" ]; then
   IFS=', ' read -r -a _COLOR_VARIANTS <<< "${COLOR_VARIANTS:-}"
 fi
 
+_THEME_VARIANTS=('-sea' '-aliz' '-azul')
+if [ ! -z "${THEME_VARIANTS:-}" ]; then
+  IFS=', ' read -r -a _THEME_VARIANTS <<< "${THEME_VARIANTS:-}"
+fi
+
 for color in "${_COLOR_VARIANTS[@]}"; do
+  for theme in "${_THEME_VARIANTS[@]}"; do
 
-  sassc $SASSC_OPT src/gtk-3.0/gtk${color}.{scss,css}
-  echo "== Generating the gtk${color}.css..."
-  sassc $SASSC_OPT src/gnome-shell/gnome-shell${color}.{scss,css}
-  echo "== Generating the gnome-shell${color}.css..."
+  sassc $SASSC_OPT src/gtk-3.0/gtk${color}${theme}.{scss,css}
+  echo "==> Generating the gtk${color}${theme}.css..."
+  sassc $SASSC_OPT src/gnome-shell/gnome-shell${color}${theme}.{scss,css}
+  echo "==> Generating the gnome-shell${color}${theme}.css..."
+  sassc $SASSC_OPT src/cinnamon/cinnamon${color}${theme}.{scss,css}
+  echo "==> Generating the cinnamon${color}${theme}.css..."
 
+  done
 done

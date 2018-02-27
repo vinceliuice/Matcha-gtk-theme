@@ -18,16 +18,25 @@ srcdir=${repodir}/src
 
 # Copying files
 for color in '' '-dark'; do
-	echo -e "   Installing Matcha${color} ..."
+  for theme in '-sea' '-aliz' '-azul'; do
+	echo -e "   Installing Matcha${color}${theme} ..."
 
-	themedir=$DEST_DIR/Matcha${color}
+	themedir=$DEST_DIR/Matcha${color}${theme}
 	install -d ${themedir}
 
 	# Install index.theme
-	cd ${srcdir}
-	cp -ur \
-	index.theme \
-	${themedir}/index.theme
+	echo "[Desktop Entry]" >> ${themedir}/index.theme
+	echo "Type=X-GNOME-Metatheme" >> ${themedir}/index.theme
+	echo "Name=Matcha${color}${theme}" >> ${themedir}/index.theme
+	echo "Comment=A dark modern design theme" >> ${themedir}/index.theme
+	echo "Encoding=UTF-8" >> ${themedir}/index.theme
+	echo "" >> ${themedir}/index.theme
+	echo "[X-GNOME-Metatheme]" >> ${themedir}/index.theme
+	echo "GtkTheme=Matcha${color}${theme}" >> ${themedir}/index.theme
+	echo "MetacityTheme=Matcha${color}${theme}" >> ${themedir}/index.theme
+	echo "IconTheme=Matcha" >> ${themedir}/index.theme
+	echo "CursorTheme=Breeze_cursors" >> ${themedir}/index.theme
+	echo "ButtonLayout=menu:minimize,maximize,close" >> ${themedir}/index.theme
 
 	# Install GNOME Shell Theme
 	install -d ${themedir}/gnome-shell
@@ -55,7 +64,7 @@ for color in '' '-dark'; do
 		${themedir}/gnome-shell/assets/calendar-arrow-right.svg
 
 	cp -ur \
-		gnome-shell${color}.css \
+		gnome-shell${color}${theme}.css \
 		${themedir}/gnome-shell/gnome-shell.css
 
 		glib-compile-resources \
@@ -71,55 +80,53 @@ for color in '' '-dark'; do
 		main.rc \
 		panel.rc \
 		xfce-notify.rc \
-		menubar-toolbar \
 		${themedir}/gtk-2.0
 
 	cp -ur \
-		gtkrc${color} \
+		gtkrc${color}${theme} \
 		${themedir}/gtk-2.0/gtkrc
 
 	cp -ur \
-		assets${color} \
+		assets${color}${theme} \
 		${themedir}/gtk-2.0/assets
 
 	cp -ur \
 		menubar-toolbar${color}.rc \
-		${themedir}/gtk-2.0/menubar-toolbar/menubar-toolbar.rc 
+		${themedir}/gtk-2.0/menubar-toolbar.rc 
 
 	# Install GTK+ 3 Theme
 	install -d ${themedir}/gtk-3.0
 	cd ${srcdir}/gtk-3.0
-	cp -ur \
-		assets \
-		gtk-dark.css \
-		${themedir}/gtk-3.0
 
 	cp -ur \
-		gtk${color}.css \
+		assets${theme} \
+		${themedir}/gtk-3.0/assets
+
+	cp -ur \
+		gtk${color}${theme}.css \
 		${themedir}/gtk-3.0/gtk.css
 
 	cp -ur \
-		thumbnail${color}.png \
+		gtk-dark${theme}.css \
+		${themedir}/gtk-3.0/gtk-dark.css
+
+	cp -ur \
+		thumbnail${color}${theme}.png \
 		${themedir}/gtk-3.0/thumbnail.png
-
-	# Install Metacity Theme
-	install -d ${themedir}/metacity-1
-	cd ${srcdir}
-	cp -ur \
-		metacity-1 \
-		${themedir}
-
-	# Install xfwm4 Theme
-	install -d ${themedir}/xfwm4
-	cd ${srcdir}/xfwm4
-	cp -ur \
-		assets/*.png \
-		themerc \
-		${themedir}/xfwm4
 
 	# Install CINNAMON Theme
 	install -d ${themedir}/cinnamon
 	cd ${srcdir}/cinnamon
+
+	cp -ur \
+		cinnamon${color}${theme}.css \
+		${themedir}/cinnamon/cinnamon.css
+
+	cp -ur \
+		thumbnail${color}${theme}.png \
+		${themedir}/cinnamon/thumbnail.png
+
+	cd ${srcdir}/cinnamon/assets${theme}
 	cp -ur \
 		common-assets \
 		${themedir}/cinnamon
@@ -128,13 +135,29 @@ for color in '' '-dark'; do
 		assets${color} \
 		${themedir}/cinnamon/assets
 
+	# Install Metacity Theme
+	install -d ${themedir}/metacity-1
+	cd ${srcdir}/metacity-1
 	cp -ur \
-		cinnamon${color}.css \
-		${themedir}/cinnamon/cinnamon.css
+		thumbnail.png \
+		*.svg \
+		${themedir}/metacity-1
 
 	cp -ur \
-		thumbnail${color}.png \
-		${themedir}/cinnamon/thumbnail.png
+		metacity-theme-1${theme}.xml \
+		${themedir}/metacity-1/metacity-theme-1.xml
+
+	cd ${themedir}/metacity-1
+	ln -s metacity-theme-1.xml metacity-theme-2.xml
+	ln -s metacity-theme-1.xml metacity-theme-3.xml
+
+	# Install xfwm4 Theme
+	install -d ${themedir}/xfwm4
+	cd ${srcdir}/xfwm4
+	cp -ur \
+		assets/*.png \
+		themerc \
+		${themedir}/xfwm4
 
 	# Install openbox Theme
 	install -d ${themedir}/openbox-3
@@ -150,5 +173,6 @@ for color in '' '-dark'; do
 		unity \
 		${themedir}
 
+  done
 done
 

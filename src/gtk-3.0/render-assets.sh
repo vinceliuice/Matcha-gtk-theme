@@ -3,9 +3,12 @@
 INKSCAPE="/usr/bin/inkscape"
 OPTIPNG="/usr/bin/optipng"
 
-SRC_FILE="assets.svg"
-ASSETS_DIR="assets"
 INDEX="assets.txt"
+
+for color in '-aliz' '-azul' '-sea'; do
+
+  ASSETS_DIR="assets${color}"
+  SRC_FILE="assets${color}.svg"
 
 for i in `cat $INDEX`
 do 
@@ -30,5 +33,7 @@ else
               --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
     && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@2.png 
 fi
+
+done
 done
 exit 0

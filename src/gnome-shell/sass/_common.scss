@@ -863,8 +863,8 @@ StScrollBar {
   }
 
   .panel-button {
-    -natural-hpadding: 12px;
-    -minimum-hpadding: 6px;
+    -natural-hpadding: 6px;
+    -minimum-hpadding: 2px;
     font-weight: bold;
     color: $topbar_secondary_fg_color;
     transition-duration: 0.2s;
@@ -872,7 +872,7 @@ StScrollBar {
     .app-menu-icon {
       -st-icon-style: symbolic;
       margin-left: 4px;
-      margin-right: 4px;
+      margin-right: 2px;
       //dimensions of the icon are hardcoded
     }
 
@@ -1271,7 +1271,7 @@ StScrollBar {
 }
 
 // not really top bar only
-.popup-menu-arrow { width: 16px; height: 16px; }
+.popup-menu-arrow { width: 0; height: 0; }
 .popup-menu-icon { @include em(16px); }
 
 //close buttons

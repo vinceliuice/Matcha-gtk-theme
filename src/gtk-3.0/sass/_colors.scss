@@ -1,14 +1,30 @@
 // When color definition differs for dark and light variant,
 // it gets @if ed depending on $variant
 
-
 $base_color: if($variant =='light', #ffffff, #222b2e);
 $text_color: if($variant == 'light', #1b2224, #eeeeee);
 $bg_color: if($variant =='light', #f7f7f7, #1b2224);
 $fg_color: if($variant =='light', #1b2224, #ffffff);
 
+@if $color=='aliz' {
+  $base_color: if($variant =='light', #ffffff, #2b2b2b);
+  $text_color: if($variant == 'light', #222222, #eeeeee);
+  $bg_color: if($variant =='light', #f7f7f7, #222222);
+  $fg_color: if($variant =='light', #222222, #ffffff);
+}
+
+@if $color=='azul' {
+  $base_color: if($variant =='light', #ffffff, #22252c);
+  $text_color: if($variant == 'light', #1b1d24, #eeeeee);
+  $bg_color: if($variant =='light', #f7f7f7, #1b1d24);
+  $fg_color: if($variant =='light', #1b1d24, #ffffff);
+}
+
 $selected_fg_color: #ffffff;
 $selected_bg_color: #2eb398;
+@if $color=='aliz' { $selected_bg_color: #F0544C; }
+@if $color=='azul' { $selected_bg_color: #3498db; }
+$alt_selected_bg_color: lighten($selected_bg_color, 6%);
 $selected_borders_color: darken($selected_bg_color, 20%);
 $borders_color: if($variant =='light', darken($bg_color, 15%), darken($bg_color, 2%));
 $highlight: if($variant =='light', rgba(white, 0.13), rgba(white, 0.10));
@@ -31,7 +47,8 @@ $destructive_fg_color: white;
 $suggested_fg_color: white;
 
 $progress_color: #db5b5b;
-
+@if $color=='aliz' { $progress_color: #00C487; }
+@if $color=='azul' { $progress_color: #7C4DFF; }
 $drop_target_color: #F08437;
 
 //insensitive state derived colors
@@ -39,21 +56,26 @@ $insensitive_fg_color: if($variant == 'light', transparentize($fg_color, 0.45), 
 $insensitive_bg_color: if($variant == 'light', mix($bg_color, $base_color, 40%), lighten($bg_color, 2%));
 
 $header_bg: #1b2224;
-@if $transparency=='true' and $variant=='light' { $header_bg: #1b2224; }
-@if $transparency=='false' and $variant=='light' { $header_bg: #1b2224; }
-@if $transparency=='true' and $variant=='dark' { $header_bg: darken(#1b2224, 3%); }
-@if $transparency=='false' and $variant=='dark' { $header_bg: darken(#1b2224, 3%); }
+@if $color=='sea' and $variant=='light' { $header_bg: #1b2224; }
+@if $color=='sea' and $variant=='dark' { $header_bg: darken(#1b2224, 3%); }
+@if $color=='aliz' and $variant=='light' { $header_bg: #222222; }
+@if $color=='aliz' and $variant=='dark' { $header_bg: darken(#222222, 3%); }
+@if $color=='azul' and $variant=='light' { $header_bg: #1b1d24; }
+@if $color=='azul' and $variant=='dark' { $header_bg: darken(#1b1d24, 3%); }
 
 $header_bg_backdrop: if($variant == 'dark', lighten($header_bg, 2%), lighten($header_bg, 3%));
 $header_border: if($variant == 'light', darken($header_bg, 7%), darken($header_bg, 4%));
 $header_fg: rgba(#ffffff, 0.85);
 
-$dark_sidebar_bg: if($transparency == 'true', transparentize(#303b3e, 0.05), #303b3e);
+$dark_sidebar_bg: #303b3e;
+@if $color=='sea' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#303b3e, 0.05), #303b3e); }
+@if $color=='aliz' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#363636, 0.05), #363636); }
+@if $color=='azul' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#30343e, 0.05), #30343e); }
 $dark_sidebar_fg: #eeeeee;
 $dark_sidebar_border: if($variant == 'light', $dark_sidebar_bg, darken($dark_sidebar_bg, 5%));
 
 $osd_fg_color: $text_color;
-$osd_bg_color: if($variant=='light', transparentize(#eeeeee, 0.05), transparentize(#303b3e, 0.05));
+$osd_bg_color: if($variant=='light', transparentize(#eeeeee, 0.05), $dark_sidebar_bg);
 
 $osd_button_bg: transparentize(lighten($osd_bg_color, 22%), 0.6);
 $osd_button_border: transparentize(darken($osd_bg_color, 12%), 0.6);
