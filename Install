@@ -154,10 +154,14 @@ for color in '' '-dark'; do
 	# Install xfwm4 Theme
 	install -d ${themedir}/xfwm4
 	cd ${srcdir}/xfwm4
+
 	cp -ur \
-		assets/*.png \
-		themerc \
+		assets${color}${theme}/*.png \
 		${themedir}/xfwm4
+
+	cp -ur \
+		themerc${theme} \
+		${themedir}/xfwm4/themerc
 
 	# Install openbox Theme
 	install -d ${themedir}/openbox-3

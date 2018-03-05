@@ -701,14 +701,15 @@ style "menu" {
 
 style "menu_framed_box" {
 
-  engine "adwaita" {
-  }
+#  engine "adwaita" { # defoult menu border
+#  }
+
 }
 
 style "menu_item"
 {
   xthickness = 2
-  ythickness = 5
+  ythickness = 3
 
   # HACK: Gtk doesn't actually read this value
   # while rendering the menu items, but Libreoffice
@@ -929,8 +930,8 @@ style "menu_item"
 
 style "button" {
 
-  xthickness = 4
-  ythickness = 4
+  xthickness = 2
+  ythickness = 2
 
   engine "pixmap" {
 
@@ -945,9 +946,20 @@ style "button" {
     image {
       function = BOX
       state = PRELIGHT
+      shadow = OUT
       file = "assets/button-hover.png"
       border = { 4, 4, 4, 4 }
       stretch = TRUE
+    }
+
+    # Don't add hover effect on pressed buttons
+    image {
+      function = BOX
+      state    = PRELIGHT
+      shadow   = IN
+      file     = "assets/button-active.png"
+      border   = {4, 4, 4, 4}
+      stretch  = TRUE
     }
 
     image {
