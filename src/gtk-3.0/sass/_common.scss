@@ -1658,7 +1658,7 @@ menubar,
     padding: 4px 8px;
     border: solid transparent;
     border-width: 0;
-    border-radius: 0 0 0 0;
+    border-radius: 2px 2px 0 0;
 
     &:hover { //Seems like it :hover even with keyboard focus
       background-color: $selected_bg_color;
