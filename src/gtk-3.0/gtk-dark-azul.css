@@ -5822,9 +5822,9 @@ window.background.chromium headerbar.titlebar button.toggle:checked, window.back
 }
 
 window.background.chromium headerbar.titlebar button.titlebutton {
-  min-width: 22px;
-  min-height: 22px;
-  margin: 0;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0 4px;
   padding: 0;
   color: transparent;
 }
