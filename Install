@@ -165,10 +165,14 @@ for color in '' '-dark'; do
 
 	# Install openbox Theme
 	install -d ${themedir}/openbox-3
-	cd ${srcdir}
+	cd ${srcdir}/openbox-3
 	cp -ur \
-		openbox-3 \
-		${themedir}
+		*.xbm \
+		${themedir}/openbox-3
+
+	cp -ur \
+		themerc${color}${theme} \
+		${themedir}/openbox-3/themerc
 
 	# Install Unity Theme
 	install -d ${themedir}/unity
