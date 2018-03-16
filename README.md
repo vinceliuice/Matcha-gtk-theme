@@ -9,7 +9,7 @@ horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 ## Info
 
 ### GTK+ 3.20 or later
-- Update your gtk(gnome) version on Mint if you want use matcha on Linux Mint.
+- Update your gtk(gnome) version on Mint if you want use matcha on Linux Mint 18 or Ubuntu16.04.
 
         sudo add-apt-repository ppa:gnome3-team/gnome3-staging
         sudo add-apt-repository ppa:gnome3-team/gnome3
