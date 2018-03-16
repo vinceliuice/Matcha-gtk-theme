@@ -38,18 +38,18 @@ window.active.label.text.color: #D3DAE3
 window.inactive.label.text.color: #7F8388
 
 window.active.button.unpressed.image.color: #D3DAE3
-window.active.button.pressed.image.color: #5294E2
+window.active.button.pressed.image.color: #3498db
 window.active.button.disabled.image.color: #2d3036
 window.active.button.hover.image.color: #afb8c5
 window.active.button.toggled.unpressed.image.color: #D3DAE3
-window.active.button.toggled.pressed.image.color: #5294E2
+window.active.button.toggled.pressed.image.color: #3498db
 window.active.button.toggled.hover.image.color: #afb8c5
 window.inactive.button.unpressed.image.color: #1F2328
-window.inactive.button.pressed.image.color: #5294E2
+window.inactive.button.pressed.image.color: #3498db
 window.inactive.button.disabled.image.color: #2d3036
 window.inactive.button.hover.image.color: #afb8c5
 window.inactive.button.toggled.unpressed.image.color: #1F2328
-window.inactive.button.toggled.pressed.image.color: #5294E2
+window.inactive.button.toggled.pressed.image.color: #3498db
 window.inactive.button.toggled.hover.image.color: #afb8c5
 
 window.active.title.bg: flat solid

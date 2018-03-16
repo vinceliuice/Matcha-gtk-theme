@@ -2119,7 +2119,13 @@ button.flat.-panel-button { // generic panel buttons
   border-radius: 0;
   color: $panel_fg;
   font-weight: 700;
-  &:hover,
+  border: none;
+
+  &:hover {
+    color: $selected_fg_color;
+    background-color: rgba($selected_fg_color, 0.1);
+  }
+
   &:active { color: $selected_fg_color; }
   &:checked {
     background-color: transparent;
@@ -2147,16 +2153,25 @@ button.flat.-panel-icon-button {
   }
 }
 
-.unpinned button.flat.-panel-icon-button,
-.pinned button.flat.-panel-icon-button.running {
+.unpinned button.flat.-panel-icon-button {
+  border-radius: 0;
 
   &:hover { -gtk-icon-effect: highlight; }
+  &:hover,
+  &:active,
+  &:checked {
+    box-shadow: inset 0 -2px $selected_bg_color;
+  }
+}
+
+.pinned button.flat.-panel-icon-button.running {
+  border-radius: 0;
 
   > image {
-    background-image: image($selected_bg_color);
     background-position: bottom center;
   }
 
+  &:hover { -gtk-icon-effect: highlight; }
   &:hover,
   &:active,
   &:checked {
