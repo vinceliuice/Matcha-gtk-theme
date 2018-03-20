@@ -1840,50 +1840,85 @@ $legacy_icon_size: 24px;
 
 //Keyboard
 /* On-screen Keyboard */
+.word-suggestions {
+    font-size: 14pt;
+    spacing: 12px;
+    min-height: 20pt;
+}
 
 #keyboard {
-    background-color: $osd_bg_color;
+    background-color: rgba(black, 0.25);
 }
 
   .keyboard-layout {
-    spacing: 10px;
-    padding: 10px;
+    padding: 4px;
+    spacing: 4px;
   }
 
-  .keyboard-row { spacing: 15px; }
+//  .keyboard-row { spacing: 15px; }
 
   .keyboard-key {
-    min-height: $medium_size * 2;
-    min-width: $medium_size * 2;
-    font-size: 2em;
-    font-weight: 500;
+    min-height: 2em;
+    min-width: 2em;
+    font-size: 14pt;
+    font-weight: bold;
     border-radius: 2px;
     border: none;
     color: inherit;
-    @include button(normal);
-    &:focus { @include button(focus); }
-    &:hover,&:checked { @include button(hover); }
-    &:active { @include button(active);}
+    background-color: $base_color;
+    box-shadow: 0 1px rgba(black, 0.2);
+    &:focus, &:hover { color: $selected_fg_color; background-color: $accent_bg_color; }
+    &:checked, &:active { color: $selected_fg_color; background-color: darken($accent_bg_color, 6%); }
     &:grayed { //FIXME
-      background-color: $osd_bg_color;
+      background-color: $bg_color;
       color: $selected_fg_color;
-      border-color: $osd_bg_color;
+    }
+
+    &.default-key { background-size: 20px; } // backspace button
+    &.default-key,
+    &.enter-key,
+    &.shift-key-lowercase,
+    &.shift-key-uppercase,
+    &.hide-key,
+    &.layout-key {
+      background-color: darken($base_color, 5%);
+      box-shadow: 0 1px rgba(black, 0.2);
+      &:focus, &:hover { color: $fg_color; background-color: $base_color; }
+      &:checked, &:active { color: $fg_color; background-color: darken($base_color, 6%); }
+    }
+    &.enter-key {
+      background-color: $primary_color;
+      background-image: url("assets/key-enter.svg");
+      &:focus, &:hover { color: $selected_fg_color; background-color: lighten($primary_color, 5%); }
+      &:checked, &:active { color: $selected_fg_color; background-color: darken($primary_color, 10%); }
+    }
+    &.shift-key-lowercase {
+      background-image: url("assets/key-shift.svg");
+    }
+    &.shift-key-uppercase {
+      background-image: url("assets/key-shift-uppercase.svg");
+    }
+    &.shift-key-uppercase:latched {
+      background-image: url("assets/key-shift-latched-uppercase.svg");
+    }
+    &.hide-key {
+      background-image: url("assets/key-hide.svg");
+    }
+    &.layout-key {
+      background-image: url("assets/key-layout.svg");
     }
   }
 
   .keyboard-subkeys { //long press on a key popup
     color: inherit;
-    padding: 5px;
-    -arrow-border-radius: 0;
-    -arrow-background-color: transparent;
+    -arrow-border-radius: 2px;
+    -arrow-background-color: rgba(black, 0.45);
     -arrow-border-width: 0;
     -arrow-border-color: transparent;
-    -arrow-base: 0;
-    -arrow-rise: 0;
+    -arrow-base: 20px;
+    -arrow-rise: 10px;
     -boxpointer-gap: 5px;
-    background-color: $base_color;
-    border-radius: 2px;
-    box-shadow: $z-depth-2;
+    box-shadow: 0 3px 3px rgba(black, 0.35);
   }
 
 // IBus Candidate Popup

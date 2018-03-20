@@ -42,18 +42,25 @@ for color in '' '-dark'; do
 	install -d ${themedir}/gnome-shell
 	cd ${srcdir}/gnome-shell
 	cp -ur \
-		assets \
 		extensions \
-		process-working.svg \
 		${themedir}/gnome-shell
 
 	cp -ur \
+		gnome-shell${color}${theme}.css \
+		${themedir}/gnome-shell/gnome-shell.css
+
+	cp -ur \
+		common-assets \
+		${themedir}/gnome-shell/assets
+
+	cd ${srcdir}/gnome-shell/assets
+	cp -ur \
 		no-events${color}.svg \
-		${themedir}/gnome-shell/no-events.svg
+		${themedir}/gnome-shell/assets/no-events.svg
 
 	cp -ur \
 		no-notifications${color}.svg \
-		${themedir}/gnome-shell/no-notifications.svg
+		${themedir}/gnome-shell/assets/no-notifications.svg
 
 	cp -ur \
 		calendar-arrow-left${color}.svg \
@@ -64,13 +71,26 @@ for color in '' '-dark'; do
 		${themedir}/gnome-shell/assets/calendar-arrow-right.svg
 
 	cp -ur \
-		gnome-shell${color}${theme}.css \
-		${themedir}/gnome-shell/gnome-shell.css
+		key-hide${color}.svg \
+		${themedir}/gnome-shell/assets/key-hide.svg
 
-		glib-compile-resources \
-		--sourcedir=${themedir}/gnome-shell \
-		--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
-		gnome-shell-theme.gresource.xml
+	cp -ur \
+		key-layout${color}.svg \
+		${themedir}/gnome-shell/assets/key-layout.svg
+
+	cp -ur \
+		key-shift${color}.svg \
+		${themedir}/gnome-shell/assets/key-shift.svg
+
+	cd ${themedir}/gnome-shell
+	ln -s assets/no-events.svg no-events.svg
+	ln -s assets/process-working.svg process-working.svg
+	ln -s assets/no-notifications.svg no-notifications.svg
+
+#		glib-compile-resources \
+#		--sourcedir=${themedir}/gnome-shell \
+#		--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
+#		gnome-shell-theme.gresource.xml
 
 	# Install GTK+ 2 Theme
 	install -d ${themedir}/gtk-2.0

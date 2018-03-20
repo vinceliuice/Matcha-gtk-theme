@@ -158,8 +158,7 @@ stage {
   box-shadow: inset 0 2px 4px rgba(251, 251, 251, 0.05);
 }
 
-.menu #notification StEntry StIcon.capslock-warning,
-.popup-menu #notification StEntry StIcon.capslock-warning, #menu-search-entry StIcon.capslock-warning {
+.menu #notification StEntry StIcon.capslock-warning, .popup-menu #notification StEntry StIcon.capslock-warning, #menu-search-entry StIcon.capslock-warning {
   icon-size: 16px;
   warning-color: #F27835;
   padding: 0 4px;
@@ -370,69 +369,82 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu .popup-sub-menu,
-.popup-menu .popup-sub-menu, .popup-combo-menu .popup-sub-menu {
+.popup-menu .popup-sub-menu,
+.popup-combo-menu .popup-sub-menu {
   background-gradient-direction: none;
   box-shadow: none;
   border-image: url("assets/menu/submenu.svg") 9 9 9 9;
 }
 
 .menu .popup-sub-menu .popup-menu-item:ltr,
-.popup-menu .popup-sub-menu .popup-menu-item:ltr, .popup-combo-menu .popup-sub-menu .popup-menu-item:ltr {
+.popup-menu .popup-sub-menu .popup-menu-item:ltr,
+.popup-combo-menu .popup-sub-menu .popup-menu-item:ltr {
   padding-right: 0em;
 }
 
 .menu .popup-sub-menu .popup-menu-item:rtl,
-.popup-menu .popup-sub-menu .popup-menu-item:rtl, .popup-combo-menu .popup-sub-menu .popup-menu-item:rtl {
+.popup-menu .popup-sub-menu .popup-menu-item:rtl,
+.popup-combo-menu .popup-sub-menu .popup-menu-item:rtl {
   padding-left: 0em;
 }
 
 .menu .popup-sub-menu StScrollBar,
-.popup-menu .popup-sub-menu StScrollBar, .popup-combo-menu .popup-sub-menu StScrollBar {
+.popup-menu .popup-sub-menu StScrollBar,
+.popup-combo-menu .popup-sub-menu StScrollBar {
   padding: 4px;
 }
 
 .menu .popup-sub-menu StScrollBar StBin#trough, .menu .popup-sub-menu StScrollBar StBin#vhandle,
 .popup-menu .popup-sub-menu StScrollBar StBin#trough,
-.popup-menu .popup-sub-menu StScrollBar StBin#vhandle, .popup-combo-menu .popup-sub-menu StScrollBar StBin#trough, .popup-combo-menu .popup-sub-menu StScrollBar StBin#vhandle {
+.popup-menu .popup-sub-menu StScrollBar StBin#vhandle,
+.popup-combo-menu .popup-sub-menu StScrollBar StBin#trough,
+.popup-combo-menu .popup-sub-menu StScrollBar StBin#vhandle {
   border-width: 0;
 }
 
 .menu .popup-menu-content,
-.popup-menu .popup-menu-content, .popup-combo-menu .popup-menu-content {
+.popup-menu .popup-menu-content,
+.popup-combo-menu .popup-menu-content {
   padding: 1em 0em 1em 0em;
 }
 
 .menu .popup-menu-item,
-.popup-menu .popup-menu-item, .popup-combo-menu .popup-menu-item {
+.popup-menu .popup-menu-item,
+.popup-combo-menu .popup-menu-item {
   padding: .4em 1.75em;
   spacing: 1em;
 }
 
 .menu .popup-menu-item:active,
-.popup-menu .popup-menu-item:active, .popup-combo-menu .popup-menu-item:active {
+.popup-menu .popup-menu-item:active,
+.popup-combo-menu .popup-menu-item:active {
   color: #ffffff;
   background-color: transparent;
   border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
 }
 
 .menu .popup-menu-item:insensitive,
-.popup-menu .popup-menu-item:insensitive, .popup-combo-menu .popup-menu-item:insensitive {
+.popup-menu .popup-menu-item:insensitive,
+.popup-combo-menu .popup-menu-item:insensitive {
   color: rgba(34, 34, 34, 0.5);
   background: none;
 }
 
 .menu .popup-inactive-menu-item,
-.popup-menu .popup-inactive-menu-item, .popup-combo-menu .popup-inactive-menu-item {
+.popup-menu .popup-inactive-menu-item,
+.popup-combo-menu .popup-inactive-menu-item {
   color: #222222;
 }
 
 .menu .popup-inactive-menu-item:insensitive,
-.popup-menu .popup-inactive-menu-item:insensitive, .popup-combo-menu .popup-inactive-menu-item:insensitive {
+.popup-menu .popup-inactive-menu-item:insensitive,
+.popup-combo-menu .popup-inactive-menu-item:insensitive {
   color: rgba(34, 34, 34, 0.55);
 }
 
 .menu .popup-menu-item:active .popup-inactive-menu-item,
-.popup-menu .popup-menu-item:active .popup-inactive-menu-item, .popup-combo-menu .popup-menu-item:active .popup-inactive-menu-item {
+.popup-menu .popup-menu-item:active .popup-inactive-menu-item,
+.popup-combo-menu .popup-menu-item:active .popup-inactive-menu-item {
   color: #ffffff;
 }
 
