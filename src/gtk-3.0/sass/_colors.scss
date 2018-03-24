@@ -45,10 +45,19 @@ $destructive_color: #db5b5b;
 $suggested_color: #db5b5b;
 $destructive_fg_color: white;
 $suggested_fg_color: white;
-
 $progress_color: #db5b5b;
-@if $color=='aliz' { $progress_color: #00C487; }
-@if $color=='azul' { $progress_color: #7C4DFF; }
+@if $color=='aliz' {
+    $progress_color: #00C487;
+    $success_color: #3498db;
+    $destructive_color: #db5b5b;
+    $suggested_color: #2eb398;
+}
+@if $color=='azul' {
+    $progress_color: #7C4DFF;
+    $success_color: #2eb398;
+    $destructive_color: #db5b5b;
+    $suggested_color: #4146d1;
+}
 $drop_target_color: #F08437;
 
 //insensitive state derived colors
