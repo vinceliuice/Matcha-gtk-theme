@@ -1471,11 +1471,11 @@ $bt_radius: 2px;
   &.user-menu {
     .container { padding: 8px; }
 
-    separator { margin: 4px 0; }
+    separator { margin: 4px 0; background-color: $borders_color; }
   }
 
   &.sound-popover {
-    separator { margin: 3px 0; }
+    separator { margin: 3px 0; background-color: $borders_color; }
   }
 
   &.night-light-indicator {
@@ -1626,7 +1626,7 @@ popover.background.user-menu {
 
   .content-box { background-color: transparent; }
 
-  separator { margin: 4px 0; }
+  separator { margin: 4px 0; background-color: $borders_color; }
 
   row {
     padding: 0;
@@ -1791,14 +1791,14 @@ popover.background.places-menu {
     .#{$pos} & {
       & {
         border-image: radial-gradient(circle closest-corner at #{$b_pos},
-                                      currentColor 0%,
+                                      $selected_bg_color 0%,
                                       transparent 0%)
                                       0 0 0 0 / 0 0 0 0;
       }
 
       &:checked {
         border-image: radial-gradient(circle closest-corner at #{$b_pos},
-                                      currentColor 100%,
+                                      $selected_bg_color 100%,
                                       transparent 0%)
                                       #{$b_wid};
       }
