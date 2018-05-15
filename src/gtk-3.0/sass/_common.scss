@@ -2697,7 +2697,6 @@ messagedialog { // Message Dialog styling
       border: none;
     }
     .dialog-action-area button {
-      border-bottom-style: none;
 
       &:active, &:checked {
         transition: background-color 0.00001s 0.3s;
@@ -2726,19 +2725,23 @@ messagedialog { // Message Dialog styling
       border-radius: 0;
       border-top: 1px solid $borders_color;
       border-right-style: none;
+      border-bottom-style: none;
     }
     %last_button {
       border-radius: 0 0 3px 0;
       border-right-style: none;
+      border-bottom-style: none;
     }
     %first_button {
       border-radius: 0 0 0 3px;
       border-left-style: none;
+      border-bottom-style: none;
     }
     %single_button {
       border-radius: 0 0 3px 3px;
       border-left-style: none;
       border-right-style: none;
+      border-bottom-style: none;
     }
   }
 }

@@ -3725,10 +3725,6 @@ messagedialog.csd.background {
   border: none;
 }
 
-messagedialog.csd .dialog-action-area button {
-  border-bottom-style: none;
-}
-
 messagedialog.csd .dialog-action-area button:active, messagedialog.csd .dialog-action-area button:checked {
   transition: background-color 0.00001s 0.3s;
   animation: ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
@@ -3747,22 +3743,26 @@ messagedialog.csd .dialog-action-area button {
   border-radius: 0;
   border-top: 1px solid #d1d1d1;
   border-right-style: none;
+  border-bottom-style: none;
 }
 
 messagedialog.csd .dialog-action-area button:last-child {
   border-radius: 0 0 3px 0;
   border-right-style: none;
+  border-bottom-style: none;
 }
 
 messagedialog.csd .dialog-action-area button:first-child {
   border-radius: 0 0 0 3px;
   border-left-style: none;
+  border-bottom-style: none;
 }
 
 messagedialog.csd .dialog-action-area button:only-child {
   border-radius: 0 0 3px 3px;
   border-left-style: none;
   border-right-style: none;
+  border-bottom-style: none;
 }
 
 filechooser #pathbarbox {
