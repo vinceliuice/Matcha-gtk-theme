@@ -7379,9 +7379,9 @@ filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-
 
 filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:hover {
-  color: #222222;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.45);
+  color: black;
+  border-color: #bec8dd;
+  background-color: white;
 }
 
 filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:active,
@@ -7471,31 +7471,31 @@ filechooser.maximized placessidebar.sidebar,
 .caja-side-pane > notebook > stack > widget > box,
 .caja-side-pane text,
 .caja-side-pane treeview {
-  color: #eeeeee;
-  caret-color: #eeeeee;
-  background-color: #363636;
+  color: #222222;
+  caret-color: #222222;
+  background-color: #f7f7f7;
 }
 
 .caja-side-pane > box button:not(:active):not(:checked) {
-  color: #eeeeee;
+  color: #222222;
 }
 
 .caja-side-pane .frame {
-  border-color: #292929;
+  border-color: #d1d1d1;
 }
 
 .caja-side-pane junction {
-  background-color: rgba(41, 41, 41, 0.95);
+  background-color: #eaeaea;
 }
 
 filechooser actionbar {
-  color: #eeeeee;
-  background-color: rgba(54, 54, 54, 0.95);
-  border-color: rgba(36, 36, 36, 0.95);
+  color: #222222;
+  background-color: #f7f7f7;
+  border-color: #d1d1d1;
 }
 
 filechooser actionbar label, filechooser actionbar combobox {
-  color: #eeeeee;
+  color: #222222;
 }
 
 .gedit-bottom-panel-paned {
@@ -7546,16 +7546,15 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 filechooser actionbar button {
-  color: rgba(255, 255, 255, 0.85);
-  outline-offset: -3px;
-  background-color: rgba(34, 34, 34, 0);
-  border-color: rgba(34, 34, 34, 0);
+  color: #222222;
+  border-color: #cfd6e6;
+  background-color: #fcfcfc;
 }
 
 .caja-side-pane > box button:hover:not(:active), filechooser actionbar button:hover {
-  color: rgba(255, 255, 255, 0.85);
-  border-color: #222222;
-  background-color: #2f2f2f;
+  color: black;
+  border-color: #bec8dd;
+  background-color: white;
 }
 
 filechooser actionbar button:active, filechooser actionbar button:checked {
@@ -7565,12 +7564,12 @@ filechooser actionbar button:active, filechooser actionbar button:checked {
 }
 
 filechooser actionbar button:disabled {
-  background-color: rgba(34, 34, 34, 0);
-  border-color: rgba(34, 34, 34, 0);
+  border-color: rgba(207, 214, 230, 0.55);
+  background-color: rgba(252, 252, 252, 0.55);
 }
 
 filechooser actionbar button:disabled label, filechooser actionbar button:disabled {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(34, 34, 34, 0.55);
 }
 
 filechooser actionbar entry {
@@ -7584,14 +7583,15 @@ filechooser actionbar entry image, filechooser actionbar entry image:hover {
 }
 
 filechooser actionbar entry:focus {
-  color: #ffffff;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: #F0544C;
+  color: #222222;
+  border-color: #F0544C;
+  background-color: #ffffff;
 }
 
 filechooser actionbar entry:disabled {
   color: rgba(34, 34, 34, 0.55);
-  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(207, 214, 230, 0.55);
+  background-color: rgba(255, 255, 255, 0.55);
 }
 
 filechooser placessidebar.sidebar scrollbar,
