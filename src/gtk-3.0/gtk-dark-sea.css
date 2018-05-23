@@ -7565,12 +7565,8 @@ filechooser actionbar button:disabled label, filechooser actionbar button:disabl
 
 filechooser actionbar entry {
   color: #eeeeee;
-  border-color: rgba(21, 26, 28, 0.35);
-  background-color: rgba(97, 119, 125, 0.35);
-}
-
-filechooser actionbar entry image, filechooser actionbar entry image:hover {
-  color: inherit;
+  border-color: #171c1e;
+  background-color: #222b2e;
 }
 
 filechooser actionbar entry:focus {

@@ -187,7 +187,7 @@ filechooser {
 }
 
 %dark_sidebar_entry {
-  @include entry(osd);
+  @include entry(normal);
 
   &:focus { @include entry(focus); }
   &:disabled { @include entry(insensitive); }
