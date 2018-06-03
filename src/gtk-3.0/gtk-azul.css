@@ -145,9 +145,9 @@ textview {
 popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier,
 popover.background.osd,
 popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd .scale-popup, .osd {
-  color: #1b1d24;
+  color: #eeeeee;
   border: none;
-  background-color: rgba(238, 238, 238, 0.95);
+  background-color: rgba(48, 52, 62, 0.95);
   background-clip: padding-box;
   box-shadow: none;
 }
@@ -293,9 +293,9 @@ entry:drop(active):focus, entry:drop(active) {
 }
 
 .osd entry {
-  color: #1b1d24;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.35);
+  color: #eeeeee;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.35);
 }
 
 .osd entry image, .osd entry image:hover {
@@ -304,13 +304,13 @@ entry:drop(active):focus, entry:drop(active) {
 
 .osd entry:focus {
   color: #ffffff;
-  border-color: rgba(207, 207, 207, 0.35);
+  border-color: rgba(21, 23, 28, 0.35);
   background-color: #3498db;
 }
 
 .osd entry:disabled {
-  color: rgba(27, 29, 36, 0.55);
-  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(238, 238, 238, 0.55);
+  background-color: rgba(97, 105, 125, 0.2);
 }
 
 .osd entry selection:focus, .osd entry selection {
@@ -477,9 +477,9 @@ button:drop(active), combobox:drop(active) button.combo {
 }
 
 button.osd {
-  color: #1b1d24;
-  background-color: rgba(238, 238, 238, 0.95);
-  border-color: rgba(218, 218, 218, 0.95);
+  color: #eeeeee;
+  background-color: rgba(48, 52, 62, 0.95);
+  border-color: rgba(30, 33, 39, 0.95);
 }
 
 button.osd.image-button {
@@ -494,39 +494,39 @@ button.osd:hover {
 
 button.osd:active, button.osd:checked {
   color: #ffffff;
-  border-color: rgba(207, 207, 207, 0.35);
+  border-color: rgba(21, 23, 28, 0.35);
   background-color: #3498db;
 }
 
 button.osd:disabled {
-  color: #afafb1;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #696c73;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.2);
 }
 
 .osd button {
-  color: #1b1d24;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.35);
+  color: #eeeeee;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.35);
 }
 
 .osd button:hover {
-  color: #1b1d24;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.45);
+  color: #eeeeee;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(113, 122, 145, 0.45);
 }
 
 .osd button:active, .osd button:checked {
   background-clip: padding-box;
   color: #ffffff;
-  border-color: rgba(207, 207, 207, 0.35);
+  border-color: rgba(21, 23, 28, 0.35);
   background-color: #3498db;
 }
 
 .osd button:disabled {
-  color: #afafb1;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #696c73;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.2);
 }
 
 .osd button.flat, .osd button.sidebar-button, .osd button.budgie-menu-launcher, .osd .budgie-panel #tasklist-button, .budgie-panel .osd #tasklist-button {
@@ -537,21 +537,21 @@ button.osd:disabled {
 }
 
 .osd button.flat:hover, .osd button.sidebar-button:hover, .osd button.budgie-menu-launcher:hover, .osd .budgie-panel #tasklist-button:hover, .budgie-panel .osd #tasklist-button:hover {
-  color: #1b1d24;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.45);
+  color: #eeeeee;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(113, 122, 145, 0.45);
 }
 
 .osd button.flat:disabled, .osd button.sidebar-button:disabled, .osd button.budgie-menu-launcher:disabled, .osd .budgie-panel #tasklist-button:disabled, .budgie-panel .osd #tasklist-button:disabled {
-  color: #afafb1;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #696c73;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.2);
   background-image: none;
 }
 
 .osd button.flat:active, .osd button.sidebar-button:active, .osd button.budgie-menu-launcher:active, .osd .budgie-panel #tasklist-button:active, .budgie-panel .osd #tasklist-button:active, .osd button.flat:checked, .osd button.sidebar-button:checked, .osd button.budgie-menu-launcher:checked, .osd .budgie-panel #tasklist-button:checked, .budgie-panel .osd #tasklist-button:checked {
   color: #ffffff;
-  border-color: rgba(207, 207, 207, 0.35);
+  border-color: rgba(21, 23, 28, 0.35);
   background-color: #3498db;
 }
 
@@ -1160,7 +1160,7 @@ spinbutton:not(.vertical) > entry:drop(active) + button {
 
 .osd spinbutton:not(.vertical) > button:hover:not(:active),
 .osd spinbutton:not(.vertical) > button:hover + button {
-  box-shadow: inset 1px 0 rgba(207, 207, 207, 0.35);
+  box-shadow: inset 1px 0 rgba(21, 23, 28, 0.35);
 }
 
 .osd spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -1229,7 +1229,7 @@ toolbar.osd, .osd.inline-toolbar {
   padding: 7px;
   border: 1px solid #d1d1d1;
   border-radius: 3px;
-  background-color: rgba(238, 238, 238, 0.85);
+  background-color: rgba(48, 52, 62, 0.85);
 }
 
 toolbar.osd.left, .osd.left.inline-toolbar, toolbar.osd.right, .osd.right.inline-toolbar, toolbar.osd.top, .osd.top.inline-toolbar, toolbar.osd.bottom, .osd.bottom.inline-toolbar {
@@ -3169,7 +3169,7 @@ scale trough:disabled {
 }
 
 .osd scale trough {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(64, 69, 82, 0.95);
 }
 
 .osd scale trough highlight {
@@ -3612,13 +3612,13 @@ row.activatable:selected.has-open-popup, .budgie-menu button:selected.has-open-p
 
 .app-notification {
   padding: 10px;
-  color: #1b1d24;
-  background-color: alpha(rgba(238, 238, 238, 0.95),0.9);
+  color: #eeeeee;
+  background-color: alpha(rgba(48, 52, 62, 0.95),0.9);
   background-clip: border-box;
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
-  border-color: rgba(207, 207, 207, 0.35);
+  border-color: rgba(21, 23, 28, 0.35);
 }
 
 .app-notification border {
@@ -3626,9 +3626,9 @@ row.activatable:selected.has-open-popup, .budgie-menu button:selected.has-open-p
 }
 
 .app-notification button {
-  color: #1b1d24;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.35);
+  color: #eeeeee;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.35);
 }
 
 .app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.budgie-menu-launcher, .app-notification .budgie-panel #tasklist-button, .budgie-panel .app-notification #tasklist-button {
@@ -3636,22 +3636,22 @@ row.activatable:selected.has-open-popup, .budgie-menu button:selected.has-open-p
 }
 
 .app-notification button:hover {
-  color: #1b1d24;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.45);
+  color: #eeeeee;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(113, 122, 145, 0.45);
 }
 
 .app-notification button:active, .app-notification button:checked {
   color: #ffffff;
-  border-color: rgba(207, 207, 207, 0.35);
+  border-color: rgba(21, 23, 28, 0.35);
   background-color: #3498db;
   background-clip: padding-box;
 }
 
 .app-notification button:disabled {
-  color: #afafb1;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #696c73;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.2);
 }
 
 expander arrow {
@@ -4026,7 +4026,7 @@ tooltip {
 }
 
 tooltip.background {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(70, 76, 91, 0.95);
   background-clip: padding-box;
 }
 
@@ -4040,7 +4040,7 @@ tooltip decoration {
 
 tooltip * {
   background-color: transparent;
-  color: #1b1d24;
+  color: #eeeeee;
 }
 
 colorswatch, colorswatch:drop(active) {
@@ -5109,9 +5109,9 @@ button.documents-favorite:active:hover {
 #gf-input-source-popup.solid,
 #gf-candidate-popup,
 #gf-candidate-popup.solid {
-  color: #2a2d38;
-  background-color: rgba(238, 238, 238, 0.95);
-  border: 1px solid rgba(218, 218, 218, 0.95);
+  color: white;
+  background-color: rgba(48, 52, 62, 0.95);
+  border: 1px solid rgba(30, 33, 39, 0.95);
   border-radius: 2px;
 }
 
@@ -5133,7 +5133,7 @@ button.documents-favorite:active:hover {
 #gf-osd-window levelbar block.empty,
 #gf-input-source-popup levelbar block.empty,
 #gf-candidate-popup levelbar block.empty {
-  background-color: rgba(225, 225, 225, 0.95);
+  background-color: rgba(37, 40, 48, 0.95);
 }
 
 #gf-bubble levelbar trough,
@@ -5470,7 +5470,7 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
 
 MsdOsdWindow.background.osd {
   border-radius: 2px;
-  border: 1px solid rgba(218, 218, 218, 0.95);
+  border: 1px solid rgba(30, 33, 39, 0.95);
 }
 
 MsdOsdWindow.background.osd .progressbar {
@@ -5481,7 +5481,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 MsdOsdWindow.background.osd .trough {
-  background-color: rgba(225, 225, 225, 0.95);
+  background-color: rgba(37, 40, 48, 0.95);
   border: none;
   border-radius: 5px;
 }
@@ -7220,7 +7220,7 @@ GtkListBox .h4 {
   padding-top: 20px;
   padding-bottom: 0px;
   border-style: none;
-  background-color: rgba(238, 238, 238, 0.95);
+  background-color: rgba(48, 52, 62, 0.95);
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border: solid rgba(0, 0, 0, 0.1);
@@ -7229,27 +7229,27 @@ GtkListBox .h4 {
 }
 
 #buttonbox_frame button {
-  color: #1b1d24;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.35);
+  color: #eeeeee;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.35);
 }
 
 #buttonbox_frame button:hover {
-  color: #1b1d24;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.45);
+  color: #eeeeee;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(113, 122, 145, 0.45);
 }
 
 #buttonbox_frame button:active, #buttonbox_frame button:checked {
   color: #ffffff;
-  border-color: rgba(207, 207, 207, 0.35);
+  border-color: rgba(21, 23, 28, 0.35);
   background-color: #3498db;
 }
 
 #buttonbox_frame button:disabled {
-  color: #afafb1;
-  border-color: rgba(207, 207, 207, 0.35);
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #696c73;
+  border-color: rgba(21, 23, 28, 0.35);
+  background-color: rgba(97, 105, 125, 0.2);
 }
 
 #login_window #user_combobox {
