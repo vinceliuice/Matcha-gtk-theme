@@ -26,7 +26,7 @@ $selected_bg_color: #2eb398;
 @if $color=='azul' { $selected_bg_color: #3498db; }
 $alt_selected_bg_color: lighten($selected_bg_color, 6%);
 $selected_borders_color: darken($selected_bg_color, 20%);
-$borders_color: if($variant =='light', darken($bg_color, 15%), darken($bg_color, 2%));
+$borders_color: if($variant =='light', rgba(black, 0.12), rgba(black, 0.18));
 $highlight: if($variant =='light', rgba(white, 0.13), rgba(white, 0.10));
 
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%),
