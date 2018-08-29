@@ -56,6 +56,12 @@ When running the installer script in Fedora 24 or later, you need to install 'gl
 
     sudo dnf install glib2-devel
 
+### Install from PPA for Ubuntu
+
+    sudo add-apt-repository ppa:ryu0/aesthetics
+    sudo apt-get update
+    sudo apt install matcha-theme
+
 ## Screenshots
 
 ### GNOME Shell
