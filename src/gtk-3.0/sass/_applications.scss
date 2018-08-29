@@ -152,18 +152,15 @@ $disk_space_free: darken($bg_color, 3%);
   .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) {
 
     > button {
-      &:not(:last-child):not(:only-child) { margin: 0; }
 
-    padding-bottom: 2px;
-    margin: 0;
-    color: darken($selected_fg_color, 20%);
-    background-color: $header_bg;
+      color: darken($selected_fg_color, 20%);
+      background-color: $header_bg;
 
-      &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
+      &:hover { color: $selected_fg_color; box-shadow: inset 0 -2px lighten($selected_bg_color, 10%); }
       &:active, &:checked { 
           transition: background-color 0.00001s 0.3s;
           animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-          color: $selected_fg_color; background-color: darken($header_bg, 10%); box-shadow: inset 0 -2px lighten($selected_bg_color, 10%);
+          color: $selected_fg_color; box-shadow: inset 0 -2px lighten($selected_bg_color, 10%);
         }
       &:disabled { color: transparentize($selected_fg_color, 0.4); }
 

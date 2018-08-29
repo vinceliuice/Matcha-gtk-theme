@@ -4669,26 +4669,19 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button {
-  padding-bottom: 2px;
-  margin: 0;
   color: #cccccc;
   background-color: #141a1b;
 }
 
-.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:not(:last-child):not(:only-child) {
-  margin: 0;
-}
-
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover {
   color: #ffffff;
-  background-color: #263033;
+  box-shadow: inset 0 -2px #45cfb3;
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:active, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:checked {
   transition: background-color 0.00001s 0.3s;
   animation: header_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   color: #ffffff;
-  background-color: black;
   box-shadow: inset 0 -2px #45cfb3;
 }
 
