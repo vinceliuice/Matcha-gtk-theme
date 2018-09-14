@@ -15,7 +15,7 @@
    height="416"
    id="svg9892"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="assets-dark-aliz.svg">
   <defs
      id="defs9894">
@@ -798,6 +798,15 @@
        x2="80.995743"
        y2="141.02211"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#selected_bg_color"
+       id="linearGradient1751"
+       gradientUnits="userSpaceOnUse"
+       x1="257.5"
+       y1="-152.63782"
+       x2="257.5"
+       y2="-137.63782" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -806,17 +815,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.99999995"
-     inkscape:cx="82.142383"
-     inkscape:cy="204.81649"
+     inkscape:zoom="1.9999999"
+     inkscape:cx="237.65623"
+     inkscape:cy="249.65896"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showborder="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="740"
+     inkscape:window-width="1920"
+     inkscape:window-height="1025"
      inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -6000,6 +6009,72 @@
          cy="-20.137819"
          r="3.0402019"
          inkscape:label="#path5834" />
+    </g>
+    <g
+       transform="translate(0,-2.6171875e-6)"
+       style="display:inline"
+       id="pathbar_button_active"
+       inkscape:label="#g5484">
+      <g
+         style="fill:#fafbfc;fill-opacity:1"
+         id="g946"
+         inkscape:label="#g5032"
+         transform="translate(57.5)">
+        <rect
+           inkscape:label="#rect5007"
+           y="-152.63782"
+           x="245"
+           height="15"
+           width="25"
+           id="rect944"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
+      <g
+         transform="matrix(1,0,0,0.13333351,57.5,-119.28608)"
+         inkscape:label="#g5032"
+         id="g950">
+        <rect
+           style="opacity:1;fill:url(#linearGradient1751);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect948"
+           width="25"
+           height="15"
+           x="245"
+           y="-152.63782"
+           inkscape:label="#rect5007" />
+      </g>
+    </g>
+    <g
+       id="pathbar_button_prelight"
+       transform="translate(0,24.999987)"
+       style="display:inline;opacity:0.5"
+       inkscape:label="#g5494">
+      <g
+         transform="translate(57.5)"
+         inkscape:label="#g5032"
+         id="g5488"
+         style="fill:#fafbfc;fill-opacity:1">
+        <rect
+           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect5486"
+           width="25"
+           height="15"
+           x="245"
+           y="-152.63782"
+           inkscape:label="#rect5007" />
+      </g>
+      <g
+         id="g5492"
+         inkscape:label="#g5032"
+         transform="matrix(1,0,0,0.13333351,57.5,-119.28608)">
+        <rect
+           inkscape:label="#rect5007"
+           y="-152.63782"
+           x="245"
+           height="15"
+           width="25"
+           id="rect5490"
+           style="opacity:1;fill:#f0544c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
     </g>
   </g>
 </svg>

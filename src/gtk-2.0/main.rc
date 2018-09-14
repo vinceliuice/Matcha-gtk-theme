@@ -701,8 +701,17 @@ style "menu" {
 
 style "menu_framed_box" {
 
-#  engine "adwaita" { # defoult menu border
+#  engine "adwaita" { # default menu border
 #  }
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      file     = "assets/frame.png"
+      border   = { 1, 1, 2, 1 }
+      stretch  = TRUE
+    }
+  }
 
 }
 
@@ -2248,6 +2257,45 @@ style "xfwm-tabwin-button" {
   font_name = "bold"
   bg[SELECTED] = @selected_bg_color
 }
+
+# Thunar
+
+style "thunar_location_button" = "location_button" {
+  ThunarLocationButtons::spacing = 0
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state    = NORMAL
+      file     = "assets/null.png"
+      border   = { 2, 2, 2, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = PRELIGHT
+      file     = "assets/pathbar_button_prelight.png"
+      border   = { 2, 2, 2, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = ACTIVE
+      file     = "assets/pathbar_button_active.png"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = INSENSITIVE
+      file     = "assets/null.png"
+      border   = { 2, 2, 2, 2 }
+      stretch  = TRUE
+    }
+  }
+}
+
+widget_class "*ThunarLocationButtons*" style "thunar_location_button"
 
 # Chromium
 style "chrome_menu_item" {

@@ -130,3 +130,5 @@ inline-toolbar
 toolbar
 menubar
 focus-line
+pathbar_button_active
+pathbar_button_prelight
