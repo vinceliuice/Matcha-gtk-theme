@@ -1871,7 +1871,8 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
       stackswitcher button {
         margin: 4px 0;
-        min-height: 26px;
+        padding: 2px 16px;
+        min-height: 16px;
         border: none;
         background-color: lighten($header_bg, 10%);
         color: $header_fg;
@@ -1970,9 +1971,10 @@ calendar.raven-calendar {
   label { min-height: 24px; }
 
   button.image-button {
-    padding: 8px;
-
-    @extend %budgiebutton.flat;
+    padding: 8px 7px;
+    border: none;
+    border-radius: 100px;
+    @extend %selected-button;
   }
 }
 
