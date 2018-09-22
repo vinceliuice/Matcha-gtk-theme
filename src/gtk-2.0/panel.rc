@@ -36,40 +36,76 @@ style "theme-panel-progressbar" {
 
 style "panelbar" {
 
-  fg[NORMAL] = shade(1.0, @tooltip_fg_color)
+  fg[NORMAL] = shade(0.8, @tooltip_fg_color)
   fg[ACTIVE] = shade(1.0, @tooltip_fg_color)
-  fg[PRELIGHT] = shade(1.1, @tooltip_fg_color)
+  fg[PRELIGHT] = shade(1.0, @tooltip_fg_color)
   fg[SELECTED] = @selected_fg_color
 
   bg[SELECTED] = @selected_bg_color
 
-  engine "murrine" {}
+  font_name = "Bold"
 }
 
 style "panelbuttons" {
-
+  GtkButton::inner-border = { 0, 0, 0, 0 }
   xthickness = 4
   ythickness = 0
 
-  engine "murrine" {
-    textstyle = 0
+  fg[NORMAL] = shade(0.8, @tooltip_fg_color)
+  fg[PRELIGHT] = @selected_fg_color
+  fg[ACTIVE] = @selected_fg_color
+  fg[SELECTED] = @selected_fg_color
+  fg[INSENSITIVE] = mix(0.28, @tooltip_fg_color, @tooltip_bg_color)
+  bg[PRELIGHT] = shade(1.2, @tooltip_bg_color)
+  bg[ACTIVE] = shade(1.5, @tooltip_bg_color)
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state    = NORMAL
+      file     = "assets/null.png"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = ACTIVE
+      file     = "assets/pathbar_button_active.png"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = PRELIGHT
+      file     = "assets/pathbar_button_prelight.png"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = INSENSITIVE
+      file     = "assets/null.png"
+      border   = { 0, 0, 0, 2 }
+      stretch  = TRUE
+    }
   }
+}
+
+style "regular-label" {
+  font_name = "Regular"
 }
 
 style "theme-panel-text" {
 
-  fg[NORMAL] = shade(1.0, @tooltip_fg_color)
+  fg[NORMAL] = shade(0.8, @tooltip_fg_color)
   fg[PRELIGHT] = @selected_fg_color
   fg[ACTIVE] = shade(1.0, @tooltip_fg_color)
 
-  text[NORMAL] = shade(1.0, @tooltip_fg_color)
+  text[NORMAL] = shade(0.8, @tooltip_fg_color)
   text[PRELIGHT] = @selected_fg_color
   text[ACTIVE] = shade(1.0, @tooltip_fg_color)
 
-  engine "murrine" {
-    textstyle = 0
-    text_shade = 0.2
-  }
+  font_name = "Bold"
 }
 
 style "panel-entry" {
@@ -103,6 +139,7 @@ style "indicator" = "theme-panel" {
 }
 
 widget "*tasklist*"                                   style "panelbuttons"
+widget_class "*Tasklist*"                             style "panelbuttons"
 widget_class "*Xfce*Panel*.GtkToggleButton"           style "panelbuttons"
 widget_class "*Xfce*NetkTasklist*GtkToggleButton"     style "panelbuttons"
 widget_class "*PanelToplevel*Button"                  style "panelbuttons"
@@ -113,7 +150,6 @@ widget_class "*<XfceActionsPlugin>*"                  style "panelbuttons"
 widget_class "*XfcePanelPlugin.GtkButton"             style "panelbuttons"
 widget "*dict*Applet*"                                style "panelbuttons"
 widget_class "*Xfce*NetkTasklist*GtkToggleButton"     style "panelbuttons"
-widget_class "*Tasklist*"                             style:highest "panelbuttons"
 
 class "*Panel*MenuBar*"                               style "panelbar"
 widget_class "*Panel*MenuBar*"                        style "panelbar"

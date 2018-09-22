@@ -159,13 +159,24 @@ StScrollBar {
 .slider {
   height: 20px;
   color: $accent_bg_color;
-  -slider-height: 4px;
+  -slider-height: 2px;
   -slider-background-color: $track_color; //background of the trough
   -slider-border-color: transparent; //trough border color
   -slider-active-background-color: $accent_bg_color; //active trough fill
   -slider-active-border-color: transparent; //active trough border
   -slider-border-width: 0;
-  -slider-handle-radius: 8px;
+  -slider-handle-radius: 7px;
+
+  // barlevels are for >= 3.29.90
+  -barlevel-height: 2px;
+  -barlevel-background-color: $track_color;
+  -barlevel-border-color: transparent;
+  -barlevel-active-background-color: $accent_bg_color;
+  -barlevel-active-border-color: transparent;
+  -barlevel-overdrive-color: $destructive_color;
+  -barlevel-overdrive-border-color: transparent;
+  -barlevel-overdrive-separator-width: 2px;
+  -barlevel-border-width: 0;
 }
 
 /* Check Boxes */
@@ -704,7 +715,18 @@ StScrollBar {
     border-radius: 4px;
     background-color: $track_color;
     color: $fg_color;
+
+    // For >= 3.29.90
+    -barlevel-height: 3px;
+    // FIXME: above 'background-color' property rendered correct trough
+    // colour already, so keep -background-color style-property transparent
+    -barlevel-background-color: transparent;
+    -barlevel-active-background-color: $success_color;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-separator-width: 3px;
+    -barlevel-border-width: 0;
   }
+
   .level-bar {
     background-color: $selected_bg_color;
     border-radius: 2px;
@@ -909,7 +931,8 @@ StScrollBar {
     spacing: 0;
   }
 
-  .screencast-indicator { color: $warning_color; }
+  .screencast-indicator { color: $error_color; }
+  .remote-access-indicator { color: $warning_color; } // > 3.29.4
 }
 
   // calendar popover
@@ -1246,6 +1269,7 @@ StScrollBar {
     border-radius: 100px; /* wish we could do 50% */
     padding: ($large_size - 16px) / 2;
     border: none;
+    -st-icon-style: symbolic; // >= 3.29.90
 
     &:hover, &:focus {
       background-color: $semi_track_color;

@@ -235,13 +235,22 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .slider {
   height: 20px;
   color: #45cfb3;
-  -slider-height: 4px;
+  -slider-height: 2px;
   -slider-background-color: rgba(255, 255, 255, 0.12);
   -slider-border-color: transparent;
   -slider-active-background-color: #45cfb3;
   -slider-active-border-color: transparent;
   -slider-border-width: 0;
-  -slider-handle-radius: 8px;
+  -slider-handle-radius: 7px;
+  -barlevel-height: 2px;
+  -barlevel-background-color: rgba(255, 255, 255, 0.12);
+  -barlevel-border-color: transparent;
+  -barlevel-active-background-color: #45cfb3;
+  -barlevel-active-border-color: transparent;
+  -barlevel-overdrive-color: #FF5252;
+  -barlevel-overdrive-border-color: transparent;
+  -barlevel-overdrive-separator-width: 2px;
+  -barlevel-border-width: 0;
 }
 
 /* Check Boxes */
@@ -588,7 +597,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .hidden {
-  color: transparent;
+  color: rgba(0, 0, 0, 0);
 }
 
 .prompt-dialog-null-label {
@@ -860,6 +869,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
+  -barlevel-height: 3px;
+  -barlevel-background-color: transparent;
+  -barlevel-active-background-color: #00C853;
+  -barlevel-overdrive-color: #FF5252;
+  -barlevel-overdrive-separator-width: 3px;
+  -barlevel-border-width: 0;
 }
 
 .osd-window .level-bar {
@@ -908,7 +923,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-arrow {
-  border-color: transparent;
+  border-color: rgba(0, 0, 0, 0);
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -1072,6 +1087,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .screencast-indicator {
+  color: #DD2C00;
+}
+
+#panel .remote-access-indicator {
   color: #FF6D00;
 }
 
@@ -1489,6 +1508,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   /* wish we could do 50% */
   padding: 14px;
   border: none;
+  -st-icon-style: symbolic;
 }
 
 .system-menu-action:hover, .system-menu-action:focus {
