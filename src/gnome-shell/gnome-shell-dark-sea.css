@@ -597,7 +597,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .hidden {
-  color: rgba(0, 0, 0, 0);
+  color: transparent;
 }
 
 .prompt-dialog-null-label {
@@ -923,7 +923,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-arrow {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -1000,7 +1000,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: #1b2224;
   font-weight: bold;
   height: 28px;
-  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
 }
 
 #panel:overview, #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
@@ -1092,6 +1092,37 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .remote-access-indicator {
   color: #FF6D00;
+}
+
+#panel.solid {
+  background-color: #1b2224;
+  /* transition from transparent to solid */
+  transition-duration: 250ms;
+  background-gradient-direction: none;
+  text-shadow: none;
+}
+
+#panel.solid:overview {
+  background-color: transparent;
+}
+
+#panel.solid .panel-corner {
+  -panel-corner-background-color: #1b2224;
+}
+
+#panel.solid .panel-button {
+  color: #F0F0F0;
+  text-shadow: none;
+}
+
+#panel.solid .panel-button:hover, #panel.solid .panel-button:active, #panel.solid .panel-button:overview, #panel.solid .panel-button:focus, #panel.solid .panel-button:checked {
+  color: #FFFFFF;
+}
+
+#panel.solid .system-status-icon,
+#panel.solid .app-menu-icon > StIcon,
+#panel.solid .popup-menu-arrow {
+  icon-shadow: none;
 }
 
 #calendarArea {

@@ -854,7 +854,7 @@ StScrollBar {
   background-color: $topbar_color;
   font-weight: bold;
   height: $menuitem_size;
-  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.35);
+  box-shadow: none;
 
   &:overview,
   &.unlock-screen,
@@ -933,6 +933,35 @@ StScrollBar {
 
   .screencast-indicator { color: $error_color; }
   .remote-access-indicator { color: $warning_color; } // > 3.29.4
+
+  &.solid {
+    background-color: $topbar_color;
+    /* transition from transparent to solid */
+    transition-duration: 250ms;
+    background-gradient-direction: none; // for Ubuntu session
+    text-shadow: none; // for Ubuntu session
+
+    &:overview { background-color: transparent; } // for Ubuntu session
+
+    .panel-corner {
+      -panel-corner-background-color: $topbar_color;
+    }
+
+    .panel-button {
+      color: $topbar_secondary_fg_color;
+      text-shadow: none;
+
+      &:hover, &:active, &:overview, &:focus, &:checked {
+        color: $topbar_fg_color;
+      }
+    }
+
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: none;
+    }
+  }
 }
 
   // calendar popover
