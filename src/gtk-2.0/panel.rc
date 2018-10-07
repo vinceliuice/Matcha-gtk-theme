@@ -1,5 +1,5 @@
 style "theme-panel" {
-
+  GtkButton::inner-border = { 0, 0, 0, 0 }
   xthickness = 2
   ythickness = 0
 
@@ -17,17 +17,6 @@ style "theme-panel" {
   text[PRELIGHT] = shade(1.1, @tooltip_fg_color)
   text[ACTIVE] = shade(1.0, @tooltip_fg_color)
   text[SELECTED] = @selected_fg_color
-
-  engine "murrine" {
-    reliefstyle = 0
-    glazestyle = 0
-    glow_shade = 1.0
-    highlight_shade = 1.0
-    roundness = 0
-    gradient_shades = {1.0,1.0,1.0,1.0}
-    textstyle = 0
-    contrast = 0.0
-  }
 }
 
 style "theme-panel-progressbar" {
@@ -139,7 +128,6 @@ style "indicator" = "theme-panel" {
 }
 
 widget "*tasklist*"                                   style "panelbuttons"
-widget_class "*Tasklist*"                             style "panelbuttons"
 widget_class "*Xfce*Panel*.GtkToggleButton"           style "panelbuttons"
 widget_class "*Xfce*NetkTasklist*GtkToggleButton"     style "panelbuttons"
 widget_class "*PanelToplevel*Button"                  style "panelbuttons"
@@ -148,8 +136,12 @@ widget_class "*Xfce*Panel*Button*"                    style "panelbuttons"
 widget_class "*<XfceArrowButton>"                     style "panelbuttons"
 widget_class "*<XfceActionsPlugin>*"                  style "panelbuttons"
 widget_class "*XfcePanelPlugin.GtkButton"             style "panelbuttons"
+widget_class "*XfcePanelPlugin.GtkToggleButton"       style "panelbuttons"
 widget "*dict*Applet*"                                style "panelbuttons"
 widget_class "*Xfce*NetkTasklist*GtkToggleButton"     style "panelbuttons"
+widget_class "*Tasklist*"                             style:highest "panelbuttons"
+widget_class "*Tasklist*.GtkLabel"                    style:highest "regular-label"
+widget_class "*Mixer*lugin*"                          style:highest "panelbuttons"
 
 class "*Panel*MenuBar*"                               style "panelbar"
 widget_class "*Panel*MenuBar*"                        style "panelbar"

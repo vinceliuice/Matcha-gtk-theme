@@ -5501,7 +5501,7 @@ MsdOsdWindow.background.osd .trough {
 .mate-panel-menu-bar, .mate-panel-menu-bar menubar,
 panel-toplevel.background,
 panel-toplevel.background menubar {
-  background-color: #2a2a2a;
+  background-color: #1b2224;
 }
 
 .mate-panel-menu-bar menubar,
@@ -5526,12 +5526,12 @@ panel-toplevel.background #tasklist-button image {
 .mate-panel-menu-bar .wnck-pager,
 panel-toplevel.background .wnck-pager {
   color: #777777;
-  background-color: rgba(17, 17, 17, 0.95);
+  background-color: #050607;
 }
 
 .mate-panel-menu-bar .wnck-pager:hover,
 panel-toplevel.background .wnck-pager:hover {
-  background-color: rgba(55, 55, 55, 0.95);
+  background-color: #263033;
 }
 
 .mate-panel-menu-bar .wnck-pager:selected,
@@ -5547,7 +5547,7 @@ panel-toplevel.background na-tray-applet {
 }
 
 .mate-panel-menu-bar button:not(#tasklist-button),
-panel-toplevel.background button:not(#tasklist-button), .xfce4-panel button.flat, .xfce4-panel button.sidebar-button, .xfce4-panel button.budgie-menu-launcher, .xfce4-panel .budgie-panel #tasklist-button, .budgie-panel .xfce4-panel #tasklist-button, .xfce4-panel button {
+panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel button, .xfce4-panel.panel button.flat, .xfce4-panel.panel button.sidebar-button, .xfce4-panel.panel button.budgie-menu-launcher, .xfce4-panel button.flat, .xfce4-panel button.sidebar-button, .xfce4-panel button.budgie-menu-launcher, .xfce4-panel .budgie-panel #tasklist-button, .budgie-panel .xfce4-panel #tasklist-button, .xfce4-panel button {
   color: #eeeeee;
   border-radius: 0;
   border: none;
@@ -5578,7 +5578,7 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel .bud
 }
 
 .xfce4-panel.panel {
-  background-color: rgba(42, 42, 42, 0.95);
+  background-color: #1b2224;
   text-shadow: none;
   -gtk-icon-shadow: none;
   border: none;
@@ -5591,7 +5591,7 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel .bud
 }
 
 .xfce4-panel {
-  background-color: rgba(42, 42, 42, 0.95);
+  background-color: #1b2224;
   color: #eeeeee;
   font-weight: 700;
   text-shadow: none;
@@ -6819,7 +6819,7 @@ calendar.raven-calendar:selected {
   * Vala-Panel *
   **************/
 window#ValaPanel.background {
-  background-color: rgba(42, 42, 42, 0.95);
+  background-color: #1b2224;
   color: #eeeeee;
 }
 
@@ -6828,7 +6828,7 @@ window#ValaPanel.background decoration {
 }
 
 window#ValaPanel.background widget.-vala-panel-background > separator {
-  background-color: rgba(42, 42, 42, 0.95);
+  background-color: #1b2224;
 }
 
 button.flat.-panel-button, button.-panel-button.sidebar-button, button.-panel-button.budgie-menu-launcher, .budgie-panel .-panel-button#tasklist-button {
@@ -7255,10 +7255,10 @@ GtkListBox .h4 {
 }
 
 #panel_window {
-  background-color: rgba(42, 42, 42, 0.95);
+  background-color: #1b2224;
   color: #eeeeee;
   font-weight: bold;
-  box-shadow: inset 0 -1px rgba(24, 24, 24, 0.95);
+  box-shadow: inset 0 -1px #0c0f10;
 }
 
 #panel_window menubar {

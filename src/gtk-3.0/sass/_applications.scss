@@ -1051,6 +1051,7 @@ $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
   text-shadow: none;
   -gtk-icon-shadow: none;
   border: none;
+  button, button.flat { @extend %panelbutton; }
 }
 
 .XfceHeading {
