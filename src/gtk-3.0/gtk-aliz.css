@@ -1966,6 +1966,10 @@ headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disa
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F0544C 0%, transparent 0%) 0 0 0/0 0 0;
 }
 
+.titlebar :not(headerbar) .path-bar button:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
 .titlebar :not(headerbar) .path-bar button:checked, .titlebar :not(headerbar) .path-bar button:active {
   color: rgba(255, 255, 255, 0.85);
   background-color: transparent;
