@@ -1822,7 +1822,7 @@ headerbar spinbutton:not(.vertical):focus, .nemo-window .primary-toolbar spinbut
 headerbar spinbutton:not(.vertical) button, .nemo-window .primary-toolbar spinbutton:not(.vertical) button, headerbar spinbutton:not(.vertical) button:disabled, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:disabled {
   color: rgba(255, 255, 255, 0.85);
   border-color: #222222;
-  background-color: #2f2f2f;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 headerbar spinbutton:not(.vertical) button:hover, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:hover {
@@ -1960,6 +1960,16 @@ headerbar scale trough, .nemo-window .primary-toolbar scale trough {
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled {
   background-color: rgba(9, 9, 9, 0.95);
+}
+
+.titlebar :not(headerbar) .path-bar button {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F0544C 0%, transparent 0%) 0 0 0/0 0 0;
+}
+
+.titlebar :not(headerbar) .path-bar button:checked, .titlebar :not(headerbar) .path-bar button:active {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: transparent;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F0544C 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 .path-bar button:hover {
@@ -3721,50 +3731,53 @@ messagedialog .dialog-action-area button {
   min-height: 0;
 }
 
-messagedialog.csd.background {
+messagedialog.background, messagedialog.csd.background {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border: none;
 }
 
-messagedialog.csd .dialog-action-area button:active, messagedialog.csd .dialog-action-area button:checked {
+messagedialog .dialog-action-area button:active, messagedialog .dialog-action-area button:checked, messagedialog.csd .dialog-action-area button:active, messagedialog.csd .dialog-action-area button:checked {
   transition: background-color 0.00001s 0.3s;
   animation: ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
-messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):hover {
+messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):hover, messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):hover {
   background-color: alpha(#222222,0.06);
 }
 
-messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):active, messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked {
+messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):active, messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked, messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):active, messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked {
   background-color: alpha(#222222,0.1);
   color: #222222;
 }
 
-messagedialog.csd .dialog-action-area button {
+messagedialog .dialog-action-area button, messagedialog.csd .dialog-action-area button, messagedialog.csd .dialog-action-area button {
   border-radius: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-right-style: none;
-  border-bottom-style: none;
+  border-right: none;
+  border-bottom: none;
 }
 
-messagedialog.csd .dialog-action-area button:last-child {
-  border-radius: 0 0 3px 0;
-  border-right-style: none;
-  border-bottom-style: none;
+messagedialog .dialog-action-area button:last-child, messagedialog.csd .dialog-action-area button:last-child, messagedialog.csd .dialog-action-area button:last-child {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 0;
+  border-right: none;
+  border-bottom: none;
 }
 
-messagedialog.csd .dialog-action-area button:first-child {
-  border-radius: 0 0 0 3px;
-  border-left-style: none;
-  border-bottom-style: none;
+messagedialog .dialog-action-area button:first-child, messagedialog.csd .dialog-action-area button:first-child, messagedialog.csd .dialog-action-area button:first-child {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 0;
+  border-left: none;
+  border-bottom: none;
 }
 
-messagedialog.csd .dialog-action-area button:only-child {
-  border-radius: 0 0 3px 3px;
-  border-left-style: none;
-  border-right-style: none;
-  border-bottom-style: none;
+messagedialog .dialog-action-area button:only-child, messagedialog.csd .dialog-action-area button:only-child, messagedialog.csd .dialog-action-area button:only-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 }
 
 filechooser #pathbarbox {
@@ -4282,7 +4295,7 @@ headerbar button.titlebutton:hover,
 .titlebar button.titlebutton:hover {
   color: rgba(255, 255, 255, 0.85);
   border-color: #222222;
-  background-color: #2f2f2f;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 headerbar button.titlebutton:active, headerbar button.titlebutton:checked,
@@ -4616,7 +4629,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   0% {
     color: rgba(255, 255, 255, 0.85);
     border-color: #222222;
-    background-color: #2f2f2f;
+    background-color: rgba(255, 255, 255, 0.12);
   }
   100% {
     color: #ffffff;
@@ -5530,32 +5543,34 @@ panel-toplevel.background na-tray-applet {
 }
 
 .mate-panel-menu-bar button:not(#tasklist-button),
-panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel button.flat, .xfce4-panel.panel button.sidebar-button, .xfce4-panel.panel button.budgie-menu-launcher, .xfce4-panel.panel .budgie-panel #tasklist-button, .budgie-panel .xfce4-panel.panel #tasklist-button {
+panel-toplevel.background button:not(#tasklist-button), .xfce4-panel button.flat, .xfce4-panel button.sidebar-button, .xfce4-panel button.budgie-menu-launcher, .xfce4-panel .budgie-panel #tasklist-button, .budgie-panel .xfce4-panel #tasklist-button, .xfce4-panel button {
   color: #eeeeee;
   border-radius: 0;
   border: none;
-  box-shadow: none;
-  background-color: rgba(42, 42, 42, 0);
+  background-color: transparent;
 }
 
-.mate-panel-menu-bar button:hover:not(#tasklist-button),
-panel-toplevel.background button:hover:not(#tasklist-button), .xfce4-panel.panel button.flat:hover, .xfce4-panel.panel button.sidebar-button:hover, .xfce4-panel.panel button.budgie-menu-launcher:hover, .xfce4-panel.panel .budgie-panel #tasklist-button:hover, .budgie-panel .xfce4-panel.panel #tasklist-button:hover {
-  border: none;
-  box-shadow: none;
-  background-color: rgba(68, 68, 68, 0.95);
+.mate-panel-menu-bar button:hover:not(:active):not(:checked):not(#tasklist-button),
+panel-toplevel.background button:hover:not(:active):not(:checked):not(#tasklist-button), .xfce4-panel .budgie-panel #tasklist-button:hover:not(:active):not(:checked), .budgie-panel .xfce4-panel #tasklist-button:hover:not(:active):not(:checked), .xfce4-panel button:hover:not(:active):not(:checked) {
+  color: #ffffff;
+  box-shadow: inset 0 -2px rgba(240, 84, 76, 0.5);
+}
+
+.mate-panel-menu-bar button:checked:not(#tasklist-button),
+panel-toplevel.background button:checked:not(#tasklist-button), .xfce4-panel .budgie-panel #tasklist-button:checked, .budgie-panel .xfce4-panel #tasklist-button:checked, .xfce4-panel button:checked {
+  color: #ffffff;
+  box-shadow: inset 0 -2px #F0544C;
+}
+
+.mate-panel-menu-bar button:checked:not(#tasklist-button) label, panel-toplevel.background button:checked:not(#tasklist-button) label, .xfce4-panel .budgie-panel #tasklist-button:checked label, .budgie-panel .xfce4-panel #tasklist-button:checked label, .xfce4-panel button:checked label, .mate-panel-menu-bar button:checked:not(#tasklist-button) image, panel-toplevel.background button:checked:not(#tasklist-button) image, .xfce4-panel .budgie-panel #tasklist-button:checked image, .budgie-panel .xfce4-panel #tasklist-button:checked image, .xfce4-panel button:checked image {
+  color: inherit;
 }
 
 .mate-panel-menu-bar button:active:not(#tasklist-button),
-panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel.panel button.flat:active, .xfce4-panel.panel button.sidebar-button:active, .xfce4-panel.panel button.budgie-menu-launcher:active, .xfce4-panel.panel .budgie-panel #tasklist-button:active, .budgie-panel .xfce4-panel.panel #tasklist-button:active, .mate-panel-menu-bar button:checked:not(#tasklist-button),
-panel-toplevel.background button:checked:not(#tasklist-button), .xfce4-panel.panel button.flat:checked, .xfce4-panel.panel button.sidebar-button:checked, .xfce4-panel.panel button.budgie-menu-launcher:checked, .xfce4-panel.panel .budgie-panel #tasklist-button:checked, .budgie-panel .xfce4-panel.panel #tasklist-button:checked {
+panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel .budgie-panel #tasklist-button:active, .budgie-panel .xfce4-panel #tasklist-button:active, .xfce4-panel button:active {
+  background-color: rgba(255, 255, 255, 0.12);
   color: #ffffff;
-  border: none;
-  box-shadow: none;
-  background-color: #F0544C;
-}
-
-.mate-panel-menu-bar button:active:not(#tasklist-button) label, panel-toplevel.background button:active:not(#tasklist-button) label, .xfce4-panel.panel button.flat:active label, .xfce4-panel.panel button.sidebar-button:active label, .xfce4-panel.panel button.budgie-menu-launcher:active label, .xfce4-panel.panel .budgie-panel #tasklist-button:active label, .budgie-panel .xfce4-panel.panel #tasklist-button:active label, .mate-panel-menu-bar button:active:not(#tasklist-button) image, panel-toplevel.background button:active:not(#tasklist-button) image, .xfce4-panel.panel button.flat:active image, .xfce4-panel.panel button.sidebar-button:active image, .xfce4-panel.panel button.budgie-menu-launcher:active image, .xfce4-panel.panel .budgie-panel #tasklist-button:active image, .budgie-panel .xfce4-panel.panel #tasklist-button:active image, .mate-panel-menu-bar button:checked:not(#tasklist-button) label, panel-toplevel.background button:checked:not(#tasklist-button) label, .xfce4-panel.panel button.flat:checked label, .xfce4-panel.panel button.sidebar-button:checked label, .xfce4-panel.panel button.budgie-menu-launcher:checked label, .xfce4-panel.panel .budgie-panel #tasklist-button:checked label, .budgie-panel .xfce4-panel.panel #tasklist-button:checked label, .mate-panel-menu-bar button:checked:not(#tasklist-button) image, panel-toplevel.background button:checked:not(#tasklist-button) image, .xfce4-panel.panel button.flat:checked image, .xfce4-panel.panel button.sidebar-button:checked image, .xfce4-panel.panel button.budgie-menu-launcher:checked image, .xfce4-panel.panel .budgie-panel #tasklist-button:checked image, .budgie-panel .xfce4-panel.panel #tasklist-button:checked image {
-  color: inherit;
+  box-shadow: inset 0 -2px #F0544C;
 }
 
 .xfce4-panel.panel {
@@ -5592,30 +5607,8 @@ panel-toplevel.background button:checked:not(#tasklist-button), .xfce4-panel.pan
   transition: none;
 }
 
-.xfce4-panel button:not(:selected) {
-  all: unset;
-}
-
 .xfce4-panel button {
-  background-color: transparent;
-  color: #eeeeee;
   font-weight: 700;
-}
-
-.xfce4-panel button:hover:not(:active):not(:checked) {
-  color: #ffffff;
-  box-shadow: inset 0 -2px rgba(240, 84, 76, 0.5);
-}
-
-.xfce4-panel button:checked {
-  color: #ffffff;
-  box-shadow: inset 0 -2px #F0544C;
-}
-
-.xfce4-panel button:active {
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  box-shadow: inset 0 -2px #F0544C;
 }
 
 .xfce4-panel button#launcher-arrow:hover, .xfce4-panel button#launcher-arrow + button.toggle:hover {
@@ -5971,7 +5964,7 @@ window.background.chromium headerbar.titlebar button.toggle {
 window.background.chromium headerbar.titlebar button.toggle:hover {
   color: rgba(255, 255, 255, 0.85);
   border-color: #222222;
-  background-color: #2f2f2f;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 window.background.chromium headerbar.titlebar button.toggle:checked, window.background.chromium headerbar.titlebar button.toggle:active {
