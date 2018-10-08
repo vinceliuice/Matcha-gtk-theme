@@ -4851,6 +4851,13 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   border-right-width: 1px;
 }
 
+.gedit-side-panel-paned.horizontal separator {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.11) 2px, rgba(0, 0, 0, 0.05) 4px, rgba(0, 0, 0, 0.05));
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 1px auto;
+}
+
 .pluma-window statusbar frame > border {
   border: none;
 }
@@ -5679,6 +5686,7 @@ XfdesktopIconView.view {
 
 XfdesktopIconView.view:active, XfdesktopIconView.view:checked {
   background-color: #2eb398;
+  color: #ffffff;
   text-shadow: none;
 }
 
@@ -5714,6 +5722,7 @@ window.thunar toolbar#location-toolbar entry, window.thunar #location-toolbar.in
 
 window.thunar notebook stack > scrolledwindow.frame.standard-view {
   border-top-width: 0;
+  border-right-width: 0;
 }
 
 window.thunar notebook header.top tab.reorderable-page > box > label {

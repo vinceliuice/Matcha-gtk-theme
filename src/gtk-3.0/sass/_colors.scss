@@ -97,6 +97,9 @@ $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 30%);
 $osd_borders_color: $osd_button_border;
 
 $panel_bg: #1b2224;
+@if $color=='sea' { $panel_bg: #1b2224; }
+@if $color=='aliz' { $panel_bg: #222222; }
+@if $color=='azul' { $panel_bg: #1b1d24; }
 $panel_fg: $dark_sidebar_fg;
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));

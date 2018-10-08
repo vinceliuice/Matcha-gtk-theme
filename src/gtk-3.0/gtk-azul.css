@@ -4851,6 +4851,13 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   border-right-width: 1px;
 }
 
+.gedit-side-panel-paned.horizontal separator {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.11) 2px, rgba(0, 0, 0, 0.05) 4px, rgba(0, 0, 0, 0.05));
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 1px auto;
+}
+
 .pluma-window statusbar frame > border {
   border: none;
 }
@@ -5533,7 +5540,7 @@ MsdOsdWindow.background.osd .trough {
 .mate-panel-menu-bar, .mate-panel-menu-bar menubar,
 panel-toplevel.background,
 panel-toplevel.background menubar {
-  background-color: #1b2224;
+  background-color: #1b1d24;
 }
 
 .mate-panel-menu-bar menubar,
@@ -5563,7 +5570,7 @@ panel-toplevel.background .wnck-pager {
 
 .mate-panel-menu-bar .wnck-pager:hover,
 panel-toplevel.background .wnck-pager:hover {
-  background-color: #263033;
+  background-color: #262933;
 }
 
 .mate-panel-menu-bar .wnck-pager:selected,
@@ -5610,7 +5617,7 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel .bud
 }
 
 .xfce4-panel.panel {
-  background-color: #1b2224;
+  background-color: #1b1d24;
   text-shadow: none;
   -gtk-icon-shadow: none;
   border: none;
@@ -5623,7 +5630,7 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel .bud
 }
 
 .xfce4-panel {
-  background-color: #1b2224;
+  background-color: #1b1d24;
   color: #eeeeee;
   font-weight: 700;
   text-shadow: none;
@@ -5679,6 +5686,7 @@ XfdesktopIconView.view {
 
 XfdesktopIconView.view:active, XfdesktopIconView.view:checked {
   background-color: #3498db;
+  color: #ffffff;
   text-shadow: none;
 }
 
@@ -5714,6 +5722,7 @@ window.thunar toolbar#location-toolbar entry, window.thunar #location-toolbar.in
 
 window.thunar notebook stack > scrolledwindow.frame.standard-view {
   border-top-width: 0;
+  border-right-width: 0;
 }
 
 window.thunar notebook header.top tab.reorderable-page > box > label {
@@ -6848,7 +6857,7 @@ calendar.raven-calendar:selected {
   * Vala-Panel *
   **************/
 window#ValaPanel.background {
-  background-color: #1b2224;
+  background-color: #1b1d24;
   color: #eeeeee;
 }
 
@@ -6857,7 +6866,7 @@ window#ValaPanel.background decoration {
 }
 
 window#ValaPanel.background widget.-vala-panel-background > separator {
-  background-color: #1b2224;
+  background-color: #1b1d24;
 }
 
 button.flat.-panel-button, button.-panel-button.sidebar-button, button.-panel-button.budgie-menu-launcher, .budgie-panel .-panel-button#tasklist-button {
@@ -7284,10 +7293,10 @@ GtkListBox .h4 {
 }
 
 #panel_window {
-  background-color: #1b2224;
+  background-color: #1b1d24;
   color: #eeeeee;
   font-weight: bold;
-  box-shadow: inset 0 -1px #0c0f10;
+  box-shadow: inset 0 -1px #0c0d10;
 }
 
 #panel_window menubar {
