@@ -63,19 +63,20 @@ $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark var
 
 .view,
 %view {
-  @extend row.activatable;
-  color: $text_color;
+//  @extend row.activatable;
+  color: rgba($text_color, 1);
   background-color: $base_color;
+//  &:hover { color: $fg_color; }
 
   &:selected {
     &, &:focus {
       @extend %selected_items;
       border-radius: 2px;
     }
+//    &:hover { background-color: mix(black, $selected_bg_color, 10%); }
   }
 }
 
-.view,
 textview {
   text {
     @extend %view;
@@ -1528,6 +1529,8 @@ treeview.view {
     -GtkTreeView-expander-size: 16;
   }
 
+//  @extend row.activatable;
+
   border-left-color: transparentize($fg_color, 0.85);   // this is actually the tree lines color,
   border-top-color: transparentize(black, 0.9);         // while this is the grid lines color, better then nothing
 
@@ -2606,7 +2609,9 @@ row {
 
   &.activatable {
     &.has-open-popup,
-    &:hover { background-color: if($variant == 'light', transparentize(black, 0.95), transparentize(white, 0.97)); }
+    &:hover {
+      background-color: if($variant == 'light', transparentize(black, 0.95), transparentize(white, 0.97));
+    }
 
     &:active { color: $fg_color; }
     &:disabled {
