@@ -1956,20 +1956,6 @@ headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disa
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.titlebar :not(headerbar) .path-bar button {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #2eb398 0%, transparent 0%) 0 0 0/0 0 0;
-}
-
-.titlebar :not(headerbar) .path-bar button:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-}
-
-.titlebar :not(headerbar) .path-bar button:checked, .titlebar :not(headerbar) .path-bar button:active {
-  color: rgba(255, 255, 255, 0.85);
-  background-color: transparent;
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #2eb398 100%, transparent 0%) 0 0 2/0 0 2px;
-}
-
 .path-bar button:hover {
   background-color: rgba(255, 255, 255, 0.06);
 }
@@ -4543,6 +4529,41 @@ terminal-window notebook > header.top button,
   padding: 0;
   min-width: 24px;
   min-height: 24px;
+}
+
+.nautilus-window headerbar .path-bar-box button {
+  margin: 0;
+  padding: 2px 8px 4px 8px;
+  border-radius: 0;
+  background: none;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #2eb398 0%, transparent 0%) 0 0 0/0 0 0;
+}
+
+.nautilus-window headerbar .path-bar-box button:hover {
+  background: none;
+  box-shadow: inset 0 -2px rgba(46, 179, 152, 0.5);
+}
+
+.nautilus-window headerbar .path-bar-box button:checked, .nautilus-window headerbar .path-bar-box button:active {
+  background: none;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #2eb398 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+.nautilus-window headerbar .path-bar-box {
+  margin: 6px 0;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: transparent;
+}
+
+.nautilus-window headerbar .path-bar-box.width-maximized {
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.nautilus-window headerbar .path-bar-box.background.frame {
+  border: none;
+  background-color: transparent;
 }
 
 .nautilus-canvas-item, .caja-canvas-item {

@@ -1456,25 +1456,25 @@ headerbar {
   }
 }
 
-.titlebar {
-  :not(headerbar) .path-bar {
-    button {
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $selected_bg_color 0%,
-                                    transparent 0%)
-                                    0 0 0 / 0 0 0;
-      &:hover { background-color: rgba($header_fg, 0.12); }
-      &:checked, &:active {
-        color: $header_fg;
-        background-color: transparent;
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $selected_bg_color 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-      }
-    }
-  }
-}
+//.titlebar {
+//  :not(headerbar) .path-bar {
+//    button {
+//      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+//                                    $selected_bg_color 0%,
+//                                    transparent 0%)
+//                                    0 0 0 / 0 0 0;
+//      &:hover { background-color: rgba($header_fg, 0.12); }
+//      &:checked, &:active {
+//        color: $header_fg;
+//        background-color: transparent;
+//        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+//                                      $selected_bg_color 100%,
+//                                      transparent 0%)
+//                                      0 0 2 / 0 0 2px;
+//      }
+//    }
+//  }
+//}
 
 //
 // Pathbars
