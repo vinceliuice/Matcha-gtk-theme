@@ -17,6 +17,15 @@ style "theme-panel" {
   text[PRELIGHT] = shade(1.1, @tooltip_fg_color)
   text[ACTIVE] = shade(1.0, @tooltip_fg_color)
   text[SELECTED] = @selected_fg_color
+
+  engine "pixmap" {
+    image {
+      function = SHADOW
+      file     = "assets/null.png"
+      border   = { 0, 0, 0, 0 }
+      stretch  = TRUE
+    }
+  }
 }
 
 style "theme-panel-progressbar" {
