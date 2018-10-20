@@ -63,7 +63,7 @@ $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark var
 
 .view,
 %view {
-//  @extend row.activatable;
+  @extend row.activatable;
   color: rgba($text_color, 1);
   background-color: $base_color;
 //  &:hover { color: $fg_color; }
@@ -1156,72 +1156,75 @@ headerbar {
   &:backdrop { opacity: 0.6; }
 }
 
-%header_widgets {
+%headerbar_button {
+  color: $header_fg;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
 
-  // Headerbar Entries
-  entry {
-    @include entry(header-normal);
+  &:backdrop { opacity: 0.8; }
 
-    &:backdrop { opacity: 0.85; }
+  &:hover { color: $selected_fg_color; background-color: rgba($header_fg, 0.12); }
+  &:active, &:checked {
+    transition: 200ms $ease-out-quad;
+    @include button(header-active);
+    background-clip: if($variant=='light', border-box, padding-box);
+  }
 
-    &:focus {
-      @include entry(header-focus);
-      background-clip: if($variant=='light', border-box, padding-box);
+  &:disabled { color: rgba($header_fg, 0.4); background-color: transparent; }
+  &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
+}
 
-      image { color: $selected_bg_color; }
-    }
-    &:disabled { @include entry(header-insensitive); }
+%headerbar_entry {
+  @include entry(header-normal);
 
-    selection:focus {
-      background-color: $selected_fg_color;
-      color: $selected_bg_color;
-    }
+  &:backdrop { opacity: 0.85; }
 
-    progress {
-      border-color: $progress_color;
-      background-image: none;
-      background-color: transparent;
-    }
+  &:focus {
+    @include entry(header-focus);
+    background-clip: if($variant=='light', border-box, padding-box);
 
-    @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
-                                            (error, $error_color, $error_fg_color) {
-      &.#{$e_type} {
+    image { color: $selected_bg_color; }
+  }
+  &:disabled { @include entry(header-insensitive); }
+
+  selection:focus {
+    background-color: $selected_fg_color;
+    color: $selected_bg_color;
+  }
+
+  progress {
+    border-color: $progress_color;
+    background-image: none;
+    background-color: transparent;
+  }
+
+  @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
+                                          (error, $error_color, $error_fg_color) {
+    &.#{$e_type} {
+      color: $e_fg_color;
+      border-color: if($variant=='light', $e_color, $header_entry_border);
+      background-color: mix($e_color, $header_bg, 60%);
+
+      &:focus {
         color: $e_fg_color;
-        border-color: if($variant=='light', $e_color, $header_entry_border);
-        background-color: mix($e_color, $header_bg, 60%);
-
-        &:focus {
-          color: $e_fg_color;
-          background-color: $e_color;
-        }
-        selection, selection:focus {
-          background-color: $e_fg_color;
-          color: $e_color;
-        }
+        background-color: $e_color;
+      }
+      selection, selection:focus {
+        background-color: $e_fg_color;
+        color: $e_color;
       }
     }
   }
+}
+
+%header_widgets {
+
+  // Headerbar Entries
+  entry { @extend %headerbar_entry; }
 
   // Headerbar Buttons
-  button {
-
-    color: $header_fg;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-
-    &:backdrop { opacity: 0.7; }
-
-    &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
-    &:active, &:checked {
-      transition: 200ms $ease-out-quad;
-      @include button(header-active);
-      background-clip: if($variant=='light', border-box, padding-box);
-    }
-
-    &:disabled { color: rgba($header_fg, 0.4); background-color: transparent; }
-    &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
-  }
+  button { @extend %headerbar_button; }
 
   &.selection-mode button {
 
@@ -2869,8 +2872,6 @@ placessidebar {
 
       &:not(:hover):not(:active) > image { opacity: 0.5 };
     }
-
-    &:hover { box-shadow: inset 3px 0 lighten($selected_bg_color, 10%); }
       
     &.sidebar-placeholder-row {
       padding: 0 8px;

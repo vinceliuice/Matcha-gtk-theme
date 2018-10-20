@@ -205,7 +205,6 @@
     color: $header_fg;
     border-color: $header_bg;
     background-color: rgba($header_fg, 0.12);
-
   }
 
   @else if $t==header-active {

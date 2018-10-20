@@ -1212,11 +1212,32 @@ window#whiskermenu-window {
 //
 
 window.thunar {
+
+  .sidebar treeview.view {
+    background-color: $dark_sidebar_bg;
+    color: $dark_sidebar_fg;
+
+    &:hover {
+      background-color: lighten($dark_sidebar_bg, 5%);
+      box-shadow: none;
+    }
+
+    &:selected, &:selected:hover, &:active:hover { @extend %selected_items; }
+  }
+
+  .sidebar scrollbar { @extend %dark_sidebar_scrollbar }
+
   toolbar#location-toolbar {
-    border-bottom: 1px solid $borders_color;
+    background-color: $header_bg;
+    color: $header_fg;
+//    border-bottom: 1px solid darken($header_bg, 2%);
+
+    button { @extend %headerbar_button; }
 
     // FIXME: need to unset for weird allocation height
-    entry { min-height: 0; }
+    entry { min-height: 0; @extend %headerbar_entry; }
+
+    .path-bar button { @extend %pathbar_box_button; }
   }
 
   notebook {

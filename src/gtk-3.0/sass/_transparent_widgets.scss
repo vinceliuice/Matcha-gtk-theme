@@ -31,7 +31,10 @@ filechooser,
       .sidebar-icon { color: transparentize($dark_sidebar_fg, 0.4); }
 
       &.has-open-popup,
-      &:hover { background-color: transparentize($dark_sidebar_fg, 0.85); }
+      &:hover {
+        background-color: transparentize($dark_sidebar_fg, 0.85);
+        box-shadow: inset 3px 0 lighten($selected_bg_color, 10%);
+      }
 
       &:disabled {
         &, label, image { color: transparentize($dark_sidebar_fg, 0.6); }
