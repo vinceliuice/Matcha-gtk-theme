@@ -106,7 +106,7 @@ menu.items.active.disabled.text.color: #aeb0b6
 menu.items.bg: flat solid
 menu.items.bg.color: #f5f6f7
 menu.items.active.bg: flat solid
-menu.items.active.bg.color: #2f9b85
+menu.items.active.bg.color: #F0544C
 menu.title.bg: flat solid
 menu.title.bg.color: #2d3036
 
@@ -127,7 +127,7 @@ osd.bg.color: #222222
 osd.label.bg: flat solid
 osd.label.bg.color: #222222
 osd.hilight.bg: flat solid
-osd.hilight.bg.color: #2f9b85
+osd.hilight.bg.color: #F0544C
 osd.unhilight.bg: flat solid
 osd.unhilight.bg.color: #D3DAE3
 
