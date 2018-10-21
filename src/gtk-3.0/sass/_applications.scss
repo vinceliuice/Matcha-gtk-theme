@@ -1218,7 +1218,7 @@ window.thunar {
     color: $dark_sidebar_fg;
 
     &:hover {
-      background-color: lighten($dark_sidebar_bg, 5%);
+//      background-color: lighten($dark_sidebar_bg, 5%);
       box-shadow: none;
     }
 

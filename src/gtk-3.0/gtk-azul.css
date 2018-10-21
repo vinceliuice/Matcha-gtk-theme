@@ -3900,6 +3900,51 @@ calendar.highlight {
   color: #1b1d24;
 }
 
+messagedialog .linked:not(.vertical) > button,
+messagedialog .linked:not(.vertical) > button:hover,
+messagedialog .linked:not(.vertical) > button:active,
+messagedialog .linked:not(.vertical) > button:checked,
+messagedialog .linked:not(.vertical) > button:disabled {
+  border-radius: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-right: none;
+  border-bottom: none;
+}
+
+messagedialog .linked:not(.vertical) > button:last-child,
+messagedialog .linked:not(.vertical) > button:hover:last-child,
+messagedialog .linked:not(.vertical) > button:active:last-child,
+messagedialog .linked:not(.vertical) > button:checked:last-child,
+messagedialog .linked:not(.vertical) > button:disabled:last-child {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+messagedialog .linked:not(.vertical) > button:first-child,
+messagedialog .linked:not(.vertical) > button:hover:first-child,
+messagedialog .linked:not(.vertical) > button:active:first-child,
+messagedialog .linked:not(.vertical) > button:checked:first-child,
+messagedialog .linked:not(.vertical) > button:disabled:first-child {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+messagedialog .linked:not(.vertical) > button:only-child,
+messagedialog .linked:not(.vertical) > button:hover:only-child,
+messagedialog .linked:not(.vertical) > button:active:only-child,
+messagedialog .linked:not(.vertical) > button:checked:only-child,
+messagedialog .linked:not(.vertical) > button:disabled:only-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
 messagedialog .titlebar {
   min-height: 20px;
   background-color: #1b1d24;
@@ -3929,35 +3974,6 @@ messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive
 messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):active, messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked, messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):active, messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked {
   background-color: alpha(#1b1d24,0.1);
   color: #1b1d24;
-}
-
-messagedialog .dialog-action-area button, messagedialog.csd .dialog-action-area button, messagedialog.csd .dialog-action-area button {
-  border-radius: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-right: none;
-  border-bottom: none;
-}
-
-messagedialog .dialog-action-area button:last-child, messagedialog.csd .dialog-action-area button:last-child, messagedialog.csd .dialog-action-area button:last-child {
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 0;
-  border-right: none;
-  border-bottom: none;
-}
-
-messagedialog .dialog-action-area button:first-child, messagedialog.csd .dialog-action-area button:first-child, messagedialog.csd .dialog-action-area button:first-child {
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 0;
-  border-left: none;
-  border-bottom: none;
-}
-
-messagedialog .dialog-action-area button:only-child, messagedialog.csd .dialog-action-area button:only-child, messagedialog.csd .dialog-action-area button:only-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
 }
 
 filechooser #pathbarbox {
@@ -5887,7 +5903,6 @@ window.thunar .sidebar treeview.view {
 }
 
 window.thunar .sidebar treeview.view:hover {
-  background-color: rgba(59, 64, 76, 0.95);
   box-shadow: none;
 }
 
@@ -7249,7 +7264,6 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   color: #eeeeee;
   border-color: rgba(21, 23, 28, 0.35);
   background-color: rgba(97, 105, 125, 0.35);
-  border-radius: 0;
 }
 
 .budgie-notification-window button:hover, .budgie-osd-window button:hover, .budgie-switcher-window button:hover {

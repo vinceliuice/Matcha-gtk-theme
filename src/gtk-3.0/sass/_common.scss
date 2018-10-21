@@ -2713,6 +2713,36 @@ calendar {
 //
 // Dialogs
 //
+
+%middle_button {
+  border-radius: 0;
+  border-top: 1px solid $borders_color;
+  border-right: none;
+  border-bottom: none;
+}
+
+%last_button {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+%first_button {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+%single_button {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
 messagedialog { // Message Dialog styling
 
   .titlebar {
@@ -2723,58 +2753,39 @@ messagedialog { // Message Dialog styling
 
   .dialog-action-area button { padding: 8px; min-height: 0; }
 
+  .linked:not(.vertical) > button,
+  .linked:not(.vertical) > button:hover,
+  .linked:not(.vertical) > button:active,
+  .linked:not(.vertical) > button:checked,
+  .linked:not(.vertical) > button:disabled {
+    @extend %middle_button;
+    &:first-child { @extend %first_button; }
+    &:last-child { @extend %last_button; }
+    &:only-child { @extend %single_button; }
+  }
+
   &, &.csd { // rounded bottom border styling for csd version
     &.background {
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
       border: none;
     }
-    .dialog-action-area button {
 
-      &:active, &:checked {
-        transition: background-color 0.00001s 0.3s;
-        animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    .dialog-action-area {
+      button {
+        &:active, &:checked {
+          transition: background-color 0.00001s 0.3s;
+          animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+        }
       }
-
-      @extend %middle_button;
-      &:first-child { @extend %first_button; }
-      &:last-child { @extend %last_button; }
-      &:only-child { @extend %single_button; }
     }
 
     .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
-
       &:hover { background-color: gtkalpha($fg_color, 0.06); }
       &:active, &:checked {
         background-color: gtkalpha($fg_color, 0.1);
         color: $fg_color;
       }
-    }
-
-    %middle_button {
-      border-radius: 0;
-      border-top: 1px solid $borders_color;
-      border-right: none;
-      border-bottom: none;
-    }
-    %last_button {
-      border-bottom-right-radius: 3px;
-      border-top-right-radius: 0;
-      border-right: none;
-      border-bottom: none;
-    }
-    %first_button {
-      border-bottom-left-radius: 3px;
-      border-top-left-radius: 0;
-      border-left: none;
-      border-bottom: none;
-    }
-    %single_button {
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
-      border-left: none;
-      border-right: none;
-      border-bottom: none;
     }
   }
 }
