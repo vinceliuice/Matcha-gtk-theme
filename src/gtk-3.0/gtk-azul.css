@@ -1917,7 +1917,7 @@ headerbar spinbutton:not(.vertical):focus, .nemo-window .primary-toolbar spinbut
 
 headerbar spinbutton:not(.vertical) button, .nemo-window .primary-toolbar spinbutton:not(.vertical) button, headerbar spinbutton:not(.vertical) button:disabled, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:disabled {
   color: rgba(255, 255, 255, 0.85);
-  border-color: #1b1d24;
+  border-color: rgba(0, 0, 0, 0.12);
   background-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -4489,7 +4489,7 @@ headerbar button.titlebutton,
 headerbar button.titlebutton:hover,
 .titlebar button.titlebutton:hover {
   color: rgba(255, 255, 255, 0.85);
-  border-color: #1b1d24;
+  border-color: rgba(0, 0, 0, 0.12);
   background-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -4849,7 +4849,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 @keyframes needs_attention_keyframes {
   0% {
     color: rgba(255, 255, 255, 0.85);
-    border-color: #1b1d24;
+    border-color: rgba(0, 0, 0, 0.12);
     background-color: rgba(255, 255, 255, 0.12);
   }
   100% {
@@ -6262,7 +6262,7 @@ window.background.chromium headerbar.titlebar button.toggle {
 
 window.background.chromium headerbar.titlebar button.toggle:hover {
   color: rgba(255, 255, 255, 0.85);
-  border-color: #1b1d24;
+  border-color: rgba(0, 0, 0, 0.12);
   background-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -8292,9 +8292,9 @@ filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-
 
 filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:hover {
-  color: black;
-  border-color: #bec8dd;
-  background-color: white;
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:active,

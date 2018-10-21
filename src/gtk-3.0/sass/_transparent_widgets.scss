@@ -50,8 +50,8 @@ filechooser,
       &:not(:selected) button.sidebar-button {
         color: $dark_sidebar_fg;
 
-        &:hover { @include button(hover); }
-        &:active { @include button(active); }
+        &:hover { @include button(header-hover); }
+        &:active { @include button(header-active); }
 
         &:not(:hover):not(:active) > image { opacity: 0.5 };
       }
