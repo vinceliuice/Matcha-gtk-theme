@@ -3996,13 +3996,13 @@ filechooserbutton:drop(active) {
 stacksidebar.sidebar:dir(ltr) list,
 stacksidebar.sidebar.left list,
 stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl) {
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-right: 1px solid #d8d8d8;
   border-left-style: none;
 }
 
 stacksidebar.sidebar:dir(rtl) list,
 stacksidebar.sidebar.right list, .sidebar:dir(rtl), .sidebar.right {
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 1px solid #d8d8d8;
   border-right-style: none;
 }
 
@@ -5512,6 +5512,65 @@ window.background > box.vertical box.horizontal > box.vertical > scrolledwindow 
   background-image: image(#3498db);
   color: #ffffff;
   transition-duration: 0s;
+}
+
+button.round-button {
+  min-height: 28px;
+  min-width: 28px;
+  padding: 0;
+}
+
+window.background > box.vertical > searchbar {
+  box-shadow: none;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack > box.vertical > scrolledwindow > viewport.frame > widget > list {
+  background-color: #f7f7f7;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack > box.vertical > scrolledwindow > viewport.frame > widget > list > separator {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list {
+  background-image: image(#f7f7f7);
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list > box.vertical > list {
+  background-color: #f7f7f7;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list separator {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.category_page_header_filter_box {
+  background-image: image(#f7f7f7);
+  border-image: linear-gradient(to bottom, #d8d8d8, #d8d8d8) 0 0 1 0/0 0 1px 0 stretch;
+}
+
+.category_page_header_filter_box button {
+  color: rgba(27, 29, 36, 0.55);
+  background-image: image(#f7f7f7);
+}
+
+.category_page_header_filter_box button:prelight {
+  color: rgba(27, 29, 36, 0.75);
+}
+
+.category_page_header_filter_box button:checked {
+  color: #1b1d24;
+}
+
+.category_page_header_filter_box button:disabled {
+  color: rgba(27, 29, 36, 0.65);
+}
+
+.application-details-infobar {
+  background-image: image(#ffffff);
+  border-image: linear-gradient(to bottom, #d8d8d8, #d8d8d8) 1 1 1 1/1px 1px 1px 1px stretch;
 }
 
 headerbar.titlebar.incognito-mode entry {
