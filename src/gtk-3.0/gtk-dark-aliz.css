@@ -38,6 +38,10 @@
   background-color: rgba(34, 34, 34, 0.999);
 }
 
+.popup.background {
+  border-radius: 2px;
+}
+
 *:disabled {
   -gtk-icon-effect: dim;
 }
@@ -2295,7 +2299,7 @@ menu,
 .csd menu, .csd
 .menu {
   padding: 4px 0;
-  border-radius: 0;
+  border-radius: 2px;
   border: none;
 }
 
@@ -2409,7 +2413,6 @@ menu > arrow:disabled,
 popover,
 popover.background {
   padding: 2px;
-  border-radius: 3px;
   background-clip: border-box;
   background-color: #222222;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35);
@@ -4450,7 +4453,7 @@ decoration:backdrop {
 }
 
 .csd.popup decoration {
-  border-radius: 0;
+  border-radius: 2px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.18);
 }
 

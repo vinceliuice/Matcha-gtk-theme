@@ -38,6 +38,11 @@ $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark var
   background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color); // without this headerbar transparency doesn't seem to work
 }
 
+.popup.background {
+  border-radius: 2px; // menus background
+}
+
+
 *:disabled { -gtk-icon-effect: dim; }
 
 .gtkstyle-fallback {
@@ -1712,7 +1717,7 @@ menu,
 
   .csd & {
     padding: 4px 0;
-    border-radius: 0;
+    border-radius: 2px;
     border: none;
   }
 
@@ -1802,7 +1807,6 @@ popover,
 popover.background {
   $_popover_bg: if($variant=='light', $base_color, $bg_color);
   padding: 2px;
-  border-radius: 3px;
   background-clip: border-box;
   background-color: $_popover_bg;
 
@@ -3281,7 +3285,7 @@ decoration {
     &.maximized { border-radius: 0; }
   }
   .csd.popup & {
-    border-radius: 0;
+    border-radius: 2px;
     box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
   }
   tooltip.csd & {
