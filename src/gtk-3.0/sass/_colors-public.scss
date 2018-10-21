@@ -15,7 +15,7 @@
 @define-color selected_bg_color #{"" + $selected_bg_color};
 @define-color selected_fg_color #{"" + $selected_fg_color};
 @define-color insensitive_bg_color #{"" + $insensitive_bg_color};
-@define-color insensitive_fg_color alpha(#{"" + opacify($insensitive_fg_color, 1)}, 0.5);
+@define-color insensitive_fg_color alpha(#{"" + $insensitive_fg_color}, 0.5);
 @define-color insensitive_base_color #{"" + $base_color};
 @define-color theme_unfocused_fg_color #{"" + $fg_color};
 @define-color theme_unfocused_text_color #{"" + $text_color};
@@ -29,7 +29,6 @@
 @define-color success_color #{"" + $success_color};
 @define-color placeholder_text_color #{#A8A8A8};
 @define-color link_color #{"" + $link_color};
-
 @define-color content_view_bg #{"" + $base_color};
 
 //WM
@@ -43,7 +42,7 @@ $wm_bg_unfocused: opacify($header_bg_backdrop, 1);
 @define-color wm_bg_unfocused #{"" + $wm_bg_unfocused};
 
 @define-color wm_highlight #{"" + $wm_highlight};
-@define-color wm_shadow #{"" + rgba(black, 0.36)};
+@define-color wm_shadow alpha(#{black}, 0.35);
 
 //WM Buttons
 
@@ -65,3 +64,18 @@ $wm_bg_unfocused: opacify($header_bg_backdrop, 1);
 @define-color wm_icon_hover_bg #{"" + $wm_icon_hover_bg};
 @define-color wm_icon_active_bg #{"" + $wm_icon_active_bg};
 
+//
+// Budgie-desktop specific indicator colours
+//
+
+// unfocused window 'dot(s)'
+@define-color budgie_tasklist_indicator_color #{"" + $selected_bg_color};
+// focused window 'line'
+@define-color budgie_tasklist_indicator_color_active #{"" + $selected_bg_color};
+// group-ed and unfocused window 'line(s)'
+@define-color budgie_tasklist_indicator_color_active_window #{"" + mix($selected_bg_color, $panel_bg, 54%)};
+// attention 'dot'
+// FIXME: we can't fill whole widget backgrounds with our suggestion colour
+//        because of lacking specific style-class on 'needs_attention' state,
+//        so use warning orange dot instead.
+@define-color budgie_tasklist_indicator_color_attention #{"" + $warning_color};

@@ -1618,12 +1618,12 @@ $bt_radius: 2px;
 .budgie-popover {
   margin: 0;
   padding: 0;
-  border: 1px solid $borders_color;
+  border-color: $borders_color;
   border-radius: $bt_radius;
+  background-color: if($variant=='light', $base_color, $bg_color);
   box-shadow: 0 1px 2px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
-              0 2px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
-
-  background-color: $base_color;
+              0 2px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
+              0 0 0 1px $borders_color;
 
   .container { padding: 2px; }
 
@@ -1691,6 +1691,21 @@ $bt_radius: 2px;
     separator { margin: 4px 0; }
 
     flowboxchild { padding: 0; }
+  }
+}
+
+// budgie specific popover widgets
+window.budgie-popover:not(.csd) {
+
+  > frame.container {
+    margin: 0 -1px -1px; // remove gap
+
+    .bottom & { padding: 2px 0 2px; } // revive bottom padding
+
+    &,
+    > border {
+      border-style: none; // hide container borders
+    }
   }
 }
 
@@ -1883,25 +1898,25 @@ popover.background.places-menu {
 // Panel
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
-  background-color: $header_bg;
-  color: $header_fg;
+  background-color: $panel_bg;
+  color: $panel_fg;
   font-weight: 500;
 
-  &.transparent { background-color: rgba($header_bg, 0.65); }
+  &.transparent { background-color: rgba($panel_bg, 0.85); }
 
   button {
     min-height: 16px;
     min-width: 16px;
     padding: 0;
     border-radius: 0;
-    color: $header_fg;
+    color: $panel_fg;
     border-top-width: 0;
     border-bottom-width: 0;
     border: none;
 
-    &:hover { background-color: rgba($header_fg, 0.15); }
-    &:active { background-color: rgba($header_fg, 0.1); }
-    &:checked { background-color: rgba($header_fg, 0.12); }
+    &:hover { background-color: rgba($panel_fg, 0.15); }
+    &:active { background-color: rgba($panel_fg, 0.1); }
+    &:checked { background-color: rgba($panel_fg, 0.12); }
   }
 
   &.horizontal button { padding: 0 4px; }
@@ -1914,7 +1929,7 @@ popover.background.places-menu {
   menubar,
   .menubar {
     box-shadow: none;
-    color: $header_fg;
+    color: $panel_fg;
     background-image: none;
     background-color: transparent;
 
@@ -1929,7 +1944,7 @@ popover.background.places-menu {
         box-shadow: inset 0 -3px $selected_bg_color;
       }
       &:disabled {
-        color: transparentize($header_fg, 0.6);
+        color: transparentize($panel_fg, 0.6);
       }
     }
   }
@@ -1967,16 +1982,13 @@ popover.background.places-menu {
       &:disabled { color: rgba($fg_color, 0.5); }
     }
   }
-
-  .unpinned button.flat.launcher,
-  .pinned button.flat.launcher.running { @extend %underscores:checked; }
 }
 
 %underscores {
-  @each $pos, $b_pos, $b_wid in (top,    center calc(1px),        2 0 0 0 / 2px 0 0 0),
-                                (bottom, center calc(100% - 1px), 0 0 2 0 / 0 0 2px 0),
-                                (left,   calc(1px) center,        0 0 0 2 / 0 0 0 2px),
-                                (right,  calc(100% - 1px) center, 0 2 0 0 / 0 2px 0 0) {
+  @each $pos, $b_pos, $b_wid in (top,    center calc(1px),        3 0 0 0 / 3px 0 0 0),
+                                (bottom, center calc(100% - 1px), 0 0 3 0 / 0 0 3px 0),
+                                (left,   calc(1px) center,        0 0 0 3 / 0 0 0 3px),
+                                (right,  calc(100% - 1px) center, 0 3 0 0 / 0 3px 0 0) {
     .#{$pos} & {
       & {
         border-image: radial-gradient(circle closest-corner at #{$b_pos},
@@ -1995,10 +2007,73 @@ popover.background.places-menu {
   }
 }
 
+.budgie-panel {
+  @at-root %budgie_icon_tasklist_button,
+  button.flat.launcher {
+    min-width: 16px;
+    min-height: 16px;
+    padding: 0;
+    border-radius: 0;
+    background-position: center center;
+
+    > image { opacity: 0.87; }
+
+    &:hover {
+      -gtk-icon-effect: highlight;
+      > image { opacity: 1.0; }
+    }
+    &:active {
+      > image { opacity: 1.0; }
+    }
+    &:checked {
+      &:hover { -gtk-icon-effect: highlight; }
+      > image { opacity: 1.0; }
+    }
+  }
+
+  @at-root %running_budgie_icon_tasklist_button,
+  .unpinned button.flat.launcher,
+  .pinned button.flat.launcher.running,
+  .pinned button.launcher.running.sidebar-button {
+    &:hover { -gtk-icon-effect: highlight; }
+
+    > image {
+      background-repeat: no-repeat;
+      opacity: 1.0;
+    }
+
+    &:checked {
+      > image { background-image: none; }
+    }
+  }
+}
+
+// draw underscores and dots
+@each $position, $_dot in (top, 6px 3px),
+                          (bottom, 6px 3px),
+                          (left, 3px 6px),
+                          (right, 3px 6px) {
+  .#{$position} .budgie-panel {
+
+    .unpinned button.flat.launcher,
+    .pinned button.flat.launcher.running,
+    .pinned button.launcher.running.sidebar-button {
+      > image {
+        background-size: #{$_dot};
+        background-position: #{$position} center;
+        background-image: image($selected_bg_color);
+      }
+
+      &:checked { > image { background-image: none; } }
+    }
+  }
+}
+
+box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher { border-image: none; } // unset before drawing indicators
+
 frame.raven-frame > border {
   border-style: none;
-  box-shadow: 0 0 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
-              0 0 8px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
+  box-shadow: none;
 }
 
 $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
@@ -2009,12 +2084,11 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
   // Raven borders
   .#{$pos} frame.raven-frame > border {
-    margin-#{$b_pos}: 32px;
     // border-#{$b_pos}: 1px solid $borders_color;
   }
 
   // Shadows
-  // .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, $borders_color, transparent); }
+   .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, rgba(black, 0.23), rgba(black, 0.08), transparent); }
 }
 
 // Raven
@@ -2029,10 +2103,9 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
   // > stack > box:last-child > stack { margin-top: -6px; }
 
-  stackswitcher.linked > button {
+  stackswitcher { padding: 0 8px 12px 8px; }
 
-    &:checked { }
-  }
+//  stackswitcher.linked > button { }
 
   .raven-header {
     min-height: 36px;
@@ -2056,19 +2129,24 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
     &.top {
       padding: 2px 12px;
-      background-color: $header_bg;
-      color: $header_fg;
+      background-color: $panel_bg;
+      color: $panel_fg;
 
-      stackswitcher button {
-        margin: 4px 0;
-        padding: 2px 16px;
-        min-height: 16px;
-        border: none;
-        background-color: lighten($header_bg, 10%);
-        color: $header_fg;
-        &:hover { background-color: lighten($header_bg, 15%); box-shadow: none; }
-        &:active, &:checked { @include button(header-active); }
-        &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
+      stackswitcher {
+        padding: 0;
+        margin: 0;
+
+        button {
+          margin: 4px 0;
+          padding: 2px 16px;
+          min-height: 16px;
+          border: none;
+          background-color: lighten($panel_bg, 10%);
+          color: $panel_fg;
+          &:hover { background-color: lighten($panel_bg, 15%); box-shadow: none; }
+          &:active, &:checked { @include button(header-active); }
+          &:disabled { color: rgba($panel_fg, 0.4); label { color: rgba($panel_fg, 0.4); } }
+        }
       }
 
       // for <10.4
@@ -2168,11 +2246,108 @@ calendar.raven-calendar {
   }
 }
 
+// notification list
+box.vertical > stack > box.vertical {
+
+  > .raven-background > viewport.frame {
+    padding: 0; // reset padding for full-width list node
+
+    list { background-color: transparent; }
+
+    > list > row.activatable {
+      margin-left: -8px;
+      margin-right: -2px;
+      background-color: transparent;
+
+      > grid > *, // legacy
+      > box.vertical * { color: $fg_color; }
+
+      image { padding-left: 8px; }
+
+      button.image-button { // 'dismiss'
+        margin: 8px;
+        @extend button.circular;
+
+        image { padding: 0; }
+
+//        &:hover { @include button(button-hover); }
+        &:active, &:checked { image { color: white; } }
+      }
+
+      // sub-list rows grouping
+      list {
+        border-radius: 2px;
+        border-top: 1px solid $borders_color;
+        border-bottom: 1px solid $borders_color;
+
+        > row.activatable {
+          border-bottom: 1px solid $borders_color;
+          &:last-child { border-bottom: none; }
+
+          &:selected { background-color: rgba($fg_color, 0.06); }
+
+          label { padding: 0 16px; }
+
+          button.image-button { // 'close'
+            @extend button.circular;
+
+            image { padding: 0; }
+          }
+
+//          box.horizontal > label:first-child { font-weight: 500; } // title labels
+        }
+      }
+
+      &:selected {
+        background-color: rgba($selected_bg_color, 0.75);
+//        &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
+//        &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
+
+        > grid > *,
+        > box.vertical * { color: $selected_fg_color; }
+
+        button.image-button { // 'dismiss'
+          border: none;
+
+          &:hover { background-color: rgba(white, 0.25); }
+          &:active, &:checked { background-color: rgba(white, 0.35); }
+        }
+
+        list {
+          border: 1px solid rgba(white, 0.12);
+
+          > row.activatable {
+            border-bottom: 1px solid rgba(white, 0.12);
+            &:last-child { border-bottom: none; }
+
+            &:selected {
+              background-color: rgba($selected_bg_color, 0.65);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // Notifications
 .budgie-notification-window {
-    background-color: transparent;
-    background-image: none;
-    border-radius: $bt_radius;
+  background-color: transparent;
+  background-image: none;
+  border-radius: $bt_radius;
+
+  button {
+    @include button(osd);
+    &:hover { @include button(osd-hover); }
+    &:active, &:checked { @include button(osd-active); }
+    &:disabled { @include button(osd-insensitive); }
+  }
+
+  .linked:not(.vertical) { @include linking_rules($b_border:$osd_button_border); }
+
+  button.image-button { // 'close'
+    @extend button.circular;
+  }
 }
 
 .budgie-notification {
@@ -2208,8 +2383,8 @@ calendar.raven-calendar {
   box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent,
               0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
 
-  background-color: $header_bg;
-  color: $header_fg;
+  background-color: $panel_bg;
+  color: $panel_fg;
 
   button { @extend %budgiebutton.flat; }
 
@@ -2224,7 +2399,8 @@ calendar.raven-calendar {
 }
 
 // Session Dialog
-.budgie-session-dialog {
+.budgie-session-dialog,
+.budgie-polkit-dialog {
   @extend %budgie_dialog;
 
   label:not(:last-child),
@@ -2266,7 +2442,6 @@ calendar.raven-calendar {
   @extend %budgie_dialog;
 
   .message { color: gtkalpha(currentColor, 0.6); }
-
   .failure { color: $destructive_color; }
 }
 

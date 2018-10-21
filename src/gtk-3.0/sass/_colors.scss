@@ -72,7 +72,7 @@ $header_bg: #1b2224;
 @if $color=='azul' and $variant=='light' { $header_bg: #1b1d24; }
 @if $color=='azul' and $variant=='dark' { $header_bg: darken(#1b1d24, 3%); }
 
-$header_bg_backdrop: if($variant == 'dark', lighten($header_bg, 2%), lighten($header_bg, 3%));
+$header_bg_backdrop: if($variant == 'dark', lighten($header_bg, 5%), lighten($header_bg, 6%));
 $header_border: if($variant == 'light', darken($header_bg, 7%), darken($header_bg, 4%));
 $header_fg: rgba(#ffffff, 0.85);
 

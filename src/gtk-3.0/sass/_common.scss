@@ -667,6 +667,7 @@ toolbar.inline-toolbar toolbutton {
 .linked:not(.vertical) {
   &:not(.path-bar) { @include linking_rules(); }
   &.path-bar { @include pathbar_linking_rules(); }
+  .osd & { @include linking_rules($e_border:$osd_entry_border, $b_border:$osd_button_border); }
 }
 
 .linked.vertical { @include linking_rules($vert:'true'); }
@@ -2658,6 +2659,7 @@ row {
     &:disabled { @include button(osd-insensitive);
     }
   }
+  .linked:not(.vertical) { @include linking_rules($b_border:$osd_button_border); }
 }
 
 //
