@@ -94,17 +94,17 @@ menu.separator.padding.height: 2
 menu.overlap.x: 0
 menu.overlap.y: 0
 
-menu.border.color: #aeb0b6
-menu.separator.color: #a8adb5
+menu.border.color: #2d3036
+menu.separator.color: #2d3036
 
 menu.title.text.color: #D3DAE3
-menu.items.text.color: #2d3036
+menu.items.text.color: #D3DAE3
 menu.items.disabled.text.color: #76797F
 menu.items.active.text.color: #ffffff
 menu.items.active.disabled.text.color: #aeb0b6
 
 menu.items.bg: flat solid
-menu.items.bg.color: #f5f6f7
+menu.items.bg.color: #1b2224
 menu.items.active.bg: flat solid
 menu.items.active.bg.color: #2f9b85
 menu.title.bg: flat solid
