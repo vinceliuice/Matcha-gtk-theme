@@ -161,6 +161,7 @@ for color in '' '-dark'; do
 	cp -ur \
 		thumbnail.png \
 		*.svg \
+		metacity-theme-3.xml \
 		${themedir}/metacity-1
 
 	cp -ur \
@@ -169,7 +170,6 @@ for color in '' '-dark'; do
 
 	cd ${themedir}/metacity-1
 	ln -s metacity-theme-1.xml metacity-theme-2.xml
-	ln -s metacity-theme-1.xml metacity-theme-3.xml
 
 	# Install xfwm4 Theme
 	install -d ${themedir}/xfwm4

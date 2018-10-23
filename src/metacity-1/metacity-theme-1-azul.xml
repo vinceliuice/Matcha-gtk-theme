@@ -36,7 +36,7 @@
 <constant name="C_icon_bg_focused" value="#909b97" />
 <constant name="C_icon_bg_unfocused" value="#66746f" />
 <constant name="C_icon_bg_hover" value="#c4ccca" />
-<constant name="C_icon_bg_active" value="#3498db" />
+<constant name="C_icon_bg_active" value="#FFFFFF" />
 
 <!-- geometries -->
 
@@ -209,6 +209,37 @@
 	<image filename="max-icon.svg" colorize="C_icon_bg_active" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
 </draw_ops>
 
+<!--max_maximize-->
+<draw_ops name="max_maximize_focused">
+	<image filename="unmax-icon.svg" colorize="C_icon_bg_focused" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+</draw_ops>
+
+<draw_ops name="max_maximize_focused_pressed">
+	<image filename="button-bg.svg" colorize="C_button_bg_active" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+	<image filename="unmax-icon.svg" colorize="C_icon_bg_active" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+</draw_ops>
+
+<draw_ops name="max_maximize_focused_prelight">
+	<image filename="button-bg.svg" colorize="C_button_bg_hover" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+	<image filename="button-border.svg" colorize="C_button_border_hover" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+	<image filename="unmax-icon.svg" colorize="C_icon_bg_hover" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+</draw_ops>
+
+<draw_ops name="max_maximize_unfocused">
+	<image filename="unmax-icon.svg" colorize="C_icon_bg_unfocused" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+</draw_ops>
+
+<draw_ops name="max_maximize_unfocused_prelight">
+	<image filename="button-bg.svg" colorize="C_button_bg_hover" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+	<image filename="button-border.svg" colorize="C_button_border_hover" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+	<image filename="unmax-icon.svg" colorize="C_icon_bg_hover" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+</draw_ops>
+
+<draw_ops name="max_maximize_unfocused_pressed">
+	<image filename="button-bg.svg" colorize="C_button_bg_active" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+	<image filename="unmax-icon.svg" colorize="C_icon_bg_active" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
+</draw_ops>
+
 <!--minimize-->
 <draw_ops name="minimize_focused">
 	<image filename="min-icon.svg" colorize="C_icon_bg_focused" x="(width-object_width)/2" y="(height-object_height)/2" width="object_width" height="object_height"/>
@@ -323,9 +354,9 @@
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
 	<button function="close" state="prelight" draw_ops="close_focused_prelight" />
-	<button function="maximize" state="normal" draw_ops="maximize_focused" />
-	<button function="maximize" state="pressed" draw_ops="maximize_focused_pressed" />
-	<button function="maximize" state="prelight" draw_ops="maximize_focused_prelight" />
+	<button function="maximize" state="normal" draw_ops="max_maximize_unfocused"/>
+	<button function="maximize" state="prelight" draw_ops="max_maximize_unfocused_prelight"/>
+	<button function="maximize" state="pressed" draw_ops="max_maximize_unfocused_pressed"/>
 	<button function="minimize" state="normal" draw_ops="minimize_focused" />
 	<button function="minimize" state="pressed" draw_ops="minimize_focused_pressed" />
 	<button function="minimize" state="prelight" draw_ops="minimize_focused_prelight" />
@@ -352,9 +383,9 @@
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
-	<button function="maximize" state="normal" draw_ops="maximize_unfocused"/>
-	<button function="maximize" state="prelight" draw_ops="maximize_unfocused_prelight"/>
-	<button function="maximize" state="pressed" draw_ops="maximize_unfocused_pressed"/>
+	<button function="maximize" state="normal" draw_ops="max_maximize_unfocused"/>
+	<button function="maximize" state="prelight" draw_ops="max_maximize_unfocused_prelight"/>
+	<button function="maximize" state="pressed" draw_ops="max_maximize_unfocused_pressed"/>
 	<button function="minimize" state="normal" draw_ops="minimize_unfocused"/>
 	<button function="minimize" state="prelight" draw_ops="minimize_unfocused_prelight"/>
 	<button function="minimize" state="pressed" draw_ops="minimize_unfocused_pressed"/>
@@ -384,9 +415,9 @@
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
 	<button function="close" state="prelight" draw_ops="close_focused_prelight" />
-	<button function="maximize" state="normal" draw_ops="maximize_focused" />
-	<button function="maximize" state="pressed" draw_ops="maximize_focused_pressed" />
-	<button function="maximize" state="prelight" draw_ops="maximize_focused_prelight" />
+	<button function="maximize" state="normal" draw_ops="max_maximize_unfocused"/>
+	<button function="maximize" state="prelight" draw_ops="max_maximize_unfocused_prelight"/>
+	<button function="maximize" state="pressed" draw_ops="max_maximize_unfocused_pressed"/>
 	<button function="minimize" state="normal" draw_ops="minimize_focused" />
 	<button function="minimize" state="pressed" draw_ops="minimize_focused_pressed" />
 	<button function="minimize" state="prelight" draw_ops="minimize_focused_prelight" />
@@ -413,9 +444,9 @@
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
-	<button function="maximize" state="normal" draw_ops="maximize_unfocused"/>
-	<button function="maximize" state="prelight" draw_ops="maximize_unfocused_prelight"/>
-	<button function="maximize" state="pressed" draw_ops="maximize_unfocused_pressed"/>
+	<button function="maximize" state="normal" draw_ops="max_maximize_unfocused"/>
+	<button function="maximize" state="prelight" draw_ops="max_maximize_unfocused_prelight"/>
+	<button function="maximize" state="pressed" draw_ops="max_maximize_unfocused_pressed"/>
 	<button function="minimize" state="normal" draw_ops="minimize_unfocused"/>
 	<button function="minimize" state="prelight" draw_ops="minimize_unfocused_prelight"/>
 	<button function="minimize" state="pressed" draw_ops="minimize_unfocused_pressed"/>

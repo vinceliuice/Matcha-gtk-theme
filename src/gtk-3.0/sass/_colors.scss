@@ -122,15 +122,15 @@ $wm_button_close_bg: if($variant == 'light', #f46067, #cc575d);
 $wm_button_close_hover_bg: if($variant == 'light', #f68086, #d7787d);
 $wm_button_close_active_bg: if($variant == 'light', #f13039, #be3841);
 
-$wm_icon_close_bg: if($variant == 'light',#F8F8F9 , #2f3f3e);
+$wm_icon_close_bg: $header_bg;
 
 // Minimize, Maximize
-$wm_button_hover_bg: if($variant == 'light', #fdfdfd, #455c57);
+$wm_button_hover_bg: lighten($header_bg, 10%);
 $wm_button_active_bg: $selected_bg_color;
 
-$wm_button_hover_border: if($variant == 'light', #d1dada, #26322f);
+$wm_button_hover_border: $header_border;
 
-$wm_icon_bg: if($variant == 'light', #909e9b, #909b99);
-$wm_icon_unfocused_bg: if($variant == 'light', #b6c0be, #667471);
-$wm_icon_hover_bg: if($variant == 'light', #7a8b88, #c4ccca);
+$wm_icon_bg: #909090;
+$wm_icon_unfocused_bg: #686868;
+$wm_icon_hover_bg: #eeeeee;
 $wm_icon_active_bg: $selected_fg_color;

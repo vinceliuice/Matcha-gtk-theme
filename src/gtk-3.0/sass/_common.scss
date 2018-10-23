@@ -661,7 +661,7 @@ toolbar.inline-toolbar toolbutton {
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
     &:hover {
-      box-shadow: none;
+//      box-shadow: none;
     }
     &:first-child:hover { box-shadow: none; }
     &:last-child:hover { box-shadow: none; }
@@ -1129,6 +1129,33 @@ headerbar {
       .tiled & { border-radius: 0; }
     }
   }
+
+  // special case for path-bars
+  .linked:not(.vertical).path-bar {
+
+    > button {
+    padding-top: 3px;
+    padding-bottom: 6px;
+    margin: 0 0 0 0;
+    color: $header_fg;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+
+      &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
+      &:active, &:checked {
+        transition: background-color 0.00001s 0.3s;
+        animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+        color: $selected_fg_color;
+        background-color: darken($header_bg, 5%);
+        box-shadow: inset 0 -3px $alt_selected_bg_color;
+      }
+
+      &:disabled { color: rgba($header_fg, 0.4); }
+//      &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
+    }
+    @include pathbar_linking_rules($sep_color:$header_button_border);
+  }
 }
 
 // Fixes split headerbars too
@@ -1277,33 +1304,6 @@ headerbar {
     > #{$_uncolored_button}:disabled:backdrop { box-shadow: none; border: none; }
   }
 
-  // special case for path-bars
-  .linked:not(.vertical).path-bar {
-
-    > button {
-    padding-top: 3px;
-    padding-bottom: 6px;
-    margin: 0 0 0 0;
-    color: $header_fg;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
-
-      &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
-      &:active, &:checked { 
-        transition: background-color 0.00001s 0.3s;
-        animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-        color: $selected_fg_color;
-        background-color: darken($header_bg, 5%);
-        box-shadow: inset 0 -3px $alt_selected_bg_color;
-      }
-
-      &:disabled { color: rgba($header_fg, 0.4); }
-//      &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
-    }
-    @include pathbar_linking_rules($sep_color:$header_button_border);
-  }
-
   // special case and stack-switchers
   .linked:not(.vertical):not(.path-bar).stack-switcher {
     > button {
@@ -1321,10 +1321,10 @@ headerbar {
   .linked:not(.vertical):not(.path-bar) {
     // Reset headerbar linked rules
     > entry {
-        border-radius: 3px;
-        border: 1px solid $header_entry_border;
-        &:focus { border-color: $selected_bg_color; }
-      }
+      border-radius: 3px;
+      border: 1px solid $header_entry_border;
+      &:focus { border-color: $selected_bg_color; }
+    }
   }
 
   // Headerbar Suggested and Destructive Action buttons
@@ -2614,6 +2614,8 @@ row {
 
     button { @extend %selected-button; }
   }
+
+	button { &:active, &:checked { background-image: image($selected_bg_color); } }
 
   &.activatable {
     &.has-open-popup,
