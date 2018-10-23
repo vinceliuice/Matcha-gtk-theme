@@ -1305,6 +1305,16 @@ StScrollBar {
     background-gradient-start: $warning_color;
     background-gradient-end: $warning_color;
   }
+
+  // >= 3.6.7
+  &-preview { // thumbnail popup windows = .switcher-list
+    padding: 20px - 8px; // = .switcher-list - .item-box
+    spacing: 8px; // = .switcher-list-item-container
+    border: none;
+    border-image: url("#{$asset_path}/menu/menu.svg") 9 9 9 9;
+    color: $fg_color;
+    background: none;
+  }
 }
 
 ///
@@ -1497,20 +1507,103 @@ StScrollBar {
   }
 }
 
-.panel-launcher,
-.launcher {
-  margin: 1px;
-  padding: 1px;
-  transition-duration: 200;
+.panel-launcher {
+  border: 0 solid transparent;
+  @each $position, $_padding in (top, 0 4px 2px 4px),
+                                (bottom, 2px 4px 0 4px),
+                                (left, 2px 2px 2px 0),
+                                (right, 2px 0 2px 2px) {
+    .panel-#{$position} & {
+      padding: #{$_padding};
+      border-#{$position}-width: 2px;
+    }
+  }
 
   &:hover {
+    border: 0 solid rgba($selected_bg_color, 0.5);
     background-gradient-direction: none;
-    border: 0px solid $selected_bg_color;
 
-    .panel-bottom & { border-bottom-width: 1px; }
-    .panel-top & { border-top-width: 1px; }
-    .panel-left & { border-left-width: 1px; padding-left: 0; }
-    .panel-right & { border-right-width: 1px; padding-right: 0; }
+    @each $position, $_padding in (top, 0 4px 2px 4px),
+                                  (bottom, 2px 4px 0 4px),
+                                  (left, 2px 2px 2px 0),
+                                  (right, 2px 0 2px 2px) {
+      .panel-#{$position} & {
+        padding: #{$_padding};
+        border-#{$position}-width: 2px;
+      }
+    }
+  }
+}
+
+.window-list-item-box {
+  border: 0 solid transparent;
+  @each $position in (top),
+                     (bottom),
+                     (left),
+                     (right) {
+    .panel-#{$position} & {
+      border-#{$position}-width: 2px;
+    }
+  }
+
+  &:hover {
+    border: 0 solid rgba($selected_bg_color, 0.5);
+    background-gradient-direction: none;
+
+    @each $position in (top),
+                       (bottom),
+                       (left),
+                       (right) {
+      .panel-#{$position} & {
+        border-#{$position}-width: 2px;
+      }
+    }
+  }
+}
+
+// 3.2.x
+.launcher {
+  padding: 2px;
+  spacing: 2px;
+  transition-duration: 0.2s;
+  &:hover {
+    border: 0 solid rgba($selected_bg_color, 0.5);
+    background-gradient-direction: none;
+
+    @each $position in (top),
+                       (bottom),
+                       (left),
+                       (right) {
+      .panel-#{$position} & {
+        padding-#{$position}: 0;
+        border-#{$position}-width: 2px;
+      }
+    }
+  }
+
+  .icon-box {
+    padding: 0 2px;
+
+    &.vertical { padding: 2px 0; }
+  }
+}
+
+.panel-launchers {
+  padding: 0 0 0 4px;
+  spacing: 2px;
+
+  &.vertical {
+    padding: 2px 0 0 0;
+    spacing: 2px;
+  }
+
+  .launcher {
+
+    .icon-box {
+      padding: 0 2px;
+
+      &.vertical { padding: 2px 0; }
+    }
   }
 }
 

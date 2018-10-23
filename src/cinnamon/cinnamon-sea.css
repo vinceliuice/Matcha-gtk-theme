@@ -1551,6 +1551,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-gradient-end: #F27835;
 }
 
+.window-list-preview {
+  padding: 12px;
+  spacing: 8px;
+  border: none;
+  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  color: #1b2224;
+  background: none;
+}
+
 .sound-button {
   width: 22px;
   height: 13px;
@@ -1766,39 +1775,151 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 2px 0;
 }
 
-.panel-launcher,
-.launcher {
-  margin: 1px;
-  padding: 1px;
-  transition-duration: 200;
+.panel-launcher {
+  border: 0 solid transparent;
 }
 
-.panel-launcher:hover,
-.launcher:hover {
+.panel-top .panel-launcher {
+  padding: 0 4px 2px 4px;
+  border-top-width: 2px;
+}
+
+.panel-bottom .panel-launcher {
+  padding: 2px 4px 0 4px;
+  border-bottom-width: 2px;
+}
+
+.panel-left .panel-launcher {
+  padding: 2px 2px 2px 0;
+  border-left-width: 2px;
+}
+
+.panel-right .panel-launcher {
+  padding: 2px 0 2px 2px;
+  border-right-width: 2px;
+}
+
+.panel-launcher:hover {
+  border: 0 solid rgba(46, 179, 152, 0.5);
   background-gradient-direction: none;
-  border: 0px solid #2eb398;
 }
 
-.panel-bottom .panel-launcher:hover, .panel-bottom
-.launcher:hover {
-  border-bottom-width: 1px;
+.panel-top .panel-launcher:hover {
+  padding: 0 4px 2px 4px;
+  border-top-width: 2px;
 }
 
-.panel-top .panel-launcher:hover, .panel-top
-.launcher:hover {
-  border-top-width: 1px;
+.panel-bottom .panel-launcher:hover {
+  padding: 2px 4px 0 4px;
+  border-bottom-width: 2px;
 }
 
-.panel-left .panel-launcher:hover, .panel-left
+.panel-left .panel-launcher:hover {
+  padding: 2px 2px 2px 0;
+  border-left-width: 2px;
+}
+
+.panel-right .panel-launcher:hover {
+  padding: 2px 0 2px 2px;
+  border-right-width: 2px;
+}
+
+.window-list-item-box {
+  border: 0 solid transparent;
+}
+
+.panel-top .window-list-item-box {
+  border-top-width: 2px;
+}
+
+.panel-bottom .window-list-item-box {
+  border-bottom-width: 2px;
+}
+
+.panel-left .window-list-item-box {
+  border-left-width: 2px;
+}
+
+.panel-right .window-list-item-box {
+  border-right-width: 2px;
+}
+
+.window-list-item-box:hover {
+  border: 0 solid rgba(46, 179, 152, 0.5);
+  background-gradient-direction: none;
+}
+
+.panel-top .window-list-item-box:hover {
+  border-top-width: 2px;
+}
+
+.panel-bottom .window-list-item-box:hover {
+  border-bottom-width: 2px;
+}
+
+.panel-left .window-list-item-box:hover {
+  border-left-width: 2px;
+}
+
+.panel-right .window-list-item-box:hover {
+  border-right-width: 2px;
+}
+
+.launcher {
+  padding: 2px;
+  spacing: 2px;
+  transition-duration: 0.2s;
+}
+
 .launcher:hover {
-  border-left-width: 1px;
+  border: 0 solid rgba(46, 179, 152, 0.5);
+  background-gradient-direction: none;
+}
+
+.panel-top .launcher:hover {
+  padding-top: 0;
+  border-top-width: 2px;
+}
+
+.panel-bottom .launcher:hover {
+  padding-bottom: 0;
+  border-bottom-width: 2px;
+}
+
+.panel-left .launcher:hover {
   padding-left: 0;
+  border-left-width: 2px;
 }
 
-.panel-right .panel-launcher:hover, .panel-right
-.launcher:hover {
-  border-right-width: 1px;
+.panel-right .launcher:hover {
   padding-right: 0;
+  border-right-width: 2px;
+}
+
+.launcher .icon-box {
+  padding: 0 2px;
+}
+
+.launcher .icon-box.vertical {
+  padding: 2px 0;
+}
+
+.panel-launchers {
+  padding: 0 0 0 4px;
+  spacing: 2px;
+}
+
+.panel-launchers.vertical {
+  padding: 2px 0 0 0;
+  spacing: 2px;
+}
+
+.panel-launchers .launcher .icon-box {
+  padding: 0 2px;
+}
+
+.panel-launchers .launcher .icon-box.vertical {
+  padding: 2px 0;
 }
 
 #overview-corner {
