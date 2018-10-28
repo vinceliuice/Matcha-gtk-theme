@@ -1,30 +1,20 @@
-//
-// Tab overrides
-//
-/*
-.gedit-bottom-panel-paned notebook,
-terminal-window notebook {
-  > header.top > tabs > tab:checked { box-shadow: inset 0 -1px $borders_color; }
-}
-*/
 
 //
 // GNOME Terminal, MATE Terminal
 //
 terminal-window,
 .mate-terminal {
-
   notebook {
+    padding: 0 1px 1px;
     > header.top {
-      padding-top: 3px;
-
-      box-shadow: inset 0  1px opacify($header_border, 1);
-
       button {
         padding: 0;
         min-width: 24px;
         min-height: 24px;
       }
+    }
+    scrollbar {
+      background: none;
     }
   }
 }
@@ -170,8 +160,16 @@ $disk_space_free: darken($bg_color, 3%);
 
 .nemo-window {
 
-  .nemo-places-sidebar.frame { border-width: 0; }
-  notebook { background-color: $base_color; }
+  .nemo-places-sidebar {
+    &.frame { border-width: 0; }
+    .places-treeview {
+      @extend row.activatable;
+    }
+  }
+
+  notebook {
+    background-color: $base_color;
+  }
 
   // Rename entry
   .nemo-window-pane widget.entry {
@@ -184,16 +182,23 @@ $disk_space_free: darken($bg_color, 3%);
   }
 
   .primary-toolbar {
+    padding-top: 0;
+    padding-bottom: 0;
     @extend %header_widgets;
     border: none;
-    color: $selected_fg_color;
+    color: $header_fg;
     background-color: opacify($header_bg, 1);
+    button, entry {
+      min-height: 16px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
   }
 
   // Pathbar
-  .primary-toolbar .linked:not(.vertical).path-bar,
-  .primary-toolbar widget.raised.linked:not(.vertical) {
-    > button { @extend %pathbar_box_button; }
+  .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar,
+  .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) {
+    button { @extend %pathbar_box_button; }
   }
 }
 

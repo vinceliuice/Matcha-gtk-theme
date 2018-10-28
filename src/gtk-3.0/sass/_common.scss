@@ -66,6 +66,10 @@ $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark var
   }
 }
 
+button.gtkstyle-fallback { // For Cinnamon system setting
+  &:active, &:checked { @include button(active); }
+}
+
 .view,
 %view {
   @extend row.activatable;
@@ -995,18 +999,14 @@ $_header_radius: if($variant=='light', 2px, 2px);
 
 headerbar,
 %titlebar {
-
   min-height: 42px;
   padding: 0 10px;
-
   color: $header_fg;
   background-color: opacify($header_bg, 1);
-  box-shadow: inset 0 1px $highlight;
 
   .csd & {  // Transparent header-bars only in csd windows
     background-color: $header_bg;
     border-color: $header_border;
-    box-shadow: inset 0 1px $highlight;
   }
 
   &:backdrop {
@@ -1099,7 +1099,54 @@ headerbar,
 }
 
 .titlebar {
-  border-radius: $_header_radius $_header_radius 0 0;
+  box-shadow: inset 0 1px $highlight;
+}
+
+.titlebar,
+.titlebar .background {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.background.tiled .titlebar,
+.background.tiled-top .titlebar,
+.background.tiled-right .titlebar,
+.background.tiled-bottom .titlebar,
+.background.tiled-left .titlebar,
+.background.maximized .titlebar,
+.background.solid-csd .titlebar {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.titlebar { // headerbar border rounding
+  window separator:first-child + &, // tackles the paned container case
+  window &:first-child { border-top-left-radius: 2px; }
+  window &:last-child { border-top-right-radius: 2px; }
+
+  window stack & { // tackles the stacked headerbars case
+    &:first-child, &:last-child {
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+    }
+  }
+
+  window.tiled &,
+  window.tiled-top &,
+  window.tiled-right &,
+  window.tiled-bottom &,
+  window.tiled-left &,
+  window.maximized &,
+  window.fullscreen &,
+  window.solid-csd & {
+    &,
+    &:first-child,
+    &:last-child,
+    &:only-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
 }
 
 headerbar {
@@ -1108,26 +1155,6 @@ headerbar {
   entry, button, separator {
     margin-top: 6px;
     margin-bottom: 6px;
-  }
-
-  // Fixes split headerbars
-  separator:first-child + &,
-  &:first-child {
-    &, &:backdrop {
-      border-top-left-radius: $_header_radius;
-
-      .maximized &,
-      .tiled & { border-radius: 0; }
-    }
-  }
-
-  &:last-child {
-    &, &:backdrop {
-      border-top-right-radius: $_header_radius;
-
-      .maximized &,
-      .tiled & { border-radius: 0; }
-    }
   }
 
   // special case for path-bars
@@ -1166,7 +1193,7 @@ headerbar {
       padding: 0;
       background: none;
       border: none;
-//      box-shadow: none;
+      box-shadow: none;
     }
   }
 
@@ -2614,8 +2641,6 @@ row {
 
     button { @extend %selected-button; }
   }
-
-	button { &:active, &:checked { background-image: image($selected_bg_color); } }
 
   &.activatable {
     &.has-open-popup,

@@ -5,7 +5,7 @@ stage {
 }
 
 .label-shadow {
-  color: rgba(0, 0, 0, 0);
+  color: transparent;
 }
 
 .menu #notification .notification-button, .menu #notification .notification-icon-button,
@@ -231,8 +231,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .separator {
   -gradient-height: 1px;
-  -gradient-start: rgba(0, 0, 0, 0);
-  -gradient-end: rgba(0, 0, 0, 0);
+  -gradient-start: transparent;
+  -gradient-end: transparent;
   -margin-horizontal: 1.5em;
   height: 1em;
 }
@@ -241,9 +241,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .slider {
   -slider-height: 4px;
   -slider-background-color: #1d1d1d;
-  -slider-border-color: rgba(0, 0, 0, 0);
+  -slider-border-color: transparent;
   -slider-active-background-color: #F0544C;
-  -slider-active-border-color: rgba(0, 0, 0, 0);
+  -slider-active-border-color: transparent;
   -slider-border-width: 0;
   -slider-handle-radius: 4px;
   height: 18px;
@@ -455,9 +455,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-boxpointer {
   -arrow-border-radius: 3px;
-  -arrow-background-color: rgba(0, 0, 0, 0);
+  -arrow-background-color: transparent;
   -arrow-border-width: 1px;
-  -arrow-border-color: rgba(0, 0, 0, 0);
+  -arrow-border-color: transparent;
   -arrow-base: 0;
   -arrow-rise: 0;
 }
@@ -1046,17 +1046,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-arrow {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   color: #eeeeee;
 }
 
 .switcher-arrow:highlighted {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   color: white;
 }
 
 .thumbnail-scroll-gradient-left {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   border-radius: 24px;
   border-radius-topright: 0px;
   border-radius-bottomright: 0px;
@@ -1064,7 +1064,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .thumbnail-scroll-gradient-right {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   border-radius: 24px;
   border-radius-topleft: 0px;
   border-radius-bottomleft: 0px;
@@ -1328,7 +1328,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu-favorites-button {
   padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
 }
 
 .menu-places-box {
@@ -1351,7 +1351,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu-application-button {
   padding: 7px;
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
 }
 
 .menu-application-button:highlighted {
@@ -1376,7 +1376,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu-category-button {
   padding: 7px;
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
 }
 
 .menu-category-button-selected {
@@ -1391,7 +1391,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu-category-button-greyed {
   padding: 7px;
   color: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
 }
 
 .menu-category-button-label:ltr {
@@ -1701,9 +1701,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   -slider-height: 0.5em;
   -slider-background-color: #151515;
-  -slider-border-color: rgba(0, 0, 0, 0);
+  -slider-border-color: transparent;
   -slider-active-background-color: #F0544C;
-  -slider-active-border-color: rgba(0, 0, 0, 0);
+  -slider-active-border-color: transparent;
   -slider-border-width: 0px;
   -slider-handle-radius: 0px;
 }
@@ -1775,53 +1775,40 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 2px 0;
 }
 
-.panel-launcher {
-  border: 0 solid transparent;
+.panel-launcher,
+.launcher {
+  padding: 2px;
+  transition-duration: 200ms;
 }
 
-.panel-top .panel-launcher {
-  padding: 0 4px 2px 4px;
-  border-top-width: 2px;
-}
-
-.panel-bottom .panel-launcher {
-  padding: 2px 4px 0 4px;
-  border-bottom-width: 2px;
-}
-
-.panel-left .panel-launcher {
-  padding: 2px 2px 2px 0;
-  border-left-width: 2px;
-}
-
-.panel-right .panel-launcher {
-  padding: 2px 0 2px 2px;
-  border-right-width: 2px;
-}
-
-.panel-launcher:hover {
-  border: 0 solid rgba(240, 84, 76, 0.5);
+.panel-launcher:hover,
+.launcher:hover {
   background-gradient-direction: none;
+  border: 0px solid #F0544C;
 }
 
-.panel-top .panel-launcher:hover {
-  padding: 0 4px 2px 4px;
-  border-top-width: 2px;
-}
-
-.panel-bottom .panel-launcher:hover {
-  padding: 2px 4px 0 4px;
+.panel-bottom .panel-launcher:hover, .panel-bottom
+.launcher:hover {
   border-bottom-width: 2px;
+  padding-bottom: 0;
 }
 
-.panel-left .panel-launcher:hover {
-  padding: 2px 2px 2px 0;
+.panel-top .panel-launcher:hover, .panel-top
+.launcher:hover {
+  border-top-width: 2px;
+  padding-top: 0;
+}
+
+.panel-left .panel-launcher:hover, .panel-left
+.launcher:hover {
   border-left-width: 2px;
+  padding-left: 0;
 }
 
-.panel-right .panel-launcher:hover {
-  padding: 2px 0 2px 2px;
+.panel-right .panel-launcher:hover, .panel-right
+.launcher:hover {
   border-right-width: 2px;
+  padding-right: 0;
 }
 
 .window-list-item-box {
@@ -1863,63 +1850,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .panel-right .window-list-item-box:hover {
   border-right-width: 2px;
-}
-
-.launcher {
-  padding: 2px;
-  spacing: 2px;
-  transition-duration: 0.2s;
-}
-
-.launcher:hover {
-  border: 0 solid rgba(240, 84, 76, 0.5);
-  background-gradient-direction: none;
-}
-
-.panel-top .launcher:hover {
-  padding-top: 0;
-  border-top-width: 2px;
-}
-
-.panel-bottom .launcher:hover {
-  padding-bottom: 0;
-  border-bottom-width: 2px;
-}
-
-.panel-left .launcher:hover {
-  padding-left: 0;
-  border-left-width: 2px;
-}
-
-.panel-right .launcher:hover {
-  padding-right: 0;
-  border-right-width: 2px;
-}
-
-.launcher .icon-box {
-  padding: 0 2px;
-}
-
-.launcher .icon-box.vertical {
-  padding: 2px 0;
-}
-
-.panel-launchers {
-  padding: 0 0 0 4px;
-  spacing: 2px;
-}
-
-.panel-launchers.vertical {
-  padding: 2px 0 0 0;
-  spacing: 2px;
-}
-
-.panel-launchers .launcher .icon-box {
-  padding: 0 2px;
-}
-
-.panel-launchers .launcher .icon-box.vertical {
-  padding: 2px 0;
 }
 
 #overview-corner {
@@ -2075,6 +2005,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .xkcd-box {
   padding: 6px;
   border: 0px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   border-radius: 0px;
 }
