@@ -2598,3 +2598,26 @@ menubar.-vala-panel-background > menuitem { // override global values
   padding: 0 4px;
   font-weight: 700;
 }
+
+// pixel-saver(?) applet
+.budgie-panel box.titlebar {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 0;
+  background: unset;
+  box-shadow: none;
+  border: none;
+
+  > widget > label { color: $panel_fg; } // titles
+
+  &.horizontal { // spacing
+    padding: 0 3px;
+
+    > widget > label {
+      &:dir(ltr) { padding-right: 3px; }
+      &:dir(rtl) { padding-left: 3px; }
+    }
+
+    > button.image-button.titlebutton { padding: 0 3px; }
+  }
+}
