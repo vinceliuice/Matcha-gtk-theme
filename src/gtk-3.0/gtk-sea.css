@@ -4003,7 +4003,7 @@ messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 filechooserbutton:drop(active) {
@@ -4933,6 +4933,12 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .nemo-window .primary-toolbar button, .nemo-window .primary-toolbar entry {
   min-height: 16px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button {
   margin-top: 6px;
   margin-bottom: 6px;
 }

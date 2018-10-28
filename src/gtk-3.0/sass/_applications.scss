@@ -198,7 +198,11 @@ $disk_space_free: darken($bg_color, 3%);
   // Pathbar
   .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar,
   .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) {
-    button { @extend %pathbar_box_button; }
+    button {
+		  @extend %pathbar_box_button;
+      margin-top: 6px;
+      margin-bottom: 6px;
+		}
   }
 }
 
