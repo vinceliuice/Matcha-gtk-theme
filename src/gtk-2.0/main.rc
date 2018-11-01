@@ -715,8 +715,7 @@ style "menu_framed_box" {
 
 }
 
-style "menu_item"
-{
+style "menu_item" {
   xthickness = 2
   ythickness = 3
 
