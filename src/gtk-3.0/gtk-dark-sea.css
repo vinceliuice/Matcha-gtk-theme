@@ -1617,18 +1617,6 @@ headerbar .linked:not(.vertical).path-bar > button:disabled {
   color: rgba(255, 255, 255, 0.4);
 }
 
-headerbar .linked:not(.vertical).path-bar > button + button {
-  border-left-style: none;
-}
-
-headerbar .linked:not(.vertical).path-bar > button:hover:not(:checked):not(:active):not(:only-child):first-child:hover {
-  box-shadow: none;
-}
-
-headerbar .linked:not(.vertical).path-bar > button:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
-  box-shadow: none;
-}
-
 window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop,
 window.csd > .titlebar:not(headerbar),
 window.csd > .titlebar:not(headerbar):backdrop {
@@ -4764,25 +4752,38 @@ terminal-window notebook scrollbar,
 }
 
 .nautilus-window headerbar .path-bar-box button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button,
-.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button, window.thunar toolbar#location-toolbar .path-bar button, window.thunar #location-toolbar.inline-toolbar .path-bar button {
-  margin: 0;
-  padding: 2px 8px 4px 8px;
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button, window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button, window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button {
   border-radius: 0;
-  background: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.85);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #2eb398 0%, transparent 0%) 0 0 0/0 0 0;
 }
 
 .nautilus-window headerbar .path-bar-box button:hover, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:hover,
-.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:hover, window.thunar toolbar#location-toolbar .path-bar button:hover, window.thunar #location-toolbar.inline-toolbar .path-bar button:hover {
-  background: none;
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:hover, window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:hover, window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:hover {
+  background-color: transparent;
   box-shadow: inset 0 -2px rgba(46, 179, 152, 0.5);
 }
 
 .nautilus-window headerbar .path-bar-box button:checked, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:checked,
-.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked, window.thunar toolbar#location-toolbar .path-bar button:checked, window.thunar #location-toolbar.inline-toolbar .path-bar button:checked, .nautilus-window headerbar .path-bar-box button:active, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:active,
-.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:active, window.thunar toolbar#location-toolbar .path-bar button:active, window.thunar #location-toolbar.inline-toolbar .path-bar button:active {
-  background: none;
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked, window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:checked, window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:checked, .nautilus-window headerbar .path-bar-box button:active, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:active,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:active, window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:active, window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:active {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: transparent;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #2eb398 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+.nautilus-window headerbar .path-bar-box button:disabled, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:disabled,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:disabled, window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:disabled, window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:disabled {
+  color: rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+}
+
+.nautilus-window headerbar .path-bar-box button:checked:disabled, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:checked:disabled,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked:disabled, window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:checked:disabled, window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:checked:disabled {
+  color: rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), rgba(46, 179, 152, 0.4) 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 .nautilus-window headerbar .path-bar-box {
@@ -4790,6 +4791,11 @@ terminal-window notebook scrollbar,
   border-radius: 2px;
   color: rgba(255, 255, 255, 0.85);
   background-color: transparent;
+}
+
+.nautilus-window headerbar .path-bar-box button {
+  margin: 0;
+  padding: 2px 8px 4px 8px;
 }
 
 .nautilus-window headerbar .path-bar-box.width-maximized {
@@ -4939,8 +4945,9 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  padding: 2px 4px 4px 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .caja-notebook {
@@ -5976,6 +5983,11 @@ window.thunar toolbar#location-toolbar, window.thunar #location-toolbar.inline-t
 
 window.thunar toolbar#location-toolbar entry, window.thunar #location-toolbar.inline-toolbar entry {
   min-height: 0;
+}
+
+window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button, window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button {
+  margin: 0;
+  padding: 2px 4px 4px 4px;
 }
 
 window.thunar notebook stack > scrolledwindow.frame.standard-view {

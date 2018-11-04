@@ -1161,13 +1161,13 @@ headerbar {
   .linked:not(.vertical).path-bar {
 
     > button {
-    padding-top: 3px;
-    padding-bottom: 6px;
-    margin: 0 0 0 0;
-    color: $header_fg;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
+      padding-top: 3px;
+      padding-bottom: 6px;
+      margin: 0 0 0 0;
+      color: $header_fg;
+      border: none;
+      border-radius: 0;
+      background-color: transparent;
 
       &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
       &:active, &:checked {
@@ -1181,7 +1181,7 @@ headerbar {
       &:disabled { color: rgba($header_fg, 0.4); }
 //      &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
     }
-    @include pathbar_linking_rules($sep_color:$header_button_border);
+//    @include pathbar_linking_rules($sep_color:$header_button_border);
   }
 }
 
