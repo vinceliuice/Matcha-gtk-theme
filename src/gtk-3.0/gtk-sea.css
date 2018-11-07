@@ -2299,6 +2299,16 @@ menubar > menuitem:disabled,
   border-color: transparent;
 }
 
+menubar > menuitem menu,
+.menubar > menuitem menu {
+  border-radius: 0 0 2px 2px;
+}
+
+menubar > menuitem menu menu,
+.menubar > menuitem menu menu {
+  border-radius: 2px;
+}
+
 menu,
 .menu {
   padding: 4px 0;
@@ -6741,6 +6751,16 @@ popover.background.places-menu row {
 .budgie-panel menubar > menuitem:disabled,
 .budgie-panel .menubar > menuitem:disabled {
   color: rgba(238, 238, 238, 0.4);
+}
+
+.budgie-panel menubar > menuitem menu,
+.budgie-panel .menubar > menuitem menu {
+  border-radius: 0 0 2px 2px;
+}
+
+.budgie-panel menubar > menuitem menu menu,
+.budgie-panel .menubar > menuitem menu menu {
+  border-radius: 2px;
 }
 
 .budgie-panel .alert {

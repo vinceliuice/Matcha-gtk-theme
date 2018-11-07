@@ -1731,6 +1731,12 @@ menubar,
 
 //    label { &:disabled { color: rgba($header_fg, 0.3); } }
 
+    menu {
+      border-radius: 0 0 2px 2px;
+      menu { //submenu
+        border-radius: 2px;
+      }
+    }
   }
 }
 
