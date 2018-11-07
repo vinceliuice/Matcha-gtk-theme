@@ -5574,7 +5574,7 @@ window.background > box.vertical > overlay > stack > widget > stack widget > box
   background-image: image(#222222);
 }
 
-.category_page_header_filter_box button:prelight {
+.category_page_header_filter_box button:hover {
   color: rgba(255, 255, 255, 0.75);
 }
 
