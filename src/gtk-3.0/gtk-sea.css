@@ -8021,6 +8021,14 @@ list.tilix-session-sidebar button.tilix-sidebar-close-button:active, list.tilix-
   background-image: image(#d23131);
 }
 
+window.background.csd stack stack scrolledwindow:dir(ltr).frame {
+  border: none;
+}
+
+window.background.csd stack revealer stack list:dir(ltr) {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
 UnityDecoration {
   -UnityDecoration-extents: 28px 1 1 1;
   -UnityDecoration-input-extents: 10px;

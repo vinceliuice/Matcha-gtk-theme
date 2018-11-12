@@ -2974,3 +2974,26 @@ list.tilix-session-sidebar {
     &:checked { background-image: image(darken($destructive_color, 10%)); }
   }
 }
+
+//
+// Pamac
+//
+window.background.csd {
+  stack {
+    stack {
+      scrolledwindow:dir(ltr).frame {
+        border: none;
+      }
+    }
+  }
+
+  stack {
+    revealer {
+      stack {
+        list:dir(ltr) {
+          border-right: 1px solid $borders_color;
+        }
+      }
+    }
+  }
+}
