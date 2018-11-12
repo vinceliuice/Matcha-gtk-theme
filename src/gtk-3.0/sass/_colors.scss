@@ -81,7 +81,7 @@ $dark_sidebar_bg: #303b3e;
 @if $color=='sea' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#303b3e, 0.05), #303b3e); }
 @if $color=='aliz' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#363636, 0.05), #363636); }
 @if $color=='azul' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#30343e, 0.05), #30343e); }
-$dark_sidebar_fg: #eeeeee;
+$dark_sidebar_fg: #dedede;
 $dark_sidebar_border: if($variant == 'light', $dark_sidebar_bg, darken($dark_sidebar_bg, 5%));
 
 $osd_fg_color: $dark_sidebar_fg;

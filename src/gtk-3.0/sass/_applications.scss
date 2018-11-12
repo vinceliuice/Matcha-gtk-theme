@@ -1988,13 +1988,29 @@ popover.background.places-menu {
     padding: 0;
     border-radius: 0;
     color: $panel_fg;
-    border-top-width: 0;
-    border-bottom-width: 0;
     border: none;
+    background: none;
 
-    &:hover { background-color: rgba($panel_fg, 0.15); }
-    &:active { background-color: rgba($panel_fg, 0.1); }
-    &:checked { background-color: rgba($panel_fg, 0.12); }
+    &:hover {
+      color: white;
+      background-color: rgba($panel_fg, 0.15);
+    }
+    &:active {
+      color: white;
+      background-color: rgba($panel_fg, 0.1);
+    }
+    &:checked {
+      color: white;
+      background-color: rgba($panel_fg, 0.12);
+    }
+    &:checked:disabled {
+      color: rgba(white, 0.5);
+      background-color: rgba($panel_fg, 0.06);
+    }
+    &:disabled {
+      color: rgba($panel_fg, 0.5);
+      background: none;
+    }
   }
 
   &.horizontal button { padding: 0 4px; }
