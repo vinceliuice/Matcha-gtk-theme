@@ -489,6 +489,14 @@ popover.popover-selector {
   }
 }
 
+button.dzlmenubuttonitem.check { // menuitem buttons
+  label {
+    color: $fg_color;
+    &.dim-label { color: $fg_color; }
+  }
+  box > image { opacity: 0.87; }
+}
+
 entry.search.preferences-search {
   border: none;
   border-right: 1px solid $borders_color;
@@ -624,6 +632,41 @@ button.documents-favorite:active:hover {
   background-image: _solid($base_color);
 }
 
+// Workaround for 3.26
+row#Focus,
+row#ClickMethod,
+row#StaticWorkspaceTweak, // for 3.26.0
+row#dynamic-workspaces,
+row#PrimaryWorkspaceTweak, // for 3.26.0
+row#workspaces-only-on-primary {
+  padding: 0;
+  border: 1px solid $borders_color;
+
+  row:not(:last-child) { border-bottom: 1px solid $borders_color; }
+
+  &.tweak > list { margin-top: -3px; }
+}
+
+// Add more spaces between title and list
+row#Focus,
+row#ClickMethod,
+row#PrimaryWorkspaceTweak, // for 3.26.0
+row#workspaces-only-on-primary {
+  margin-top: 4px;
+}
+
+
+row#AutostartTitle.tweak {
+  padding: 3px;
+  background-color: $base_color;
+}
+
+list#AutostartListBoxTweakGroup {
+  &.tweak-group-startup {
+    border: 1px solid $borders_color;
+  }
+}
+
 //
 // Transmission
 //
@@ -686,6 +729,143 @@ gf-candidate-box {
     color: $selected_fg_color;
     background-color: $selected_bg_color;
     border-radius: 2px;
+  }
+}
+
+//
+// gnome-sound-recorder
+//
+stack {
+  grid.vertical {
+    scrolledwindow.frame,
+    scrolledwindow.frame.emptyGrid { border: none; } // Removed ugly borders
+  }
+}
+
+//
+// Eog
+//
+eog-thumb-nav,
+#eog-thumb-nav {
+
+  scrolledwindow {
+    &, &.frame {
+      border-top: none;
+    }
+  }
+
+  button {
+    -gtk-outline-radius: 2px;
+    border-radius: 2px;
+    border-top: none;
+  }
+}
+
+//
+// Gnome Contacts
+//
+window.background.csd {
+  overlay > grid.horizontal {
+    frame:dir(ltr) > border { // Removed ugly borders
+      border-top-width: 0;
+      border-left-width: 0;
+      border-bottom-width: 0;
+    }
+  }
+}
+
+//
+// Empathy
+//
+frame.sidebar.chat-sidebar > border {
+  border-right: none;
+}
+
+frame.sidebar.chat-sidebar {
+  frame.chat-status-area > border {
+    border-style: none;
+    border-top-style: solid;
+  }
+}
+
+// /***************
+//  * Gnome-Usage *
+//  ***************/
+
+// FIXME: why was 'adwaita.css' used for all user-themes? :/
+widget {
+  &#PROCESSOR,
+  &#MEMORY {
+    list {
+      row {
+        margin: -1px; // kill ugly parent borders
+        border: 1px solid $solid_borders_color;
+
+        &.max {
+          color: $osd_bg_color; // enforce dark foreground
+          // FIXME: we can't override the salmon-pinky background
+          // background-image: image($destructive_color);
+          // border: 1px solid $destructive_color;
+        }
+      }
+
+      // kill ugly separators
+      separator.list {
+        box-shadow: inset 0 0 0 1px $solid_borders_color;
+      }
+    }
+  }
+
+  &#STORAGE {
+    list {
+      margin: -1px; // kill ugly borders
+
+      row.activatable {
+        color: rgba($fg_color, 0.75);
+        &:hover,
+        &:active { color: rgba($fg_color, 0.75); }
+      }
+
+      // kill ugly separators
+      separator.list {
+        box-shadow: inset 0 0 0 1px $solid_borders_color;
+      }
+    }
+  }
+
+  &#PERFORMANCE {
+    searchbar {
+      box-shadow: inset 0 -2px $borders_color, inset 0 -1px $bg_color;  // Removed double borders under headerbar
+      entry, button { margin-bottom: 2px; }
+    }
+  }
+}
+
+graph-switcher-button.toggle {
+  color: rgba($fg_color, 0.75);
+  font-weight: 500;
+  &:hover { // use opaque
+    color: $fg_color;
+    background-image: image(if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03)));
+  }
+}
+
+rg-graph.big {
+  // FIXME: We need to re-define these properties to prevent weird
+  // 'non-repeated' imaging behind the main graph.
+  background-position: left top;
+  background-origin: border-box;
+  background-repeat: repeat;
+}
+
+box.speedometer {
+  // FIXME: 'outter' meant 'outer'?
+  // circular progress should be drawn with our $accent_color though,
+  // damned adwaita.css picks @theme_selected_bg_color up.
+  &-outter { opacity: 0.8; } // reduce alpha for our troughs
+
+  &-content-area { // cover up meter troughs with selection colour
+    box-shadow: 0 0 0 4px rgba($selected_bg_color, 0.2);
   }
 }
 
@@ -1077,6 +1257,38 @@ window.background > box.vertical > toolbar.primary-toolbar {
       min-width: 28px;
       padding: 0;
       margin: 0;
+    }
+  }
+}
+
+//
+// Dialogs
+//
+dialog.background.csd {
+  box.dialog-vbox {
+    grid.horizontal {
+      scrolledwindow.frame { //removed ugly boders for nautilus batch renaming dialog
+        border: none;
+        viewport.frame {
+          border: none;
+        }
+      }
+      stack {
+        scrolledwindow.frame { // reset border for totem setting dialog
+          border: 1px solid $borders_color;
+        }
+      }
+    }
+  }
+}
+
+//
+// Gnome map
+//
+.maps-popover {
+  button.radio.layer-radio-button {
+    &:checked {
+      box-shadow: 0 0 0 2px $selected_bg_color;
     }
   }
 }
@@ -1635,6 +1847,26 @@ window.background.chromium {
 
   // internal region of toolbar's entry widget
   > textview.view { background-color: $base_color; }
+}
+
+//
+// gThumb
+//
+overlay.window-overlay {
+  grid.horizontal {
+    stack {
+      paned.horizontal {
+        stack {
+          widget.view.frame,
+          scrolledwindow.frame { // Removed ugly borders
+            border-left: none;
+            border-right: none;
+          }
+        }
+      }
+      .sidebar { border-bottom: 1px solid $borders_color; } // Add bottom border for sidebar
+    }
+  }
 }
 
 /****************
@@ -2672,5 +2904,73 @@ menubar.-vala-panel-background > menuitem { // override global values
     }
 
     > button.image-button.titlebutton { padding: 0 3px; }
+  }
+}
+
+// /*********
+//  * Tilix *
+//  *********/
+
+// in-line titlebars
+widget > box.terminal-titlebar {
+  padding: 0 6px;
+
+  > button.flat.popup.toggle {
+    border: none;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $selected_bg_color 0%,
+                                  transparent 0%)
+                                  0 0 0 / 0 0 0;
+
+    &:dir(ltr) { padding-right: 6px; }
+    &:dir(rtl) { padding-left: 6px; }
+
+    &:hover {
+      box-shadow: inset 0 -2px $selected_bg_color;
+      background: none;
+    }
+
+    &:checked, &:active {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $selected_bg_color 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
+      background-color: transparent;
+      color: $fg_color;
+    }
+  }
+
+  > button.image-button { // 'plus' and 'close'
+    &, &.toggle {
+      margin: 2px 0;
+      padding: 0;
+      min-height: 24px;
+      min-width: 24px;
+      border-radius: 100px;
+      -gtk-outline-radius: 100px;
+    }
+  }
+}
+
+list.tilix-session-sidebar {
+  // use -image property instead
+  background-image: image($dark_sidebar_bg);
+
+  button.tilix-sidebar-close-button {
+    min-height: 20px;
+    min-width: 20px;
+    padding: 0;
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
+    background-color: $destructive_color;
+    &, &:hover, &:active, &:checked { color: white; }
+
+    &:hover { background-color: lighten($destructive_color, 10%); }
+
+    &:active,
+    &:checked { background-image: image(darken($destructive_color, 10%)); }
   }
 }
