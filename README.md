@@ -3,18 +3,13 @@
 
 Matcha is a flat Design theme for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
 
-This theme is based on Arc gtk theme of horst3180. Thanks horst3180 sincerely for his great job! 
+This theme is based on Arc gtk theme of horst3180. Thanks horst3180 sincerely for his great job!
+
 horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 
 ## Info
 
-### GTK+ 3.20 or later
-- Update your gtk(gnome) version on Mint if you want use matcha on Linux Mint 18 or Ubuntu16.04.
-
-        sudo add-apt-repository ppa:gnome3-team/gnome3-staging
-        sudo add-apt-repository ppa:gnome3-team/gnome3
-        sudo apt-get update
-        sudo apt-get dist-upgrade
+### GTK+ > 3.20
 
 ### GTK2 engines requirment
 - GTK2 engine Murrine 0.98.1.1 or later.
@@ -52,18 +47,15 @@ Run
 
     ./Install
 
-When running the installer script in ubuntu16.04 or later, if you had this error:
+Usage:  `./Install`  **[OPTIONS...]**
 
-    XMLLINT not set and xmllint not found in path; skipping xml preprocessing.
-
-To fix it you have to install libxml2-utils
-
-    sudo apt install libxml2-utils
-
-When running the installer script in Fedora 24 or later, you need to install 'glib2-devel'.
-
-    sudo dnf install glib2-devel
-
+|  OPTIONS:     | |
+|:--------------|:-------------|
+| -d, --dest    | Specify theme destination directory (Default: $HOME/.themes) |
+| -n, --name    | Specify theme name (Default: Matcha) |
+| -c, --color   | Specify theme color variant(s) **[standard/dark]** (Default: All variants) |
+| -t, --theme   | Specify hue theme variant(s) **[aliz/azul/sea]** (Default: All variants) |
+| -h, --help    | Show this help |
 
 ## Screenshots
 
