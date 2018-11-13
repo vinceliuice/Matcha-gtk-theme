@@ -14,7 +14,7 @@
    viewBox="0 0 27 27"
    id="svg4196"
    version="1.1"
-   inkscape:version="0.92.2 (unknown)"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="panel-bottom.svg">
   <defs
      id="defs4198" />
@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="22.627416"
-     inkscape:cx="15.672242"
+     inkscape:cx="-3.3312536"
      inkscape:cy="20.783804"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -37,7 +37,7 @@
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1014"
+     inkscape:window-height="1022"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1">
@@ -71,14 +71,14 @@
          height="26"
          width="27"
          id="rect4713"
-         style="display:inline;opacity:0.95;fill:#1b2224;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:1;fill:#1b1d24;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <rect
          y="1051.3622"
          x="0"
          height="1"
          width="27"
          id="rect4713-4"
-         style="display:inline;opacity:0.85;fill:#0f1116;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:0.85;fill:#1b1d24;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
   </g>
 </svg>

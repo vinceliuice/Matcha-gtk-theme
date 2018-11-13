@@ -1,0 +1,417 @@
+//
+// Nemo
+//
+.nemo-desktop.nemo-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+
+.nemo-window {
+
+  menubar,
+  .menubar {
+    menuitem {
+      menu {
+        border-radius: 0 0 2px 2px;
+        menu { //submenu
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+
+  .nemo-places-sidebar {
+    &.frame { border-width: 0; }
+    .places-treeview {
+      @extend row.activatable;
+    }
+  }
+
+  notebook {
+    background-color: $base_color;
+  }
+
+  // Rename entry
+  .nemo-window-pane widget.entry {
+    border: 1px solid;
+    border-radius: 3px;
+
+    @include entry(focus);
+
+    &:selected { &:focus, & { @extend %selected_items; }}
+  }
+
+  .primary-toolbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    @extend %header_widgets;
+    border: none;
+    color: $header_fg;
+    background-color: opacify($header_bg, 1);
+    button, entry {
+      min-height: 16px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+  }
+
+  // Pathbar
+  .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar,
+  .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) {
+    button {
+      @extend %pathbar_box_button;
+      padding: 2px 4px 4px 4px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+  }
+
+  .sidebar {
+    scrolledwindow.frame { border: none; } // Removed treeview double borders
+  }
+}
+
+//
+// Caja
+//
+.caja-desktop { @extend .nautilus-desktop.nautilus-canvas-item; }
+
+.caja-notebook { border-top: 1px solid $borders_color; }
+.caja-side-pane .frame { border-width: 1px 0 0; }
+.caja-notebook .frame { border-width: 0 0 1px; }
+
+.caja {
+  &-canvas-item { @extend .nautilus-canvas-item; }
+
+  &-list-dim-label { @extend .nautilus-list-dim-label; }
+}
+
+.caja-desktop { // desktop icon-grid styling
+  &.caja-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+
+  > widget.entry { // = EelEditableLabel.entry
+    &, &:focus {
+      transition: none;
+
+      &:selected { // FIXME: selection node doesn't work?
+        @extend %selected_items;
+      }
+    }
+  }
+}
+
+//
+// Pluma
+//
+.pluma-window statusbar frame > border { border: none; }
+.pluma-window notebook > stack scrolledwindow { border-width: 0 0 1px 0; }
+
+#pluma-status-combo-button {
+  min-height: 0;
+  padding: 0;
+
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+//
+// Firefox and Thunderbird
+//
+
+$firefox_border: if($variant =='light', rgba(black, 0.15), rgba(black, 0.2));
+
+window.background:not(.csd) {
+  > widget {
+    // for the bookmark toolbar's separators
+    > separator { color: $borders_color; }
+
+    // avoid black border
+    > scrollbar { background-clip: border-box; }
+
+    // emphasize borders color
+    > scrollbar,
+    > frame > border { border-color: $firefox_border; }
+
+    > entry,
+    > button > button {
+      border: 1px solid $firefox_border;
+      border-radius: 2px;
+    }
+
+    > entry,
+    .entry { // Set for linked entrys
+//      min-height: 26px;
+      border-radius: 2px;
+      background-image: image($base_color);
+      border: 1px solid $firefox_border;
+
+      &:focus { border-color: $selected_bg_color; }
+    }
+
+    > spinbutton {
+      background-image: image($button_bg);
+      border: 1px solid $firefox_border;
+      &:active { background-image: image($selected_bg_color); }
+
+      // Fixed thunderbird linked entry spinbutton border-radius.
+      .entry { border-top-right-radius: 0;  border-bottom-right-radius: 0; }
+    }
+  }
+
+  > menu > separator { color: $borders_color; }
+  > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
+}
+
+//
+// Firefox Quantum
+//
+#MozillaGtkWidget.background {
+
+  // blend with weird toolbar backgrounds
+  background-color: $bg_color;
+
+  // FIXME: resetting child elements background is not fully functional yet
+  // because WidgetStyleCache keeps holding initial background-color.
+  // the stem of this incorrect colouring seems to be caused by their
+  // gdk_rgba to ns_rgba conversion. I don't think theme's fault.
+  .background,
+  frame,
+  separator,
+  scrolledwindow { background-color: $bg_color; }
+
+  scrollbar {
+    background-color: if($variant == 'light', $base_color, lighten($bg_color, 15%));
+    slider {
+      background-color: mix($fg_color, $bg_color, 45%);
+      &:hover { background-color: mix($fg_color, $bg_color, 60%); }
+      &:hover:active { background-color: mix($fg_color, $bg_color, 75%); }
+      &:disabled { background-color: transparent; }
+      }
+    }
+
+  *:not(menuitem):hover, // exclude menuitem node
+  *:focus,
+  *:active,
+  *:checked {
+    &, button { color: $fg_color; } // enforce opaque foregrounds
+  }
+
+  > window.background > menu { // context-menus
+    background-color: $base_color;
+
+    // revert to standard separators
+    > separator {
+      padding: 0;
+      border: none;
+      background-color: $firefox_border;
+    }
+  }
+
+  > widget {
+    border { border-color: $firefox_border; }
+
+    separator { background-color: $firefox_border; }
+
+    // FIXME: this affected to popover widget as well,
+    // so we can not set $lighter_bg_color to search-bar...
+    > scrolledwindow > textview {
+      background-color: if($variant == 'light', $base_color, lighten($base_color, 5%));
+
+      text {
+        background-color: transparent;
+        color: if($variant =='light', #242424, #aaaaaa);
+        &:selected,
+        &:selected:focus,
+        selection { @extend %selected_items; }
+      }
+    }
+  }
+}
+
+//
+// Chrome(ium)
+//
+$chrome_borders_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.15));
+
+window.background.chromium {
+  // checked-tab & toolbar & button widgets
+  background-color: if($variant == 'light', darken($bg_color, 3%), lighten($bg_color, 8%));
+  color: $text_color;
+
+  headerbar.titlebar {
+    button.toggle { // account-button (> 64.0.3282?)
+      @include button(header-normal);
+      &:hover { @include button(header-hover); }
+      &:checked, &:active { @include button(header-active); }
+    }
+
+    // from nav_button_provider_gtk3.cc (> 62.0.3202?)
+    button.titlebutton { // title-buttons
+      // define global titlebutton class sizing
+      min-width: 16px; // > 16px causes image blurring
+      min-height: 16px;
+      margin: 0 4px; // unset margins
+      padding: 0;
+      color: transparent; // hide stock icons
+    }
+  }
+
+  // FIXME: not for actual button widgets but for toolbar's separators
+  // crazy: src/+/master/chrome/browser/ui/libgtkui/gtk_ui.cc#891
+  button { // for active-tab borders
+    border-width: 1px;
+    border-style: solid;
+    border-color: $chrome_borders_color;
+  }
+
+  entry.chromium {
+    // overrides standard borders
+    border-image: none;
+    border: 1px solid $chrome_borders_color;
+  }
+
+  // internal region of toolbar's entry widget
+  > textview.view { background-color: $base_color; }
+}
+
+//
+// gThumb
+//
+overlay.window-overlay {
+  grid.horizontal {
+    stack {
+      paned.horizontal {
+        stack {
+          widget.view.frame,
+          scrolledwindow.frame { // Removed ugly borders
+            border-left: none;
+            border-right: none;
+          }
+        }
+      }
+      .sidebar { border-bottom: 1px solid $borders_color; } // Add bottom border for sidebar
+    }
+  }
+}
+
+/****************
+ * Libre-Office *
+ ****************/
+
+window.background:not(.csd):not(.solid-csd) {
+// reserved area at the most-right side of GtkMenuBar
+  > grid.horizontal > grid.horizontal {
+    background-color: $header_bg;
+
+    > button.flat.small-button { // 'close' button
+      color: $header_fg;
+      border: none;
+      &:hover { background-color: lighten($header_bg, 15%); color: lighten($header_fg, 5%); }
+      &:active,
+      &:checked { background-color: $selected_bg_color; color: lighten($header_fg, 15%); }
+      &:disabled { color: gtkalpha($header_fg, 0.6); }
+    }
+  }
+}
+
+window.background:not(.solid-csd) {
+  // for 'Notebookbar' toolbar
+  > notebook:not(.frame) {
+    border: 0 none transparent; // unset borders
+    background-color: $base_color;
+
+    > stack {
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+
+//
+// Tilix
+//
+
+// in-line titlebars
+widget > box.terminal-titlebar {
+  padding: 0 6px;
+
+  > button.flat.popup.toggle {
+    border: none;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $selected_bg_color 0%,
+                                  transparent 0%)
+                                  0 0 0 / 0 0 0;
+
+    &:dir(ltr) { padding-right: 6px; }
+    &:dir(rtl) { padding-left: 6px; }
+
+    &:hover {
+      box-shadow: inset 0 -2px $selected_bg_color;
+      background: none;
+    }
+
+    &:checked, &:active {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $selected_bg_color 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
+      background-color: transparent;
+      color: $fg_color;
+    }
+  }
+
+  > button.image-button { // 'plus' and 'close'
+    &, &.toggle {
+      margin: 2px 0;
+      padding: 0;
+      min-height: 24px;
+      min-width: 24px;
+      border-radius: 100px;
+      -gtk-outline-radius: 100px;
+    }
+  }
+}
+
+list.tilix-session-sidebar {
+  // use -image property instead
+  background-image: image($dark_sidebar_bg);
+
+  button.tilix-sidebar-close-button {
+    min-height: 20px;
+    min-width: 20px;
+    padding: 0;
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
+    background-color: $destructive_color;
+    &, &:hover, &:active, &:checked { color: white; }
+
+    &:hover { background-color: lighten($destructive_color, 10%); }
+
+    &:active,
+    &:checked { background-image: image(darken($destructive_color, 10%)); }
+  }
+}
+
+//
+// Pamac
+//
+window.background.csd {
+  stack {
+    stack {
+      scrolledwindow:dir(ltr).frame {
+        border: none;
+      }
+    }
+  }
+
+  stack {
+    revealer {
+      stack {
+        list:dir(ltr) {
+          border-right: 1px solid $borders_color;
+        }
+      }
+    }
+  }
+}

@@ -11,196 +11,212 @@ else
   DEST_DIR="$HOME/.themes"
 fi
 
-repodir=$(cd $(dirname $0) && pwd)
-srcdir=${repodir}/src
+REO_DIR=$(cd $(dirname $0) && pwd)
+SRC_DIR=${REO_DIR}/src
 
-  rm -rf $DEST_DIR/Matcha*
+THEME_NAME=Matcha
+COLOR_VARIANTS=('' '-dark')
+THEME_VARIANTS=('-aliz' '-azul' '-sea')
+
+usage() {
+  printf "%s\n" "Usage: $0 [OPTIONS...]"
+  printf "\n%s\n" "OPTIONS:"
+  printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
+  printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
+  printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [standard|dark] (Default: All variants)"
+  printf "  %-25s%s\n" "-t, --theme VARIANTS" "Specify hue theme variant(s) [aliz|azul|sea] (Default: All variants)"
+  printf "  %-25s%s\n" "-h, --help" "Show this help"
+}
 
 # Copying files
-for color in '' '-dark'; do
-  for theme in '-sea' '-aliz' '-azul'; do
-	echo -e "   Installing Matcha${color}${theme} ..."
+install() {
+  local dest=${1}
+  local name=${2}
+  local color=${3}
+  local theme=${4}
 
-	themedir=$DEST_DIR/Matcha${color}${theme}
-	install -d ${themedir}
+  local themedir=${dest}/${name}${color}${theme}
 
-	# Install index.theme
-	echo "[Desktop Entry]" >> ${themedir}/index.theme
-	echo "Type=X-GNOME-Metatheme" >> ${themedir}/index.theme
-	echo "Name=Matcha${color}${theme}" >> ${themedir}/index.theme
-	echo "Comment=A dark modern design theme" >> ${themedir}/index.theme
-	echo "Encoding=UTF-8" >> ${themedir}/index.theme
-	echo "" >> ${themedir}/index.theme
-	echo "[X-GNOME-Metatheme]" >> ${themedir}/index.theme
-	echo "GtkTheme=Matcha${color}${theme}" >> ${themedir}/index.theme
-	echo "MetacityTheme=Matcha${color}${theme}" >> ${themedir}/index.theme
-	echo "IconTheme=Matcha" >> ${themedir}/index.theme
-	echo "CursorTheme=Breeze_cursors" >> ${themedir}/index.theme
-	echo "ButtonLayout=menu:minimize,maximize,close" >> ${themedir}/index.theme
+  [[ -d ${themedir} ]] && rm -rf ${themedir}
 
-	# Install GNOME Shell Theme
-	install -d ${themedir}/gnome-shell
-	cd ${srcdir}/gnome-shell
-	cp -ur \
-		extensions \
-		${themedir}/gnome-shell
+  echo "Installing '${themedir}'..."
+  mkdir -p                                                                            ${themedir}
 
-	cp -ur \
-		gnome-shell${color}${theme}.css \
-		${themedir}/gnome-shell/gnome-shell.css
+  # Install index.theme
+  echo "[Desktop Entry]"                                                           >> ${themedir}/index.theme
+  echo "Type=X-GNOME-Metatheme"                                                    >> ${themedir}/index.theme
+  echo "Name=${name}${color}${theme}"                                              >> ${themedir}/index.theme
+  echo "Comment=A dark modern design theme"                                        >> ${themedir}/index.theme
+  echo "Encoding=UTF-8"                                                            >> ${themedir}/index.theme
+  echo ""                                                                          >> ${themedir}/index.theme
+  echo "[X-GNOME-Metatheme]"                                                       >> ${themedir}/index.theme
+  echo "GtkTheme=${name}${color}${theme}"                                          >> ${themedir}/index.theme
+  echo "MetacityTheme=${name}${color}${theme}"                                     >> ${themedir}/index.theme
+  echo "IconTheme=${name}"                                                         >> ${themedir}/index.theme
+  echo "CursorTheme=Breeze_cursors"                                                >> ${themedir}/index.theme
+  echo "ButtonLayout=menu:minimize,maximize,close"                                 >> ${themedir}/index.theme
 
-	cp -ur \
-		common-assets \
-		${themedir}/gnome-shell/assets
+  # Install GNOME Shell Theme
+  mkdir -p                                                                            ${themedir}/gnome-shell
+  cd ${SRC_DIR}/gnome-shell
+  cp -ur extensions                                                                   ${themedir}/gnome-shell
+  cp -ur gnome-shell${color}${theme}.css                                              ${themedir}/gnome-shell/gnome-shell.css
+  cp -ur common-assets                                                                ${themedir}/gnome-shell/assets
 
-	cd ${srcdir}/gnome-shell/assets
-	cp -ur \
-		no-events${color}.svg \
-		${themedir}/gnome-shell/assets/no-events.svg
+  cd ${SRC_DIR}/gnome-shell/assets
+  cp -ur no-events${color}.svg                                                        ${themedir}/gnome-shell/assets/no-events.svg
+  cp -ur no-notifications${color}.svg                                                 ${themedir}/gnome-shell/assets/no-notifications.svg
+  cp -ur calendar-arrow-left${color}.svg                                              ${themedir}/gnome-shell/assets/calendar-arrow-left.svg
+  cp -ur calendar-arrow-right${color}.svg                                             ${themedir}/gnome-shell/assets/calendar-arrow-right.svg
+  cp -ur key-hide${color}.svg                                                         ${themedir}/gnome-shell/assets/key-hide.svg
+  cp -ur key-layout${color}.svg                                                       ${themedir}/gnome-shell/assets/key-layout.svg
+  cp -ur key-shift${color}.svg                                                        ${themedir}/gnome-shell/assets/key-shift.svg
 
-	cp -ur \
-		no-notifications${color}.svg \
-		${themedir}/gnome-shell/assets/no-notifications.svg
+  cd ${themedir}/gnome-shell
+  ln -s assets/no-events.svg no-events.svg
+  ln -s assets/process-working.svg process-working.svg
+  ln -s assets/no-notifications.svg no-notifications.svg
 
-	cp -ur \
-		calendar-arrow-left${color}.svg \
-		${themedir}/gnome-shell/assets/calendar-arrow-left.svg
+  # Install GTK+ 2 Theme
+  mkdir -p                                                                            ${themedir}/gtk-2.0
+  cd ${SRC_DIR}/gtk-2.0
+  cp -ur {apps.rc,main.rc,panel.rc,xfce-notify.rc}                                    ${themedir}/gtk-2.0
+  cp -ur gtkrc${color}${theme}                                                        ${themedir}/gtk-2.0/gtkrc
+  cp -ur assets${color}${theme}                                                       ${themedir}/gtk-2.0/assets
+  cp -ur menubar-toolbar${color}.rc                                                   ${themedir}/gtk-2.0/menubar-toolbar.rc 
 
-	cp -ur \
-		calendar-arrow-right${color}.svg \
-		${themedir}/gnome-shell/assets/calendar-arrow-right.svg
+  # Install GTK+ 3 Theme
+  mkdir -p                                                                            ${themedir}/gtk-3.0
+  cd ${SRC_DIR}/gtk-3.0
+  cp -ur assets${theme}                                                               ${themedir}/gtk-3.0/assets
+  cp -ur gtk${color}${theme}.css                                                      ${themedir}/gtk-3.0/gtk.css
+  cp -ur gtk-dark${theme}.css                                                         ${themedir}/gtk-3.0/gtk-dark.css
 
-	cp -ur \
-		key-hide${color}.svg \
-		${themedir}/gnome-shell/assets/key-hide.svg
+  cp -ur thumbnail${color}${theme}.png                                                ${themedir}/gtk-3.0/thumbnail.png
 
-	cp -ur \
-		key-layout${color}.svg \
-		${themedir}/gnome-shell/assets/key-layout.svg
+  # Install CINNAMON Theme
+  mkdir -p                                                                            ${themedir}/cinnamon
+  cd ${SRC_DIR}/cinnamon
+  cp -ur cinnamon${color}${theme}.css                                                 ${themedir}/cinnamon/cinnamon.css
+  cp -ur thumbnail${color}${theme}.png                                                ${themedir}/cinnamon/thumbnail.png
 
-	cp -ur \
-		key-shift${color}.svg \
-		${themedir}/gnome-shell/assets/key-shift.svg
+  cd ${SRC_DIR}/cinnamon/assets${theme}
+  cp -ur common-assets                                                                ${themedir}/cinnamon
+  cp -ur assets${color}                                                               ${themedir}/cinnamon/assets
 
-	cd ${themedir}/gnome-shell
-	ln -s assets/no-events.svg no-events.svg
-	ln -s assets/process-working.svg process-working.svg
-	ln -s assets/no-notifications.svg no-notifications.svg
+  # Install Metacity Theme
+  mkdir -p                                                                            ${themedir}/metacity-1
+  cd ${SRC_DIR}/metacity-1
+  cp -ur {thumbnail.png,*.svg,metacity-theme-3.xml}                                   ${themedir}/metacity-1
+  cp -ur metacity-theme-1${theme}.xml                                                 ${themedir}/metacity-1/metacity-theme-1.xml
 
-#		glib-compile-resources \
-#		--sourcedir=${themedir}/gnome-shell \
-#		--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
-#		gnome-shell-theme.gresource.xml
+  cd ${themedir}/metacity-1
+  ln -s metacity-theme-1.xml metacity-theme-2.xml
 
-	# Install GTK+ 2 Theme
-	install -d ${themedir}/gtk-2.0
-	cd ${srcdir}/gtk-2.0
-	cp -ur \
-		apps.rc \
-		main.rc \
-		panel.rc \
-		xfce-notify.rc \
-		${themedir}/gtk-2.0
+  # Install xfwm4 Theme
+  mkdir -p                                                                            ${themedir}/xfwm4
+  cd ${SRC_DIR}/xfwm4
+  cp -ur assets${color}${theme}/*.png                                                 ${themedir}/xfwm4
+  cp -ur themerc${theme}                                                              ${themedir}/xfwm4/themerc
 
-	cp -ur \
-		gtkrc${color}${theme} \
-		${themedir}/gtk-2.0/gtkrc
+  # Install openbox Theme
+  mkdir -p                                                                            ${themedir}/openbox-3
+  cd ${SRC_DIR}/openbox-3
+  cp -ur *.xbm                                                                        ${themedir}/openbox-3
+  cp -ur themerc${color}${theme}                                                      ${themedir}/openbox-3/themerc
 
-	cp -ur \
-		assets${color}${theme} \
-		${themedir}/gtk-2.0/assets
+  # Install Unity Theme
+  mkdir -p                                                                            ${themedir}/unity
+  cd ${SRC_DIR}
+  cp -ur unity                                                                        ${themedir}
+}
 
-	cp -ur \
-		menubar-toolbar${color}.rc \
-		${themedir}/gtk-2.0/menubar-toolbar.rc 
-
-	# Install GTK+ 3 Theme
-	install -d ${themedir}/gtk-3.0
-	cd ${srcdir}/gtk-3.0
-
-	cp -ur \
-		assets${theme} \
-		${themedir}/gtk-3.0/assets
-
-	cp -ur \
-		gtk${color}${theme}.css \
-		${themedir}/gtk-3.0/gtk.css
-
-	cp -ur \
-		gtk-dark${theme}.css \
-		${themedir}/gtk-3.0/gtk-dark.css
-
-	cp -ur \
-		thumbnail${color}${theme}.png \
-		${themedir}/gtk-3.0/thumbnail.png
-
-	# Install CINNAMON Theme
-	install -d ${themedir}/cinnamon
-	cd ${srcdir}/cinnamon
-
-	cp -ur \
-		cinnamon${color}${theme}.css \
-		${themedir}/cinnamon/cinnamon.css
-
-	cp -ur \
-		thumbnail${color}${theme}.png \
-		${themedir}/cinnamon/thumbnail.png
-
-	cd ${srcdir}/cinnamon/assets${theme}
-	cp -ur \
-		common-assets \
-		${themedir}/cinnamon
-
-	cp -ur \
-		assets${color} \
-		${themedir}/cinnamon/assets
-
-	# Install Metacity Theme
-	install -d ${themedir}/metacity-1
-	cd ${srcdir}/metacity-1
-	cp -ur \
-		thumbnail.png \
-		*.svg \
-		metacity-theme-3.xml \
-		${themedir}/metacity-1
-
-	cp -ur \
-		metacity-theme-1${theme}.xml \
-		${themedir}/metacity-1/metacity-theme-1.xml
-
-	cd ${themedir}/metacity-1
-	ln -s metacity-theme-1.xml metacity-theme-2.xml
-
-	# Install xfwm4 Theme
-	install -d ${themedir}/xfwm4
-	cd ${srcdir}/xfwm4
-
-	cp -ur \
-		assets${color}${theme}/*.png \
-		${themedir}/xfwm4
-
-	cp -ur \
-		themerc${theme} \
-		${themedir}/xfwm4/themerc
-
-	# Install openbox Theme
-	install -d ${themedir}/openbox-3
-	cd ${srcdir}/openbox-3
-	cp -ur \
-		*.xbm \
-		${themedir}/openbox-3
-
-	cp -ur \
-		themerc${color}${theme} \
-		${themedir}/openbox-3/themerc
-
-	# Install Unity Theme
-	install -d ${themedir}/unity
-	cd ${srcdir}
-	cp -ur \
-		unity \
-		${themedir}
-
+#  Install theme
+install_theme() {
+for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+  for theme in "${themes[@]:-${THEME_VARIANTS[@]}}"; do
+    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${theme}"
   done
 done
+}
+
+while [[ $# -gt 0 ]]; do
+  case "${1}" in
+    -d|--dest)
+      dest="${2}"
+      if [[ ! -d "${dest}" ]]; then
+        echo "ERROR: Destination directory does not exist."
+        exit 1
+      fi
+      shift 2
+      ;;
+    -n|--name)
+      name="${2}"
+      shift 2
+      ;;
+    -t|--theme)
+      shift
+      for theme in "${@}"; do
+        case "${theme}" in
+          aliz)
+            themes+=("${THEME_VARIANTS[0]}")
+            shift 1
+            ;;
+          azul)
+            themes+=("${THEME_VARIANTS[1]}")
+            shift 1
+            ;;
+          sea)
+            themes+=("${THEME_VARIANTS[2]}")
+            shift 1
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized thin variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    -c|--color)
+      shift
+      for color in "${@}"; do
+        case "${color}" in
+          standard)
+            colors+=("${COLOR_VARIANTS[0]}")
+            shift 1
+            ;;
+          dark)
+            colors+=("${COLOR_VARIANTS[1]}")
+            shift 1
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized color variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "ERROR: Unrecognized installation option '$1'."
+      echo "Try '$0 --help' for more information."
+      exit 1
+      ;;
+  esac
+done
+
+install_theme
+
+echo "Finished!..."
 

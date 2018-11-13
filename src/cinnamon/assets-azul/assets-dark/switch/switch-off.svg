@@ -14,7 +14,7 @@
    height="20"
    id="svg7539"
    version="1.1"
-   inkscape:version="0.92.2 (unknown)"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="switch-off.svg">
   <defs
      id="defs7541">
@@ -35,7 +35,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="4.1247897"
-     inkscape:cx="21.015474"
+     inkscape:cx="-31.108395"
      inkscape:cy="-4.545184"
      inkscape:current-layer="switch-selected"
      showgrid="true"
@@ -46,7 +46,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1014"
+     inkscape:window-height="1022"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -118,7 +118,7 @@
                ry="11"
                rx="11" />
             <circle
-               style="fill:#1b2224;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.77777803"
+               style="fill:#1b1d24;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.77777803"
                id="path3759-7-1"
                cx="41"
                cy="1041.3622"

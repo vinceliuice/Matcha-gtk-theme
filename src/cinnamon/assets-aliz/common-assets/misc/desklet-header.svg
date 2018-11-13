@@ -14,7 +14,7 @@
    viewBox="0 0 32.000011 22.999983"
    id="svg5386"
    version="1.1"
-   inkscape:version="0.92.2 (unknown)"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="desklet-header.svg">
   <defs
      id="defs5388">
@@ -39,8 +39,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="63.999996"
-     inkscape:cx="13.766486"
-     inkscape:cy="16.262266"
+     inkscape:cx="6.2321888"
+     inkscape:cy="15.054739"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -55,7 +55,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1014"
+     inkscape:window-height="1022"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1">
@@ -93,7 +93,7 @@
          height="21.999889"
          width="23"
          id="rect4164-4-3"
-         style="display:inline;opacity:0.84;fill:none;fill-opacity:1;stroke:#1e222d;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:0.84;fill:none;fill-opacity:1;stroke:#222222;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <rect
          ry="1.4"
          rx="1.4"
@@ -102,7 +102,7 @@
          height="20.999971"
          width="22"
          id="rect4164"
-         style="display:inline;opacity:0.95;fill:#1b2224;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:0.95;fill:#222222;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <g
          style="display:inline;opacity:0.75"
          id="g4271"

@@ -14,7 +14,7 @@
    height="120"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="trash-icon.svg">
   <defs
      id="defs4" />
@@ -25,16 +25,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.28"
-     inkscape:cx="36.193504"
-     inkscape:cy="50.945434"
+     inkscape:zoom="14.481547"
+     inkscape:cx="38.626605"
+     inkscape:cy="100.72298"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1366"
-     inkscape:window-height="721"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true"
@@ -52,7 +52,8 @@
     <sodipodi:guide
        orientation="1,0"
        position="200,105"
-       id="guide3920" />
+       id="guide3920"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -72,12 +73,12 @@
      id="layer1"
      transform="translate(0,-932.36218)">
     <path
-       style="opacity:0.45;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:0.45;fill:#0a0e0e;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="M 8 6 C 6.892 6 6 6.8919999 6 8 L 6 121 C 6 122.108 6.892 123 8 123 L 392 123 C 393.108 123 394 122.108 394 121 L 394 8 C 394 6.8919999 393.108 6 392 6 L 8 6 z M 8 7 L 392 7 C 392.554 7 393 7.446 393 8 L 393 121 C 393 121.554 392.554 122 392 122 L 8 122 C 7.446 122 7 121.554 7 121 L 7 8 C 7 7.446 7.446 7 8 7 z "
        transform="translate(0,932.36218)"
        id="rect4179-2-0-9-8" />
     <rect
-       style="opacity:0.3;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:0.3;fill:#0a0e0e;fill-opacity:1;stroke:none;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4179-2-0-9"
        width="386"
        height="115"
