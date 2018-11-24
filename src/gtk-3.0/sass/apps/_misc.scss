@@ -398,6 +398,10 @@ list.tilix-session-sidebar {
 //
 window.background.csd {
   stack {
+    list {
+      background: none;
+      border-right: 1px solid $borders_color;
+    }
     stack {
       scrolledwindow:dir(ltr).frame {
         border: none;
@@ -408,7 +412,8 @@ window.background.csd {
   stack {
     revealer {
       stack {
-        list:dir(ltr) {
+        list {
+          background: none;
           border-right: 1px solid $borders_color;
         }
       }
