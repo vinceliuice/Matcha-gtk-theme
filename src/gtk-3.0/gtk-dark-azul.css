@@ -6043,6 +6043,18 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
   background-color: #1b1d24;
 }
 
+#MozillaGtkWidget.background, #MozillaGtkWidget.background decoration {
+  border-radius: 0 0 0 0;
+}
+
+#MozillaGtkWidget.background headerbar.titlebar {
+  border-radius: 0 0 0 0;
+}
+
+#MozillaGtkWidget.background headerbar.titlebar.default-decoration button.titlebutton {
+  margin: 0;
+}
+
 #MozillaGtkWidget.background .background,
 #MozillaGtkWidget.background frame,
 #MozillaGtkWidget.background separator,
