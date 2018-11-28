@@ -2268,7 +2268,7 @@ treeview.view header.button.dnd:active {
 menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
-  padding: 0px;
+  padding: 0;
   background-color: #222222;
   color: rgba(255, 255, 255, 0.85);
 }
@@ -2282,8 +2282,7 @@ menubar > menuitem,
 .menubar > menuitem {
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
   padding: 4px 8px;
-  border: solid transparent;
-  border-width: 0;
+  border: none;
   border-radius: 2px 2px 0 0;
 }
 
@@ -4001,7 +4000,7 @@ messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 1px solid transparent;
 }
 
 filechooserbutton:drop(active) {
@@ -8088,6 +8087,24 @@ window#whiskermenu-window scrolledwindow > viewport button.radio:checked, window
 window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: #222222;
+}
+
+menubar.-vala-panel-appmenu-private {
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem {
+  border-radius: 0 0 0 0;
+  color: #dedede;
+  font-weight: normal;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem:hover {
+  color: #ffffff;
 }
 
 window.thunar .sidebar treeview.view {

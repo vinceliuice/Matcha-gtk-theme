@@ -1684,7 +1684,7 @@ treeview.view {
 menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
-  padding: 0px;
+  padding: 0;
   background-color: opacify($header_bg, 1);
   color: $header_fg;
 
@@ -1696,8 +1696,7 @@ menubar,
   > menuitem {
     transition: all 0.2s cubic-bezier(0.0, 0.0, 0.2, 1);
     padding: 4px 8px;
-    border: solid transparent;
-    border-width: 0;
+    border: none;
     border-radius: 2px 2px 0 0;
 
     &:hover { //Seems like it :hover even with keyboard focus
