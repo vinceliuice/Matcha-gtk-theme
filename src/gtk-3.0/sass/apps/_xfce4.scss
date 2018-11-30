@@ -134,33 +134,9 @@ window#whiskermenu-window {
   }
 }
 
-// vala-panel-appmenu
-menubar.-vala-panel-appmenu-private {
-  background: none;
-  border: none;
-  box-shadow: none;
-  // margin-top: -2px;
-  // margin-bottom: -2px;
-
-  > menuitem {
-    border-radius: 0 0 0 0;
-    color: $panel_fg;
-    font-weight: normal;
-    &:hover { color: $selected_fg_color; }
-    &:disabled { color: rgba($panel_fg, 0.45); }
-    menu {
-      border-radius: 0 0 2px 2px;
-      menu { //submenu
-        border-radius: 2px;
-      }
-    }
-  }
-}
-
 //
 //  * Thunar *
 //
-
 window.thunar {
 
   .sidebar treeview.view {

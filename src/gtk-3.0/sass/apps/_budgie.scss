@@ -942,9 +942,25 @@ button.flat.-panel-icon-button {
 }
 
 // menubar-style'ed app menu
-menubar.-vala-panel-background > menuitem { // override global values
-  padding: 0 4px;
-  font-weight: 700;
+menubar.-vala-panel-background,
+menubar.-vala-panel-appmenu-private { // override global values
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  > menuitem {
+    border-radius: 0 0 0 0;
+    color: $panel_fg;
+    font-weight: normal;
+    &:hover { color: $selected_fg_color; }
+    &:disabled { color: rgba($panel_fg, 0.45); }
+    menu {
+      border-radius: 0 0 2px 2px;
+      menu { //submenu
+        border-radius: 2px;
+      }
+    }
+  }
 }
 
 // pixel-saver(?) applet

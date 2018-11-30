@@ -7904,9 +7904,38 @@ button.-panel-icon-button.sidebar-button:active, button.-panel-icon-button.budgi
   box-shadow: inset 0 -2px #3498db;
 }
 
-menubar.-vala-panel-background > menuitem {
-  padding: 0 4px;
-  font-weight: 700;
+menubar.-vala-panel-background,
+menubar.-vala-panel-appmenu-private {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+menubar.-vala-panel-background > menuitem,
+menubar.-vala-panel-appmenu-private > menuitem {
+  border-radius: 0 0 0 0;
+  color: #dedede;
+  font-weight: normal;
+}
+
+menubar.-vala-panel-background > menuitem:hover,
+menubar.-vala-panel-appmenu-private > menuitem:hover {
+  color: #ffffff;
+}
+
+menubar.-vala-panel-background > menuitem:disabled,
+menubar.-vala-panel-appmenu-private > menuitem:disabled {
+  color: rgba(222, 222, 222, 0.45);
+}
+
+menubar.-vala-panel-background > menuitem menu,
+menubar.-vala-panel-appmenu-private > menuitem menu {
+  border-radius: 0 0 2px 2px;
+}
+
+menubar.-vala-panel-background > menuitem menu menu,
+menubar.-vala-panel-appmenu-private > menuitem menu menu {
+  border-radius: 2px;
 }
 
 .budgie-panel box.titlebar {
@@ -8066,34 +8095,6 @@ window#whiskermenu-window scrolledwindow > viewport button.radio:checked, window
 window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: #1b1d24;
-}
-
-menubar.-vala-panel-appmenu-private {
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
-menubar.-vala-panel-appmenu-private > menuitem {
-  border-radius: 0 0 0 0;
-  color: #dedede;
-  font-weight: normal;
-}
-
-menubar.-vala-panel-appmenu-private > menuitem:hover {
-  color: #ffffff;
-}
-
-menubar.-vala-panel-appmenu-private > menuitem:disabled {
-  color: rgba(222, 222, 222, 0.45);
-}
-
-menubar.-vala-panel-appmenu-private > menuitem menu {
-  border-radius: 0 0 2px 2px;
-}
-
-menubar.-vala-panel-appmenu-private > menuitem menu menu {
-  border-radius: 2px;
 }
 
 window.thunar .sidebar treeview.view {
