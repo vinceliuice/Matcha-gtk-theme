@@ -4,7 +4,6 @@
 .nemo-desktop.nemo-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
 
 .nemo-window {
-
   menubar,
   .menubar {
     menuitem {
@@ -72,7 +71,6 @@
 // Caja
 //
 .caja-desktop { @extend .nautilus-desktop.nautilus-canvas-item; }
-
 .caja-notebook { border-top: 1px solid $borders_color; }
 .caja-side-pane .frame { border-width: 1px 0 0; }
 .caja-notebook .frame { border-width: 0 0 1px; }

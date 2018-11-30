@@ -341,41 +341,9 @@ popover.background.places-menu {
   }
 
   &.horizontal button { padding: 0 4px; }
-
   &.vertical button { padding: 4px 0; }
 
   separator { background-color: $borders_color; }
-
-  // Budgie styled Gtk Menus
-  menubar,
-  .menubar {
-    box-shadow: none;
-    color: $panel_fg;
-    background-image: none;
-    background-color: transparent;
-
-    > menuitem {
-      border: none;
-      background-image: none;
-      border-radius: 0;
-
-      &:hover {
-        background-color: transparent;
-        color: $selected_fg_color;
-        box-shadow: inset 0 -3px $selected_bg_color;
-      }
-      &:disabled {
-        color: transparentize($panel_fg, 0.6);
-      }
-
-      menu {
-        border-radius: 0 0 2px 2px;
-        menu { //submenu
-          border-radius: 2px;
-        }
-      }
-    }
-  }
 
   // used to indicate unread notifications
   .alert { color: $destructive_color; }
@@ -500,7 +468,7 @@ popover.background.places-menu {
 box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher { border-image: none; } // unset before drawing indicators
 
 frame.raven-frame > border {
-  border-style: none;
+  border: none;
   box-shadow: none;
 }
 
@@ -511,9 +479,9 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
   // .#{$pos} .budgie-panel { border-#{$b_pos}: 1px solid $borders_color; }
 
   // Raven borders
-  .#{$pos} frame.raven-frame > border {
-    // border-#{$b_pos}: 1px solid $borders_color;
-  }
+  // .#{$pos} frame.raven-frame > border {
+  //   border-#{$b_pos}: 1px solid $borders_color;
+  // }
 
   // Shadows
    .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, rgba(black, 0.23), rgba(black, 0.08), transparent); }
@@ -1001,4 +969,3 @@ menubar.-vala-panel-background > menuitem { // override global values
     > button.image-button.titlebutton { padding: 0 3px; }
   }
 }
-
