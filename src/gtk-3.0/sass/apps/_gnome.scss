@@ -22,15 +22,22 @@ terminal-window,
 //
 // Nautilus
 //
-
 %pathbar_box_button {
-  border-radius: 0;
   background-color: transparent;
   color: $header_fg;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                 $selected_bg_color 0%,
                                 transparent 0%)
                                 0 0 0 / 0 0 0;
+
+  &, &:hover, &:checked, &:active, &:disabled {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 6px 2px 6px;
+    min-height: 24px;
+    border-radius: 0;
+  }
+
   &:hover {
     background-color: transparent;
     box-shadow: inset 0 -2px rgba($selected_bg_color, 0.5);
@@ -64,10 +71,12 @@ terminal-window,
     color: $header_fg;
     background-color: transparent;
 
-    button {
+    .path-bar {
+      padding: 0;
       margin: 0;
-      padding: 2px 8px 4px 8px;
-      @extend %pathbar_box_button;
+
+      button.flat.text-button.toggle,
+      button.flat.image-button.text-button.toggle { @extend %pathbar_box_button; }
     }
 
     &.width-maximized {
@@ -1202,4 +1211,3 @@ dialog.background.csd {
         @extend %selected-button;
     }
 }
-
