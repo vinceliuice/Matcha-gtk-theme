@@ -954,12 +954,8 @@ menubar.-vala-panel-appmenu-private { // override global values
     font-weight: normal;
     &:hover { color: $selected_fg_color; }
     &:disabled { color: rgba($panel_fg, 0.45); }
-    menu {
-      border-radius: 0 0 2px 2px;
-      menu { //submenu
-        border-radius: 2px;
-      }
-    }
+
+    > window.background.popup > menu { border-radius: 0 0 2px 2px; }
   }
 }
 

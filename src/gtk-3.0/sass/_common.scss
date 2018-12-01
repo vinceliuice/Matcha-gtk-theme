@@ -75,14 +75,13 @@ button.gtkstyle-fallback { // For Cinnamon system setting
   @extend row.activatable;
   color: rgba($text_color, 1);
   background-color: $base_color;
-//  &:hover { color: $fg_color; }
+  &:hover { color: $fg_color; }
 
   &:selected {
     &, &:focus {
       @extend %selected_items;
-      border-radius: 2px;
     }
-//    &:hover { background-color: mix(black, $selected_bg_color, 10%); }
+   &:hover { background-color: mix(black, $selected_bg_color, 10%); }
   }
 }
 
@@ -1721,11 +1720,8 @@ menubar,
 
 //    label { &:disabled { color: rgba($header_fg, 0.3); } }
 
-    menu {
+    > window.background.popup > menu {
       border-radius: 0 0 2px 2px;
-      menu { //submenu
-        border-radius: 2px;
-      }
     }
   }
 }

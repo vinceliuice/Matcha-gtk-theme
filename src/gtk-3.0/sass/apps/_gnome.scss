@@ -33,7 +33,7 @@ terminal-window,
   &, &:hover, &:checked, &:active, &:disabled {
     margin-top: 0;
     margin-bottom: 0;
-    padding: 0 6px 2px 6px;
+    padding: 0 6px 4px 6px;
     min-height: 24px;
     border-radius: 0;
   }
@@ -66,7 +66,7 @@ terminal-window,
 
 .nautilus-window headerbar {
   .path-bar-box {
-    margin: 6px 0;
+    margin: 6px 0 4px 0;
     border-radius: 2px;
     color: $header_fg;
     background-color: transparent;
@@ -1095,7 +1095,7 @@ flowboxchild.bookmark-tag-widget {
 .sidebar-paned {
   scrolledwindow { border: none; }
 
-  treeview.view.sidebar { }
+  // treeview.view.sidebar { }
 }
 
 // tweak border and frame in alt-toolbar
