@@ -6,13 +6,8 @@
 .nemo-window {
   menubar,
   .menubar {
-    menuitem {
-      menu {
-        border-radius: 0 0 2px 2px;
-        menu { //submenu
-          border-radius: 2px;
-        }
-      }
+    > menuitem {
+      > window.background.popup > menu { border-radius: 0 0 2px 2px; }
     }
   }
 
@@ -283,6 +278,19 @@ window.background.chromium {
 }
 
 //
+// Geary
+//
+.geary-sidebar-pane-separator {
+  frame.geary-folder-frame {
+    treeview.view.sidebar {
+      background-color: $bg_color;
+      color: $text_color;
+      @extend %view;
+    }
+  }
+}
+
+//
 // gThumb
 //
 overlay.window-overlay {
@@ -305,7 +313,6 @@ overlay.window-overlay {
 /****************
  * Libre-Office *
  ****************/
-
 window.background:not(.csd):not(.solid-csd) {
 // reserved area at the most-right side of GtkMenuBar
   > grid.horizontal > grid.horizontal {
