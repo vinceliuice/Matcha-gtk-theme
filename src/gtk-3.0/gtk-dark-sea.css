@@ -231,7 +231,7 @@ entry:focus {
 
 entry:disabled {
   color: rgba(255, 255, 255, 0.45);
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   background-color: rgba(34, 43, 46, 0.55);
 }
 
@@ -427,7 +427,7 @@ button.flat:disabled, button.sidebar-button:disabled, button.budgie-menu-launche
 }
 
 button:disabled {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   background-color: rgba(38, 48, 52, 0.55);
 }
 
@@ -607,7 +607,7 @@ button.suggested-action.flat:disabled, button.suggested-action.sidebar-button:di
 }
 
 button.suggested-action:disabled {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   background-color: rgba(38, 48, 52, 0.55);
 }
 
@@ -651,7 +651,7 @@ button.destructive-action.flat:disabled, button.destructive-action.sidebar-butto
 }
 
 button.destructive-action:disabled {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   background-color: rgba(38, 48, 52, 0.55);
 }
 
@@ -730,7 +730,7 @@ button.font separator, button.file separator {
 }
 
 .inline-toolbar toolbutton > button:disabled {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   background-color: rgba(38, 48, 52, 0.55);
 }
 
@@ -749,7 +749,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: rgba(0, 0, 0, 0);
+  border-left-color: transparent;
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -827,7 +827,7 @@ button.font separator, button.file separator {
 
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
+  box-shadow: inset 1px 0 transparent;
 }
 
 .linked:not(.vertical):not(.path-bar) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
@@ -957,7 +957,7 @@ button.font separator, button.file separator {
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: rgba(0, 0, 0, 0);
+  border-top-color: transparent;
 }
 
 .linked.vertical > entry.error + entry,
@@ -1035,7 +1035,7 @@ button.font separator, button.file separator {
 
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 1px transparent;
 }
 
 .linked.vertical > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
@@ -1230,7 +1230,7 @@ spinbutton:not(.vertical) > button:hover + button {
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
+  box-shadow: inset 1px 0 transparent;
 }
 
 spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -1555,8 +1555,8 @@ headerbar:last-child, headerbar:last-child:backdrop {
 }
 
 stack headerbar:first-child, stack headerbar:last-child {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 window.tiled headerbar, window.tiled headerbar:first-child, window.tiled headerbar:last-child, window.tiled headerbar:only-child,
@@ -3341,7 +3341,7 @@ scale fill:disabled {
 
 scale slider {
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
   border-radius: 100%;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-property: background, border;
@@ -3360,7 +3360,7 @@ scale slider:active {
 
 scale slider:disabled {
   background-color: #e6e6e6;
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
 }
 
 menuitem:hover scale slider,
@@ -3776,7 +3776,7 @@ row.activatable:selected.has-open-popup, .view:selected.has-open-popup, iconview
 }
 
 .app-notification .linked:not(.vertical) > entry + entry {
-  border-left-color: rgba(0, 0, 0, 0);
+  border-left-color: transparent;
 }
 
 .app-notification .linked:not(.vertical) > entry.error + entry,
@@ -4004,7 +4004,7 @@ messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 1px solid transparent;
 }
 
 filechooserbutton:drop(active) {
@@ -4483,7 +4483,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 3px 0 transparent;
 }
 
 messagedialog.csd decoration {
@@ -7557,7 +7557,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 }
 
 .budgie-notification-window .linked:not(.vertical) > entry + entry, .budgie-osd-window .linked:not(.vertical) > entry + entry, .budgie-switcher-window .linked:not(.vertical) > entry + entry {
-  border-left-color: rgba(0, 0, 0, 0);
+  border-left-color: transparent;
 }
 
 .budgie-notification-window .linked:not(.vertical) > entry.error + entry, .budgie-osd-window .linked:not(.vertical) > entry.error + entry, .budgie-switcher-window .linked:not(.vertical) > entry.error + entry,
@@ -8467,7 +8467,7 @@ scale.warmth trough {
 }
 
 #content_frame button:disabled {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   background-color: rgba(38, 48, 52, 0.55);
 }
 
@@ -9013,7 +9013,7 @@ filechooser actionbar button:active, filechooser actionbar button:checked {
 }
 
 filechooser actionbar button:disabled {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   background-color: rgba(38, 48, 52, 0.55);
 }
 
@@ -9035,7 +9035,7 @@ filechooser actionbar entry:focus {
 
 filechooser actionbar entry:disabled {
   color: rgba(255, 255, 255, 0.45);
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   background-color: rgba(34, 43, 46, 0.55);
 }
 
