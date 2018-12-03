@@ -4004,7 +4004,7 @@ messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 filechooserbutton:drop(active) {
