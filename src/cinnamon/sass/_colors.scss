@@ -2,22 +2,22 @@
 // it gets @if ed depending on $variant
 
 $base_color: if($variant =='light', #ffffff, #222b2e);
-$text_color: if($variant == 'light', #1b2224, #eeeeee);
+$text_color: if($variant == 'light', #303d41, #abb9b6);
 $bg_color: if($variant =='light', #f7f7f7, #1b2224);
-$fg_color: if($variant =='light', #1b2224, #ffffff);
+$fg_color: if($variant =='light', #273134, #ccd7d4);
 
 @if $color=='aliz' {
   $base_color: if($variant =='light', #ffffff, #262626);
-  $text_color: if($variant == 'light', #222222, #eeeeee);
+  $text_color: if($variant == 'light', #363636, #b5abab);
   $bg_color: if($variant =='light', #f7f7f7, #222222);
-  $fg_color: if($variant =='light', #222222, #ffffff);
+  $fg_color: if($variant =='light', #323232, #cbbfbf);
 }
 
 @if $color=='azul' {
   $base_color: if($variant =='light', #ffffff, #22252c);
-  $text_color: if($variant == 'light', #1b1d24, #eeeeee);
+  $text_color: if($variant == 'light', #2e313d, #afb4ba);
   $bg_color: if($variant =='light', #f7f7f7, #1b1d24);
-  $fg_color: if($variant =='light', #1b1d24, #ffffff);
+  $fg_color: if($variant =='light', #2b2f3b, #bbc3c8);
 }
 
 $selected_fg_color: #ffffff;
@@ -63,13 +63,13 @@ $header_bg: #1b2224;
 
 $header_bg_backdrop: if($variant == 'dark', lighten($header_bg, 2%), lighten($header_bg, 3%));
 $header_border: if($variant == 'light', darken($header_bg, 7%), darken($header_bg, 4%));
-$header_fg: rgba(#ffffff, 0.85);
+$header_fg: if($variant =='light', mix($selected_bg_color, #bdbdbd, 5%), $text_color);
 
 $dark_sidebar_bg: #303b3e;
 @if $color=='sea' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#303b3e, 0.05), #303b3e); }
 @if $color=='aliz' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#363636, 0.05), #363636); }
 @if $color=='azul' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#30343e, 0.05), #30343e); }
-$dark_sidebar_fg: #eeeeee;
+$dark_sidebar_fg: if($variant =='light', mix($selected_bg_color, #bdbdbd, 5%), $text_color);
 $dark_sidebar_border: if($variant == 'light', $dark_sidebar_bg, darken($dark_sidebar_bg, 5%));
 
 $osd_fg_color: $dark_sidebar_fg;

@@ -11,8 +11,13 @@
     }
   }
 
+  paned.horizontal > separator {
+    @if $variant=='light' { background: none; }
+  }
+
   .nemo-places-sidebar {
     &.frame { border-width: 0; }
+
     .places-treeview {
       @extend row.activatable;
     }

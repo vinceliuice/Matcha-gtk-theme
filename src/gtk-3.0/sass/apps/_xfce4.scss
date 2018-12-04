@@ -138,16 +138,25 @@ window#whiskermenu-window {
 //  * Thunar *
 //
 window.thunar {
-  .sidebar treeview.view {
-    background-color: $dark_sidebar_bg;
-    color: $dark_sidebar_fg;
 
-    &:hover {
-//      background-color: lighten($dark_sidebar_bg, 5%);
-      box-shadow: none;
+  paned.horizontal > separator {
+    @if $variant=='light' { background: none; }
+  }
+
+  .sidebar {
+    border: none;
+
+    treeview.view {
+      background-color: $dark_sidebar_bg;
+      color: $dark_sidebar_fg;
+
+      &:hover {
+//        background-color: lighten($dark_sidebar_bg, 5%);
+        box-shadow: none;
+      }
+
+      &:selected, &:selected:hover, &:active:hover { @extend %selected_items; }
     }
-
-    &:selected, &:selected:hover, &:active:hover { @extend %selected_items; }
   }
 
   .sidebar scrollbar { @extend %dark_sidebar_scrollbar }
