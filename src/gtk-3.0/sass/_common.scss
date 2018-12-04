@@ -1115,6 +1115,26 @@ headerbar,
   }
 }
 
+box.vertical > headerbar { // reset headerbar style for not CSD window
+  &, &:backdrop { background-color: $header_bg; }
+  border-radius: 0 0 0 0;
+  box-shadow: none;
+
+  // Fixes split headerbars
+  separator:first-child + &,
+  &:first-child {
+    &, &:backdrop {
+      border-top-left-radius: 0;
+    }
+  }
+
+  &:last-child {
+    &, &:backdrop {
+      border-top-right-radius: 0;
+    }
+  }
+}
+
 headerbar {
   @extend %header_widgets;
 

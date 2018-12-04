@@ -1548,6 +1548,23 @@ headerbar.default-decoration,
   box-shadow: none;
 }
 
+box.vertical > headerbar {
+  border-radius: 0 0 0 0;
+  box-shadow: none;
+}
+
+box.vertical > headerbar, box.vertical > headerbar:backdrop {
+  background-color: #222222;
+}
+
+separator:first-child + box.vertical > headerbar, separator:first-child + box.vertical > headerbar:backdrop, box.vertical > headerbar:first-child, box.vertical > headerbar:first-child:backdrop {
+  border-top-left-radius: 0;
+}
+
+box.vertical > headerbar:last-child, box.vertical > headerbar:last-child:backdrop {
+  border-top-right-radius: 0;
+}
+
 headerbar entry, headerbar button, headerbar separator {
   margin-top: 6px;
   margin-bottom: 6px;
