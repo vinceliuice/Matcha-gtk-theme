@@ -760,11 +760,11 @@ StScrollBar {
   spacing-columns: 10px;
   margin-from-right-edge-of-screen: 20px;
   width: 34em;
-  color: $osd_fg_color;
+  color: $text_color;
 
   .menu &,
   .popup-menu & {
-    &, &.multi-line-notification { color: $osd_fg_color; }
+    &, &.multi-line-notification { color: $text_color; }
     border-image: url("#{$asset_path}/misc/message.svg") 9 9 9 9;
 
     .notification-button, .notification-icon-button {
@@ -777,7 +777,7 @@ StScrollBar {
 
   &.multi-line-notification {
     padding-bottom: 13px;
-    color: $osd_fg_color;
+    color: $text_color;
   }
 
   &-scrollview {
@@ -797,7 +797,7 @@ StScrollBar {
 
   &-with-image {
     min-height: 159px;
-    color: $osd_fg_color;
+    color: $text_color;
   }
 
   &-button, &-icon-button {
@@ -1243,7 +1243,7 @@ StScrollBar {
   .level {
     padding: 0;
     height: 4px;
-    background-color: transparentize(black, 0.5);
+    background-color: rgba(black, 0.5);
     border-radius: 2px;
     color: $selected_bg_color;
   }
@@ -1260,7 +1260,7 @@ StScrollBar {
     padding-left: 10px;
 
     .panel-bottom &,
-    .panel-top & { padding-bottom: 2px; padding-bottom: 2px; }
+    .panel-top & { padding-top: 2px; padding-bottom: 2px; }
 
     &.vertical {
       spacing: 2px;
@@ -1271,7 +1271,7 @@ StScrollBar {
       }
     }
 
-    &:highlight { background-color: transparentize($error_color, 0.5); }
+    &:highlight { background-color: rgba($error_color, 0.5); }
   }
 
   &-item-label {
@@ -1294,24 +1294,13 @@ StScrollBar {
     .panel-left & StLabel { padding-top: 6px; }
     .panel-right & StLabel { padding-top: 6px; }
 
-    // Cinnamon 4.0.3
-    &.bottom StLabel { padding-left: 6px; }
-    &.top StLabel { padding-left: 6px; }
-    &.left StLabel { padding-top: 6px; }
-    &.right StLabel { padding-top: 6px; }
-
     @each $position in (top),
                        (bottom),
                        (left),
                        (right) {
       .panel-#{$position} & {
         border-#{$position}-width: 2px;
-        StIcon, StBin { padding: 0; }
-      }
-
-      &.#{$position} { // Cinnamon 4.0.3
-        border-#{$position}-width: 2px;
-        #appMenuIcon { padding: 0; }
+        StIcon, StBin, #appMenuIcon { padding: 2px; padding-#{$position}: 0; }
       }
     }
 
@@ -1471,14 +1460,14 @@ StScrollBar {
 
       &.#{$position} { // Cinnamon 4.0.3
         border-#{$position}-width: 2px;
-        #appMenuIcon { padding: 0; }
+        StIcon, StBin, #appMenuIcon { padding: 2px; padding-#{$position}: 0; }
       }
     }
 
-    &.bottom StLabel { padding-left: 6px; }
-    &.top StLabel { padding-left: 6px; }
-    &.left StLabel { padding-top: 6px; }
-    &.right StLabel { padding-top: 6px; }
+    // &.bottom StLabel { padding-left: 6px; }
+    // &.top StLabel { padding-left: 6px; }
+    // &.left StLabel { padding-top: 6px; }
+    // &.right StLabel { padding-top: 6px; }
 
     &:hover {
       color: $panel_fg;
@@ -1614,7 +1603,7 @@ StScrollBar {
 
     StButton:small {
       width: 16px;
-      height: 8px;
+      height: 16px;
       padding: 1px;
 
       StIcon { icon-size: 12px; }

@@ -1488,7 +1488,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .panel-bottom .window-list-box,
 .panel-top .window-list-box {
-  padding-bottom: 2px;
+  padding-top: 2px;
   padding-bottom: 2px;
 }
 
@@ -1537,84 +1537,40 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding-top: 6px;
 }
 
-.window-list-item-box.bottom StLabel {
-  padding-left: 6px;
-}
-
-.window-list-item-box.top StLabel {
-  padding-left: 6px;
-}
-
-.window-list-item-box.left StLabel {
-  padding-top: 6px;
-}
-
-.window-list-item-box.right StLabel {
-  padding-top: 6px;
-}
-
 .panel-top .window-list-item-box {
   border-top-width: 2px;
 }
 
-.panel-top .window-list-item-box StIcon, .panel-top .window-list-item-box StBin {
-  padding: 0;
-}
-
-.window-list-item-box.top {
-  border-top-width: 2px;
-}
-
-.window-list-item-box.top #appMenuIcon {
-  padding: 0;
+.panel-top .window-list-item-box StIcon, .panel-top .window-list-item-box StBin, .panel-top .window-list-item-box #appMenuIcon {
+  padding: 2px;
+  padding-top: 0;
 }
 
 .panel-bottom .window-list-item-box {
   border-bottom-width: 2px;
 }
 
-.panel-bottom .window-list-item-box StIcon, .panel-bottom .window-list-item-box StBin {
-  padding: 0;
-}
-
-.window-list-item-box.bottom {
-  border-bottom-width: 2px;
-}
-
-.window-list-item-box.bottom #appMenuIcon {
-  padding: 0;
+.panel-bottom .window-list-item-box StIcon, .panel-bottom .window-list-item-box StBin, .panel-bottom .window-list-item-box #appMenuIcon {
+  padding: 2px;
+  padding-bottom: 0;
 }
 
 .panel-left .window-list-item-box {
   border-left-width: 2px;
 }
 
-.panel-left .window-list-item-box StIcon, .panel-left .window-list-item-box StBin {
-  padding: 0;
-}
-
-.window-list-item-box.left {
-  border-left-width: 2px;
-}
-
-.window-list-item-box.left #appMenuIcon {
-  padding: 0;
+.panel-left .window-list-item-box StIcon, .panel-left .window-list-item-box StBin, .panel-left .window-list-item-box #appMenuIcon {
+  padding: 2px;
+  padding-left: 0;
 }
 
 .panel-right .window-list-item-box {
   border-right-width: 2px;
 }
 
-.panel-right .window-list-item-box StIcon, .panel-right .window-list-item-box StBin {
-  padding: 0;
-}
-
-.window-list-item-box.right {
-  border-right-width: 2px;
-}
-
-.window-list-item-box.right #appMenuIcon {
-  padding: 0;
+.panel-right .window-list-item-box StIcon, .panel-right .window-list-item-box StBin, .panel-right .window-list-item-box #appMenuIcon {
+  padding: 2px;
+  padding-right: 0;
 }
 
 .window-list-item-box:hover {
@@ -1778,48 +1734,36 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-top-width: 2px;
 }
 
-.grouped-window-list-item-box.top #appMenuIcon {
-  padding: 0;
+.grouped-window-list-item-box.top StIcon, .grouped-window-list-item-box.top StBin, .grouped-window-list-item-box.top #appMenuIcon {
+  padding: 2px;
+  padding-top: 0;
 }
 
 .grouped-window-list-item-box.bottom {
   border-bottom-width: 2px;
 }
 
-.grouped-window-list-item-box.bottom #appMenuIcon {
-  padding: 0;
+.grouped-window-list-item-box.bottom StIcon, .grouped-window-list-item-box.bottom StBin, .grouped-window-list-item-box.bottom #appMenuIcon {
+  padding: 2px;
+  padding-bottom: 0;
 }
 
 .grouped-window-list-item-box.left {
   border-left-width: 2px;
 }
 
-.grouped-window-list-item-box.left #appMenuIcon {
-  padding: 0;
+.grouped-window-list-item-box.left StIcon, .grouped-window-list-item-box.left StBin, .grouped-window-list-item-box.left #appMenuIcon {
+  padding: 2px;
+  padding-left: 0;
 }
 
 .grouped-window-list-item-box.right {
   border-right-width: 2px;
 }
 
-.grouped-window-list-item-box.right #appMenuIcon {
-  padding: 0;
-}
-
-.grouped-window-list-item-box.bottom StLabel {
-  padding-left: 6px;
-}
-
-.grouped-window-list-item-box.top StLabel {
-  padding-left: 6px;
-}
-
-.grouped-window-list-item-box.left StLabel {
-  padding-top: 6px;
-}
-
-.grouped-window-list-item-box.right StLabel {
-  padding-top: 6px;
+.grouped-window-list-item-box.right StIcon, .grouped-window-list-item-box.right StBin, .grouped-window-list-item-box.right #appMenuIcon {
+  padding: 2px;
+  padding-right: 0;
 }
 
 .grouped-window-list-item-box:hover {
@@ -1985,7 +1929,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .sound-player > StBoxLayout:first-child StButton:small {
   width: 16px;
-  height: 8px;
+  height: 16px;
   padding: 1px;
 }
 
