@@ -6218,11 +6218,11 @@ window.background.chromium > menu > menuitem:hover {
 }
 
 window.background.chromium > menu > menuitem:disabled {
-  color: rgba(182, 189, 187, 0.5);
+  color: rgba(182, 189, 187, 0.45);
 }
 
 window.background.chromium > menu > menuitem label:disabled {
-  color: rgba(182, 189, 187, 0.5);
+  color: rgba(182, 189, 187, 0.45);
 }
 
 .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar {

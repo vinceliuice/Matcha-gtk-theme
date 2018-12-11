@@ -303,10 +303,10 @@ window.background.chromium {
       }
 
       &:disabled {
-        color: rgba($header_fg, 0.5);
+        color: rgba($header_fg, 0.45);
       }
 
-      label { &:disabled { color: rgba($header_fg, 0.5); }}
+      label { &:disabled { color: rgba($header_fg, 0.45); }}
     }
   }
 }
