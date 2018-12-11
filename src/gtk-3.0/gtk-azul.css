@@ -6195,6 +6195,36 @@ window.background.chromium > textview.view {
   background-color: #ffffff;
 }
 
+window.background.chromium > menubar {
+  background-color: #1b1d24;
+}
+
+window.background.chromium > menu {
+  border: 1px solid #101115;
+  background-color: #1b1d24;
+}
+
+window.background.chromium > menu > separator {
+  background-color: #1b1d24;
+}
+
+window.background.chromium > menu > menuitem {
+  color: #b6bbbf;
+}
+
+window.background.chromium > menu > menuitem:hover {
+  color: #ffffff;
+  background-color: #3498db;
+}
+
+window.background.chromium > menu > menuitem:disabled {
+  color: rgba(182, 187, 191, 0.5);
+}
+
+window.background.chromium > menu > menuitem label:disabled {
+  color: rgba(182, 187, 191, 0.5);
+}
+
 .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar {
   background-color: #f7f7f7;
   color: #2e313d;
@@ -8118,6 +8148,7 @@ window.thunar .sidebar treeview.view {
 }
 
 window.thunar .sidebar treeview.view:hover {
+  background-color: rgba(59, 64, 76, 0.95);
   box-shadow: none;
 }
 
