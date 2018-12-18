@@ -35,7 +35,7 @@ $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark var
 //
 .background {
   color: $fg_color;
-  background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color); // without this headerbar transparency doesn't seem to work
+  background-color: if($transparency == 'true', rgba($bg_color, 1), $bg_color); // without this headerbar transparency doesn't seem to work
 }
 
 .popup.background {
@@ -1004,7 +1004,7 @@ headerbar,
   min-height: 42px;
   padding: 0 10px;
   color: $header_fg;
-  background-color: opacify($header_bg, 1);
+  background-color: $header_bg;
 
   .csd & {  // Transparent header-bars only in csd windows
     background-color: $header_bg;
@@ -1014,7 +1014,7 @@ headerbar,
   &:backdrop {
     transition: $backdrop_transition;
     color: transparentize($header_fg, 0.3);
-    background-color: opacify($header_bg_backdrop, 1);
+    background-color: $header_bg_backdrop;
     box-shadow: inset 0 1px lighten($header_bg, 5%);
     .csd & { background-color: $header_bg_backdrop; box-shadow: inset 0 1px lighten($header_bg, 5%); }
   }
@@ -1385,6 +1385,29 @@ headerbar {
       border: 1px solid $header_entry_border;
       &:focus { border-color: $selected_bg_color; }
     }
+
+    > entry + entry { border-left-color: $header_entry_border; }
+    > entry.error + entry { border-left-color: $header_entry_border; }
+    > entry + entry.error { border-left-color: $error_color; }
+    > entry.warning + entry { border-left-color: $header_entry_border; }
+    > entry + entry.warning { border-left-color: $warning_color; }
+    > entry.error + entry.warning { border-left-color: $warning_color; }
+    > entry.warning + entry.error { border-left-color: $error_color; }
+
+    @each $e_type in (':focus', ':drop(active)', '.warning:focus', '.error:focus') {
+
+      > entry + entry#{$e_type}:not(:last-child),
+      > entry + entry#{$e_type}:last-child { border-left-color: $header_entry_border; }
+
+      > entry#{$e_type}:not(:only-child) {
+        + entry,
+        + button,
+        + combobox > box > button.combo { border-left-color: $header_button_border; }
+      }
+    }
+
+    > button:active + entry,
+    > button:checked + entry { border-left-color: $header_entry_border; }
   }
 
   // Headerbar Suggested and Destructive Action buttons
