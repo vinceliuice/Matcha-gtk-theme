@@ -60,7 +60,8 @@ style "default" {
   GtkTreeView::vertical-separator = 4
   GtkTreeView::horizontal-separator = 4
   GtkTreeView::allow-rules = 1
-  GtkTreeView::odd_row_color = shade(0.98, @base_color)
+  GtkTreeView::odd-row-color = mix(0.5, @bg_color, @base_color)
+  GtkTreeView::even-row-color = @base_color
 
   GtkExpander::expander-size = 11
 
@@ -727,6 +728,8 @@ style "menu_item" {
   # highlight. The price to pay is black text on menus as well,
   # but at least it's readable.
   # See https://bugs.freedesktop.org/show_bug.cgi?id=38038
+
+  bg[NORMAL] = @menu_bg
   bg[SELECTED] = @selected_bg_color
 
   fg[NORMAL] = @menu_fg
@@ -1984,8 +1987,11 @@ style "separator_menu_item" {
 style "treeview_header" {
   ythickness = 1
 
-  fg[PRELIGHT] = mix(0.70, @text_color, @base_color)
-  font_name = "Bold"
+  fg[NORMAL] = mix(0.6, @text_color, @base_color)
+  fg[PRELIGHT] = mix(0.8, @text_color, @base_color)
+  fg[ACTIVE]  = @text_color
+  fg[INSENSITIVE] = mix(0.24, @text_color, @base_color)
+  font_name = "Medium"
 
   engine "pixmap" {
 
@@ -2005,8 +2011,9 @@ style "treeview" {
   xthickness = 2
   ythickness = 0
 
-
-}    
+  bg[NORMAL] = @bg_color
+  bg[SELECTED] = mix(0.8, @selected_bg_color, @fg_color) # progress
+}
 
 style "scrolled_window" {
 

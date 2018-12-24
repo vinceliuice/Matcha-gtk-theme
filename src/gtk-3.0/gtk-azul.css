@@ -2450,6 +2450,7 @@ menu menuitem,
   min-height: 16px;
   min-width: 40px;
   padding: 5px;
+  color: #2e313d;
 }
 
 menu menuitem:hover,

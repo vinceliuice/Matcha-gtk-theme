@@ -1802,10 +1802,13 @@ menu,
     min-height: 16px;
     min-width: 40px;
     padding: 5px;
+    color: $text_color;
+
     &:hover {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
     }
+
     &:disabled {
       color: $insensitive_fg_color;
     }
