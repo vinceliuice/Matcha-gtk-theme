@@ -807,18 +807,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="15.999999"
-     inkscape:cx="432.38829"
-     inkscape:cy="174.06512"
+     inkscape:zoom="2.828427"
+     inkscape:cx="219.36805"
+     inkscape:cy="306.81073"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      showgrid="false"
      showborder="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1051"
-     inkscape:window-x="0"
-     inkscape:window-y="29"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1671"
+     inkscape:window-height="766"
+     inkscape:window-x="11"
+     inkscape:window-y="40"
+     inkscape:window-maximized="0"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
@@ -869,7 +869,8 @@
      id="layer3"
      inkscape:label="superbackdrop"
      style="display:inline"
-     transform="translate(7,283.63782)">
+     transform="translate(7,283.63782)"
+     sodipodi:insensitive="true">
     <rect
        ry="0"
        rx="0"
@@ -4614,7 +4615,7 @@
        inkscape:label="#rect5010" />
     <g
        transform="rotate(-90,278.5,-181.13782)"
-       style="display:inline"
+       style="display:inline;opacity:0.2"
        id="line-v"
        inkscape:label="#g4996">
       <rect
@@ -4630,11 +4631,11 @@
          height="1"
          width="2"
          id="rect4976-3"
-         style="display:inline;opacity:1;fill:#565656;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
     <g
        transform="rotate(180,280,-178.63782)"
-       style="display:inline"
+       style="display:inline;opacity:0.2"
        id="line-h"
        inkscape:label="#g4996">
       <rect
@@ -4650,7 +4651,7 @@
          height="1"
          width="2"
          id="rect4976-3-6"
-         style="display:inline;opacity:1;fill:#565656;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
     <rect
        style="opacity:1;fill:#151b1b;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"

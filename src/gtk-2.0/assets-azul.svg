@@ -15,38 +15,10 @@
    height="416"
    id="svg9892"
    version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="assets-azul.svg">
   <defs
      id="defs9894">
-    <linearGradient
-       id="linearGradient6614">
-      <stop
-         style="stop-color:#cfd6e6;stop-opacity:1;"
-         offset="0"
-         id="stop6616" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5167">
-      <stop
-         style="stop-color:#cfd6e6;stop-opacity:1;"
-         offset="0"
-         id="stop5169" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5117">
-      <stop
-         style="stop-color:#cfd6e6;stop-opacity:1;"
-         offset="0"
-         id="stop5119" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5037">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0"
-         id="stop5039" />
-    </linearGradient>
     <linearGradient
        id="selected_fg_color"
        osb:paint="solid">
@@ -54,41 +26,6 @@
          style="stop-color:#ffffffgit;stop-opacity:1;"
          offset="0"
          id="stop5018" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5015">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0"
-         id="stop5017" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5046">
-      <stop
-         style="stop-color:#3498db;stop-opacity:1;"
-         offset="0"
-         id="stop5048" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5035">
-      <stop
-         style="stop-color:#3498db;stop-opacity:1;"
-         offset="0"
-         id="stop5037" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5019">
-      <stop
-         style="stop-color:#3498db;stop-opacity:1;"
-         offset="0"
-         id="stop5021" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5013">
-      <stop
-         style="stop-color:#3498db;stop-opacity:1;"
-         offset="0"
-         id="stop5015" />
     </linearGradient>
     <linearGradient
        id="selected_bg_color"
@@ -991,16 +928,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.313708"
-     inkscape:cx="312.83843"
+     inkscape:cx="284.81933"
      inkscape:cy="308.29158"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      showborder="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="709"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
      inkscape:window-x="0"
-     inkscape:window-y="31"
+     inkscape:window-y="29"
      inkscape:window-maximized="1"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -6307,7 +6244,7 @@
     </g>
     <g
        transform="rotate(-90,278.5,-181.13782)"
-       style="display:inline"
+       style="display:inline;opacity:0.15"
        id="line-v"
        inkscape:label="#g4996">
       <rect
@@ -6323,11 +6260,11 @@
          height="1"
          width="2"
          id="rect4976-3"
-         style="display:inline;opacity:1;fill:#565656;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
     <g
        transform="rotate(180,280,-178.63782)"
-       style="display:inline"
+       style="display:inline;opacity:0.15"
        id="line-h"
        inkscape:label="#g4996">
       <rect
@@ -6343,7 +6280,7 @@
          height="1"
          width="2"
          id="rect4976-3-6"
-         style="display:inline;opacity:1;fill:#565656;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
   </g>
 </svg>
