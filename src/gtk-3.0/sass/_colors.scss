@@ -75,13 +75,13 @@ $header_bg: #1b2224;
 
 $header_bg_backdrop: if($variant == 'dark', lighten($header_bg, 5%), lighten($header_bg, 6%));
 $header_border: if($variant == 'light', darken($header_bg, 7%), darken($header_bg, 4%));
-$header_fg: if($variant =='light', mix($selected_bg_color, #bdbdbd, 5%), $text_color);
+$header_fg: if($variant =='light', mix($selected_bg_color, #efefef, 5%), $fg_color);
 
 $dark_sidebar_bg: #303b3e;
 @if $color=='sea' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#303b3e, 0.05), #303b3e); }
 @if $color=='aliz' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#363636, 0.05), #363636); }
 @if $color=='azul' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#30343e, 0.05), #30343e); }
-$dark_sidebar_fg: if($variant =='light', mix($selected_bg_color, #bdbdbd, 5%), $text_color);
+$dark_sidebar_fg: $header_fg;
 $dark_sidebar_border: if($variant == 'light', $dark_sidebar_bg, darken($dark_sidebar_bg, 5%));
 
 $osd_fg_color: $dark_sidebar_fg;
@@ -101,7 +101,7 @@ $panel_bg: #1b2224;
 @if $color=='sea' { $panel_bg: #1b2224; }
 @if $color=='aliz' { $panel_bg: #222222; }
 @if $color=='azul' { $panel_bg: #1b1d24; }
-$panel_fg: $dark_sidebar_fg;
+$panel_fg: $header_fg;
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
 $entry_border: if($variant == 'light', #cfd6e6, darken($borders_color, 0%));

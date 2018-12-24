@@ -15,7 +15,7 @@
    height="416"
    id="svg9892"
    version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="assets-dark-aliz.svg">
   <defs
      id="defs9894">
@@ -815,18 +815,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9999999"
-     inkscape:cx="237.65623"
-     inkscape:cy="249.65896"
+     inkscape:zoom="5.656854"
+     inkscape:cx="344.53522"
+     inkscape:cy="194.51479"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showborder="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1025"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
+     inkscape:window-width="689"
+     inkscape:window-height="429"
+     inkscape:window-x="367"
+     inkscape:window-y="337"
+     inkscape:window-maximized="0"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
@@ -4614,7 +4614,7 @@
          style="opacity:0.75;fill:#404040;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
     <rect
-       style="opacity:1;fill:#2b2b2b;fill-opacity:1;stroke:#1c1c1c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#1c1c1c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="frame"
        width="9"
        height="9"

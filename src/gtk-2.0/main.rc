@@ -727,7 +727,7 @@ style "menu_item" {
   # highlight. The price to pay is black text on menus as well,
   # but at least it's readable.
   # See https://bugs.freedesktop.org/show_bug.cgi?id=38038
-  bg[SELECTED] = @selected_fg_color
+  bg[SELECTED] = @selected_bg_color
 
   fg[NORMAL] = @menu_fg
   fg[SELECTED] = @selected_fg_color
