@@ -93,6 +93,27 @@ $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
   widget.tasklist > button.toggle { font-weight: 400; }
 }
 
+//workspaces plugin
+window#XfcePanelWindow.background.panel.xfce4-panel {
+  border: none;
+
+  > widget {
+    wnck-pager {
+      background-color: rgba(white, 0.1);
+      border: none;
+      box-shadow: 0 0 0 1px rgba(white, 0.15);
+
+      &:hover {
+        background-color: rgba(white, 0.25);
+      }
+
+      &:active, &:checked, &:selected {
+        background-color: rgba(white, 0.35);
+      }
+    }
+  }
+}
+
 XfdesktopIconView.view {
   border-radius: 2px;
   background: transparent;

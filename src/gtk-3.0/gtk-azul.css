@@ -8190,6 +8190,24 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel .bud
   font-weight: 400;
 }
 
+window#XfcePanelWindow.background.panel.xfce4-panel {
+  border: none;
+}
+
+window#XfcePanelWindow.background.panel.xfce4-panel > widget wnck-pager {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+window#XfcePanelWindow.background.panel.xfce4-panel > widget wnck-pager:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+window#XfcePanelWindow.background.panel.xfce4-panel > widget wnck-pager:active, window#XfcePanelWindow.background.panel.xfce4-panel > widget wnck-pager:checked, window#XfcePanelWindow.background.panel.xfce4-panel > widget wnck-pager:selected {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
 XfdesktopIconView.view {
   border-radius: 2px;
   background: transparent;
