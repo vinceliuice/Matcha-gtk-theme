@@ -260,6 +260,7 @@ entry {
         background-color: $e_color;
         box-shadow: none;
       }
+
       selection, selection:focus {
         background-color: $e_fg_color;
         color: $e_color;
@@ -1285,6 +1286,7 @@ headerbar {
 
     image { color: $selected_bg_color; }
   }
+
   &:disabled { @include entry(header-insensitive); }
 
   selection:focus {
@@ -1309,6 +1311,7 @@ headerbar {
         color: $e_fg_color;
         background-color: $e_color;
       }
+
       selection, selection:focus {
         background-color: $e_fg_color;
         color: $e_color;

@@ -129,27 +129,102 @@ XfdesktopIconView.view {
   .rubberband { @extend rubberband; }
 }
 
+$dark_menu_bg: $panel_bg;
+$dark_menu_fg: $panel_fg;
+$dark_menu_border: rgba(black, 0.20);
+
+%dark_menu_scrollbar {
+  border-color: darken($dark_menu_bg, 2%);
+
+  &.overlay-indicator:not(.dragging):not(.hovering) slider {
+    background-color: $dark_menu_fg;
+    border: 1px solid $dark_menu_border;
+  }
+
+  slider {
+    background-color: rgba(lighten($dark_menu_fg, 15%), 0.65);
+
+    &:hover { background-color: lighten($dark_menu_fg, 20%); }
+    &:hover:active { background-color: $selected_bg_color; }
+
+    &:disabled { background-color: transparent; }
+  }
+
+  trough { background-color: darken($dark_menu_bg, 2%); }
+}
+
 window#whiskermenu-window {
-  background-color: $base_color;
+  background-color: $dark_menu_bg;
+  color: $dark_menu_fg;
 
   // no CSD class even if the sw compositor was enabled.
   > frame > border {
     border-radius: 0;
   }
 
-  scrolledwindow {
-    > viewport button.radio {
-      &:hover { background-color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12)); }
-      &:checked, &:active {
-        background-color: $selected_bg_color;
-        color: $selected_fg_color;
-      }
+  button {
+    background-color: $dark_menu_bg;
+    color: $dark_menu_fg;
+    background-clip: padding-box;
+
+    &:hover {
+      background-color: rgba($dark_menu_fg, 0.12);
+      color: $selected_fg_color;
+      border-color: $dark_menu_border;
     }
 
+    &:checked, &:active {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+      border-color: $dark_menu_border;
+    }
+
+    &:disabled {
+      color: rgba($dark_menu_fg, 0.45);
+      border-color: rgba($dark_menu_border, 0.15);
+      background-color: rgba($dark_menu_bg, 0.45);
+    }
+  }
+
+  entry {
+    background-color: lighten($dark_menu_bg, 3%);
+    color: $dark_menu_fg;
+    border-color: $dark_menu_border;
+
+    image { // icons inside the entry
+      color: mix($dark_menu_fg, $dark_menu_bg, 80%);
+    }
+
+    &:focus {
+      border-color: $selected_bg_color;
+
+      image { color: $selected_bg_color; }
+    }
+
+    &:disabled {
+      color: rgba($dark_menu_fg, 0.45);
+      border-color: rgba($dark_menu_border, 0.15);
+      background-color: rgba($dark_menu_bg, 0.45);
+
+      image { color: rgba($dark_menu_fg, 0.45); }
+    }
+  }
+
+  scrolledwindow {
+    // > viewport button.radio {
+    //   background-color: $dark_menu_bg;
+    //   color: $dark_menu_fg;
+    // }
+
+    scrollbar { @extend %dark_menu_scrollbar; }
+
     treeview.view {
+      background-color: lighten($dark_menu_bg, 3%);
+      color: $dark_menu_fg;
+
       &:selected:hover {
-        background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
-        color: $fg_color;
+        background-color: rgba($dark_menu_fg, 0.1);
+        color: $dark_menu_fg;
       }
     }
   }

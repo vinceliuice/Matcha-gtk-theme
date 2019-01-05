@@ -8240,26 +8240,104 @@ XfdesktopIconView.view:active, XfdesktopIconView.view:checked {
   text-shadow: none;
 }
 
+window#whiskermenu-window scrolledwindow scrollbar {
+  border-color: #1d1d1d;
+}
+
+window#whiskermenu-window scrolledwindow scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+  background-color: #efe7e7;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+window#whiskermenu-window scrolledwindow scrollbar slider {
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+window#whiskermenu-window scrolledwindow scrollbar slider:hover {
+  background-color: white;
+}
+
+window#whiskermenu-window scrolledwindow scrollbar slider:hover:active {
+  background-color: #F0544C;
+}
+
+window#whiskermenu-window scrolledwindow scrollbar slider:disabled {
+  background-color: transparent;
+}
+
+window#whiskermenu-window scrolledwindow scrollbar trough {
+  background-color: #1d1d1d;
+}
+
 window#whiskermenu-window {
-  background-color: #ffffff;
+  background-color: #222222;
+  color: #efe7e7;
 }
 
 window#whiskermenu-window > frame > border {
   border-radius: 0;
 }
 
-window#whiskermenu-window scrolledwindow > viewport button.radio:hover {
-  background-color: rgba(0, 0, 0, 0.12);
+window#whiskermenu-window button {
+  background-color: #222222;
+  color: #efe7e7;
+  background-clip: padding-box;
 }
 
-window#whiskermenu-window scrolledwindow > viewport button.radio:checked, window#whiskermenu-window scrolledwindow > viewport button.radio:active {
+window#whiskermenu-window button:hover {
+  background-color: rgba(239, 231, 231, 0.12);
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+window#whiskermenu-window button:checked, window#whiskermenu-window button:active {
   background-color: #F0544C;
   color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+window#whiskermenu-window button:disabled {
+  color: rgba(239, 231, 231, 0.45);
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(34, 34, 34, 0.45);
+}
+
+window#whiskermenu-window entry {
+  background-color: #2a2a2a;
+  color: #efe7e7;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+window#whiskermenu-window entry image {
+  color: #c6c0c0;
+}
+
+window#whiskermenu-window entry:focus {
+  border-color: #F0544C;
+}
+
+window#whiskermenu-window entry:focus image {
+  color: #F0544C;
+}
+
+window#whiskermenu-window entry:disabled {
+  color: rgba(239, 231, 231, 0.45);
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(34, 34, 34, 0.45);
+}
+
+window#whiskermenu-window entry:disabled image {
+  color: rgba(239, 231, 231, 0.45);
+}
+
+window#whiskermenu-window scrolledwindow treeview.view {
+  background-color: #2a2a2a;
+  color: #efe7e7;
 }
 
 window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #323232;
+  background-color: rgba(239, 231, 231, 0.1);
+  color: #efe7e7;
 }
 
 window.thunar paned.horizontal > separator {

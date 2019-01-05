@@ -197,25 +197,21 @@ filechooser {
 }
 
 %dark_sidebar_scrollbar {
-
   border-color: darken($dark_sidebar_bg, 5%);
 
   &.overlay-indicator:not(.dragging):not(.hovering) slider {
     background-color: lighten($dark_sidebar_fg, 15%);
     border: 1px solid transparentize(black, 0.7);
   }
+
   slider {
     background-color: transparentize(lighten($dark_sidebar_fg, 15%), 0.3);
 
     &:hover { background-color: lighten($dark_sidebar_fg, 20%); }
-
     &:hover:active { background-color: $selected_bg_color; }
 
-    &:disabled {
-      background-color: transparent;
-    }
+    &:disabled { background-color: transparent; }
   }
-  trough {
-    background-color: darken($dark_sidebar_bg, 5%);
-  }
+
+  trough { background-color: darken($dark_sidebar_bg, 5%); }
 }
