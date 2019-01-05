@@ -132,6 +132,10 @@ label selection {
   background-color: #2eb398;
 }
 
+label:disabled {
+  color: rgba(39, 49, 52, 0.55);
+}
+
 .dim-label, label.separator, popover label.separator,
 popover.background label.separator, headerbar .subtitle,
 .titlebar:not(headerbar) .subtitle, .budgie-notification .notification-body, .budgie-switcher .notification-body {
@@ -1136,6 +1140,11 @@ modelbutton.flat:hover {
 menuitem.button.flat:checked,
 modelbutton.flat:checked {
   color: #273134;
+}
+
+menuitem.button.flat:disabled,
+modelbutton.flat:disabled {
+  color: rgba(39, 49, 52, 0.55);
 }
 
 menuitem.button.flat check:last-child,
@@ -2404,8 +2413,13 @@ menubar > menuitem:hover,
 
 menubar > menuitem:disabled,
 .menubar > menuitem:disabled {
-  color: rgba(229, 236, 235, 0.3);
+  color: rgba(229, 236, 235, 0.45);
   border-color: transparent;
+}
+
+menubar > menuitem label:disabled,
+.menubar > menuitem label:disabled {
+  color: rgba(229, 236, 235, 0.45);
 }
 
 menubar > menuitem > window.background.popup > menu,
