@@ -287,11 +287,11 @@ window.background.chromium {
   }
 
   > menu {
-    border: 1px solid darken($header_bg, 5%);
-    background-color: $header_bg;
+    border: 1px solid darken($header_bg, 3%);
+    background-color: lighten($header_bg, 5%);
 
     > separator {
-      background-color: $header_bg;
+      background-color: lighten($header_bg, 5%);
     }
 
     > menuitem {

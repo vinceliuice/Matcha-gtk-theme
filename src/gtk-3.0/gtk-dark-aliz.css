@@ -6305,12 +6305,12 @@ window.background.chromium > menubar {
 }
 
 window.background.chromium > menu {
-  border: 1px solid #0e0e0e;
-  background-color: #1a1a1a;
+  border: 1px solid #131313;
+  background-color: #272727;
 }
 
 window.background.chromium > menu > separator {
-  background-color: #1a1a1a;
+  background-color: #272727;
 }
 
 window.background.chromium > menu > menuitem {
