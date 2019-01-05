@@ -1772,7 +1772,7 @@ menubar,
       border-color: transparent;
     }
 
-   label { &:disabled { color: rgba($header_fg, 0.45); } }
+   label { &:disabled { color: rgba($header_fg, 0.45); }}
 
     > window.background.popup > menu {
       border-radius: 0 0 2px 2px;
@@ -1817,9 +1817,9 @@ menu,
       background-color: $selected_bg_color;
     }
 
-    &:disabled {
-      color: $insensitive_fg_color;
-    }
+    &:disabled { color: $insensitive_fg_color; }
+
+    label { &:disabled { color: $insensitive_fg_color; }}
 
     //submenu indicators
     arrow {
@@ -1835,6 +1835,7 @@ menu,
         margin-right: 10px;
       }
     }
+
     @at-root menuitem {
       accelerator { color: gtkalpha(currentColor,0.55); }
 

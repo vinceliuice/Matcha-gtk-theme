@@ -2478,6 +2478,11 @@ menu menuitem:disabled,
   color: rgba(204, 215, 212, 0.45);
 }
 
+menu menuitem label:disabled,
+.menu menuitem label:disabled {
+  color: rgba(204, 215, 212, 0.45);
+}
+
 menu menuitem arrow,
 .menu menuitem arrow {
   min-height: 16px;
