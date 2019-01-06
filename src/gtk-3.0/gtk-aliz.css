@@ -9,10 +9,10 @@
 
 @keyframes ripple_effect {
   from {
-    background-image: radial-gradient(circle farthest-corner at center, rgba(50, 50, 50, 0.1) 0%, transparent 0%);
+    background-image: radial-gradient(circle farthest-corner at center, gtkalpha(currentColor, 0.1) 0%, transparent 0%);
   }
   to {
-    background-image: radial-gradient(circle farthest-corner at center, rgba(50, 50, 50, 0.1) 100%, transparent 0%);
+    background-image: radial-gradient(circle farthest-corner at center, gtkalpha(currentColor, 0.1) 100%, transparent 0%);
   }
 }
 
@@ -598,15 +598,15 @@ button.suggested-action.flat, button.suggested-action.sidebar-button, button.sug
 button.suggested-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #45cfb3;
-  border-color: #45cfb3;
+  background-color: #33c7a9;
+  border-color: #33c7a9;
 }
 
 button.suggested-action:active, button.suggested-action:checked {
   background-clip: border-box;
   color: white;
-  background-color: #248a76;
-  border-color: #248a76;
+  background-color: #45cfb3;
+  border-color: #45cfb3;
 }
 
 button.suggested-action.flat:disabled, button.suggested-action.sidebar-button:disabled, button.suggested-action.budgie-menu-launcher:disabled, .budgie-panel .suggested-action#tasklist-button:disabled {
@@ -642,15 +642,15 @@ button.destructive-action.flat, button.destructive-action.sidebar-button, button
 button.destructive-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #e48585;
-  border-color: #e48585;
+  background-color: #e07070;
+  border-color: #e07070;
 }
 
 button.destructive-action:active, button.destructive-action:checked {
   background-clip: border-box;
   color: white;
-  background-color: #d23131;
-  border-color: #d23131;
+  background-color: #e48585;
+  border-color: #e48585;
 }
 
 button.destructive-action.flat:disabled, button.destructive-action.sidebar-button:disabled, button.destructive-action.budgie-menu-launcher:disabled, .budgie-panel .destructive-action#tasklist-button:disabled {
@@ -1975,15 +1975,15 @@ headerbar button.suggested-action.flat, .nemo-window .primary-toolbar button.sug
 headerbar button.suggested-action:hover, .nemo-window .primary-toolbar button.suggested-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #45cfb3;
-  border-color: #45cfb3;
+  background-color: #33c7a9;
+  border-color: #33c7a9;
 }
 
 headerbar button.suggested-action:active, .nemo-window .primary-toolbar button.suggested-action:active, headerbar button.suggested-action:checked, .nemo-window .primary-toolbar button.suggested-action:checked {
   background-clip: border-box;
   color: white;
-  background-color: #248a76;
-  border-color: #248a76;
+  background-color: #45cfb3;
+  border-color: #45cfb3;
 }
 
 headerbar button.suggested-action.flat:disabled, .nemo-window .primary-toolbar button.suggested-action.flat:disabled, headerbar button.suggested-action.sidebar-button:disabled, .nemo-window .primary-toolbar button.suggested-action.sidebar-button:disabled, headerbar button.suggested-action.budgie-menu-launcher:disabled, .nemo-window .primary-toolbar button.suggested-action.budgie-menu-launcher:disabled, headerbar .budgie-panel .suggested-action#tasklist-button:disabled, .budgie-panel headerbar .suggested-action#tasklist-button:disabled, .nemo-window .primary-toolbar .budgie-panel .suggested-action#tasklist-button:disabled, .budgie-panel .nemo-window .primary-toolbar .suggested-action#tasklist-button:disabled, headerbar .budgie-panel button.suggested-action.flat.launcher:disabled, .budgie-panel headerbar button.suggested-action.flat.launcher:disabled, headerbar button.suggested-action:disabled, .nemo-window .primary-toolbar button.suggested-action:disabled {
@@ -2016,15 +2016,15 @@ headerbar button.destructive-action.flat, .nemo-window .primary-toolbar button.d
 headerbar button.destructive-action:hover, .nemo-window .primary-toolbar button.destructive-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #e48585;
-  border-color: #e48585;
+  background-color: #e07070;
+  border-color: #e07070;
 }
 
 headerbar button.destructive-action:active, .nemo-window .primary-toolbar button.destructive-action:active, headerbar button.destructive-action:checked, .nemo-window .primary-toolbar button.destructive-action:checked {
   background-clip: border-box;
   color: white;
-  background-color: #d23131;
-  border-color: #d23131;
+  background-color: #e48585;
+  border-color: #e48585;
 }
 
 headerbar button.destructive-action.flat:disabled, .nemo-window .primary-toolbar button.destructive-action.flat:disabled, headerbar button.destructive-action.sidebar-button:disabled, .nemo-window .primary-toolbar button.destructive-action.sidebar-button:disabled, headerbar button.destructive-action.budgie-menu-launcher:disabled, .nemo-window .primary-toolbar button.destructive-action.budgie-menu-launcher:disabled, headerbar .budgie-panel .destructive-action#tasklist-button:disabled, .budgie-panel headerbar .destructive-action#tasklist-button:disabled, .nemo-window .primary-toolbar .budgie-panel .destructive-action#tasklist-button:disabled, .budgie-panel .nemo-window .primary-toolbar .destructive-action#tasklist-button:disabled, headerbar .budgie-panel button.destructive-action.flat.launcher:disabled, .budgie-panel headerbar button.destructive-action.flat.launcher:disabled, headerbar button.destructive-action:disabled, .nemo-window .primary-toolbar button.destructive-action:disabled {

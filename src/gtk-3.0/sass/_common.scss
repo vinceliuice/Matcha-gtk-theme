@@ -489,16 +489,20 @@ button {
         @include button(undecorated);
         color: $b_color;
       }
+
       &:hover {
+        @include button(suggested_destructive, lighten($b_color, 5%), $b_fg);
+      }
+
+      &:active, &:checked {
         @include button(suggested_destructive, lighten($b_color, 10%), $b_fg);
       }
-      &:active, &:checked {
-        @include button(suggested_destructive, darken($b_color, 10%), $b_fg);
-      }
+
       &.flat:disabled {
         @include button(undecorated);
         color: $insensitive_fg_color;
       }
+
       &:disabled { @include button(insensitive); }
     }
   }
@@ -1429,15 +1433,19 @@ headerbar {
         @include button(undecorated);
         color: $b_color;
       }
+
       &:hover {
+        @include button(suggested_destructive, lighten($b_color, 5%), $b_fg);
+      }
+
+      &:active, &:checked {
         @include button(suggested_destructive, lighten($b_color, 10%), $b_fg);
       }
-      &:active, &:checked {
-        @include button(suggested_destructive, darken($b_color, 10%), $b_fg);
-      }
+
       &.flat:disabled,
       &:disabled { @include button(header-insensitive); }
     }
+
     button.#{$b_type}:backdrop,
     button.#{$b_type}:backdrop {
       opacity: 0.8;
