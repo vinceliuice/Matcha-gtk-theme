@@ -6576,9 +6576,7 @@ menubar.-vala-panel-appmenu-private > menuitem {
 
 menubar.-vala-panel-background > menuitem:hover,
 menubar.-vala-panel-appmenu-private > menuitem:hover {
-  background: none;
   color: #ffffff;
-  box-shadow: inset 0 -2px #F0544C, 0 1px #F0544C;
 }
 
 menubar.-vala-panel-background > menuitem:disabled,
@@ -8395,8 +8393,6 @@ window.thunar notebook header.top tab.reorderable-page > box > label {
 
 menubar .panel,
 .panel menubar {
-  padding-top: 2px;
-  padding-bottom: 2px;
   box-shadow: none;
   border: none;
   background: none;
