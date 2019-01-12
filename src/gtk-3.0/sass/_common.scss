@@ -1758,7 +1758,7 @@ treeview.view {
 menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
-  padding: 0;
+  padding: 0 0 0 0;
   background-color: opacify($header_bg, 1);
   color: $header_fg;
 
@@ -2775,7 +2775,7 @@ expander {
 calendar {
   color: $fg_color;
   border: 1px solid $borders_color;
-  border-radius: 3px;
+  border-radius: 0;
   padding: 2px;
 
   &:selected {
