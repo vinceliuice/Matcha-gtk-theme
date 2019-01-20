@@ -9014,20 +9014,19 @@ GtkListBox .h4 {
   padding-left: 6px;
 }
 
+filechooser paned > separator,
 .nautilus-window paned > separator {
   background-image: linear-gradient(to bottom, rgba(48, 59, 62, 0.95), rgba(48, 59, 62, 0.95));
 }
 
+filechooser paned > separator:dir(ltr),
 .nautilus-window paned > separator:dir(ltr) {
   margin-left: -1px;
 }
 
+filechooser paned > separator:dir(rtl),
 .nautilus-window paned > separator:dir(rtl) {
   margin-right: -1px;
-}
-
-filechooser paned > separator {
-  background-image: linear-gradient(to bottom, rgba(48, 59, 62, 0.95), rgba(48, 59, 62, 0.95));
 }
 
 filechooser.csd.background, filechooser placessidebar list,

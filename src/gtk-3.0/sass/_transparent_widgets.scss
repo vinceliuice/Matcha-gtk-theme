@@ -1,6 +1,7 @@
 //.nemo-window GtkEventBox { background-color: $bg_color; } // fixes nemo statusbar
 
 //.nemo-window,
+filechooser,
 .nautilus-window {
   paned > separator {
     background-image: _solid($dark_sidebar_border);
@@ -11,8 +12,6 @@
     }
   }
 }
-
-filechooser paned > separator { background-image: _solid($dark_sidebar_border); }
 
 // Dark transparent sidebars
 filechooser,

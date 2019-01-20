@@ -9005,11 +9005,8 @@ GtkListBox .h4 {
   padding-left: 6px;
 }
 
+filechooser paned > separator,
 .nautilus-window paned > separator {
-  background-image: linear-gradient(to bottom, rgba(37, 40, 48, 0.95), rgba(37, 40, 48, 0.95));
-}
-
-filechooser paned > separator {
   background-image: linear-gradient(to bottom, rgba(37, 40, 48, 0.95), rgba(37, 40, 48, 0.95));
 }
 
