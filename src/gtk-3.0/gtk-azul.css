@@ -4774,7 +4774,7 @@ modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
-.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
+.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover, .nemo-window .sidebar .view:selected, .nemo-window .sidebar .view:selected:hover, .nemo-window .sidebar row:selected, .nemo-window .sidebar row:selected:hover {
   background-color: #3498db;
 }
 
@@ -4787,7 +4787,7 @@ modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
-.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
+.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover, .nemo-window .sidebar .view:selected, .nemo-window .sidebar .view:selected:hover, .nemo-window .sidebar row:selected, .nemo-window .sidebar row:selected:hover {
   color: #ffffff;
 }
 
@@ -4798,7 +4798,7 @@ modelbutton.flat:disabled:selected,
 modelbutton.flat:selected arrow:disabled, treeview.view:disabled:selected:focus, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .caja-desktop > widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .budgie-menu button:disabled:checked, window.thunar .sidebar treeview.view:disabled:selected, window.thunar .sidebar treeview.view:disabled:active:hover, filechooser placessidebar.sidebar row.sidebar-row:disabled:selected, filechooser placessidebar.sidebar row.sidebar-row:disabled:active:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:selected,
-.nautilus-window placessidebar.sidebar row.sidebar-row:disabled:active:hover {
+.nautilus-window placessidebar.sidebar row.sidebar-row:disabled:active:hover, .nemo-window .sidebar .view:disabled:selected, .nemo-window .sidebar row:disabled:selected {
   color: #9acced;
 }
 
@@ -9151,9 +9151,12 @@ filechooser.maximized placessidebar.sidebar,
   color: #e6ebee;
 }
 
-.nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar row.cell:selected {
-  background-color: #3498db;
-  color: #ffffff;
+.nemo-window .sidebar .view:hover, .nemo-window .sidebar row:hover {
+  background-color: rgba(230, 235, 238, 0.15);
+}
+
+.nemo-window .sidebar .view:selected .sidebar-icon, .nemo-window .sidebar .view:selected:hover .sidebar-icon, .nemo-window .sidebar row:selected .sidebar-icon, .nemo-window .sidebar row:selected:hover .sidebar-icon {
+  color: inherit;
 }
 
 .nemo-window .sidebar .view.expander, .nemo-window .sidebar row.expander {

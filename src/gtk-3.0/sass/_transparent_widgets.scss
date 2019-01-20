@@ -90,9 +90,15 @@ filechooser,
       background-color: transparent;
       color: $dark_sidebar_fg;
 
-      &.cell:selected {
-        background-color: $selected_bg_color;
-        color: $selected_fg_color;
+      &:hover {
+        background-color: transparentize($dark_sidebar_fg, 0.85);
+      }
+
+      &:selected,
+      &:selected:hover, {
+        @extend %selected_items;
+
+        .sidebar-icon { color: inherit; }
       }
 
       &.expander {
