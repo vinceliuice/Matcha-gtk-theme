@@ -1513,7 +1513,7 @@ headerbar.default-decoration button.titlebutton,
   border: none;
   min-height: 22px;
   min-width: 22px;
-  margin: 0 4px;
+  margin: 0;
   padding: 0;
 }
 
@@ -2531,7 +2531,7 @@ menu > arrow,
 
 menu > arrow.top,
 .menu > arrow.top {
-  margin-top: -12px;
+  margin-top: -6px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
@@ -6182,6 +6182,7 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 
 #MozillaGtkWidget.background headerbar.titlebar.default-decoration button.titlebutton {
   margin: 0;
+  padding: 0;
 }
 
 #MozillaGtkWidget.background .background,

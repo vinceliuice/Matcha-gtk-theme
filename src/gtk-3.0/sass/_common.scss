@@ -1093,7 +1093,7 @@ headerbar,
       border: none;
       min-height: 22px;
       min-width: 22px;
-      margin: 0 4px;
+      margin: 0;
       padding: 0;
     }
   }
@@ -1871,16 +1871,19 @@ menu,
 //    border: 1px solid $borders_color;
 
     &.top {
-      margin-top: -12px;
+      margin-top: -6px;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
+
     &.bottom {
       margin-bottom: -12px;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
+
     &:hover { background-color: mix($fg_color, $base_color, 10%); }
+
     &:disabled {
       color: transparent;
       background-color: transparent;
