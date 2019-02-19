@@ -1552,20 +1552,20 @@ headerbar.default-decoration,
   box-shadow: none;
 }
 
-window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) {
+window.background > box.vertical > headerbar:not(.titlebar) {
   border-radius: 0 0 0 0;
   box-shadow: none;
 }
 
-window.background:not(.csd) > box.vertical > headerbar:not(.titlebar), window.background:not(.csd) > box.vertical > headerbar:not(.titlebar):backdrop {
+window.background > box.vertical > headerbar:not(.titlebar), window.background > box.vertical > headerbar:not(.titlebar):backdrop {
   background-color: #1b2224;
 }
 
-separator:first-child + window.background:not(.csd) > box.vertical > headerbar:not(.titlebar), separator:first-child + window.background:not(.csd) > box.vertical > headerbar:not(.titlebar):backdrop, window.background:not(.csd) > box.vertical > headerbar:not(.titlebar):first-child, window.background:not(.csd) > box.vertical > headerbar:not(.titlebar):first-child:backdrop {
+separator:first-child + window.background > box.vertical > headerbar:not(.titlebar), separator:first-child + window.background > box.vertical > headerbar:not(.titlebar):backdrop, window.background > box.vertical > headerbar:not(.titlebar):first-child, window.background > box.vertical > headerbar:not(.titlebar):first-child:backdrop {
   border-top-left-radius: 0;
 }
 
-window.background:not(.csd) > box.vertical > headerbar:not(.titlebar):last-child, window.background:not(.csd) > box.vertical > headerbar:not(.titlebar):last-child:backdrop {
+window.background > box.vertical > headerbar:not(.titlebar):last-child, window.background > box.vertical > headerbar:not(.titlebar):last-child:backdrop {
   border-top-right-radius: 0;
 }
 
@@ -4907,7 +4907,7 @@ terminal-window notebook scrollbar,
 
 .nautilus-window headerbar .path-bar-box {
   margin: 6px 0 4px 0;
-  border-radius: 2px;
+  border-radius: 3px;
   color: #e5eceb;
   background-color: transparent;
 }
@@ -4945,10 +4945,15 @@ terminal-window notebook scrollbar,
   border-radius: 0;
 }
 
+.nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.text-button,
+.nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button {
+  border-radius: 3px;
+}
+
 .nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.text-button:hover,
 .nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button:hover {
   background-color: rgba(229, 236, 235, 0.15);
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #2eb398 100%, transparent 0%) 0 0 2/0 0 2px;
+  box-shadow: none;
 }
 
 .nautilus-window headerbar .path-bar-box.width-maximized {

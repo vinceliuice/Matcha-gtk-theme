@@ -66,7 +66,7 @@ terminal-window,
 .nautilus-window headerbar {
   .path-bar-box {
     margin: 6px 0 4px 0;
-    border-radius: 2px;
+    border-radius: 3px;
     color: $header_fg;
     background-color: transparent;
 
@@ -89,13 +89,11 @@ terminal-window,
       button.text-button,
       button.image-button.text-button {
         @extend %pathbar_box_button;
+        border-radius: 3px;
 
         &:hover {
           background-color: rgba($header_fg, 0.15);
-          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                        $selected_bg_color 100%,
-                                        transparent 0%)
-                                        0 0 2 / 0 0 2px;
+          box-shadow: none;
         }
       }
     }
