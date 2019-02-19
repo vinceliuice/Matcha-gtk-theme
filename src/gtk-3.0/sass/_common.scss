@@ -638,9 +638,11 @@ toolbar.inline-toolbar toolbutton {
         + combobox > box > button.combo { border-#{$_border}-color: $e_color; }
       }
     }
+
     > button:active + entry,
     > button:checked + entry { border-#{$_border}-color: $selected_bg_color; }
   }
+
   @if $button_rules=='true' {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
 
@@ -676,9 +678,10 @@ toolbar.inline-toolbar toolbutton {
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
-    &:hover {
-//      box-shadow: none;
-    }
+    // &:hover {
+    //   box-shadow: none;
+    // }
+
     &:first-child:hover { box-shadow: none; }
     &:last-child:hover { box-shadow: none; }
   }

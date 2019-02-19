@@ -83,7 +83,7 @@ install() {
   cp -ur {apps.rc,main.rc,panel.rc,xfce-notify.rc}                                    ${themedir}/gtk-2.0
   cp -ur gtkrc${color}${theme}                                                        ${themedir}/gtk-2.0/gtkrc
   cp -ur assets${color}${theme}                                                       ${themedir}/gtk-2.0/assets
-  cp -ur menubar-toolbar${color}.rc                                                   ${themedir}/gtk-2.0/menubar-toolbar.rc 
+  cp -ur menubar-toolbar${color}.rc                                                   ${themedir}/gtk-2.0/menubar-toolbar.rc
 
   # Install GTK+ 3 Theme
   mkdir -p                                                                            ${themedir}/gtk-3.0
@@ -219,4 +219,3 @@ done
 install_theme
 
 echo "Finished!..."
-
