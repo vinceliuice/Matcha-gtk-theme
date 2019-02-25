@@ -1,3 +1,8 @@
+
+@function gtkalpha($c,$a) {
+  @return unquote("alpha(#{$c},#{$a})");
+}
+
 // Animations
 
 @keyframes header_ripple_effect {
