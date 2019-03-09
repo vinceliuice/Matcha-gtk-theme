@@ -11,12 +11,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="34.133331"
-   height="35.200001"
-   viewBox="0 0 31.999999 33"
+   width="36"
+   height="36"
+   viewBox="0 0 33.750001 33.749999"
    id="svg6927"
    version="1.1"
-   inkscape:version="0.92.2 (unknown)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="menu-hover.svg">
   <defs
      id="defs6929">
@@ -46,8 +46,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.919596"
-     inkscape:cx="30.096513"
-     inkscape:cy="23.614556"
+     inkscape:cx="-6.5205368"
+     inkscape:cy="23.645581"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -55,8 +55,8 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1014"
+     inkscape:window-width="1366"
+     inkscape:window-height="707"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -89,18 +89,18 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-137,-382.36221)">
+     transform="translate(-137,-381.61221)">
     <g
-       transform="matrix(0.0689655,0,0,0.05681805,71.275885,407.35085)"
+       transform="matrix(0.07543103,0,0,0.05807477,64.489229,407.17366)"
        id="g6908"
-       style="fill:url(#linearGradient4140);fill-opacity:1">
+       style="fill:url(#linearGradient4140);fill-opacity:1;stroke-width:0.94578034">
       <rect
          y="-440.14731"
          x="1011"
          height="581.14734"
          width="348"
          id="rect5271"
-         style="opacity:1;fill:#2eb398;fill-opacity:1;stroke:none;stroke-width:4.19648933;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0" />
+         style="opacity:1;fill:#2eb398;fill-opacity:1;stroke:none;stroke-width:3.96895719;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0" />
     </g>
   </g>
 </svg>

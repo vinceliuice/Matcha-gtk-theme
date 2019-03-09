@@ -381,19 +381,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu .popup-sub-menu .popup-menu-item:ltr,
 .popup-menu .popup-sub-menu .popup-menu-item:ltr,
 .popup-combo-menu .popup-sub-menu .popup-menu-item:ltr {
-  padding-right: 0em;
+  padding-right: 1em;
 }
 
 .menu .popup-sub-menu .popup-menu-item:rtl,
 .popup-menu .popup-sub-menu .popup-menu-item:rtl,
 .popup-combo-menu .popup-sub-menu .popup-menu-item:rtl {
-  padding-left: 0em;
+  padding-left: 1em;
 }
 
 .menu .popup-sub-menu StScrollBar,
 .popup-menu .popup-sub-menu StScrollBar,
 .popup-combo-menu .popup-sub-menu StScrollBar {
-  padding: 4px;
+  padding: 8px;
 }
 
 .menu .popup-sub-menu StScrollBar StBin#trough, .menu .popup-sub-menu StScrollBar StBin#vhandle,
@@ -1482,19 +1482,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-list-box {
-  spacing: 2px;
-  padding-left: 10px;
+  spacing: 0;
 }
 
-.panel-bottom .window-list-box,
-.panel-top .window-list-box {
-  padding-top: 2px;
-  padding-bottom: 2px;
+.panel-bottom .window-list-box:ltr,
+.panel-top .window-list-box:ltr {
+  padding: 0 0 0 8px;
+}
+
+.panel-bottom .window-list-box:rtl,
+.panel-top .window-list-box:rtl {
+  padding: 0 8px 0 0;
 }
 
 .window-list-box.vertical {
-  spacing: 2px;
-  padding: 10px 0;
+  padding: 6px 0 0 0;
 }
 
 .window-list-box.vertical #appMenuIcon {
@@ -1514,10 +1516,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .window-list-item-box {
   font-weight: normal;
   background-image: none;
-  padding: 2px 10px;
-  spacing: 8px;
+  padding: 0 8px;
   transition-duration: 100;
-  color: rgba(182, 187, 191, 0.6);
+  color: rgba(182, 187, 191, 0.95);
   border: 0 solid transparent;
 }
 
@@ -1596,7 +1597,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box:running {
-  color: #b6bbbf;
+  color: #ffffff;
   border: 0 solid rgba(52, 152, 219, 0.35);
   background-gradient-direction: none;
 }
@@ -1622,7 +1623,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-list-item-box:focus {
-  color: #b6bbbf;
+  color: #ffffff;
   border: 0 solid #3498db;
   background-gradient-direction: none;
 }
@@ -1722,11 +1723,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .grouped-window-list-item-box {
   font-weight: normal;
   background-image: none;
-  padding-top: 0;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 0 8px;
   transition-duration: 100;
-  color: rgba(182, 187, 191, 0.6);
+  color: rgba(182, 187, 191, 0.95);
   border: 0 solid transparent;
 }
 
@@ -1789,7 +1788,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .grouped-window-list-item-box:active, .grouped-window-list-item-box:checked, .grouped-window-list-item-box:running {
-  color: #b6bbbf;
+  color: #ffffff;
   border: 0 solid rgba(52, 152, 219, 0.35);
   background-gradient-direction: none;
 }
@@ -1815,7 +1814,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .grouped-window-list-item-box:focus {
-  color: #b6bbbf;
+  color: #ffffff;
   border: 0 solid #3498db;
   background-gradient-direction: none;
 }
@@ -2163,6 +2162,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .applet-box:hover {
+  color: #b6bbbf;
+  background-color: rgba(182, 187, 191, 0.15);
+}
+
+.applet-box:checked, .applet-box:checked:hover {
   color: #ffffff;
   background-color: #3498db;
 }
@@ -2178,7 +2182,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #b6bbbf;
 }
 
-.applet-label:hover, .applet-box:hover > .applet-label {
+.applet-box:checked .applet-label {
   color: #ffffff;
   text-shadow: none;
 }
@@ -2188,7 +2192,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 22px;
 }
 
-.applet-icon:hover, .applet-box:hover > .applet-icon {
+.applet-box:checked .applet-icon {
   color: #ffffff;
   text-shadow: none;
 }
