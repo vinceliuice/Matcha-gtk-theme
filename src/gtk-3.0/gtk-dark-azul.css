@@ -5424,6 +5424,19 @@ button.documents-favorite:active:hover {
   border-image: url("assets/thumbnail-frame.png") 3 3 6 4;
 }
 
+window.background.csd > headerbar.titlebar > box.horizontal > separator.sidebar,
+window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar {
+  border-right: none;
+  background: none;
+  min-width: 0;
+}
+
+box.horizontal > separator.sidebar,
+hdyleaflet > separator.sidebar {
+  background: none;
+  min-width: 0;
+}
+
 .photos-fade-in {
   opacity: 1.0;
   transition: opacity 0.2s ease-out;
