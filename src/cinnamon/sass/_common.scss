@@ -906,7 +906,7 @@ StScrollBar {
 
 .modal-dialog {
   color: $fg_color;
-  background-color: transparentize($bg_color, 1);
+  background-color: $bg_color;
   border: none;
   border-image: url("#{$asset_path}/misc/modal.svg") 9 9 9 67;
   padding: 0 5px 6px 5px;
@@ -937,14 +937,14 @@ StScrollBar {
 // Run dialog
 //
 .run-dialog {
-  padding: 0px 15px 10px 15px;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  padding: 15px 20px;
+  background-color: $osd_bg_color;
+  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 
   > * { padding: 0; }
 
   &-label {
-    font-size: 0;
-    font-weight: bold;
+    font-weight: 400;
     color: $osd_fg_color;
     padding-bottom: 0;
   }

@@ -138,7 +138,7 @@ stage {
   color: #2e313d;
   background-color: #ffffff;
   border: 1px solid #cfd6e6;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+  box-shadow: none;
 }
 
 .menu #notification StEntry:focus,
@@ -147,7 +147,7 @@ stage {
   color: #2b2f3b;
   background-color: #ffffff;
   border: 1px solid #3498db;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+  box-shadow: none;
 }
 
 .menu #notification StEntry:insensitive,
@@ -155,7 +155,7 @@ stage {
   color: rgba(43, 47, 59, 0.55);
   background-color: #fbfbfb;
   border-color: 1px solid #e1e5ee;
-  box-shadow: inset 0 2px 4px rgba(251, 251, 251, 0.05);
+  box-shadow: none;
 }
 
 .menu #notification StEntry StIcon.capslock-warning, .popup-menu #notification StEntry StIcon.capslock-warning, #menu-search-entry StIcon.capslock-warning {
@@ -175,21 +175,21 @@ stage {
   color: #b6bbbf;
   background-color: rgba(97, 105, 125, 0.35);
   border: 1px solid rgba(21, 23, 28, 0.35);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 .notification StEntry:focus {
   color: #ffffff;
   background-color: #3498db;
   border: 1px solid #3498db;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 .notification StEntry:insensitive {
   color: rgba(182, 187, 191, 0.55);
   background-color: rgba(97, 105, 125, 0.2);
   border: 1px solid rgba(21, 23, 28, 0.35);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 StScrollView.vfade {
@@ -659,7 +659,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #b6bbbf;
   background-color: rgba(97, 105, 125, 0.35);
   border: 1px solid rgba(21, 23, 28, 0.35);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 .expo-workspaces-name-entry:focus,
@@ -1090,7 +1090,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .modal-dialog {
   color: #2b2f3b;
-  background-color: rgba(247, 247, 247, 0);
+  background-color: #f7f7f7;
   border: none;
   border-image: url("assets/misc/modal.svg") 9 9 9 67;
   padding: 0 5px 6px 5px;
@@ -1116,8 +1116,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .run-dialog {
-  padding: 0px 15px 10px 15px;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  padding: 15px 20px;
+  background-color: rgba(48, 52, 62, 0.95);
+  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 }
 
 .run-dialog > * {
@@ -1125,8 +1126,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .run-dialog-label {
-  font-size: 0;
-  font-weight: bold;
+  font-weight: 400;
   color: #b6bbbf;
   padding-bottom: 0;
 }
@@ -1155,14 +1155,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #b6bbbf;
   background-color: rgba(97, 105, 125, 0.35);
   border: 1px solid rgba(21, 23, 28, 0.35);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 .run-dialog-entry:focus {
   color: #ffffff;
   background-color: #3498db;
   border: 1px solid #3498db;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 .run-dialog .modal-dialog-button-box {
