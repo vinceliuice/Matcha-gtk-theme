@@ -760,7 +760,7 @@ StScrollBar {
   spacing-columns: 10px;
   margin-from-right-edge-of-screen: 20px;
   width: 34em;
-  color: $text_color;
+  color: $osd_fg_color;
 
   .menu &,
   .popup-menu & {
@@ -777,7 +777,7 @@ StScrollBar {
 
   &.multi-line-notification {
     padding-bottom: 13px;
-    color: $text_color;
+    color: $osd_fg_color;
   }
 
   &-scrollview {
@@ -797,7 +797,7 @@ StScrollBar {
 
   &-with-image {
     min-height: 159px;
-    color: $text_color;
+    color: $osd_fg_color;
   }
 
   &-button, &-icon-button {
@@ -901,7 +901,7 @@ StScrollBar {
 //
 // Modal dialogs
 //
-.lightbox { background-color: rgba(0, 0, 0, 0.4); }
+.lightbox { background-color: rgba(0, 0, 0, 0.5); }
 .flashspot { background-color: white; }
 
 .modal-dialog {
@@ -937,16 +937,16 @@ StScrollBar {
 // Run dialog
 //
 .run-dialog {
-  padding: 15px 20px;
-  background-color: $osd_bg_color;
+  padding: 0 20px 15px 20px;
+  background-color: rgba($osd_bg_color, 0.95);
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 
   > * { padding: 0; }
 
   &-label {
     font-weight: 400;
-    color: $osd_fg_color;
-    padding-bottom: 0;
+    color: rgba($osd_fg_color, 0.75);
+    padding-bottom: 10px;
   }
 
   &-error-label { color: $error_color; }
@@ -954,12 +954,14 @@ StScrollBar {
   &-error-box {
     padding-top: 15px;
     spacing: 5px;
+    color: $error_color;
   }
   &-completion-box {
     padding-left: 15px;
     font-size: 10px;
   }
   &-entry {
+    @include entry(osd);
     width: 21em;
     padding: 7px;
     border-radius: 3px;
@@ -967,12 +969,15 @@ StScrollBar {
     selected-color: $selected_fg_color;
     selection-background-color: $selected_bg_color;
 
-    @include entry(osd);
-
-    &:focus { @include entry(osd-focus); }
+    &:focus {
+      @include entry(osd);
+      background-color: darken($header_bg, 3%);
+      border-color: $selected_bg_color;
+    }
   }
   .modal-dialog-button-box {
     border: none;
+    border-image: none;
     box-shadow: none;
     background: none;
     background-gradient-direction: none;
@@ -1219,7 +1224,8 @@ StScrollBar {
   font-weight: bold;
   spacing: 1em;
   padding: 16px;
-  color: $panel_fg;
+  color: $osd_fg_color;
+  background-color: $osd_bg_color;
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 }
 
@@ -1232,20 +1238,25 @@ StScrollBar {
   min-width: 64px;
   min-height: 64px;
 
-  color: $panel_fg;
-  background: none;
+  color: $osd_fg_color;
+  background-color: $osd_bg_color;
   border: none;
   border-radius: 5px;
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 
-.osd-monitor-label { font-size: 3em; }
+  .osd-monitor-label { font-size: 3em; }
 
   .level {
     padding: 0;
     height: 4px;
-    background-color: rgba(black, 0.5);
+    background-color: rgba(black, 0.2);
     border-radius: 2px;
     color: $selected_bg_color;
+  }
+
+  .level-bar {
+    border-radius: 2px;
+    background-color: rgba(black, 0.5);
   }
 }
 

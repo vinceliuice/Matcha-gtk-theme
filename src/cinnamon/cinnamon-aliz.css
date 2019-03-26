@@ -933,7 +933,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing-columns: 10px;
   margin-from-right-edge-of-screen: 20px;
   width: 34em;
-  color: #363636;
+  color: #c0b8b7;
 }
 
 .menu #notification,
@@ -955,7 +955,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #notification.multi-line-notification {
   padding-bottom: 13px;
-  color: #363636;
+  color: #c0b8b7;
 }
 
 #notification-scrollview {
@@ -984,7 +984,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .notification-with-image {
   min-height: 159px;
-  color: #363636;
+  color: #c0b8b7;
 }
 
 .notification-button, .notification-icon-button {
@@ -1081,7 +1081,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .lightbox {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .flashspot {
@@ -1116,7 +1116,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .run-dialog {
-  padding: 15px 20px;
+  padding: 0 20px 15px 20px;
   background-color: rgba(54, 54, 54, 0.95);
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 }
@@ -1127,8 +1127,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .run-dialog-label {
   font-weight: 400;
-  color: #c0b8b7;
-  padding-bottom: 0;
+  color: rgba(192, 184, 183, 0.75);
+  padding-bottom: 10px;
 }
 
 .run-dialog-error-label {
@@ -1138,6 +1138,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .run-dialog-error-box {
   padding-top: 15px;
   spacing: 5px;
+  color: #FC4138;
 }
 
 .run-dialog-completion-box {
@@ -1146,27 +1147,30 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .run-dialog-entry {
+  color: #c0b8b7;
+  background-color: rgba(110, 110, 110, 0.35);
+  border: 1px solid rgba(23, 23, 23, 0.35);
+  box-shadow: none;
   width: 21em;
   padding: 7px;
   border-radius: 3px;
   caret-color: #c0b8b7;
   selected-color: #ffffff;
   selection-background-color: #F0544C;
+}
+
+.run-dialog-entry:focus {
   color: #c0b8b7;
   background-color: rgba(110, 110, 110, 0.35);
   border: 1px solid rgba(23, 23, 23, 0.35);
   box-shadow: none;
-}
-
-.run-dialog-entry:focus {
-  color: #ffffff;
-  background-color: #F0544C;
-  border: 1px solid #F0544C;
-  box-shadow: none;
+  background-color: #1a1a1a;
+  border-color: #F0544C;
 }
 
 .run-dialog .modal-dialog-button-box {
   border: none;
+  border-image: none;
   box-shadow: none;
   background: none;
   background-gradient-direction: none;
@@ -1451,6 +1455,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 1em;
   padding: 16px;
   color: #c0b8b7;
+  background-color: rgba(54, 54, 54, 0.95);
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 }
 
@@ -1463,7 +1468,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: 64px;
   min-height: 64px;
   color: #c0b8b7;
-  background: none;
+  background-color: rgba(54, 54, 54, 0.95);
   border: none;
   border-radius: 5px;
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
@@ -1476,9 +1481,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .osd-window .level {
   padding: 0;
   height: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   color: #F0544C;
+}
+
+.osd-window .level-bar {
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .window-list-box {
