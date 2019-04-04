@@ -107,20 +107,27 @@ $z-depth-5: 0 19px 19px rgba(0, 0, 0, 0.30 * 2), 0 15px 6px rgba(0, 0, 0, 0.22 *
 // normal, focus, insensitive
 //
   @if $t==normal {
-    background-color: if($fc!=$selected_bg_color, rgba($bg_color, 0.01), rgba($base_color, 0.01));
-    border-color: transparent;
-    box-shadow: inset 0 -1px if($fc!=$selected_bg_color, $fc, $track_color);
-
+    background-color: $base_color;
+    border: 1px solid $borders_color;
+    border-radius: 3px;
+    box-shadow: none;
+    text-shadow: none;
   }
+
   @if $t==focus {
     border-color: transparent;
-    box-shadow: inset 0 -2px if($fc!=$selected_bg_color, $fc, $selected_bg_color);
+    border: 1px solid $selected_bg_color;
+    box-shadow: none;
+    text-shadow: none;
   }
+
   @if $t==hover { }
+
   @if $t==insensitive {
     color: $insensitive_fg_color;
-    border-color: transparent;
-    box-shadow: inset 0 -1px if($fc!=$selected_bg_color, $fc, $insensitive_track_color);
+    border-color: $borders_color;
+    box-shadow: none;
+    text-shadow: none;
   }
 }
 
@@ -144,8 +151,8 @@ $z-depth-5: 0 19px 19px rgba(0, 0, 0, 0.30 * 2), 0 15px 6px rgba(0, 0, 0, 0.22 *
   //
     color: if($tc!=$fg_color, $tc, $secondary_fg_color);
     background-color: $c;
-    border-color: transparent;
-    box-shadow: $z-depth-1;
+    border: 1px solid $borders_color;
+    box-shadow: none;
     text-shadow: none;
     icon-shadow: none;
   }
@@ -165,9 +172,9 @@ $z-depth-5: 0 19px 19px rgba(0, 0, 0, 0.30 * 2), 0 15px 6px rgba(0, 0, 0, 0.22 *
   // hovered button
   //
     color: if($tc!=$fg_color, $tc, $fg_color);
-    background-color: $c;
-    border-color: transparent;
-    box-shadow: $z-depth-2;
+    background-color: rgba($fg_color, 0.1);
+    border: 1px solid $borders_color;
+    box-shadow: none;
     text-shadow: none;
     icon-shadow: none;
 
@@ -178,8 +185,8 @@ $z-depth-5: 0 19px 19px rgba(0, 0, 0, 0.30 * 2), 0 15px 6px rgba(0, 0, 0, 0.22 *
   //
     color: if($tc!=$fg_color, $tc, $fg_color);
     background-color: mix($tc, $c, percentage($lower_opacity));
-    border-color: transparent;
-    box-shadow: $z-depth-2;
+    border: 1px solid $borders_color;
+    box-shadow: none;
     text-shadow: none;
     icon-shadow: none;
   }
@@ -251,4 +258,3 @@ $z-depth-5: 0 19px 19px rgba(0, 0, 0, 0.30 * 2), 0 15px 6px rgba(0, 0, 0, 0.22 *
     icon-shadow: none;
   }
 }
-
