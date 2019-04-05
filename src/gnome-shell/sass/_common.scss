@@ -121,8 +121,8 @@ StScrollBar {
   padding: 0;
 
   StScrollView & {
-    min-width: 16px;
-    min-height: 16px;
+    min-width: 5px;
+    min-height: 5px;
   }
 
   StBin#trough {
@@ -137,7 +137,7 @@ StScrollBar {
     //border: 4px solid transparent; //would be nice to margin or at least to transparent
     margin: 4px;
     &:hover { background-color: $secondary_fg_color; }
-    &:active { background-color: $fg_color; }
+    &:active { background-color: $primary_color; }
   }
 }
 
@@ -658,12 +658,6 @@ StScrollBar {
     -boxpointer-gap: 4px;
     margin-bottom: 1.75em;
   }
-
-  StEntry {
-    color: $fg_color;
-    selection-background-color: $selected_bg_color;
-    selected-color: $selected_fg_color;
-  }
 }
 
 .popup-menu-ornament {
@@ -674,41 +668,40 @@ StScrollBar {
 
 .popup-menu-boxpointer {
   -arrow-border-radius: 2px;
-  -arrow-background-color:  rgba(0,0,0,0.0);
+  -arrow-background-color: transparent;
   -arrow-border-width: 1px;
-  -arrow-border-color: rgba(0,0,0,0.0);
+  -arrow-border-color: transparent;
   -arrow-base: 0;
   -arrow-rise: 0;
+  border: 0 none transparent;
+  background: transparent; // needs to reset?
+
+  // .popup-menu-content {
+  // }
+
+  StEntry {
+    selection-background-color: $selected_fg_color;
+    selected-color: $selected_bg_color;
+    text-shadow: none;
+  }
 }
 
 .candidate-popup-boxpointer {
   -arrow-border-radius: 2px;
-  -arrow-background-color: $osd_bg_color;
+  -arrow-background-color: transparent;
   -arrow-border-width: 1px;
-  -arrow-border-color: transparentize(black, 0.6);
-  -arrow-base: 5;
-  -arrow-rise: 5;
-}
+  -arrow-border-color: transparent;
+  -arrow-base: 0;
+  -arrow-rise: 0;
+  border: 0 none transparent;
+  background: transparent; // needs to reset?
+  color: $fg_color;
+  border-image: url("assets/menu.svg") 9 9 9 9;
 
-// .popup-menu-boxpointer {
-//   .popup-menu-content {
-//     margin: 3px 5px 12px;
-//     border-radius: 2px;
-//     border: none;
-//     background-color: $base_color;
-//     box-shadow: $z-depth-2;
-//   }
-// }
-//
-// .candidate-popup-boxpointer {
-//   .candidate-popup-content {
-//     margin: 3px 5px 12px;
-//     border-radius: 2px;
-//     background-color: $base_color;
-//     color: $fg_color;
-//     box-shadow: $z-depth-2;
-//   }
-// }
+  .candidate-popup-content {
+    margin: 6px;
+  }
+}
 
 .popup-separator-menu-item {
   //-margin-horizontal: 24px;
@@ -1436,148 +1429,6 @@ StScrollBar {
 #overview {
   spacing: 24px; //
   StScrollBar { @extend %overview_scrollbar; }
-}
-
-.overview-controls {
-  padding-bottom: 32px;
-}
-
-  .window-picker { //container around window thumbnails
-    -horizontal-spacing: 32px;
-    -vertical-spacing: 32px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 48px;
-
-    &.external-monitor { padding: 32px; }
-  }
-
-  .window-clone-border {
-    border: 4px solid scale-alpha($selected_bg_color, 0.7);
-    border-radius: 2px;
-    // For window decorations with round corners we can't match
-    // the exact shape when the window is scaled. So apply a shadow
-    // to fix that case
-    box-shadow: inset 0 0 0 1px scale-alpha($selected_bg_color, 0.7);
-  }
-  .window-caption {
-    spacing: 25px;
-    color: $selected_fg_color;
-    background-color: scale-alpha(black, 0.5);
-    border-radius: 2px;
-    padding: 4px 8px;
-    -shell-caption-spacing: 12px;
-    &:hover { background-color: scale-alpha($selected_bg_color, 0.8); color: $selected_fg_color; }
-  }
-
-  //search entry
-  .search-entry {
-    width: 320px;
-    padding: 0 8px;
-    border-radius: 20px;
-    color: $entry_color;
-    background-color: scale-alpha($primary_fg_color, 0.1);
-    box-shadow: none;
-    border: 1px solid rgba(white, 0.15);
-    text-shadow: none;
-
-    &:focus {
-      padding: 0 8px;
-      color: $entry_hover_color;
-      background-color: scale-alpha($primary_fg_color, 0.2);
-      box-shadow: none;
-      border: 1px solid $selected_bg_color;
-    }
-
-    .search-entry-icon { icon-size: 16px; padding: 0 0; color: $entry_color; }
-
-    &:hover {
-      .search-entry-icon { color: $entry_hover_color; }
-      box-shadow: none;
-      background-color: scale-alpha($primary_fg_color, 0.2);
-    }
-  }
-
-  //search results
-
-  #searchResultsBin {
-    max-width: 1000px;
-  }
-
-  #searchResultsContent {
-    padding-left: 20px;
-    padding-right: 20px;
-    spacing: 16px;
-  }
-
-  .search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
-  .search-section-content { spacing: 32px; } // This is the space between the provider icon and the results container
-  .search-statustext { // "no results"
-    @extend %status_text;
-  }
-  .list-search-results { spacing: 3px; }
-
-  .search-section-separator {
-    -gradient-height: 1px;
-    -gradient-start: rgba(255,255,255,0);
-    -gradient-end: rgba(255,255,255,0.4);
-    -margin-horizontal: 1.5em;
-    height: 1px;
-  }
-
-  .list-search-result-content { spacing: 12px; padding: 12px; }
-  .list-search-result-title { @include font(headline); color: $selected_fg_color; }
-  .list-search-result-description { color: $secondary_selected_fg_color; }
-  .search-provider-icon { padding: 15px; }
-  .search-provider-icon-more {
-    width: 16px;
-    height: 16px;
-    background-image: url("assets/more-results.svg");
-  }
-
-
-  /* DASHBOARD */
-
-  #dash {
-    font-size: 1em;
-    color: $selected_fg_color;
-    background-color: $overview_bg_color;
-    padding: 3px 0;
-    border: none;
-    border-left: 0px;
-    border-radius: 0px 2px 2px 0px;
-
-    &:rtl {
-      border-radius: 2px 0 0 2px;
-    }
-
-    .placeholder {
-      background-image: url("assets/dash-placeholder.svg");
-      background-size: contain;
-      height: 24px;
-    }
-
-    .empty-dash-drop-target {
-      width: 24px;
-      height: 24px;
-    }
-
-  }
-
-  .dash-item-container > StWidget {
-    padding: 3px 6px;
-  }
-
-  .dash-label { //osd tooltip
-    min-height: 32px - 6px * 2;
-    border-radius: 2px;
-    padding: 6px 8px;
-    color: $fg_color;
-    background-color: $base_color;
-    box-shadow: $z-depth-2;
-    text-align: center;
-    -x-offset: 8px;
-  }
 
   /* App Vault/Grid */
   .icon-grid {
@@ -1597,12 +1448,12 @@ StScrollBar {
     padding: 0 16px;
     font-weight: bold;
     color: $secondary_selected_fg_color;
-    background-color: $osd_bg_color;
-    border: 1px solid $borders_color;
+    background-color: rgba(black, 0.35);
+    border: 1px solid rgba(black, 0.25);
 
     &:hover {
       color: $selected_fg_color;
-      background-color: scale-alpha($selected_fg_color, 0.15);
+      background-color: rgba(black, 0.25);
       box-shadow: none;
     }
     &:active {
@@ -1627,168 +1478,310 @@ StScrollBar {
       &:checked { border-radius: 0 2px 2px 0; }
     }
   }
+}
 
-  //Icon tile
-  .search-provider-icon,
-  .list-search-result {
-    @extend %icon_tile;
-    &:focus, &:selected, &:hover {
-      background-color: $selected_semi_track_color;
-      transition-duration: 0s;
-    }
-    &:active, &:checked {
-      background-color: $selected_track_color;
-      transition-duration: 0.2s;
-    }
-  }
-  .app-well-app,
-  .app-well-app.app-folder,
-  .show-apps,
-  .grid-search-result {
-    & .overview-icon {
-      @extend %icon_tile;
-    }
-    &:hover .overview-icon,
-    &:focus .overview-icon,
-    &:selected .overview-icon {
-      background-color: $selected_semi_track_color;
-      transition-duration: 0s;
-      border-image: none;
-      background-image: none;
-    }
-    &:active .overview-icon,
-    &:checked .overview-icon {
-      background-color: $selected_track_color;
-      box-shadow: $z-depth-0;
-      transition-duration: 0.2s;
-    }
+.overview-controls {
+  padding-bottom: 32px;
+}
 
-  }
+.window-picker { //container around window thumbnails
+  -horizontal-spacing: 32px;
+  -vertical-spacing: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 48px;
 
-  .app-well-app-running-dot { //running apps indicator
-    width: 32px; height: 2px;
-    background-color: $selected_fg_color;
-    margin-bottom: 0;
-  }
+  &.external-monitor { padding: 32px; }
+}
 
-  %icon_tile {
-    color: $selected_fg_color;
-    border-radius: 2px;
-    padding: 6px;
-    border: none;
-    transition-duration: 0.2s;
-    text-align: center;
-  }
+.window-clone-border {
+  border: 4px solid scale-alpha($selected_bg_color, 0.7);
+  border-radius: 2px;
+  // For window decorations with round corners we can't match
+  // the exact shape when the window is scaled. So apply a shadow
+  // to fix that case
+  box-shadow: inset 0 0 0 1px scale-alpha($selected_bg_color, 0.7);
+}
+.window-caption {
+  spacing: 25px;
+  color: $selected_fg_color;
+  background-color: scale-alpha(black, 0.5);
+  border-radius: 2px;
+  padding: 4px 8px;
+  -shell-caption-spacing: 12px;
+  &:hover { background-color: scale-alpha($selected_bg_color, 0.8); color: $selected_fg_color; }
+}
 
-  .app-well-app.app-folder > .overview-icon {
-    background-color: $overview_bg_color;
+//search entry
+.search-entry {
+  width: 320px;
+  padding: 0 8px;
+  border-radius: 20px;
+  color: $entry_color;
+  background-color: rgba(black, 0.35);
+  box-shadow: none;
+  border: 1px solid rgba(black, 0.25);
+  text-shadow: none;
+
+  &:focus {
+    padding: 0 8px;
+    color: $entry_hover_color;
+    background-color: rgba(black, 0.25);
+    box-shadow: none;
+    border: 1px solid $selected_bg_color;
   }
 
-  .show-apps .show-apps-icon {
-    color: $secondary_selected_fg_color;
+  .search-entry-icon { icon-size: 16px; padding: 0 0; color: $entry_color; }
+
+  &:hover {
+    .search-entry-icon { color: $entry_hover_color; }
+    box-shadow: none;
+    background-color: rgba(black, 0.25);
   }
+}
 
-  .show-apps:hover .show-apps-icon,
-  .show-apps:active .show-apps-icon,
-  .show-apps:checked .show-apps-icon,
-  .show-apps:focus .show-apps-icon {
-    color: $selected_fg_color;
-    transition-duration: 0.2s;
-  }
+//search results
+
+#searchResultsBin {
+  max-width: 1000px;
+}
+
+#searchResultsContent {
+  padding-left: 20px;
+  padding-right: 20px;
+  spacing: 16px;
+}
+
+.search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
+.search-section-content { spacing: 32px; } // This is the space between the provider icon and the results container
+.search-statustext { // "no results"
+  @extend %status_text;
+}
+.list-search-results { spacing: 3px; }
+
+.search-section-separator {
+  -gradient-height: 1px;
+  -gradient-start: rgba(255,255,255,0);
+  -gradient-end: rgba(255,255,255,0.4);
+  -margin-horizontal: 1.5em;
+  height: 1px;
+}
+
+.list-search-result-content { spacing: 12px; padding: 12px; }
+.list-search-result-title { @include font(headline); color: $selected_fg_color; }
+.list-search-result-description { color: $secondary_selected_fg_color; }
+.search-provider-icon { padding: 15px; }
+.search-provider-icon-more {
+  width: 16px;
+  height: 16px;
+  background-image: url("assets/more-results.svg");
+}
 
 
-  // Collections
-  .app-folder-popup { //expanded collection
-    -arrow-border-radius: 2px;
-    -arrow-background-color: $overview_bg_color;
-    -arrow-base: 24px;
-    -arrow-rise: 12px;
-  }
-  .app-folder-popup-bin { padding: 5px; }
-  .app-folder-icon {
-    padding: 5px;
-    spacing-rows: 5px;
-    spacing-columns: 5px;
-  }
+/* DASHBOARD */
 
-  .page-indicator {
-    padding: 15px 20px;
+#dash {
+  font-size: 1em;
+  color: $selected_fg_color;
+  background-color: $overview_bg_color;
+  padding: 3px 0;
+  border: none;
+  border-left: 0px;
+  border-radius: 0px 2px 2px 0px;
 
-    .page-indicator-icon {
-      width: 12px;
-      height: 12px;
-      border-radius: 12px;
-      margin: 0;
-      padding: 0;
-      background-image: none;
-      color: transparent;
-      border: none;
-      box-shadow: none;
-      background-color: scale-alpha($selected_fg_color, $lower_opacity);
-    }
-    &:hover .page-indicator-icon {
-      margin: 0;
-      padding: 0;
-      background-image: none;
-      color: transparent;
-      border: none;
-      box-shadow: none;
-      background-color: scale-alpha($selected_fg_color, $middle_opacity);
-    }
-    &:active .page-indicator-icon {
-      margin: 0;
-      padding: 0;
-      background-image: none;
-      color: transparent;
-      border: none;
-      box-shadow: none;
-      background-color: scale-alpha($selected_fg_color, $higher_opacity);
-    }
-    &:checked .page-indicator-icon,
-    &:checked:active {
-      margin: 0;
-      padding: 0;
-      background-image: none;
-      color: transparent;
-      border: none;
-      box-shadow: none;
-      background-color: $selected_fg_color;
-      transition-duration: 0s;
-    }
-  }
-
-  .no-frequent-applications-label { @extend %status_text; }
-
-  .app-well-app > .overview-icon.overview-icon-with-label,
-  .grid-search-result .overview-icon.overview-icon-with-label {
-    padding: 10px 8px 5px 8px;
-    spacing: 4px;
-  }
-
-  // Workspace pager
-  .workspace-thumbnails { //container ala dash
-    @extend %overview-panel;
-    visible-width: 32px; //amount visible before hover
-    spacing: 12px;
-    padding: 12px;
+  &:rtl {
     border-radius: 2px 0 0 2px;
-    //border-width: 0; //fixme: can't have non unoform borders :(
-    &:rtl { border-radius: 0 2px 2px 0;}
-  }
-  .workspace-thumbnail-indicator {
-    border: 0 solid $selected_fg_color;
-    border-left-width: 2px;
-    padding: 6px;
-    border-radius: 0;
   }
 
-  //Some hacks I don't even
-  .search-display > StBoxLayout,
-  .all-apps,
-  .frequent-apps > StBoxLayout {
-    // horizontal padding to make sure scrollbars or dash don't overlap content
-    padding: 0px 88px 10px 88px;
+  .placeholder {
+    background-image: url("assets/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
   }
+
+  .empty-dash-drop-target {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.dash-item-container > StWidget {
+  padding: 3px 6px;
+}
+
+.dash-label { //osd tooltip
+  min-height: 32px - 6px * 2;
+  border-radius: 2px;
+  padding: 6px 8px;
+  color: $fg_color;
+  background-color: $base_color;
+  box-shadow: $z-depth-2;
+  text-align: center;
+  -x-offset: 8px;
+}
+
+//Icon tile
+.search-provider-icon,
+.list-search-result {
+  @extend %icon_tile;
+  &:focus, &:selected, &:hover {
+    background-color: $selected_semi_track_color;
+    transition-duration: 0s;
+  }
+  &:active, &:checked {
+    background-color: $selected_track_color;
+    transition-duration: 0.2s;
+  }
+}
+.app-well-app,
+.app-well-app.app-folder,
+.show-apps,
+.grid-search-result {
+  & .overview-icon {
+    @extend %icon_tile;
+  }
+  &:hover .overview-icon,
+  &:focus .overview-icon,
+  &:selected .overview-icon {
+    background-color: $selected_semi_track_color;
+    transition-duration: 0s;
+    border-image: none;
+    background-image: none;
+  }
+  &:active .overview-icon,
+  &:checked .overview-icon {
+    background-color: $selected_track_color;
+    box-shadow: $z-depth-0;
+    transition-duration: 0.2s;
+  }
+
+}
+
+.app-well-app-running-dot { //running apps indicator
+  width: 32px; height: 2px;
+  background-color: $selected_fg_color;
+  margin-bottom: 0;
+}
+
+%icon_tile {
+  color: $selected_fg_color;
+  border-radius: 2px;
+  padding: 6px;
+  border: none;
+  transition-duration: 0.2s;
+  text-align: center;
+}
+
+.app-well-app.app-folder > .overview-icon {
+  background-color: $overview_bg_color;
+}
+
+.show-apps .show-apps-icon {
+  color: $secondary_selected_fg_color;
+}
+
+.show-apps:hover .show-apps-icon,
+.show-apps:active .show-apps-icon,
+.show-apps:checked .show-apps-icon,
+.show-apps:focus .show-apps-icon {
+  color: $selected_fg_color;
+  transition-duration: 0.2s;
+}
+
+
+// Collections
+.app-folder-popup { //expanded collection
+  -arrow-border-radius: 2px;
+  -arrow-background-color: $overview_bg_color;
+  -arrow-base: 24px;
+  -arrow-rise: 12px;
+}
+.app-folder-popup-bin { padding: 5px; }
+.app-folder-icon {
+  padding: 5px;
+  spacing-rows: 5px;
+  spacing-columns: 5px;
+}
+
+.page-indicator {
+  padding: 15px 20px;
+
+  .page-indicator-icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    margin: 0;
+    padding: 0;
+    background-image: none;
+    color: transparent;
+    border: none;
+    box-shadow: none;
+    background-color: scale-alpha($selected_fg_color, $lower_opacity);
+  }
+  &:hover .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+    color: transparent;
+    border: none;
+    box-shadow: none;
+    background-color: scale-alpha($selected_fg_color, $middle_opacity);
+  }
+  &:active .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+    color: transparent;
+    border: none;
+    box-shadow: none;
+    background-color: $primary_color;
+    transition-duration: 0s;
+  }
+  &:checked .page-indicator-icon,
+  &:checked:active {
+    margin: 0;
+    padding: 0;
+    background-image: none;
+    color: transparent;
+    border: none;
+    box-shadow: none;
+    background-color: $primary_color;
+    transition-duration: 0s;
+  }
+}
+
+.no-frequent-applications-label { @extend %status_text; }
+
+.app-well-app > .overview-icon.overview-icon-with-label,
+.grid-search-result .overview-icon.overview-icon-with-label {
+  padding: 10px 8px 5px 8px;
+  spacing: 4px;
+}
+
+// Workspace pager
+.workspace-thumbnails { //container ala dash
+  @extend %overview-panel;
+  visible-width: 32px; //amount visible before hover
+  spacing: 12px;
+  padding: 12px;
+  border-radius: 2px 0 0 2px;
+  //border-width: 0; //fixme: can't have non unoform borders :(
+  &:rtl { border-radius: 0 2px 2px 0;}
+}
+.workspace-thumbnail-indicator {
+  border: 0 solid $selected_bg_color;
+  border-left-width: 2px;
+  padding: 6px;
+  border-radius: 0;
+}
+
+//Some hacks I don't even
+.search-display > StBoxLayout,
+.all-apps,
+.frequent-apps > StBoxLayout {
+  // horizontal padding to make sure scrollbars or dash don't overlap content
+  padding: 0px 88px 10px 88px;
+}
 
 %overview-panel {
   color: $selected_fg_color;
@@ -2045,37 +2038,37 @@ $legacy_icon_size: 24px;
   spacing: 0;
 }
 
-  .candidate-index {
-    padding: 0 4px 0 0;
-    color: $tertiary_fg_color;
-    .candidate-box:selected & { color: $tertiary_selected_fg_color; }
-  }
+.candidate-index {
+  padding: 0 4px 0 0;
+  color: $tertiary_fg_color;
+  .candidate-box:selected & { color: $tertiary_selected_fg_color; }
+}
 
-  .candidate-box {
-    transition-duration: 0s;
-    min-height: $menuitem_size;
-    padding: 0 8px;
-    border-radius: 2px;
-    &:hover { background-color: $semi_track_color; color: $fg_color; }
-    &:active { background-color: $track_color; color: $fg_color; }
-    &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
-  }
+.candidate-box {
+  transition-duration: 0s;
+  min-height: $menuitem_size;
+  padding: 0 8px;
+  border-radius: 2px;
+  &:hover { background-color: $semi_track_color; color: $fg_color; }
+  &:active { background-color: $track_color; color: $fg_color; }
+  &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
+}
 
-  .candidate-page-button-box {
-    height: $menuitem_size;
-    .vertical & { padding-top: 0; }
-    .horizontal & { padding-left: 0; }
-  }
+.candidate-page-button-box {
+  height: $menuitem_size;
+  .vertical & { padding-top: 0; }
+  .horizontal & { padding-left: 0; }
+}
 
-  .candidate-page-button {
-    min-width: $menuitem_size;
-    min-height: $menuitem_size;
-    padding: 0;
-  }
+.candidate-page-button {
+  min-width: $menuitem_size;
+  min-height: $menuitem_size;
+  padding: 0;
+}
 
-  .candidate-page-button-previous { border-radius: 2px; border-right-width: 0; }
-  .candidate-page-button-next { border-radius: 2px;  }
-  .candidate-page-button-icon { @include em(16px); }
+.candidate-page-button-previous { border-radius: 2px; border-right-width: 0; }
+.candidate-page-button-next { border-radius: 2px;  }
+.candidate-page-button-icon { @include em(16px); }
 
 /* Auth Dialogs & Screen Shield */
 
@@ -2112,6 +2105,8 @@ $legacy_icon_size: 24px;
     &:focus {
       border: 1px solid $selected_bg_color;
       background-color: rgba(white, 0.1);
+      selection-background-color: $selected_bg_color;
+      selected-color: $selected_fg_color;
     }
 
     &:insensitive {
@@ -2123,19 +2118,18 @@ $legacy_icon_size: 24px;
   .modal-dialog-button-box { spacing: 3px; }
   .modal-dialog-button {
     padding: 0 16px;
-    @include button(flat-normal, $tc:$secondary_selected_fg_color);
-    &:hover,&:focus { @include button(flat-hover, $c:$selected_semi_track_color, $tc:$selected_fg_color); }
-    &:active { @include button(flat-active, $c:$selected_track_color, $tc:$selected_fg_color); }
-    &:insensitive { @include button(flat-insensitive, $tc:$insensitive_secondary_selected_fg_color); }
-    &:default {
-      @include button(normal, $c:$suggested_color, $tc:$selected_fg_color);
-      &:hover,&:focus { @include button(hover, $c:$suggested_color, $tc:$selected_fg_color); }
-      &:active { @include button(active, $c:$suggested_color, $tc:$selected_fg_color); }
-      &:insensitive { @include button(insensitive, $c:$selected_insensitive_track_color, $tc:$insensitive_selected_fg_color); }
+    @include button(flat-normal);
+    &:hover,&:focus { @include button(flat-hover); }
+    &:active { @include button(flat-active); }
+    &:insensitive { @include button(flat-insensitive); }
 
+    &:default {
+      @include button(normal);
+      &:hover,&:focus { @include button(hover); }
+      &:active { @include button(active); }
+      &:insensitive { @include button(insensitive); }
     }
   }
-
 }
 
   .login-dialog-logo-bin { padding: 24px 0px; }
@@ -2230,11 +2224,11 @@ $legacy_icon_size: 24px;
 }
 
 .screen-shield-arrows Gjs_Arrow {
-    color: white;
-    width: 80px;
-    height: 48px;
-    -arrow-thickness: 12px;
-    -arrow-shadow: $z-depth-1;
+  color: white;
+  width: 80px;
+  height: 48px;
+  -arrow-thickness: 12px;
+  -arrow-shadow: $z-depth-1;
 }
 
 .screen-shield-clock {
@@ -2347,65 +2341,65 @@ $legacy_icon_size: 24px;
   StBoxLayout#ResultsArea { spacing: 4px; }
 }
 
-  .lg-dialog {
-    StEntry {
-      selection-background-color: $selected_bg_color;
-      selected-color: $selected_fg_color;
-    }
-    .shell-link {
-      color: $link_color;
-      &:hover { color: $link_color; }
-     }
+.lg-dialog {
+  StEntry {
+    selection-background-color: $selected_bg_color;
+    selected-color: $selected_fg_color;
   }
-
-  .lg-completions-text {
-      font-size: 1em;
-      font-style: italic;
+  .shell-link {
+    color: $link_color;
+    &:hover { color: $link_color; }
   }
+}
 
-  .lg-obj-inspector-title {
-      spacing: 4px;
-  }
+.lg-completions-text {
+  font-size: 1em;
+  font-style: italic;
+}
 
-  .lg-obj-inspector-button {
-      min-height: $medium_size;
-      padding: 0 16px;
-      border: none;
-      border-radius: 2px;
-      @include font(button);
-      @include button(flat-normal);
-      &:hover { @include button(flat-hover); }
-      &:active { @include button(flat-active); }
-      &:insensitive { @include button(flat-insensitive); }
-      &:focus { @include button(flat-focus); }
-      &:hover { border: none; }
-  }
+.lg-obj-inspector-title {
+  spacing: 4px;
+}
 
-  #lookingGlassExtensions { padding: 4px; }
+.lg-obj-inspector-button {
+  min-height: $medium_size;
+  padding: 0 16px;
+  border: none;
+  border-radius: 2px;
+  @include font(button);
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+  &:hover { border: none; }
+}
 
-  .lg-extensions-list {
-      padding: 4px;
-      spacing: 6px;
-  }
+#lookingGlassExtensions { padding: 4px; }
 
-  .lg-extension {
-      border: none;
-      border-radius: 2px;
-      padding: 4px;
-  }
+.lg-extensions-list {
+  padding: 4px;
+  spacing: 6px;
+}
 
-  .lg-extension-name {
-      @include font(headline);
-  }
+.lg-extension {
+  border: none;
+  border-radius: 2px;
+  padding: 4px;
+}
 
-  .lg-extension-meta {
-      spacing: 6px;
-  }
+.lg-extension-name {
+  @include font(headline);
+}
 
-  #LookingGlassPropertyInspector {
-    background: $base_color;
-    border: none;
-    border-radius: 2px;
-    padding: 6px;
-    box-shadow: $z-depth-4;
-  }
+.lg-extension-meta {
+  spacing: 6px;
+}
+
+#LookingGlassPropertyInspector {
+  background: $base_color;
+  border: none;
+  border-radius: 2px;
+  padding: 6px;
+  box-shadow: $z-depth-4;
+}
