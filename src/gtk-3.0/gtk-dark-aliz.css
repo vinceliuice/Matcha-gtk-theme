@@ -6274,8 +6274,8 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 }
 
 window.background.chromium {
-  background-color: #363636;
-  color: #b5abab;
+  background-color: #fbfbfb;
+  color: #565656;
 }
 
 window.background.chromium headerbar.titlebar button.toggle {
@@ -6308,33 +6308,38 @@ window.background.chromium headerbar.titlebar button.titlebutton {
 window.background.chromium button {
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: #d9d9d9;
+  background-color: #fbfbfb;
+  color: #565656;
 }
 
 window.background.chromium entry.chromium {
   border-image: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #d9d9d9;
 }
 
 window.background.chromium > textview.view {
-  background-color: #262626;
+  background-color: #fbfbfb;
 }
 
 window.background.chromium > menubar {
-  background-color: #1a1a1a;
+  background-color: #fbfbfb;
+  color: #666666;
 }
 
 window.background.chromium > menu {
-  border: 1px solid #131313;
-  background-color: #272727;
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  color: #666666;
 }
 
 window.background.chromium > menu > separator {
-  background-color: #272727;
+  color: white;
+  background-color: white;
 }
 
 window.background.chromium > menu > menuitem {
-  color: #cbbfbf;
+  color: #666666;
 }
 
 window.background.chromium > menu > menuitem:hover {
@@ -6343,11 +6348,11 @@ window.background.chromium > menu > menuitem:hover {
 }
 
 window.background.chromium > menu > menuitem:disabled {
-  color: rgba(203, 191, 191, 0.45);
+  color: rgba(102, 102, 102, 0.45);
 }
 
 window.background.chromium > menu > menuitem label:disabled {
-  color: rgba(203, 191, 191, 0.45);
+  color: rgba(102, 102, 102, 0.45);
 }
 
 .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar {

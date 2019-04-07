@@ -240,12 +240,16 @@ window.background:not(.csd) {
 //
 // Chrome(ium)
 //
-$chrome_borders_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.15));
+$chrome_borders_color: darken(white, 15%);
+$chrome_bg_color: #fbfbfb;
+$chrome_fg_color: #565656;
+$chrome_menu_bg_color: #ffffff;
+$chrome_menu_fg_color: #666666;
 
 window.background.chromium {
   // checked-tab & toolbar & button widgets
-  background-color: if($variant == 'light', darken($bg_color, 3%), lighten($bg_color, 8%));
-  color: $text_color;
+  background-color: $chrome_bg_color;
+  color: $chrome_fg_color;
 
   headerbar.titlebar {
     button.toggle { // account-button (> 64.0.3282?)
@@ -271,6 +275,8 @@ window.background.chromium {
     border-width: 1px;
     border-style: solid;
     border-color: $chrome_borders_color;
+    background-color: $chrome_bg_color;
+    color: $chrome_fg_color;
   }
 
   entry.chromium {
@@ -280,23 +286,26 @@ window.background.chromium {
   }
 
   // internal region of toolbar's entry widget
-  > textview.view { background-color: $base_color; }
+  > textview.view { background-color: $chrome_bg_color; }
 
   // Fixed Atom/VS-code chromium based app menubar issues
   > menubar {
-    background-color: $header_bg;
+    background-color: $chrome_bg_color;
+    color: $chrome_menu_fg_color;
   }
 
   > menu {
-    border: 1px solid darken($header_bg, 3%);
-    background-color: lighten($header_bg, 5%);
+    border: 1px solid $chrome_borders_color;
+    background-color: lighten($chrome_menu_bg_color, 5%);
+    color: $chrome_menu_fg_color;
 
     > separator {
-      background-color: lighten($header_bg, 5%);
+      color: lighten($chrome_menu_bg_color, 5%);
+      background-color: lighten($chrome_menu_bg_color, 5%);
     }
 
     > menuitem {
-      color: $header_fg; // Atom/VS-code menubar use this as menubar menuitem color
+      color: $chrome_menu_fg_color; // Atom/VS-code menubar use this as menubar menuitem color
 
       &:hover {
         color: $selected_fg_color;
@@ -304,10 +313,10 @@ window.background.chromium {
       }
 
       &:disabled {
-        color: rgba($header_fg, 0.45);
+        color: rgba($chrome_menu_fg_color, 0.45);
       }
 
-      label { &:disabled { color: rgba($header_fg, 0.45); }}
+      label { &:disabled { color: rgba($chrome_menu_fg_color, 0.45); }}
     }
   }
 }
