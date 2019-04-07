@@ -89,11 +89,12 @@ terminal-window,
       button.text-button,
       button.image-button.text-button {
         @extend %pathbar_box_button;
-        border-radius: 3px;
 
-        &:hover {
-          background-color: rgba($header_fg, 0.15);
-          box-shadow: none;
+        &:not(:only-child):last-child {
+          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                        $selected_bg_color 100%,
+                                        transparent 0%)
+                                        0 0 2 / 0 0 2px;
         }
       }
     }

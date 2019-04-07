@@ -686,7 +686,7 @@ toolbar.inline-toolbar toolbutton {
 
 // Apply the rules defined above
 .linked:not(.vertical) {
-  &:not(.path-bar) { @include linking_rules(); }
+  &:not(.path-bar):not(.nautilus-path-bar) { @include linking_rules(); }
   &.path-bar { @include pathbar_linking_rules(); }
   .osd & { @include linking_rules($e_border:$osd_entry_border, $b_border:$osd_button_border); }
 }
@@ -1061,6 +1061,7 @@ headerbar,
       padding-left: 10px;
       padding-right: 10px;
       GtkArrow { -GtkArrow-arrow-scaling: 1; }
+
       .arrow {
         -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
       }
@@ -1104,7 +1105,7 @@ headerbar,
   .csd &.default-decoration:backdrop {
     background-color: opacify($header_bg, 1);
     border-bottom-width: 0;
-//    box-shadow: none;
+    // box-shadow: none;
     .maximized & { background-color: opacify($header_bg, 1); }
   }
 
@@ -1214,9 +1215,9 @@ headerbar {
       }
 
       &:disabled { color: rgba($header_fg, 0.4); }
-//      &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
+      // &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
     }
-//    @include pathbar_linking_rules($sep_color:$header_button_border);
+   // @include pathbar_linking_rules($sep_color:$header_button_border);
   }
 }
 
@@ -1339,6 +1340,7 @@ headerbar {
       color: $selection_mode_fg;
       background-color: transparentize($selection_mode_fg, 1);
     }
+
     &:hover { background-color: gtkalpha($selection_mode_fg, 0.3); }
     &:active, &:checked { @extend %selected-button:active; }
 
@@ -1347,6 +1349,7 @@ headerbar {
 
       &:checked, &:active { @extend %selected-button:disabled:checked; }
     }
+
     &:backdrop { opacity: 0.7; background: none; }
   }
 
@@ -1367,7 +1370,7 @@ headerbar {
     }
   }
 
-  .linked:not(.vertical):not(.path-bar) {
+  .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
 
     > #{$_uncolored_button}:hover:not(:only-child),
