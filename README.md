@@ -32,12 +32,6 @@ Search for the engines in your distributions repository or install the engines f
 
 ## Install
 
-### Install from PPA for Ubuntu
-
-    sudo add-apt-repository ppa:ryu0/aesthetics
-    sudo apt-get update
-    sudo apt install matcha-theme
-
 ### Install from source file
 
 Double-click to open that script file,
@@ -65,4 +59,3 @@ Usage:  `./Install`  **[OPTIONS...]**
 ![03](https://github.com/vinceliuice/matcha/blob/imgs/img-03.jpg?raw=true) 
 ![04](https://github.com/vinceliuice/matcha/blob/imgs/img-04.jpg?raw=true) 
 ![05](https://github.com/vinceliuice/matcha/blob/imgs/img-05.jpg?raw=true) 
-
