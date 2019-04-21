@@ -150,7 +150,7 @@ $dark_menu_border: rgba(black, 0.20);
     &:disabled { background-color: transparent; }
   }
 
-  trough { background-color: darken($dark_menu_bg, 2%); }
+  trough { background-color: rgba(black, 0.08); }
 }
 
 window#whiskermenu-window {
@@ -163,7 +163,7 @@ window#whiskermenu-window {
   }
 
   button {
-    background-color: $dark_menu_bg;
+    background-color: transparent;
     color: $dark_menu_fg;
     background-clip: padding-box;
 
@@ -187,7 +187,7 @@ window#whiskermenu-window {
   }
 
   entry {
-    background-color: lighten($dark_menu_bg, 3%);
+    background-color: rgba($dark_menu_fg, 0.1);
     color: $dark_menu_fg;
     border-color: $dark_menu_border;
 
@@ -219,11 +219,11 @@ window#whiskermenu-window {
     scrollbar { @extend %dark_menu_scrollbar; }
 
     treeview.view {
-      background-color: lighten($dark_menu_bg, 3%);
+      background-color: rgba(lighten($dark_menu_bg, 5%), 0.9);
       color: $dark_menu_fg;
 
       &:selected:hover {
-        background-color: rgba($dark_menu_fg, 0.1);
+        background-color: lighten($dark_menu_bg, 10%);
         color: $dark_menu_fg;
       }
     }

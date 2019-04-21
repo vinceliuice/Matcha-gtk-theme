@@ -8291,7 +8291,7 @@ window#whiskermenu-window scrolledwindow scrollbar slider:disabled {
 }
 
 window#whiskermenu-window scrolledwindow scrollbar trough {
-  background-color: #1d1d1d;
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 window#whiskermenu-window {
@@ -8304,7 +8304,7 @@ window#whiskermenu-window > frame > border {
 }
 
 window#whiskermenu-window button {
-  background-color: #222222;
+  background-color: transparent;
   color: #efe7e7;
   background-clip: padding-box;
 }
@@ -8328,7 +8328,7 @@ window#whiskermenu-window button:disabled {
 }
 
 window#whiskermenu-window entry {
-  background-color: #2a2a2a;
+  background-color: rgba(239, 231, 231, 0.1);
   color: #efe7e7;
   border-color: rgba(0, 0, 0, 0.2);
 }
@@ -8356,12 +8356,12 @@ window#whiskermenu-window entry:disabled image {
 }
 
 window#whiskermenu-window scrolledwindow treeview.view {
-  background-color: #2a2a2a;
+  background-color: rgba(47, 47, 47, 0.9);
   color: #efe7e7;
 }
 
 window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
-  background-color: rgba(239, 231, 231, 0.1);
+  background-color: #3c3c3c;
   color: #efe7e7;
 }
 
