@@ -1464,7 +1464,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
   spacing: 1em;
   padding: 20px;
-  margin: 32px;
   min-width: 64px;
   min-height: 64px;
   color: #b6bbbf;
@@ -1481,14 +1480,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .osd-window .level {
   padding: 0;
   height: 4px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.35);
   border-radius: 2px;
   color: #3498db;
 }
 
 .osd-window .level-bar {
   border-radius: 2px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #3498db;
 }
 
 .window-list-box {
