@@ -6148,12 +6148,12 @@ window.background:not(.csd) > widget > scrollbar {
 
 window.background:not(.csd) > widget > scrollbar,
 window.background:not(.csd) > widget > frame > border {
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #d1d1d1;
 }
 
 window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget > button > button {
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #d1d1d1;
   border-radius: 2px;
 }
 
@@ -6161,7 +6161,7 @@ window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget .entry {
   border-radius: 2px;
   background-image: image(#ffffff);
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #d1d1d1;
 }
 
 window.background:not(.csd) > widget > entry:focus,
@@ -6171,7 +6171,7 @@ window.background:not(.csd) > widget .entry:focus {
 
 window.background:not(.csd) > widget > spinbutton {
   background-image: image(#fcfcfc);
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #d1d1d1;
 }
 
 window.background:not(.csd) > widget > spinbutton:active {
@@ -6252,15 +6252,15 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 #MozillaGtkWidget.background > window.background > menu > separator {
   padding: 0;
   border: none;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #d1d1d1;
 }
 
 #MozillaGtkWidget.background > widget border {
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #d1d1d1;
 }
 
 #MozillaGtkWidget.background > widget separator {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #d1d1d1;
 }
 
 #MozillaGtkWidget.background > widget > scrolledwindow > textview {
@@ -6273,8 +6273,8 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 }
 
 window.background.chromium {
-  background-color: #fbfbfb;
-  color: #565656;
+  background-color: #f7f7f7;
+  color: #273134;
 }
 
 window.background.chromium headerbar.titlebar button.toggle {
@@ -6307,27 +6307,46 @@ window.background.chromium headerbar.titlebar button.titlebutton {
 window.background.chromium button {
   border-width: 1px;
   border-style: solid;
-  border-color: #d9d9d9;
+  border-color: #d1d1d1;
+  background-color: #f7f7f7;
+  color: #273134;
 }
 
 window.background.chromium entry.chromium {
   border-image: none;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #d1d1d1;
+  background-color: #f7f7f7;
+  color: #273134;
 }
 
 window.background.chromium > textview.view {
-  background-color: #fbfbfb;
-  color: #565656;
+  background-color: #f7f7f7;
+  color: #273134;
+}
+
+window.background.chromium > textview {
+  color: #273134;
+  background-color: #f7f7f7;
+}
+
+window.background.chromium > textview text {
+  color: #273134;
+  background-color: #f7f7f7;
 }
 
 window.background.chromium > menubar {
-  background-color: #fbfbfb;
+  background-color: #1b2224;
+  color: #e5eceb;
+}
+
+window.background.chromium > menubar > menuitem {
+  color: #e5eceb;
 }
 
 window.background.chromium > menu {
-  border: 1px solid #d9d9d9;
+  border: 1px solid #dddddd;
   background-color: white;
-  color: #666666;
+  color: #686868;
 }
 
 window.background.chromium > menu > separator {
@@ -6336,7 +6355,7 @@ window.background.chromium > menu > separator {
 }
 
 window.background.chromium > menu > menuitem {
-  color: #666666;
+  color: #686868;
 }
 
 window.background.chromium > menu > menuitem:hover {
@@ -6345,11 +6364,11 @@ window.background.chromium > menu > menuitem:hover {
 }
 
 window.background.chromium > menu > menuitem:disabled {
-  color: rgba(102, 102, 102, 0.45);
+  color: rgba(104, 104, 104, 0.45);
 }
 
 window.background.chromium > menu > menuitem label:disabled {
-  color: rgba(102, 102, 102, 0.45);
+  color: rgba(104, 104, 104, 0.45);
 }
 
 .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar {
