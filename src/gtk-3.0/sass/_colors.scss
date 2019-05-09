@@ -47,18 +47,21 @@ $suggested_color: #db5b5b;
 $destructive_fg_color: white;
 $suggested_fg_color: white;
 $progress_color: #db5b5b;
+
 @if $color=='aliz' {
     $progress_color: #00C487;
     $success_color: #3498db;
     $destructive_color: #db5b5b;
     $suggested_color: #2eb398;
 }
+
 @if $color=='azul' {
     $progress_color: #7C4DFF;
     $success_color: #2eb398;
     $destructive_color: #db5b5b;
     $suggested_color: #4146d1;
 }
+
 $drop_target_color: #F08437;
 
 //insensitive state derived colors
@@ -85,7 +88,7 @@ $dark_sidebar_fg: $header_fg;
 $dark_sidebar_border: if($variant == 'light', $dark_sidebar_bg, darken($dark_sidebar_bg, 5%));
 
 $osd_fg_color: $dark_sidebar_fg;
-$osd_bg_color: $dark_sidebar_bg;
+$osd_bg_color: lighten($header_bg, 1%);
 
 $osd_button_bg: transparentize(lighten($osd_bg_color, 22%), 0.6);
 $osd_button_border: transparentize(darken($osd_bg_color, 12%), 0.6);

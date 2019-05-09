@@ -35,7 +35,7 @@ $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark var
   background-color: if($transparency == 'true', rgba($bg_color, 1), $bg_color); // without this headerbar transparency doesn't seem to work
 }
 
-.popup.background {
+.popup.background.csd {
   border-radius: 2px; // menus background
 }
 
@@ -1118,7 +1118,7 @@ headerbar,
     border-top-right-radius: 2px;
   }
 
-  &, & > headerbar {
+  &, & headerbar {
     box-shadow: inset 0 1px $highlight;
 
     .tiled &,
@@ -1229,7 +1229,7 @@ headerbar {
       padding: 0;
       background: none;
       border: none;
-      box-shadow: none;
+      // box-shadow: none;
     }
   }
 
@@ -2843,46 +2843,67 @@ calendar {
 
 messagedialog { // Message Dialog styling
 
-  .titlebar {
+  &.csd .titlebar {
     min-height: 20px;
-    background-color: $header_bg;
-    border-bottom: 1px solid darken($header_bg, 7%);
+    background-color: $bg_color;
+    border: none;
+    box-shadow: inset 0 1px $highlight;
   }
 
-  .dialog-action-area button { padding: 8px; min-height: 0; }
+  .dialog-action-area.linked:not(.vertical) > button {
+    padding: 5px 10px;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid $borders_color;
 
-  .linked:not(.vertical) > button,
-  .linked:not(.vertical) > button:hover,
-  .linked:not(.vertical) > button:active,
-  .linked:not(.vertical) > button:checked,
-  .linked:not(.vertical) > button:disabled {
-    @extend %middle_button;
-    &:first-child { @extend %first_button; }
-    &:last-child { @extend %last_button; }
-    &:only-child { @extend %single_button; }
+    &:active, &:checked {
+      transition: background-color 0.00001s 0.2s;
+      animation: ripple_effect 0.2s cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+
+    &, &:hover, &:active, &:checked, &:disabled {
+      border-radius: 0;
+
+      &:first-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      &:only-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+    }
+
+    &:not(.suggested-action):not(.destructive-action) {
+      &:hover { background-color: gtkalpha($fg_color, 0.06); }
+      &:active, &:checked {
+        background-color: gtkalpha($fg_color, 0.1);
+        color: $fg_color;
+      }
+    }
   }
 
-  &, &.csd { // rounded bottom border styling for csd version
+  &.csd { // rounded bottom border styling for csd version
     &.background {
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
       border: none;
     }
 
-    .dialog-action-area {
-      button {
-        &:active, &:checked {
-          transition: background-color 0.00001s 0.3s;
-          animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-        }
-      }
-    }
+    .dialog-action-area.linked:not(.vertical) > button {
+      padding: 6px 10px 8px 10px;
 
-    .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
-      &:hover { background-color: gtkalpha($fg_color, 0.06); }
-      &:active, &:checked {
-        background-color: gtkalpha($fg_color, 0.1);
-        color: $fg_color;
+      &, &:hover, &:active, &:checked, &:disabled {
+        @extend %middle_button;
+        &:first-child { @extend %first_button; }
+        &:last-child { @extend %last_button; }
+        &:only-child { @extend %single_button; }
       }
     }
   }
@@ -3162,7 +3183,7 @@ tooltip {
   &.background {
     // background-color needs to be set this way otherwise it gets drawn twice
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
-    background-color: lighten($osd_bg_color, 10%);
+    background-color: $osd_bg_color;
     background-clip: padding-box;
 
     label { padding: 4px; }
@@ -3390,7 +3411,7 @@ decoration {
     border-radius: 3px;
   }
   .solid-csd & {
-    border: none;
+    border: 1px solid $header_bg;
     border-radius: 0;
     margin: 0;
     background-color: $header_bg;
