@@ -253,32 +253,39 @@ StScrollBar {
 .modal-dialog {
   border-radius: 2px;
   color: $fg_color;
+  margin: 10px;
   background-color: $base_color;
+  box-shadow: $z-depth-2;
   border: none;
-  box-shadow: $z-depth-4;
+
   .modal-dialog-content-box {
     padding: 24px;
   }
+
   .run-dialog-entry { width: 20em; margin-bottom: 6px; }
+
   .run-dialog-error-box {
     padding-top: 16px;
     spacing: 6px;
   }
-  .run-dialog-button-box { padding-top: 1em; }
+
+  .run-dialog-button-box {
+    padding-top: 1em;
+  }
+
   .run-dialog-label {
     font-size: 1em;
     font-weight: normal;
     color: $tertiary_fg_color;
     padding-bottom: .4em;
   }
-
 }
 
-  .show-processes-dialog-subject,
-  .mount-question-dialog-subject,
-  .end-session-dialog-subject { //this should be a generic header class
-    @include font(title);
-  }
+.show-processes-dialog-subject,
+.mount-question-dialog-subject,
+.end-session-dialog-subject { //this should be a generic header class
+  @include font(title);
+}
 
 /* End Session Dialog */
 .end-session-dialog {
@@ -2116,6 +2123,7 @@ $legacy_icon_size: 24px;
   }
 
   .modal-dialog-button-box { spacing: 3px; }
+
   .modal-dialog-button {
     padding: 0 16px;
     @include button(flat-normal);
