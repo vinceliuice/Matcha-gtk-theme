@@ -35,7 +35,7 @@ $link_color: if($variant == 'light', darken($selected_bg_color, 10%),
 $link_visited_color: if($variant == 'light', darken($text_color, 5%),
                                      lighten($text_color, 10%));
 
-$selection_mode_bg: if($transparency == 'true', transparentize($selected_bg_color, 0.05), $selected_bg_color);
+$selection_mode_bg: if($trans == 'true', transparentize($selected_bg_color, 0.05), $selected_bg_color);
 $selection_mode_fg: $selected_fg_color;
 $warning_color: #F27835;
 $error_color: #FC4138;
@@ -69,26 +69,24 @@ $insensitive_fg_color: if($variant == 'light', transparentize($fg_color, 0.45), 
 $insensitive_bg_color: if($variant == 'light', mix($bg_color, $base_color, 40%), lighten($bg_color, 2%));
 
 $header_bg: #1b2224;
-@if $color=='sea' and $variant=='light' { $header_bg: #1b2224; }
-@if $color=='sea' and $variant=='dark' { $header_bg: darken(#1b2224, 3%); }
-@if $color=='aliz' and $variant=='light' { $header_bg: #222222; }
-@if $color=='aliz' and $variant=='dark' { $header_bg: darken(#222222, 3%); }
-@if $color=='azul' and $variant=='light' { $header_bg: #1b1d24; }
-@if $color=='azul' and $variant=='dark' { $header_bg: darken(#1b1d24, 3%); }
+@if $header=='light' { $header_bg: #f2f2f2; }
+@if $color=='sea' and $header == 'dark' { $header_bg: if($variant =='light', #1b2224, darken(#1b2224, 3%)); }
+@if $color=='aliz' and $header == 'dark' { $header_bg: if($variant =='light', #222222, darken(#222222, 3%)); }
+@if $color=='azul' and $header == 'dark' { $header_bg: if($variant =='light', #1b1d24, darken(#1b1d24, 3%)); }
 
-$header_bg_backdrop: if($variant == 'dark', lighten($header_bg, 5%), lighten($header_bg, 6%));
-$header_border: if($variant == 'light', darken($header_bg, 7%), darken($header_bg, 4%));
-$header_fg: if($variant =='light', mix($selected_bg_color, #efefef, 5%), $fg_color);
+$header_bg_backdrop: if($header == 'light', lighten($header_bg, 6%), lighten($header_bg, 5%));
+$header_border: if($header == 'light', darken($header_bg, 7%), darken($header_bg, 4%));
+$header_fg: if($header =='light', $fg_color, mix($selected_bg_color, #cecece, 5%));
 
 $dark_sidebar_bg: #303b3e;
-@if $color=='sea' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#303b3e, 0.05), #303b3e); }
-@if $color=='aliz' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#363636, 0.05), #363636); }
-@if $color=='azul' { $dark_sidebar_bg: if($transparency == 'true', transparentize(#30343e, 0.05), #30343e); }
-$dark_sidebar_fg: $header_fg;
+@if $color=='sea' { $dark_sidebar_bg: if($trans == 'true', transparentize(#303b3e, 0.05), #303b3e); }
+@if $color=='aliz' { $dark_sidebar_bg: if($trans == 'true', transparentize(#363636, 0.05), #363636); }
+@if $color=='azul' { $dark_sidebar_bg: if($trans == 'true', transparentize(#30343e, 0.05), #30343e); }
+$dark_sidebar_fg: mix($selected_bg_color, #cecece, 5%);
 $dark_sidebar_border: if($variant == 'light', $dark_sidebar_bg, darken($dark_sidebar_bg, 5%));
 
 $osd_fg_color: $dark_sidebar_fg;
-$osd_bg_color: lighten($header_bg, 1%);
+$osd_bg_color: darken($dark_sidebar_bg, 5%);
 
 $osd_button_bg: transparentize(lighten($osd_bg_color, 22%), 0.6);
 $osd_button_border: transparentize(darken($osd_bg_color, 12%), 0.6);
@@ -106,11 +104,11 @@ $panel_bg: #1b2224;
 @if $color=='azul' { $panel_bg: #1b1d24; }
 $panel_fg: $header_fg;
 
-$entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
-$entry_border: if($variant == 'light', #cfd6e6, darken($borders_color, 0%));
+$entry_bg: if($variant == 'light', $base_color, lighten($base_color, 0%));
+$entry_border: if($variant == 'light', $borders_color, darken($borders_color, 0%));
 
-$header_entry_bg: transparentize(lighten($header_bg, 22%), 0.6);
-$header_entry_border: transparentize(darken($header_bg, 12%), 0.6);
+$header_entry_bg: if($header == 'light', $entry_bg, transparentize(lighten($header_bg, 22%), 0.6));
+$header_entry_border: if($header == 'light', $borders_color, transparentize(darken($header_bg, 12%), 0.6));
 
 $button_bg: if($variant == 'light', lighten($bg_color, 2%), lighten($base_color, 2%));
 $button_border: $entry_border;

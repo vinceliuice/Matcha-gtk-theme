@@ -28,6 +28,7 @@ terminal-window,
   color: $header_fg;
   border-radius: 0;
   box-shadow: none;
+  border: none;
   margin: 0 0 0 0;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                 $selected_bg_color 0%,

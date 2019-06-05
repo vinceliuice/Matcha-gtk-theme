@@ -15,7 +15,7 @@ REO_DIR=$(cd $(dirname $0) && pwd)
 SRC_DIR=${REO_DIR}/src
 
 THEME_NAME=Matcha
-COLOR_VARIANTS=('' '-dark')
+COLOR_VARIANTS=('' '-light' '-dark')
 THEME_VARIANTS=('-aliz' '-azul' '-sea')
 
 usage() {
@@ -36,6 +36,9 @@ install() {
   local theme=${4}
 
   local themedir=${dest}/${name}${color}${theme}
+
+  [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
+  [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
   [[ -d ${themedir} ]] && rm -rf ${themedir}
 
@@ -60,26 +63,26 @@ install() {
   mkdir -p                                                                            ${themedir}/gnome-shell
   cd ${SRC_DIR}/gnome-shell
   cp -ur extensions                                                                   ${themedir}/gnome-shell
-  cp -ur gnome-shell${color}${theme}.css                                              ${themedir}/gnome-shell/gnome-shell.css
+  cp -ur gnome-shell${ELSE_DARK}${theme}.css                                          ${themedir}/gnome-shell/gnome-shell.css
   cp -ur common-assets                                                                ${themedir}/gnome-shell/assets
 
   cd ${SRC_DIR}/gnome-shell/assets
-  cp -ur no-events${color}.svg                                                        ${themedir}/gnome-shell/assets/no-events.svg
-  cp -ur no-notifications${color}.svg                                                 ${themedir}/gnome-shell/assets/no-notifications.svg
-  cp -ur calendar-arrow-left${color}.svg                                              ${themedir}/gnome-shell/assets/calendar-arrow-left.svg
-  cp -ur calendar-arrow-right${color}.svg                                             ${themedir}/gnome-shell/assets/calendar-arrow-right.svg
-  cp -ur key-hide${color}.svg                                                         ${themedir}/gnome-shell/assets/key-hide.svg
-  cp -ur key-layout${color}.svg                                                       ${themedir}/gnome-shell/assets/key-layout.svg
-  cp -ur key-shift${color}.svg                                                        ${themedir}/gnome-shell/assets/key-shift.svg
-  [[ ${color} == '' ]] && \
+  cp -ur no-events${ELSE_DARK}.svg                                                    ${themedir}/gnome-shell/assets/no-events.svg
+  cp -ur no-notifications${ELSE_DARK}.svg                                             ${themedir}/gnome-shell/assets/no-notifications.svg
+  cp -ur calendar-arrow-left${ELSE_DARK}.svg                                          ${themedir}/gnome-shell/assets/calendar-arrow-left.svg
+  cp -ur calendar-arrow-right${ELSE_DARK}.svg                                         ${themedir}/gnome-shell/assets/calendar-arrow-right.svg
+  cp -ur key-hide${ELSE_DARK}.svg                                                     ${themedir}/gnome-shell/assets/key-hide.svg
+  cp -ur key-layout${ELSE_DARK}.svg                                                   ${themedir}/gnome-shell/assets/key-layout.svg
+  cp -ur key-shift${ELSE_DARK}.svg                                                    ${themedir}/gnome-shell/assets/key-shift.svg
+  [[ ${ELSE_DARK} == '' ]] && \
   cp -ur menu.svg                                                                     ${themedir}/gnome-shell/assets
-  cp -ur submenu${color}.svg                                                          ${themedir}/gnome-shell/assets/submenu.svg
-  cp -ur submenu-open${color}.svg                                                     ${themedir}/gnome-shell/assets/submenu-open.svg
+  cp -ur submenu${ELSE_DARK}.svg                                                      ${themedir}/gnome-shell/assets/submenu.svg
+  cp -ur submenu-open${ELSE_DARK}.svg                                                 ${themedir}/gnome-shell/assets/submenu-open.svg
 
   cd ${SRC_DIR}/gnome-shell/theme-assets
   cp -ur checkbox${theme}.svg                                                         ${themedir}/gnome-shell/assets/checkbox.svg
-  [[ ${color} == '-dark' ]] && \
-  cp -ur menu${color}${theme}.svg                                                     ${themedir}/gnome-shell/assets/menu.svg
+  [[ ${ELSE_DARK} == '-dark' ]] && \
+  cp -ur menu${ELSE_DARK}${theme}.svg                                                 ${themedir}/gnome-shell/assets/menu.svg
   cp -ur menu-hover${theme}.svg                                                       ${themedir}/gnome-shell/assets/menu-hover.svg
   cp -ur more-results${theme}.svg                                                     ${themedir}/gnome-shell/assets/more-results.svg
   cp -ur toggle-on${theme}.svg                                                        ${themedir}/gnome-shell/assets/toggle-on.svg
@@ -94,8 +97,8 @@ install() {
   cd ${SRC_DIR}/gtk-2.0
   cp -ur {apps.rc,main.rc,panel.rc,xfce-notify.rc}                                    ${themedir}/gtk-2.0
   cp -ur gtkrc${color}${theme}                                                        ${themedir}/gtk-2.0/gtkrc
-  cp -ur assets${color}${theme}                                                       ${themedir}/gtk-2.0/assets
-  cp -ur menubar-toolbar${color}.rc                                                   ${themedir}/gtk-2.0/menubar-toolbar.rc
+  cp -ur assets${ELSE_DARK}${theme}                                                   ${themedir}/gtk-2.0/assets
+  cp -ur menubar-toolbar${ELSE_DARK}.rc                                               ${themedir}/gtk-2.0/menubar-toolbar.rc
 
   # Install GTK+ 3 Theme
   mkdir -p                                                                            ${themedir}/gtk-3.0
@@ -104,17 +107,17 @@ install() {
   cp -ur gtk${color}${theme}.css                                                      ${themedir}/gtk-3.0/gtk.css
   cp -ur gtk-dark${theme}.css                                                         ${themedir}/gtk-3.0/gtk-dark.css
 
-  cp -ur thumbnail${color}${theme}.png                                                ${themedir}/gtk-3.0/thumbnail.png
+  cp -ur thumbnail${ELSE_DARK}${theme}.png                                            ${themedir}/gtk-3.0/thumbnail.png
 
   # Install CINNAMON Theme
   mkdir -p                                                                            ${themedir}/cinnamon
   cd ${SRC_DIR}/cinnamon
-  cp -ur cinnamon${color}${theme}.css                                                 ${themedir}/cinnamon/cinnamon.css
-  cp -ur thumbnail${color}${theme}.png                                                ${themedir}/cinnamon/thumbnail.png
+  cp -ur cinnamon${ELSE_DARK}${theme}.css                                             ${themedir}/cinnamon/cinnamon.css
+  cp -ur thumbnail${ELSE_DARK}${theme}.png                                            ${themedir}/cinnamon/thumbnail.png
 
   cd ${SRC_DIR}/cinnamon/assets${theme}
   cp -ur common-assets                                                                ${themedir}/cinnamon
-  cp -ur assets${color}                                                               ${themedir}/cinnamon/assets
+  cp -ur assets${ELSE_DARK}                                                           ${themedir}/cinnamon/assets
 
   # Install Metacity Theme
   mkdir -p                                                                            ${themedir}/metacity-1
@@ -128,14 +131,14 @@ install() {
   # Install xfwm4 Theme
   mkdir -p                                                                            ${themedir}/xfwm4
   cd ${SRC_DIR}/xfwm4
-  cp -ur assets${color}${theme}/*.png                                                 ${themedir}/xfwm4
+  cp -ur assets${ELSE_DARK}${theme}/*.png                                             ${themedir}/xfwm4
   cp -ur themerc${theme}                                                              ${themedir}/xfwm4/themerc
 
   # Install openbox Theme
   mkdir -p                                                                            ${themedir}/openbox-3
   cd ${SRC_DIR}/openbox-3
   cp -ur *.xbm                                                                        ${themedir}/openbox-3
-  cp -ur themerc${color}${theme}                                                      ${themedir}/openbox-3/themerc
+  cp -ur themerc${ELSE_DARK}${theme}                                                  ${themedir}/openbox-3/themerc
 
   # Install Unity Theme
   mkdir -p                                                                            ${themedir}/unity
