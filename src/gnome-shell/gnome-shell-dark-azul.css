@@ -258,6 +258,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -barlevel-border-width: 0;
 }
 
+.popup-menu-item.selected .slider {
+  color: #FFFFFF;
+  -slider-background-color: rgba(0, 0, 0, 0.2);
+  -slider-active-background-color: #FFFFFF;
+  -barlevel-background-color: rgba(0, 0, 0, 0.2);
+  -barlevel-active-background-color: #FFFFFF;
+}
+
 /* Check Boxes */
 .check-box * {
   min-height: 16px;
@@ -309,6 +317,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 40px;
   height: 20px;
   background-size: contain;
+  background-image: url("assets/toggle-off.svg");
+}
+
+.toggle-switch:checked {
+  background-image: url("assets/toggle-on.svg");
+}
+
+.popup-menu-item.selected .toggle-switch {
+  background-image: url("assets/toggle-off.svg");
+}
+
+.popup-menu-item.selected .toggle-switch:checked {
+  background-image: url("assets/toggle-on.svg");
 }
 
 .toggle-switch-us {
@@ -1058,6 +1079,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin-right: 2px;
 }
 
+#panel .panel-button .popup-menu-arrow {
+  width: 0;
+  height: 0;
+}
+
 #panel .panel-button:hover {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -1133,12 +1159,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel.solid .panel-button:hover, #panel.solid .panel-button:active, #panel.solid .panel-button:overview, #panel.solid .panel-button:focus, #panel.solid .panel-button:checked {
   color: rgba(255, 255, 255, 0.8);
-}
-
-#panel.solid .system-status-icon,
-#panel.solid .app-menu-icon > StIcon,
-#panel.solid .popup-menu-arrow {
-  icon-shadow: none;
 }
 
 #calendarArea {
@@ -1586,8 +1606,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-arrow {
-  width: 0;
-  height: 0;
+  width: 16px;
+  height: 16px;
 }
 
 .popup-menu-icon {

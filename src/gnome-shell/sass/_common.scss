@@ -176,6 +176,16 @@ StScrollBar {
   -barlevel-overdrive-border-color: transparent;
   -barlevel-overdrive-separator-width: 2px;
   -barlevel-border-width: 0;
+
+  .popup-menu-item.selected & {
+    color: $selected_fg_color;
+    -slider-background-color: rgba(black, 0.2);
+    -slider-active-background-color: $selected_fg_color;
+
+    // barlevels are for >= 3.29.90
+    -barlevel-background-color: rgba(black, 0.2);
+    -barlevel-active-background-color: $selected_fg_color;
+  }
 }
 
 /* Check Boxes */
@@ -221,14 +231,23 @@ StScrollBar {
   width: 40px;
   height: 20px;
   background-size: contain;
+  background-image: url("assets/toggle-off.svg");
+
+  &:checked { background-image: url("assets/toggle-on.svg"); }
+
+  .popup-menu-item.selected & {
+    background-image: url("assets/toggle-off.svg");
+
+    &:checked { background-image: url("assets/toggle-on.svg"); }
+  }
 }
 
-  @each $v in us, intl {
-    .toggle-switch-#{$v} {
-      background-image: url("assets/toggle-off.svg");
-      &:checked { background-image: url("assets/toggle-on.svg"); }
-    }
+@each $v in us, intl {
+  .toggle-switch-#{$v} {
+    background-image: url("assets/toggle-off.svg");
+    &:checked { background-image: url("assets/toggle-on.svg"); }
   }
+}
 
 /* links */
 .shell-link {
@@ -612,7 +631,8 @@ StScrollBar {
   color: $fg_color;
   border-image: url("assets/menu.svg") 9 9 9 9;
 
-  .popup-menu-arrow { } //defined globally in the TOP BAR
+  // .popup-menu-arrow { } //defined globally in the TOP BAR
+
   .popup-sub-menu {
     background: none;
     box-shadow: none;
@@ -927,6 +947,8 @@ StScrollBar {
       //dimensions of the icon are hardcoded
     }
 
+    .popup-menu-arrow { width: 0; height: 0; } // Remove panel arrows
+
     &:hover {
       color: $topbar_fg_color;
     }
@@ -983,12 +1005,6 @@ StScrollBar {
       &:hover, &:active, &:overview, &:focus, &:checked {
         color: $topbar_fg_color;
       }
-    }
-
-    .system-status-icon,
-    .app-menu-icon > StIcon,
-    .popup-menu-arrow {
-      icon-shadow: none;
     }
   }
 }
@@ -1353,7 +1369,7 @@ StScrollBar {
 }
 
 // not really top bar only
-.popup-menu-arrow { width: 0; height: 0; }
+.popup-menu-arrow { width: 16px; height: 16px; }
 .popup-menu-icon { @include em(16px); }
 
 //close buttons
