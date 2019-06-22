@@ -57,7 +57,7 @@
 }
 
 .gtkstyle-fallback:active {
-  background-color: #dedede;
+  background-color: #dedddd;
   color: #273134;
 }
 
@@ -2231,7 +2231,7 @@ headerbar switch:backdrop, .nemo-window .primary-toolbar switch:backdrop {
 }
 
 headerbar progressbar trough, .nemo-window .primary-toolbar progressbar trough {
-  background-color: #d9d9d9;
+  background-color: #d9d8d8;
 }
 
 headerbar progressbar:backdrop, .nemo-window .primary-toolbar progressbar:backdrop {
@@ -2263,11 +2263,11 @@ headerbar scale slider:disabled, .nemo-window .primary-toolbar scale slider:disa
 }
 
 headerbar scale trough, .nemo-window .primary-toolbar scale trough {
-  background-color: #d9d9d9;
+  background-color: #d9d8d8;
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled {
-  background-color: rgba(217, 217, 217, 0.95);
+  background-color: rgba(217, 216, 216, 0.95);
 }
 
 .path-bar button:hover {
@@ -3547,7 +3547,7 @@ scale slider:active {
 }
 
 scale slider:disabled {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: rgba(0, 0, 0, 0);
 }
 
@@ -5224,7 +5224,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .gedit-document-panel-dragged-row {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #dedede;
+  background-color: #dedddd;
   color: #273134;
 }
 

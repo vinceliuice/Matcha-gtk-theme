@@ -1525,7 +1525,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .window-list-item-box {
   font-weight: normal;
   background-image: none;
-  padding: 0 8px;
   transition-duration: 100;
   color: rgba(175, 180, 186, 0.95);
   border: 0 solid transparent;
@@ -1732,7 +1731,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .grouped-window-list-item-box {
   font-weight: normal;
   background-image: none;
-  padding: 0 8px;
   transition-duration: 100;
   color: rgba(175, 180, 186, 0.95);
   border: 0 solid transparent;

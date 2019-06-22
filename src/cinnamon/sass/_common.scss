@@ -1295,7 +1295,6 @@ StScrollBar {
   &-item-box {
     font-weight: normal;
     background-image: none;
-    padding: 0 8px;
     transition-duration: 100;
     color: rgba($panel_fg, 0.95);
     border: 0 solid transparent;
@@ -1457,7 +1456,6 @@ StScrollBar {
   &-item-box {
     font-weight: normal;
     background-image: none;
-    padding: 0 8px;
     transition-duration: 100;
     color: rgba($panel_fg, 0.95);
     border: 0 solid transparent;

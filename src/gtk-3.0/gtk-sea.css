@@ -57,7 +57,7 @@
 }
 
 .gtkstyle-fallback:active {
-  background-color: #dedede;
+  background-color: #dedddd;
   color: #273134;
 }
 
@@ -3553,7 +3553,7 @@ scale slider:active {
 }
 
 scale slider:disabled {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: rgba(0, 0, 0, 0);
 }
 
@@ -5230,7 +5230,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .gedit-document-panel-dragged-row {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #dedede;
+  background-color: #dedddd;
   color: #273134;
 }
 
