@@ -104,8 +104,8 @@ $panel_bg: #1b2224;
 @if $color=='azul' { $panel_bg: #1b1d24; }
 $panel_fg: $header_fg;
 
-$entry_bg: if($variant == 'light', $base_color, lighten($base_color, 0%));
-$entry_border: if($variant == 'light', $borders_color, darken($borders_color, 0%));
+$entry_bg: $base_color;
+$entry_border: $borders_color;
 
 $header_entry_bg: if($header == 'light', $entry_bg, transparentize(lighten($header_bg, 22%), 0.6));
 $header_entry_border: if($header == 'light', $borders_color, transparentize(darken($header_bg, 12%), 0.6));

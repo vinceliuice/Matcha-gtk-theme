@@ -2444,7 +2444,7 @@ scale {
   }
 
   slider {
-    $_slider_border: if($variant=='light', transparentize(darken($button_border,25%), 0.5), transparentize($button_border, 0.5));
+    $_slider_border: $button_border;
 
     background-color: $selected_fg_color;
     border: 1px solid $_slider_border;
