@@ -144,6 +144,11 @@ install() {
   mkdir -p                                                                            ${themedir}/unity
   cd ${SRC_DIR}
   cp -ur unity                                                                        ${themedir}
+
+  # Install Plank Theme
+  mkdir -p                                                                            ${themedir}/plank
+  cd ${SRC_DIR}
+  cp -ur plank                                                                        ${themedir}
 }
 
 #  Install theme
