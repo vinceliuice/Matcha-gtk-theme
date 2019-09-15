@@ -51,9 +51,12 @@ Usage:  `./Install`  **[OPTIONS...]**
 | -t, --theme   | Specify hue theme variant(s) **[aliz/azul/sea]** (Default: All variants) |
 | -h, --help    | Show this help |
 
+## Icon theme for Matcha
+
+- Qogir-manjaro:  https://github.com/vinceliuice/Qogir-icon-theme
+
 ## Screenshots
 
-### GNOME Shell
 ![01](https://github.com/vinceliuice/matcha/blob/imgs/img-01.jpg?raw=true) 
 ![02](https://github.com/vinceliuice/matcha/blob/imgs/img-02.jpg?raw=true) 
 ![03](https://github.com/vinceliuice/matcha/blob/imgs/img-03.jpg?raw=true) 
