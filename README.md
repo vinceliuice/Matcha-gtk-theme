@@ -55,6 +55,12 @@ Usage:  `./Install`  **[OPTIONS...]**
 | -t, --theme   | Specify hue theme variant(s) **[aliz/azul/sea]** (Default: All variants) |
 | -h, --help    | Show this help |
 
+### Install from repository
+
+Solus:
+
+    sudo eopkg it matcha-gtk-theme
+
 ## Icon theme for Matcha
 
 - Qogir-manjaro:  https://github.com/vinceliuice/Qogir-icon-theme
