@@ -27,6 +27,10 @@ ArchLinux:
 
     pacman -S gtk-engine-murrine gtk-engines
 
+Solus:
+
+    sudo eopkg it gtk2-engine-murrine gtk-engines
+
 Other:
 Search for the engines in your distributions repository or install the engines from source.
 
@@ -50,6 +54,12 @@ Usage:  `./Install`  **[OPTIONS...]**
 | -c, --color   | Specify theme color variant(s) **[standard/dark]** (Default: All variants) |
 | -t, --theme   | Specify hue theme variant(s) **[aliz/azul/sea]** (Default: All variants) |
 | -h, --help    | Show this help |
+
+### Install from repository
+
+Solus:
+
+    sudo eopkg it matcha-gtk-theme
 
 ## Icon theme for Matcha
 
