@@ -27,6 +27,10 @@ ArchLinux:
 
     pacman -S gtk-engine-murrine gtk-engines
 
+Solus:
+
+    sudo eopkg it gtk2-engine-murrine gtk-engines
+
 Other:
 Search for the engines in your distributions repository or install the engines from source.
 
