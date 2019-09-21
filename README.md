@@ -51,6 +51,11 @@ Usage:  `./Install`  **[OPTIONS...]**
 | -t, --theme   | Specify hue theme variant(s) **[aliz/azul/sea]** (Default: All variants) |
 | -h, --help    | Show this help |
 
+### Install from flathub
+
+    flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
+    flatpak install flathub org.gtk.Gtk3theme.Matcha-sea
+
 ## Icon theme for Matcha
 
 - Qogir-manjaro:  https://github.com/vinceliuice/Qogir-icon-theme
