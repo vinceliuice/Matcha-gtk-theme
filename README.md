@@ -27,6 +27,10 @@ ArchLinux:
 
     pacman -S gtk-engine-murrine gtk-engines
 
+Solus:
+
+    sudo eopkg it gtk2-engine-murrine gtk-engines
+
 Other:
 Search for the engines in your distributions repository or install the engines from source.
 
@@ -55,6 +59,12 @@ Usage:  `./Install`  **[OPTIONS...]**
 
     flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
     flatpak install flathub org.gtk.Gtk3theme.Matcha-sea
+
+    ### Install from repository
+
+    Solus:
+
+        sudo eopkg it matcha-gtk-theme
 
 ## Icon theme for Matcha
 
