@@ -60,11 +60,11 @@ Usage:  `./Install`  **[OPTIONS...]**
     flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
     flatpak install flathub org.gtk.Gtk3theme.Matcha-sea
 
-    ### Install from repository
+### Install from repository
 
-    Solus:
+Solus:
 
-        sudo eopkg it matcha-gtk-theme
+    sudo eopkg it matcha-gtk-theme
 
 ## Icon theme for Matcha
 
