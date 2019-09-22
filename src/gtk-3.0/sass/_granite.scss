@@ -157,7 +157,7 @@ GraniteWidgetsWelcome label {
 
 GraniteWidgetsWelcome .h1,
 GraniteWidgetsWelcome .h3 {
-  color: transparentize($fg_color, 0.2);
+  color: rgba($fg_color, 0.8);
 }
 
 //
@@ -177,13 +177,13 @@ GraniteWidgetsPopOver {
   -GraniteWidgetsPopOver-border-width: 1;
   -GraniteWidgetsPopOver-shadow-size: 12;
 
-  border: 1px solid transparentize(black, 0.7);
+  border: 1px solid rgba(black, 0.3);
   margin: 0;
 }
 
 .popover_bg {
   background-image: _solid($base_color);
-  border: 1px solid transparentize(black, 0.7);
+  border: 1px solid rgba(black, 0.3);
 }
 
 GraniteWidgetsPopOver .sidebar.view,

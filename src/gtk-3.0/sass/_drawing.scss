@@ -72,8 +72,8 @@
   // insensitive entry
   //
     color: $insensitive_fg_color;
-    border-color: transparentize($entry_border, 0.45);
-    background-color: transparentize($entry_bg, 0.45);
+    border-color: $disable_borders_color;
+    background-color: rgba($entry_bg, 0.55);
   }
 
   @if $t==header-normal {
@@ -101,9 +101,9 @@
   //
   // insensitive header-bar entry
   //
-    color: transparentize($header_fg, 0.45);
+    color: rgba($header_fg, 0.55);
     border-color: $header_entry_border;
-    background-color: transparentize($header_entry_bg, 0.15);
+    background-color: rgba($header_entry_bg, 0.85);
   }
 
   @else if $t==osd {
@@ -130,8 +130,8 @@
   //
   // insensitive osd entry
   //
-    color: transparentize($osd_fg_color, 0.45);
-    background-color: transparentize($osd_entry_bg, 0.15);
+    color: rgba($osd_fg_color, 0.55);
+    background-color: rgba($osd_entry_bg, 0.85);
   }
 }
 
@@ -177,18 +177,18 @@
   //
     label, & { color: $insensitive_fg_color; }
 
-    border-color: transparentize($button_border, 0.45);
-    background-color: transparentize($button_bg, 0.45);
+    border-color: $disable_borders_color;
+    background-color: rgba($button_bg, 0.55);
   }
 
   @else if $t==insensitive-active {
   //
   // insensitive pushed button
   //
-    label, & { color: transparentize($selected_fg_color, 0.2); }
+    label, & { color: rgba($selected_fg_color, 0.8); }
 
-    border-color: transparentize($selected_bg_color, 0.25);
-    background-color: transparentize($selected_bg_color, 0.25);
+    border-color: rgba($selected_bg_color, 0.75);
+    background-color: rgba($selected_bg_color, 0.75);
 
     opacity: 0.6;
   }
@@ -225,7 +225,7 @@
   //
   // insensitive header-bar button
   //
-    label, & { color: transparentize($header_fg, 0.55); }
+    label, & { color: rgba($header_fg, 0.45); }
 
     background-color: transparent;
     border-color: transparent;
@@ -235,9 +235,9 @@
   //
   // header-bar insensitive pushed button
   //
-    color: transparentize($selected_fg_color, 0.5);
-    border-color: transparentize($selected_bg_color, 0.35);
-    background-color: transparentize($selected_bg_color, 0.35);
+    color: rgba($selected_fg_color, 0.5);
+    border-color: rgba($selected_bg_color, 0.75);
+    background-color: rgba($selected_bg_color, 0.75);
   }
 
   @else if $t==osd {
@@ -273,7 +273,7 @@
   //
     color: $osd_insensitive_fg_color;
     border-color: $osd_button_border;
-    background-color: transparentize($osd_button_bg, 0.15);
+    background-color: rgba($osd_button_bg, 0.85);
   }
 
   @else if $t==suggested_destructive {
@@ -330,8 +330,8 @@
   background-image: -gtk-gradient(radial,
                                 $_position, 0,
                                 $_position, 0.6,
-                                from(transparentize($c, 0.8)),
-                                to(transparentize($c, 1)));
+                                from(rgba($c, 0.2)),
+                                to(rgba($c, 0.0)));
 
   background-size: $_big_gradient_size;
   background-repeat: no-repeat;
@@ -352,8 +352,8 @@
 // top, bottom, right, left
 //
 
-  $_undershoot_color_dark: transparentize(black, 0.8);
-  $_undershoot_color_light: transparentize(white, 0.8);
+  $_undershoot_color_dark: rgba(black, 0.2);
+  $_undershoot_color_light: rgba(white, 0.2);
 
   $_gradient_dir: left;
   $_dash_bg_size: 10px 1px;
