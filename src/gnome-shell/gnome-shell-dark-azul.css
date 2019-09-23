@@ -247,6 +247,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -slider-active-border-color: transparent;
   -slider-border-width: 0;
   -slider-handle-radius: 7px;
+  -slider-handle-border-width: 1px;
+  -slider-handle-border-color: rgba(0, 0, 0, 0.2);
   -barlevel-height: 2px;
   -barlevel-background-color: rgba(255, 255, 255, 0.12);
   -barlevel-border-color: transparent;
@@ -1089,7 +1091,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 -2px #3498db;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -1747,10 +1749,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #overview .app-view-control {
   padding: 0 16px;
+  margin: 0;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.75);
   background-color: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 #overview .app-view-control:hover {
@@ -1833,7 +1836,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #FAFAFA;
   background-color: rgba(0, 0, 0, 0.35);
   box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.8);
   text-shadow: none;
 }
 
