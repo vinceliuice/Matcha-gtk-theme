@@ -690,7 +690,7 @@ toolbar.inline-toolbar toolbutton {
     > #{$_uncolored_button}:hover + #{$_uncolored_button} { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
 
     > #{$_uncolored_button}:disabled:not(:only-child),
-    > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $disable_borders_color; }
+    > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
 
     > button:active + #{$_uncolored_button}:hover,
     > button:checked + #{$_uncolored_button}:hover,

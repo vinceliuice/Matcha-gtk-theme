@@ -39,9 +39,9 @@ panel-toplevel.background {
 
   &, menubar { background-color: opacify($panel_bg, 1); }
 
-  menubar,
-  #PanelApplet label,
-  #PanelApplet image { color: $panel_fg; }
+  // menubar,
+  // #PanelApplet label,
+  // #PanelApplet image { color: $panel_fg; }
 
   // Panel buttons
   button,
