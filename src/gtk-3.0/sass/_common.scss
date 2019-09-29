@@ -2347,6 +2347,8 @@ radio {
 //
 // GtkScale
 //
+
+%scale,
 scale {
   $_marks_length: 3px;
   $_marks_distance: 1px;
@@ -2409,21 +2411,6 @@ scale {
 
       &:disabled {  }
     }
-
-    // Troughs in selected list-rows and infobars
-    menuitem:hover &,
-    row:selected &,
-    infobar & {
-      background-color: rgba(black, 0.2);
-
-      highlight {
-        background-color: $selected_fg_color;
-
-        &:disabled { background-color: mix($selected_fg_color, $selected_bg_color, 55%); }
-      }
-
-      &:disabled { background-color: rgba(black, 0.1); }
-    }
   }
 
   // The colored part of trough
@@ -2464,28 +2451,6 @@ scale {
     &:disabled {
       background-color: darken($selected_fg_color, 10%);
       border-color: darken($_slider_border, 5%);
-    }
-
-    // Selected list-row and infobar sliders
-    menuitem:hover &,
-    row:selected &,
-    infobar & {
-      background-clip: border-box;
-      background-color: $selected_fg_color;
-      border-color: $selected_fg_color;
-
-      &:hover {
-        background-color: mix($selected_fg_color, $selected_bg_color, 85%);
-        border-color: mix($selected_fg_color, $selected_bg_color, 85%);
-      }
-      &:active {
-        background-color: mix($selected_fg_color, $selected_bg_color, 50%);
-        border-color: mix($selected_fg_color, $selected_bg_color, 50%);
-      }
-      &:disabled{
-        background-color: mix($selected_fg_color, $selected_bg_color, 55%);
-        border-color: mix($selected_fg_color, $selected_bg_color, 55%);
-      }
     }
 
     // OSD sliders
@@ -2535,6 +2500,7 @@ scale {
       }
     }
   }
+
   &.horizontal {
     indicator {
       min-height: $_marks_length;
@@ -2543,6 +2509,7 @@ scale {
 
     &.fine-tune indicator { min-height: ($_marks_length - 1px); }
   }
+
   &.vertical {
     indicator {
       min-height: 1px;
@@ -2551,8 +2518,26 @@ scale {
 
     &.fine-tune indicator { min-width: ($_marks_length - 1px); }
   }
+
+  %selected_scale,
+  &:hover, &:selected {
+    trough { // Troughs in selected list-rows and infobars
+      background-color: rgba(black, 0.2);
+
+      highlight {
+        background-color: $alt_selected_bg_color;
+
+        &:disabled { background-color: mix($selected_fg_color, $selected_bg_color, 55%); }
+      }
+
+      &:disabled { background-color: rgba(black, 0.1); }
+    }
+  }
 }
 
+infobar {
+  @extend %selected_scale;
+}
 
 //
 // Progress bars

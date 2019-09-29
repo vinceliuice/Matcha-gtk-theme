@@ -103,7 +103,7 @@ $panel_bg: #1b2224;
 @if $color=='sea' { $panel_bg: #1b2224; }
 @if $color=='aliz' { $panel_bg: #222222; }
 @if $color=='azul' { $panel_bg: #1b1d24; }
-$panel_fg: $header_fg;
+$panel_fg: mix($selected_bg_color, #cecece, 5%);
 
 $entry_bg: if($variant == 'light', $base_color, lighten($base_color, 0%));
 $entry_border: if($variant == 'light', $borders_color, darken($borders_color, 3%));

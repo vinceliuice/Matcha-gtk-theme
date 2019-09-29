@@ -114,28 +114,6 @@ filechooser,
   }
 }
 
-.caja-side-pane {
-
-  &,
-  > notebook > stack > widget > box,
-  text,
-  treeview {
-    color: $fg_color;
-    caret-color: $fg_color;
-    background-color: opacify($bg_color, 1);
-  }
-
-  > box button {
-    &:not(:active):not(:checked) { color: $fg_color; }
-    &:hover:not(:active) { @extend %dark_sidebar_button:hover; }
-  }
-
-  .frame { border-color: $borders_color; }
-
-  scrollbar { @extend %dark_sidebar_scrollbar; }
-  junction { background-color: darken($bg_color, 5%); }
-}
-
 filechooser {
 
   actionbar {
