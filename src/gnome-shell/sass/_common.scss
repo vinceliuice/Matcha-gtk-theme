@@ -308,6 +308,31 @@ StScrollBar {
   @include font(title);
 }
 
+/* Message Dialog */
+.message-dialog-main-layout {
+  padding: 12px 20px 0;
+  spacing: 12px;
+}
+
+.message-dialog-content {
+  max-width: 28em;
+  spacing: 20px;
+}
+
+.message-dialog-icon {
+  min-width: 48px;
+  icon-size: 48px;
+}
+
+.message-dialog-title {
+  font-weight: bold;
+}
+
+.message-dialog-subtitle {
+  color: $tertiary_fg_color;
+  font-weight: bold;
+}
+
 /* End Session Dialog */
 .end-session-dialog {
   spacing: 42px;
@@ -450,6 +475,69 @@ StScrollBar {
     font-size: 1em;
   }
 
+  /* ShellMountOperation Dialogs */
+  .shell-mount-operation-icon {
+    icon-size: 48px;
+  }
+
+  .mount-dialog {
+    spacing: 24px;
+  }
+    .mount-dialog .message-dialog-title {
+      padding-top: 10px;
+      padding-left: 17px;
+      padding-bottom: 6px;
+      max-width: 34em;
+    }
+    .mount-dialog .message-dialog-title:rtl {
+      padding-left: 0px;
+      padding-right: 17px;
+    }
+    .mount-dialog .message-dialog-body {
+      padding-left: 17px;
+      width: 28em;
+    }
+    .mount-dialog .message-dialog-body:rtl {
+      padding-left: 0px;
+      padding-right: 17px;
+    }
+
+  .mount-dialog-app-list {
+    max-height: 200px;
+    padding-top: 24px;
+    padding-left: 49px;
+    padding-right: 32px;
+  }
+
+  .mount-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+  }
+
+  .mount-dialog-app-list-item {
+    color: $fg_color;
+  }
+    .mount-dialog-app-list-item:hover {
+      color: $tertiary_fg_color;
+    }
+    .mount-dialog-app-list-item:ltr {
+      padding-right: 1em;
+    }
+    .mount-dialog-app-list-item:rtl {
+      padding-left: 1em;
+    }
+
+  .mount-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+  }
+
+  .mount-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+  }
+
+  .mount-dialog-app-list-item-name {
+    font-size: 10pt;
+  }
 
 /* Password or Authentication Dialog */
 
@@ -457,6 +545,17 @@ StScrollBar {
   //this is the width of the entire modal popup
   width: 500px;
   border: none;
+
+  .message-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+  }
+  .message-dialog-content {
+    spacing: 16px;
+  }
+  .message-dialog-title {
+    color: $tertiary_fg_color;
+  }
 }
 
   .prompt-dialog-main-layout {
@@ -612,6 +711,22 @@ StScrollBar {
   .geolocation-dialog-reason {
     color: $tertiary_fg_color;
     font-weight: bold;
+  }
+
+  /* Extension Dialog */
+  .extension-dialog .message-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+  }
+
+  .extension-dialog .message-dialog-title {
+    font-weight: normal;
+    color: $tertiary_fg_color;
+  }
+
+  /* Inhibit-Shortcuts Dialog */
+  .inhibit-shortcuts-dialog {
+    spacing: 30px;
   }
 
 /* Network Agent Dialog */
