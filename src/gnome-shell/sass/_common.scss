@@ -1346,6 +1346,7 @@ StScrollBar {
         .message {
           min-height: $menuitem_size * 2;
           background-color: transparent;
+          border: none;
           &:hover,&:focus { background-color: $semi_track_color; }
           &:active { background-color: $track_color; }
           border-radius: 2px;
@@ -1360,6 +1361,11 @@ StScrollBar {
             icon-size: 32px;
           }
 
+          .message-icon-bin > .fallback-window-icon {
+            width: 1.09em;
+            height: 1.09em;
+          }
+
           .message-secondary-bin {
             &:ltr { padding-left: 8px; }
             &:rtl { padding-right: 8px; }
@@ -1367,6 +1373,14 @@ StScrollBar {
 
           .message-secondary-bin {
             color: $tertiary_fg_color;
+          }
+
+          .message-secondary-bin > .event-time {
+            color: $insensitive_fg_color;
+            font-size: 0.7em;
+            /* HACK: the label should be baseline-aligned with a 1em label,
+                     fake this with some bottom padding */
+            padding-bottom: 0.13em;
           }
 
           .message-secondary-bin > StIcon {
@@ -1589,12 +1603,12 @@ StScrollBar {
     margin: 0;
     font-weight: bold;
     color: $secondary_selected_fg_color;
-    background-color: rgba(black, 0.35);
+    background-color: rgba(white, 0.10);
     border: 1px solid rgba(black, 0.8);
 
     &:hover {
       color: $selected_fg_color;
-      background-color: rgba(black, 0.25);
+      background-color: rgba(white, 0.15);
       box-shadow: none;
     }
     &:active {
@@ -1659,26 +1673,26 @@ StScrollBar {
   padding: 0 8px;
   border-radius: 20px;
   color: $entry_color;
-  background-color: rgba(black, 0.35);
+  background-color: rgba(white, 0.10);
   box-shadow: none;
   border: 1px solid rgba(black, 0.8);
   text-shadow: none;
 
+  &:hover {
+    .search-entry-icon { color: $entry_hover_color; }
+    box-shadow: none;
+    background-color: rgba(white, 0.15);
+  }
+
   &:focus {
     padding: 0 8px;
     color: $entry_hover_color;
-    background-color: rgba(black, 0.25);
+    background-color: rgba(white, 0.10);
     box-shadow: none;
     border: 1px solid $selected_bg_color;
   }
 
   .search-entry-icon { icon-size: 16px; padding: 0 0; color: $entry_color; }
-
-  &:hover {
-    .search-entry-icon { color: $entry_hover_color; }
-    box-shadow: none;
-    background-color: rgba(black, 0.25);
-  }
 }
 
 //search results
@@ -1799,8 +1813,8 @@ StScrollBar {
 }
 
 .app-well-app-running-dot { //running apps indicator
-  width: 32px; height: 2px;
-  background-color: $selected_fg_color;
+  width: 24px; height: 2px;
+  background-color: $selected_bg_color;
   margin-bottom: 0;
 }
 

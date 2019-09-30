@@ -37,7 +37,7 @@ $base_color: if($variant =='light', #FAFAFA, #1b2224);
 $secondary_base_color: scale-alpha($fg_color, 0.05);
 $bg_color: scale-alpha(#000000, $middle_opacity);
 $osd_bg_color: scale-alpha(#000000, $lower_opacity);
-$overview_bg_color: scale-alpha(#000000, 0.25);
+$overview_bg_color: scale-alpha(#ffffff, 0.10);
 $topbar_color: #1b2224;
 @if $color=='sea' { $topbar_color: #1b2224; }
 @if $color=='aliz' { $topbar_color: #222222; }
