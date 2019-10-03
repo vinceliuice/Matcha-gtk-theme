@@ -52,12 +52,12 @@
 }
 
 .gtkstyle-fallback:hover {
-  background-color: #3c3c3c;
+  background-color: #3c3b3b;
   color: #cbbfbf;
 }
 
 .gtkstyle-fallback:active {
-  background-color: #090909;
+  background-color: #090808;
   color: #cbbfbf;
 }
 
@@ -407,7 +407,7 @@ button.flat:hover:active, button.sidebar-button:hover:active, PanelToplevel.mate
 button:hover {
   color: #a99595;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: #404040;
+  background-color: #403f3f;
   -gtk-icon-effect: highlight;
 }
 
@@ -732,7 +732,7 @@ button.font separator, button.file separator {
 .inline-toolbar toolbutton > button:hover {
   color: #a99595;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: #404040;
+  background-color: #403f3f;
 }
 
 .inline-toolbar toolbutton > button:active, .inline-toolbar toolbutton > button:checked {
@@ -2691,7 +2691,7 @@ popover.background > .inline-toolbar {
 
 popover button:not(.suggested-action):not(.destructive-action):hover,
 popover.background button:not(.suggested-action):not(.destructive-action):hover {
-  background-color: #404040;
+  background-color: #403f3f;
   color: #b5abab;
 }
 
@@ -3565,7 +3565,7 @@ scale slider:active {
 
 
 scale slider:disabled {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -4597,7 +4597,7 @@ colorswatch#add-color-button {
 colorswatch#add-color-button:hover {
   color: #a99595;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: #404040;
+  background-color: #403f3f;
 }
 
 colorswatch#add-color-button overlay {
@@ -4630,7 +4630,7 @@ colorchooser .popover.osd {
 .scale-popup button:hover {
   color: #a99595;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: #404040;
+  background-color: #403f3f;
 }
 
 .context-menu, popover.touch-selection, .csd popover.touch-selection,
@@ -5287,7 +5287,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .gedit-document-panel-dragged-row {
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: #090909;
+  background-color: #090808;
   color: #cbbfbf;
 }
 
@@ -5684,7 +5684,7 @@ list#AutostartListBoxTweakGroup.tweak-group-startup {
 #gf-osd-window levelbar block.empty,
 #gf-input-source-popup levelbar block.empty,
 #gf-candidate-popup levelbar block.empty {
-  background-color: rgba(29, 29, 29, 0.95);
+  background-color: rgba(29, 28, 28, 0.95);
 }
 
 #gf-bubble levelbar trough,
@@ -6043,7 +6043,7 @@ popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport
 }
 
 popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > row.activatable, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .view, textview popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > text, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > iconview, .geary-sidebar-pane-separator frame.geary-folder-frame popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > treeview.view.sidebar, .nemo-window .nemo-places-sidebar popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .places-treeview, .budgie-menu popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > button, .panel popover .sidebar popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .view, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > treeview.view.sidebar.source-list {
-  background-color: #3c3c3c;
+  background-color: #3c3b3b;
   color: rgba(203, 191, 191, 0.85);
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -6053,7 +6053,7 @@ popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport
 popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > row.activatable:hover, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .view:hover, textview popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > text:hover, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > iconview:hover, .geary-sidebar-pane-separator frame.geary-folder-frame popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > treeview.view.sidebar:hover, .nemo-window .nemo-places-sidebar popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .places-treeview:hover, .budgie-menu popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > button:hover, .panel popover .sidebar popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .view:hover, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > treeview.view.sidebar.source-list:hover {
   color: #a99595;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: #404040;
+  background-color: #403f3f;
 }
 
 popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
@@ -6817,7 +6817,7 @@ UnityDecoration {
 }
 
 UnityDecoration .top {
-  border: 1px solid #090909;
+  border: 1px solid #090808;
   border-bottom-width: 0;
   border-radius: 4px 4px 0 0;
   padding: 1px 6px 0 6px;
@@ -6834,7 +6834,7 @@ UnityDecoration .top:backdrop {
 UnityDecoration .left, UnityDecoration .right, UnityDecoration .bottom,
 UnityDecoration .left:backdrop, UnityDecoration .right:backdrop, UnityDecoration .bottom:backdrop {
   background-color: transparent;
-  background-image: linear-gradient(to bottom, #090909, #090909);
+  background-image: linear-gradient(to bottom, #090808, #090808);
 }
 
 UnityPanelWidget,
@@ -6975,7 +6975,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 MsdOsdWindow.background.osd .trough {
-  background-color: rgba(29, 29, 29, 0.95);
+  background-color: rgba(29, 28, 28, 0.95);
   border: none;
   border-radius: 5px;
 }
@@ -6999,7 +6999,7 @@ panel-toplevel.background button#tasklist-button image {
 .mate-panel-menu-bar .wnck-pager,
 panel-toplevel.background .wnck-pager {
   color: #686464;
-  background-color: #090909;
+  background-color: #090808;
 }
 
 .mate-panel-menu-bar .wnck-pager:hover,
@@ -8177,7 +8177,7 @@ frame.raven-frame > border {
   padding: 2px 16px;
   min-height: 16px;
   border: none;
-  background-color: #3c3c3c;
+  background-color: #3c3b3b;
   color: #d0c8c8;
 }
 
@@ -9080,7 +9080,7 @@ window#whiskermenu-window scrolledwindow treeview.view {
 }
 
 window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
-  background-color: #3c3c3c;
+  background-color: #3c3b3b;
   color: #d0c8c8;
 }
 
@@ -9449,7 +9449,7 @@ scale.warmth trough {
 #content_frame button:hover {
   color: #a99595;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: #404040;
+  background-color: #403f3f;
 }
 
 #content_frame button:active, #content_frame button:checked {
@@ -9971,7 +9971,7 @@ filechooser actionbar button {
 filechooser actionbar button:hover {
   color: #a99595;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: #404040;
+  background-color: #403f3f;
 }
 
 filechooser actionbar button:active, filechooser actionbar button:checked {

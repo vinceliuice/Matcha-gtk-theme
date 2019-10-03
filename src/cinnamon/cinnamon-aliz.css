@@ -1953,7 +1953,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 15px;
   spacing: 0.5em;
   background: rgba(41, 41, 41, 0.85);
-  border: 0px solid rgba(29, 29, 29, 0.95);
+  border: 0px solid rgba(29, 28, 28, 0.95);
   border-bottom: 1px;
   color: #c0b8b7;
 }

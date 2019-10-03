@@ -57,7 +57,7 @@
 }
 
 .gtkstyle-fallback:active {
-  background-color: #dedede;
+  background-color: #dedddd;
   color: #323232;
 }
 
@@ -1993,7 +1993,7 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) > button
 }
 
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button {
-  background-color: #3c3c3c;
+  background-color: #3c3b3b;
   color: #d0c8c8;
   border-width: 0;
   border-color: rgba(0, 0, 0, 0.15);
@@ -2251,7 +2251,7 @@ headerbar switch:backdrop, .nemo-window .primary-toolbar switch:backdrop, .caja-
 }
 
 headerbar progressbar trough, .nemo-window .primary-toolbar progressbar trough, .caja-navigation-window toolbar#Toolbar.primary-toolbar progressbar trough, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar progressbar trough {
-  background-color: #090909;
+  background-color: #090808;
 }
 
 headerbar progressbar:backdrop, .nemo-window .primary-toolbar progressbar:backdrop, .caja-navigation-window toolbar#Toolbar.primary-toolbar progressbar:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar progressbar:backdrop {
@@ -2283,11 +2283,11 @@ headerbar scale slider:disabled, .nemo-window .primary-toolbar scale slider:disa
 }
 
 headerbar scale trough, .nemo-window .primary-toolbar scale trough, .caja-navigation-window toolbar#Toolbar.primary-toolbar scale trough, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar scale trough {
-  background-color: #090909;
+  background-color: #090808;
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar scale trough:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar scale trough:disabled {
-  background-color: rgba(9, 9, 9, 0.95);
+  background-color: rgba(9, 8, 8, 0.95);
 }
 
 .path-bar button:hover {
@@ -3565,7 +3565,7 @@ scale slider:active {
 
 
 scale slider:disabled {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -4106,7 +4106,7 @@ expander arrow:dir(rtl) {
 }
 
 expander arrow:hover {
-  color: #7f7f7f;
+  color: #7f7e7e;
 }
 
 expander arrow:checked {
@@ -5172,7 +5172,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .disk-space-display.unknown {
   background-color: rgba(50, 50, 50, 0.5);
-  border-color: rgba(25, 25, 25, 0.5);
+  border-color: rgba(25, 24, 24, 0.5);
 }
 
 .disk-space-display.used {
@@ -5287,7 +5287,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .gedit-document-panel-dragged-row {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #dedede;
+  background-color: #dedddd;
   color: #323232;
 }
 
@@ -5685,7 +5685,7 @@ list#AutostartListBoxTweakGroup.tweak-group-startup {
 #gf-osd-window levelbar block.empty,
 #gf-input-source-popup levelbar block.empty,
 #gf-candidate-popup levelbar block.empty {
-  background-color: rgba(29, 29, 29, 0.95);
+  background-color: rgba(29, 28, 28, 0.95);
 }
 
 #gf-bubble levelbar trough,
@@ -6980,7 +6980,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 MsdOsdWindow.background.osd .trough {
-  background-color: rgba(29, 29, 29, 0.95);
+  background-color: rgba(29, 28, 28, 0.95);
   border: none;
   border-radius: 5px;
 }
@@ -7004,7 +7004,7 @@ panel-toplevel.background button#tasklist-button image {
 .mate-panel-menu-bar .wnck-pager,
 panel-toplevel.background .wnck-pager {
   color: #686464;
-  background-color: #090909;
+  background-color: #090808;
 }
 
 .mate-panel-menu-bar .wnck-pager:hover,
@@ -8182,7 +8182,7 @@ frame.raven-frame > border {
   padding: 2px 16px;
   min-height: 16px;
   border: none;
-  background-color: #3c3c3c;
+  background-color: #3c3b3b;
   color: #d0c8c8;
 }
 
@@ -9085,7 +9085,7 @@ window#whiskermenu-window scrolledwindow treeview.view {
 }
 
 window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
-  background-color: #3c3c3c;
+  background-color: #3c3b3b;
   color: #d0c8c8;
 }
 
@@ -10093,7 +10093,7 @@ window.thunar .sidebar scrollbar trough, filechooser placessidebar.sidebar scrol
 @define-color wm_button_close_hover_bg #f68086;
 @define-color wm_button_close_active_bg #f13039;
 @define-color wm_icon_close_bg #222222;
-@define-color wm_button_hover_bg #3c3c3c;
+@define-color wm_button_hover_bg #3c3b3b;
 @define-color wm_button_active_bg #F0544C;
 @define-color wm_button_hover_border #181818;
 @define-color wm_icon_bg #909090;

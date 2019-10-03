@@ -586,29 +586,29 @@ button.osd:disabled {
 button.suggested-action {
   background-clip: border-box;
   color: white;
-  background-color: #db5b5b;
-  border-color: #db5b5b;
+  background-color: #3498db;
+  border-color: #3498db;
 }
 
 button.suggested-action.flat, button.suggested-action.sidebar-button, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action, button.suggested-action.budgie-menu-launcher, .budgie-panel .suggested-action#tasklist-button, .budgie-panel button.suggested-action.flat.launcher {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
-  color: #db5b5b;
+  color: #3498db;
 }
 
 button.suggested-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #e07070;
-  border-color: #e07070;
+  background-color: #4aa3df;
+  border-color: #4aa3df;
 }
 
 button.suggested-action:active, button.suggested-action:checked {
   background-clip: border-box;
   color: white;
-  background-color: #e48585;
-  border-color: #e48585;
+  background-color: #5faee3;
+  border-color: #5faee3;
 }
 
 button.suggested-action.flat:disabled, button.suggested-action.sidebar-button:disabled, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action:disabled, button.suggested-action.budgie-menu-launcher:disabled, .budgie-panel .suggested-action#tasklist-button:disabled {
@@ -2057,29 +2057,29 @@ headerbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error, .
 headerbar button.suggested-action, .nemo-window .primary-toolbar button.suggested-action, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action {
   background-clip: border-box;
   color: white;
-  background-color: #db5b5b;
-  border-color: #db5b5b;
+  background-color: #3498db;
+  border-color: #3498db;
 }
 
 headerbar button.suggested-action.flat, .nemo-window .primary-toolbar button.suggested-action.flat, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action.flat, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action.flat, headerbar button.suggested-action.sidebar-button, .nemo-window .primary-toolbar button.suggested-action.sidebar-button, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action.sidebar-button, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action.sidebar-button, headerbar PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action, .nemo-window .primary-toolbar PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action, .caja-navigation-window toolbar#Toolbar.primary-toolbar PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action, headerbar button.suggested-action.budgie-menu-launcher, .nemo-window .primary-toolbar button.suggested-action.budgie-menu-launcher, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action.budgie-menu-launcher, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action.budgie-menu-launcher, headerbar .budgie-panel .suggested-action#tasklist-button, .budgie-panel headerbar .suggested-action#tasklist-button, .nemo-window .primary-toolbar .budgie-panel .suggested-action#tasklist-button, .budgie-panel .nemo-window .primary-toolbar .suggested-action#tasklist-button, .caja-navigation-window toolbar#Toolbar.primary-toolbar .budgie-panel .suggested-action#tasklist-button, .budgie-panel .caja-navigation-window toolbar#Toolbar.primary-toolbar .suggested-action#tasklist-button, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .budgie-panel .suggested-action#tasklist-button, .budgie-panel .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .suggested-action#tasklist-button, headerbar .budgie-panel button.suggested-action.flat.launcher, .budgie-panel headerbar button.suggested-action.flat.launcher {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
-  color: #db5b5b;
+  color: #3498db;
 }
 
 headerbar button.suggested-action:hover, .nemo-window .primary-toolbar button.suggested-action:hover, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action:hover, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #e07070;
-  border-color: #e07070;
+  background-color: #4aa3df;
+  border-color: #4aa3df;
 }
 
 headerbar button.suggested-action:active, .nemo-window .primary-toolbar button.suggested-action:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action:active, headerbar button.suggested-action:checked, .nemo-window .primary-toolbar button.suggested-action:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action:checked {
   background-clip: border-box;
   color: white;
-  background-color: #e48585;
-  border-color: #e48585;
+  background-color: #5faee3;
+  border-color: #5faee3;
 }
 
 headerbar button.suggested-action.flat:disabled, .nemo-window .primary-toolbar button.suggested-action.flat:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action.flat:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action.flat:disabled, headerbar button.suggested-action.sidebar-button:disabled, .nemo-window .primary-toolbar button.suggested-action.sidebar-button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action.sidebar-button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action.sidebar-button:disabled, headerbar PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action:disabled, .nemo-window .primary-toolbar PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar PanelToplevel.mate-panel-menu-bar > grid.horizontal > button.suggested-action:disabled, headerbar button.suggested-action.budgie-menu-launcher:disabled, .nemo-window .primary-toolbar button.suggested-action.budgie-menu-launcher:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action.budgie-menu-launcher:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action.budgie-menu-launcher:disabled, headerbar .budgie-panel .suggested-action#tasklist-button:disabled, .budgie-panel headerbar .suggested-action#tasklist-button:disabled, .nemo-window .primary-toolbar .budgie-panel .suggested-action#tasklist-button:disabled, .budgie-panel .nemo-window .primary-toolbar .suggested-action#tasklist-button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar .budgie-panel .suggested-action#tasklist-button:disabled, .budgie-panel .caja-navigation-window toolbar#Toolbar.primary-toolbar .suggested-action#tasklist-button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .budgie-panel .suggested-action#tasklist-button:disabled, .budgie-panel .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .suggested-action#tasklist-button:disabled, headerbar button.suggested-action:disabled, .nemo-window .primary-toolbar button.suggested-action:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action:disabled {
@@ -3565,7 +3565,7 @@ scale slider:active {
 
 
 scale slider:disabled {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -5875,7 +5875,7 @@ window.background > box.vertical box.horizontal > box.vertical > scrolledwindow 
 }
 
 window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable label.compressed-entries-label, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .event.view label.compressed-entries-label, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list textview text.event label.compressed-entries-label, textview window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list text.event label.compressed-entries-label, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list iconview.event label.compressed-entries-label, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .geary-sidebar-pane-separator frame.geary-folder-frame treeview.event.view.sidebar label.compressed-entries-label, .geary-sidebar-pane-separator frame.geary-folder-frame window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list treeview.event.view.sidebar label.compressed-entries-label, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .nemo-window .nemo-places-sidebar .event.places-treeview label.compressed-entries-label, .nemo-window .nemo-places-sidebar window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .event.places-treeview label.compressed-entries-label, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .budgie-menu button.event label.compressed-entries-label, .budgie-menu window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list button.event label.compressed-entries-label, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .panel popover .sidebar .event.view label.compressed-entries-label, .panel popover .sidebar window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .event.view label.compressed-entries-label, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list treeview.event.view.sidebar.source-list label.compressed-entries-label {
-  background-image: image(#db5b5b);
+  background-image: image(#3498db);
   color: #ffffff;
   font-weight: 700;
 }
@@ -9389,7 +9389,7 @@ actionbar.inline-toolbar button:last-child {
 }
 
 scale.warmth trough {
-  background-image: linear-gradient(to right, #db5b5b, #db5b5b);
+  background-image: linear-gradient(to right, #3498db, #db5b5b);
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -9541,22 +9541,22 @@ scale.warmth trough {
 #restart_button.button {
   background-clip: border-box;
   color: green;
-  background-color: #db5b5b;
-  border-color: #db5b5b;
+  background-color: #3498db;
+  border-color: #3498db;
 }
 
 #restart_button.button:hover {
   background-clip: border-box;
   color: green;
-  background-color: #e48585;
-  border-color: #e48585;
+  background-color: #5faee3;
+  border-color: #5faee3;
 }
 
 #restart_button.button:active, #restart_button.button:checked {
   background-clip: border-box;
   color: green;
-  background-color: #d23131;
-  border-color: #d23131;
+  background-color: #217dbb;
+  border-color: #217dbb;
 }
 
 #greeter_infobar {

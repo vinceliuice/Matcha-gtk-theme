@@ -1226,7 +1226,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button .system-status-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
   padding: 0 4px;
 }
 
@@ -1752,7 +1752,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
 }
 
 .window-close {
@@ -2323,7 +2323,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .notification-banner .secondary-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
 }
 
 .notification-banner .notification-actions {
@@ -2374,7 +2374,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .secondary-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
 }
 
 .chat-body {
@@ -2716,7 +2716,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .candidate-page-button-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
 }
 
 /* Auth Dialogs & Screen Shield */
