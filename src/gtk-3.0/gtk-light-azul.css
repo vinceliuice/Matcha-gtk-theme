@@ -9083,27 +9083,24 @@ window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
   color: #c6cbcf;
 }
 
-window.thunar paned.horizontal > separator {
-  background: none;
-}
-
 window.thunar .sidebar {
   border: none;
 }
 
 window.thunar .sidebar treeview.view {
-  background-color: rgba(48, 52, 62, 0.95);
-  color: #c6cbcf;
+  background-color: #f7f7f7;
+  color: #2b2f3b;
 }
 
 window.thunar .sidebar treeview.view:hover {
-  background-color: rgba(59, 64, 76, 0.95);
+  background-color: rgba(43, 47, 59, 0.1);
   box-shadow: none;
 }
 
 window.thunar toolbar#location-toolbar, window.thunar #location-toolbar.inline-toolbar {
   background-color: #f2f2f2;
   color: #2b2f3b;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 window.thunar toolbar#location-toolbar entry, window.thunar #location-toolbar.inline-toolbar entry {
@@ -10020,33 +10017,33 @@ filechooser actionbar entry:disabled {
   background-color: rgba(255, 255, 255, 0.55);
 }
 
-window.thunar .sidebar scrollbar, filechooser placessidebar.sidebar scrollbar,
+filechooser placessidebar.sidebar scrollbar,
 .nautilus-window placessidebar.sidebar scrollbar, .nemo-window .sidebar scrollbar {
   border-color: rgba(37, 40, 48, 0.95);
 }
 
-window.thunar .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, filechooser placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+filechooser placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   background-color: #f0f1f2;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-window.thunar .sidebar scrollbar slider, filechooser placessidebar.sidebar scrollbar slider, .nautilus-window placessidebar.sidebar scrollbar slider, .nemo-window .sidebar scrollbar slider {
+filechooser placessidebar.sidebar scrollbar slider, .nautilus-window placessidebar.sidebar scrollbar slider, .nemo-window .sidebar scrollbar slider {
   background-color: rgba(240, 241, 242, 0.7);
 }
 
-window.thunar .sidebar scrollbar slider:hover, filechooser placessidebar.sidebar scrollbar slider:hover, .nautilus-window placessidebar.sidebar scrollbar slider:hover, .nemo-window .sidebar scrollbar slider:hover {
+filechooser placessidebar.sidebar scrollbar slider:hover, .nautilus-window placessidebar.sidebar scrollbar slider:hover, .nemo-window .sidebar scrollbar slider:hover {
   background-color: #fdfefe;
 }
 
-window.thunar .sidebar scrollbar slider:hover:active, filechooser placessidebar.sidebar scrollbar slider:hover:active, .nautilus-window placessidebar.sidebar scrollbar slider:hover:active, .nemo-window .sidebar scrollbar slider:hover:active {
+filechooser placessidebar.sidebar scrollbar slider:hover:active, .nautilus-window placessidebar.sidebar scrollbar slider:hover:active, .nemo-window .sidebar scrollbar slider:hover:active {
   background-color: #3498db;
 }
 
-window.thunar .sidebar scrollbar slider:disabled, filechooser placessidebar.sidebar scrollbar slider:disabled, .nautilus-window placessidebar.sidebar scrollbar slider:disabled, .nemo-window .sidebar scrollbar slider:disabled {
+filechooser placessidebar.sidebar scrollbar slider:disabled, .nautilus-window placessidebar.sidebar scrollbar slider:disabled, .nemo-window .sidebar scrollbar slider:disabled {
   background-color: transparent;
 }
 
-window.thunar .sidebar scrollbar trough, filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessidebar.sidebar scrollbar trough, .nemo-window .sidebar scrollbar trough {
+filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessidebar.sidebar scrollbar trough, .nemo-window .sidebar scrollbar trough {
   background-color: rgba(37, 40, 48, 0.95);
 }
 
