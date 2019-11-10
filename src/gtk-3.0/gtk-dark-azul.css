@@ -6493,18 +6493,18 @@ window.background.chromium > menubar > menuitem {
 }
 
 window.background.chromium > menu {
-  border: 1px solid #dddddd;
-  background-color: white;
-  color: #686868;
+  border: 1px solid #14161b;
+  background-color: #1b1d24;
+  color: #afb4ba;
 }
 
 window.background.chromium > menu > separator {
-  color: white;
-  background-color: white;
+  color: #1b1d24;
+  background-color: #1b1d24;
 }
 
 window.background.chromium > menu > menuitem {
-  color: #686868;
+  color: #afb4ba;
 }
 
 window.background.chromium > menu > menuitem:hover {
@@ -6513,11 +6513,11 @@ window.background.chromium > menu > menuitem:hover {
 }
 
 window.background.chromium > menu > menuitem:disabled {
-  color: rgba(104, 104, 104, 0.45);
+  color: rgba(175, 180, 186, 0.45);
 }
 
 window.background.chromium > menu > menuitem label:disabled {
-  color: rgba(104, 104, 104, 0.45);
+  color: rgba(175, 180, 186, 0.45);
 }
 
 .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar {

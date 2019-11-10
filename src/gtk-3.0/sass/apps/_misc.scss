@@ -229,8 +229,8 @@ window.background:not(.csd) {
 $chrome_borders_color: $solid_borders_color;
 $chrome_bg_color: $bg_color;
 $chrome_fg_color: $fg_color;
-$chrome_menu_bg_color: white;
-$chrome_menu_fg_color: #686868;
+$chrome_menu_bg_color: $_menu_bg;
+$chrome_menu_fg_color: $text_color;
 
 window.background.chromium {
   // checked-tab & toolbar & button widgets
@@ -298,7 +298,7 @@ window.background.chromium {
   }
 
   > menu {
-    border: 1px solid #dddddd;
+    border: 1px solid $solid_borders_color;
     background-color: $chrome_menu_bg_color;
     color: $chrome_menu_fg_color;
 
