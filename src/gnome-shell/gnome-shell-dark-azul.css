@@ -888,13 +888,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu {
   min-width: 200px;
   color: #FFFFFF;
-  border-image: url("assets/menu.svg") 9 9 9 9;
+  border-image: url("assets/menu.svg") 18 18 18 18;
 }
 
 .popup-menu .popup-sub-menu {
   background: none;
   box-shadow: none;
-  border-image: url("assets/submenu.svg") 9 9 9 9;
+  border-image: url("assets/submenu.svg") 18 18 2 2;
 }
 
 .popup-menu .popup-menu-content {
@@ -918,13 +918,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: normal;
   background: none;
   box-shadow: none;
-  border-image: url("assets/submenu-open.svg") 9 9 9 9;
+  border-image: url("assets/submenu-open.svg") 18 18 2 2;
 }
 
 .popup-menu .popup-menu-item:checked:active, .popup-menu .popup-menu-item:checked.selected {
   color: #FFFFFF;
   background-color: transparent;
-  border-image: url("assets/menu-hover.svg") 9 9 1 1;
+  border-image: url("assets/menu-hover.svg") 18 18 2 2;
 }
 
 .popup-menu .popup-menu-item:checked:insensitive {
@@ -935,7 +935,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu .popup-menu-item:hover, .popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
   color: #FFFFFF;
   background-color: transparent;
-  border-image: url("assets/menu-hover.svg") 9 9 1 1;
+  border-image: url("assets/menu-hover.svg") 18 18 2 2;
 }
 
 .popup-menu .popup-menu-item:insensitive {
@@ -988,7 +988,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: 0 none transparent;
   background: transparent;
   color: #FFFFFF;
-  border-image: url("assets/menu.svg") 9 9 9 9;
+  border-image: url("assets/menu.svg") 18 18 18 18;
 }
 
 .candidate-popup-boxpointer .candidate-popup-content {
@@ -3475,4 +3475,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .search-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon {
   color: #FFFFFF;
+}
+
+.openweather-button-action {
+  border: 1px solid transparent;
+  background: none;
 }

@@ -57,7 +57,7 @@
 }
 
 .gtkstyle-fallback:active {
-  background-color: #dedddd;
+  background-color: #dedede;
   color: #323232;
 }
 
@@ -1375,7 +1375,7 @@ modelbutton.flat arrow.right {
   color: #fcdddb;
 }
 
-infobar.info *:link, infobar.info button:link, infobar.info button:visited, infobar.question *:link, infobar.question button:link, infobar.question button:visited, infobar.warning *:link, infobar.warning button:link, infobar.warning button:visited, infobar.error *:link, infobar.error button:link, infobar.error button:visited, *:link:selected, button:selected:link, button:selected:visited, headerbar.selection-mode .subtitle:link,
+infobar.info :link, infobar.question :link, infobar.warning :link, infobar.error :link, *:link:selected, button:selected:link, button:selected:visited, headerbar.selection-mode .subtitle:link,
 .selection-mode.titlebar:not(headerbar) .subtitle:link,
 *:selected *:link,
 *:selected button:link,
@@ -2245,7 +2245,7 @@ headerbar switch:backdrop, .nemo-window .primary-toolbar switch:backdrop, .caja-
 }
 
 headerbar progressbar trough, .nemo-window .primary-toolbar progressbar trough, .caja-navigation-window toolbar#Toolbar.primary-toolbar progressbar trough, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar progressbar trough {
-  background-color: #d9d8d8;
+  background-color: #d9d9d9;
 }
 
 headerbar progressbar:backdrop, .nemo-window .primary-toolbar progressbar:backdrop, .caja-navigation-window toolbar#Toolbar.primary-toolbar progressbar:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar progressbar:backdrop {
@@ -2277,11 +2277,11 @@ headerbar scale slider:disabled, .nemo-window .primary-toolbar scale slider:disa
 }
 
 headerbar scale trough, .nemo-window .primary-toolbar scale trough, .caja-navigation-window toolbar#Toolbar.primary-toolbar scale trough, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar scale trough {
-  background-color: #d9d8d8;
+  background-color: #d9d9d9;
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar scale trough:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar scale trough:disabled {
-  background-color: rgba(217, 216, 216, 0.95);
+  background-color: rgba(217, 217, 217, 0.95);
 }
 
 .path-bar button:hover {
@@ -3559,7 +3559,7 @@ scale slider:active {
 
 
 scale slider:disabled {
-  background-color: #e6e5e5;
+  background-color: #e6e6e6;
   border-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -3943,7 +3943,7 @@ row.activatable:selected:active, .view:selected:active, textview text:selected:a
   color: #ffffff;
 }
 
-row.activatable:selected.has-open-popup, .view:selected.has-open-popup, textview text:selected.has-open-popup, iconview:selected.has-open-popup, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected.has-open-popup, .nemo-window .nemo-places-sidebar .places-treeview:selected.has-open-popup, .budgie-menu button:selected.has-open-popup, .panel popover .sidebar .view:selected.has-open-popup, treeview.view.sidebar.source-list:selected.has-open-popup, row.activatable:selected:hover, .view:selected:hover, textview text:selected:hover, iconview:selected:hover, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected:hover, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .budgie-menu button:selected:hover, .panel popover .sidebar .view:selected:hover, treeview.view.sidebar.source-list:selected:hover {
+row.activatable:selected.has-open-popup, :selected.has-open-popup.view, textview text:selected.has-open-popup, iconview:selected.has-open-popup, .geary-sidebar-pane-separator frame.geary-folder-frame treeview:selected.has-open-popup.view.sidebar, .nemo-window .nemo-places-sidebar :selected.has-open-popup.places-treeview, .budgie-menu button:selected.has-open-popup, .panel popover .sidebar :selected.has-open-popup.view, treeview:selected.has-open-popup.view.sidebar.source-list, row.activatable:selected:hover, .view:selected:hover, textview text:selected:hover, iconview:selected:hover, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected:hover, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .budgie-menu button:selected:hover, .panel popover .sidebar .view:selected:hover, treeview.view.sidebar.source-list:selected:hover {
   background-color: #d84c44;
 }
 
@@ -4100,7 +4100,7 @@ expander arrow:dir(rtl) {
 }
 
 expander arrow:hover {
-  color: #7f7e7e;
+  color: #7f7f7f;
 }
 
 expander arrow:checked {
@@ -5166,7 +5166,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .disk-space-display.unknown {
   background-color: rgba(50, 50, 50, 0.5);
-  border-color: rgba(25, 24, 24, 0.5);
+  border-color: rgba(25, 25, 25, 0.5);
 }
 
 .disk-space-display.used {
@@ -5281,7 +5281,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .gedit-document-panel-dragged-row {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #dedddd;
+  background-color: #dedede;
   color: #323232;
 }
 
@@ -5679,7 +5679,7 @@ list#AutostartListBoxTweakGroup.tweak-group-startup {
 #gf-osd-window levelbar block.empty,
 #gf-input-source-popup levelbar block.empty,
 #gf-candidate-popup levelbar block.empty {
-  background-color: rgba(29, 28, 28, 0.95);
+  background-color: rgba(29, 29, 29, 0.95);
 }
 
 #gf-bubble levelbar trough,
@@ -6974,7 +6974,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 MsdOsdWindow.background.osd .trough {
-  background-color: rgba(29, 28, 28, 0.95);
+  background-color: rgba(29, 29, 29, 0.95);
   border: none;
   border-radius: 5px;
 }
@@ -6998,7 +6998,7 @@ panel-toplevel.background button#tasklist-button image {
 .mate-panel-menu-bar .wnck-pager,
 panel-toplevel.background .wnck-pager {
   color: #686464;
-  background-color: #090808;
+  background-color: #090909;
 }
 
 .mate-panel-menu-bar .wnck-pager:hover,
@@ -7389,9 +7389,9 @@ window#MyControlCenter > frame > box.horizontal > widget > scrolledwindow.frame 
   transition-duration: 0s;
 }
 
-.atril-window.fullscreen.background > box.vertical > toolbar:not(.primary-toolbar).horizontal, .atril-window.fullscreen.background > box.vertical > .inline-toolbar:not(.primary-toolbar).horizontal,
+.atril-window.fullscreen.background > box.vertical > toolbar:not(.primary-toolbar).horizontal, .atril-window.fullscreen.background > box.vertical > :not(.primary-toolbar).horizontal.inline-toolbar,
 .xreader-window.fullscreen.background > box.vertical > toolbar:not(.primary-toolbar).horizontal,
-.xreader-window.fullscreen.background > box.vertical > .inline-toolbar:not(.primary-toolbar).horizontal {
+.xreader-window.fullscreen.background > box.vertical > :not(.primary-toolbar).horizontal.inline-toolbar {
   border-bottom-color: #d1d1d1;
 }
 
@@ -8176,7 +8176,7 @@ frame.raven-frame > border {
   padding: 2px 16px;
   min-height: 16px;
   border: none;
-  background-color: #3c3b3b;
+  background-color: #3c3c3c;
   color: #d0c8c8;
 }
 
@@ -9079,7 +9079,7 @@ window#whiskermenu-window scrolledwindow treeview.view {
 }
 
 window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
-  background-color: #3c3b3b;
+  background-color: #3c3c3c;
   color: #d0c8c8;
 }
 
