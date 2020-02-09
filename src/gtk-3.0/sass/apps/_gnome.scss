@@ -1230,12 +1230,20 @@ dialog.background.csd {
 //
 .nautilus-window .floating-bar {
   padding: 1px;
-  background-color: $selected_bg_color;
-  color: $selected_fg_color;
+  background-color: $base_color;
+  color: $fg_color;
   border-radius: 2px 2px 0 0;
+  border: 1px solid $borders_color;
 
-  &.bottom.left { border-top-left-radius: 0; }
-  &.bottom.right { border-top-right-radius: 0; }
+  &.bottom.left {
+    border-top-left-radius: 0;
+    border-width: 1px 1px 0 0;
+  }
+
+  &.bottom.right {
+    border-top-right-radius: 0;
+    border-width: 1px 0 0 1px;
+  }
 
     button {
         border: none;

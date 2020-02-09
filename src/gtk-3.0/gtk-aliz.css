@@ -6191,17 +6191,20 @@ dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame
 
 .nautilus-window .floating-bar {
   padding: 1px;
-  background-color: #F0544C;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #323232;
   border-radius: 2px 2px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .nautilus-window .floating-bar.bottom.left {
   border-top-left-radius: 0;
+  border-width: 1px 1px 0 0;
 }
 
 .nautilus-window .floating-bar.bottom.right {
   border-top-right-radius: 0;
+  border-width: 1px 0 0 1px;
 }
 
 .nautilus-window .floating-bar button {

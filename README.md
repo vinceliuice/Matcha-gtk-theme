@@ -43,9 +43,9 @@ Or open the terminal at current directory.
 
 Run
 
-    ./Install
+    ./install.sh
 
-Usage:  `./Install`  **[OPTIONS...]**
+Usage:  `./install.sh`  **[OPTIONS...]**
 
 |  OPTIONS:     | |
 |:--------------|:-------------|
