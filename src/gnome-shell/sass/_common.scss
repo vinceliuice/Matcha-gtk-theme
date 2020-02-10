@@ -95,6 +95,7 @@ StEntry {
   border-radius: 0;
   border-width: 0;
   color: $fg_color;
+  caret-color: $fg_color;
   selection-background-color: $selected_bg_color;
   selected-color: $selected_fg_color;
   @include font(subheading);
@@ -823,10 +824,8 @@ StScrollBar {
   // .popup-menu-content {
   // }
 
-  StEntry {
-    selection-background-color: $selected_fg_color;
-    selected-color: $selected_bg_color;
-    text-shadow: none;
+  StEntry, .search-entry {
+    caret-color: $fg_color;
   }
 }
 
@@ -1614,13 +1613,13 @@ StScrollBar {
     &:active {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
-      border: 1px solid $selected_bg_color;
+      border: 1px solid rgba(black, 0.8);
       box-shadow: none;
     }
     &:checked {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
-      border: 1px solid $selected_bg_color;
+      border: 1px solid rgba(black, 0.8);
       box-shadow: none;
     }
     &:first-child {
@@ -1629,6 +1628,7 @@ StScrollBar {
       &:checked { border-radius: 2px 0 0 2px; }
     }
     &:last-child {
+      border-left-width: 0;
       border-radius: 0 2px 2px 0;
       &:checked { border-radius: 0 2px 2px 0; }
     }
@@ -1673,6 +1673,7 @@ StScrollBar {
   padding: 0 8px;
   border-radius: 20px;
   color: $entry_color;
+  caret-color: $entry_color;
   background-color: rgba(white, 0.10);
   box-shadow: none;
   border: 1px solid rgba(black, 0.8);
@@ -2252,6 +2253,7 @@ $legacy_icon_size: 24px;
 
   StEntry {
     color: $selected_fg_color;
+    caret-color: $selected_fg_color;;
     selection-background-color: $selected_bg_color;
     selected-color: $selected_fg_color;
     border: 1px solid rgba(white, 0.2);
