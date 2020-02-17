@@ -51,7 +51,7 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 |:--------------|:-------------|
 | -d, --dest    | Specify theme destination directory (Default: $HOME/.themes) |
 | -n, --name    | Specify theme name (Default: Matcha) |
-| -c, --color   | Specify theme color variant(s) **[standard/dark]** (Default: All variants) |
+| -c, --color   | Specify theme color variant(s) **[standard/light/dark]** (Default: All variants) |
 | -t, --theme   | Specify hue theme variant(s) **[aliz/azul/sea]** (Default: All variants) |
 | -h, --help    | Show this help |
 

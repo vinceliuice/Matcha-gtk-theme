@@ -55,7 +55,7 @@ install() {
   echo "[X-GNOME-Metatheme]"                                                       >> ${themedir}/index.theme
   echo "GtkTheme=${name}${color}${theme}"                                          >> ${themedir}/index.theme
   echo "MetacityTheme=${name}${color}${theme}"                                     >> ${themedir}/index.theme
-  echo "IconTheme=Qogir-manjaro"                                                         >> ${themedir}/index.theme
+  echo "IconTheme=Qogir-manjaro"                                                   >> ${themedir}/index.theme
   echo "CursorTheme=Breeze_cursors"                                                >> ${themedir}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                 >> ${themedir}/index.theme
 
@@ -209,8 +209,12 @@ while [[ $# -gt 0 ]]; do
             colors+=("${COLOR_VARIANTS[0]}")
             shift 1
             ;;
-          dark)
+          light)
             colors+=("${COLOR_VARIANTS[1]}")
+            shift 1
+            ;;
+          dark)
+            colors+=("${COLOR_VARIANTS[2]}")
             shift 1
             ;;
           -*|--*)
