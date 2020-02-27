@@ -168,7 +168,7 @@ done
 while [[ $# -gt 0 ]]; do
   case "${1}" in
     -d|--dest)
-      dest="${2}"
+      dest="$(realpath "${2}")"
       if [[ ! -d "${dest}" ]]; then
         echo "ERROR: Destination directory does not exist."
         exit 1
@@ -214,8 +214,12 @@ while [[ $# -gt 0 ]]; do
             colors+=("${COLOR_VARIANTS[0]}")
             shift 1
             ;;
-          dark)
+          light)
             colors+=("${COLOR_VARIANTS[1]}")
+            shift 1
+            ;;
+          dark)
+            colors+=("${COLOR_VARIANTS[2]}")
             shift 1
             ;;
           -*|--*)
