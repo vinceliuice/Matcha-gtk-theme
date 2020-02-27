@@ -5,7 +5,7 @@ OPTIPNG="/usr/bin/optipng"
 
 INDEX="assets.txt"
 
-for variant in '' '-dark'; do
+for variant in '' '-light' '-dark'; do
   for color in '-sea' '-aliz' '-azul'; do
 
     ASSETS_DIR="assets${variant}${color}"

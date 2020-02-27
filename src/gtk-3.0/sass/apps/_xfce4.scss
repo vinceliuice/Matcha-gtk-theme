@@ -134,6 +134,7 @@ $dark_menu_fg: $panel_fg;
 $dark_menu_border: rgba(black, 0.20);
 
 %dark_menu_scrollbar {
+  background-color: rgba(black, 0.15);
   border-color: darken($dark_menu_bg, 2%);
 
   &.overlay-indicator:not(.dragging):not(.hovering) slider {
@@ -218,9 +219,13 @@ window#whiskermenu-window {
 
     scrollbar { @extend %dark_menu_scrollbar; }
 
-    treeview.view {
+    .view {
       background-color: rgba(lighten($dark_menu_bg, 5%), 0.9);
       color: $dark_menu_fg;
+
+      // &:hover {
+      //   background-color: lighten($dark_menu_bg, 10%);
+      // }
 
       &:selected:hover {
         background-color: lighten($dark_menu_bg, 10%);
@@ -243,11 +248,11 @@ window.thunar {
     border: none;
 
     treeview.view {
-      background-color: $bg_color;
-      color: $fg_color;
+      background-color: $dark_sidebar_bg;
+      color: $dark_sidebar_fg;
 
       &:hover {
-        background-color: rgba($fg_color, 0.1);
+        background-color: mix($dark_sidebar_fg, $dark_sidebar_bg, 10%);
         box-shadow: none;
       }
 

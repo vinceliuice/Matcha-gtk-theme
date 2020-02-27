@@ -66,6 +66,12 @@ Solus:
 
     sudo eopkg it matcha-gtk-theme
 
+### Firefox theme
+[Intall Firefox theme](src/extra/firefox)
+
+#### Preview
+![Firefox-theme](src/extra/firefox/preview.png?raw=true)
+
 ## Icon theme for Matcha
 
 - Qogir-manjaro:  https://github.com/vinceliuice/Qogir-icon-theme

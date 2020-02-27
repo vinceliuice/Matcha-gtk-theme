@@ -55,7 +55,7 @@ install() {
   echo "[X-GNOME-Metatheme]"                                                       >> ${themedir}/index.theme
   echo "GtkTheme=${name}${color}${theme}"                                          >> ${themedir}/index.theme
   echo "MetacityTheme=${name}${color}${theme}"                                     >> ${themedir}/index.theme
-  echo "IconTheme=Qogir-manjaro"                                                         >> ${themedir}/index.theme
+  echo "IconTheme=Qogir-manjaro"                                                   >> ${themedir}/index.theme
   echo "CursorTheme=Breeze_cursors"                                                >> ${themedir}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                 >> ${themedir}/index.theme
 
@@ -131,8 +131,13 @@ install() {
   # Install xfwm4 Theme
   mkdir -p                                                                            ${themedir}/xfwm4
   cd ${SRC_DIR}/xfwm4
-  cp -ur assets${ELSE_DARK}${theme}/*.png                                             ${themedir}/xfwm4
-  cp -ur themerc${theme}                                                              ${themedir}/xfwm4/themerc
+  cp -ur assets${color}${theme}/*.png                                                 ${themedir}/xfwm4
+
+  if [[ ${color} == '-light' ]] ; then
+    cp -ur themerc${color}                                                            ${themedir}/xfwm4/themerc
+  else
+    cp -ur themerc${theme}                                                            ${themedir}/xfwm4/themerc
+  fi
 
   # Install openbox Theme
   mkdir -p                                                                            ${themedir}/openbox-3

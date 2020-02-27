@@ -8993,6 +8993,7 @@ XfdesktopIconView.view:active, XfdesktopIconView.view:checked {
 }
 
 window#whiskermenu-window scrolledwindow scrollbar {
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: #1d1d1d;
 }
 
@@ -9082,12 +9083,12 @@ window#whiskermenu-window entry:disabled image {
   color: rgba(208, 200, 200, 0.45);
 }
 
-window#whiskermenu-window scrolledwindow treeview.view {
+window#whiskermenu-window scrolledwindow .view {
   background-color: rgba(47, 47, 47, 0.9);
   color: #d0c8c8;
 }
 
-window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
+window#whiskermenu-window scrolledwindow .view:selected:hover {
   background-color: #3c3c3c;
   color: #d0c8c8;
 }
@@ -9097,12 +9098,12 @@ window.thunar .sidebar {
 }
 
 window.thunar .sidebar treeview.view {
-  background-color: #f7f7f7;
-  color: #323232;
+  background-color: rgba(54, 54, 54, 0.95);
+  color: #d0c8c8;
 }
 
 window.thunar .sidebar treeview.view:hover {
-  background-color: rgba(50, 50, 50, 0.1);
+  background-color: rgba(71, 70, 70, 0.955);
   box-shadow: none;
 }
 

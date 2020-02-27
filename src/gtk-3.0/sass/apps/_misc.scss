@@ -47,6 +47,9 @@
     border: none;
     color: $header_fg;
     background-color: opacify($header_bg, 1);
+
+    @if $header == 'light' { box-shadow: inset 0 -1px $borders_color; }
+
     button, entry {
       min-height: 16px;
       margin-top: 6px;

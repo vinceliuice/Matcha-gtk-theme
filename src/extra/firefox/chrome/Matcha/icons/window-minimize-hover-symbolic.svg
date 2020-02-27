@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg11"
+   sodipodi:docname="window-minimize-big-symbolic.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   style="enable-background:new">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnome Symbolic Icons</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="707"
+     id="namedview13"
+     showgrid="false"
+     inkscape:zoom="14.292664"
+     inkscape:cx="14.098028"
+     inkscape:cy="8.518109"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg11" />
+  <title
+     id="title2">Gnome Symbolic Icons</title>
+  <defs
+     id="defs7">
+    <linearGradient
+       id="cf"
+       x1="-61"
+       x2="-61"
+       y1="-627.64001"
+       y2="-626.64001"
+       gradientTransform="translate(69,635.64)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#5c616c"
+         offset="0"
+         id="stop4" />
+    </linearGradient>
+  </defs>
+  <g
+     transform="matrix(1.375,0,0,1.375,-1739.375,-339.625)"
+     style="display:inline;opacity:1"
+     id="g4909-8">
+    <g
+       transform="translate(1265,247)"
+       id="g4834-0-0"
+       style="display:inline;opacity:1;fill:#c0e3ff;fill-opacity:1">
+      <g
+         id="layer9-3-4-3"
+         inkscape:label="status"
+         style="display:inline;fill:#c0e3ff;fill-opacity:1"
+         transform="translate(-81.0002,-967)" />
+      <g
+         style="fill:#c0e3ff;fill-opacity:1"
+         id="layer10-4-1-0"
+         inkscape:label="devices"
+         transform="translate(-81.0002,-967)" />
+      <g
+         style="fill:#c0e3ff;fill-opacity:1"
+         id="layer11-2-6-6"
+         inkscape:label="apps"
+         transform="translate(-81.0002,-967)" />
+      <g
+         style="fill:#c0e3ff;fill-opacity:1"
+         id="layer13-5-4-9"
+         inkscape:label="places"
+         transform="translate(-81.0002,-967)" />
+      <g
+         style="fill:#c0e3ff;fill-opacity:1"
+         id="layer14-6-0-6"
+         inkscape:label="mimetypes"
+         transform="translate(-81.0002,-967)" />
+      <g
+         id="layer15-52-1-4"
+         inkscape:label="emblems"
+         style="display:inline;fill:#c0e3ff;fill-opacity:1"
+         transform="translate(-81.0002,-967)" />
+      <g
+         id="g71291-3-9-0"
+         inkscape:label="emotes"
+         style="display:inline;fill:#c0e3ff;fill-opacity:1"
+         transform="translate(-81.0002,-967)" />
+      <g
+         id="g4953-8-2-6"
+         inkscape:label="categories"
+         style="display:inline;fill:#c0e3ff;fill-opacity:1"
+         transform="translate(-81.0002,-967)" />
+      <g
+         id="layer12-45-6-5"
+         inkscape:label="actions"
+         style="display:inline;fill:#c0e3ff;fill-opacity:1"
+         transform="translate(-81.0002,-967)">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 86.091109,974.27273 v 1.45454 h 5.818182 v -1.45454 z"
+           id="rect9057-8-9"
+           style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#96aaa9;fill-opacity:1;stroke:none;stroke-width:1.67956233;marker:none;enable-background:accumulate"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+    </g>
+  </g>
+</svg>
