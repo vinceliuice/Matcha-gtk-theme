@@ -9093,13 +9093,7 @@ window.thunar .sidebar {
 }
 
 window.thunar .sidebar treeview.view {
-  background-color: rgba(54, 54, 54, 0.95);
-  color: #d0c8c8;
-}
-
-window.thunar .sidebar treeview.view:hover {
-  background-color: rgba(71, 70, 70, 0.955);
-  box-shadow: none;
+  background-color: #222222;
 }
 
 window.thunar toolbar#location-toolbar, window.thunar #location-toolbar.inline-toolbar {
