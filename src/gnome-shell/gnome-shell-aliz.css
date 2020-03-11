@@ -887,7 +887,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .popup-menu {
-  min-width: 12em;
+  min-width: 15em;
   color: rgba(0, 0, 0, 0.8);
   border-image: url("assets/menu.svg") 18 18 18 18;
 }
@@ -996,20 +996,25 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-separator-menu-item {
-  height: 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  margin: 10px 48px;
+  padding: 0;
+}
+
+popup-sub-menu .popup-separator-menu-item {
+  margin: 0 64px 0 32px;
+}
+
+.popup-separator-menu-item .popup-separator-menu-item-separator {
   background: none;
   border: none;
 }
 
-.popup-separator-menu-item .popup-separator-menu-item-separator {
-  height: 1px;
-  margin: 8px 48px;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
-  margin: 0 64px 0 32px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background: none;
+  border: none;
 }
 
 .system-switch-user-submenu-icon.user-icon {
@@ -1032,7 +1037,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .aggregate-menu {
-  min-width: 22em;
+  min-width: 21em;
 }
 
 .aggregate-menu .popup-menu-icon {
@@ -1300,7 +1305,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button .system-status-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
   padding: 0 4px;
 }
 
@@ -1800,7 +1805,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
 }
 
 .window-close {
@@ -2251,9 +2256,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-icon {
-  padding: 5px;
-  spacing-rows: 5px;
-  spacing-columns: 5px;
+  padding: 4px;
+  spacing-rows: 4px;
+  spacing-columns: 4px;
 }
 
 .page-indicator {
@@ -2307,8 +2312,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-well-app > .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
-  padding: 10px 8px 5px 8px;
-  spacing: 4px;
+  padding: 4px 8px 20px 8px;
+  spacing: 6px;
 }
 
 /* App Folders */
@@ -2371,12 +2376,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 12px;
   width: 800px;
   height: 600px;
-}
-
-.app-folder-icon {
-  padding: 6px;
-  spacing-rows: 6px;
-  spacing-columns: 6px;
 }
 
 .workspace-thumbnails {
@@ -2450,7 +2449,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .notification-banner .secondary-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
 }
 
 .notification-banner .notification-actions {
@@ -2501,7 +2500,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .secondary-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
 }
 
 .chat-body {
@@ -2843,7 +2842,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .candidate-page-button-icon {
-  icon-size: 1.23077em;
+  icon-size: 1.2307692308em;
 }
 
 /* Auth Dialogs & Screen Shield */

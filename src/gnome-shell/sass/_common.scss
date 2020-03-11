@@ -745,7 +745,7 @@ StScrollBar {
 /* Popovers/Menus */
 
 .popup-menu {
-  min-width: 12em;
+  min-width: 15em;
   color: $fg_color;
   border-image: url("assets/menu.svg") 18 18 18 18;
 
@@ -823,9 +823,6 @@ StScrollBar {
   -arrow-rise: 0;
   border: 0 none transparent;
 
-  // .popup-menu-content {
-  // }
-
   StEntry, .search-entry {
     caret-color: $fg_color;
   }
@@ -849,19 +846,23 @@ StScrollBar {
 }
 
 .popup-separator-menu-item {
-  height: 0; //not really the whole box
-  background: none;
+  height: 1px; //not really the whole box
+  background-color: $borders_color;
   border: none;
+  margin: 10px 48px;
+  padding: 0;
+
+   popup-sub-menu & { //submenu separators
+    margin: 0 64px 0 32px;
+  }
 
   .popup-separator-menu-item-separator {
-    //-margin-horizontal: 24px;
-    height: 1px; //not really the whole box
-    margin: 8px 48px;
-    background-color: $borders_color;
+    background: none;
+    border: none;
 
     .popup-sub-menu & { //submenu separators
-      margin: 0 64px 0 32px;
-      background-color: $borders_color;
+      background: none;
+      border: none;
     }
   }
 }
@@ -886,7 +887,7 @@ StScrollBar {
 
 // system status popover menu
 .aggregate-menu {
-  min-width: 22em;
+  min-width: 21em;
 
   // lock screen, shutdown, etc. buttons
   .popup-menu-icon {
@@ -916,6 +917,7 @@ StScrollBar {
       border: none;
       padding: ($large_size - 16px) / 2;
     }
+
     &:active { background-color: $track_color; color: $fg_color; }
 
     & > StIcon { icon-size: 16px; }
@@ -1909,9 +1911,9 @@ StScrollBar {
 }
 .app-folder-popup-bin { padding: 5px; }
 .app-folder-icon {
-  padding: 5px;
-  spacing-rows: 5px;
-  spacing-columns: 5px;
+  padding: 4px;
+  spacing-rows: 4px;
+  spacing-columns: 4px;
 }
 
 .page-indicator {
@@ -1965,8 +1967,8 @@ StScrollBar {
 
 .app-well-app > .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
-  padding: 10px 8px 5px 8px;
-  spacing: 4px;
+  padding: 4px 8px 20px 8px;
+  spacing: 6px;
 }
 
 /* App Folders */
@@ -2025,12 +2027,6 @@ StScrollBar {
   padding: 12px;
   width: 800px;
   height: 600px;
-}
-
-.app-folder-icon {
-  padding: 6px;
-  spacing-rows: 6px;
-  spacing-columns: 6px;
 }
 
 // Workspace pager
