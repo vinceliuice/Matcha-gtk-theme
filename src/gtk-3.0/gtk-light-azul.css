@@ -1375,7 +1375,7 @@ modelbutton.flat arrow.right {
   color: #d6eaf8;
 }
 
-infobar.info :link, infobar.question :link, infobar.warning :link, infobar.error :link, *:link:selected, button:selected:link, button:selected:visited, headerbar.selection-mode .subtitle:link,
+infobar.info *:link, infobar.info button:link, infobar.info button:visited, infobar.question *:link, infobar.question button:link, infobar.question button:visited, infobar.warning *:link, infobar.warning button:link, infobar.warning button:visited, infobar.error *:link, infobar.error button:link, infobar.error button:visited, *:link:selected, button:selected:link, button:selected:visited, headerbar.selection-mode .subtitle:link,
 .selection-mode.titlebar:not(headerbar) .subtitle:link,
 *:selected *:link,
 *:selected button:link,
@@ -3944,7 +3944,7 @@ row.activatable:selected:active, .view:selected:active, textview text:selected:a
   color: #ffffff;
 }
 
-row.activatable:selected.has-open-popup, :selected.has-open-popup.view, textview text:selected.has-open-popup, iconview:selected.has-open-popup, .geary-sidebar-pane-separator frame.geary-folder-frame treeview:selected.has-open-popup.view.sidebar, .nemo-window .nemo-places-sidebar :selected.has-open-popup.places-treeview, .budgie-menu button:selected.has-open-popup, .panel popover .sidebar :selected.has-open-popup.view, treeview:selected.has-open-popup.view.sidebar.source-list, row.activatable:selected:hover, .view:selected:hover, textview text:selected:hover, iconview:selected:hover, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected:hover, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .budgie-menu button:selected:hover, .panel popover .sidebar .view:selected:hover, treeview.view.sidebar.source-list:selected:hover {
+row.activatable:selected.has-open-popup, .view:selected.has-open-popup, textview text:selected.has-open-popup, iconview:selected.has-open-popup, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected.has-open-popup, .nemo-window .nemo-places-sidebar .places-treeview:selected.has-open-popup, .budgie-menu button:selected.has-open-popup, .panel popover .sidebar .view:selected.has-open-popup, treeview.view.sidebar.source-list:selected.has-open-popup, row.activatable:selected:hover, .view:selected:hover, textview text:selected:hover, iconview:selected:hover, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected:hover, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .budgie-menu button:selected:hover, .panel popover .sidebar .view:selected:hover, treeview.view.sidebar.source-list:selected:hover {
   background-color: #2f89c5;
 }
 
@@ -7394,9 +7394,9 @@ window#MyControlCenter > frame > box.horizontal > widget > scrolledwindow.frame 
   transition-duration: 0s;
 }
 
-.atril-window.fullscreen.background > box.vertical > toolbar:not(.primary-toolbar).horizontal, .atril-window.fullscreen.background > box.vertical > :not(.primary-toolbar).horizontal.inline-toolbar,
+.atril-window.fullscreen.background > box.vertical > toolbar:not(.primary-toolbar).horizontal, .atril-window.fullscreen.background > box.vertical > .inline-toolbar:not(.primary-toolbar).horizontal,
 .xreader-window.fullscreen.background > box.vertical > toolbar:not(.primary-toolbar).horizontal,
-.xreader-window.fullscreen.background > box.vertical > :not(.primary-toolbar).horizontal.inline-toolbar {
+.xreader-window.fullscreen.background > box.vertical > .inline-toolbar:not(.primary-toolbar).horizontal {
   border-bottom-color: #d1d1d1;
 }
 

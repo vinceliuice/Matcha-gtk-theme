@@ -1300,7 +1300,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button .system-status-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
   padding: 0 4px;
 }
 
@@ -1398,16 +1398,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding-bottom: 0;
 }
 
-.datemenu-today-button,
-.world-clocks-button,
-.weather-button,
-.message-list-section-title,
-.events-section-title {
-  min-height: 20px;
-  padding: 4px 8px;
-  border-radius: 2px;
-}
-
 .datemenu-today-button {
   min-height: 48px;
 }
@@ -1418,6 +1408,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-list-section-list:rtl {
   padding-right: 0;
+}
+
+.datemenu-today-button,
+.world-clocks-button,
+.weather-button,
+.message-list-section-title,
+.events-section-title {
+  min-height: 20px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: none;
 }
 
 .datemenu-today-button:hover, .datemenu-today-button:focus,
@@ -1798,7 +1800,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .window-close {
@@ -2448,7 +2450,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .notification-banner .secondary-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .notification-banner .notification-actions {
@@ -2499,7 +2501,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .secondary-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .chat-body {
@@ -2841,7 +2843,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .candidate-page-button-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 /* Auth Dialogs & Screen Shield */
