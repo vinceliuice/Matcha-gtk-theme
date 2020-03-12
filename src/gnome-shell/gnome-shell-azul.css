@@ -1305,7 +1305,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 #panel .panel-button .system-status-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
   padding: 0 4px;
 }
 
@@ -1425,6 +1425,8 @@ popup-sub-menu .popup-separator-menu-item {
   border-radius: 2px;
   border: none;
   box-shadow: none;
+  background: none;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .datemenu-today-button:hover, .datemenu-today-button:focus,
@@ -1459,6 +1461,27 @@ popup-sub-menu .popup-separator-menu-item {
 .message-list-section-title,
 .events-section-title {
   color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+
+.weather-header.location {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.48);
+}
+
+.weather-forecast-time {
+  color: rgba(0, 0, 0, 0.48);
+  font-feature-settings: "tnum";
+  font-weight: normal;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+.weather-forecast-icon {
+  icon-size: 32px;
+}
+
+.weather-forecast-temp {
   font-weight: bold;
 }
 
@@ -1805,7 +1828,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .popup-menu-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .window-close {
@@ -2449,7 +2472,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .notification-banner .secondary-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .notification-banner .notification-actions {
@@ -2500,7 +2523,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .secondary-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 .chat-body {
@@ -2842,7 +2865,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .candidate-page-button-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1.23077em;
 }
 
 /* Auth Dialogs & Screen Shield */
