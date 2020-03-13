@@ -341,16 +341,41 @@ menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
 .findbar-find-next:active .toolbarbutton-icon,
 .findbar-find-previous:active .toolbarbutton-icon,
 toolbarbutton:not([disabled]):not(.titlebar-button):active .toolbarbutton-icon,
+toolbarbutton:not([disabled]):not(.titlebar-button)[checked="true"] .toolbarbutton-icon,
 .toolbarbutton-1:not([disabled])[open] .toolbarbutton-icon {
-	filter: invert(50%) brightness(200%) !important;
+	filter: invert(60%) brightness(200%) !important;
 }
 
+.searchbar-search-icon,
+#nav-bar #stop-button .toolbarbutton-icon,
+#nav-bar #copy-button .toolbarbutton-icon,
+#nav-bar #paste-button .toolbarbutton-icon,
+#nav-bar #privatebrowsing-button .toolbarbutton-icon,
+#nav-bar #fullscreen-button .toolbarbutton-icon,
+#nav-bar #open-file-button .toolbarbutton-icon,
+#nav-bar #panic-button .toolbarbutton-icon,
+#nav-bar #library-button .toolbarbutton-icon,
+#nav-bar #characterencoding-button .toolbarbutton-icon,
+#nav-bar #new-window-button .toolbarbutton-icon,
+#nav-bar #add-ons-button .toolbarbutton-icon,
+#nav-bar #sync-button .toolbarbutton-icon,
+#nav-bar #cut-button .toolbarbutton-icon,
+#nav-bar #save-page-button .toolbarbutton-icon,
+#nav-bar #email-link-button .toolbarbutton-icon,
+#nav-bar #preferences-button .toolbarbutton-icon,
+#nav-bar #find-button .toolbarbutton-icon,
+#nav-bar #history-panelmenu .toolbarbutton-icon,
+#nav-bar #downloads-button .toolbarbutton-icon,
+#nav-bar #print-button .toolbarbutton-icon,
+#nav-bar #developer-button .toolbarbutton-icon,
+#nav-bar #bookmarks-menu-button .toolbarbutton-icon,
+#nav-bar #sidebar-button .toolbarbutton-icon,
 #nav-bar #back-button .toolbarbutton-icon,
 #nav-bar #forward-button .toolbarbutton-icon,
 #PanelUI-menu-button .toolbarbutton-icon,
 #home-button .toolbarbutton-icon,
 #nav-bar-overflow-button .toolbarbutton-icon {
-	filter: invert(50%) brightness(150%);
+	filter: invert(60%) brightness(160%);
 }
 
 /* Invert icons color in dark variant */
@@ -380,9 +405,9 @@ toolbarbutton:not([disabled]):not(.titlebar-button):active .toolbarbutton-icon,
 	.identity-popup-permission-remove-button .button-icon,
 
 	#privatebrowsing-button .toolbarbutton-icon,
-	#sidebar-button:-moz-locale-dir(ltr):not([positionend])  .toolbarbutton-icon,
-	#sidebar-button:-moz-locale-dir(rtl)[positionend]  .toolbarbutton-icon,
-	#sidebar-button  .toolbarbutton-icon,
+	#sidebar-button:-moz-locale-dir(ltr):not([positionend]) .toolbarbutton-icon,
+	#sidebar-button:-moz-locale-dir(rtl)[positionend] .toolbarbutton-icon,
+	#sidebar-button .toolbarbutton-icon,
 	#context-back .menu-iconic-icon,
 	#context-forward .menu-iconic-icon,
 	#new-tab-button .toolbarbutton-icon,
@@ -409,7 +434,7 @@ toolbarbutton:not([disabled]):not(.titlebar-button):active .toolbarbutton-icon,
 	#appMenu-copy-button .toolbarbutton-icon,
 	#paste-button .toolbarbutton-icon,
 	#appMenu-paste-button .toolbarbutton-icon {
-		filter: invert(50%) brightness(150%);
+		filter: invert(60%) brightness(160%);
 	}
 
 	.bookmark-item[container] {

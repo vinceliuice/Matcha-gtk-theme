@@ -13,19 +13,21 @@
 	border: 1px solid var(--gnome-entry-border-color) !important;
 	border-radius: 100px !important;
 	color: var(--gnome-entry-color) !important;
-	height: 28px !important;
-	max-height: 28px !important;
+	height: 30px !important;
+	max-height: 30px !important;
 	margin: 0 !important;
-	padding: 3px 8px !important;
-	box-sizing: border-box;
+	padding: 4px 8px !important;
+	box-sizing: border-box !important;
 }
 
 #urlbar.megabar #urlbar-input-container,
-#urlbar:not(.megabar) {
+#urlbar:not(.megabar),
+#searchbar {
 	padding: 0 6px !important;
 	background: var(--gnome-header-entry-background) !important;
 	border: 1px solid var(--gnome-header-entry-border-color) !important;
 	color: var(--gnome-header-entry-color) !important;
+	fill: var(--gnome-header-entry-color) !important;
 }
 
 /* Entries focused */
@@ -38,7 +40,6 @@
 }
 
 /* Inactive window entries */
-#searchbar:-moz-window-inactive,
 #search-box:-moz-window-inactive,
 .findbar-textbox:-moz-window-inactive {
 	background: var(--gnome-inactive-entry-background) !important;
@@ -46,6 +47,7 @@
 	color: var(--gnome-inactive-entry-color) !important;
 }
 
+#searchbar:-moz-window-inactive,
 #urlbar.megabar #urlbar-input-container:-moz-window-inactive,
 #urlbar:not(.megabar):-moz-window-inactive {
 	background: var(--gnome-header-inactive-entry-background) !important;
