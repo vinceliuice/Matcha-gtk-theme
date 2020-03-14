@@ -1199,7 +1199,7 @@ StScrollBar {
 
   .calendar {
     margin-bottom: 0;
-    border-color: $borders_color;
+    border: none;
     box-shadow: none;
     background: none;
   }
@@ -1973,8 +1973,7 @@ StScrollBar {
     background-color: $primary_color;
     transition-duration: 0s;
   }
-  &:checked .page-indicator-icon,
-  &:checked:active {
+  &:checked .page-indicator-icon {
     margin: 0;
     padding: 0;
     background-image: none;
@@ -1983,6 +1982,9 @@ StScrollBar {
     box-shadow: none;
     background-color: $primary_color;
     transition-duration: 0s;
+  }
+  &:checked:active {
+    background-image: none;
   }
 }
 
