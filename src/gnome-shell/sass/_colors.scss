@@ -7,14 +7,14 @@ $lower_opacity: 0.3;
 
 $enabled_opacity: 0.75;
 $hint_opacity: 0.6;
-$disabled_opacity: 0.4;
+$disabled_opacity: 0.35;
 
 @function scale-alpha($c, $a) {
   @return scale-color($c, $alpha: percentage(-1 + $a));
 }
 
 // Foreground colors
-$fg_color: if($variant == 'light', scale-alpha(#000000, 0.8), #FFFFFF);
+$fg_color: if($variant == 'light', scale-alpha(#000000, 0.8), scale-alpha(#FFFFFF, 0.85));
 $secondary_fg_color: scale-alpha($fg_color, $enabled_opacity);
 $tertiary_fg_color: scale-alpha($fg_color, $hint_opacity);
 

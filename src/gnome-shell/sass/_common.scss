@@ -846,23 +846,22 @@ StScrollBar {
 }
 
 .popup-separator-menu-item {
-  height: 1px; //not really the whole box
-  background-color: $borders_color;
-  border: none;
-  margin: 10px 48px;
+  height: 0; //not really the whole box
+  background: none;
   padding: 0;
-
-   popup-sub-menu & { //submenu separators
-    margin: 0 64px 0 32px;
-  }
+  margin-bottom: 12px;
+  border: none;
 
   .popup-separator-menu-item-separator {
+    height: 0;
     background: none;
     border: none;
+    margin: 0 0;
+    padding: 0;
 
     .popup-sub-menu & { //submenu separators
-      background: none;
-      border: none;
+      margin: 0 0;
+      padding: 0;
     }
   }
 }
@@ -1125,8 +1124,8 @@ StScrollBar {
 
     .app-menu-icon {
       -st-icon-style: symbolic;
-      margin-left: 4px;
-      margin-right: 4px;
+      margin-left: 6px;
+      margin-right: 6px;
       //dimensions of the icon are hardcoded
     }
 
@@ -1788,8 +1787,6 @@ StScrollBar {
   spacing: 16px;
 }
 
-.search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
-.search-section-content { spacing: 32px; } // This is the space between the provider icon and the results container
 .search-statustext { // "no results"
   @extend %status_text;
 }
@@ -1811,6 +1808,100 @@ StScrollBar {
   width: 16px;
   height: 16px;
   background-image: url("assets/more-results.svg");
+}
+
+// search results sections "the boxes"
+.search-section {
+  // This should be equal to #searchResultsContent spacing
+  spacing: 16px;
+
+  // separator
+  .search-section-separator {
+    height: 0;
+    background-color: transparent;
+  }
+}
+
+// content
+.search-section-content {
+  background-color: $overview_bg_color;
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: $selected_fg_color;
+  padding: 18px;
+  // This is the space between the provider icon and the results container
+  spacing: 12px;
+}
+
+%search-section-content-item {
+  @extend %icon_tile;
+
+  &:focus,
+  &:hover,
+  &:selected {
+    background-color: $selected_fg_color;
+    transition-duration: 200ms;
+  }
+
+  &:active,
+  &:checked {
+    background-color: $overview_bg_color;
+  }
+}
+
+// "no results" text
+.search-statustext {
+  @extend %status_text;
+}
+
+// Search results with icons
+.grid-search-result {
+}
+
+// search result provider
+.search-provider-icon {
+  @extend %search-section-content-item;
+
+  // content
+  .list-search-provider-content {
+    spacing: 12px;
+
+    // provider labels
+    .list-search-provider-details {
+      width: 120px;
+      margin-top: 0;
+      color: darken($selected_fg_color, 8%);
+      // font-weight: bold;
+    }
+  }
+}
+
+// search results list
+.list-search-results {
+  spacing: 6px;
+}
+
+// search result listitem
+.list-search-result {
+  @extend %search-section-content-item;
+
+  // content
+  .list-search-result-content {
+    spacing: 6px;
+  }
+
+  // list item title (with leading icon)
+  .list-search-result-title {
+    spacing: 12px;
+    // font-weight: bold;
+  }
+
+  // list item description
+  .list-search-result-description {
+    color: darken($selected_fg_color, 30%);
+  }
 }
 
 

@@ -66,7 +66,7 @@ stage {
 }
 
 .button:insensitive {
-  color: rgba(0, 0, 0, 0.24);
+  color: rgba(0, 0, 0, 0.21);
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 0 transparent;
@@ -115,7 +115,7 @@ stage {
 }
 
 .modal-dialog-linked-button:insensitive {
-  color: rgba(0, 0, 0, 0.24);
+  color: rgba(0, 0, 0, 0.21);
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 0 transparent;
@@ -171,7 +171,7 @@ StEntry:focus {
 }
 
 StEntry:insensitive {
-  color: rgba(0, 0, 0, 0.32);
+  color: rgba(0, 0, 0, 0.28);
   border-color: rgba(0, 0, 0, 0.1);
   box-shadow: none;
   text-shadow: none;
@@ -204,7 +204,7 @@ StScrollView StScrollBar {
 StScrollBar StBin#trough {
   margin: 4px;
   border-radius: 100px;
-  background-color: rgba(0, 0, 0, 0.096);
+  background-color: rgba(0, 0, 0, 0.084);
 }
 
 StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
@@ -222,7 +222,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #overview StScrollBar StBin#trough, #screenShieldNotifications StScrollBar StBin#trough {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.105);
 }
 
 #overview StScrollBar StButton#vhandle, #screenShieldNotifications StScrollBar StButton#vhandle, #overview StScrollBar StButton#hhandle, #screenShieldNotifications StScrollBar StButton#hhandle {
@@ -931,7 +931,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item:checked:insensitive {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.35);
   background: none;
 }
 
@@ -942,7 +942,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item:insensitive {
-  color: rgba(0, 0, 0, 0.32);
+  color: rgba(0, 0, 0, 0.28);
 }
 
 .popup-menu .popup-inactive-menu-item {
@@ -996,25 +996,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-separator-menu-item {
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: none;
-  margin: 10px 48px;
+  height: 0;
+  background: none;
   padding: 0;
-}
-
-popup-sub-menu .popup-separator-menu-item {
-  margin: 0 64px 0 32px;
+  margin-bottom: 12px;
+  border: none;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
+  height: 0;
   background: none;
   border: none;
+  margin: 0 0;
+  padding: 0;
 }
 
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
-  background: none;
-  border: none;
+  margin: 0 0;
+  padding: 0;
 }
 
 .system-switch-user-submenu-icon.user-icon {
@@ -1143,7 +1142,7 @@ popup-sub-menu .popup-separator-menu-item {
 .switcher-list .item-box:outlined {
   padding: 8px;
   border: none;
-  background-color: rgba(0, 0, 0, 0.096);
+  background-color: rgba(0, 0, 0, 0.084);
 }
 
 .switcher-list .item-box:selected {
@@ -1205,7 +1204,7 @@ popup-sub-menu .popup-separator-menu-item {
 .ws-switcher-box {
   height: 48px;
   border: none;
-  background: rgba(0, 0, 0, 0.096);
+  background: rgba(0, 0, 0, 0.084);
   border-radius: 2px;
 }
 
@@ -1281,8 +1280,8 @@ popup-sub-menu .popup-separator-menu-item {
 
 #panel .panel-button .app-menu-icon {
   -st-icon-style: symbolic;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 #panel .panel-button .popup-menu-arrow {
@@ -1620,7 +1619,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .calendar-other-month-day {
-  color: rgba(0, 0, 0, 0.32);
+  color: rgba(0, 0, 0, 0.28);
   opacity: 0.5;
 }
 
@@ -1720,7 +1719,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .message-secondary-bin > .event-time {
-  color: rgba(0, 0, 0, 0.32);
+  color: rgba(0, 0, 0, 0.28);
   font-size: 0.7em;
   /* HACK: the label should be baseline-aligned with a 1em label,
                      fake this with some bottom padding */
@@ -1782,7 +1781,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .message-media-control:insensitive {
-  color: rgba(0, 0, 0, 0.24);
+  color: rgba(0, 0, 0, 0.21);
 }
 
 .message-media-control:last-child:ltr {
@@ -2099,14 +2098,6 @@ popup-sub-menu .popup-separator-menu-item {
   spacing: 16px;
 }
 
-.search-section {
-  spacing: 16px;
-}
-
-.search-section-content {
-  spacing: 32px;
-}
-
 .list-search-results {
   spacing: 3px;
 }
@@ -2142,6 +2133,61 @@ popup-sub-menu .popup-separator-menu-item {
   width: 16px;
   height: 16px;
   background-image: url("assets/more-results.svg");
+}
+
+.search-section {
+  spacing: 16px;
+}
+
+.search-section .search-section-separator {
+  height: 0;
+  background-color: transparent;
+}
+
+.search-section-content {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: #FFFFFF;
+  padding: 18px;
+  spacing: 12px;
+}
+
+.search-provider-icon:focus, .list-search-result:focus, .search-provider-icon:hover, .list-search-result:hover, .search-provider-icon:selected, .list-search-result:selected {
+  background-color: #FFFFFF;
+  transition-duration: 200ms;
+}
+
+.search-provider-icon:active, .list-search-result:active, .search-provider-icon:checked, .list-search-result:checked {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-provider-icon .list-search-provider-content {
+  spacing: 12px;
+}
+
+.search-provider-icon .list-search-provider-content .list-search-provider-details {
+  width: 120px;
+  margin-top: 0;
+  color: #ebebeb;
+}
+
+.list-search-results {
+  spacing: 6px;
+}
+
+.list-search-result .list-search-result-content {
+  spacing: 6px;
+}
+
+.list-search-result .list-search-result-title {
+  spacing: 12px;
+}
+
+.list-search-result .list-search-result-description {
+  color: #b3b3b3;
 }
 
 /* DASHBOARD */
@@ -2238,8 +2284,7 @@ popup-sub-menu .popup-separator-menu-item {
   margin-bottom: 0;
 }
 
-.search-provider-icon,
-.list-search-result, .app-well-app .overview-icon,
+.search-provider-icon, .list-search-result, .app-well-app .overview-icon,
 .app-well-app.app-folder .overview-icon,
 .show-apps .overview-icon,
 .grid-search-result .overview-icon {
@@ -2912,11 +2957,11 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .login-dialog StEntry:insensitive {
-  color: rgba(0, 0, 0, 0.32);
+  color: rgba(0, 0, 0, 0.28);
   border-color: rgba(0, 0, 0, 0.1);
   box-shadow: none;
   text-shadow: none;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .login-dialog .modal-dialog-button-box {
@@ -2952,7 +2997,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .login-dialog .modal-dialog-button:insensitive {
-  color: rgba(0, 0, 0, 0.24);
+  color: rgba(0, 0, 0, 0.21);
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 0 transparent;
@@ -2988,8 +3033,8 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .login-dialog .modal-dialog-button:default:insensitive {
-  color: rgba(0, 0, 0, 0.24);
-  background-color: rgba(0, 0, 0, 0.096);
+  color: rgba(0, 0, 0, 0.21);
+  background-color: rgba(0, 0, 0, 0.084);
   border-color: transparent;
   box-shadow: 0 0 transparent;
   text-shadow: none;
@@ -3349,7 +3394,7 @@ popup-sub-menu .popup-separator-menu-item {
 }
 
 .lg-obj-inspector-button:insensitive {
-  color: rgba(0, 0, 0, 0.24);
+  color: rgba(0, 0, 0, 0.21);
   background-color: transparent;
   border-color: transparent;
   box-shadow: 0 0 transparent;
