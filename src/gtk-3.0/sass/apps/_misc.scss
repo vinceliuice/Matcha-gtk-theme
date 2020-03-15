@@ -50,10 +50,16 @@
 
     @if $header == 'light' { box-shadow: inset 0 -1px $borders_color; }
 
-    button, entry {
-      min-height: 16px;
+    button {
+      min-height: 20px;
       margin-top: 6px;
       margin-bottom: 6px;
+    }
+
+    entry {
+      min-height: 22px;
+      margin-top: 4px;
+      margin-bottom: 4px;
     }
   }
 
@@ -63,8 +69,8 @@
     button {
       @extend %pathbar_box_button;
       padding: 2px 4px 4px 4px;
-      margin-top: 4px;
-      margin-bottom: 4px;
+      margin-top: 6px;
+      margin-bottom: 6px;
     }
   }
 

@@ -6250,17 +6250,23 @@ dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame
   background-color: #1a1a1a;
 }
 
-.nemo-window .primary-toolbar button, .nemo-window .primary-toolbar entry {
-  min-height: 16px;
+.nemo-window .primary-toolbar button {
+  min-height: 20px;
   margin-top: 6px;
   margin-bottom: 6px;
+}
+
+.nemo-window .primary-toolbar entry {
+  min-height: 22px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button {
   padding: 2px 4px 4px 4px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .nemo-window .sidebar scrolledwindow.frame {
