@@ -21,6 +21,7 @@ $tertiary_fg_color: scale-alpha($fg_color, $hint_opacity);
 $selected_fg_color: #FFFFFF;
 $secondary_selected_fg_color: scale-alpha($selected_fg_color, $enabled_opacity);
 $tertiary_selected_fg_color: scale-alpha($selected_fg_color, $hint_opacity);
+$osd_fg_color: scale-alpha(#ffffff, $enabled_opacity);
 
 $insensitive_fg_color: scale-alpha($fg_color, $disabled_opacity);
 $insensitive_secondary_fg_color: scale-alpha($secondary_fg_color, $disabled_opacity);
@@ -68,6 +69,7 @@ $selected_semi_track_color: scale-alpha($selected_fg_color, $lower_opacity / 2);
 $selected_insensitive_track_color: scale-alpha($insensitive_selected_fg_color, $lower_opacity);
 
 $borders_color: if($variant == 'light', scale-alpha(#000000, 0.1), scale-alpha(#000000, 0.2));
+$solid_borders_color: if($variant == 'light', darken($bg_color, 20%), darken($bg_color, 6%));
 $highlight_color: if($variant == 'light', scale-alpha(#FFFFFF, 0.4), scale-alpha(#FFFFFF, 0.1));
 $secondary_highlight_color: scale-alpha(#FFFFFF, 0.2);
 

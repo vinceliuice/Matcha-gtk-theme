@@ -81,7 +81,7 @@
       .view {
         background: none;
         border-radius: 2px;
-        @extend row.activatable;
+        @extend %row_activatable;
 
         &:selected,
         &:active,
@@ -203,9 +203,21 @@ treeview.view {
     &.source-list {
       padding-top: 3px;
       padding-bottom: 3px;
-      @extend row.activatable;
+      @extend %row_activatable;
 
-      &.trough { @extend treeview.view.trough }
+      &.trough {
+        color: $fg_color;
+        background-color: $button_border;
+        border-radius: 3px;
+        border-width: 0;
+
+        &:selected, &:selected:focus {
+          color: $selected_fg_color;
+          background-color: rgba(black, 0.2);
+          border-radius: 3px;
+          border-width: 0;
+        }
+      }
     }
   }
 }

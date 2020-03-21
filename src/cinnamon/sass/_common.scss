@@ -33,10 +33,7 @@ stage {
   min-height: 20px;
   padding: 5px 32px;
   transition-duration: 0;
-
-  &, &:focus, &:hover, &:hover:focus, &:active, &:active:focus, &:insensitive {
-    border-radius: 2px;
-  }
+  border-radius: 2px;
 
   @include button(normal);
 
@@ -1117,7 +1114,7 @@ StScrollBar {
     padding: 10px;
     border: 1px solid rgba(0,0,0,0);
 
-    &:hover { @extend %button:hover; }
+    &:hover { @include button(hover); }
   }
 
   &-places {
@@ -1145,7 +1142,7 @@ StScrollBar {
 
     &-selected {
       padding: 7px;
-      @extend %button:hover;
+      @include button(hover);
 
       &:highlighted { font-weight: bold; }
     }
@@ -1160,7 +1157,7 @@ StScrollBar {
 
     &-selected {
       padding: 7px;
-      @extend %button:hover;
+      @include button(hover);
     }
     &-hover {
       background-color: red;

@@ -121,8 +121,20 @@ filechooser {
     background-color: $bg_color;
     border-color: $borders_color;
 
-    button { @extend %dark_sidebar_button; }
-    entry { @extend %dark_sidebar_entry; }
+    button {
+      @include button(normal);
+
+      &:hover { @include button(hover); }
+      &:active, &:checked { @include button(active); }
+      &:disabled { @include button(insensitive); }
+    }
+
+    entry {
+      @include entry(normal);
+
+      &:focus { @include entry(focus); }
+      &:disabled { @include entry(insensitive); }
+    }
 
     @extend %osd_check_radio;
 
@@ -162,21 +174,6 @@ filechooser {
       color: $dark_sidebar_fg;
     }
   }
-}
-
-%dark_sidebar_button {
-  @include button(normal);
-
-  &:hover { @include button(hover); }
-  &:active, &:checked { @include button(active); }
-  &:disabled { @include button(insensitive); }
-}
-
-%dark_sidebar_entry {
-  @include entry(normal);
-
-  &:focus { @include entry(focus); }
-  &:disabled { @include entry(insensitive); }
 }
 
 %dark_sidebar_scrollbar {

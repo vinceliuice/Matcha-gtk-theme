@@ -3,7 +3,7 @@
  ******************/
 $bt_radius: 2px;
 
-%budgiebutton.flat {
+%budgiebutton_flat {
   transition: $button_transition;
   &:hover { transition: $button_transition; transition-duration: 350ms; }
   &:checked, &:active { transition: $button_transition; }
@@ -16,7 +16,7 @@ $bt_radius: 2px;
 
   button {
     @extend %linked;
-    @extend %budgiebutton.flat;
+    @extend %budgiebutton_flat;
   }
 }
 
@@ -44,7 +44,7 @@ $bt_radius: 2px;
   }
 
   &:not(.budgie-menu) button.flat:not(.image-button) {
-    @extend %budgiebutton.flat;
+    @extend %budgiebutton_flat;
     min-height: 28px;
     padding: 0 8px;
     color: rgba($fg_color, 0.85);
@@ -198,7 +198,7 @@ window.budgie-popover:not(.csd) {
   }
 
   button {
-    @extend row.activatable;
+    @extend %row_activatable;
 
     min-height: 32px;
     padding: 0 8px;
@@ -224,7 +224,7 @@ window.budgie-popover:not(.csd) {
 // Menu Button
 button.budgie-menu-launcher {
   // padding: 0 2px;
-  @extend button.flat;
+  @extend %flat_button;
 }
 
 // User Menu
@@ -353,19 +353,12 @@ popover.background.places-menu {
     // background-color: rgba(0,0,0,0.2);
   }
 
-  // Tasklist
-  #tasklist-button {
-    padding: 0 4px;
-    @extend button.flat;
-    @extend %underscores;
-  }
-
   &.vertical #tasklist-button { min-height: 32px; }
 
   // Icon Tasklist
   button.flat.launcher {
     padding: 0;
-    @extend button.flat;
+    @extend %flat_button;
     @extend %underscores;
 
     // for indicator colors
@@ -377,6 +370,13 @@ popover.background.places-menu {
       &:disabled { color: rgba($panel_fg, 0.5); }
     }
   }
+}
+
+// Tasklist
+#tasklist-button {
+  padding: 0 4px;
+  @extend %underscores;
+  @extend %flat_button;
 }
 
 %underscores {
@@ -402,29 +402,32 @@ popover.background.places-menu {
   }
 }
 
+%budgie_icon_tasklist_button {
+  min-width: 16px;
+  min-height: 16px;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background-position: center center;
+
+  > image { opacity: 0.87; }
+
+  &:hover {
+    -gtk-icon-effect: highlight;
+    > image { opacity: 1.0; }
+  }
+  &:active {
+    > image { opacity: 1.0; }
+  }
+  &:checked {
+    &:hover { -gtk-icon-effect: highlight; }
+    > image { opacity: 1.0; }
+  }
+}
+
 .budgie-panel {
-  @at-root %budgie_icon_tasklist_button,
   button.flat.launcher {
-    min-width: 16px;
-    min-height: 16px;
-    padding: 0;
-    border-radius: 0;
-    border: none;
-    background-position: center center;
-
-    > image { opacity: 0.87; }
-
-    &:hover {
-      -gtk-icon-effect: highlight;
-      > image { opacity: 1.0; }
-    }
-    &:active {
-      > image { opacity: 1.0; }
-    }
-    &:checked {
-      &:hover { -gtk-icon-effect: highlight; }
-      > image { opacity: 1.0; }
-    }
+    @extend %budgie_icon_tasklist_button;
   }
 
   @at-root %running_budgie_icon_tasklist_button,
@@ -511,7 +514,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       margin-top: -6px; // remove extra spaces, but not perfect :(
 
       button {
-        @extend %budgiebutton.flat;
+        @extend %budgiebutton_flat;
         min-height: 28px;
         min-width: 28px;
         margin: 0;
@@ -587,7 +590,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
     grid > label:first-child { min-height: 26px; } // workaround to fix vertical-align
 
     // for <10.4
-    spinbutton:not(.vertical) { @extend entry.flat; }
+    spinbutton:not(.vertical) { @extend %flat_entry; }
 
     // for <10.4
     button.combo { }
@@ -662,7 +665,7 @@ box.vertical > stack > box.vertical {
 
       button.image-button { // 'dismiss'
         margin: 8px;
-        @extend button.circular;
+        @extend %circular_button;
 
         image { padding: 0; }
 
@@ -685,7 +688,7 @@ box.vertical > stack > box.vertical {
           label { padding: 0 16px; }
 
           button.image-button { // 'close'
-            @extend button.circular;
+            @extend %circular_button;
 
             image { padding: 0; }
           }
@@ -743,7 +746,7 @@ box.vertical > stack > box.vertical {
   .linked:not(.vertical) { @include linking_rules($b_border:$osd_button_border); }
 
   button.image-button { // 'close'
-    @extend button.circular;
+    @extend %circular_button;
   }
 }
 
@@ -783,7 +786,7 @@ box.vertical > stack > box.vertical {
   background-color: $panel_bg;
   color: $panel_fg;
 
-  button { @extend %budgiebutton.flat; }
+  button { @extend %budgiebutton_flat; }
 
   .linked > button { border-radius: $bt_radius; }
 }

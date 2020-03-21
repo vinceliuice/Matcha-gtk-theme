@@ -1,7 +1,7 @@
 //
 // Nemo
 //
-.nemo-desktop.nemo-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+.nemo-desktop.nemo-canvas-item { @extend %nautilus-canvas-item; }
 
 .nemo-window {
   menubar,
@@ -19,7 +19,7 @@
     &.frame { border-width: 0; }
 
     .places-treeview {
-      @extend row.activatable;
+      @extend %row_activatable;
 
       -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
       -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);
@@ -43,23 +43,28 @@
   .primary-toolbar {
     padding-top: 0;
     padding-bottom: 0;
-    @extend %header_widgets;
     border: none;
     color: $header_fg;
     background-color: opacify($header_bg, 1);
 
     @if $header == 'light' { box-shadow: inset 0 -1px $borders_color; }
 
+    .linked:not(.vertical):not(.path-bar):not(.stack-switcher) {
+      @include linking_rules($entry_rules:'false', $button_rules:'false', $e_border: $header_entry_border, $b_border: transparent);
+    }
+
     button {
       min-height: 20px;
       margin-top: 6px;
       margin-bottom: 6px;
+      @extend %header_button;
     }
 
     entry {
       min-height: 22px;
       margin-top: 4px;
       margin-bottom: 4px;
+      @extend %header_entry;
     }
   }
 
@@ -531,7 +536,6 @@ window#ValaPanel.background {
   button#tasklist-button.toggle.flat,
   // tasklist-arrow-button.toggle.flat.-panel-flat-button, // xfce tasklist button
   button.flat.-panel-icon-button {
-    @extend %budgie_icon_tasklist_button;
     color: $panel_fg;
 
     &:hover {
