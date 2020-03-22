@@ -742,8 +742,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Password or Authentication Dialog */
 .prompt-dialog {
-  min-width: 34em;
-  spacing: 8px;
+  min-width: 34.5em;
 }
 
 .prompt-dialog .modal-dialog-content-box {
@@ -3791,7 +3790,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.48);
 }
 
-.popup-menu .search-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus .search-entry-icon {
+.popup-menu .search-entry:hover .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus .search-entry-icon {
   color: rgba(0, 0, 0, 0.8);
 }
 
