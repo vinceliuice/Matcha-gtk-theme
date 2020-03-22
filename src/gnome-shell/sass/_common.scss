@@ -598,14 +598,11 @@ StScrollBar {
 
 .prompt-dialog {
   //this is the width of the entire modal popup
-  width: 28em;
+  min-width: 34em;
+  spacing: 8px;
 
   .modal-dialog-content-box {
     margin-bottom: 24px;
-  }
-
-  *-label {
-    text-align: center;
   }
 }
 
@@ -1202,8 +1199,22 @@ StScrollBar {
       background-color: $topbar_overview_color;
       box-shadow: inset 0 -2px $primary_color;
       color: $topbar_fg_color;
+      border-image: none;
 
       & > .system-status-icon { icon-shadow: none; }
+    }
+
+    &.clock-display {
+      // Move highlight from .panel-button to .clock
+      &:active, &:overview, &:focus, &:checked {
+        background-color: $topbar_overview_color;
+        box-shadow: inset 0 -2px $primary_color;
+
+        .clock { //reset
+          background-color: transparent;
+          box-shadow: none
+        }
+      }
     }
 
     .system-status-icon { @include em(16px); padding: 0 4px; }
