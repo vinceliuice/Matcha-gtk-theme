@@ -71,9 +71,9 @@ stage {
   @include font(button);
   @include button(flat-normal);
   &:hover { @include button(flat-hover); }
+  &:focus { @include button(flat-focus); }
   &:active { @include button(flat-active); }
   &:insensitive { @include button(flat-insensitive); }
-  &:focus { @include button(flat-focus); }
 
   &:first-child {
     border-radius: 0px 0px 0px 2px;
@@ -2625,13 +2625,15 @@ $legacy_icon_size: 24px;
   .modal-dialog-button {
     padding: 0 16px;
     @include button(flat-normal);
-    &:hover,&:focus { @include button(flat-hover); }
+    &:hover { @include button(hover); }
+    &:focus { @include button(focus); }
     &:active { @include button(flat-active); }
     &:insensitive { @include button(flat-insensitive); }
 
     &:default {
       @include button(normal);
-      &:hover,&:focus { @include button(hover); }
+      &:hover { @include button(hover); }
+      &:focus { @include button(focus); }
       &:active { @include button(active); }
       &:insensitive { @include button(insensitive); }
     }

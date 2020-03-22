@@ -77,7 +77,9 @@ stage {
   color: rgba(0, 0, 0, 0.8);
   text-shadow: none;
   icon-shadow: none;
-  box-shadow: 0 0 transparent;
+  box-shadow: inset 0px 0px 0px 2px rgba(240, 84, 76, 0.35);
+  box-shadow: none;
+  color: #F0544C;
 }
 
 .modal-dialog-linked-button {
@@ -104,6 +106,15 @@ stage {
   icon-shadow: none;
 }
 
+.modal-dialog-linked-button:focus {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: inset 0px 0px 0px 2px rgba(240, 84, 76, 0.35);
+  box-shadow: none;
+  color: #F0544C;
+}
+
 .modal-dialog-linked-button:active {
   color: rgba(0, 0, 0, 0.8);
   background-color: rgba(0, 0, 0, 0.24);
@@ -120,13 +131,6 @@ stage {
   box-shadow: 0 0 transparent;
   text-shadow: none;
   icon-shadow: none;
-}
-
-.modal-dialog-linked-button:focus {
-  color: rgba(0, 0, 0, 0.8);
-  text-shadow: none;
-  icon-shadow: none;
-  box-shadow: 0 0 transparent;
 }
 
 .modal-dialog-linked-button:first-child {
@@ -3078,13 +3082,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-shadow: none;
 }
 
-.login-dialog .modal-dialog-button:hover, .login-dialog .modal-dialog-button:focus {
+.login-dialog .modal-dialog-button:hover {
   color: rgba(0, 0, 0, 0.8);
-  background-color: rgba(0, 0, 0, 0.12);
-  border-color: transparent;
-  box-shadow: 0 0 transparent;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   text-shadow: none;
   icon-shadow: none;
+}
+
+.login-dialog .modal-dialog-button:focus {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: inset 0px 0px 0px 2px rgba(240, 84, 76, 0.35);
+  box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.24);
 }
 
 .login-dialog .modal-dialog-button:active {
@@ -3114,13 +3126,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-shadow: none;
 }
 
-.login-dialog .modal-dialog-button:default:hover, .login-dialog .modal-dialog-button:default:focus {
+.login-dialog .modal-dialog-button:default:hover {
   color: rgba(0, 0, 0, 0.8);
   background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: none;
   text-shadow: none;
   icon-shadow: none;
+}
+
+.login-dialog .modal-dialog-button:default:focus {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: inset 0px 0px 0px 2px rgba(240, 84, 76, 0.35);
+  box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.24);
 }
 
 .login-dialog .modal-dialog-button:default:active {
@@ -3524,7 +3544,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.8);
   text-shadow: none;
   icon-shadow: none;
-  box-shadow: 0 0 transparent;
+  box-shadow: inset 0px 0px 0px 2px rgba(240, 84, 76, 0.35);
+  box-shadow: none;
+  color: #F0544C;
 }
 
 .lg-obj-inspector-button:hover {

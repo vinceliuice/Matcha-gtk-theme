@@ -163,8 +163,10 @@ $z-depth-5: 0 19px 19px rgba(0, 0, 0, 0.30 * 2), 0 15px 6px rgba(0, 0, 0, 0.22 *
     color: $tc;
     text-shadow: none;
     icon-shadow: none;
-    box-shadow: 0 0 transparent;
-  //  box-shadow: inset 0px 0px 0px 2px $track_color;
+    box-shadow: inset 0px 0px 0px 2px rgba($primary_color, 0.35);
+    @if $variant == 'light' {
+     box-shadow: inset 0px 0px 0px 2px $track_color;
+    }
   }
 
   @else if $t==hover {
@@ -219,8 +221,11 @@ $z-depth-5: 0 19px 19px rgba(0, 0, 0, 0.30 * 2), 0 15px 6px rgba(0, 0, 0, 0.22 *
     color: $tc;
     text-shadow: none;
     icon-shadow: none;
-    box-shadow: 0 0 transparent;
-  //  box-shadow: inset 0px 0px 0px 2px $track_color;
+    box-shadow: inset 0px 0px 0px 2px rgba($primary_color, 0.35);
+    @if $variant == 'light' {
+     box-shadow: none;
+     color: $primary_color;
+    }
   }
 
   @else if $t==flat-hover {
