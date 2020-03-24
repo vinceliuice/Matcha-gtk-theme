@@ -1554,11 +1554,18 @@ toolbar:not(.inline-toolbar) .linked > entry,
 }
 
 searchbar {
-  background-color: #1b2224;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+searchbar > revealer > box {
+  padding: 6px;
+  margin: -6px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.25);
+  border-color: #141a1b;
+  background-color: #1b2224;
   border-width: 0 0 1px;
-  padding: 3px;
 }
 
 actionbar {
