@@ -2181,19 +2181,20 @@ headerbar .linked:not(.vertical).path-bar > button {
   padding-top: 3px;
   padding-bottom: 6px;
   margin: 0 0 0 0;
-  border-width: 0;
+  border: none;
   border-radius: 0;
+  color: #d0c8c8;
 }
 
 headerbar .linked:not(.vertical).path-bar > button:hover {
-  color: #ffffff;
+  color: #d0c8c8;
   background-color: #2f2f2f;
 }
 
 headerbar .linked:not(.vertical).path-bar > button:active, headerbar .linked:not(.vertical).path-bar > button:checked {
   transition: background-color 0.00001s 0.3s;
   animation: header_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
-  color: #ffffff;
+  color: #d0c8c8;
   background-color: #0e0e0e;
   box-shadow: inset 0 -3px #f26f68;
 }
