@@ -2172,24 +2172,14 @@ StScrollBar {
     box-shadow: none;
     background-color: scale-alpha($selected_fg_color, $middle_opacity);
   }
-  &:active .page-indicator-icon {
+  &:active .page-indicator-icon, &:checked .page-indicator-icon {
     margin: 0;
     padding: 0;
     background-image: none;
     color: transparent;
     border: none;
     box-shadow: none;
-    background-color: $primary_color;
-    transition-duration: 0s;
-  }
-  &:checked .page-indicator-icon {
-    margin: 0;
-    padding: 0;
-    background-image: none;
-    color: transparent;
-    border: none;
-    box-shadow: none;
-    background-color: $primary_color;
+    background-color: scale-alpha($selected_fg_color, $hint_opacity);
     transition-duration: 0s;
   }
   &:checked:active {

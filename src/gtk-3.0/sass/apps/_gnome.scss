@@ -547,6 +547,23 @@ hdyleaflet > separator.sidebar {
   min-width: 0;
 }
 
+window.background {
+  > hdyleaflet > stack.background {
+    > widget > box.vertical > box.vertical {
+      > scrolledwindow > viewport.frame {
+        > box.vertical > box.vertical > flowbox.horizontal {
+          > flowboxchild > overlay {
+            > button.osd.image-button.remove-button {
+              padding-top: 0;
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 //
 // Gnome Photos
 //

@@ -2464,25 +2464,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.page-indicator:active .page-indicator-icon {
+.page-indicator:active .page-indicator-icon, .page-indicator:checked .page-indicator-icon {
   margin: 0;
   padding: 0;
   background-image: none;
   color: transparent;
   border: none;
   box-shadow: none;
-  background-color: #3498db;
-  transition-duration: 0s;
-}
-
-.page-indicator:checked .page-indicator-icon {
-  margin: 0;
-  padding: 0;
-  background-image: none;
-  color: transparent;
-  border: none;
-  box-shadow: none;
-  background-color: #3498db;
+  background-color: rgba(255, 255, 255, 0.6);
   transition-duration: 0s;
 }
 
