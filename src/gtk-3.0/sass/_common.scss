@@ -1362,6 +1362,33 @@ headerbar {
     &:backdrop { opacity: 0.7; background: none; }
   }
 
+  // special case for path-bars
+  .linked:not(.vertical).path-bar {
+    > button {
+      padding-top: 3px;
+      padding-bottom: 6px;
+      margin: 1px 0 0 0;
+      border: none;
+      border-radius: 0;
+      color: $header_fg;
+
+      &:hover {
+        color: $header_fg;
+        background-color: lighten($header_bg, 8%);
+      }
+
+      &:active, &:checked {
+        transition: background-color 0.00001s 0.3s;
+        animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+        color: $header_fg;
+        background-color: darken($header_bg, 5%);
+        box-shadow: inset 0 -3px $alt_selected_bg_color;
+      }
+
+      &:disabled { color: rgba($header_fg, 0.4); }
+    }
+  }
+
   // special case and stack-switchers
   .linked:not(.vertical):not(.path-bar).stack-switcher {
     > button {
@@ -1573,30 +1600,6 @@ headerbar {
     &:only-child {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-    }
-  }
-
-  // special case for path-bars
-  .linked:not(.vertical).path-bar {
-
-    > button {
-      padding-top: 3px;
-      padding-bottom: 6px;
-      margin: 0 0 0 0;
-      border: none;
-      border-radius: 0;
-      color: $header_fg;
-
-      &:hover { color: $header_fg; background-color: lighten($header_bg, 8%); }
-      &:active, &:checked {
-        transition: background-color 0.00001s 0.3s;
-        animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-        color: $header_fg;
-        background-color: darken($header_bg, 5%);
-        box-shadow: inset 0 -3px $alt_selected_bg_color;
-      }
-
-      &:disabled { color: rgba($header_fg, 0.4); }
     }
   }
 }

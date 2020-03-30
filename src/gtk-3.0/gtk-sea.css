@@ -1875,6 +1875,32 @@ headerbar.selection-mode button:backdrop {
   background: none;
 }
 
+headerbar .linked:not(.vertical).path-bar > button {
+  padding-top: 3px;
+  padding-bottom: 6px;
+  margin: 1px 0 0 0;
+  border: none;
+  border-radius: 0;
+  color: #c6cdcb;
+}
+
+headerbar .linked:not(.vertical).path-bar > button:hover {
+  color: #c6cdcb;
+  background-color: #2c383b;
+}
+
+headerbar .linked:not(.vertical).path-bar > button:active, headerbar .linked:not(.vertical).path-bar > button:checked {
+  transition: background-color 0.00001s 0.3s;
+  animation: header_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
+  color: #c6cdcb;
+  background-color: #101415;
+  box-shadow: inset 0 -3px #35cbac;
+}
+
+headerbar .linked:not(.vertical).path-bar > button:disabled {
+  color: rgba(198, 205, 203, 0.4);
+}
+
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button {
   background-color: #313e41;
   color: #c6cdcb;
@@ -2182,32 +2208,6 @@ stack headerbar:first-child, stack headerbar:last-child {
 window.tiled headerbar, window.tiled headerbar:first-child, window.tiled headerbar:last-child, window.tiled headerbar:only-child, window.tiled-top headerbar, window.tiled-top headerbar:first-child, window.tiled-top headerbar:last-child, window.tiled-top headerbar:only-child, window.tiled-right headerbar, window.tiled-right headerbar:first-child, window.tiled-right headerbar:last-child, window.tiled-right headerbar:only-child, window.tiled-bottom headerbar, window.tiled-bottom headerbar:first-child, window.tiled-bottom headerbar:last-child, window.tiled-bottom headerbar:only-child, window.tiled-left headerbar, window.tiled-left headerbar:first-child, window.tiled-left headerbar:last-child, window.tiled-left headerbar:only-child, window.maximized headerbar, window.maximized headerbar:first-child, window.maximized headerbar:last-child, window.maximized headerbar:only-child, window.fullscreen headerbar, window.fullscreen headerbar:first-child, window.fullscreen headerbar:last-child, window.fullscreen headerbar:only-child, window.solid-csd headerbar, window.solid-csd headerbar:first-child, window.solid-csd headerbar:last-child, window.solid-csd headerbar:only-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-
-headerbar .linked:not(.vertical).path-bar > button {
-  padding-top: 3px;
-  padding-bottom: 6px;
-  margin: 0 0 0 0;
-  border: none;
-  border-radius: 0;
-  color: #c6cdcb;
-}
-
-headerbar .linked:not(.vertical).path-bar > button:hover {
-  color: #c6cdcb;
-  background-color: #2c383b;
-}
-
-headerbar .linked:not(.vertical).path-bar > button:active, headerbar .linked:not(.vertical).path-bar > button:checked {
-  transition: background-color 0.00001s 0.3s;
-  animation: header_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
-  color: #c6cdcb;
-  background-color: #101415;
-  box-shadow: inset 0 -3px #35cbac;
-}
-
-headerbar .linked:not(.vertical).path-bar > button:disabled {
-  color: rgba(198, 205, 203, 0.4);
 }
 
 window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, window.csd > .titlebar:not(headerbar), window.csd > .titlebar:not(headerbar):backdrop {
