@@ -6528,18 +6528,19 @@ window.background.chromium > menubar > menuitem {
 }
 
 window.background.chromium > menu {
-  border: 1px solid #1a1a1a;
-  background-color: #222222;
-  color: #b5abab;
+  border: 1px solid dakren(white, 15%);
+  background-color: white;
+  color: #303030;
+  border-color: dakren(white, 15%);
 }
 
 window.background.chromium > menu > separator {
-  color: #222222;
-  background-color: #222222;
+  color: white;
+  background-color: white;
 }
 
 window.background.chromium > menu > menuitem {
-  color: #b5abab;
+  color: #303030;
 }
 
 window.background.chromium > menu > menuitem:hover {
@@ -6548,11 +6549,17 @@ window.background.chromium > menu > menuitem:hover {
 }
 
 window.background.chromium > menu > menuitem:disabled {
-  color: rgba(181, 171, 171, 0.45);
+  color: rgba(48, 48, 48, 0.45);
 }
 
 window.background.chromium > menu > menuitem label:disabled {
-  color: rgba(181, 171, 171, 0.45);
+  color: rgba(48, 48, 48, 0.45);
+}
+
+menu.background.chromium,
+tooltip.background.chromium {
+  border-color: rgba(11, 11, 11, 0.42);
+  background-color: #292929;
 }
 
 .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar {

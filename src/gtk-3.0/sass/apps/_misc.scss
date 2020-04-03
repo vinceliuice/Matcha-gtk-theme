@@ -267,8 +267,8 @@ window.background:not(.csd) {
 $chrome_borders_color: $solid_borders_color;
 $chrome_bg_color: $bg_color;
 $chrome_fg_color: $fg_color;
-$chrome_menu_bg_color: $_menu_bg;
-$chrome_menu_fg_color: $text_color;
+$chrome_menu_bg_color: white;
+$chrome_menu_fg_color: #303030;
 
 window.background.chromium {
   // checked-tab & toolbar & button widgets
@@ -336,9 +336,10 @@ window.background.chromium {
   }
 
   > menu {
-    border: 1px solid $solid_borders_color;
+    border: 1px solid dakren($chrome_menu_bg_color, 15%);
     background-color: $chrome_menu_bg_color;
     color: $chrome_menu_fg_color;
+    border-color: dakren($chrome_menu_bg_color, 15%);
 
     > separator {
       color: $chrome_menu_bg_color;
@@ -357,9 +358,14 @@ window.background.chromium {
         color: rgba($chrome_menu_fg_color, 0.45);
       }
 
-      label { &:disabled { color: rgba($chrome_menu_fg_color, 0.45); }}
+      label:disabled { color: rgba($chrome_menu_fg_color, 0.45); }
     }
   }
+}
+
+tooltip.background.chromium {
+  border-color: $osd_borders_color;
+  background-color: rgba($osd_bg_color, 1);
 }
 
 //
