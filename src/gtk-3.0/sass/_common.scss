@@ -88,8 +88,13 @@ button.gtkstyle-fallback { // For Cinnamon system setting
   }
 }
 
-textview {
+textview {  // This will get overridden by .view, needed by gedit line numbers
+  &, &.view {
+    background-color: $base_color;
+  }
+
   text {
+    background-color: $base_color;
     selection { &:focus, & { @extend %selected_items; }}
   }
 }
@@ -161,10 +166,6 @@ assistant {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
   }
-}
-
-textview { // This will get overridden by .view, needed by gedit line numbers
-  background-color: $base_color;
 }
 
 %osd, .osd {

@@ -90,6 +90,14 @@ button.gtkstyle-fallback:active, button.gtkstyle-fallback:checked {
   background-color: #2f89c5;
 }
 
+textview, textview.view {
+  background-color: #22252c;
+}
+
+textview text {
+  background-color: #22252c;
+}
+
 textview border {
   background-color: #1f2128;
 }
@@ -153,10 +161,6 @@ assistant .sidebar label {
 assistant .sidebar label.highlight {
   background-color: #3498db;
   color: #ffffff;
-}
-
-textview {
-  background-color: #22252c;
 }
 
 .osd .scale-popup, popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier,
@@ -6556,7 +6560,6 @@ window.background.chromium > menu > menuitem label:disabled {
   color: rgba(48, 48, 48, 0.45);
 }
 
-menu.background.chromium,
 tooltip.background.chromium {
   border-color: rgba(10, 11, 13, 0.42);
   background-color: #252830;
