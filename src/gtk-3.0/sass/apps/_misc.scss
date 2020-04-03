@@ -12,7 +12,7 @@
   }
 
   paned.horizontal > separator {
-    @if $variant=='light' { background: none; }
+    background-image: image($solid_borders_color);
   }
 
   .nemo-places-sidebar {
@@ -20,9 +20,33 @@
 
     .places-treeview {
       @extend %row_activatable;
+      background-color: $bg_color;
+
+      &:selected, &:selected:hover {
+        @extend %selected_items;
+
+        .sidebar-icon { color: inherit; }
+      }
 
       -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
       -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);
+    }
+  }
+
+  .NemoSidebar {
+    background-color: $bg_color;
+
+    &:selected, &:selected:hover, &:selected:focus {
+      background-color: rgba($fg_color, 0.15);
+      color: $fg_color;
+    }
+
+    &.expander {
+      &:hover { color: mix($fg_color, $base_color, 90%); }
+
+      &:selected {
+        &, &:hover { color: mix($fg_color, $base_color, 80%); }
+      }
     }
   }
 

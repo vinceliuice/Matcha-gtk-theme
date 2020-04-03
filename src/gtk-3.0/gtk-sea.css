@@ -4822,14 +4822,14 @@ headerbar button.titlebutton.restore:active,
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark.png"), url("assets/titlebutton-restore-active-dark@2.png"));
 }
 
-.nemo-window .sidebar .view:selected, .nemo-window .sidebar .view:selected:hover, .nemo-window .sidebar row:selected, .nemo-window .sidebar row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
+filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover, window.thunar .sidebar treeview.view:selected, window.thunar .sidebar treeview.view:selected:hover, window.thunar .sidebar treeview.view:active:hover, .budgie-menu button:checked, .atril-window scrolledwindow.frame > .view:selected, .atril-window scrolledwindow.frame > .view:active,
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
-#MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .view:selected, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected, .view:selected:focus, textview text selection:focus, textview text selection, iconview:selected, iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
+#MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .view:selected, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected, .view:selected:focus, textview text selection:focus, textview text selection, iconview:selected, iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
@@ -4838,12 +4838,12 @@ modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:
   color: #ffffff;
 }
 
-.nemo-window .sidebar .view:disabled:selected, .nemo-window .sidebar row:disabled:selected, .nemo-window .sidebar row:disabled:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:disabled:selected, filechooser placessidebar.sidebar row.sidebar-row:disabled:active:hover,
+filechooser placessidebar.sidebar row.sidebar-row:disabled:selected, filechooser placessidebar.sidebar row.sidebar-row:disabled:active:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:active:hover, window.thunar .sidebar treeview.view:disabled:selected, window.thunar .sidebar treeview.view:disabled:active:hover, .budgie-menu button:disabled:checked, .atril-window scrolledwindow.frame > .view:disabled:selected, .atril-window scrolledwindow.frame > .view:disabled:active,
 .xreader-window scrolledwindow.frame > .view:disabled:selected,
 .xreader-window scrolledwindow.frame > .view:disabled:active, .caja-desktop > widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
-#MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .view:disabled:selected, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:disabled:selected, textview text selection:disabled, iconview:disabled:selected, iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry selection:disabled, menuitem.button.flat:disabled:active, menuitem.button.flat:active arrow:disabled, menuitem.button.flat:disabled:selected, menuitem.button.flat:selected arrow:disabled,
+#MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, .view:disabled:selected, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:disabled:selected, textview text selection:disabled, iconview:disabled:selected, iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry selection:disabled, menuitem.button.flat:disabled:active, menuitem.button.flat:active arrow:disabled, menuitem.button.flat:disabled:selected, menuitem.button.flat:selected arrow:disabled,
 modelbutton.flat:disabled:active,
 modelbutton.flat:active arrow:disabled,
 modelbutton.flat:disabled:selected,
@@ -6119,7 +6119,7 @@ dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame
 }
 
 .nemo-window paned.horizontal > separator {
-  background: none;
+  background-image: image(#d1d1d1);
 }
 
 .nemo-window .nemo-places-sidebar.frame {
@@ -6127,8 +6127,30 @@ dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame
 }
 
 .nemo-window .nemo-places-sidebar .places-treeview {
+  background-color: #f7f7f7;
   -NemoPlacesTreeView-disk-full-bg-color: #d1d1d1;
   -NemoPlacesTreeView-disk-full-fg-color: #d64646;
+}
+
+.nemo-window .nemo-places-sidebar .places-treeview:selected .sidebar-icon, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover .sidebar-icon {
+  color: inherit;
+}
+
+.nemo-window .NemoSidebar {
+  background-color: #f7f7f7;
+}
+
+.nemo-window .NemoSidebar:selected, .nemo-window .NemoSidebar:selected:hover, .nemo-window .NemoSidebar:selected:focus {
+  background-color: rgba(39, 49, 52, 0.15);
+  color: #273134;
+}
+
+.nemo-window .NemoSidebar.expander:hover {
+  color: #3d4648;
+}
+
+.nemo-window .NemoSidebar.expander:selected, .nemo-window .NemoSidebar.expander:selected:hover {
+  color: #525a5d;
 }
 
 .nemo-window notebook {
@@ -9717,36 +9739,6 @@ filechooser.maximized placessidebar.sidebar,
   background-color: #303b3e;
 }
 
-.nemo-window .sidebar {
-  color: #c6cdcb;
-  background-color: rgba(48, 59, 62, 0.95);
-}
-
-.nemo-window .sidebar .view, .nemo-window .sidebar row {
-  background-color: transparent;
-  color: #c6cdcb;
-}
-
-.nemo-window .sidebar .view:hover, .nemo-window .sidebar row:hover {
-  background-color: rgba(198, 205, 203, 0.15);
-}
-
-.nemo-window .sidebar .view:selected .sidebar-icon, .nemo-window .sidebar .view:selected:hover .sidebar-icon, .nemo-window .sidebar row:selected .sidebar-icon, .nemo-window .sidebar row:selected:hover .sidebar-icon {
-  color: inherit;
-}
-
-.nemo-window .sidebar .view.expander, .nemo-window .sidebar row.expander {
-  color: rgba(127, 136, 136, 0.975);
-}
-
-.nemo-window .sidebar .view.expander:hover, .nemo-window .sidebar row.expander:hover {
-  color: #c6cdcb;
-}
-
-.nemo-window .sidebar separator {
-  background-color: transparent;
-}
-
 filechooser actionbar {
   color: #273134;
   background-color: #f7f7f7;
@@ -9850,38 +9842,38 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 filechooser placessidebar.sidebar scrollbar,
-.nautilus-window placessidebar.sidebar scrollbar, .nemo-window .sidebar scrollbar {
+.nautilus-window placessidebar.sidebar scrollbar {
   border-color: rgba(37, 45, 48, 0.95);
 }
 
 filechooser placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider,
-.nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+.nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   background-color: #eff1f0;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 filechooser placessidebar.sidebar scrollbar slider,
-.nautilus-window placessidebar.sidebar scrollbar slider, .nemo-window .sidebar scrollbar slider {
+.nautilus-window placessidebar.sidebar scrollbar slider {
   background-color: rgba(239, 241, 240, 0.7);
 }
 
 filechooser placessidebar.sidebar scrollbar slider:hover,
-.nautilus-window placessidebar.sidebar scrollbar slider:hover, .nemo-window .sidebar scrollbar slider:hover {
+.nautilus-window placessidebar.sidebar scrollbar slider:hover {
   background-color: #fcfdfd;
 }
 
 filechooser placessidebar.sidebar scrollbar slider:hover:active,
-.nautilus-window placessidebar.sidebar scrollbar slider:hover:active, .nemo-window .sidebar scrollbar slider:hover:active {
+.nautilus-window placessidebar.sidebar scrollbar slider:hover:active {
   background-color: #2eb398;
 }
 
 filechooser placessidebar.sidebar scrollbar slider:disabled,
-.nautilus-window placessidebar.sidebar scrollbar slider:disabled, .nemo-window .sidebar scrollbar slider:disabled {
+.nautilus-window placessidebar.sidebar scrollbar slider:disabled {
   background-color: transparent;
 }
 
 filechooser placessidebar.sidebar scrollbar trough,
-.nautilus-window placessidebar.sidebar scrollbar trough, .nemo-window .sidebar scrollbar trough {
+.nautilus-window placessidebar.sidebar scrollbar trough {
   background-color: rgba(37, 45, 48, 0.95);
 }
 
