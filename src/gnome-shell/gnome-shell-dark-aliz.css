@@ -2182,6 +2182,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .list-search-result .list-search-result-title {
   spacing: 8px;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 .list-search-result .list-search-result-description {

@@ -1926,7 +1926,8 @@ StScrollBar {
   // list item title (with leading icon)
   .list-search-result-title {
     spacing: 8px;
-    // font-weight: bold;
+    font-weight: bold;
+    font-size: 1em;
   }
 
   // list item description
@@ -2109,10 +2110,10 @@ StScrollBar {
 }
 
 /* App Folders */
-.app-folder {
-  .overview-icon {
-  }
-}
+// .app-folder {
+//   .overview-icon {
+//   }
+// }
 
 // expanded folder
 .app-folder-dialog {

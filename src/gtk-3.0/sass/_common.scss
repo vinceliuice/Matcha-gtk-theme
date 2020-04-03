@@ -3584,7 +3584,7 @@ popover.emoji-picker {
     box-shadow: none;
     border-width: 0 0 1px 0;
     padding: 4px 12px;
-//    margin: 2px 0 0 0;
+    // margin: 2px 0 0 0;
   }
 
   scrolledwindow { border-bottom: 1px solid $borders_color; }
@@ -3598,6 +3598,8 @@ button.emoji-section {
   outline-offset: -4px;
   box-shadow: none;
   border: none;
+  transition-duration: 0ms;
+
   &:first-child { border-radius: 0 0 0 2px; }
   &:last-child { border-radius: 0 0 2px 0; }
 }
@@ -3606,11 +3608,12 @@ button.emoji-section {
   min-width: 3em;
   min-height: 3em;
   padding: 0;
-  // font-size: large;
+  font-size: large;
 
   widget {
-    transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+    border-radius: 3px;
+    transition: all 0.1s cubic-bezier(0, 0, 0.2, 1);
 
-    &:hover { font-size: larger; }
+    &:hover { @extend %selected_items; }
   }
 }
