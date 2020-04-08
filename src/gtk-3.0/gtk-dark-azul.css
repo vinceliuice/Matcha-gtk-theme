@@ -6532,19 +6532,18 @@ window.background.chromium > menubar > menuitem {
 }
 
 window.background.chromium > menu {
-  border: 1px solid dakren(white, 15%);
-  background-color: white;
-  color: #303030;
-  border-color: dakren(white, 15%);
+  border: 1px solid #14161b;
+  background-color: #1b1d24;
+  color: #bbc3c8;
 }
 
 window.background.chromium > menu > separator {
-  color: white;
-  background-color: white;
+  color: #1b1d24;
+  background-color: #1b1d24;
 }
 
 window.background.chromium > menu > menuitem {
-  color: #303030;
+  color: #bbc3c8;
 }
 
 window.background.chromium > menu > menuitem:hover {
@@ -6552,12 +6551,8 @@ window.background.chromium > menu > menuitem:hover {
   background-color: #3498db;
 }
 
-window.background.chromium > menu > menuitem:disabled {
-  color: rgba(48, 48, 48, 0.45);
-}
-
-window.background.chromium > menu > menuitem label:disabled {
-  color: rgba(48, 48, 48, 0.45);
+window.background.chromium > menu > menuitem:disabled, window.background.chromium > menu > menuitem accelerator, window.background.chromium > menu > menuitem label:disabled {
+  color: rgba(187, 195, 200, 0.45);
 }
 
 tooltip.background.chromium {

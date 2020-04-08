@@ -6533,19 +6533,18 @@ window.background.chromium > menubar > menuitem {
 }
 
 window.background.chromium > menu {
-  border: 1px solid dakren(white, 15%);
-  background-color: white;
-  color: #303030;
-  border-color: dakren(white, 15%);
+  border: 1px solid #d1d1d1;
+  background-color: #ffffff;
+  color: #273134;
 }
 
 window.background.chromium > menu > separator {
-  color: white;
-  background-color: white;
+  color: #ffffff;
+  background-color: #ffffff;
 }
 
 window.background.chromium > menu > menuitem {
-  color: #303030;
+  color: #273134;
 }
 
 window.background.chromium > menu > menuitem:hover {
@@ -6553,12 +6552,8 @@ window.background.chromium > menu > menuitem:hover {
   background-color: #2eb398;
 }
 
-window.background.chromium > menu > menuitem:disabled {
-  color: rgba(48, 48, 48, 0.45);
-}
-
-window.background.chromium > menu > menuitem label:disabled {
-  color: rgba(48, 48, 48, 0.45);
+window.background.chromium > menu > menuitem:disabled, window.background.chromium > menu > menuitem accelerator, window.background.chromium > menu > menuitem label:disabled {
+  color: rgba(39, 49, 52, 0.45);
 }
 
 tooltip.background.chromium {
@@ -9339,7 +9334,7 @@ scale.warmth trough {
   border-bottom-right-radius: 3px;
   border: solid rgba(0, 0, 0, 0.1);
   border-width: 0 1px 1px 1px;
-  box-shadow: inset 0 1px rgba(48, 59, 62, 0.95);
+  box-shadow: inset 0 1px rgba(37, 45, 48, 0.95);
 }
 
 #buttonbox_frame button {
@@ -9623,7 +9618,7 @@ GtkListBox .h4 {
 
 filechooser paned > separator,
 .nautilus-window paned > separator {
-  background-image: linear-gradient(to bottom, rgba(48, 59, 62, 0.95), rgba(48, 59, 62, 0.95));
+  background-image: linear-gradient(to bottom, rgba(37, 45, 48, 0.95), rgba(37, 45, 48, 0.95));
 }
 
 filechooser paned > separator:dir(ltr),
@@ -9808,7 +9803,7 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 .gedit-side-panel-paned > separator {
-  background-image: linear-gradient(to bottom, rgba(48, 59, 62, 0.95), rgba(48, 59, 62, 0.95));
+  background-image: linear-gradient(to bottom, rgba(37, 45, 48, 0.95), rgba(37, 45, 48, 0.95));
 }
 
 .gedit-bottom-panel-paned > separator {

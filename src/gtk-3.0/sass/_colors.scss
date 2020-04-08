@@ -27,7 +27,7 @@ $selected_bg_color: #2eb398;
 $alt_selected_bg_color: lighten($selected_bg_color, 6%);
 $selected_borders_color: darken($selected_bg_color, 20%);
 $borders_color: if($variant =='light', rgba(black, 0.15), rgba(black, 0.25));
-$disable_borders_color: if($variant =='light', rgba(black, 0.08), rgba(black, 0.15));
+$disable_borders_color: if($variant == 'light', rgba(black, 0.08), rgba(black, 0.15));
 $solid_borders_color: if($variant == 'light', darken($bg_color, 15%), darken($bg_color, 3%));
 $highlight: if($variant =='light', rgba(white, 0.13), rgba(white, 0.10));
 
@@ -80,11 +80,11 @@ $header_border: if($header == 'light', darken($header_bg, 7%), darken($header_bg
 $header_fg: if($header =='light', $fg_color, mix($selected_bg_color, #cecece, 5%));
 
 $dark_sidebar_bg: #303b3e;
-@if $color=='sea' { $dark_sidebar_bg: if($trans == 'true', rgba(#303b3e, 0.95), #303b3e); }
-@if $color=='aliz' { $dark_sidebar_bg: if($trans == 'true', rgba(#363636, 0.95), #363636); }
-@if $color=='azul' { $dark_sidebar_bg: if($trans == 'true', rgba(#30343e, 0.95), #30343e); }
-$dark_sidebar_fg: mix($selected_bg_color, #cecece, 5%);
-$dark_sidebar_border: if($variant == 'light', $dark_sidebar_bg, darken($dark_sidebar_bg, 5%));
+@if $color=='sea' { $dark_sidebar_bg: if($variant == 'light' and $header == 'light', rgba(#f8f8f8, 0.95), rgba(#303b3e, 0.95)); }
+@if $color=='aliz' { $dark_sidebar_bg: if($variant == 'light' and $header == 'light', rgba(#f8f8f8, 0.95), rgba(#363636, 0.95)); }
+@if $color=='azul' { $dark_sidebar_bg: if($variant == 'light' and $header == 'light', rgba(#f8f8f8, 0.95), rgba(#30343e, 0.95)); }
+$dark_sidebar_fg: if($variant == 'light' and $header == 'light', $text_color, mix($selected_bg_color, #cecece, 5%));
+$dark_sidebar_border: if($variant == 'light' and $header == 'light', darken($dark_sidebar_bg, 15%), darken($dark_sidebar_bg, 5%));
 
 $osd_fg_color: $dark_sidebar_fg;
 $osd_bg_color: darken($dark_sidebar_bg, 5%);
