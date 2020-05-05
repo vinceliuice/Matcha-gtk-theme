@@ -1096,7 +1096,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.85);
   -barlevel-height: 3px;
   -barlevel-background-color: transparent;
-  -barlevel-active-background-color: #00C853;
+  -barlevel-active-background-color: #3498db;
   -barlevel-overdrive-color: #FF5252;
   -barlevel-overdrive-separator-width: 3px;
   -barlevel-border-width: 0;
@@ -3646,35 +3646,35 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dashtodockContainer.bottom .dash-item-container > StWidget.running1 {
-  background-image: url("assets/bottom-running1.svg");
+  background-image: url("assets/bottom-running1-azul.svg");
 }
 
 #dashtodockContainer.bottom .dash-item-container > StWidget.running1.focused {
-  background-image: url("assets/bottom-running1-focused.svg");
+  background-image: url("assets/bottom-running1-focused-azul.svg");
 }
 
 #dashtodockContainer.bottom .dash-item-container > StWidget.running2 {
-  background-image: url("assets/bottom-running2.svg");
+  background-image: url("assets/bottom-running2-azul.svg");
 }
 
 #dashtodockContainer.bottom .dash-item-container > StWidget.running2.focused {
-  background-image: url("assets/bottom-running2-focused.svg");
+  background-image: url("assets/bottom-running2-focused-azul.svg");
 }
 
 #dashtodockContainer.bottom .dash-item-container > StWidget.running3 {
-  background-image: url("assets/bottom-running3.svg");
+  background-image: url("assets/bottom-running3-azul.svg");
 }
 
 #dashtodockContainer.bottom .dash-item-container > StWidget.running3.focused {
-  background-image: url("assets/bottom-running3-focused.svg");
+  background-image: url("assets/bottom-running3-focused-azul.svg");
 }
 
 #dashtodockContainer.bottom .dash-item-container > StWidget.running4 {
-  background-image: url("assets/bottom-running4.svg");
+  background-image: url("assets/bottom-running4-azul.svg");
 }
 
 #dashtodockContainer.bottom .dash-item-container > StWidget.running4.focused {
-  background-image: url("assets/bottom-running4-focused.svg");
+  background-image: url("assets/bottom-running4-focused-azul.svg");
 }
 
 /* Simple Dock */
