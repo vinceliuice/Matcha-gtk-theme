@@ -1,100 +1,77 @@
-/* Dash to Dock */
+// Dash to Dock
 
-#dashtodockContainer #dash {
-    background-color: $bg_color;
-}
+#dashtodockContainer {
+  background: transparent;
 
-#dashtodockContainer:overview #dash {
-    background-color: $overview_bg_color;
-}
-
-#dashtodockContainer.extended:overview #dash {
-    background-color: transparent;
-}
-
-#dashtodockContainer.left #dash,
-#dashtodockContainer.right #dash {
-    padding: 3px 0;
-}
-
-#dashtodockContainer.top #dash,
-#dashtodockContainer.bottom #dash {
-    padding: 0 3px;
-}
-
-#dashtodockContainer.extended #dash {
+  #dash,
+  &:overview #dash,
+  &.extended #dash,
+  &.extended:overview #dash {
     padding: 0;
-    border-radius: 0;
-}
+    border: none;
+    margin: 0;
+  }
 
-#dashtodockContainer.left .dash-item-container > StWidget,
-#dashtodockContainer.right .dash-item-container > StWidget,
-#dashtodockContainer.extended.left .dash-item-container > StWidget,
-#dashtodockContainer.extended.right .dash-item-container > StWidget {
-   padding: 3px 6px;
-}
+  @each $_dock, $_radius in (top, 0 0 3px 3px),
+                            (bottom, 3px 3px 0 0),
+                            (left, 0 3px 3px 0),
+                            (right, 3px 0 0 3px) {
+    &.#{$_dock} #dash,
+    &.#{$_dock}:overview #dash { border-radius: #{$_radius}; }
 
-#dashtodockContainer.extended.left .dash-item-container:first-child > StWidget,
-#dashtodockContainer.extended.right .dash-item-container:first-child > StWidget {
-   padding: 6px 6px 3px 6px;
-}
+    &.#{$_dock}.extended #dash,
+    &.#{$_dock}.extended:overview #dash { border-radius: #{$_radius}; }
+  }
 
-#dashtodockContainer.extended.left .dash-item-container:last-child > StWidget,
-#dashtodockContainer.extended.right .dash-item-container:last-child > StWidget {
-   padding: 3px 6px 6px 6px;
-}
+  #dash { // default-mode
+    background-color: $bg_color;
+    box-shadow: none;
+  }
 
-#dashtodockContainer.top .dash-item-container > StWidget,
-#dashtodockContainer.bottom .dash-item-container > StWidget,
-#dashtodockContainer.extended.top .dash-item-container > StWidget,
-#dashtodockContainer.extended.bottom .dash-item-container > StWidget {
-   padding: 6px 3px;
-}
+  &.opaque #dash { // solid-mode
+    background-color: $topbar_color;
+  }
 
-#dashtodockContainer.extended.top .dash-item-container:first-child > StWidget,
-#dashtodockContainer.extended.bottom .dash-item-container:first-child > StWidget {
-   padding: 6px 3px 6px 6px;
-}
+  &.transparent #dash { // translucent-mode
+    background-color: $osd_bg_color; // does not work
+  }
 
-#dashtodockContainer.extended.top .dash-item-container:last-child > StWidget,
-#dashtodockContainer.extended.bottom .dash-item-container:last-child > StWidget {
-   padding: 6px 6px 6px 3px;
-}
+  &:overview #dash { // overview-mode #1
+    background-color: $overview_bg_color;
+  }
 
-#dashtodockContainer .app-well-app-running-dot {
-    background-color: transparent;
-}
+  &.opaque:overview,
+  &.transparent:overview { // overview-mode #2
+    #dash {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
 
-#dashtodockContainer .dash-item-container > StWidget {
-    background-size: cover;
-}
+  &.extended:overview, // overview-mode #3
+  &.opaque.extended:overview,
+  &.transparent.extended:overview {
+    #dash {
+      background-color: $topbar_color;
+    }
+  }
 
-@each $p,$pt in ('.left', 'left'),
-                ('.right', 'right'),
-                ('.top', 'top'),
-                ('.bottom', 'bottom') {
-  @each $n,$nb in ('.running1','running1'),
-                  ('.running2','running2'),
-                  ('.running3','running3'),
-                  ('.running4','running4') {
-    @each $f,$fc in ('',''),
-                    ('.focused','-focused') {
-      #dashtodockContainer#{$p} .dash-item-container > StWidget#{$n}#{$f} {
-          background-image: url("assets/#{$pt}-#{$nb}#{$fc}.svg");
-      }
+  .app-well-app,
+  .show-apps {
+    .overview-icon {
+      padding: 8px;
+      background-size: contain;
     }
   }
 }
 
-
-/* Simple Dock */
+// Simple Dock
 
 #dash:desktop {
-    background-color: $bg_color;
+  background-color: $bg_color;
 }
 
-
-/* GPaste */
+// GPaste
 
 .popup-menu {
   .search-entry {
@@ -116,7 +93,7 @@
 }
 
 
-//  * OpenWeather Extension *
+//  OpenWeather Extension
 
 .openweather-button-action {
   border: 1px solid transparent;
