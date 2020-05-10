@@ -1243,15 +1243,19 @@ StScrollBar {
   background: none;
   color: $secondary_fg_color;
 
-  &:hover,&:focus { color: $fg_color; background-color: $semi_track_color; }
+  &:hover, &:focus {
+    color: $fg_color;
+    background-color: $semi_track_color;
+    text-shadow: none;
+  }
+
   &:active {
     color: $fg_color;
     background-color: $track_color;
   }
 }
 
-.datemenu-today-button .day-label {
-}
+// .datemenu-today-button .day-label { }
 
 .datemenu-today-button .date-label {
   @include font(headline);
@@ -2017,9 +2021,15 @@ StScrollBar {
 }
 
 .app-well-app-running-dot { //running apps indicator
-  width: 24px; height: 2px;
-  background-color: $selected_bg_color;
+  width: 16px; height: 2px;
+  background-color: $selected_track_color;
   margin-bottom: 0;
+  border-radius: 0;
+}
+
+StWidget.focused .app-well-app-running-dot {
+  width: 24px;
+  background-color: $selected_bg_color;
 }
 
 %icon_tile {
