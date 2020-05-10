@@ -87,7 +87,3 @@ $info_bg_color: #66BB6A;
 $question_bg_color: #42A5F5;
 $warning_bg_color: #FFA726;
 $error_bg_color: #EF5350;
-
-$volume_bar_bg_color: #00C853;
-@if $color=='aliz' { $volume_bar_bg_color: #f4817b; }
-@if $color=='azul' { $volume_bar_bg_color: #3498db; }
