@@ -877,7 +877,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-image: url("assets/submenu-open.svg") 18 18 2 2;
 }
 
-.popup-menu .popup-menu-item:checked:active, .popup-menu .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked:active, .popup-menu .popup-menu-item:checked.selected {
   color: #FFFFFF;
   background-color: transparent;
   border-image: url("assets/menu-hover.svg") 18 18 2 2;
@@ -1090,12 +1090,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .osd-window .level {
-  height: 0.6em;
-  border-radius: 4px;
+  height: 4px;
+  border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.102);
-  color: rgba(255, 255, 255, 0.85);
+  color: #F0544C;
   -barlevel-height: 3px;
-  -barlevel-background-color: transparent;
+  -barlevel-background-color: rgba(0, 0, 0, 0.15);
   -barlevel-active-background-color: #F0544C;
   -barlevel-overdrive-color: #FF5252;
   -barlevel-overdrive-separator-width: 3px;
@@ -1104,7 +1104,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .osd-window .level-bar {
   background-color: #F0544C;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* App Switcher */
