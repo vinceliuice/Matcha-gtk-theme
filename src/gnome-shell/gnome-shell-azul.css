@@ -1100,7 +1100,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.8);
   -barlevel-height: 3px;
   -barlevel-background-color: transparent;
-  -barlevel-active-background-color: #42A5F5;
+  -barlevel-active-background-color: #3498db;
   -barlevel-overdrive-color: #FF5252;
   -barlevel-overdrive-separator-width: 3px;
   -barlevel-border-width: 0;
