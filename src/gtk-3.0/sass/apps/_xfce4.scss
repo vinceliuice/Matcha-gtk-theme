@@ -163,73 +163,75 @@ window#whiskermenu-window {
     border-radius: 0;
   }
 
-  button {
-    background-color: transparent;
-    color: $dark_menu_fg;
-    background-clip: padding-box;
-
-    &:hover {
-      background-color: rgba($dark_menu_fg, 0.12);
-      color: $selected_fg_color;
-      border-color: $dark_menu_border;
-    }
-
-    &:checked, &:active {
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
-      border-color: $dark_menu_border;
-    }
-
-    &:disabled {
-      color: rgba($dark_menu_fg, 0.45);
-      border-color: rgba($dark_menu_border, 0.15);
-      background-color: rgba($dark_menu_bg, 0.45);
-    }
-  }
-
-  entry {
-    background-color: rgba($dark_menu_fg, 0.1);
-    color: $dark_menu_fg;
-    border-color: $dark_menu_border;
-
-    image { // icons inside the entry
-      color: mix($dark_menu_fg, $dark_menu_bg, 80%);
-    }
-
-    &:focus {
-      border-color: $selected_bg_color;
-
-      image { color: $selected_bg_color; }
-    }
-
-    &:disabled {
-      color: rgba($dark_menu_fg, 0.45);
-      border-color: rgba($dark_menu_border, 0.15);
-      background-color: rgba($dark_menu_bg, 0.45);
-
-      image { color: rgba($dark_menu_fg, 0.45); }
-    }
-  }
-
-  scrolledwindow {
-    // > viewport button.radio {
-    //   background-color: $dark_menu_bg;
-    //   color: $dark_menu_fg;
-    // }
-
-    scrollbar { @extend %dark_menu_scrollbar; }
-
-    .view {
-      background-color: rgba(lighten($dark_menu_bg, 5%), 0.9);
+  > frame > stack {
+    button {
+      background-color: transparent;
       color: $dark_menu_fg;
+      background-clip: padding-box;
 
-      // &:hover {
-      //   background-color: lighten($dark_menu_bg, 10%);
+      &:hover {
+        background-color: rgba($dark_menu_fg, 0.12);
+        color: $selected_fg_color;
+        border-color: $dark_menu_border;
+      }
+
+      &:checked, &:active {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+        border-color: $dark_menu_border;
+      }
+
+      &:disabled {
+        color: rgba($dark_menu_fg, 0.45);
+        border-color: rgba($dark_menu_border, 0.15);
+        background-color: rgba($dark_menu_bg, 0.45);
+      }
+    }
+
+    entry {
+      background-color: rgba($dark_menu_fg, 0.1);
+      color: $dark_menu_fg;
+      border-color: $dark_menu_border;
+
+      image { // icons inside the entry
+        color: mix($dark_menu_fg, $dark_menu_bg, 80%);
+      }
+
+      &:focus {
+        border-color: $selected_bg_color;
+
+        image { color: $selected_bg_color; }
+      }
+
+      &:disabled {
+        color: rgba($dark_menu_fg, 0.45);
+        border-color: rgba($dark_menu_border, 0.15);
+        background-color: rgba($dark_menu_bg, 0.45);
+
+        image { color: rgba($dark_menu_fg, 0.45); }
+      }
+    }
+
+    scrolledwindow {
+      // > viewport button.radio {
+      //   background-color: $dark_menu_bg;
+      //   color: $dark_menu_fg;
       // }
 
-      &:selected:hover {
-        background-color: lighten($dark_menu_bg, 10%);
+      scrollbar { @extend %dark_menu_scrollbar; }
+
+      .view {
+        background-color: rgba(lighten($dark_menu_bg, 5%), 0.9);
         color: $dark_menu_fg;
+
+        // &:hover {
+        //   background-color: lighten($dark_menu_bg, 10%);
+        // }
+
+        &:selected:hover {
+          background-color: lighten($dark_menu_bg, 10%);
+          color: $dark_menu_fg;
+        }
       }
     }
   }
