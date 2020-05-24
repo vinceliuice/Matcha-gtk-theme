@@ -720,8 +720,8 @@ StScrollBar {
     padding: 6px;
     transition-duration: 0s;
 
-    &:ltr { padding-right:1.75em; padding-left: 0; }
-    &:rtl { padding-right: 0; padding-left:1.75em; }
+    &:ltr { padding-right: 1.75em; padding-left: 0; }
+    &:rtl { padding-right: 0; padding-left: 1.75em; }
 
     &:checked {
       font-weight: normal;
@@ -753,7 +753,7 @@ StScrollBar {
   .popup-inactive-menu-item { //all icons and other graphical elements
     color: $fg_color;
 
-    &:insensitive { color: $tertiary_fg_color; }
+    &:insensitive { color: $insensitive_fg_color; }
   }
 
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
@@ -788,8 +788,8 @@ StScrollBar {
   -arrow-background-color: transparent;
   -arrow-border-width: 1px;
   -arrow-border-color: transparent;
-  -arrow-base: 0;
-  -arrow-rise: 0;
+  -arrow-base: 5px;
+  -arrow-rise: 5px;
   border: 0 none transparent;
   background: transparent; // needs to reset?
   color: $fg_color;
@@ -1243,6 +1243,7 @@ StScrollBar {
   box-shadow: none;
   background: none;
   color: $secondary_fg_color;
+  text-shadow: none;
 
   &:hover, &:focus {
     color: $fg_color;
@@ -1295,6 +1296,24 @@ StScrollBar {
 .world-clocks-grid {
   spacing-rows: 0.4em;
   spacing-columns: 0.8em;
+}
+
+.world-clocks-city {
+  color: $tertiary_fg_color;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: $tertiary_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: $tertiary_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
 }
 
 .calendar-month-label {

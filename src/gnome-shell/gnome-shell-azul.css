@@ -907,7 +907,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-inactive-menu-item:insensitive {
-  color: rgba(0, 0, 0, 0.48);
+  color: rgba(0, 0, 0, 0.28);
 }
 
 .popup-menu.panel-menu {
@@ -940,8 +940,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-background-color: transparent;
   -arrow-border-width: 1px;
   -arrow-border-color: transparent;
-  -arrow-base: 0;
-  -arrow-rise: 0;
+  -arrow-base: 5px;
+  -arrow-rise: 5px;
   border: 0 none transparent;
   background: transparent;
   color: rgba(0, 0, 0, 0.8);
@@ -1415,6 +1415,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
   background: none;
   color: rgba(0, 0, 0, 0.6);
+  text-shadow: none;
 }
 
 .datemenu-today-button:hover, .datemenu-today-button:focus,
@@ -1478,6 +1479,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-grid {
   spacing-rows: 0.4em;
   spacing-columns: 0.8em;
+}
+
+.world-clocks-city {
+  color: rgba(0, 0, 0, 0.48);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: rgba(0, 0, 0, 0.48);
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: rgba(0, 0, 0, 0.48);
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
 }
 
 .calendar-month-label {
@@ -3572,34 +3591,90 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.popup-menu .search-entry, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry {
-  color: rgba(0, 0, 0, 0.8);
-  selection-background-color: #3498db;
-  selected-color: #FFFFFF;
+.openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
+  border: 1px solid transparent;
+  background: none;
+}
+
+.openweather-provider {
+  padding: 0 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
   background-color: #FAFAFA;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
   box-shadow: none;
   text-shadow: none;
+  icon-shadow: none;
 }
 
-.popup-menu .search-entry:focus, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus {
-  border-color: transparent;
-  border: 1px solid #3498db;
-  box-shadow: none;
-  text-shadow: none;
+.openweather-provider:hover {
   color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
 }
 
-.popup-menu .search-entry .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry .search-entry-icon {
+.openweather-provider:focus {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: inset 0px 0px 0px 2px rgba(52, 152, 219, 0.35);
+  box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.24);
+}
+
+.openweather-provider:active {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(194, 194, 194, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-provider:insensitive {
+  color: rgba(0, 0, 0, 0.21);
+  background-color: rgba(0, 0, 0, 0.084);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-current-icon, .openweather-current-summary, .openweather-current-summarybox {
+  background: none;
+  color: rgba(0, 0, 0, 0.8);
+  -st-icon-style: symbolic;
+}
+
+.openweather-current-databox-values {
+  background: none;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.openweather-current-databox-captions {
+  background: none;
   color: rgba(0, 0, 0, 0.48);
 }
 
-.popup-menu .search-entry:hover .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus .search-entry-icon {
+.openweather-forecast-icon, .openweather-forecast-summary {
+  background: none;
+  color: rgba(0, 0, 0, 0.6);
+  -st-icon-style: symbolic;
+}
+
+.openweather-forecast-day {
+  background: none;
   color: rgba(0, 0, 0, 0.8);
 }
 
-.openweather-button-action {
-  border: 1px solid transparent;
+.openweather-forecast-temperature {
   background: none;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
+  color: rgba(0, 0, 0, 0.6);
+  -st-icon-style: symbolic;
 }
