@@ -139,3 +139,26 @@
     -st-icon-style: symbolic;
   }
 }
+
+// GPaste
+
+.popup-menu {
+  .search-entry {
+    color: $fg_color;
+    selection-background-color: $selected_bg_color;
+    selected-color: $selected_fg_color;
+    @include entry(normal);
+    border-image: none;
+
+    &:focus {
+      @include entry(focus);
+      color: $fg_color;
+    }
+
+    .search-entry-icon { color: $tertiary_fg_color; }
+
+    &:hover, &:focus {
+      .search-entry-icon { color: $fg_color; }
+    }
+  }
+}

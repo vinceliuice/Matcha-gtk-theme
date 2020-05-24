@@ -842,6 +842,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: 15em;
   color: rgba(255, 255, 255, 0.85);
   border-image: url("assets/menu.svg") 18 18 18 18;
+  box-shadow: none;
 }
 
 .popup-menu .popup-sub-menu {
@@ -877,18 +878,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-image: url("assets/submenu-open.svg") 18 18 2 2;
 }
 
-.popup-menu .popup-menu-item:checked:active, .popup-menu .popup-menu-item.selected:checked {
-  color: #FFFFFF;
-  background-color: transparent;
-  border-image: url("assets/menu-hover.svg") 18 18 2 2;
-}
-
-.popup-menu .popup-menu-item:checked:insensitive {
-  color: rgba(255, 255, 255, 0.35);
-  background: none;
-}
-
-.popup-menu .popup-menu-item:hover, .popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
+.popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
   color: #FFFFFF;
   background-color: transparent;
   border-image: url("assets/menu-hover.svg") 18 18 2 2;
@@ -3668,4 +3658,32 @@ StWidget.focused .app-well-app-running-dot {
 .openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
   color: rgba(255, 255, 255, 0.6375);
   -st-icon-style: symbolic;
+}
+
+.popup-menu .search-entry, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry {
+  color: rgba(255, 255, 255, 0.85);
+  selection-background-color: #F0544C;
+  selected-color: #FFFFFF;
+  background-color: #222222;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  box-shadow: none;
+  text-shadow: none;
+  border-image: none;
+}
+
+.popup-menu .search-entry:focus, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus {
+  border-color: transparent;
+  border: 1px solid #F0544C;
+  box-shadow: none;
+  text-shadow: none;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.popup-menu .search-entry .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry .search-entry-icon {
+  color: rgba(255, 255, 255, 0.51);
+}
+
+.popup-menu .search-entry:hover .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus .search-entry-icon {
+  color: rgba(255, 255, 255, 0.85);
 }
