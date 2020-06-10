@@ -290,6 +290,8 @@ window.thunar {
     stack > scrolledwindow.frame.standard-view {
       border-top-width: 0;
       border-right-width: 0;
+
+      widget.view { border-radius: 2px; }
     }
 
     // an allocation height of label node affects to close button's

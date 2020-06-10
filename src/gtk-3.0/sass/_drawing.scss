@@ -209,7 +209,7 @@
   //
     color: $header_fg;
     border-color: $borders_color;
-    background-color: rgba($header_fg, 0.12);
+    background-color: rgba($header_fg, if($variant=='light', 0.12, 0.18));
   }
 
   @else if $t==header-active {

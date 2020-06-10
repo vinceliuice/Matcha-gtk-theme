@@ -8977,6 +8977,10 @@ window.thunar notebook stack > scrolledwindow.frame.standard-view {
   border-right-width: 0;
 }
 
+window.thunar notebook stack > scrolledwindow.frame.standard-view widget.view {
+  border-radius: 2px;
+}
+
 window.thunar notebook header.top tab.reorderable-page > box > label {
   min-height: 0;
 }

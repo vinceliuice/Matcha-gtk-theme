@@ -1744,7 +1744,7 @@ window.thunar toolbar#location-toolbar button:backdrop, window.thunar #location-
 window.thunar toolbar#location-toolbar button:hover, window.thunar #location-toolbar.inline-toolbar button:hover, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:hover, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:hover, .nemo-window .primary-toolbar button:hover, headerbar button:hover {
   color: #c6cdcb;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: rgba(198, 205, 203, 0.12);
+  background-color: rgba(198, 205, 203, 0.18);
 }
 
 window.thunar toolbar#location-toolbar button:active, window.thunar #location-toolbar.inline-toolbar button:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:active, .nemo-window .primary-toolbar button:active, headerbar button:active, window.thunar toolbar#location-toolbar button:checked, window.thunar #location-toolbar.inline-toolbar button:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:checked, .nemo-window .primary-toolbar button:checked, headerbar button:checked {
@@ -2059,7 +2059,7 @@ headerbar spinbutton:not(.vertical):focus {
 headerbar spinbutton:not(.vertical) button, headerbar spinbutton:not(.vertical) button:disabled {
   color: #c6cdcb;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: rgba(198, 205, 203, 0.12);
+  background-color: rgba(198, 205, 203, 0.18);
 }
 
 headerbar spinbutton:not(.vertical) button:hover {
@@ -4697,7 +4697,7 @@ headerbar button.titlebutton:hover,
 .titlebar button.titlebutton:hover {
   color: #c6cdcb;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: rgba(198, 205, 203, 0.12);
+  background-color: rgba(198, 205, 203, 0.18);
 }
 
 headerbar button.titlebutton:active, headerbar button.titlebutton:checked,
@@ -5083,7 +5083,7 @@ window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stac
   0% {
     color: #c6cdcb;
     border-color: rgba(0, 0, 0, 0.25);
-    background-color: rgba(198, 205, 203, 0.12);
+    background-color: rgba(198, 205, 203, 0.18);
   }
   100% {
     color: #ffffff;
@@ -6475,7 +6475,7 @@ window.background.chromium headerbar.titlebar button.toggle {
 window.background.chromium headerbar.titlebar button.toggle:hover {
   color: #c6cdcb;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: rgba(198, 205, 203, 0.12);
+  background-color: rgba(198, 205, 203, 0.18);
 }
 
 window.background.chromium headerbar.titlebar button.toggle:checked, window.background.chromium headerbar.titlebar button.toggle:active {
@@ -8976,6 +8976,10 @@ window.thunar notebook stack > scrolledwindow.frame.standard-view {
   border-right-width: 0;
 }
 
+window.thunar notebook stack > scrolledwindow.frame.standard-view widget.view {
+  border-radius: 2px;
+}
+
 window.thunar notebook header.top tab.reorderable-page > box > label {
   min-height: 0;
 }
@@ -9688,7 +9692,7 @@ filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-
 .nautilus-window placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:hover {
   color: #c6cdcb;
   border-color: rgba(0, 0, 0, 0.25);
-  background-color: rgba(198, 205, 203, 0.12);
+  background-color: rgba(198, 205, 203, 0.18);
 }
 
 filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:active,
