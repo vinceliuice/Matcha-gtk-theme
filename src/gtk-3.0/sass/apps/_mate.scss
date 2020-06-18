@@ -294,15 +294,13 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
 .mate-panel-applet-slider {
   background-color: transparent;
 
-  frame { // draw actual widget
-    border-width: 1px;
-    border-style: solid;
-    border-color: $borders_color;
+  > frame { // draw actual widget
+    border: 1px solid $borders_color;
     border-radius: 2px;
     background-color: $bg_color;
 
     // unset borders
-    *,
+    // *,
     > border { border: unset; }
   }
 }
