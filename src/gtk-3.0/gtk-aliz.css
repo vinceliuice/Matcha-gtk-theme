@@ -9925,12 +9925,12 @@ filechooser placessidebar.sidebar scrollbar trough,
 @define-color wm_button_close_hover_bg #f68086;
 @define-color wm_button_close_active_bg #f13039;
 @define-color wm_icon_close_bg #222222;
-@define-color wm_button_hover_bg #3c3c3c;
+@define-color wm_button_hover_bg #090909;
 @define-color wm_button_active_bg #F0544C;
 @define-color wm_button_hover_border #181818;
-@define-color wm_icon_bg #909090;
-@define-color wm_icon_unfocused_bg #686868;
-@define-color wm_icon_hover_bg #eeeeee;
+@define-color wm_icon_bg #d0c8c8;
+@define-color wm_icon_unfocused_bg white;
+@define-color wm_icon_hover_bg #d0c8c8;
 @define-color wm_icon_active_bg #ffffff;
 @define-color budgie_tasklist_indicator_color #F0544C;
 @define-color budgie_tasklist_indicator_color_active #F0544C;
