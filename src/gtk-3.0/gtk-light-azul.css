@@ -6967,15 +6967,6 @@ panel-toplevel.background menubar {
   background-color: #1b1d24;
 }
 
-.mate-panel-menu-bar menubar,
-.mate-panel-menu-bar #PanelApplet label,
-.mate-panel-menu-bar #PanelApplet image,
-panel-toplevel.background menubar,
-panel-toplevel.background #PanelApplet label,
-panel-toplevel.background #PanelApplet image {
-  color: #c6cbcf;
-}
-
 .mate-panel-menu-bar button label, .mate-panel-menu-bar button image,
 .mate-panel-menu-bar button#tasklist-button label,
 .mate-panel-menu-bar button#tasklist-button image,
