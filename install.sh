@@ -58,7 +58,7 @@ install() {
   echo "GtkTheme=${name}${color}${theme}"                                          >> ${themedir}/index.theme
   echo "MetacityTheme=${name}${color}${theme}"                                     >> ${themedir}/index.theme
   echo "IconTheme=Qogir-manjaro"                                                   >> ${themedir}/index.theme
-  echo "CursorTheme=Breeze_cursors"                                                >> ${themedir}/index.theme
+  echo "CursorTheme=Qogir-manjaro"                                                 >> ${themedir}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                 >> ${themedir}/index.theme
 
   # Install GNOME Shell Theme

@@ -1767,6 +1767,7 @@ treeview.view {
       background-color: $selected_fg_color;
     }
   }
+
   &.trough { // progress bar trough in treeviews
     color: $fg_color;
     background-color: $button_border;
@@ -2772,7 +2773,7 @@ list {
 %row_activatable {
   &.has-open-popup,
   &:hover {
-    background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03));
+    background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.08));
   }
 
   &:active { color: $fg_color; }

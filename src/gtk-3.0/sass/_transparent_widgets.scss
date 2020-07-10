@@ -81,32 +81,6 @@ filechooser,
   &.maximized placessidebar.sidebar { background-color: opacify($dark_sidebar_bg, 1); }
 }
 
-// .nemo-window {
-//   .sidebar {
-//     color: $dark_sidebar_fg;
-//     background-color: $dark_sidebar_bg;
-//
-//     .view, row {
-//       background-color: transparent;
-//       color: $dark_sidebar_fg;
-//
-//       &:hover {
-//         background-color: rgba($dark_sidebar_fg, 0.15);
-//       }
-//
-//       &.expander {
-//         color: mix($dark_sidebar_fg, $dark_sidebar_bg, 50%);
-//
-//         &:hover { color: $dark_sidebar_fg; }
-//       }
-//     }
-//
-//     separator { background-color: transparent; }
-//
-//     scrollbar { @extend %dark_sidebar_scrollbar }
-//   }
-// }
-
 filechooser {
 
   actionbar {
