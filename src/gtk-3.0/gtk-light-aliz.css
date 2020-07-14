@@ -3677,13 +3677,13 @@ row:selected progressbar trough, infobar progressbar trough {
 }
 
 levelbar block {
-  min-width: 32px;
+  min-width: 1px;
   min-height: 1px;
 }
 
 levelbar.vertical block {
   min-width: 1px;
-  min-height: 32px;
+  min-height: 1px;
 }
 
 levelbar trough {
