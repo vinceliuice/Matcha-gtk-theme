@@ -2471,12 +2471,6 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 0;
 }
 
-.search-display > StBoxLayout,
-.all-apps,
-.frequent-apps > StBoxLayout {
-  padding: 0px 88px 10px 88px;
-}
-
 .workspace-thumbnails {
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.1);

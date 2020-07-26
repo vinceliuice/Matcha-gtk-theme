@@ -2205,14 +2205,6 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 0;
 }
 
-//Some hacks I don't even
-.search-display > StBoxLayout,
-.all-apps,
-.frequent-apps > StBoxLayout {
-  // horizontal padding to make sure scrollbars or dash don't overlap content
-  padding: 0px 88px 10px 88px;
-}
-
 %overview-panel {
   color: $selected_fg_color;
   background-color: $overview_bg_color;
