@@ -1886,6 +1886,7 @@ StScrollBar {
 
 %search-section-content-item {
   @extend %icon_tile;
+  transition-duration: 0ms;
 
   &:focus,
   &:hover,
@@ -2044,10 +2045,10 @@ StWidget.focused .app-well-app-running-dot {
 
 %icon_tile {
   color: $selected_fg_color;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 6px;
   border: none;
-  transition-duration: 0.2s;
+  transition-duration: 100ms;
   text-align: center;
 }
 

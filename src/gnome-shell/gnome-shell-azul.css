@@ -2167,6 +2167,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 8px;
 }
 
+.list-search-result, .search-provider-icon {
+  transition-duration: 0ms;
+}
+
 .list-search-result:focus, .search-provider-icon:focus, .list-search-result:hover, .search-provider-icon:hover, .list-search-result:selected, .search-provider-icon:selected {
   background-color: #FFFFFF;
   transition-duration: 200ms;
@@ -2306,10 +2310,10 @@ StWidget.focused .app-well-app-running-dot {
 .show-apps .overview-icon,
 .grid-search-result .overview-icon {
   color: #FFFFFF;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 6px;
   border: none;
-  transition-duration: 0.2s;
+  transition-duration: 100ms;
   text-align: center;
 }
 
