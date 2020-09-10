@@ -63,8 +63,9 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 ### Install from repository
 
 Archlinux:
+This package is available in the AUR
 
-    sudo pacman -S matcha-gtk-theme
+    yay -S matcha-gtk-theme
 
 FreeBSD:
 
