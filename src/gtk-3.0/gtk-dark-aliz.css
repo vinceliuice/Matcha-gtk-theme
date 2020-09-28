@@ -343,7 +343,7 @@ entry progress {
   margin: 0 -6px;
   border-radius: 0;
   border-width: 0 0 2px;
-  border-color: #00C487;
+  border-color: #2eb398;
   border-style: solid;
   background-image: none;
   background-color: transparent;
@@ -1797,7 +1797,7 @@ headerbar entry, headerbar button, headerbar separator {
 }
 
 headerbar entry progress {
-  border-color: #00C487;
+  border-color: #2eb398;
   background-image: none;
   background-color: transparent;
 }
@@ -2364,7 +2364,7 @@ treeview.view.expander:checked {
 treeview.view.progressbar, treeview.view.progressbar:focus {
   color: #ffffff;
   border-radius: 3px;
-  background-color: #00C487;
+  background-color: #2eb398;
 }
 
 treeview.view.progressbar:selected, treeview.view.progressbar:selected:focus, treeview.view.progressbar:focus:selected, treeview.view.progressbar:focus:selected:focus {
@@ -3657,7 +3657,7 @@ progressbar.osd trough {
 }
 
 progressbar progress {
-  background-color: #00C487;
+  background-color: #2eb398;
   border: none;
   border-radius: 3px;
   box-shadow: none;
@@ -6131,7 +6131,7 @@ dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame
 .nemo-window .nemo-places-sidebar .places-treeview {
   background-color: #222222;
   -NemoPlacesTreeView-disk-full-bg-color: #1a1a1a;
-  -NemoPlacesTreeView-disk-full-fg-color: #00ab75;
+  -NemoPlacesTreeView-disk-full-fg-color: #299f87;
 }
 
 .nemo-window .nemo-places-sidebar .places-treeview:selected .sidebar-icon, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover .sidebar-icon {

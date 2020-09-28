@@ -343,7 +343,7 @@ entry progress {
   margin: 0 -6px;
   border-radius: 0;
   border-width: 0 0 2px;
-  border-color: #7C4DFF;
+  border-color: #4586D8;
   border-style: solid;
   background-image: none;
   background-color: transparent;
@@ -582,29 +582,29 @@ button.osd:disabled {
 button.suggested-action {
   background-clip: border-box;
   color: white;
-  background-color: #4146d1;
-  border-color: #4146d1;
+  background-color: #4586D8;
+  border-color: #4586D8;
 }
 
 button.suggested-action.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
-  color: #4146d1;
+  color: #4586D8;
 }
 
 button.suggested-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #565ad6;
-  border-color: #565ad6;
+  background-color: #5a94dc;
+  border-color: #5a94dc;
 }
 
 button.suggested-action:active, button.suggested-action:checked {
   background-clip: border-box;
   color: white;
-  background-color: #6a6edb;
-  border-color: #6a6edb;
+  background-color: #6fa1e1;
+  border-color: #6fa1e1;
 }
 
 button.suggested-action.flat:disabled {
@@ -1797,7 +1797,7 @@ headerbar entry, headerbar button, headerbar separator {
 }
 
 headerbar entry progress {
-  border-color: #7C4DFF;
+  border-color: #4586D8;
   background-image: none;
   background-color: transparent;
 }
@@ -1970,29 +1970,29 @@ headerbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error {
 headerbar button.suggested-action {
   background-clip: border-box;
   color: white;
-  background-color: #4146d1;
-  border-color: #4146d1;
+  background-color: #4586D8;
+  border-color: #4586D8;
 }
 
 headerbar button.suggested-action.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
-  color: #4146d1;
+  color: #4586D8;
 }
 
 headerbar button.suggested-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #565ad6;
-  border-color: #565ad6;
+  background-color: #5a94dc;
+  border-color: #5a94dc;
 }
 
 headerbar button.suggested-action:active, headerbar button.suggested-action:checked {
   background-clip: border-box;
   color: white;
-  background-color: #6a6edb;
-  border-color: #6a6edb;
+  background-color: #6fa1e1;
+  border-color: #6fa1e1;
 }
 
 headerbar button.suggested-action.flat:disabled, headerbar button.suggested-action:disabled {
@@ -2364,7 +2364,7 @@ treeview.view.expander:checked {
 treeview.view.progressbar, treeview.view.progressbar:focus {
   color: #ffffff;
   border-radius: 3px;
-  background-color: #7C4DFF;
+  background-color: #4586D8;
 }
 
 treeview.view.progressbar:selected, treeview.view.progressbar:selected:focus, treeview.view.progressbar:focus:selected, treeview.view.progressbar:focus:selected:focus {
@@ -3657,7 +3657,7 @@ progressbar.osd trough {
 }
 
 progressbar progress {
-  background-color: #7C4DFF;
+  background-color: #4586D8;
   border: none;
   border-radius: 3px;
   box-shadow: none;
@@ -5774,7 +5774,7 @@ window.background > box.vertical box.horizontal > box.vertical > scrolledwindow 
 }
 
 window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable label.compressed-entries-label {
-  background-image: image(#4146d1);
+  background-image: image(#4586D8);
   color: #ffffff;
   font-weight: 700;
 }
@@ -6131,7 +6131,7 @@ dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame
 .nemo-window .nemo-places-sidebar .places-treeview {
   background-color: #1b1d24;
   -NemoPlacesTreeView-disk-full-bg-color: #14161b;
-  -NemoPlacesTreeView-disk-full-fg-color: #6934ff;
+  -NemoPlacesTreeView-disk-full-fg-color: #3078d4;
 }
 
 .nemo-window .nemo-places-sidebar .places-treeview:selected .sidebar-icon, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover .sidebar-icon {
@@ -9253,7 +9253,7 @@ actionbar.inline-toolbar button:last-child {
 }
 
 scale.warmth trough {
-  background-image: linear-gradient(to right, #4146d1, #db5b5b);
+  background-image: linear-gradient(to right, #4586D8, #db5b5b);
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -9405,22 +9405,22 @@ scale.warmth trough {
 #restart_button.button {
   background-clip: border-box;
   color: green;
-  background-color: #4146d1;
-  border-color: #4146d1;
+  background-color: #4586D8;
+  border-color: #4586D8;
 }
 
 #restart_button.button:hover {
   background-clip: border-box;
   color: green;
-  background-color: #6a6edb;
-  border-color: #6a6edb;
+  background-color: #6fa1e1;
+  border-color: #6fa1e1;
 }
 
 #restart_button.button:active, #restart_button.button:checked {
   background-clip: border-box;
   color: green;
-  background-color: #2b30b4;
-  border-color: #2b30b4;
+  background-color: #296cc1;
+  border-color: #296cc1;
 }
 
 #greeter_infobar {
