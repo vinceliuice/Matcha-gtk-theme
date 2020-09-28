@@ -876,13 +876,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item:checked {
+  color: rgba(0, 0, 0, 0.8);
   font-weight: normal;
   background: none;
   box-shadow: none;
   border-image: url("assets/submenu-open.svg") 18 18 2 2;
 }
 
-.popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
+.popup-menu .popup-menu-item:hover, .popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
   color: #FFFFFF;
   background-color: transparent;
   border-image: url("assets/menu-hover.svg") 18 18 2 2;

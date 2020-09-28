@@ -725,13 +725,14 @@ StScrollBar {
     &:rtl { padding-right: 0; padding-left: 1.75em; }
 
     &:checked {
+      color: $fg_color;
       font-weight: normal;
       background: none;
       box-shadow: none;
       border-image: url("assets/submenu-open.svg") 18 18 2 2;
     }
 
-    &:active, &.selected {
+    &:hover, &:active, &.selected {
       color: $selected_fg_color;
       background-color: transparent;
       border-image: url("assets/menu-hover.svg") 18 18 2 2;
