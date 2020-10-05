@@ -76,6 +76,7 @@ install() {
   cp -ur key-hide${ELSE_DARK}.svg                                                     ${themedir}/gnome-shell/assets/key-hide.svg
   cp -ur key-layout${ELSE_DARK}.svg                                                   ${themedir}/gnome-shell/assets/key-layout.svg
   cp -ur key-shift${ELSE_DARK}.svg                                                    ${themedir}/gnome-shell/assets/key-shift.svg
+  cp -ur checkbox-off${ELSE_DARK}.svg                                                 ${themedir}/gnome-shell/assets/checkbox-off.svg
   [[ ${ELSE_DARK} == '' ]] && \
   cp -ur menu.svg                                                                     ${themedir}/gnome-shell/assets
   cp -ur submenu${ELSE_DARK}.svg                                                      ${themedir}/gnome-shell/assets/submenu.svg
