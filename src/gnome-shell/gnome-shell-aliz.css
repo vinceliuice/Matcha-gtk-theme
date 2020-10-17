@@ -1367,6 +1367,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background: none;
   padding: 6px;
   margin: 4px;
+  text-shadow: none;
 }
 
 .datemenu-calendar-column {
@@ -1396,6 +1397,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
+.events-button,
 .message-list-section-title,
 .events-section-title {
   min-height: 20px;
@@ -1414,6 +1416,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button:focus,
 .weather-button:hover,
 .weather-button:focus,
+.events-button:hover,
+.events-button:focus,
 .message-list-section-title:hover,
 .message-list-section-title:focus,
 .events-section-title:hover,
@@ -1426,6 +1430,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .datemenu-today-button:active,
 .world-clocks-button:active,
 .weather-button:active,
+.events-button:active,
 .message-list-section-title:active,
 .events-section-title:active {
   color: rgba(0, 0, 0, 0.8);
@@ -1498,6 +1503,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
 }
 
 .calendar-month-label:focus {
@@ -1548,6 +1554,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 9pt;
   font-weight: 400;
   text-align: center;
+  text-shadow: none;
   width: 28px;
   height: 28px;
   padding: 0;
@@ -1561,8 +1568,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar-day-base:active, .calendar-day-base:selected {
-  color: #FFFFFF;
-  background-color: #F0544C !important;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.12);
   border-color: transparent;
 }
 
@@ -1578,6 +1585,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: 400;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
 }
 
 .calendar-day {
@@ -1619,15 +1627,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar-day-with-events {
-  color: #F0544C;
-  font-weight: normal;
-  text-decoration: underline;
-  background-image: none;
+  background-image: url("assets/calendar-today.svg");
+}
+
+.calendar-day-with-events.calendar-work-day {
+  color: rgba(0, 0, 0, 0.48);
+  font-weight: bold;
 }
 
 .calendar-other-month-day {
   color: rgba(0, 0, 0, 0.28);
   opacity: 0.5;
+  text-shadow: none;
 }
 
 .calendar-week-number {
@@ -1641,6 +1652,29 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: inherit;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
+}
+
+/* Events */
+.events-button .events-box {
+  spacing: 6px;
+}
+
+.events-button .events-list {
+  spacing: 12px;
+  text-shadow: none;
+}
+
+.events-button .events-title {
+  color: rgba(0, 0, 0, 0.48);
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-shadow: none;
+}
+
+.events-button .event-time {
+  color: rgba(0, 0, 0, 0.28);
+  font-feature-settings: "tnum";
 }
 
 /* Message list */
@@ -1689,6 +1723,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 2px;
   color: rgba(0, 0, 0, 0.6);
+  text-shadow: none;
   /* FIXME: how do you do this in sass? */
 }
 
@@ -1723,6 +1758,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message .message-secondary-bin {
   color: rgba(0, 0, 0, 0.48);
   padding: 0 8px;
+  text-shadow: none;
 }
 
 .message .message-secondary-bin > .event-time {
@@ -1731,6 +1767,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   /* HACK: the label should be baseline-aligned with a 1em label,
                fake this with some bottom padding */
   padding-bottom: 0.13em;
+  text-shadow: none;
 }
 
 .message .message-secondary-bin > StIcon {
@@ -1755,6 +1792,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
   font-size: 1em;
+  text-shadow: none;
 }
 
 .message .message-content {
@@ -1762,6 +1800,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.6);
   font-size: 1em;
   spacing: 4px;
+  text-shadow: none;
 }
 
 .message .message-content * > StIcon {

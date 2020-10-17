@@ -1201,6 +1201,7 @@ StScrollBar {
   background: none;
   padding: 6px;
   margin: 4px;
+  text-shadow: none;
 }
 
 // pane-separator between messages and calendar
@@ -1224,6 +1225,7 @@ StScrollBar {
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
+.events-button,
 .message-list-section-title,
 .events-section-title {
   min-height: $menuitem_size - 4px * 2;
@@ -1315,6 +1317,7 @@ StScrollBar {
   color: $fg_color;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
   &:focus { background-color: $semi_track_color; }
 }
 
@@ -1349,6 +1352,7 @@ StScrollBar {
 .calendar-day-base {
   @include font(caption);
   text-align: center;
+  text-shadow: none;
   width: $menuitem_size;
   height: $menuitem_size;
   padding: 0;
@@ -1358,8 +1362,8 @@ StScrollBar {
   &:hover,&:focus { background-color: $semi_track_color; }
   // &:active { background-color: $track_color; }
   &:active, &:selected {
-    color: $selected_fg_color;
-    background-color: $selected_bg_color !important;
+    color: $fg_color;
+    background-color: $semi_track_color;
     border-color: transparent; //avoid jumparound due to today
   }
   &.calendar-day-heading {  //day of week heading
@@ -1372,6 +1376,7 @@ StScrollBar {
     @include font(caption);
     font-weight: bold;
     text-align: center;
+    text-shadow: none;
   }
 }
 .calendar-day { //border collapse hack - see calendar.js
@@ -1379,9 +1384,7 @@ StScrollBar {
 }
 .calendar-day-top { border-top-width: 0; }
 .calendar-day-left { border-left-width: 0; }
-.calendar-work-day {
-
-}
+// .calendar-work-day { }
 .calendar-nonwork-day {
   color: $fg_color;
 }
@@ -1391,30 +1394,32 @@ StScrollBar {
   background-color: $selected_bg_color;
   border: none;
 
-  &:hover,&:focus {
+  &:hover, &:focus {
     background-color:lighten($selected_bg_color, 3%);
     color: $selected_fg_color;
   }
 
-  &:active,&:selected {
+  &:active, &:selected {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
 
-    &:hover,&:focus {
+    &:hover, &:focus {
       background-color:lighten($selected_bg_color, 3%);
       color: $selected_fg_color;
     }
   }
 }
 .calendar-day-with-events {
-  color: $link_color;
-  font-weight: normal;
-  text-decoration: underline;
-  background-image: none;
+  background-image: url("assets/calendar-today.svg");
+  &.calendar-work-day {
+     color: $tertiary_fg_color;
+     font-weight: bold;
+  }
 }
 .calendar-other-month-day {
   color: $insensitive_fg_color;
   opacity: 0.5;
+  text-shadow: none;
 }
 .calendar-week-number {
   width: $menuitem_size; height: $menuitem_size - 7px;
@@ -1426,6 +1431,31 @@ StScrollBar {
   font-size: inherit;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
+}
+
+/* Events */
+.events-button {
+  .events-box {
+    spacing: 6px;
+  }
+
+  .events-list {
+    spacing: 12px;
+    text-shadow: none;
+  }
+
+  .events-title {
+    color: $tertiary_fg_color;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-shadow: none;
+  }
+
+  .event-time {
+    color: $insensitive_fg_color;
+    font-feature-settings: "tnum";
+  }
 }
 
 /* Message list */
@@ -1472,6 +1502,7 @@ StScrollBar {
   border: none;
   border-radius: 2px;
   color: $secondary_fg_color;
+  text-shadow: none;
 
   &:hover, &:focus {
     color: $fg_color;
@@ -1501,6 +1532,7 @@ StScrollBar {
   .message-secondary-bin {
     color: $tertiary_fg_color;
     padding: 0 8px;
+    text-shadow: none;
 
     > .event-time {
       color: $insensitive_fg_color;
@@ -1508,6 +1540,7 @@ StScrollBar {
       /* HACK: the label should be baseline-aligned with a 1em label,
                fake this with some bottom padding */
       padding-bottom: 0.13em;
+      text-shadow: none;
     }
 
     > StIcon {
@@ -1532,6 +1565,7 @@ StScrollBar {
     color: $fg_color;
     font-weight: bold;
     font-size: 1em;
+    text-shadow: none;
   }
 
   .message-content {
@@ -1539,6 +1573,7 @@ StScrollBar {
     color: $secondary_fg_color;
     font-size: 1em;
     spacing: 4px;
+    text-shadow: none;
   }
 
   .message-content * > StIcon {
