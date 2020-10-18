@@ -883,7 +883,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-image: url("assets/submenu-open.svg") 18 18 2 2;
 }
 
-.popup-menu .popup-menu-item:hover, .popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
+.popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
   color: #FFFFFF;
   background-color: transparent;
   border-image: url("assets/menu-hover.svg") 18 18 2 2;

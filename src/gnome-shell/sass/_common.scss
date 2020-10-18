@@ -732,7 +732,7 @@ StScrollBar {
       border-image: url("assets/submenu-open.svg") 18 18 2 2;
     }
 
-    &:hover, &:active, &.selected {
+    &:active, &.selected {
       color: $selected_fg_color;
       background-color: transparent;
       border-image: url("assets/menu-hover.svg") 18 18 2 2;
