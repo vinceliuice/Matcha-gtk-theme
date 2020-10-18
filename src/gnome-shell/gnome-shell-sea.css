@@ -1723,6 +1723,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 2px;
   color: rgba(0, 0, 0, 0.6);
+  box-shadow: none;
   text-shadow: none;
   /* FIXME: how do you do this in sass? */
 }
@@ -1738,6 +1739,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin {
+  margin: 8px 0;
   padding: 8px 0px 8px 8px;
 }
 
@@ -1750,6 +1752,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
+.message .message-icon-bin > .fallback-app-icon,
 .message .message-icon-bin > .fallback-window-icon {
   width: 16px;
   height: 16px;
