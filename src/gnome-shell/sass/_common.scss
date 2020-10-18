@@ -1863,7 +1863,14 @@ StScrollBar {
   }
 
   &:insensitive {
-    border: none;
+    color: $insensitive_secondary_selected_fg_color;
+    box-shadow: none;
+    border: 1px solid rgba(black, 0.45);
+
+    StLabel.hint-text,
+    .search-entry-icon {
+      color: $insensitive_secondary_selected_fg_color;
+    }
   }
 
   StLabel.hint-text {
@@ -2115,7 +2122,9 @@ StWidget.focused .app-well-app-running-dot {
   -arrow-base: 24px;
   -arrow-rise: 12px;
 }
+
 .app-folder-popup-bin { padding: 5px; }
+
 .app-folder-icon {
   padding: 4px;
   spacing-rows: 4px;
@@ -2170,17 +2179,19 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 /* App Folders */
-// .app-folder {
-//   .overview-icon {
-//   }
-// }
+.app-folder {
+  background: none;
+
+  // .overview-icon {
+  // }
+}
 
 // expanded folder
 .app-folder-dialog {
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
   spacing: 12px;
-  background-color: $bg_color;
+  background-color: rgba(darken($topbar_color, 5%), 0.95);
 
   & .folder-name-container {
     padding: 24px 36px 0;
@@ -2221,6 +2232,7 @@ StWidget.focused .app-well-app-running-dot {
   & StButton#vhandle:hover,
   & StButton#vhandle:active { background-color: transparent; }
 }
+
 .app-folder-dialog-container {
   padding: 12px;
   width: 800px;

@@ -2156,7 +2156,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .search-entry:insensitive, .app-folder-dialog .folder-name-container .folder-name-entry:insensitive {
-  border: none;
+  color: rgba(255, 255, 255, 0.2625);
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+.search-entry:insensitive StLabel.hint-text, .app-folder-dialog .folder-name-container .folder-name-entry:insensitive StLabel.hint-text,
+.search-entry:insensitive .search-entry-icon,
+.app-folder-dialog .folder-name-container .folder-name-entry:insensitive .search-entry-icon {
+  color: rgba(255, 255, 255, 0.2625);
 }
 
 .search-entry StLabel.hint-text, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
@@ -2442,11 +2450,15 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 /* App Folders */
+.app-folder {
+  background: none;
+}
+
 .app-folder-dialog {
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
   spacing: 12px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(16, 17, 21, 0.95);
 }
 
 .app-folder-dialog .folder-name-container {
