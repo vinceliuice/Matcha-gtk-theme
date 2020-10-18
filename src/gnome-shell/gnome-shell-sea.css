@@ -3379,7 +3379,8 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #LookingGlassDialog {
-  background-color: #FAFAFA;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(250, 250, 250, 0.95);
   spacing: 4px;
   padding: 0;
   border: none;
@@ -3409,19 +3410,20 @@ StWidget.focused .app-well-app-running-dot {
   padding-right: 16px;
   min-height: 32px;
   padding: 0 32px;
+  border-bottom-width: 2px;
 }
 
 #LookingGlassDialog .notebook-tab:hover {
-  box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.24);
   color: rgba(0, 0, 0, 0.8);
   text-shadow: none;
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.24);
 }
 
 #LookingGlassDialog .notebook-tab:selected {
-  border-bottom-width: 0;
+  border-bottom-width: 2px;
   border-color: transparent;
   background-color: rgba(250, 250, 250, 0.01);
-  box-shadow: inset 0 -2px 0px #2eb398;
+  box-shadow: inset 0 -2px #2eb398;
   color: rgba(0, 0, 0, 0.8);
   text-shadow: none;
 }
@@ -3523,8 +3525,9 @@ StWidget.focused .app-well-app-running-dot {
 
 .lg-extension {
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 4px;
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 .lg-extension-name {
@@ -3538,10 +3541,10 @@ StWidget.focused .app-well-app-running-dot {
 
 #LookingGlassPropertyInspector {
   background: #FAFAFA;
-  border: none;
-  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
   padding: 6px;
-  box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5), 0 10px 5px rgba(0, 0, 0, 0.44);
+  box-shadow: none;
 }
 
 #dashtodockContainer {

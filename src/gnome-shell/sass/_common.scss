@@ -2824,7 +2824,8 @@ $key_bg_color: lighten($topbar_color, 15%);
 
 // Looking Glass
 #LookingGlassDialog {
-  background-color: $base_color;
+  color: $secondary_fg_color;
+  background-color: rgba($base_color, 0.95);
   spacing: 4px;
   padding: 0;
   border: none;
@@ -2848,16 +2849,17 @@ $key_bg_color: lighten($topbar_color, 15%);
     padding-right: 16px;
     min-height: $medium_size;
     padding: 0 16px * 2;
+    border-bottom-width: 2px;
     &:hover {
-      box-shadow: inset 0 -2px 0px $track_color;
       color: $fg_color;
       text-shadow: none;
+      box-shadow: inset 0 -2px $track_color;
     }
     &:selected {
-      border-bottom-width: 0;
+      border-bottom-width: 2px;
       border-color: transparent;
       background-color: rgba($base_color, 0.01);
-      box-shadow: inset 0 -2px 0px $selected_bg_color;
+      box-shadow: inset 0 -2px $selected_bg_color;
       color: $fg_color;
       text-shadow: none;
     }
@@ -2909,8 +2911,9 @@ $key_bg_color: lighten($topbar_color, 15%);
 
 .lg-extension {
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 4px;
+  background-color: rgba($fg_color, 0.06);
 }
 
 .lg-extension-name {
@@ -2923,8 +2926,8 @@ $key_bg_color: lighten($topbar_color, 15%);
 
 #LookingGlassPropertyInspector {
   background: $base_color;
-  border: none;
-  border-radius: 2px;
+  border: 1px solid $borders_color;
+  border-radius: 3px;
   padding: 6px;
-  box-shadow: $z-depth-4;
+  box-shadow: none;
 }
