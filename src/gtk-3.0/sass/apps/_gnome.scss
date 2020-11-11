@@ -586,6 +586,33 @@ window.background {
 }
 
 //
+// Gnome Clocks
+//
+window.background.csd.unified {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+
+  > deck > deck > deck {
+    > box.vertical > headerbar.titlebar.windowhandle {
+      > viewswitchertitle > squeezer {
+        > viewswitcher > box.horizontal {
+          > button.radio {
+            margin: 0;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+hdyviewswitcherbar > actionbar,
+viewswitcherbar > actionbar { // Gnome 3.38
+  background: none;
+  border: none;
+}
+
+//
 // Gnome Tweak Tool
 //
 .tweak-categories,

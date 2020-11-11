@@ -5500,6 +5500,22 @@ window.background > hdyleaflet > stack.background > widget > box.vertical > box.
   transition: opacity 0.2s ease-out;
 }
 
+window.background.csd.unified {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.titlebar.windowhandle > viewswitchertitle > squeezer > viewswitcher > box.horizontal > button.radio {
+  margin: 0;
+  border-radius: 0;
+}
+
+hdyviewswitcherbar > actionbar,
+viewswitcherbar > actionbar {
+  background: none;
+  border: none;
+}
+
 .tweak-categories,
 .tweak-category:not(:selected):not(:hover) {
   background-image: linear-gradient(to bottom, #22252c, #22252c);
