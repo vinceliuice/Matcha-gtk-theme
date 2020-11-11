@@ -535,27 +535,31 @@ button.documents-favorite:active:hover {
 //  Gnome Control Center
 //
 window.background.csd > headerbar.titlebar > box.horizontal > separator.sidebar,
-window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar {
+window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar,  //3.36
+window.background.csd > headerbar.titlebar > leaflet > separator.sidebar { // 3.38
   border-right: none;
   background: none;
   min-width: 0;
 }
 
 box.horizontal > separator.sidebar,
-hdyleaflet > separator.sidebar {
+hdyleaflet > separator.sidebar,
+leaflet > separator.sidebar {
   background: none;
   min-width: 0;
 }
 
 window.background {
-  > hdyleaflet > stack.background {
-    > widget > box.vertical > box.vertical {
-      > scrolledwindow > viewport.frame {
-        > box.vertical > box.vertical > flowbox.horizontal {
-          > flowboxchild > overlay {
-            > button.osd.image-button.remove-button {
-              padding-top: 0;
-              padding-bottom: 0;
+  > hdyleaflet, > leaflet {
+    > stack.background {
+      > widget > box.vertical > box.vertical {
+        > scrolledwindow > viewport.frame {
+          > box.vertical > box.vertical > flowbox.horizontal {
+            > flowboxchild > overlay {
+              > button.osd.image-button.remove-button {
+                padding-top: 0;
+                padding-bottom: 0;
+              }
             }
           }
         }

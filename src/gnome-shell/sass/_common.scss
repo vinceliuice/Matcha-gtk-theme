@@ -2191,7 +2191,8 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 8px;
   border: none;
   spacing: 12px;
-  background-color: rgba(darken($topbar_color, 5%), 0.95);
+  background-color: rgba(darken($topbar_color, 10%), 0.75);
+  border: 1px solid rgba(white, 0.15);
 
   & .folder-name-container {
     padding: 24px 36px 0;

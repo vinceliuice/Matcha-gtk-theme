@@ -5471,19 +5471,21 @@ button.documents-favorite:active:hover {
 }
 
 window.background.csd > headerbar.titlebar > box.horizontal > separator.sidebar,
-window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar {
+window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar,
+window.background.csd > headerbar.titlebar > leaflet > separator.sidebar {
   border-right: none;
   background: none;
   min-width: 0;
 }
 
 box.horizontal > separator.sidebar,
-hdyleaflet > separator.sidebar {
+hdyleaflet > separator.sidebar,
+leaflet > separator.sidebar {
   background: none;
   min-width: 0;
 }
 
-window.background > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical > box.vertical > flowbox.horizontal > flowboxchild > overlay > button.osd.image-button.remove-button {
+window.background > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical > box.vertical > flowbox.horizontal > flowboxchild > overlay > button.osd.image-button.remove-button, window.background > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical > box.vertical > flowbox.horizontal > flowboxchild > overlay > button.osd.image-button.remove-button {
   padding-top: 0;
   padding-bottom: 0;
 }
