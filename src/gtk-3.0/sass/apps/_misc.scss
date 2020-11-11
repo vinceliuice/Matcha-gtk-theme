@@ -185,20 +185,7 @@ window.background:not(.csd) {
 //
 // Firefox Quantum
 //
-#MozillaGtkWidget.background {
-  &, decoration { border-radius: 0 0 0 0; } // enforce radius
-
-  // FIXME: unset all our specific titlebuttons
-  // until upstream stops rendering useless (weird) icons
-  headerbar.titlebar {
-    border-radius: 0 0 0 0;
-
-    &.default-decoration button.titlebutton {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
+#MozillaGtkWidget {
   // blend with weird toolbar backgrounds
   background-color: $bg_color;
 
@@ -220,13 +207,6 @@ window.background:not(.csd) {
       &:hover:active { background-color: mix($fg_color, $bg_color, 75%); }
       &:disabled { background-color: transparent; }
     }
-  }
-
-  *:not(menuitem):hover, // exclude menuitem node
-  *:focus,
-  *:active,
-  *:checked {
-    &, button { color: $fg_color; } // enforce opaque foregrounds
   }
 
   > window.background > menu { // context-menus
