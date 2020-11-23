@@ -221,7 +221,7 @@ window#whiskermenu-window {
       scrollbar { @extend %dark_menu_scrollbar; }
 
       .view {
-        background-color: rgba(lighten($dark_menu_bg, 5%), 0.9);
+        background-color: lighten($dark_menu_bg, 5%);
         color: $dark_menu_fg;
 
         // &:hover {
@@ -233,6 +233,10 @@ window#whiskermenu-window {
           color: $dark_menu_fg;
         }
       }
+
+      // iconview:not(:hover):not(:selected) {
+      //   background-color: lighten($dark_menu_bg, 5%);
+      // }
     }
   }
 }

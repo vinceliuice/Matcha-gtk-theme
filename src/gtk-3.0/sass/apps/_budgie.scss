@@ -30,17 +30,41 @@ $bt_radius: 2px;
               0 2px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
               0 0 0 1px $borders_color;
 
-  .container { padding: 2px; }
+  .container { padding: 0; }
 
   border { border: none; }
 
   list { background-color: transparent; }
 
-  row {
+  row.activatable {
     padding: 0;
-    background-color: transparent;
+    background: none;
 
-    &:hover { box-shadow: none; background-color: transparent; }
+    @extend %row_activatable;
+
+    &:selected {
+      @extend %selected_items;
+    }
+  }
+
+  treeview.view.sidebar {
+    min-height: 36px;
+    background: none;
+    border-right: none;
+    color: $fg_color;
+
+    &:hover { background-color: rgba($fg_color, 0.05); }
+
+    &:selected, &:selected:hover {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+  }
+
+  > frame.container > grid.horizontal > grid.horizontal {
+    > widget > grid.horizontal > stack {
+      border-top: 1px solid $borders_color;
+    }
   }
 
   &:not(.budgie-menu) button.flat:not(.image-button) {
@@ -70,12 +94,16 @@ $bt_radius: 2px;
     separator { margin: 3px 0; background-color: $borders_color; }
   }
 
+  &.caffeine-popover {
+    .container { padding: 6px; }
+  }
+
   &.night-light-indicator {
-    .container { padding: 8px; }
+    .container { padding: 6px; }
   }
 
   &.places-menu {
-    .container { padding: 8px; }
+    .container { padding: 6px; }
 
     .places-list:not(.always-expand) {
       margin-top: 4px;

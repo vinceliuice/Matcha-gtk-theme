@@ -620,6 +620,20 @@ viewswitcherbar > actionbar { // Gnome 3.38
   background-image: _solid($base_color);
 }
 
+//
+// Fractal
+//
+
+.main-window {
+  > stack > hdyleaflet {
+    > separator.sidebar {
+      min-width: 1px;
+      background-color: $borders_color;
+    }
+  }
+}
+
+
 // Workaround for 3.26
 row#Focus,
 row#ClickMethod,
@@ -1181,7 +1195,22 @@ flowboxchild.bookmark-tag-widget {
 .sidebar-paned {
   scrolledwindow { border: none; }
 
-  // treeview.view.sidebar { }
+  treeview.view.sidebar {
+    background-color: $bg_color;
+    color: $text_color;
+
+    &:hover {
+      background-color: rgba($fg_color, 0.06);
+      color: $fg_color;
+    }
+
+    &:active, &:selected {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+    }
+  }
+
+  separator { background-image: image($solid_borders_color); }
 }
 
 // tweak border and frame in alt-toolbar
