@@ -769,6 +769,22 @@ window.background.csd {
   }
 }
 
+box.horizontal, // gnome 3.30
+hdyleaflet, // > 3.32
+leaflet.unfolded {  // > 3.38
+  .selection-mode & headerbar {
+    color: $selection_mode_fg;
+    background-color: $selection_mode_bg;
+    border-color: darken($selection_mode_bg, 4%);
+    box-shadow: none;
+
+    &:backdrop {
+      background-color: $selection_mode_bg;
+      color: transparentize($selection_mode_fg, 0.4);
+    }
+  }
+}
+
 //
 // Empathy
 //

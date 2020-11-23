@@ -5661,6 +5661,18 @@ window.background.csd overlay > grid.horizontal frame:dir(ltr) > border {
   border-bottom-width: 0;
 }
 
+.selection-mode box.horizontal headerbar, .selection-mode hdyleaflet headerbar, .selection-mode leaflet.unfolded headerbar {
+  color: #ffffff;
+  background-color: rgba(52, 152, 219, 0.95);
+  border-color: rgba(38, 143, 213, 0.95);
+  box-shadow: none;
+}
+
+.selection-mode box.horizontal headerbar:backdrop, .selection-mode hdyleaflet headerbar:backdrop, .selection-mode leaflet.unfolded headerbar:backdrop {
+  background-color: rgba(52, 152, 219, 0.95);
+  color: rgba(255, 255, 255, 0.6);
+}
+
 frame.sidebar.chat-sidebar > border {
   border-right: none;
 }
