@@ -2728,6 +2728,7 @@ StWidget.focused .app-well-app-running-dot {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.6375);
   font-weight: 500;
+  border-width: 0;
 }
 
 .notification-banner .notification-button:first-child {
@@ -2738,9 +2739,14 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 0 0 2px 0;
 }
 
-.notification-banner .notification-button:hover, .notification-banner .notification-buttonfocus {
+.notification-banner .notification-button:hover, .notification-banner .notification-button:focus:hover {
   background-color: rgba(255, 255, 255, 0.051);
   color: rgba(255, 255, 255, 0.85);
+}
+
+.notification-banner .notification-button:focus {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .notification-banner .notification-button:active {

@@ -2444,9 +2444,11 @@ StWidget.focused .app-well-app-running-dot {
     background-color: transparent;
     color: $secondary_fg_color;
     font-weight: 500;
+    border-width: 0;
     &:first-child { border-radius: 0 0 0 2px; }
     &:last-child { border-radius: 0 0 2px 0; }
-    &:hover, &focus { background-color: $semi_track_color; color: $fg_color; }
+    &:hover, &:focus:hover { background-color: $semi_track_color; color: $fg_color; }
+    &:focus { background-color: transparent; box-shadow: none; }
     &:active { background-color: $track_color; color: $fg_color; }
   }
 }
