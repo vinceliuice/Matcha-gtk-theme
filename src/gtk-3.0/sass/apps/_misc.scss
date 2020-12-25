@@ -75,6 +75,11 @@
 
     .linked:not(.vertical):not(.path-bar):not(.stack-switcher) {
       @include linking_rules($entry_rules:'false', $button_rules:'false', $e_border: $header_entry_border, $b_border: transparent);
+
+      > button {
+        margin-left: 1px;
+        margin-right: 1px;
+      }
     }
 
     button {
