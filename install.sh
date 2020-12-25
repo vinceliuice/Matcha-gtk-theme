@@ -64,37 +64,24 @@ install() {
   # Install GNOME Shell Theme
   mkdir -p                                                                            ${themedir}/gnome-shell
   cd ${SRC_DIR}/gnome-shell
-  cp -ur extensions                                                                   ${themedir}/gnome-shell
+  cp -ur pad-osd.css                                                                  ${themedir}/gnome-shell
+  cp -ur icons                                                                        ${themedir}/gnome-shell
   cp -ur gnome-shell${ELSE_DARK}${theme}.css                                          ${themedir}/gnome-shell/gnome-shell.css
   cp -ur common-assets                                                                ${themedir}/gnome-shell/assets
 
   cd ${SRC_DIR}/gnome-shell/assets
-  cp -ur no-events${ELSE_DARK}.svg                                                    ${themedir}/gnome-shell/assets/no-events.svg
-  cp -ur no-notifications${ELSE_DARK}.svg                                             ${themedir}/gnome-shell/assets/no-notifications.svg
   cp -ur calendar-arrow-left${ELSE_DARK}.svg                                          ${themedir}/gnome-shell/assets/calendar-arrow-left.svg
   cp -ur calendar-arrow-right${ELSE_DARK}.svg                                         ${themedir}/gnome-shell/assets/calendar-arrow-right.svg
-  cp -ur key-hide${ELSE_DARK}.svg                                                     ${themedir}/gnome-shell/assets/key-hide.svg
-  cp -ur key-layout${ELSE_DARK}.svg                                                   ${themedir}/gnome-shell/assets/key-layout.svg
-  cp -ur key-shift${ELSE_DARK}.svg                                                    ${themedir}/gnome-shell/assets/key-shift.svg
   cp -ur checkbox-off${ELSE_DARK}.svg                                                 ${themedir}/gnome-shell/assets/checkbox-off.svg
   cp -ur calendar-today${ELSE_DARK}.svg                                               ${themedir}/gnome-shell/assets/calendar-today.svg
-  [[ ${ELSE_DARK} == '' ]] && \
-  cp -ur menu.svg                                                                     ${themedir}/gnome-shell/assets
-  cp -ur submenu${ELSE_DARK}.svg                                                      ${themedir}/gnome-shell/assets/submenu.svg
-  cp -ur submenu-open${ELSE_DARK}.svg                                                 ${themedir}/gnome-shell/assets/submenu-open.svg
-
-  cd ${SRC_DIR}/gnome-shell/theme-assets
   cp -ur checkbox${theme}.svg                                                         ${themedir}/gnome-shell/assets/checkbox.svg
-  [[ ${ELSE_DARK} == '-dark' ]] && \
-  cp -ur menu${ELSE_DARK}${theme}.svg                                                 ${themedir}/gnome-shell/assets/menu.svg
-  cp -ur menu-hover${theme}.svg                                                       ${themedir}/gnome-shell/assets/menu-hover.svg
   cp -ur more-results${theme}.svg                                                     ${themedir}/gnome-shell/assets/more-results.svg
   cp -ur toggle-on${theme}.svg                                                        ${themedir}/gnome-shell/assets/toggle-on.svg
 
   cd ${themedir}/gnome-shell
-  ln -s assets/no-events.svg no-events.svg
-  ln -s assets/process-working.svg process-working.svg
-  ln -s assets/no-notifications.svg no-notifications.svg
+  mv -f assets/no-events.svg no-events.svg
+  mv -f assets/process-working.svg process-working.svg
+  mv -f assets/no-notifications.svg no-notifications.svg
 
   # Install GTK+ 2 Theme
   mkdir -p                                                                            ${themedir}/gtk-2.0
