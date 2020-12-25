@@ -2414,7 +2414,6 @@ radio {
 // GtkScale
 //
 
-%scale,
 scale {
   $_marks_length: 3px;
   $_marks_distance: 1px;
@@ -2585,24 +2584,23 @@ scale {
     &.fine-tune indicator { min-width: ($_marks_length - 1px); }
   }
 
-  %selected_scale,
   &:hover, &:selected {
     trough { // Troughs in selected list-rows and infobars
-      background-color: rgba(black, 0.2);
-
-      highlight {
-        background-color: $alt_selected_bg_color;
-
-        &:disabled { background-color: mix($selected_fg_color, $selected_bg_color, 55%); }
-      }
-
-      &:disabled { background-color: rgba(black, 0.1); }
+      @extend %selected_scale;
     }
   }
 }
 
-infobar {
-  @extend %selected_scale;
+%selected_scale {
+  background-color: rgba(black, 0.2);
+
+  highlight {
+    background-color: $alt_selected_bg_color;
+
+    &:disabled { background-color: mix($selected_fg_color, $selected_bg_color, 55%); }
+  }
+
+  &:disabled { background-color: rgba(black, 0.1); }
 }
 
 //
@@ -3191,22 +3189,63 @@ paned {
 infobar {
   border-style: none;
 
+  &.info {
+    & > revealer > box,
+    &:backdrop > revealer > box {
+      background-color: $selected_bg_color;
+      selection { color: $selected_bg_color; }
+    }
+  }
+
+  &.question {
+    & > revealer > box,
+    &:backdrop > revealer > box {
+      background-color: $suggested_color;
+      selection { color: $suggested_color; }
+    }
+  }
+
+  &.warning {
+    & > revealer > box,
+    &:backdrop > revealer > box {
+      background-color: $warning_color;
+      selection { color: $warning_color; }
+    }
+  }
+
+  &.error {
+    & > revealer > box,
+    &:backdrop > revealer > box {
+      background-color: $error_color;
+      selection { color: $error_color; }
+    }
+  }
+
   &.info,
   &.question,
   &.warning,
   &.error {
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-    caret-color: currentColor;
+    & > revealer > box,
+    &:hover > revealer > box,
+    &:backdrop > revealer > box {
+      color: $selected_fg_color;
+      caret-color: currentColor;
 
-    button { @extend %selected-button }
+      button {
+        min-height: 28px;
+        @extend %selected-button;
+      }
 
-    selection {
-      color: $selected_bg_color;
-      background-color: $selected_fg_color;
+      selection {
+        background-color: $selected_fg_color;
+      }
+
+      *:link { @extend %link_selected; }
     }
 
-    *:link { @extend %link_selected; }
+    trough {
+      @extend %selected_scale;
+    }
   }
 }
 
