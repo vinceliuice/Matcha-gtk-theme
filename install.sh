@@ -1,5 +1,4 @@
-#!/bin/bash
-  # Copying files
+#! /usr/bin/env bash
 
 ROOT_UID=0
 DEST_DIR=
