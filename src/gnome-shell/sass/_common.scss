@@ -271,7 +271,8 @@ StScrollBar {
   margin: 10px;
   background-color: $base_color;
   box-shadow: none;
-  border: 1px solid $solid_borders_color;
+  border: 0 solid $solid_borders_color;
+  border-width: if($variant == 'light', 0, 1px);
 
   .modal-dialog-content-box {
     margin: 32px 40px;
@@ -1177,8 +1178,8 @@ StScrollBar {
   }
 
   .panel-button {
-    -natural-hpadding: 6px;
-    -minimum-hpadding: 6px;
+    -natural-hpadding: 8px;
+    -minimum-hpadding: 8px;
     font-weight: bold;
     color: $topbar_secondary_fg_color;
     transition-duration: 0.2s;
@@ -1186,9 +1187,14 @@ StScrollBar {
 
     .app-menu-icon {
       -st-icon-style: symbolic;
-      margin-left: 6px;
-      margin-right: 6px;
-      //dimensions of the icon are hardcoded
+      margin-left: 0;
+      margin-right: 0;
+      icon-size: 16px;
+
+      > StIcon {
+        padding-left: 4px;
+        padding-right: 6px;
+      }
     }
 
     .popup-menu-arrow { width: 0; height: 0; } // Remove panel arrows
@@ -1281,14 +1287,14 @@ StScrollBar {
 
 // calendar popover
 #calendarArea {
-  padding: 6px 8px;
+  padding: 10px 0;
 }
 
 .calendar {
   border: none;
   box-shadow: none;
   background: none;
-  padding: 0;
+  padding: 6px;
   margin: 0;
   text-shadow: none;
 }
@@ -1296,8 +1302,7 @@ StScrollBar {
 // pane-separator between messages and calendar
 .datemenu-calendar-column {
   spacing: 6px;
-  border-style: solid;
-  border-color: transparent;
+  border: 0 solid $borders_color;
 
   &:ltr { margin-right: 8px; border-left-width: 1px; }
   &:rtl { margin-left: 8px; border-right-width: 1px; }
@@ -1324,97 +1329,15 @@ StScrollBar {
   }
 }
 
-.datemenu-today-button,
-.world-clocks-button,
-.weather-button,
-.events-button,
-.message-list-section-title,
-.events-section-title {
-  min-height: $menuitem_size - 4px * 2;
-  padding: 12px;
-  margin: 4px;
-  border-radius: 2px;
-  border: none;
-  box-shadow: none;
-  background: none;
-  color: $secondary_fg_color;
-  text-shadow: none;
-
-  &:hover, &:focus {
-    color: $fg_color;
-    background-color: $semi_track_color;
-    text-shadow: none;
-  }
-
-  &:active {
-    color: $fg_color;
-    background-color: $track_color;
-  }
-}
-
-.world-clocks-header,
-.weather-header,
-.message-list-section-title,
-.events-section-title {
-  color: $secondary_fg_color;
-  font-weight: bold;
-}
-
-.weather-header.location {
-  font-weight: normal;
-  color: $tertiary_fg_color;
-}
-
-.weather-forecast-time {
-  color: $tertiary_fg_color;
-  font-feature-settings: "tnum";
-  font-weight: normal;
-  padding-top: 0.2em;
-  padding-bottom: 0.4em;
-}
-
-.weather-forecast-icon {
-  icon-size: 32px;
-}
-
-.weather-forecast-temp {
-  font-weight: bold;
-}
-
-.weather-grid,
-.world-clocks-grid {
-  spacing-rows: 0.4em;
-  spacing-columns: 0.8em;
-}
-
-.world-clocks-city {
-  color: $tertiary_fg_color;
-  font-weight: bold;
-  font-size: 0.9em;
-}
-
-.world-clocks-time {
-  color: $tertiary_fg_color;
-  font-feature-settings: "tnum";
-  font-size: 1.2em;
-}
-
-.world-clocks-timezone {
-  color: $tertiary_fg_color;
-  font-feature-settings: "tnum";
-  font-size: 0.9em;
-}
-
 .calendar-month-label {
   height: $menuitem_size - 4px * 2;
   margin: 2px;
-  padding: 6px 16px;
-  border-radius: 2px;
+  padding: 6px;
+  border-radius: 3px;
   color: $fg_color;
   font-weight: bold;
   text-align: center;
   text-shadow: none;
-  &:focus { background-color: $semi_track_color; }
 }
 
 .pager-button {
@@ -1452,7 +1375,7 @@ StScrollBar {
   width: $menuitem_size;
   height: $menuitem_size;
   padding: 0 0;
-  margin: 4px 2px;
+  margin: 4px;
   border-radius: 100px;
   color: $secondary_fg_color;
   border: none;
@@ -1479,15 +1402,19 @@ StScrollBar {
     text-shadow: none;
   }
 }
+
 .calendar-day { //border collapse hack - see calendar.js
   border-width: 0;
 }
+
 .calendar-day-top { border-top-width: 0; }
 .calendar-day-left { border-left-width: 0; }
 // .calendar-work-day { }
+
 .calendar-nonwork-day {
   color: $fg_color;
 }
+
 .calendar-today {
   font-weight: bold !important;
   color: $selected_fg_color;
@@ -1509,6 +1436,7 @@ StScrollBar {
     }
   }
 }
+
 .calendar-day-with-events {
   background-image: url("assets/calendar-today.svg");
   &.calendar-work-day {
@@ -1516,18 +1444,19 @@ StScrollBar {
      font-weight: bold;
   }
 }
+
 .calendar-other-month-day {
   color: $insensitive_fg_color;
   opacity: 0.5;
   text-shadow: none;
 }
+
 .calendar-week-number {
   height: 1.8em;
-  width: 2.3em;
-  border-radius: 2px;
-  margin: 6px;
-  border-radius: 100px;
-  background-color: transparent;
+  width: 2em;
+  border-radius: 3px;
+  margin: 6px 0;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $tertiary_fg_color;
   font-size: inherit;
   font-weight: bold;
@@ -1535,7 +1464,104 @@ StScrollBar {
   text-shadow: none;
 }
 
-/* Events */
+// butons under calendar
+.world-clocks-button,
+.weather-button,
+.events-button {
+  padding: 12px;
+  margin: 2px 0;
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+  color: $secondary_fg_color;
+  text-shadow: none;
+
+  &:hover, &:focus {
+    background-color: $semi_track_color;
+    text-shadow: none;
+  }
+
+  &:active {
+    background-color: $track_color;
+  }
+}
+
+.world-clocks-header,
+.weather-header,
+.message-list-section-title,
+.events-section-title,
+.events-title {
+  color: $tertiary_fg_color;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-shadow: none;
+}
+
+.weather-grid,
+.world-clocks-grid {
+  spacing-rows: 8px;
+  spacing-columns: 16px;
+}
+
+// World clocks
+.world-clocks-button {
+  .world-clocks-city {
+    color: $tertiary_fg_color;
+    font-weight: normal;
+    font-size: 0.9em;
+  }
+
+  .world-clocks-time {
+    color: $tertiary_fg_color;
+    font-feature-settings: "tnum";
+    font-weight: bold;
+    font-size: 1.0em;
+
+    &:ltr { text-align: right; }
+    &:rtl { text-align: left; }
+  }
+
+  .world-clocks-timezone {
+    color: $tertiary_fg_color;
+    font-feature-settings: "tnum";
+    font-size: 0.9em;
+  }
+}
+
+// Weather
+.weather-button {
+  .weather-box {
+    spacing: 12px;
+  }
+
+  .weather-header-box {
+    spacing: 8px;
+  }
+
+  .weather-header.location {
+    font-weight: normal;
+    color: $tertiary_fg_color;
+  }
+
+  .weather-forecast-time {
+    color: $tertiary_fg_color;
+    font-feature-settings: "tnum";
+    font-weight: normal;
+    padding-top: 0.2em;
+    padding-bottom: 0.4em;
+  }
+
+  .weather-forecast-icon {
+    icon-size: 32px;
+  }
+
+  .weather-forecast-temp {
+    font-weight: bold;
+  }
+}
+
+// Events
 .events-button {
   .events-box {
     spacing: 6px;
@@ -1543,13 +1569,6 @@ StScrollBar {
 
   .events-list {
     spacing: 12px;
-    text-shadow: none;
-  }
-
-  .events-title {
-    color: $tertiary_fg_color;
-    font-weight: bold;
-    margin-bottom: 4px;
     text-shadow: none;
   }
 

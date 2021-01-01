@@ -4624,10 +4624,9 @@ popover.background.touch-selection, .csd popover.background.touch-selection {
 .budgie-osd-window button.image-button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable button.image-button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button, button.nautilus-circular-button.image-button,
 button.circular,
 button.circular-button {
-  padding: 0;
-  min-width: 16px;
-  min-height: 24px;
-  padding: 2px 6px;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 2px;
   border-radius: 50%;
   -gtk-outline-radius: 50%;
 }
