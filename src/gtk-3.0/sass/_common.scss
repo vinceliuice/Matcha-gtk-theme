@@ -504,20 +504,25 @@ button {
     @include button(osd);
 
     &:hover { @include button(osd-hover); }
+
     &:active, &:checked {
       background-clip: padding-box;
       @include button(osd-active);
     }
+
     &:disabled { @include button(osd-insensitive); }
 
     &.flat {
       @include button(undecorated);
       box-shadow: none;
+
       &:hover { @include button(osd-hover); }
+
       &:disabled {
         @include button(osd-insensitive);
         background-image: none;
       }
+
       &:active, &:checked { @include button(osd-active); }
     }
   }
@@ -1080,7 +1085,7 @@ toolbar {
 
   &.osd {
     padding: 7px;
-    border: 1px solid $borders_color;
+    border: 1px solid $osd_borders_color;
     border-radius: 3px;
     background-color: rgba($osd_bg_color, 0.9);
 
@@ -1804,19 +1809,20 @@ treeview.view {
     &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
   }
 
-  &.progressbar, &.progressbar:focus { // progress bar in treeviews
+  &.progressbar, &.progressbar:hover { // progress bar in treeviews
     color: $selected_fg_color;
     border-radius: 3px;
     background-color: $progress_color;
 
     &:selected, &:selected:focus {
       color: $selected_bg_color;
+      border-radius: 3px;
       box-shadow: none;
       background-color: $selected_fg_color;
     }
   }
 
-  &.trough { // progress bar trough in treeviews
+  &.trough, &.trough:hover { // progress bar trough in treeviews
     color: $fg_color;
     background-color: $button_border;
     border-radius: 3px;
@@ -2462,10 +2468,11 @@ radio {
 // GtkScale
 //
 
-scale {
-  $_marks_length: 3px;
-  $_marks_distance: 1px;
+$_marks_length: 3px;
+$_marks_distance: 1px;
+$_scale_trough_bg: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.25));
 
+scale {
   min-height: 15px;
   min-width: 15px;
   padding: 3px;
@@ -2478,13 +2485,6 @@ scale {
   &.vertical {
     trough { padding: 4px 0; }
     highlight, fill { margin: -4px 0; }
-  }
-
-  // The slider is inside the trough, negative margin to make it bigger
-  slider {
-    min-height: 15px;
-    min-width: 15px;
-    margin: -6px;
   }
 
   // Click-and-hold the slider to activate
@@ -2501,89 +2501,86 @@ scale {
   }
 
   // Trough
-  trough {
-    $_scale_trough_bg: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.25));
+  &, &:hover, &:focus {
+    trough {
+      &, &:hover, &:focus, &:backdrop {
+        outline-offset: 2px;
+        -gtk-outline-radius: 4.5px;
 
-    outline-offset: 2px;
-    -gtk-outline-radius: 4.5px;
+        border-radius: 2.5px;
+        background-color: $_scale_trough_bg;
 
-    border-radius: 2.5px;
-    background-color: $_scale_trough_bg;
+        &:disabled { background-color: if($variant == 'light', rgba(black, 0.08), rgba(black, 0.15)); }
 
-    &:disabled { background-color: if($variant == 'light', rgba(black, 0.08), rgba(black, 0.15)); }
+        //OSD troughs
+        .osd & {
+          background-color: $_scale_trough_bg;
 
-    //OSD troughs
-    .osd & {
-      background-color: lighten($osd_bg_color, 7%);
+          &:disabled { background-color: if($variant == 'light', rgba(black, 0.08), rgba(black, 0.15)); }
 
-      highlight {
-        background-color: $selected_bg_color;
+          highlight {
+            background-color: $selected_bg_color;
 
-        &:disabled {  }
+            &:disabled { background-color: rgba($selected_bg_color, 0.55); }
+          }
+        }
       }
-
-      &:disabled {  }
     }
   }
 
   // The colored part of trough
   highlight {
     border-radius: 2.5px;
-    background-color: $selected_bg_color;
 
-    &:disabled { background-color: rgba($selected_bg_color, 0.55); }
+    &, &:hover, &:focus, &:backdrop {
+      background-color: $selected_bg_color;
+
+      &:disabled { background-color: rgba($selected_bg_color, 0.55); }
+    }
   }
 
   // this is another differently styled part of the trough, the most relevant use case is for example
   // in media player to indicate how much video stream as been cached
   fill {
     border-radius: 2.5px;
-    background-color: rgba($selected_bg_color, 0.5);
 
-    &:disabled { background-color: transparent; }
+    &, &:hover, &:focus, &:backdrop {
+      background-color: rgba($selected_bg_color, 0.5);
+
+      &:disabled { background-color: transparent; }
+    }
   }
 
   slider {
-    $_slider_border: $button_border;
-
+    min-height: 15px;
+    min-width: 15px;
+    margin: -6px; // The slider is inside the trough, negative margin to make it bigger
     background-color: $selected_fg_color;
-    border: 1px solid $_slider_border;
+    border: 1px solid $borders_color;
     border-radius: 100%;
 
     transition: $button_transition;
     transition-property: background, border;
 
-    &:hover { background-color: lighten($selected_bg_color, 3%); border-color: $selected_bg_color;}
+    &:hover {
+      background-clip: border-box;
+      background-color: $selected_bg_color;
+      border-color: darken($selected_bg_color, 3%);
+    }
 
     &:active {
       background-clip: border-box;
       background-color: darken($selected_bg_color, 3%);
-      border-color: $selected_bg_color;
+      border-color: darken($selected_bg_color, 6%);
     }
 
     &:disabled {
       background-color: darken($selected_fg_color, 10%);
-      border-color: darken($_slider_border, 5%);
+      border-color: darken($borders_color, 5%);
     }
 
     // OSD sliders
-    .osd & {
-      background-clip: border-box;
-      background-color: $selected_bg_color;
-      border-color: $selected_bg_color;
-
-      &:hover {
-        background-color: lighten($selected_bg_color, 10%);
-        border-color: lighten($selected_bg_color, 10%)
-      }
-
-      &:active {
-        background-color: darken($selected_bg_color, 10%);
-        border-color: darken($selected_bg_color, 10%);
-      }
-
-      &:disabled {  }
-    }
+    // .osd & { }
   }
 
   value { color: gtkalpha(currentColor, 0.4); }
@@ -2632,7 +2629,7 @@ scale {
     &.fine-tune indicator { min-width: ($_marks_length - 1px); }
   }
 
-  &:hover, &:selected {
+  &:selected {
     trough { // Troughs in selected list-rows and infobars
       @extend %selected_scale;
     }

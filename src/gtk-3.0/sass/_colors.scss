@@ -87,17 +87,17 @@ $dark_sidebar_fg: if($variant == 'light' and $header == 'light', $text_color, mi
 $dark_sidebar_border: if($variant == 'light' and $header == 'light', darken($dark_sidebar_bg, 15%), darken($dark_sidebar_bg, 5%));
 
 $osd_fg_color: $dark_sidebar_fg;
-$osd_bg_color: darken($dark_sidebar_bg, 5%);
+$osd_bg_color: rgba($header_bg, 0.95);
+$osd_borders_color: if($variant == 'light', darken($osd_bg_color, 15%), darken($osd_bg_color, 4%));
 
-$osd_button_bg: rgba(lighten($osd_bg_color, 22%), 0.42);
-$osd_button_border: rgba(darken($osd_bg_color, 12%), 0.42);
+$osd_button_bg: lighten($osd_bg_color, 3%);
+$osd_button_border: $osd_borders_color;
 
-$osd_entry_bg: rgba(lighten($osd_bg_color, 22%), 0.42);
-$osd_entry_border: rgba(darken($osd_bg_color, 12%), 0.42);
+$osd_entry_bg: lighten($osd_bg_color, 3%);
+$osd_entry_border: $osd_borders_color;
 
-$osd_insensitive_bg_color: darken($osd_bg_color, 3%);
+$osd_insensitive_bg_color: rgba(lighten($osd_bg_color, 6%), 0.45);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 30%);
-$osd_borders_color: $osd_button_border;
 
 $panel_bg: #1b2224;
 @if $color=='sea' { $panel_bg: #1b2224; }
