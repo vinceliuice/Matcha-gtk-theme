@@ -1498,6 +1498,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-today-button {
   min-height: 48px;
+  box-shadow: none;
+  background: none;
+  text-shadow: none;
+  border: none;
 }
 
 .datemenu-today-button .day-label {
@@ -1509,6 +1513,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .datemenu-today-button .date-label {
   font-size: 18pt;
   font-weight: 400;
+}
+
+.datemenu-today-button:hover, .datemenu-today-button:focus {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.051);
+}
+
+.datemenu-today-button:active {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.102);
 }
 
 .calendar-month-label {
@@ -1783,7 +1797,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-feature-settings: "tnum";
 }
 
-/* Message list */
 .message-list {
   width: 31.5em;
   padding: 0 8px;
@@ -1810,7 +1823,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
 }
 
-/* FIXME: how do you do this in sass? */
 .message-list-section-close:hover > StIcon,
 .message-list-section-close:focus > StIcon {
   color: rgba(255, 255, 255, 0.85);
@@ -1837,7 +1849,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.6375);
   box-shadow: none;
   text-shadow: none;
-  /* FIXME: how do you do this in sass? */
 }
 
 .message:hover, .message:focus {

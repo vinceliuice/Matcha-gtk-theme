@@ -1316,6 +1316,10 @@ StScrollBar {
 
 .datemenu-today-button {
   min-height: $menuitem_size * 2 - 4px * 2;
+  box-shadow: none;
+  background: none;
+  text-shadow: none;
+  border: none;
 
   // weekday label
   .day-label {
@@ -1326,6 +1330,16 @@ StScrollBar {
   // date label
   .date-label {
     @include font(headline);
+  }
+
+  &:hover, &:focus {
+    color: $fg_color;
+    background-color: $semi_track_color;
+  }
+
+  &:active {
+    color: $fg_color;
+    background-color: $track_color;
   }
 }
 
@@ -1578,7 +1592,7 @@ StScrollBar {
   }
 }
 
-/* Message list */
+// Message list
 .message-list {
   width: 31.5em;
   padding: 0 8px;
@@ -1603,7 +1617,7 @@ StScrollBar {
   background-color: transparent;
 }
 
-/* FIXME: how do you do this in sass? */
+// FIXME: how do you do this in sass?
 .message-list-section-close:hover > StIcon,
 .message-list-section-close:focus > StIcon {
   color: $fg_color;
@@ -1714,7 +1728,7 @@ StScrollBar {
     color: $secondary_fg_color;
   }
 
-  /* FIXME: how do you do this in sass? */
+  // FIXME: how do you do this in sass?
   .message-content *:hover > StIcon,
   .message-content *:focus > StIcon {
     color: $fg_color;
