@@ -1,7 +1,7 @@
 Summary
 -------
 
-* Do not edit the CSS directly, edit the source SCSS files and process them with SASS (run 
+* Do not edit the CSS directly, edit the source SCSS files and process them with Sass (run 
   `./parse-sass.sh` when you have the required software installed, as described below)
 * To be able to use the latest/adequate version of sass, install ruby, gem, sass & bundle.
 
@@ -14,7 +14,7 @@ Summary
 How to tweak the theme
 ----------------------
 
-Adwaita is a complex theme, so to keep it maintainable it's written and processed in SASS. The
+Adwaita is a complex theme, so to keep it maintainable it's written and processed in Sass. The
 generated CSS is then transformed into a gresource file during gtk build and used at runtime in a 
 non-legible or editable form.
 
@@ -34,7 +34,7 @@ _drawing.scss       - drawing helper mixings/functions to allow easier definitio
 _common.scss        - actual definitions of style for each widget. This is where you are likely to add/remove
                       your changes.
                       
-You can read about SASS at http://sass-lang.com/documentation/. Once you make your changes to the
-_common.scss file, you can either run the ./parse-sass.sh script or keep SASS watching for changes as you
+You can read about Sass at http://sass-lang.com/documentation/. Once you make your changes to the
+_common.scss file, you can either run the ./parse-sass.sh script or keep Sass watching for changes as you
 edit. This is done by running `bundle exec sass --watch --sourcemap=none .` If sass is out of date, or is
 missing, you can install it with `bundle install`.
