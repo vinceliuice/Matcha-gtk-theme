@@ -1290,36 +1290,13 @@ StScrollBar {
   padding: 10px 0;
 }
 
-.calendar {
-  border: none;
-  box-shadow: none;
-  background: none;
-  padding: 6px;
-  margin: 0;
-  text-shadow: none;
-}
-
-// pane-separator between messages and calendar
-.datemenu-calendar-column {
-  spacing: 6px;
-  border: 0 solid $borders_color;
-
-  &:ltr { margin-right: 8px; border-left-width: 1px; }
-  &:rtl { margin-left: 8px; border-right-width: 1px; }
-
-  // .datemenu-displays-section { padding-bottom: 0; }
-
-  .datemenu-displays-box {
-    spacing: 6px;
-  }
-}
-
 .datemenu-today-button {
-  min-height: $menuitem_size * 2 - 4px * 2;
+  padding: 8px;
   box-shadow: none;
   background: none;
   text-shadow: none;
   border: none;
+  border-radius: 3px;
 
   // weekday label
   .day-label {
@@ -1343,6 +1320,31 @@ StScrollBar {
   }
 }
 
+.calendar {
+  border: none;
+  box-shadow: none;
+  background: none;
+  padding: 6px;
+  margin: 0;
+  text-shadow: none;
+}
+
+// pane-separator between messages and calendar
+.datemenu-calendar-column {
+  spacing: 6px;
+  border: 0 solid $borders_color;
+  padding: 0 12px;
+
+  &:ltr { margin-right: 8px; border-left-width: 1px; }
+  &:rtl { margin-left: 8px; border-right-width: 1px; }
+
+  // .datemenu-displays-section { padding-bottom: 0; }
+
+  .datemenu-displays-box {
+    spacing: 6px;
+  }
+}
+
 .calendar-month-label {
   height: $menuitem_size - 4px * 2;
   margin: 2px;
@@ -1358,7 +1360,7 @@ StScrollBar {
   width: $menuitem_size;
   height: $menuitem_size;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 1000px;
   background-color: transparent;
   color: $fg_color;
   &:hover, &:focus { background-color: $semi_track_color; }
@@ -1370,6 +1372,7 @@ StScrollBar {
   background-image: url("assets/calendar-arrow-left.svg");
   &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
 }
+
 .calendar-change-month-forward { //arrow foreward
   padding: 0 2px;
   background-image: url("assets/calendar-arrow-right.svg");
@@ -1404,10 +1407,8 @@ StScrollBar {
   }
 
   &.calendar-day-heading {  //day of week heading
-    width: $menuitem_size; height: $menuitem_size - 7px;
-    margin-top: 2px;
-    padding: 7px 0 0;
-    border-radius: 100px;
+    margin-top: 1em;
+    border-radius: 1000px;
     background-color: transparent;
     color: $tertiary_fg_color;
     @include font(caption);
@@ -1430,7 +1431,7 @@ StScrollBar {
 }
 
 .calendar-today {
-  font-weight: bold !important;
+  font-weight: bold;
   color: $selected_fg_color;
   background-color: $selected_bg_color;
   border: none;
@@ -1467,11 +1468,12 @@ StScrollBar {
 
 .calendar-week-number {
   height: 1.8em;
-  width: 2em;
+  width: 2.6em;
   border-radius: 3px;
-  margin: 6px 0;
+  margin: 6px 6px 6px 0;
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $tertiary_fg_color;
+  font-size: 7pt;
   font-size: inherit;
   font-weight: bold;
   text-align: center;
@@ -1508,7 +1510,6 @@ StScrollBar {
 .events-title {
   color: $tertiary_fg_color;
   font-weight: bold;
-  margin-bottom: 4px;
   text-shadow: none;
 }
 
@@ -1523,14 +1524,14 @@ StScrollBar {
   .world-clocks-city {
     color: $tertiary_fg_color;
     font-weight: normal;
-    font-size: 0.9em;
+    font-size: 11pt;
   }
 
   .world-clocks-time {
     color: $tertiary_fg_color;
     font-feature-settings: "tnum";
     font-weight: bold;
-    font-size: 1.0em;
+    font-size: 11pt;
 
     &:ltr { text-align: right; }
     &:rtl { text-align: left; }
@@ -1539,7 +1540,7 @@ StScrollBar {
   .world-clocks-timezone {
     color: $tertiary_fg_color;
     font-feature-settings: "tnum";
-    font-size: 0.9em;
+    font-size: 10pt;
   }
 }
 
@@ -1554,6 +1555,7 @@ StScrollBar {
   }
 
   .weather-header.location {
+    font-size: 10pt;
     font-weight: normal;
     color: $tertiary_fg_color;
   }
@@ -1562,6 +1564,7 @@ StScrollBar {
     color: $tertiary_fg_color;
     font-feature-settings: "tnum";
     font-weight: normal;
+    font-size: 9pt;
     padding-top: 0.2em;
     padding-bottom: 0.4em;
   }
@@ -1586,9 +1589,14 @@ StScrollBar {
     text-shadow: none;
   }
 
+  .events-title {
+    margin-bottom: 4px;
+  }
+
   .event-time {
     color: $insensitive_fg_color;
     font-feature-settings: "tnum";
+    font-size: 10pt;
   }
 }
 
@@ -1640,9 +1648,9 @@ StScrollBar {
 .message {
   min-height: $menuitem_size * 2;
   margin: 4px;
-  background-color: transparent;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   color: $secondary_fg_color;
   box-shadow: none;
   text-shadow: none;
@@ -1974,7 +1982,7 @@ StScrollBar {
 .search-entry {
   width: 320px;
   padding: 0 8px;
-  border-radius: 20px;
+  border-radius: 1000px;
   color: $entry_color;
   caret-color: $entry_color;
   background-color: rgba(white, 0.10);
@@ -2376,11 +2384,10 @@ StWidget.focused .app-well-app-running-dot {
       color: $selected_fg_color;
       border: none;
       background-image: none;
-
       padding: 0;
       width: 36px;
       height: 36px;
-      border-radius: 18px;
+      border-radius: 1000px;
 
       & > StIcon { icon-size: 16px }
 
@@ -2615,8 +2622,9 @@ $legacy_icon_size: 24px;
   &.full-screen { border-width: 0; }
 }
 
+//
 //Keyboard
-/* On-screen Keyboard */
+//
 .word-suggestions {
   font-size: 14pt;
   spacing: 12px;
@@ -2681,21 +2689,6 @@ $key_bg_color: lighten($topbar_color, 15%);
     &:focus, &:hover { color: $selected_fg_color; background-color: lighten($primary_color, 5%); }
     &:checked, &:active { color: $selected_fg_color; background-color: darken($primary_color, 10%); }
   }
-  // &.shift-key-lowercase {
-  //   background-image: url("assets/key-shift.svg");
-  // }
-  // &.shift-key-uppercase {
-  //   background-image: url("assets/key-shift-uppercase.svg");
-  // }
-  // &.shift-key-uppercase:latched {
-  //   background-image: url("assets/key-shift-latched-uppercase.svg");
-  // }
-  // &.hide-key {
-  //   background-image: url("assets/key-hide.svg");
-  // }
-  // &.layout-key {
-  //   background-image: url("assets/key-layout.svg");
-  // }
 
   StIcon { icon-size: 1.125em; }
 }

@@ -1472,40 +1472,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 10px 0;
 }
 
-.calendar {
-  border: none;
-  box-shadow: none;
-  background: none;
-  padding: 6px;
-  margin: 0;
-  text-shadow: none;
-}
-
-.datemenu-calendar-column {
-  spacing: 6px;
-  border: 0 solid rgba(0, 0, 0, 0.1);
-}
-
-.datemenu-calendar-column:ltr {
-  margin-right: 8px;
-  border-left-width: 1px;
-}
-
-.datemenu-calendar-column:rtl {
-  margin-left: 8px;
-  border-right-width: 1px;
-}
-
-.datemenu-calendar-column .datemenu-displays-box {
-  spacing: 6px;
-}
-
 .datemenu-today-button {
-  min-height: 48px;
+  padding: 8px;
   box-shadow: none;
   background: none;
   text-shadow: none;
   border: none;
+  border-radius: 3px;
 }
 
 .datemenu-today-button .day-label {
@@ -1529,6 +1502,35 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.24);
 }
 
+.calendar {
+  border: none;
+  box-shadow: none;
+  background: none;
+  padding: 6px;
+  margin: 0;
+  text-shadow: none;
+}
+
+.datemenu-calendar-column {
+  spacing: 6px;
+  border: 0 solid rgba(0, 0, 0, 0.1);
+  padding: 0 12px;
+}
+
+.datemenu-calendar-column:ltr {
+  margin-right: 8px;
+  border-left-width: 1px;
+}
+
+.datemenu-calendar-column:rtl {
+  margin-left: 8px;
+  border-right-width: 1px;
+}
+
+.datemenu-calendar-column .datemenu-displays-box {
+  spacing: 6px;
+}
+
 .calendar-month-label {
   height: 20px;
   margin: 2px;
@@ -1544,7 +1546,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 28px;
   height: 28px;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 1000px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.8);
 }
@@ -1606,11 +1608,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar-day-base.calendar-day-heading {
-  width: 28px;
-  height: 21px;
-  margin-top: 2px;
-  padding: 7px 0 0;
-  border-radius: 100px;
+  margin-top: 1em;
+  border-radius: 1000px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.48);
   font-size: 9pt;
@@ -1637,7 +1636,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar-today {
-  font-weight: bold !important;
+  font-weight: bold;
   color: #FFFFFF;
   background-color: #2eb398;
   border: none;
@@ -1675,11 +1674,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-week-number {
   height: 1.8em;
-  width: 2em;
+  width: 2.6em;
   border-radius: 3px;
-  margin: 6px 0;
+  margin: 6px 6px 6px 0;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.48);
+  font-size: 7pt;
   font-size: inherit;
   font-weight: bold;
   text-align: center;
@@ -1721,7 +1721,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .events-title {
   color: rgba(0, 0, 0, 0.48);
   font-weight: bold;
-  margin-bottom: 4px;
   text-shadow: none;
 }
 
@@ -1734,14 +1733,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button .world-clocks-city {
   color: rgba(0, 0, 0, 0.48);
   font-weight: normal;
-  font-size: 0.9em;
+  font-size: 11pt;
 }
 
 .world-clocks-button .world-clocks-time {
   color: rgba(0, 0, 0, 0.48);
   font-feature-settings: "tnum";
   font-weight: bold;
-  font-size: 1.0em;
+  font-size: 11pt;
 }
 
 .world-clocks-button .world-clocks-time:ltr {
@@ -1755,7 +1754,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button .world-clocks-timezone {
   color: rgba(0, 0, 0, 0.48);
   font-feature-settings: "tnum";
-  font-size: 0.9em;
+  font-size: 10pt;
 }
 
 .weather-button .weather-box {
@@ -1767,6 +1766,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .weather-button .weather-header.location {
+  font-size: 10pt;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.48);
 }
@@ -1775,6 +1775,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.48);
   font-feature-settings: "tnum";
   font-weight: normal;
+  font-size: 9pt;
   padding-top: 0.2em;
   padding-bottom: 0.4em;
 }
@@ -1796,9 +1797,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
 }
 
+.events-button .events-title {
+  margin-bottom: 4px;
+}
+
 .events-button .event-time {
   color: rgba(0, 0, 0, 0.28);
   font-feature-settings: "tnum";
+  font-size: 10pt;
 }
 
 .message-list {
@@ -1847,9 +1853,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message {
   min-height: 56px;
   margin: 4px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.04);
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   color: rgba(0, 0, 0, 0.6);
   box-shadow: none;
   text-shadow: none;
@@ -2244,7 +2250,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .search-entry, .app-folder-dialog .folder-name-container .folder-name-entry {
   width: 320px;
   padding: 0 8px;
-  border-radius: 20px;
+  border-radius: 1000px;
   color: #FAFAFA;
   caret-color: #FAFAFA;
   background-color: rgba(255, 255, 255, 0.1);
@@ -2619,7 +2625,7 @@ StWidget.focused .app-well-app-running-dot {
   padding: 0;
   width: 36px;
   height: 36px;
-  border-radius: 18px;
+  border-radius: 1000px;
 }
 
 .app-folder-dialog .folder-name-container .edit-folder-button > StIcon {
@@ -2963,7 +2969,6 @@ StWidget.focused .app-well-app-running-dot {
   border-width: 0;
 }
 
-/* On-screen Keyboard */
 .word-suggestions {
   font-size: 14pt;
   spacing: 12px;

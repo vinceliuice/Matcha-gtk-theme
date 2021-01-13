@@ -147,16 +147,21 @@ install() {
 }
 
 # Backup and install files related to GDM theme
-
 GS_THEME_FILE="/usr/share/gnome-shell/gnome-shell-theme.gresource"
 SHELL_THEME_FOLDER="/usr/share/gnome-shell/theme"
 ETC_THEME_FOLDER="/etc/alternatives"
 ETC_THEME_FILE="/etc/alternatives/gdm3.css"
+ETC_NEW_THEME_FILE="/etc/alternatives/gdm3-theme.gresource"
 UBUNTU_THEME_FILE="/usr/share/gnome-shell/theme/ubuntu.css"
 UBUNTU_NEW_THEME_FILE="/usr/share/gnome-shell/theme/gnome-shell.css"
+UBUNTU_YARU_THEME_FILE="/usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource"
 
 install_gdm() {
   local GDM_THEME_DIR="${1}/${2}${3}${4}"
+  local YARU_GDM_THEME_DIR="$SHELL_THEME_FOLDER/Yaru/${2}${3}${4}"
+
+  [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
+  [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
   echo
   echo "Installing ${2}${3}${4} gdm theme..."
@@ -173,8 +178,6 @@ install_gdm() {
   if [[ -f "$UBUNTU_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
     echo "Installing '$UBUNTU_THEME_FILE'..."
     cp -an "$UBUNTU_THEME_FILE" "$UBUNTU_THEME_FILE.bak"
-    # rm -rf "$GS_THEME_FILE"
-    # mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
     cp -af "$GDM_THEME_DIR/gnome-shell/gnome-shell.css" "$UBUNTU_THEME_FILE"
   fi
 
@@ -184,42 +187,85 @@ install_gdm() {
     cp -af "$GDM_THEME_DIR"/gnome-shell/* "$SHELL_THEME_FOLDER"
   fi
 
+  # > Ubuntu 18.04
   if [[ -f "$ETC_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
-    echo "Installing Ubuntu gnome-shell theme..."
+    echo "Installing Ubuntu GDM theme..."
     cp -an "$ETC_THEME_FILE" "$ETC_THEME_FILE.bak"
-    # rm -rf "$ETC_THEME_FILE" "$GS_THEME_FILE"
-    # mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
-    [[ -d $SHELL_THEME_FOLDER/Matcha ]] && rm -rf $SHELL_THEME_FOLDER/Matcha
-    cp -ur "$GDM_THEME_DIR/gnome-shell" "$SHELL_THEME_FOLDER/Matcha"
+    [[ -d "$SHELL_THEME_FOLDER/$THEME_NAME" ]] && rm -rf "$SHELL_THEME_FOLDER/$THEME_NAME"
+    cp -r "$GDM_THEME_DIR/gnome-shell" "$SHELL_THEME_FOLDER/$THEME_NAME"
     cd "$ETC_THEME_FOLDER"
-    ln -s "$SHELL_THEME_FOLDER/Matcha-dark-sea/gnome-shell.css" gdm3.css
+    [[ -f "$ETC_THEME_FILE.bak" ]] && ln -sf "$SHELL_THEME_FOLDER/$THEME_NAME/gnome-shell.css" gdm3.css
+  fi
+
+  # > Ubuntu 20.04
+  if [[ -d "$SHELL_THEME_FOLDER/Yaru" && -f "$GS_THEME_FILE.bak" ]]; then
+    echo "Installing Ubuntu GDM theme..."
+    cp -an "$UBUNTU_YARU_THEME_FILE" "$UBUNTU_YARU_THEME_FILE.bak"
+    rm -rf "$UBUNTU_YARU_THEME_FILE"
+    rm -rf "$YARU_GDM_THEME_DIR" && mkdir -p "$YARU_GDM_THEME_DIR"
+
+    mkdir -p                                                                             "$YARU_GDM_THEME_DIR"/gnome-shell
+    mkdir -p                                                                             "$YARU_GDM_THEME_DIR"/gnome-shell/Yaru
+    cp -r "$SRC_DIR"/gnome-shell/{icons,pad-osd.css}                                     "$YARU_GDM_THEME_DIR"/gnome-shell
+    cp -r "$SRC_DIR"/gnome-shell/gnome-shell${ELSE_DARK}${theme}.css                     "$YARU_GDM_THEME_DIR"/gnome-shell/gdm3.css
+    cp -r "$SRC_DIR"/gnome-shell/gnome-shell${ELSE_DARK}${theme}.css                     "$YARU_GDM_THEME_DIR"/gnome-shell/Yaru/gnome-shell.css
+    cp -r "$SRC_DIR"/gnome-shell/common-assets                                           "$YARU_GDM_THEME_DIR"/gnome-shell/assets
+    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-arrow-left${ELSE_DARK}.svg              "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-arrow-left.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-arrow-right${ELSE_DARK}.svg             "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-arrow-right.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/checkbox-off${ELSE_DARK}.svg                     "$YARU_GDM_THEME_DIR"/gnome-shell/assets/checkbox-off.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-today${ELSE_DARK}.svg                   "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-today.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/checkbox${theme}.svg                             "$YARU_GDM_THEME_DIR"/gnome-shell/assets/checkbox.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/more-results${theme}.svg                         "$YARU_GDM_THEME_DIR"/gnome-shell/assets/more-results.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/toggle-on${theme}.svg                            "$YARU_GDM_THEME_DIR"/gnome-shell/assets/toggle-on.svg
+
+    cd "$YARU_GDM_THEME_DIR"/gnome-shell
+    mv -f assets/no-events.svg no-events.svg
+    mv -f assets/process-working.svg process-working.svg
+    mv -f assets/no-notifications.svg no-notifications.svg
+
+    glib-compile-resources \
+      --sourcedir="$YARU_GDM_THEME_DIR"/gnome-shell \
+      --target="$UBUNTU_YARU_THEME_FILE" \
+      "$SRC_DIR"/gnome-shell/gdm-theme.gresource.xml
+
+    rm -rf "$YARU_GDM_THEME_DIR"
   fi
 }
 
 revert_gdm() {
   if [[ -f "$GS_THEME_FILE.bak" ]]; then
-    echo "reverting '$GS_THEME_FILE'..."
+    echo "Reverting '$GS_THEME_FILE'..."
     rm -rf "$GS_THEME_FILE"
     mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
   fi
 
   if [[ -f "$UBUNTU_THEME_FILE.bak" ]]; then
-    echo "reverting '$UBUNTU_THEME_FILE'..."
+    echo "Reverting '$UBUNTU_THEME_FILE'..."
     rm -rf "$UBUNTU_THEME_FILE"
     mv "$UBUNTU_THEME_FILE.bak" "$UBUNTU_THEME_FILE"
   fi
 
   if [[ -f "$UBUNTU_NEW_THEME_FILE.bak" ]]; then
-    echo "reverting '$UBUNTU_NEW_THEME_FILE'..."
+    echo "Reverting '$UBUNTU_NEW_THEME_FILE'..."
     rm -rf "$UBUNTU_NEW_THEME_FILE" "$SHELL_THEME_FOLDER"/{assets,no-events.svg,process-working.svg,no-notifications.svg}
     mv "$UBUNTU_NEW_THEME_FILE.bak" "$UBUNTU_NEW_THEME_FILE"
   fi
 
+  # > Ubuntu 18.04
   if [[ -f "$ETC_THEME_FILE.bak" ]]; then
-    echo "reverting Ubuntu gnome-shell theme..."
+
+    echo "reverting Ubuntu GDM theme..."
+
     rm -rf "$ETC_THEME_FILE"
     mv "$ETC_THEME_FILE.bak" "$ETC_THEME_FILE"
-    [[ -d $SHELL_THEME_FOLDER/Matcha ]] && rm -rf $SHELL_THEME_FOLDER/Matcha
+    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm -rf $SHELL_THEME_FOLDER/$THEME_NAME
+  fi
+
+  # > Ubuntu 20.04
+  if [[ -f "$UBUNTU_YARU_THEME_FILE.bak" ]]; then
+    echo "reverting Ubuntu GDM theme..."
+    rm -rf "$UBUNTU_YARU_THEME_FILE"
+    mv "$UBUNTU_YARU_THEME_FILE.bak" "$UBUNTU_YARU_THEME_FILE"
   fi
 }
 
