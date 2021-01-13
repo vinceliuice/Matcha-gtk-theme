@@ -53,6 +53,8 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 | -n, --name    | Specify theme name (Default: Matcha) |
 | -c, --color   | Specify theme color variant(s) **[standard/light/dark]** (Default: All variants) |
 | -t, --theme   | Specify hue theme variant(s) **[aliz/azul/sea]** (Default: All variants) |
+| -g, --gdm     | Install GDM theme, this option need root user authority! please run this with sudo |
+| -r, --revert  | revert GDM theme, this option need root user authority! please run this with sudo |
 | -h, --help    | Show this help |
 
 ### Install from flathub
