@@ -4,5 +4,5 @@ cd /tmp/; rm -Rf /tmp/matcha.zip 2>/dev/null
 rm -Rf /tmp/matcha-master/ 2>/dev/null
 wget https://github.com/vinceliuice/matcha/archive/master.zip -O matcha.zip
 unzip matcha.zip; cd matcha-master
-./Install
+./install.sh
 notify-send "All done!" "Enjoy the latest version of Matcha!" -i face-smile
