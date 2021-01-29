@@ -303,3 +303,11 @@ window.thunar {
     header.top tab.reorderable-page > box > label { min-height: 0; }
   }
 }
+
+#pulseaudio-button, #xfce4-power-manager-plugin {
+  menuitem:hover {
+    scale highlight {
+      background-color: $selected_fg_color;
+    }
+  }
+}
