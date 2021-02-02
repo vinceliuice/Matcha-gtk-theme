@@ -78,7 +78,7 @@ Solus:
     sudo eopkg it matcha-gtk-theme
 
 ### Firefox theme
-[Intall Firefox theme](src/extra/firefox)
+[Install Firefox theme](src/extra/firefox)
 
 #### Preview
 ![Firefox-theme](src/extra/firefox/preview.png?raw=true)
