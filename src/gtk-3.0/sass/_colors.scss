@@ -99,11 +99,15 @@ $osd_entry_border: $osd_borders_color;
 $osd_insensitive_bg_color: rgba(lighten($osd_bg_color, 6%), 0.45);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 30%);
 
-$panel_bg: #1b2224;
-@if $color=='sea' { $panel_bg: #1b2224; }
-@if $color=='aliz' { $panel_bg: #222222; }
-@if $color=='azul' { $panel_bg: #1b1d24; }
-$panel_fg: mix($selected_bg_color, #cecece, 5%);
+// keep dark colors in dark headers
+$panel_bg: $bg_color;
+@if $color=='sea' and $header == 'dark' { $panel_bg: #1b2224; }
+@if $color=='aliz' and $header == 'dark' { $panel_bg: #222222; }
+@if $color=='azul' and $header == 'dark' { $panel_bg: #1b1d24; }
+$panel_fg: $fg_color;
+@if $color=='sea' and $header == 'dark' { $panel_fg: #ccd7d4; }
+@if $color=='aliz' and $header == 'dark' { $panel_fg: #cbbfbf; }
+@if $color=='azul' and $header == 'dark' { $panel_fg: #bbc3c8; }
 
 $entry_bg: if($variant == 'light', $base_color, lighten($base_color, 0%));
 $entry_border: if($variant == 'light', $borders_color, darken($borders_color, 3%));
