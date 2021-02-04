@@ -805,17 +805,6 @@ StScrollBar {
   }
 }
 
-.candidate-popup-boxpointer {
-  -arrow-border-radius: 2px;
-  -arrow-background-color: transparent;
-  -arrow-border-width: 1px;
-  -arrow-border-color: transparent;
-  -arrow-base: 5px;
-  -arrow-rise: 5px;
-  border: none;
-  border-image: none;
-}
-
 .popup-separator-menu-item {
   background: none;
   border: none;
@@ -2716,9 +2705,23 @@ $key_bg_color: lighten($topbar_color, 15%);
 
 // IBus Candidate Popup
 
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 2px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 1px;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 5px;
+  border: none;
+  border-image: none;
+}
+
 .candidate-popup-content {
   padding: 8px;
   spacing: 0;
+  margin: 6px;
+  color: $secondary_fg_color;
+  @extend %theme_dialogs;
 }
 
 .candidate-index {
@@ -2732,6 +2735,7 @@ $key_bg_color: lighten($topbar_color, 15%);
   min-height: $menuitem_size;
   padding: 0 8px;
   border-radius: 2px;
+  margin-right: 2px;
   &:hover { background-color: $semi_track_color; color: $fg_color; }
   &:active { background-color: $track_color; color: $fg_color; }
   &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }

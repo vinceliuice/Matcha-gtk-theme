@@ -839,7 +839,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing-columns: 1em;
 }
 
-.popup-menu .popup-menu-content {
+.candidate-popup-content, .popup-menu .popup-menu-content {
   background-color: #1b1d24;
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
@@ -938,17 +938,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-boxpointer StEntry, .popup-menu-boxpointer .search-entry, .popup-menu-boxpointer .app-folder-dialog .folder-name-container .folder-name-entry, .app-folder-dialog .folder-name-container .popup-menu-boxpointer .folder-name-entry {
   caret-color: rgba(255, 255, 255, 0.85);
-}
-
-.candidate-popup-boxpointer {
-  -arrow-border-radius: 2px;
-  -arrow-background-color: transparent;
-  -arrow-border-width: 1px;
-  -arrow-border-color: transparent;
-  -arrow-base: 5px;
-  -arrow-rise: 5px;
-  border: none;
-  border-image: none;
 }
 
 .popup-separator-menu-item {
@@ -3013,9 +3002,22 @@ StWidget.focused .app-well-app-running-dot {
   min-height: 20pt;
 }
 
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 2px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 1px;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 5px;
+  border: none;
+  border-image: none;
+}
+
 .candidate-popup-content {
   padding: 8px;
   spacing: 0;
+  margin: 6px;
+  color: rgba(255, 255, 255, 0.6375);
 }
 
 .candidate-index {
@@ -3032,6 +3034,7 @@ StWidget.focused .app-well-app-running-dot {
   min-height: 28px;
   padding: 0 8px;
   border-radius: 2px;
+  margin-right: 2px;
 }
 
 .candidate-box:hover {
