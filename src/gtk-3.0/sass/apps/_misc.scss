@@ -351,19 +351,6 @@ tooltip.background.chromium {
 }
 
 //
-// Geary
-//
-.geary-sidebar-pane-separator {
-  frame.geary-folder-frame {
-    treeview.view.sidebar {
-      background-color: $bg_color;
-      color: $text_color;
-      @extend %view;
-    }
-  }
-}
-
-//
 // gThumb
 //
 overlay.window-overlay {

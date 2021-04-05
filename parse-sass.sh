@@ -31,8 +31,10 @@ done
 
 for color in "${_ECOLOR_VARIANTS[@]}"; do
   for theme in "${_THEME_VARIANTS[@]}"; do
-  sassc $SASSC_OPT src/gnome-shell/gnome-shell${color}${theme}.{scss,css}
-  echo "==> Generating the gnome-shell${color}${theme}.css..."
+  sassc $SASSC_OPT src/gnome-shell/3.28/gnome-shell${color}${theme}.{scss,css}
+  echo "==> Generating the 3.28 gnome-shell${color}${theme}.css..."
+  sassc $SASSC_OPT src/gnome-shell/40.0/gnome-shell${color}${theme}.{scss,css}
+  echo "==> Generating the 40.0 gnome-shell${color}${theme}.css..."
   done
 done
 

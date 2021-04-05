@@ -1,0 +1,21 @@
+/* Switches */
+
+// these are equal to the size of the SVG assets
+$switch_height: 20px;
+$switch_width: 40px;
+
+.toggle-switch {
+  color: $fg_color;
+  height: $switch_height;
+  width: $switch_width;
+  background-size: contain;
+  background-image: url("assets/toggle-off.svg");
+
+  &:checked { background-image: url("assets/toggle-on.svg"); }
+
+  .popup-menu-item.selected & {
+    background-image: url("assets/toggle-off.svg");
+
+    &:checked { background-image: url("assets/toggle-on.svg"); }
+  }
+}

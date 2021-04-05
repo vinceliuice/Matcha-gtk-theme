@@ -32,6 +32,12 @@ $header_asset_suffix: if($header == 'dark', '-dark', ''); // use dark assets in 
 // Base States
 //
 .background {
+  &.csd {
+    border-radius: 0 0 2px 2px;
+
+    &.maximized { border-radius: 0; }
+  }
+
   color: $fg_color;
   background-color: if($trans == 'true', rgba($bg_color, 1), $bg_color); // without this headerbar transparency doesn't seem to work
 }
@@ -1249,6 +1255,40 @@ headerbar,
   separator.titlebutton { @extend %header_separator; }
 }
 
+%viewswitcher_button {
+  color: $header_fg;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  margin: 0 0 0 0;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                $selected_bg_color 0%,
+                                transparent 0%)
+                                0 0 0 / 0 0 0;
+
+  &:checked, &:active {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.15);
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $selected_bg_color 100%,
+                                  transparent 0%)
+                                  0 0 2 / 0 0 2px;
+  }
+
+  &:disabled {
+    color: rgba($header_fg, 0.4);
+  }
+
+  &:checked:disabled {
+    color: rgba($header_fg, 0.4);
+    background-color: rgba($header_fg, 0.05);
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  rgba($selected_bg_color, 0.4) 100%,
+                                  transparent 0%)
+                                  0 0 2 / 0 0 2px;
+  }
+}
+
 .titlebar { // headerbar border rounding
   &, &.background {
     border-top-left-radius: 2px;
@@ -1263,6 +1303,15 @@ headerbar,
     .tiled &,
     .maximized &,
     .fullscreen & { @if $header == 'dark' { box-shadow: none; }}
+  }
+
+  &.windowhandle {
+    viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+      border-radius: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      @extend %viewswitcher_button;
+    }
   }
 }
 
@@ -2053,9 +2102,19 @@ popover.background {
 
   > list,
   > .view,
-  > toolbar {
+  > toolbar,
+  > scrolledwindow > viewport > list {
     border-style: none;
     background-color: transparent;
+  }
+
+  > scrolledwindow > viewport > list {
+    margin: 6px;
+
+    row {
+      padding: 6px 12px;
+      border-radius: 2px;
+    }
   }
 
   &, .csd & {
@@ -2755,7 +2814,7 @@ frame > border,
 .frame {
   margin: 0;
   padding: 0;
-  border-radius: 0;
+  border-radius: 2px;
   border: 1px solid $borders_color;
 }
 
@@ -2810,15 +2869,19 @@ separator {
 list {
   background-color: $base_color;
   border-color: $borders_color;
+  border-radius: 2px;
 
-  row { padding: 2px; }
+  row {
+    padding: 2px;
+
+    &:first-child { border-radius: 2px 2px 0 0; }
+    &:last-child { border-radius: 0 0 2px 2px; }
+  }
 }
 
 %row_activatable {
   &.has-open-popup,
-  &:hover {
-    background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.08));
-  }
+  &:hover { background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.08)); }
 
   &:active { color: $fg_color; }
   &:disabled {
@@ -3079,6 +3142,7 @@ stacksidebar {
       padding-left: 6px;
       padding-right: 6px;
     }
+
     &.needs-attention > label {
       @extend %needs_attention;
       background-size: 6px 6px, 0 0;
@@ -3540,7 +3604,7 @@ stackswitcher button {
 $_wm_border: if($variant=='light', rgba(black, 0.1), rgba(black, 0.2));
 
 decoration {
-  border-radius: if($variant=='light', 2px 2px 0 0, 2px 2px 0 0);
+  border-radius: 2px;
   border-width: 0;
 
   box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),

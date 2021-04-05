@@ -1,0 +1,42 @@
+// Search entry
+
+$search_entry_width: 320px;
+$search_entry_height: 36px;
+
+%search_entry,
+.search-entry {
+  width: $search_entry_width;
+  padding: $base_padding+1 $base_padding+3;
+  border-radius: $search_entry_height * 0.5; // half the height
+  color: rgba(white, 0.75);
+  background-color: rgba(white, 0.10);
+  border-color: rgba(black, 0.65);
+  margin-top: $base_spacing * 2;
+  margin-bottom: $base_spacing;
+
+  &:hover {
+    background-color: rgba(white, 0.18);
+    border-color: rgba(black, 0.75);
+    color: rgba(white, 0.85);
+  }
+
+  &:focus {
+    background-color: rgba(white, 0.15);
+    padding: $base_padding $base_padding+2; // 1px less to account for wider border
+    border-width: 2px;
+    border-style: solid;
+    border-color: $selected_bg_color;
+    color: rgba(white, 0.85);
+    box-shadow: none;
+  }
+
+  StLabel.hint-text {
+    color: rgba(white, 0.55);
+  }
+
+  .search-entry-icon {
+    icon-size: $base_icon_size;
+    padding: 0 4px;
+    color: inherit;
+  }
+}

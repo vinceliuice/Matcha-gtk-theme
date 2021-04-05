@@ -620,19 +620,7 @@ viewswitcherbar > actionbar { // Gnome 3.38
   background-image: _solid($base_color);
 }
 
-//
-// Fractal
-//
-
-.main-window {
-  > stack > hdyleaflet {
-    > separator.sidebar {
-      min-width: 1px;
-      background-color: $borders_color;
-    }
-  }
-}
-
+.tweak-categories > separator { background: none; }
 
 // Workaround for 3.26
 row#Focus,
@@ -642,30 +630,30 @@ row#dynamic-workspaces,
 row#PrimaryWorkspaceTweak, // for 3.26.0
 row#workspaces-only-on-primary {
   padding: 0;
-  border: 1px solid $borders_color;
+  margin: 0;
 
-  row:not(:last-child) { border-bottom: 1px solid $borders_color; }
-
-  &.tweak > list { margin-top: -3px; }
+  &.tweak > list { border: 1px solid $borders_color; }
 }
-
-// Add more spaces between title and list
-row#Focus,
-row#ClickMethod,
-row#PrimaryWorkspaceTweak, // for 3.26.0
-row#workspaces-only-on-primary {
-  margin-top: 4px;
-}
-
 
 row#AutostartTitle.tweak {
-  padding: 3px;
   background-color: $base_color;
 }
 
 list#AutostartListBoxTweakGroup {
   &.tweak-group-startup {
     border: 1px solid $borders_color;
+  }
+}
+
+//
+// Fractal
+//
+.main-window {
+  > stack > hdyleaflet {
+    > separator.sidebar {
+      min-width: 1px;
+      background-color: $borders_color;
+    }
   }
 }
 
@@ -766,6 +754,15 @@ window.background.csd {
       border-left-width: 0;
       border-bottom-width: 0;
     }
+  }
+
+  > deck > box.vertical > leaflet > separator.sidebar {
+    border-right: none;
+  }
+
+  list.content {
+    border-radius: 2px;
+    border: 1px solid $borders_color;
   }
 }
 
@@ -1191,6 +1188,101 @@ flowboxchild.bookmark-tag-widget {
 
   &-selected { color: $selected_fg_color; } // checked
 }
+
+// Gnome 40.0
+tabbox {
+  background-color: $bg_color;
+  box-shadow: inset 0 -1px $borders_color;
+
+  > tab {
+    padding: 3px 16px 6px 16px;
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 0;
+    outline-offset: -4px;
+    border: none;
+    color: $insensitive_fg_color;
+
+    &:not(:only-child) {
+      &:first-child { margin-left: 6px; }
+      &:last-child { margin-right: 6px; }
+    }
+
+    &:hover {
+      color: mix($fg_color, $insensitive_fg_color, 50%);
+      transition: 200ms $ease-out-quad;
+      box-shadow: inset 0 -2px gtkalpha($selected_bg_color, 0.6), 0 1px gtkalpha($selected_bg_color, 0.6);
+    }
+
+    &:checked {
+      color: $fg_color;
+      transition: 300ms $ease-out-quad;
+      box-shadow: inset 0 -2px $selected_bg_color, 0 1px $selected_bg_color;
+    }
+
+    // close button
+    button {
+      border-radius: 100%;
+      min-height: 16px;
+      min-width: 16px;
+      border-radius: 3px;
+      border: none;
+      padding: 0;
+      color: mix($bg_color, $fg_color, 35%);
+      @extend %flat_button;
+
+      &:hover {
+        color: lighten(red, 15%);
+        background-color: darken($bg_color, 5%);
+      }
+
+      &:active, &:active:hover {
+        color: $selected_bg_color;
+        background-color: darken($bg_color, 8%);
+      }
+    }
+  }
+}
+
+//
+// Geary
+//
+.geary-main-window {
+  .geary-folder-frame {
+    treeview.view.sidebar {
+      background-color: $bg_color;
+      color: $text_color;
+
+      &:hover { background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.08)); }
+
+      &:active {
+        color: $fg_color;
+        background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.16));
+      }
+
+      &:disabled {
+        color: $insensitive_fg_color;
+        image { color: inherit; }
+      }
+
+      &:selected {
+        color: $selected_fg_color;
+        background-color: $selected_bg_color;
+
+        &:active { background-color: mix(black, $selected_bg_color, 10%); }
+
+        &:hover { background-color: mix(white, $selected_bg_color, 10%); }
+      }
+    }
+  }
+
+  headerbar.titlebar > leaflet > leaflet > separator.sidebar { // 40.0
+    border-right: none;
+    background: none;
+    min-width: 0;
+  }
+}
+
 
 //
 // RhythmBox

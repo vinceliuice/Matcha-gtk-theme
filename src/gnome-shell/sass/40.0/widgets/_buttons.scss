@@ -1,0 +1,11 @@
+/* Buttons */
+
+.button {
+  @extend %button; // that's it
+}
+
+.popup-menu {
+  .button {
+    @extend %flat_button; // that's it
+  }
+}

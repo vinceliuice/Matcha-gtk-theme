@@ -38,6 +38,14 @@
   background-color: #f7f7f7;
 }
 
+.background.csd {
+  border-radius: 0 0 2px 2px;
+}
+
+.background.csd.maximized {
+  border-radius: 0;
+}
+
 .popup.background.csd {
   border-radius: 2px;
 }
@@ -77,16 +85,16 @@ button.gtkstyle-fallback:active, button.gtkstyle-fallback:checked {
   background-color: #F0544C;
 }
 
-.view, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar, iconview {
+.view, iconview {
   color: #363636;
   background-color: #ffffff;
 }
 
-.view:hover, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:hover, iconview:hover {
+.view:hover, iconview:hover {
   color: #323232;
 }
 
-.view:selected:hover, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected:hover, iconview:selected:hover {
+.view:selected:hover, iconview:selected:hover {
   background-color: #d84c44;
 }
 
@@ -430,19 +438,19 @@ button separator {
   margin: 4px 1px;
 }
 
-#tasklist-button, .budgie-panel button.flat.launcher, button.budgie-menu-launcher, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button, placessidebar row button.sidebar-button, button.flat {
+#tasklist-button, .budgie-panel button.flat.launcher, button.budgie-menu-launcher, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button, tabbox > tab button, placessidebar row button.sidebar-button, button.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
   transition: none;
 }
 
-#tasklist-button:hover, .budgie-panel button.flat.launcher:hover, button.budgie-menu-launcher:hover, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover, placessidebar row button.sidebar-button:hover, button.flat:hover {
+#tasklist-button:hover, .budgie-panel button.flat.launcher:hover, button.budgie-menu-launcher:hover, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover, tabbox > tab button:hover, placessidebar row button.sidebar-button:hover, button.flat:hover {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 350ms;
 }
 
-#tasklist-button:hover:active, button.budgie-menu-launcher:hover:active, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover:active, placessidebar row button.sidebar-button:hover:active, button.flat:hover:active {
+#tasklist-button:hover:active, button.budgie-menu-launcher:hover:active, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover:active, tabbox > tab button:hover:active, placessidebar row button.sidebar-button:hover:active, button.flat:hover:active {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -1709,6 +1717,31 @@ headerbar.default-decoration button.titlebutton {
   padding: 0;
 }
 
+.titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+  color: #323232;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  margin: 0 0 0 0;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F0544C 0%, transparent 0%) 0 0 0/0 0 0;
+}
+
+.titlebar.windowhandle viewswitcher button:checked:not(.titlebutton):not(.suggested-action):not(.destructive-action), .titlebar.windowhandle viewswitcher button:active:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+  color: #323232;
+  background-color: rgba(50, 50, 50, 0.15);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F0544C 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+.titlebar.windowhandle viewswitcher button:disabled:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+  color: rgba(50, 50, 50, 0.4);
+}
+
+.titlebar.windowhandle viewswitcher button:checked:disabled:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+  color: rgba(50, 50, 50, 0.4);
+  background-color: rgba(50, 50, 50, 0.05);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), rgba(240, 84, 76, 0.4) 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
 .titlebar, .titlebar.background {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
@@ -1717,6 +1750,12 @@ headerbar.default-decoration button.titlebutton {
 .titlebar, .titlebar headerbar {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.13);
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15), inset 0 1px rgba(255, 255, 255, 0.13);
+}
+
+.titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 window.background > box.vertical > headerbar:not(.titlebar) {
@@ -2676,12 +2715,25 @@ popover > list,
 popover > .view,
 popover > toolbar,
 popover > .inline-toolbar,
+popover > scrolledwindow > viewport > list,
 popover.background > list,
 popover.background > .view,
 popover.background > toolbar,
-popover.background > .inline-toolbar {
+popover.background > .inline-toolbar,
+popover.background > scrolledwindow > viewport > list {
   border-style: none;
   background-color: transparent;
+}
+
+popover > scrolledwindow > viewport > list,
+popover.background > scrolledwindow > viewport > list {
+  margin: 6px;
+}
+
+popover > scrolledwindow > viewport > list row,
+popover.background > scrolledwindow > viewport > list row {
+  padding: 6px 12px;
+  border-radius: 2px;
 }
 
 popover button:not(.suggested-action):not(.destructive-action):hover,
@@ -3737,7 +3789,7 @@ frame > border,
 .frame {
   margin: 0;
   padding: 0;
-  border-radius: 0;
+  border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -3854,10 +3906,19 @@ separator {
 list {
   background-color: #ffffff;
   border-color: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
 }
 
 list row {
   padding: 2px;
+}
+
+list row:first-child {
+  border-radius: 2px 2px 0 0;
+}
+
+list row:last-child {
+  border-radius: 0 0 2px 2px;
 }
 
 treeview.has-open-popup.view.sidebar.source-list, .panel popover .sidebar .has-open-popup.view, .budgie-menu button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, row.has-open-popup.activatable, treeview.has-open-popup.view, treeview.view.sidebar.source-list:hover, .panel popover .sidebar .view:hover, .budgie-menu button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, row.activatable:hover, treeview.view:hover {
@@ -4662,7 +4723,7 @@ stackswitcher button.circular {
 }
 
 decoration {
-  border-radius: 2px 2px 0 0;
+  border-radius: 2px;
   border-width: 0;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
   margin: 6px;
@@ -4861,7 +4922,7 @@ filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filec
 .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover, window.thunar .sidebar treeview.view:selected, window.thunar .sidebar treeview.view:selected:hover, window.thunar .sidebar treeview.view:active:hover, .budgie-menu button:checked, .atril-window scrolledwindow.frame > .view:selected, .atril-window scrolledwindow.frame > .view:active,
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget > widget > scrolledwindow > textview text:selected:focus,
-#MozillaGtkWidget > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .emoji widget:hover, .view:selected, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:selected, .view:selected:focus, textview text selection:focus, textview text selection, iconview:selected, iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
+#MozillaGtkWidget > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .emoji widget:hover, .view:selected, .view:selected:focus, textview text selection:focus, textview text selection, iconview:selected, iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
@@ -4875,7 +4936,7 @@ filechooser placessidebar.sidebar row.sidebar-row:disabled:selected, filechooser
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:active:hover, window.thunar .sidebar treeview.view:disabled:selected, window.thunar .sidebar treeview.view:disabled:active:hover, .budgie-menu button:disabled:checked, .atril-window scrolledwindow.frame > .view:disabled:selected, .atril-window scrolledwindow.frame > .view:disabled:active,
 .xreader-window scrolledwindow.frame > .view:disabled:selected,
 .xreader-window scrolledwindow.frame > .view:disabled:active, .caja-desktop > widget.entry:disabled:selected, #MozillaGtkWidget > widget > scrolledwindow > textview text:disabled:selected,
-#MozillaGtkWidget > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, .emoji widget:disabled:hover, .view:disabled:selected, .geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar:disabled:selected, textview text selection:disabled, iconview:disabled:selected, iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry selection:disabled, menuitem.button.flat:disabled:active, menuitem.button.flat:active arrow:disabled, menuitem.button.flat:disabled:selected, menuitem.button.flat:selected arrow:disabled,
+#MozillaGtkWidget > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, .emoji widget:disabled:hover, .view:disabled:selected, textview text selection:disabled, iconview:disabled:selected, iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry selection:disabled, menuitem.button.flat:disabled:active, menuitem.button.flat:active arrow:disabled, menuitem.button.flat:disabled:selected, menuitem.button.flat:selected arrow:disabled,
 modelbutton.flat:disabled:active,
 modelbutton.flat:active arrow:disabled,
 modelbutton.flat:disabled:selected,
@@ -5550,9 +5611,8 @@ viewswitcherbar > actionbar {
   background-image: linear-gradient(to bottom, #ffffff, #ffffff);
 }
 
-.main-window > stack > hdyleaflet > separator.sidebar {
-  min-width: 1px;
-  background-color: rgba(0, 0, 0, 0.15);
+.tweak-categories > separator {
+  background: none;
 }
 
 row#Focus,
@@ -5562,16 +5622,7 @@ row#dynamic-workspaces,
 row#PrimaryWorkspaceTweak,
 row#workspaces-only-on-primary {
   padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-row#Focus row:not(:last-child),
-row#ClickMethod row:not(:last-child),
-row#StaticWorkspaceTweak row:not(:last-child),
-row#dynamic-workspaces row:not(:last-child),
-row#PrimaryWorkspaceTweak row:not(:last-child),
-row#workspaces-only-on-primary row:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0;
 }
 
 row#Focus.tweak > list,
@@ -5580,23 +5631,20 @@ row#StaticWorkspaceTweak.tweak > list,
 row#dynamic-workspaces.tweak > list,
 row#PrimaryWorkspaceTweak.tweak > list,
 row#workspaces-only-on-primary.tweak > list {
-  margin-top: -3px;
-}
-
-row#Focus,
-row#ClickMethod,
-row#PrimaryWorkspaceTweak,
-row#workspaces-only-on-primary {
-  margin-top: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 row#AutostartTitle.tweak {
-  padding: 3px;
   background-color: #ffffff;
 }
 
 list#AutostartListBoxTweakGroup.tweak-group-startup {
   border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.main-window > stack > hdyleaflet > separator.sidebar {
+  min-width: 1px;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .tr-workarea undershoot,
@@ -5688,6 +5736,15 @@ window.background.csd overlay > grid.horizontal frame:dir(ltr) > border {
   border-top-width: 0;
   border-left-width: 0;
   border-bottom-width: 0;
+}
+
+window.background.csd > deck > box.vertical > leaflet > separator.sidebar {
+  border-right: none;
+}
+
+window.background.csd list.content {
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .selection-mode box.horizontal headerbar, .selection-mode hdyleaflet headerbar, .selection-mode leaflet.unfolded headerbar {
@@ -6061,6 +6118,102 @@ flowboxchild.bookmark-tag-widget label {
 
 flowboxchild.bookmark-tag-widget-selected {
   color: #ffffff;
+}
+
+tabbox {
+  background-color: #f7f7f7;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
+}
+
+tabbox > tab {
+  padding: 3px 16px 6px 16px;
+  min-width: 16px;
+  min-height: 16px;
+  border-radius: 0;
+  outline-offset: -4px;
+  border: none;
+  color: rgba(50, 50, 50, 0.55);
+}
+
+tabbox > tab:not(:only-child):first-child {
+  margin-left: 6px;
+}
+
+tabbox > tab:not(:only-child):last-child {
+  margin-right: 6px;
+}
+
+tabbox > tab:hover {
+  color: rgba(50, 50, 50, 0.775);
+  transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: inset 0 -2px alpha(#F0544C,0.6), 0 1px alpha(#F0544C,0.6);
+}
+
+tabbox > tab:checked {
+  color: #323232;
+  transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: inset 0 -2px #F0544C, 0 1px #F0544C;
+}
+
+tabbox > tab button {
+  border-radius: 100%;
+  min-height: 16px;
+  min-width: 16px;
+  border-radius: 3px;
+  border: none;
+  padding: 0;
+  color: #777777;
+}
+
+tabbox > tab button:hover {
+  color: #ff4d4d;
+  background-color: #eaeaea;
+}
+
+tabbox > tab button:active, tabbox > tab button:active:hover {
+  color: #F0544C;
+  background-color: #e3e3e3;
+}
+
+.geary-main-window .geary-folder-frame treeview.view.sidebar {
+  background-color: #f7f7f7;
+  color: #363636;
+}
+
+.geary-main-window .geary-folder-frame treeview.view.sidebar:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.geary-main-window .geary-folder-frame treeview.view.sidebar:active {
+  color: #323232;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.geary-main-window .geary-folder-frame treeview.view.sidebar:disabled {
+  color: rgba(50, 50, 50, 0.55);
+}
+
+.geary-main-window .geary-folder-frame treeview.view.sidebar:disabled image {
+  color: inherit;
+}
+
+.geary-main-window .geary-folder-frame treeview.view.sidebar:selected {
+  color: #ffffff;
+  background-color: #F0544C;
+}
+
+.geary-main-window .geary-folder-frame treeview.view.sidebar:selected:active {
+  background-color: #d84c44;
+}
+
+.geary-main-window .geary-folder-frame treeview.view.sidebar:selected:hover {
+  background-color: #f2655e;
+}
+
+.geary-main-window headerbar.titlebar > leaflet > leaflet > separator.sidebar {
+  border-right: none;
+  background: none;
+  min-width: 0;
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
@@ -6624,11 +6777,6 @@ window.background.chromium > menu > menuitem:disabled, window.background.chromiu
 tooltip.background.chromium {
   border-color: rgba(204, 204, 204, 0.95);
   background-color: #f2f2f2;
-}
-
-.geary-sidebar-pane-separator frame.geary-folder-frame treeview.view.sidebar {
-  background-color: #f7f7f7;
-  color: #363636;
 }
 
 overlay.window-overlay grid.horizontal stack paned.horizontal stack widget.view.frame,

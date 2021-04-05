@@ -17,6 +17,18 @@ THEME_NAME=Matcha
 COLOR_VARIANTS=('' '-light' '-dark')
 THEME_VARIANTS=('-aliz' '-azul' '-sea')
 
+if [[ "$(command -v gnome-shell)" ]]; then
+  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -2)"
+  if [[ "${SHELL_VERSION:-}" == '40.0' ]]; then
+    GS_VERSION="new"
+  else
+    GS_VERSION="old"
+  fi
+  else
+    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+    GS_VERSION="new"
+fi
+
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
@@ -65,8 +77,13 @@ install() {
   cd ${SRC_DIR}/gnome-shell
   cp -ur pad-osd.css                                                                  ${themedir}/gnome-shell
   cp -ur icons                                                                        ${themedir}/gnome-shell
-  cp -ur gnome-shell${ELSE_DARK}${theme}.css                                          ${themedir}/gnome-shell/gnome-shell.css
   cp -ur common-assets                                                                ${themedir}/gnome-shell/assets
+
+  if [[ "${GS_VERSION:-}" == 'new' ]]; then
+    cp -ur 40.0/gnome-shell${ELSE_DARK}${theme}.css                                   ${themedir}/gnome-shell/gnome-shell.css
+  else
+    cp -ur 3.28/gnome-shell${ELSE_DARK}${theme}.css                                   ${themedir}/gnome-shell/gnome-shell.css
+  fi
 
   cd ${SRC_DIR}/gnome-shell/assets
   cp -ur calendar-arrow-left${ELSE_DARK}.svg                                          ${themedir}/gnome-shell/assets/calendar-arrow-left.svg
@@ -267,6 +284,25 @@ revert_gdm() {
     rm -rf "$UBUNTU_YARU_THEME_FILE"
     mv "$UBUNTU_YARU_THEME_FILE.bak" "$UBUNTU_YARU_THEME_FILE"
   fi
+}
+
+gnome_version() {
+  if [[ -z "${GS_VERSION:-}" ]]; then
+    # Set a proper gnome-shell theme version
+    if [[ "$(command -v gnome-shell)" ]]; then
+      SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -2)"
+      if [[ "${SHELL_VERSION:-}" == '40.0' ]]; then
+        GS_VERSION="new"
+      else
+        GS_VERSION="old"
+      fi
+    else
+      echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+      GS_VERSION="new"
+    fi
+  fi
+
+  sed -i.bak "s/gs_version/$GS_VERSION/g" "$SRC_DIR/sass/_theme-options.scss"
 }
 
 #  Install theme
