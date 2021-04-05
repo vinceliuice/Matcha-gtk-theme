@@ -12,13 +12,32 @@
 
 .candidate-index {
   padding: 0 0.5em 0 0;
-  color: darken($fg_color,10%);
+  color: $alt_fg_color;
+
+  .candidate-box:selected & { color: $selected_fg_color; }
 }
 
 .candidate-box {
   padding: 0.3em 0.5em 0.3em 0.5em;
   border-radius: $base_border_radius;
-  &:selected,&:hover { background-color: $selected_bg_color; color: $selected_fg_color; }
+  margin-right: 2px;
+
+  &:last-child { margin-right: 0; }
+
+  &:hover {
+    background-color: rgba($fg_color, 0.1);
+    color: $fg_color;
+  }
+
+  &:active {
+    background-color: rgba($fg_color, 0.15);
+    color: $fg_color;
+  }
+
+  &:selected {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+  }
 }
 
 .candidate-page-button-box {

@@ -4686,8 +4686,8 @@ button.circular-button {
   min-width: 28px;
   min-height: 28px;
   padding: 2px;
-  border-radius: 50%;
-  -gtk-outline-radius: 50%;
+  border-radius: 1000px;
+  -gtk-outline-radius: 1000px;
 }
 
 .slate-notification-window button.image-button label,

@@ -1231,15 +1231,34 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .candidate-index {
   padding: 0 0.5em 0 0;
-  color: #1d1d1d;
+  color: #555555;
+}
+
+.candidate-box:selected .candidate-index {
+  color: #fff;
 }
 
 .candidate-box {
   padding: 0.3em 0.5em 0.3em 0.5em;
   border-radius: 3px;
+  margin-right: 2px;
 }
 
-.candidate-box:selected, .candidate-box:hover {
+.candidate-box:last-child {
+  margin-right: 0;
+}
+
+.candidate-box:hover {
+  background-color: rgba(54, 54, 54, 0.1);
+  color: #363636;
+}
+
+.candidate-box:active {
+  background-color: rgba(54, 54, 54, 0.15);
+  color: #363636;
+}
+
+.candidate-box:selected {
   background-color: #3498db;
   color: #fff;
 }
