@@ -99,7 +99,7 @@ install() {
   mv -f assets/process-working.svg process-working.svg
   mv -f assets/no-notifications.svg no-notifications.svg
 
-  # Install GTK+ 2 Theme
+  # Install GTK+ 2.0 Theme
   mkdir -p                                                                            ${themedir}/gtk-2.0
   cd ${SRC_DIR}/gtk-2.0
   cp -ur {apps.rc,main.rc,panel.rc,xfce-notify.rc}                                    ${themedir}/gtk-2.0
@@ -107,14 +107,22 @@ install() {
   cp -ur assets${ELSE_DARK}${theme}                                                   ${themedir}/gtk-2.0/assets
   cp -ur menubar-toolbar${ELSE_DARK}.rc                                               ${themedir}/gtk-2.0/menubar-toolbar.rc
 
-  # Install GTK+ 3 Theme
+  # Install GTK+ 3.0 Theme
   mkdir -p                                                                            ${themedir}/gtk-3.0
-  cd ${SRC_DIR}/gtk-3.0
+  cd ${SRC_DIR}/gtk
   cp -ur assets${theme}                                                               ${themedir}/gtk-3.0/assets
-  cp -ur gtk${color}${theme}.css                                                      ${themedir}/gtk-3.0/gtk.css
-  cp -ur gtk-dark${theme}.css                                                         ${themedir}/gtk-3.0/gtk-dark.css
+  cp -ur gtk-3.0/gtk${color}${theme}.css                                              ${themedir}/gtk-3.0/gtk.css
+  cp -ur gtk-3.0/gtk-dark${theme}.css                                                 ${themedir}/gtk-3.0/gtk-dark.css
 
   cp -ur thumbnail${ELSE_DARK}${theme}.png                                            ${themedir}/gtk-3.0/thumbnail.png
+
+  # Install GTK+ 4.0 Theme
+  mkdir -p                                                                            ${themedir}/gtk-4.0
+  cp -ur gtk-4.0/gtk${color}${theme}.css                                              ${themedir}/gtk-4.0/gtk.css
+  cp -ur gtk-4.0/gtk-dark${theme}.css                                                 ${themedir}/gtk-4.0/gtk-dark.css
+  cd ${themedir}/gtk-4.0
+  ln -sf ../gtk-3.0/assets  assets
+  ln -sf ../gtk-3.0/thumbnail.png thumbnail.png
 
   # Install CINNAMON Theme
   mkdir -p                                                                            ${themedir}/cinnamon

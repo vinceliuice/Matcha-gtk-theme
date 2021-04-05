@@ -24,8 +24,10 @@ fi
 
 for color in "${_COLOR_VARIANTS[@]}"; do
   for theme in "${_THEME_VARIANTS[@]}"; do
-  sassc $SASSC_OPT src/gtk-3.0/gtk${color}${theme}.{scss,css}
-  echo "==> Generating the gtk${color}${theme}.css..."
+  sassc $SASSC_OPT src/gtk/gtk-3.0/gtk${color}${theme}.{scss,css}
+  echo "==> Generating the GTK 3.0 gtk${color}${theme}.css..."
+  sassc $SASSC_OPT src/gtk/gtk-4.0/gtk${color}${theme}.{scss,css}
+  echo "==> Generating the GTK 4.0 gtk${color}${theme}.css..."
   done
 done
 

@@ -30,6 +30,8 @@ $borders_color: if($variant =='light', rgba(black, 0.15), rgba(black, 0.25));
 $disable_borders_color: if($variant == 'light', rgba(black, 0.08), rgba(black, 0.15));
 $solid_borders_color: if($variant == 'light', darken($bg_color, 15%), darken($bg_color, 3%));
 $highlight: if($variant =='light', rgba(white, 0.13), rgba(white, 0.10));
+$focus_border_color: if($variant == 'light', transparentize($selected_bg_color, 0.5), transparentize($selected_bg_color, 0.3));
+$alt_focus_border_color: if($variant == 'light', transparentize(white, 0.2), transparentize(white,0.7));
 
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%),
                                      lighten($selected_bg_color, 20%));
@@ -108,6 +110,10 @@ $panel_fg: $fg_color;
 @if $color=='sea' and $header == 'dark' { $panel_fg: #ccd7d4; }
 @if $color=='aliz' and $header == 'dark' { $panel_fg: #cbbfbf; }
 @if $color=='azul' and $header == 'dark' { $panel_fg: #bbc3c8; }
+
+$menu_bg_color: if($variant=='light', $base_color, $bg_color);
+$menu_selected_color: if($variant == 'light', darken($base_color, 8%), lighten($bg_color, 5%));
+$menu_active_color: if($variant == 'light', darken($base_color, 15%), lighten($bg_color, 10%));
 
 $entry_bg: if($variant == 'light', $base_color, lighten($base_color, 0%));
 $entry_border: if($variant == 'light', $borders_color, darken($borders_color, 3%));
