@@ -16,21 +16,22 @@ filechooser,
 // Dark transparent sidebars
 filechooser,
 .nautilus-window {
-
   &.csd.background, placessidebar list { background-color: transparent; }
 
   placessidebar.sidebar {
-
     background-color: $dark_sidebar_bg;
 
     row.sidebar-row {
+      margin: 0 0;
       border: none;
+      border-radius: 0;
       color: $dark_sidebar_fg;
 
       .sidebar-icon { color: rgba($dark_sidebar_fg, 0.6); }
 
       &.has-open-popup,
       &:hover {
+        border-radius: 0;
         background-color: rgba($dark_sidebar_fg, 0.15);
         box-shadow: inset 3px 0 lighten($selected_bg_color, 10%);
       }
@@ -42,6 +43,7 @@ filechooser,
       &:selected.has-open-popup,
       &:selected, &:selected:hover, &:active:hover {
         @extend %selected_items;
+        border-radius: 0;
 
         .sidebar-icon { color: inherit; }
       }

@@ -2281,6 +2281,7 @@ headerbar:backdrop {
 headerbar .title {
   padding-left: 12px;
   padding-right: 12px;
+  font-weight: bold;
 }
 
 headerbar .subtitle {
@@ -3480,12 +3481,11 @@ notebook > header {
 }
 
 notebook > header.top {
-  padding-bottom: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 notebook > header.top > tabs > tab {
-  padding: 3px 16px 6px 16px;
+  padding: 6px 16px;
   min-width: 16px;
   min-height: 16px;
   border-radius: 0;
@@ -3511,12 +3511,11 @@ notebook > header.top > tabs > tab:checked {
 }
 
 notebook > header.bottom {
-  padding-top: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 notebook > header.bottom > tabs > tab {
-  padding: 3px 16px 6px 16px;
+  padding: 6px 16px;
   min-width: 16px;
   min-height: 16px;
   border-radius: 0;
@@ -3542,12 +3541,11 @@ notebook > header.bottom > tabs > tab:checked {
 }
 
 notebook > header.right {
-  padding-left: 0;
   border-left: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 notebook > header.right > tabs > tab {
-  padding: 3px 16px 6px 16px;
+  padding: 6px 16px;
   min-width: 16px;
   min-height: 16px;
   border-radius: 0;
@@ -3573,12 +3571,11 @@ notebook > header.right > tabs > tab:checked {
 }
 
 notebook > header.left {
-  padding-right: 0;
   border-right: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 notebook > header.left > tabs > tab {
-  padding: 3px 16px 6px 16px;
+  padding: 6px 16px;
   min-width: 16px;
   min-height: 16px;
   border-radius: 0;
@@ -4702,6 +4699,16 @@ list > row.expander .row-header {
   padding: 2px;
 }
 
+listview.separators.horizontal,
+list.separators.horizontal {
+  border-left: none;
+}
+
+listview.separators:not(.horizontal),
+list.separators:not(.horizontal) {
+  border-bottom: none;
+}
+
 listview.horizontal row.separator, listview.separators.horizontal > row:not(.separator),
 list.horizontal row.separator,
 list.separators.horizontal > row:not(.separator) {
@@ -5066,42 +5073,42 @@ window.dialog.message label.title {
   font-size: 15pt;
 }
 
-window.dialog.message .dialog-action-area.linked:not(.vertical) > button {
+window.dialog.message .dialog-action-area:not(.vertical) > button {
   padding: 5px 10px;
   border-radius: 0;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-window.dialog.message .dialog-action-area.linked:not(.vertical) > button:active, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:checked {
+window.dialog.message .dialog-action-area:not(.vertical) > button:active, window.dialog.message .dialog-action-area:not(.vertical) > button:checked {
   transition: background-color 0.00001s 0.2s;
   animation: ripple_effect 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
 
-window.dialog.message .dialog-action-area.linked:not(.vertical) > button, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:hover, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:active, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:checked, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:disabled {
+window.dialog.message .dialog-action-area:not(.vertical) > button, window.dialog.message .dialog-action-area:not(.vertical) > button:hover, window.dialog.message .dialog-action-area:not(.vertical) > button:active, window.dialog.message .dialog-action-area:not(.vertical) > button:checked, window.dialog.message .dialog-action-area:not(.vertical) > button:disabled {
   border-radius: 0;
 }
 
-window.dialog.message .dialog-action-area.linked:not(.vertical) > button:first-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:hover:first-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:active:first-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:checked:first-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:disabled:first-child {
+window.dialog.message .dialog-action-area:not(.vertical) > button:first-child, window.dialog.message .dialog-action-area:not(.vertical) > button:hover:first-child, window.dialog.message .dialog-action-area:not(.vertical) > button:active:first-child, window.dialog.message .dialog-action-area:not(.vertical) > button:checked:first-child, window.dialog.message .dialog-action-area:not(.vertical) > button:disabled:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 
-window.dialog.message .dialog-action-area.linked:not(.vertical) > button:last-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:hover:last-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:active:last-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:checked:last-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:disabled:last-child {
+window.dialog.message .dialog-action-area:not(.vertical) > button:last-child, window.dialog.message .dialog-action-area:not(.vertical) > button:hover:last-child, window.dialog.message .dialog-action-area:not(.vertical) > button:active:last-child, window.dialog.message .dialog-action-area:not(.vertical) > button:checked:last-child, window.dialog.message .dialog-action-area:not(.vertical) > button:disabled:last-child {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-window.dialog.message .dialog-action-area.linked:not(.vertical) > button:only-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:hover:only-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:active:only-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:checked:only-child, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:disabled:only-child {
+window.dialog.message .dialog-action-area:not(.vertical) > button:only-child, window.dialog.message .dialog-action-area:not(.vertical) > button:hover:only-child, window.dialog.message .dialog-action-area:not(.vertical) > button:active:only-child, window.dialog.message .dialog-action-area:not(.vertical) > button:checked:only-child, window.dialog.message .dialog-action-area:not(.vertical) > button:disabled:only-child {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
 
-window.dialog.message .dialog-action-area.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):hover {
+window.dialog.message .dialog-action-area:not(.vertical) > button:not(.suggested-action):not(.destructive-action):hover {
   background-color: alpha(#cbbfbf,0.06);
 }
 
-window.dialog.message .dialog-action-area.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):active, window.dialog.message .dialog-action-area.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
+window.dialog.message .dialog-action-area:not(.vertical) > button:not(.suggested-action):not(.destructive-action):active, window.dialog.message .dialog-action-area:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
   background-color: alpha(#cbbfbf,0.1);
   color: #cbbfbf;
 }
@@ -5112,32 +5119,32 @@ window.dialog.message.csd.background {
   border: none;
 }
 
-window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button {
+window.dialog.message.csd .dialog-action-area:not(.vertical) > button {
   padding: 6px 10px 8px 10px;
 }
 
-window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:hover, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:active, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:checked, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:disabled {
+window.dialog.message.csd .dialog-action-area:not(.vertical) > button, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:hover, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:active, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:checked, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:disabled {
   border-radius: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.25);
   border-right: none;
   border-bottom: none;
 }
 
-window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:first-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:hover:first-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:active:first-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:checked:first-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:disabled:first-child {
+window.dialog.message.csd .dialog-action-area:not(.vertical) > button:first-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:hover:first-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:active:first-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:checked:first-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:disabled:first-child {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 0;
   border-left: none;
   border-bottom: none;
 }
 
-window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:last-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:hover:last-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:active:last-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:checked:last-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:disabled:last-child {
+window.dialog.message.csd .dialog-action-area:not(.vertical) > button:last-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:hover:last-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:active:last-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:checked:last-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:disabled:last-child {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 0;
   border-right: none;
   border-bottom: none;
 }
 
-window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:only-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:hover:only-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:active:only-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:checked:only-child, window.dialog.message.csd .dialog-action-area.linked:not(.vertical) > button:disabled:only-child {
+window.dialog.message.csd .dialog-action-area:not(.vertical) > button:only-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:hover:only-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:active:only-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:checked:only-child, window.dialog.message.csd .dialog-action-area:not(.vertical) > button:disabled:only-child {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border-left: none;
@@ -11027,7 +11034,9 @@ filechooser placessidebar.sidebar,
 
 filechooser placessidebar.sidebar row.sidebar-row,
 .nautilus-window placessidebar.sidebar row.sidebar-row {
+  margin: 0 0;
   border: none;
+  border-radius: 0;
   color: #d0c8c8;
 }
 
@@ -11039,6 +11048,7 @@ filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
 filechooser placessidebar.sidebar row.sidebar-row.has-open-popup, filechooser placessidebar.sidebar row.sidebar-row:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup,
 .nautilus-window placessidebar.sidebar row.sidebar-row:hover {
+  border-radius: 0;
   background-color: rgba(208, 200, 200, 0.15);
   box-shadow: inset 3px 0 #f4817b;
 }
@@ -11048,6 +11058,14 @@ filechooser placessidebar.sidebar row.sidebar-row:disabled, filechooser placessi
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled label,
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled image {
   color: rgba(208, 200, 200, 0.45);
+}
+
+filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
+.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected,
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected,
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
+.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
+  border-radius: 0;
 }
 
 filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:active:hover .sidebar-icon,

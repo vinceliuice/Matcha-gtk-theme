@@ -1541,6 +1541,7 @@ actionbar > revealer > box {
 //
 // Headerbars
 //
+
 $_header_radius: if($variant=='light', 2px, 2px);
 
 headerbar,
@@ -1559,12 +1560,14 @@ headerbar,
   .title {
     padding-left: 12px;
     padding-right: 12px;
+    font-weight: bold;
   }
 
   .subtitle {
     font-size: smaller;
     padding-left: 12px;
     padding-right: 12px;
+
     @extend .dim-label;
   }
 
@@ -2610,11 +2613,11 @@ notebook {
   @each $_pos, $_bpos in (top, bottom), (bottom, top), (right, left), (left, right) {
       // sizing and borders
       &.#{$_pos} {
-        padding-#{$_bpos}: 0;
+        // padding-#{$_bpos}: 0;
         border-#{$_bpos}: 1px solid $borders_color;
 
         > tabs > tab {
-          padding: 3px 16px 6px 16px;
+          padding: 6px 16px;
           min-width: 16px;
           min-height: 16px;
           border-radius: 0;
@@ -3433,13 +3436,18 @@ list {
     &:first-child { border-radius: 2px 2px 0 0; }
     &:last-child { border-radius: 0 0 2px 2px; }
   }
+
   > row.expander { padding: 0px; }
   > row.expander .row-header { padding: 2px; }
+
+  &.separators.horizontal { border-left: none; }
+  &.separators:not(.horizontal) { border-bottom: none; }
 
   &.horizontal row.separator,
   &.separators.horizontal > row:not(.separator) {
     border-left: 1px solid $borders_color;
   }
+
   &:not(.horizontal) row.separator,
   &.separators:not(.horizontal) > row:not(.separator) {
     border-bottom: 1px solid $borders_color;
@@ -3697,7 +3705,7 @@ window.dialog.message { // Message Dialog styling
     font-size: 15pt;
   }
 
-  .dialog-action-area.linked:not(.vertical) > button {
+  .dialog-action-area:not(.vertical) > button {
     padding: 5px 10px;
     border-radius: 0;
     border: none;
@@ -3743,7 +3751,7 @@ window.dialog.message { // Message Dialog styling
       border: none;
     }
 
-    .dialog-action-area.linked:not(.vertical) > button {
+    .dialog-action-area:not(.vertical) > button {
       padding: 6px 10px 8px 10px;
 
       &, &:hover, &:active, &:checked, &:disabled {
