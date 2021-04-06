@@ -45,6 +45,8 @@ filechooser,
         @extend %selected_items;
         border-radius: 0;
 
+        label { color: $selected_fg_color; }
+
         .sidebar-icon { color: inherit; }
       }
 

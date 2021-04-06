@@ -9914,6 +9914,14 @@ filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filec
   border-radius: 0;
 }
 
+filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected label, filechooser placessidebar.sidebar row.sidebar-row:selected label, filechooser placessidebar.sidebar row.sidebar-row:selected:hover label, filechooser placessidebar.sidebar row.sidebar-row:active:hover label,
+.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected label,
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected label,
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover label,
+.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover label {
+  color: #ffffff;
+}
+
 filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:active:hover .sidebar-icon,
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected .sidebar-icon,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected .sidebar-icon,

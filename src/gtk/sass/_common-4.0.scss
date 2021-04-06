@@ -3914,6 +3914,8 @@ stacksidebar {
       background-color: $menu_selected_color;
       color: $fg_color;
 
+      label { color: $fg_color; }
+
       &:hover {
         background-color: mix($fg_color, $menu_selected_color, 5%);
       }
@@ -4138,7 +4140,7 @@ infobar {
       color: $selected_fg_color;
       caret-color: currentColor;
 
-      button {
+      > button {
         min-height: 28px;
         @extend %selected-button;
       }
@@ -4156,18 +4158,18 @@ infobar {
   }
 }
 
-   //close button for info and searchbar (#3215)
+//close button for info and searchbar (#3215)
 
-   infobar .close,
-   searchbar .close {
-      @include button(undecorated);
-      min-width: 16px;
-      min-height: 16px;
-      padding: 4px;
-      border-radius: 50%;
+infobar .close,
+searchbar .close {
+   @include button(undecorated);
+   min-width: 16px;
+   min-height: 16px;
+   padding: 4px;
+   border-radius: 1000px;
 
-      &:hover { @include button(hover); }
-   }
+   &:hover { @include button(hover); }
+}
 
 //
 // Titlebuttons
@@ -4275,11 +4277,6 @@ windowcontrols {
   }
 }
 
-%normal_selected_button {
-  color: $selected_fg_color;
-  background-color: rgba($selected_fg_color, 0.0);
-  border-color: rgba($selected_fg_color, 0.5);
-}
 
 //
 // Tooltips
