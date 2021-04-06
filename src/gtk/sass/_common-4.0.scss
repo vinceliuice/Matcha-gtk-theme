@@ -48,13 +48,13 @@ treeview.expander:disabled { -gtk-icon-filter: opacity(0.5); }
   &:hover { color: $fg_color; }
 
   &:selected {
-    &:focus, &  {
-      @extend %selected_items;
+    &:focus, & {
+      @extend %normal_selected_items;
 
       border-radius: 2px;
     }
 
-    &:hover { background-color: mix(black, $selected_bg_color, 10%); }
+    &:hover { background-color: mix(black, $menu_selected_color, 10%); }
   }
 }
 
@@ -62,7 +62,7 @@ textview {
   > text {
     @extend %view;
 
-    selection { &:focus, & { @extend %selected_items; }}
+    selection { &:focus, & { @extend %selected_items; } }
   }
 
   &:drop(active) {
@@ -162,8 +162,8 @@ label {
   }
 
   &.error {
-   color: $error_color;
-   &:disabled { color: transparentize($error_color,0.5); }
+    color: $error_color;
+    &:disabled { color: transparentize($error_color,0.5); }
   }
 }
 
@@ -208,6 +208,8 @@ window.aboutdialog image.large-icons {
   margin: 6px;
   box-shadow: 0 3px 8px rgba(black, 0.35);
   // -gtk-icon-shadow: 0 1px black;
+
+  &.circular { border-radius: 100%; }
 }
 
 //
@@ -707,15 +709,7 @@ button {
     > box > box > label { font-weight: bold; }
   }
 
-  //inline-toolbar buttons
-  .inline-toolbar &, .inline-toolbar &:backdrop {
-    border-radius: 2px;
-    border-width: 1px;
-    @extend %linked;
-  }
-
   .linked:not(.vertical) > & { @extend %linked; }
-
   .linked.vertical > & { @extend %linked_vertical; }
 }
 
@@ -749,37 +743,6 @@ button.circular {
     @if $variant == 'light' { background-position: left 3px, left 4px; }
 
     @else { background-position: left 3px, left 2px; }
-  }
-}
-
-// all the following is for the +|- buttons on inline toolbars, that way
-// should really be deprecated...
-.inline-toolbar toolbutton > button { // redefining the button look is
-                                          // needed since those are flat...
-  @include button(normal);
-  &:hover { @include button(hover); }
-  &:active,
-  &:checked{ @include button(active); }
-  &:disabled { @include button(insensitive); }
-  &:disabled:active,
-  &:disabled:checked { @include button(insensitive-active); }
-}
-
-// More inline toolbar buttons
-toolbar.inline-toolbar toolbutton {
-  & > button.flat { @extend %linked_middle; }
-  &:first-child > button.flat {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-  }
-  &:last-child > button.flat {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-right-style: solid;
-  }
-  &:only-child > button.flat {
-    border-radius: 3px;
-    border-style: solid;
   }
 }
 
@@ -1057,11 +1020,17 @@ modelbutton.flat {
   border-radius: 2px;
   @extend %undecorated_button;
 
-  &:hover { background-color: $menu_selected_color; }
+  &:hover {
+    background-color: $menu_selected_color;
+    color: $fg_color;
+  }
 
-  &:active { color: $fg_color; }
+  &:active {
+    color: $fg_color;
+    background-color: $menu_active_color;
+  }
 
-  &:selected { @extend %selected_items; }
+  &:selected { @extend %normal_selected_items; }
 
   &:disabled { color: $insensitive_fg_color; }
 }
@@ -1377,7 +1346,7 @@ combobox {
 
          &:selected {
            outline-color: $alt_focus_border_color;
-           color: $text-color;
+           color: $text_color;
            background-color: $menu_selected_color;
          }
       }
@@ -1455,6 +1424,7 @@ combobox {
   padding: 4px;
   border-spacing: 4px;
   background-color: $bg_color;
+  border-bottom: 1px solid $borders_color;
 }
 
 .toolbar,
@@ -1468,7 +1438,7 @@ toolbar {
   .osd & { background-color: transparent; }
 
   &.osd {
-    padding: 7px;
+    padding: 8px;
     border: 1px solid $osd_borders_color;
     border-radius: 3px;
     background-color: rgba($osd_bg_color, 0.9);
@@ -1483,42 +1453,16 @@ toolbar {
     &.left { border-width: 0 1px 0 0; }
     &.right { border-width: 0 0 0 1px; }
   }
-
-  &:not(.inline-toolbar) {
-    switch,
-    scale,
-    entry,
-    spinbutton,
-    button {
-      margin-right: 1px;
-      margin-bottom: 1px;
-    }
-    .linked > button,
-    .linked > entry { margin-right:0; }
-  }
 }
 
-.primary-toolbar:not(.libreoffice-toolbar) {  // LO messes up the toolbar styling, so exclude LO toolbars
-  color: $text_color;
-  background-color: transparent;
-  box-shadow: none;
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-image: linear-gradient(to bottom, opacify($button_border, 0.9), $button_border) 1 0 1 0; //temporary hack for rhythmbox 3.1
+// oldstyle toolbar buttons
+.toolbar button {
+  margin: 1px;
+  @extend %undecorated_button;
 
-  //&:backdrop { background-color: opacify($header_bg_backdrop, 1); }
-
-  separator { @extend %header_separator; }
-}
-
-.inline-toolbar {
-  @extend toolbar;
-  background-color: darken($bg_color, 3%);
-  border-style: solid;
-  border-color: $borders_color;
-  border-width: 0 1px 1px;
-  padding: 3px;
-  border-radius: 0  0 3px 3px;
+  &:hover { @include button('hover'); }
+  &:active { @include button('active'); }
+  &:disabled { @include button('insensitive'); }
 }
 
 //searchbar & location-bar
@@ -2206,7 +2150,7 @@ treeview.view {
       border-radius: 0;
       outline-color: $alt_focus_border_color;
 
-      @extend %selected_items;
+      @extend %normal_selected_items;
     }
   }
 
@@ -2214,7 +2158,7 @@ treeview.view {
     color: $insensitive_fg_color;
 
     &:selected {
-      color: mix($selected_fg_color, $selected_bg_color, 40%);
+      color: $insensitive_fg_color;
     }
   }
 
@@ -2254,8 +2198,9 @@ treeview.view {
     &:hover { color: $fg_color; }
 
     &:selected {
-      color: mix($selected_fg_color, $selected_bg_color, 70%);
-      &:hover { color: $selected_fg_color; }
+      color: $text_color;
+
+      &:hover { color: $fg_color; }
     }
 
     &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
@@ -2576,13 +2521,12 @@ popover.menu {
     border-radius: 2px;
 
     &:selected {
-      color: $text-color;
+      color: $text_color;
       background-color: $menu_selected_color;
     }
 
     &:selected:active {
-      //@extend %selected_items;
-      //color: $selected_fg_color;
+      color: $fg_color;
       background-color: $menu_active_color; // matching buttons
     }
   }
@@ -2893,8 +2837,7 @@ switch {
     background-image: -gtk-scaled(url("assets/switch#{$l}-selected.png"),url("assets/switch#{$l}-selected@2.png"));
   }
 
-  headerbar switch#{$k},
-  .primary-toolbar switch#{$k} {
+  headerbar switch#{$k} {
     background-image: -gtk-scaled(url("assets/switch#{$l}-header#{$asset_suffix}.png"),url("assets/switch#{$l}-header#{$asset_suffix}@2.png"));
   }
 }
@@ -3467,10 +3410,10 @@ list {
   }
 
   &:selected {
-    &:active { color: $selected_fg_color; }
+    &:active { color: $fg_color; }
 
     &.has-open-popup,
-    &:hover { background-color: mix(black, $selected_bg_color, 10%); }
+    &:hover { background-color: mix($fg_color, $menu_selected_color, 6%); }
   }
 }
 
@@ -3478,7 +3421,7 @@ row {
   &:not(:hover) { transition: all 150ms $ease-out-quad; }
 
   &:selected {
-    @extend %selected_items;
+    @extend %normal_selected_items;
 
     button { @extend %selected-button; }
   }
@@ -4649,10 +4592,17 @@ stackswitcher.circular {
   &:disabled { color: mix($selected_fg_color, $selected_bg_color, 50%); }
 }
 
-%nobg_selected_items {
-  color: $selected_fg_color;
+%normal_selected_items {
+  background-color: $menu_selected_color;
+  color: $fg_color;
 
-  &:disabled { color: mix($selected_fg_color, $selected_bg_color, 50%); }
+  &:disabled { color: $insensitive_fg_color; }
+}
+
+%nobg_selected_items {
+  color: $fg_color;
+
+  &:disabled { color: $insensitive_fg_color; }
 }
 
 ///*********
