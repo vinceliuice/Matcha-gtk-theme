@@ -31,7 +31,7 @@ $disable_borders_color: if($variant == 'light', rgba(black, 0.08), rgba(black, 0
 $solid_borders_color: if($variant == 'light', darken($bg_color, 15%), darken($bg_color, 3%));
 $highlight: if($variant =='light', rgba(white, 0.13), rgba(white, 0.10));
 $focus_border_color: if($variant == 'light', transparentize($selected_bg_color, 0.5), transparentize($selected_bg_color, 0.3));
-$alt_focus_border_color: if($variant == 'light', transparentize(white, 0.2), transparentize(white,0.7));
+$alt_focus_border_color: if($variant == 'light', transparentize(black, 0.7), transparentize(white, 0.7));
 
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%),
                                      lighten($selected_bg_color, 20%));
