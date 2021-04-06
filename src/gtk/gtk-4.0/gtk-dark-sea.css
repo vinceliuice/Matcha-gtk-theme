@@ -2612,6 +2612,7 @@ headerbar.selection-mode button:backdrop {
   background: none;
 }
 
+headerbar .linked > button.toggle,
 headerbar stackswitcher.linked > button {
   background-color: #2a3538;
   color: #c6cdcb;
@@ -2619,20 +2620,25 @@ headerbar stackswitcher.linked > button {
   border-color: rgba(0, 0, 0, 0.25);
 }
 
+headerbar .linked > button.toggle:hover,
 headerbar stackswitcher.linked > button:hover {
   background-color: #3a4447;
 }
 
-headerbar stackswitcher.linked > button:active, headerbar stackswitcher.linked > button:checked {
+headerbar .linked > button.toggle:active, headerbar .linked > button.toggle:checked,
+headerbar stackswitcher.linked > button:active,
+headerbar stackswitcher.linked > button:checked {
   color: #ffffff;
   border-color: transparent;
   background-color: #2eb398;
 }
 
+headerbar .linked > button.toggle:disabled,
 headerbar stackswitcher.linked > button:disabled {
   color: rgba(198, 205, 203, 0.4);
 }
 
+headerbar .linked > button.toggle:disabled label,
 headerbar stackswitcher.linked > button:disabled label {
   color: rgba(198, 205, 203, 0.4);
 }
