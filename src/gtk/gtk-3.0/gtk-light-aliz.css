@@ -1852,7 +1852,7 @@ window.thunar toolbar#location-toolbar button:disabled:active, window.thunar #lo
   background-color: rgba(240, 84, 76, 0.75);
 }
 
-.linked:not(.vertical):not(.path-bar):not(.stack-switcher) window.thunar toolbar#location-toolbar button:not(:last-child):not(:only-child), window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:last-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) window.thunar #location-toolbar.inline-toolbar button:not(:last-child):not(:only-child), window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:last-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) .caja-navigation-window toolbar#Toolbar.primary-toolbar button:not(:last-child):not(:only-child), .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:last-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:not(:last-child):not(:only-child), .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:last-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) .nemo-window .primary-toolbar button:not(:last-child):not(:only-child), .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:last-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) headerbar button:not(:last-child):not(:only-child), headerbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:last-child):not(:only-child) {
+.linked:not(.vertical):not(.path-bar):not(.stack-switcher) window.thunar toolbar#location-toolbar button:not(:first-child):not(:only-child), window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:first-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) window.thunar #location-toolbar.inline-toolbar button:not(:first-child):not(:only-child), window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:first-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) .caja-navigation-window toolbar#Toolbar.primary-toolbar button:not(:first-child):not(:only-child), .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:first-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:not(:first-child):not(:only-child), .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:first-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) .nemo-window .primary-toolbar button:not(:first-child):not(:only-child), .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:first-child):not(:only-child), .linked:not(.vertical):not(.path-bar):not(.stack-switcher) headerbar button:not(:first-child):not(:only-child), headerbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(:first-child):not(:only-child) {
   margin-left: 1px;
 }
 
@@ -1987,6 +1987,7 @@ headerbar .linked.path-bar:not(.vertical) > button:disabled {
   color: rgba(50, 50, 50, 0.4);
 }
 
+headerbar windowhandle .linked > button.toggle:not(.disclosure-button),
 headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button {
   background-color: white;
   color: #323232;
@@ -1994,20 +1995,25 @@ headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button {
   border-color: rgba(0, 0, 0, 0.15);
 }
 
+headerbar windowhandle .linked > button.toggle:not(.disclosure-button):hover,
 headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button:hover {
   background-color: #ebebeb;
 }
 
-headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button:active, headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button:checked {
+headerbar windowhandle .linked > button.toggle:not(.disclosure-button):active, headerbar windowhandle .linked > button.toggle:not(.disclosure-button):checked,
+headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button:active,
+headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button:checked {
   color: #ffffff;
   border-color: #F0544C;
   background-color: #F0544C;
 }
 
+headerbar windowhandle .linked > button.toggle:not(.disclosure-button):disabled,
 headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button:disabled {
   color: rgba(50, 50, 50, 0.4);
 }
 
+headerbar windowhandle .linked > button.toggle:not(.disclosure-button):disabled label,
 headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button:disabled label {
   color: rgba(50, 50, 50, 0.4);
 }

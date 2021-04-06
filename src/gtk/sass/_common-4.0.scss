@@ -1861,6 +1861,7 @@ headerbar {
   }
 
   // special case and stackswitcher
+  buttonbox.linked > button,
   .linked > button.toggle,
   stackswitcher.linked > button {
     background-color: lighten($header_bg, 10%);
