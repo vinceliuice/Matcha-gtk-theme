@@ -6162,6 +6162,16 @@ statusbar {
   padding: 6px 10px 6px 10px;
 }
 
+terminal-window.background.csd,
+.mate-terminal.background.csd {
+  border-radius: 0 0 0 0;
+}
+
+terminal-window decoration,
+.mate-terminal decoration {
+  border-radius: 2px 2px 0 0;
+}
+
 terminal-window notebook > header.top button,
 .mate-terminal notebook > header.top button {
   padding: 0;

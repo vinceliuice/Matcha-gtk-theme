@@ -5002,6 +5002,16 @@ button.emoji-section:last-child {
   transition: all 0.1s cubic-bezier(0, 0, 0.2, 1);
 }
 
+terminal-window.background.csd,
+.mate-terminal.background.csd {
+  border-radius: 0 0 0 0;
+}
+
+terminal-window decoration,
+.mate-terminal decoration {
+  border-radius: 2px 2px 0 0;
+}
+
 terminal-window notebook > header.top button,
 .mate-terminal notebook > header.top button {
   padding: 0;

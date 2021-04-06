@@ -4,6 +4,14 @@
 //
 terminal-window,
 .mate-terminal {
+  &.background.csd {
+    border-radius: 0 0 0 0;
+  }
+
+  decoration {
+    border-radius: 2px 2px 0 0;
+  }
+
   notebook {
     // padding: 0 1px 1px;
     > header.top {
@@ -13,6 +21,7 @@ terminal-window,
         min-height: 24px;
       }
     }
+
     scrollbar {
       background: none;
     }
