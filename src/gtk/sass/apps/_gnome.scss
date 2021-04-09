@@ -350,7 +350,6 @@ layouttab {
 
 layout {
   border: 1px solid $borders_color;
-  -PnlDockBin-handle-size: 1;
 }
 
 eggsearchbar box.search-bar {
@@ -388,7 +387,6 @@ docktabstrip {
 
 dockbin {
   border: 1px solid $borders_color;
-  -PnlDockBin-handle-size: 1;
 }
 
 dockpaned {
@@ -481,8 +479,7 @@ configurationview {
 eog-thumb-nav {
   scrolledwindow { border-top: none; }
 
-  button { -gtk-outline-radius: 2px;
-           border-radius: 2px; }
+  button { border-radius: 2px; }
 }
 
 //
@@ -747,7 +744,6 @@ eog-thumb-nav,
   }
 
   button {
-    -gtk-outline-radius: 2px;
     border-radius: 2px;
     border-top: none;
   }
@@ -908,7 +904,6 @@ $em-base: 16px;
 // titles inside the button!?
 headerbar > button.flat.popup.title-menu-button.toggle {
   border-radius: 2px;
-  -gtk-outline-radius: 2px;
 
   > grid {
     .title {
@@ -1182,7 +1177,6 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
         padding: 4px; // Same as of image.sidebar-icon
         margin: 0 6px;
         border-radius: 100px;
-        -gtk-outline-radius: 100px;
       }
     }
   }

@@ -58,11 +58,6 @@ panel-toplevel.background {
       background-color: $selected_bg_color;
     }
   }
-
-  na-tray-applet {
-    -NaTrayApplet-icon-padding: 0;
-    -NaTrayApplet-icon-size: 16px;
-  }
 }
 
 //
@@ -123,7 +118,6 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
   border-radius: 0;
   border-style: solid;
   border-color: rgba(white, 0.1);
-  -gtk-outline-radius: 0;
   background-color: transparent;
   color: $panel_fg;
   &:hover {
@@ -193,7 +187,6 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
   &.brisk-button {
     padding: 0 4px;
     border-radius: 0;
-    -gtk-outline-radius: 0;
     background-image: none;
     background-color: transparent;
     color: $panel_fg;
@@ -237,7 +230,6 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
       padding-top: unset;
       padding-bottom: unset;
       border-radius: 2px;
-      -gtk-outline-radius: 0;
       font-weight: 500;
       transition-duration: 0.1s; // shorter duration
       // almost covers :hover pseudo-class
@@ -270,7 +262,6 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
         padding-top: unset;
         padding-bottom: unset;
         border-radius: 0; // remove roundness
-        -gtk-outline-radius: 0;
         font-weight: 400;
         transition-duration: 0s; // needs quicker response
         border: none;
@@ -440,7 +431,6 @@ window#MyControlCenter > frame > box.horizontal {
 
   toolbar > toolbutton button.flat.image-button { // back to square buttons
     border-radius: 2px;
-    -gtk-outline-radius: 2px;
   }
 
   // 'presentation' mode fullscreen?

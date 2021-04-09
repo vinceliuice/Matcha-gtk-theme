@@ -28,8 +28,8 @@
         .sidebar-icon { color: inherit; }
       }
 
-      -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
-      -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);
+      // -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
+      // -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);
     }
   }
 
@@ -445,7 +445,6 @@ widget > box.terminal-titlebar {
       min-height: 24px;
       min-width: 24px;
       border-radius: 100px;
-      -gtk-outline-radius: 100px;
     }
   }
 }
@@ -459,7 +458,6 @@ list.tilix-session-sidebar {
     min-width: 20px;
     padding: 0;
     border-radius: 100px;
-    -gtk-outline-radius: 100px;
     background-color: $destructive_color;
     &, &:hover, &:active, &:checked { color: white; }
 
@@ -541,10 +539,6 @@ window#ValaPanel.background {
   .unpinned button.flat.-panel-icon-button {
     border-radius: 0;
 
-    &:hover {
-      -gtk-icon-effect: highlight;
-    }
-
     &:hover,
     &:active,
     &:checked {
@@ -558,10 +552,6 @@ window#ValaPanel.background {
 
     > image {
       background-position: bottom center;
-    }
-
-    &:hover {
-      -gtk-icon-effect: highlight;
     }
 
     &:hover,

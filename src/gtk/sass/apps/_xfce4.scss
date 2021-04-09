@@ -87,7 +87,6 @@ $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
   menu {
     font-weight: 400; // for enforcing regular weight
     text-shadow: none;
-    -gtk-icon-effect: none;
   }
 
   widget.tasklist > button.toggle { font-weight: 400; }

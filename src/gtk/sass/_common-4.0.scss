@@ -719,7 +719,6 @@ button.circular {
   min-height: 32px;
   padding: 0;
   border-radius: 1000px;
-  -gtk-outline-radius: 1000px;
 
   label { padding: 0; }
 }
@@ -1533,7 +1532,6 @@ headerbar,
       box-shadow: none;
       padding-left: 10px;
       padding-right: 10px;
-      GtkArrow { -GtkArrow-arrow-scaling: 1; }
 
       .arrow {
         -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
@@ -2701,12 +2699,6 @@ $_scrollbar_bg_color: darken($base_color, 1%);
 scrollbar {
   $_slider_min_length: 40px;
 
-  // disable steppers
-  @at-root * {
-    -GtkScrollbar-has-backward-stepper: false;
-    -GtkScrollbar-has-forward-stepper: false;
-  }
-
   background-color: $_scrollbar_bg_color;
   transition: 300ms $ease-out-quad;
 
@@ -2989,7 +2981,6 @@ scale {
     highlight,
     trough {
       border-radius: 5px;
-      -gtk-outline-radius: 7px;
     }
   }
 
@@ -3257,7 +3248,7 @@ levelbar {
     }
 
     &.discrete > trough > block {
-      min-width: $_levelbar_size - 7px;
+      min-width: $_levelbar_size;
       margin: 1px 0;
       min-height: 32px;
     }
@@ -3884,7 +3875,6 @@ stacksidebar {
   margin-bottom: 2px;
   padding: 0;
   border-radius: 100%;
-  -gtk-outline-radius: 100%;
 
   @extend %flat_button;
 

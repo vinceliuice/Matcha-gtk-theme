@@ -444,14 +444,12 @@ popover.background.places-menu {
   > image { opacity: 0.87; }
 
   &:hover {
-    -gtk-icon-effect: highlight;
     > image { opacity: 1.0; }
   }
   &:active {
     > image { opacity: 1.0; }
   }
   &:checked {
-    &:hover { -gtk-icon-effect: highlight; }
     > image { opacity: 1.0; }
   }
 }
@@ -465,8 +463,6 @@ popover.background.places-menu {
   .unpinned button.flat.launcher,
   .pinned button.flat.launcher.running,
   .pinned button.launcher.running.sidebar-button {
-    &:hover { -gtk-icon-effect: highlight; }
-
     > image {
       background-repeat: no-repeat;
       opacity: 1.0;
@@ -551,9 +547,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
         margin: 0;
         padding: 0;
 
-        &.image-button {
-          border-radius: 100px;
-          -gtk-outline-radius: 100px; }
+        &.image-button { border-radius: 100px; }
       }
     }
 
@@ -600,9 +594,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
   viewport.frame .raven-header { margin-top: -8px; }
 
-  .expander-button {
-    border-radius: 100px;
-    -gtk-outline-radius: 100px; }
+  .expander-button { border-radius: 100px; }
 
   .raven-background {
     border-style: solid none;
