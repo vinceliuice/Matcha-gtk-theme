@@ -2668,7 +2668,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .notification-banner .secondary-icon {
-  icon-size: 1.2307692308em;
+  icon-size: em(16px);
 }
 
 .notification-banner .notification-actions {

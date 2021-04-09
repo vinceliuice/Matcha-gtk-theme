@@ -2460,7 +2460,7 @@ StWidget.focused .app-well-app-running-dot {
 
   .notification-icon { padding: 5px; }
   .notification-content { padding: 5px; spacing: 5px; }
-  .secondary-icon { @include em(16px); }
+  .secondary-icon { icon-size: em(16px); }
   .notification-actions {
     background-color: transparent;
     padding-top: 0;
