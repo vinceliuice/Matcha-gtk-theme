@@ -94,7 +94,7 @@ rubberband {
 }
 
 flowbox {
-  > rubberband { @extend rubberband }
+  > rubberband { @extend rubberband; }
 
   > flowboxchild {
     padding: 3px;
@@ -2686,8 +2686,8 @@ notebook {
       }
     }
 
-  // Button on notebook header
-  button { margin: 2px; }
+    // Button on notebook header
+    button { margin: 2px; }
   }
 }
 
@@ -4226,6 +4226,11 @@ tooltip {
     color: $osd_fg_color;
   }
 
+  &.csd {
+    border-radius: 3px;
+    box-shadow: none;
+  }
+
   padding: 6px 10px;
   border-radius: 2px;
   box-shadow: none;
@@ -4455,11 +4460,6 @@ window {
 
   // server-side decorations as used by mutter
   &.ssd { box-shadow: 0 0 0 1px $_wm_border; } //just doing borders, wm draws actual shadows
-}
-
-tooltip.csd {
-  border-radius: 3px;
-  box-shadow: none;
 }
 
 ///**********************

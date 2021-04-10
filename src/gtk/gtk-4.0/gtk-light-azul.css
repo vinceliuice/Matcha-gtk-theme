@@ -5602,6 +5602,11 @@ tooltip.background {
   color: #2e313d;
 }
 
+tooltip.csd {
+  border-radius: 3px;
+  box-shadow: none;
+}
+
 tooltip > box {
   border-spacing: 6px;
 }
@@ -5834,11 +5839,6 @@ window.popup {
 
 window.ssd {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-}
-
-tooltip.csd {
-  border-radius: 3px;
-  box-shadow: none;
 }
 
 cursor-handle {
