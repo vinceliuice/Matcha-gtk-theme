@@ -294,25 +294,6 @@ revert_gdm() {
   fi
 }
 
-gnome_version() {
-  if [[ -z "${GS_VERSION:-}" ]]; then
-    # Set a proper gnome-shell theme version
-    if [[ "$(command -v gnome-shell)" ]]; then
-      SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -2)"
-      if [[ "${SHELL_VERSION:-}" == '40.0' ]]; then
-        GS_VERSION="new"
-      else
-        GS_VERSION="old"
-      fi
-    else
-      echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-      GS_VERSION="new"
-    fi
-  fi
-
-  sed -i.bak "s/gs_version/$GS_VERSION/g" "$SRC_DIR/sass/_theme-options.scss"
-}
-
 #  Install theme
 install_theme() {
 for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
