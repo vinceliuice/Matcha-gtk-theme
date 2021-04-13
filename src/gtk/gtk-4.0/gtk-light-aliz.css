@@ -6681,6 +6681,14 @@ window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.ti
   border-radius: 0;
 }
 
+window.background.org-gnome-Calendar .week-view weekgrid event.color-light, window.background.org-gnome-Calendar .week-view weekgrid event.color-light > stack > grid > label {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+window.background.org-gnome-Calendar .week-view weekgrid event.color-dark, window.background.org-gnome-Calendar .week-view weekgrid event.color-dark > stack > grid > label {
+  color: white;
+}
+
 hdyviewswitcherbar > actionbar,
 viewswitcherbar > actionbar {
   background: none;
