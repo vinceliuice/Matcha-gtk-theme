@@ -403,6 +403,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0 0;
   background: none;
   border-image: none;
+  font-size: 10pt;
 }
 
 .popup-menu.panel-menu {
@@ -754,7 +755,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar .calendar-day-base {
-  font-size: 8pt;
+  font-size: 9pt;
   text-align: center;
   width: 32px;
   height: 32px;
@@ -777,7 +778,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .calendar .calendar-day-base.calendar-day-heading {
   color: #aaaaaa;
   margin-top: 1em;
-  font-size: 7pt;
+  font-size: 9pt;
 }
 
 .calendar .calendar-day {
@@ -1792,6 +1793,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 2.2em;
   font-feature-settings: "tnum";
   transition-duration: 250ms;
+  font-size: 10pt;
 }
 
 #panel.unlock-screen, #panel.login-screen, #panel:overview {

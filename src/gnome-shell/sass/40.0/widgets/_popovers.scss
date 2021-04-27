@@ -20,6 +20,7 @@ $popover_arrow_height: 12px;
   padding: 0 0;
   background: none;
   border-image: none;
+  @include fontsize($base_font_size - 1);
 
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {

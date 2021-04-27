@@ -3866,6 +3866,7 @@ StWidget.focused .app-well-app-running-dot {
 .openweather-provider {
   padding: 0 16px;
   font-weight: 500;
+  border: 1px solid transparent;
   color: rgba(0, 0, 0, 0.6);
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);

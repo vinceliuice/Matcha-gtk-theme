@@ -86,6 +86,7 @@
     // generic text buttons are allocated with y-expand-ed
     padding: 0 16px;
     font-weight: 500;
+    border: 1px solid transparent;
     @include button(normal);
     &:hover { @include button(hover); }
     &:focus { @include button(focus); }

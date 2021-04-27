@@ -95,7 +95,7 @@
   $calendar_day_size: 32px;
 
   .calendar-day-base {
-    @include fontsize($base_font_size - 3);
+    @include fontsize($base_font_size - 2);
     text-align: center;
     width: $calendar_day_size;
     height: $calendar_day_size;
@@ -114,7 +114,7 @@
     &.calendar-day-heading {
       color: $alt_fg_color;
       margin-top: 1em;
-      @include fontsize($base_font_size - 4);
+      @include fontsize($base_font_size - 2);
     }
   }
 
