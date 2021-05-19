@@ -7302,6 +7302,30 @@ tabbox > tab button:active, tabbox > tab button:active:hover {
   min-width: 0;
 }
 
+.geary-main-window > deck > overlay > .geary-main-layout > leaflet > separator.sidebar,
+.geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > separator.sidebar {
+  min-width: 1px;
+  background-color: #1a1a1a;
+  border-right: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > box.vertical + separator.sidebar {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > box.vertical > .geary-conversation-frame > scrolledwindow {
+  margin: -1px 0;
+}
+
+.geary-main-window > deck > overlay > .geary-main-layout .conversation-listbox {
+  border: none;
+}
+
+.geary-main-window > deck > overlay > .geary-main-layout statusbar {
+  padding: 0 6px;
+}
+
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
   padding: 4px;
@@ -7710,26 +7734,6 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 #MozillaGtkWidget separator,
 #MozillaGtkWidget scrolledwindow {
   background-color: #222222;
-}
-
-#MozillaGtkWidget scrollbar {
-  background-color: #484848;
-}
-
-#MozillaGtkWidget scrollbar slider {
-  background-color: #6e6969;
-}
-
-#MozillaGtkWidget scrollbar slider:hover {
-  background-color: #878080;
-}
-
-#MozillaGtkWidget scrollbar slider:hover:active {
-  background-color: #a19898;
-}
-
-#MozillaGtkWidget scrollbar slider:disabled {
-  background-color: transparent;
 }
 
 #MozillaGtkWidget > window.background > menu {

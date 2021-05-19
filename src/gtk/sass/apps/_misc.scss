@@ -165,7 +165,6 @@ window.background:not(.csd) {
 
     > entry,
     .entry { // Set for linked entrys
-//      min-height: 26px;
       border-radius: 2px;
       background-image: image($base_color);
       border: 1px solid $firefox_border;
@@ -203,16 +202,16 @@ window.background:not(.csd) {
   separator,
   scrolledwindow { background-color: $bg_color; }
 
-  scrollbar {
-    background-color: if($variant == 'light', $base_color, lighten($bg_color, 15%));
-
-    slider {
-      background-color: mix($fg_color, $bg_color, 45%);
-      &:hover { background-color: mix($fg_color, $bg_color, 60%); }
-      &:hover:active { background-color: mix($fg_color, $bg_color, 75%); }
-      &:disabled { background-color: transparent; }
-    }
-  }
+  // scrollbar {
+  //   background-color: if($variant == 'light', $base_color, lighten($bg_color, 15%));
+  //
+  //   slider {
+  //     background-color: mix($fg_color, $bg_color, 45%);
+  //     &:hover { background-color: mix($fg_color, $bg_color, 60%); }
+  //     &:hover:active { background-color: mix($fg_color, $bg_color, 75%); }
+  //     &:disabled { background-color: transparent; }
+  //   }
+  // }
 
   > window.background > menu { // context-menus
     background-color: $base_color;

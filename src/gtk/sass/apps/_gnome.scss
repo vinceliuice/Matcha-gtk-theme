@@ -1306,6 +1306,35 @@ tabbox {
   }
 }
 
+.geary-main-window {
+  > deck > overlay > .geary-main-layout {
+    > leaflet > separator.sidebar, // centry
+    > leaflet > leaflet > separator.sidebar { // left
+      min-width: 1px;
+      background-color: $header_bg;
+      border-right: none;
+      box-shadow: inset 0 1px $highlight;
+
+      @if $header == 'light' { box-shadow: inset 0 -1px $borders_color, inset 0 1px $highlight; }
+    }
+
+    > leaflet > leaflet > box.vertical + separator.sidebar {
+      background-color: $borders_color;
+    }
+
+    > leaflet > leaflet > box.vertical > .geary-conversation-frame {
+      > scrolledwindow {
+        margin: -1px 0; // hide .view top border
+        // > treeview.view {}
+      }
+    }
+
+    .conversation-listbox { border: none; }
+
+    statusbar { padding: 0 6px; }
+  }
+}
+
 
 //
 // RhythmBox
