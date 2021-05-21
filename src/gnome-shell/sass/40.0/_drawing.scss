@@ -186,7 +186,7 @@
   // normal button
   @if $t==flat {
     color: $tc;
-    background-color: rgba($tc, 0.03);
+    background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
     border-color: transparent;
     // box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
     text-shadow: 0 1px $text_shadow_color;
@@ -273,7 +273,7 @@
   &:active,
   &:checked {
     .overview-icon {
-      background-color: transparentize(darken($osd_bg_color, 10%), .5);
+      background-color: transparentize($color, .75);
     }
   }
 }

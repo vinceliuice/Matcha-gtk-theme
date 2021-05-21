@@ -1,6 +1,6 @@
 /* Dash */
 
-$dash_background_color: lighten($system_bg_color, 8%);
+$dash_background_color: rgba(white, 0.15);
 $dash_placeholder_size: 32px;
 $dash_padding: $base_padding + 4px; // 10px
 $dash_spacing: $base_padding / 4;
@@ -56,18 +56,11 @@ $dash_border_radius: $base_border_radius;
   border-radius: $base_border_radius;
   padding: $base_padding $base_padding * 2;
   text-align: center;
+  margin: 6px;
   -y-offset: $base_margin * 3; // distance from the dash edge
 }
 
 // Show apps button
 .show-apps {
   @include overview-icon($osd_fg_color);
-
-  &:focus,
-  &:checked {
-    .overview-icon {
-      background-color: transparentize($osd_bg_color,0.5);
-      color: $osd_fg_color;
-    }
-  }
 }

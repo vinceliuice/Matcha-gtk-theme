@@ -20,9 +20,8 @@
   border: 0 solid $bubble_borders_color;
   padding: 0 $base_padding * 2;
 
-  &:ltr {margin-right: $base_margin * 2; border-left-width: 0; }
-  &:rtl {margin-left: $base_margin * 2; border-right-width: 0; }
-
+  &:ltr { margin-right: $base_margin * 2; border-left-width: 1px; }
+  &:rtl { margin-left: $base_margin * 2; border-right-width: 1px; }
   .datemenu-displays-section {
   }
 

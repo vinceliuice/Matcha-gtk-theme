@@ -4,10 +4,11 @@ $slider_size: 15px;
 
 .slider {
   height: $slider_size;
+  color: $selected_bg_color;
   // slider trough
   -barlevel-height: 3px; // has to be an odd number
   -barlevel-background-color: $borders_color; //background of the trough
-  -barlevel-border-width: 1px;
+  -barlevel-border-width: 0;
   -barlevel-border-color: $borders_color; // trough border color
   // fill style
   -barlevel-active-background-color: $selected_bg_color; //active trough fill
@@ -18,12 +19,8 @@ $slider_size: 15px;
   -barlevel-overdrive-separator-width:1px;
   // slider handler
   -slider-handle-radius: $slider_size * 0.5; // half the size of the size
-  -slider-handle-border-width: 1px;
+  -slider-handle-border-width: 0;
   -slider-handle-border-color: if($variant == 'light', $borders_color, $fg_color);
-
-  color: if($variant == 'light', lighten($bg_color, 10%), $fg_color);
-  &:hover { color: $hover_bg_color; }
-  &:active { color: $active_bg_color; }
 
   .popup-menu-item.selected & {
     color: $selected_fg_color;

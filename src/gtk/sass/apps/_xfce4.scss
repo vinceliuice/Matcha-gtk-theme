@@ -254,12 +254,12 @@ window.thunar {
 
     treeview.view {
       background-color: $bg_color;
-      // color: $dark_sidebar_fg;
-      //
-      // &:hover {
-      //   background-color: mix($dark_sidebar_fg, $dark_sidebar_bg, 10%);
-      //   box-shadow: none;
-      // }
+      color: $text_color;
+
+      &:hover {
+        background-color: mix($fg_color, $bg_color, 10%);
+        box-shadow: none;
+      }
 
       &:selected, &:selected:hover, &:active:hover { @extend %selected_items; }
     }
@@ -267,7 +267,7 @@ window.thunar {
 
   // .sidebar scrollbar { @extend %dark_sidebar_scrollbar }
 
-  toolbar#location-toolbar {
+  toolbar {
     background-color: $header_bg;
     color: $header_fg;
     // border-bottom: 1px solid darken($header_bg, 2%);

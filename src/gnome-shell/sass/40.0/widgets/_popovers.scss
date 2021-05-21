@@ -27,6 +27,29 @@ $popover_arrow_height: 12px;
     -boxpointer-gap: $base_margin; // distance from the panel
     margin-bottom: 1.75em;
   }
+
+  .search-entry {
+    color: $alt_fg_color;
+    caret-color: $alt_fg_color;
+    background-color: rgba($fg_color, 0.10);
+    border-color: $borders_color;
+
+    &:hover {
+      background-color: rgba($fg_color, 0.15);
+      border-color: $borders_color;
+      color: $fg_color;
+    }
+
+    &:focus, &:focus:hover {
+      background-color: rgba($fg_color, 0.15);
+      color: $fg_color;
+      border-color: $selected_bg_color;
+    }
+
+    StLabel.hint-text {
+      color: $insensitive_fg_color;
+    }
+  }
 }
 
 .popup-menu-content {
