@@ -3159,3 +3159,242 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #unlockDialogNotifications StButton#vhandle:active, #unlockDialogNotifications StButton#hhandle:active {
   background-color: rgba(52, 152, 219, 0.5);
 }
+
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
+#dashtodockContainer {
+  background-color: transparent;
+}
+
+#dashtodockContainer .number-overlay {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+#dashtodockContainer .notification-badge {
+  color: #fff;
+  background-color: #3498db;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 1000px;
+  margin: 2px;
+  padding: 0.2em 1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#dashtodockContainer.straight-corner #dash, #dashtodockContainer.shrink.straight-corner #dash {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+#dashtodockContainer.straight-corner #dash .dash-background, #dashtodockContainer.shrink.straight-corner #dash .dash-background {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+#dashtodockContainer.extended.top #dash, #dashtodockContainer.extended.bottom #dash, #dashtodockContainer.extended.right #dash, #dashtodockContainer.extended.left #dash {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 0;
+}
+
+#dashtodockContainer.extended.top #dash .dash-background, #dashtodockContainer.extended.bottom #dash .dash-background, #dashtodockContainer.extended.right #dash .dash-background, #dashtodockContainer.extended.left #dash .dash-background {
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#dashtodockContainer.left #dash, #dashtodockContainer.right #dash {
+  margin-top: 0;
+  padding: 0 0;
+}
+
+#dashtodockContainer.left #dash .dash-background, #dashtodockContainer.right #dash .dash-background {
+  margin-bottom: 0;
+  border-radius: 9px;
+}
+
+#dashtodockContainer.left .dash-item-container .app-well-app, #dashtodockContainer.left .show-apps, #dashtodockContainer.right .dash-item-container .app-well-app, #dashtodockContainer.right .show-apps {
+  padding: 6px;
+}
+
+#dashtodockContainer.left #dash {
+  margin-left: 6px;
+}
+
+#dashtodockContainer.right #dash {
+  margin-right: 6px;
+}
+
+#dashtodockContainer #dash {
+  background: none;
+}
+
+#dashtodockContainer #dash StWidget.focused .app-well-app-running-dot {
+  background-color: #3498db;
+}
+
+#dashtodockContainer .dash-background {
+  color: #efefef;
+  background-color: rgba(49, 52, 65, 0.9);
+}
+
+#dashtodockContainer:overview #dash {
+  background: none;
+}
+
+#dashtodockContainer:overview #dash .dash-background {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#dashtodockContainer:overview #dash StWidget.focused .app-well-app-running-dot {
+  background-color: #3498db;
+}
+
+#dashtodockContainer.opaque:overview #dash, #dashtodockContainer.transparent:overview #dash {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#dashtodockContainer.opaque:overview .dash-background, #dashtodockContainer.transparent:overview .dash-background {
+  background-color: transparent !important;
+}
+
+#dashtodockContainer.extended:overview #dash, #dashtodockContainer.opaque.extended:overview #dash, #dashtodockContainer.transparent.extended:overview #dash {
+  background: none;
+}
+
+#dashtodockContainer.running-dots .dash-item-container > StButton, #dashtodockContainer.dashtodock .dash-item-container > StButton {
+  transition-duration: 250ms;
+  background-size: contain;
+}
+
+#dashtodockContainer.shrink .dash-item-container > StButton, #dashtodockContainer.dashtodock .dash-item-container > StButton {
+  padding: 1px 2px;
+}
+
+#dashtodockContainer.extended .app-well-app .overview-icon,
+#dashtodockContainer.extended .show-apps .overview-icon, #dashtodockContainer.extended:overview .app-well-app .overview-icon,
+#dashtodockContainer.extended:overview .show-apps .overview-icon {
+  border-radius: 2px;
+}
+
+#dashtodockContainer .metro .overview-icon {
+  border-radius: 0;
+}
+
+.dashtodock-app-well-preview-menu-item {
+  padding: 1em 1em 0.5em 1em;
+}
+
+#dashtodockPreviewSeparator.popup-separator-menu-item-horizontal {
+  width: 1px;
+  height: auto;
+  border-right-width: 1px;
+  margin: 32px 0;
+}
+
+.openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
+  border: 1px solid transparent !important;
+  background: none;
+}
+
+.openweather-provider {
+  padding: 0 16px;
+  font-weight: 500;
+  border: 1px solid transparent !important;
+  color: #363636;
+  background-color: #ffffff;
+  border-color: #cfcfcf;
+  box-shadow: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+  icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.openweather-provider:hover {
+  color: #363636;
+  background-color: #ebebeb;
+  border-color: #cfcfcf;
+  box-shadow: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+  icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.openweather-provider:focus {
+  color: #363636;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+  icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 2px rgba(52, 152, 219, 0.6);
+}
+
+.openweather-provider:active {
+  color: #363636;
+  background-color: #e1e1e1;
+  border-color: #cfcfcf;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none;
+}
+
+.openweather-provider:insensitive {
+  color: #969696;
+  border-color: #e2e2e2;
+  background-color: #f9f9f9;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-current-icon, .openweather-current-summary, .openweather-current-summarybox {
+  background: none;
+  color: #363636;
+  -st-icon-style: symbolic;
+}
+
+.openweather-current-databox-values {
+  background: none;
+  color: #555555;
+}
+
+.openweather-current-databox-captions {
+  background: none;
+  color: #969696;
+}
+
+.openweather-forecast-icon, .openweather-forecast-summary {
+  background: none;
+  color: #555555;
+  -st-icon-style: symbolic;
+}
+
+.openweather-forecast-day {
+  background: none;
+  color: #363636;
+}
+
+.openweather-forecast-temperature {
+  background: none;
+  color: #555555;
+}
+
+.openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
+  color: #555555;
+  -st-icon-style: symbolic;
+}

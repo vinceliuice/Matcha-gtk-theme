@@ -1,0 +1,248 @@
+// Dash to Dock
+
+// Scrollview style
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
+#dashtodockContainer {
+  background-color: transparent;
+
+  .number-overlay {
+    color: white;
+    background-color: rgba(black, 0.75);
+    text-align: center;
+  }
+
+  .notification-badge {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 1000px;
+    margin: 2px;
+    padding: 0.2em 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &.straight-corner #dash,
+  &.shrink.straight-corner #dash {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+
+    .dash-background {
+      border-radius: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &.extended.top,
+  &.extended.bottom,
+  &.extended.right,
+  &.extended.left {
+    #dash {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0 0;
+
+      .dash-background {
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.left,
+  &.right {
+    #dash {
+      margin-top: 0;
+      padding: 0 0;
+
+      .dash-background { // default-mode
+        margin-bottom: 0;
+        border-radius: $base_border_radius + $base_spacing;
+      }
+    }
+
+    .dash-item-container .app-well-app, .show-apps {
+      padding: $base_padding;
+    }
+  }
+
+  &.left #dash {
+    margin-left: $base_padding;
+  }
+
+  &.right #dash {
+    margin-right: $base_padding;
+  }
+
+  #dash { // default-mode
+    background: none;
+
+    StWidget.focused .app-well-app-running-dot {
+      background-color: $selected_bg_color;
+    }
+  }
+
+  .dash-background {
+    color: $osd_fg_color;
+    background-color: rgba($osd_bg_color, 0.9);
+  }
+
+  &:overview #dash { // overview-mode #1
+    background: none;
+
+    .dash-background {
+      background-color: $dash_background_color;
+    }
+
+    StWidget.focused .app-well-app-running-dot {
+      background-color: $selected_bg_color;
+    }
+  }
+
+  &.opaque:overview,
+  &.transparent:overview { // overview-mode #2
+    #dash {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .dash-background {
+      background-color: transparent !important;
+    }
+  }
+
+  &.extended:overview, // overview-mode #3
+  &.opaque.extended:overview,
+  &.transparent.extended:overview {
+    #dash {
+      background: none;
+    }
+  }
+
+  &.running-dots,
+  &.dashtodock {
+    .dash-item-container > StButton {
+      transition-duration: 250ms;
+      background-size: contain;
+    }
+  }
+
+  &.shrink,
+  &.dashtodock {
+    .dash-item-container > StButton {
+       padding: 1px 2px;
+    }
+  }
+
+  &.extended,
+  &.extended:overview {
+    .app-well-app,
+    .show-apps {
+      .overview-icon {
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .metro .overview-icon {
+    border-radius: 0;
+  }
+}
+
+.dashtodock-app-well-preview-menu-item {
+  padding: 1em 1em 0.5em 1em;
+}
+
+#dashtodockPreviewSeparator.popup-separator-menu-item-horizontal {
+  width: 1px;
+  height: auto;
+  border-right-width: 1px;
+  margin: 32px 0;
+}
+
+// OpenWeather Extension
+.openweather {
+  &-button,
+  &-button-action,
+  &-menu-button-container,
+  &-button-box {
+    border: 1px solid transparent !important;
+    background: none;
+  }
+
+  &-provider {
+    // generic text buttons are allocated with y-expand-ed
+    padding: 0 16px;
+    font-weight: 500;
+    border: 1px solid transparent !important;
+    @include button(normal);
+    &:hover { @include button(hover); }
+    &:focus { @include button(focus); }
+    &:active { @include button(active); }
+    &:insensitive { @include button(insensitive); }
+  }
+
+  &-current {
+    &-icon,
+    &-summary,
+    &-summarybox {
+      background: none;
+      color: $fg_color;
+      -st-icon-style: symbolic;
+    }
+
+    &-databox-values {
+      background: none;
+      color: $alt_fg_color;
+    }
+
+    &-databox-captions {
+      background: none;
+      color: $insensitive_fg_color;
+    }
+  }
+
+  &-forecast {
+    &-icon,
+    &-summary {
+      background: none;
+      color: $alt_fg_color;
+      -st-icon-style: symbolic;
+    }
+
+    &-day {
+      background: none;
+      color: $fg_color;
+    }
+
+    &-temperature {
+      background: none;
+      color: $alt_fg_color;
+    }
+  }
+
+  &-sunrise-icon,
+  &-sunset-icon,
+  &-build-icon {
+    color: $alt_fg_color;
+    -st-icon-style: symbolic;
+  }
+}
