@@ -57,6 +57,14 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 | -r, --revert  | revert GDM theme, this option need root user authority! please run this with sudo |
 | -h, --help    | Show this help |
 
+### Fix for flatpak apps
+
+    sudo flatpak override --filesystem=~/.themes
+
+If you installed your theme in system theme folder then run:
+
+    sudo flatpak override --filesystem=/usr/share/themes
+
 ### Install from flathub
 
     flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
