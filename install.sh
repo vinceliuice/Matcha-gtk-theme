@@ -29,6 +29,9 @@ if [[ "$(command -v gnome-shell)" ]]; then
     GS_VERSION="new"
 fi
 
+# parse SASS to generate CSS files
+bash ./parse-sass.sh
+
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
