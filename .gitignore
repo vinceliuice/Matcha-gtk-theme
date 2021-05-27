@@ -1,0 +1,3 @@
+/src/**/*.css
+!/src/gnome-shell/pad-osd.css
+!/src/extra/firefox/chrome/Matcha/**/*.css
