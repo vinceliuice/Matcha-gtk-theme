@@ -1156,6 +1156,7 @@ StScrollBar {
     color: $topbar_secondary_fg_color;
     transition-duration: 0.2s;
     border-radius: 0;
+    border: none !important;
 
     .app-menu-icon {
       -st-icon-style: symbolic;
@@ -1173,12 +1174,14 @@ StScrollBar {
 
     &:hover {
       color: $topbar_fg_color;
+      background-color: $topbar_overview_color;
+      box-shadow: none;
     }
 
     &:active, &:overview, &:focus, &:checked {
       // Trick due to St limitations. It needs a background to draw
       // a box-shadow
-      background-color: $topbar_overview_color;
+      background-color: $topbar_active_color;
       box-shadow: inset 0 -2px $primary_color;
       color: $topbar_fg_color;
       border-image: none;
@@ -1187,11 +1190,9 @@ StScrollBar {
     }
 
     &.clock-display {
+      border-radius: 0;
       // Move highlight from .panel-button to .clock
-      &:active, &:overview, &:focus, &:checked {
-        background-color: $topbar_overview_color;
-        box-shadow: inset 0 -2px $primary_color;
-
+      &:hover, &:active, &:overview, &:focus, &:checked {
         .clock { //reset
           background-color: transparent;
           box-shadow: none

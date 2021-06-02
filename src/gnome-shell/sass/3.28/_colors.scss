@@ -45,7 +45,8 @@ $topbar_color: #1b2224;
 @if $color=='azul' { $topbar_color: #1b1d24; }
 $topbar_fg_color: rgba(#ffffff, 0.8);
 $topbar_secondary_fg_color: #F0F0F0;
-$topbar_overview_color: rgba(#ffffff, 0.1);
+$topbar_overview_color: rgba(#ffffff, 0.08);
+$topbar_active_color: rgba(#ffffff, 0.15);
 
 $selected_bg_color: #2eb398;
 @if $color=='aliz' { $selected_bg_color: #F0544C; }
