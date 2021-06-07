@@ -317,21 +317,21 @@ while [[ $# -gt 0 ]]; do
       shift 1
       ;;
     -s|--gnome-shell)
-      shift
       case "${2}" in
         new)
           GS_VERSION=new
-	  shift 1
-	  ;;
-	old)
-	  GS_VERSION=old
-	  shift 1
-	  ;;
-	-*|--*)
+          shift 2
+          ;;
+        old)
+          GS_VERSION=old
+          shift 2
+          ;;
+        -*|--*)
+          shift 1
           break
           ;;
         *)
-	  echo "ERROR: Unrecognized gnome-shell version '$1'."
+          echo "ERROR: Unrecognized gnome-shell version '$1'."
           echo "Try '$0 --help' for more information."
           exit 1
           ;;
