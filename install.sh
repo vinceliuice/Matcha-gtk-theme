@@ -17,17 +17,7 @@ THEME_NAME=Matcha
 COLOR_VARIANTS=('' '-light' '-dark')
 THEME_VARIANTS=('-aliz' '-azul' '-sea')
 
-if [[ "$(command -v gnome-shell)" ]]; then
-  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-  if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
-    GS_VERSION="new"
-  else
-    GS_VERSION="old"
-  fi
-  else
-    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-    GS_VERSION="new"
-fi
+GS_VERSION=""
 
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
@@ -36,6 +26,7 @@ usage() {
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [standard|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-t, --theme VARIANTS" "Specify hue theme variant(s) [aliz|azul|sea] (Default: All variants)"
+  printf "  %-25s%s\n" "-s, --gnome-shell VERSION" "Set gnome-shell flavor, where new is version 40 or later, [new|old] (Default: Auto detect)"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-r, --revert" "revert GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
@@ -325,6 +316,27 @@ while [[ $# -gt 0 ]]; do
       revert='true'
       shift 1
       ;;
+    -s|--gnome-shell)
+      shift
+      case "${2}" in
+        new)
+          GS_VERSION=new
+	  shift 1
+	  ;;
+	old)
+	  GS_VERSION=old
+	  shift 1
+	  ;;
+	-*|--*)
+          break
+          ;;
+        *)
+	  echo "ERROR: Unrecognized gnome-shell version '$1'."
+          echo "Try '$0 --help' for more information."
+          exit 1
+          ;;
+        esac
+      ;;
     -t|--theme)
       shift
       for theme in "${@}"; do
@@ -390,6 +402,20 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+if [ -z "$GS_VERSION" ]; then
+  if [[ "$(command -v gnome-shell)" ]]; then
+    SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
+    if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+      GS_VERSION="new"
+    else
+      GS_VERSION="old"
+    fi
+  else
+    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+    GS_VERSION="new"
+  fi
+fi
 
 if [[ "${gdm:-}" != 'true' && "${revert:-}" != 'true' ]]; then
   install_theme
