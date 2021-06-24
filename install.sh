@@ -15,7 +15,7 @@ SRC_DIR=${REO_DIR}/src
 
 THEME_NAME=Matcha
 COLOR_VARIANTS=('' '-light' '-dark')
-THEME_VARIANTS=('-aliz' '-azul' '-sea')
+THEME_VARIANTS=('-aliz' '-azul' '-sea' '-pueril')
 
 GS_VERSION=""
 
@@ -25,7 +25,7 @@ usage() {
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [standard|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-t, --theme VARIANTS" "Specify hue theme variant(s) [aliz|azul|sea] (Default: All variants)"
+  printf "  %-25s%s\n" "-t, --theme VARIANTS" "Specify hue theme variant(s) [aliz|azul|sea|pueril] (Default: All variants)"
   printf "  %-25s%s\n" "-s, --gnome-shell VERSION" "Set gnome-shell flavor, where new is version 40 or later, [new|old] (Default: Auto detect)"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-r, --revert" "revert GDM theme, this option need root user authority! please run this with sudo"
@@ -351,6 +351,10 @@ while [[ $# -gt 0 ]]; do
             ;;
           sea)
             themes+=("${THEME_VARIANTS[2]}")
+            shift 1
+            ;;
+          pueril)
+            themes+=("${THEME_VARIANTS[3]}")
             shift 1
             ;;
           -*|--*)

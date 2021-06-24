@@ -17,7 +17,7 @@ if [ ! -z "${ECOLOR_VARIANTS:-}" ]; then
   IFS=', ' read -r -a _ECOLOR_VARIANTS <<< "${ECOLOR_VARIANTS:-}"
 fi
 
-_THEME_VARIANTS=('-sea' '-aliz' '-azul')
+_THEME_VARIANTS=('-sea' '-aliz' '-azul' '-pueril')
 if [ ! -z "${THEME_VARIANTS:-}" ]; then
   IFS=', ' read -r -a _THEME_VARIANTS <<< "${THEME_VARIANTS:-}"
 fi

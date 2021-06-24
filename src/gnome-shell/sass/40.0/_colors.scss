@@ -4,6 +4,7 @@
 $base_color: if($variant =='light', #ffffff, #1b2224);
 @if $color=='aliz' { $base_color: if($variant =='light', #ffffff, #222222); }
 @if $color=='azul' { $base_color: if($variant =='light', #ffffff, #1b1d24); }
+@if $color=='pueril' { $base_color: if($variant =='light', #ffffff, #222222); }
 $bg_color: if($variant == 'light', #f5f5f5, lighten($base_color, 5%));
 $fg_color: if($variant == 'light', #363636, #dddddd);
 $alt_fg_color: if($variant == 'light', #555555, #aaaaaa);
@@ -12,6 +13,7 @@ $accent_color: #2eb398;
 @if $color=='aliz' { $accent_color: #F0544C; }
 @if $color=='aliz' { $accent_color: #F0544C; }
 @if $color=='azul' { $accent_color: #3498db; }
+@if $color=='pueril' { $accent_color: #F0544C; }
 
 $selected_fg_color: #fff;
 $selected_bg_color: if($variant == 'light', $accent_color, darken($accent_color, 10%));
@@ -31,6 +33,7 @@ $destructive_color: if($variant == 'light', #e01b24, darken(#e01b24, 10%));
 $system_bg_color: lighten(#1b2224, 5%); //neutralize the HIG color
 @if $color=='aliz' { $system_bg_color: lighten(#222222, 5%); }
 @if $color=='azul' { $system_bg_color: lighten(#1b1d24, 5%); }
+@if $color=='pueril' { $system_bg_color: lighten(#222222, 5%); }
 
 $osd_fg_color: #efefef;
 $osd_text_color: white;
