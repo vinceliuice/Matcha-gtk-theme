@@ -22,9 +22,9 @@ $fg_color: if($variant =='light', #273134, #ccd7d4);
 
 @if $color=='pueril' {
   $base_color: if($variant =='light', #ffffff, #262626);
-  $text_color: if($variant == 'light', #363636, #b5abab);
+  $text_color: if($variant == 'light', #363636, #bababa);
   $bg_color: if($variant =='light', #f7f7f7, #222222);
-  $fg_color: if($variant =='light', #323232, #cbbfbf);
+  $fg_color: if($variant =='light', #323232, #bfbfbf);
 }
 
 $selected_fg_color: #ffffff;
@@ -75,9 +75,9 @@ $progress_color: #db5b5b;
 
 @if $color=='pueril' {
   $progress_color: #97BB72;
-  $success_color: #97BB72;
+  $success_color: #3498db;
   $destructive_color: #db5b5b;
-  $suggested_color: #97BB72;
+  $suggested_color: #33b165;
 }
 
 $drop_target_color: #F08437;
@@ -128,7 +128,7 @@ $panel_fg: $fg_color;
 @if $color=='sea' and $header == 'dark' { $panel_fg: #ccd7d4; }
 @if $color=='aliz' and $header == 'dark' { $panel_fg: #cbbfbf; }
 @if $color=='azul' and $header == 'dark' { $panel_fg: #bbc3c8; }
-@if $color=='pueril' and $header == 'dark' { $panel_fg: #cbbfbf; }
+@if $color=='pueril' and $header == 'dark' { $panel_fg: #bfbfbf; }
 
 
 $menu_bg_color: if($variant=='light', $base_color, $bg_color);

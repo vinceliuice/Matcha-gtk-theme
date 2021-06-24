@@ -11,11 +11,10 @@ $alt_fg_color: if($variant == 'light', #555555, #aaaaaa);
 
 $accent_color: #2eb398;
 @if $color=='aliz' { $accent_color: #F0544C; }
-@if $color=='aliz' { $accent_color: #F0544C; }
 @if $color=='azul' { $accent_color: #3498db; }
-@if $color=='pueril' { $accent_color: #F0544C; }
+@if $color=='pueril' { $accent_color: #97BB72; }
 
-$selected_fg_color: #fff;
+$selected_fg_color: #ffffff;
 $selected_bg_color: if($variant == 'light', $accent_color, darken($accent_color, 10%));
 
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
@@ -31,9 +30,8 @@ $success_color: if($variant == 'light', #33d17a, darken(#33d17a, 10%));
 $destructive_color: if($variant == 'light', #e01b24, darken(#e01b24, 10%));
 
 $system_bg_color: lighten(#1b2224, 5%); //neutralize the HIG color
-@if $color=='aliz' { $system_bg_color: lighten(#222222, 5%); }
+@if $color=='aliz' or $color=='pueril' { $system_bg_color: lighten(#222222, 5%); }
 @if $color=='azul' { $system_bg_color: lighten(#1b1d24, 5%); }
-@if $color=='pueril' { $system_bg_color: lighten(#222222, 5%); }
 
 $osd_fg_color: #efefef;
 $osd_text_color: white;
