@@ -71,19 +71,19 @@ install() {
   cp -ur common-assets                                                                "${themedir}/gnome-shell/assets"
 
   if [[ "${GS_VERSION:-}" == 'new' ]]; then
-    cp -ur "40.0/gnome-shell${ELSE_DARK}${theme}.css"                                   "${themedir}/gnome-shell/gnome-shell.css"
+    cp -ur "40.0/gnome-shell${ELSE_DARK}${theme}.css"                                 "${themedir}/gnome-shell/gnome-shell.css"
   else
-    cp -ur "3.28/gnome-shell${ELSE_DARK}${theme}.css"                                   "${themedir}/gnome-shell/gnome-shell.css"
+    cp -ur "3.28/gnome-shell${ELSE_DARK}${theme}.css"                                 "${themedir}/gnome-shell/gnome-shell.css"
   fi
 
   cd "${SRC_DIR}/gnome-shell/assets"
-  cp -ur "calendar-arrow-left${ELSE_DARK}.svg"                                          "${themedir}/gnome-shell/assets/calendar-arrow-left.svg"
-  cp -ur "calendar-arrow-right${ELSE_DARK}.svg"                                         "${themedir}/gnome-shell/assets/calendar-arrow-right.svg"
-  cp -ur "checkbox-off${ELSE_DARK}.svg"                                                 "${themedir}/gnome-shell/assets/checkbox-off.svg"
-  cp -ur "calendar-today${ELSE_DARK}.svg"                                               "${themedir}/gnome-shell/assets/calendar-today.svg"
-  cp -ur "checkbox${theme}.svg"                                                         "${themedir}/gnome-shell/assets/checkbox.svg"
-  cp -ur "more-results${theme}.svg"                                                     "${themedir}/gnome-shell/assets/more-results.svg"
-  cp -ur "toggle-on${theme}.svg"                                                        "${themedir}/gnome-shell/assets/toggle-on.svg"
+  cp -ur "calendar-arrow-left${ELSE_DARK}.svg"                                        "${themedir}/gnome-shell/assets/calendar-arrow-left.svg"
+  cp -ur "calendar-arrow-right${ELSE_DARK}.svg"                                       "${themedir}/gnome-shell/assets/calendar-arrow-right.svg"
+  cp -ur "checkbox-off${ELSE_DARK}.svg"                                               "${themedir}/gnome-shell/assets/checkbox-off.svg"
+  cp -ur "calendar-today${ELSE_DARK}.svg"                                             "${themedir}/gnome-shell/assets/calendar-today.svg"
+  cp -ur "checkbox${theme}.svg"                                                       "${themedir}/gnome-shell/assets/checkbox.svg"
+  cp -ur "more-results${theme}.svg"                                                   "${themedir}/gnome-shell/assets/more-results.svg"
+  cp -ur "toggle-on${theme}.svg"                                                      "${themedir}/gnome-shell/assets/toggle-on.svg"
 
   cd "${themedir}/gnome-shell"
   mv -f assets/no-events.svg no-events.svg
@@ -94,23 +94,23 @@ install() {
   mkdir -p                                                                            "${themedir}/gtk-2.0"
   cd "${SRC_DIR}/gtk-2.0"
   cp -ur {apps.rc,main.rc,panel.rc,xfce-notify.rc}                                    "${themedir}/gtk-2.0"
-  cp -ur "gtkrc${color}${theme}"                                                        "${themedir}/gtk-2.0/gtkrc"
+  cp -ur "gtkrc${color}${theme}"                                                      "${themedir}/gtk-2.0/gtkrc"
   cp -ur assets${ELSE_DARK}${theme}                                                   "${themedir}/gtk-2.0/assets"
-  cp -ur "menubar-toolbar${ELSE_DARK}.rc"                                               "${themedir}/gtk-2.0/menubar-toolbar.rc"
+  cp -ur "menubar-toolbar${ELSE_DARK}.rc"                                             "${themedir}/gtk-2.0/menubar-toolbar.rc"
 
   # Install GTK+ 3.0 Theme
   mkdir -p                                                                            "${themedir}/gtk-3.0"
   cd "${SRC_DIR}/gtk"
-  cp -ur "assets${theme}"                                                               "${themedir}/gtk-3.0/assets"
-  cp -ur "gtk-3.0/gtk${color}${theme}.css"                                              "${themedir}/gtk-3.0/gtk.css"
-  cp -ur "gtk-3.0/gtk-dark${theme}.css"                                                 "${themedir}/gtk-3.0/gtk-dark.css"
+  cp -ur "assets${theme}"                                                             "${themedir}/gtk-3.0/assets"
+  cp -ur "gtk-3.0/gtk${color}${theme}.css"                                            "${themedir}/gtk-3.0/gtk.css"
+  cp -ur "gtk-3.0/gtk-dark${theme}.css"                                               "${themedir}/gtk-3.0/gtk-dark.css"
 
-  cp -ur "thumbnail${ELSE_DARK}${theme}.png"                                            "${themedir}/gtk-3.0/thumbnail.png"
+  cp -ur "thumbnail${ELSE_DARK}${theme}.png"                                          "${themedir}/gtk-3.0/thumbnail.png"
 
   # Install GTK+ 4.0 Theme
   mkdir -p                                                                            "${themedir}/gtk-4.0"
-  cp -ur "gtk-4.0/gtk${color}${theme}.css"                                              "${themedir}/gtk-4.0/gtk.css"
-  cp -ur "gtk-4.0/gtk-dark${theme}.css"                                                 "${themedir}/gtk-4.0/gtk-dark.css"
+  cp -ur "gtk-4.0/gtk${color}${theme}.css"                                            "${themedir}/gtk-4.0/gtk.css"
+  cp -ur "gtk-4.0/gtk-dark${theme}.css"                                               "${themedir}/gtk-4.0/gtk-dark.css"
   cd "${themedir}/gtk-4.0"
   ln -sf ../gtk-3.0/assets  assets
   ln -sf ../gtk-3.0/thumbnail.png thumbnail.png
@@ -118,18 +118,18 @@ install() {
   # Install CINNAMON Theme
   mkdir -p                                                                            "${themedir}/cinnamon"
   cd "${SRC_DIR}/cinnamon"
-  cp -ur "cinnamon${ELSE_DARK}${theme}.css"                                             "${themedir}/cinnamon/cinnamon.css"
-  cp -ur "thumbnail${ELSE_DARK}${theme}.png"                                            "${themedir}/cinnamon/thumbnail.png"
+  cp -ur "cinnamon${ELSE_DARK}${theme}.css"                                           "${themedir}/cinnamon/cinnamon.css"
+  cp -ur "thumbnail${ELSE_DARK}${theme}.png"                                          "${themedir}/cinnamon/thumbnail.png"
 
   cd "${SRC_DIR}/cinnamon/assets${theme}"
   cp -ur common-assets                                                                "${themedir}/cinnamon"
-  cp -ur "assets${ELSE_DARK}"                                                           "${themedir}/cinnamon/assets"
+  cp -ur "assets${ELSE_DARK}"                                                         "${themedir}/cinnamon/assets"
 
   # Install Metacity Theme
   mkdir -p                                                                            "${themedir}/metacity-1"
   cd "${SRC_DIR}/metacity-1"
   cp -ur {thumbnail.png,*.svg,metacity-theme-3.xml}                                   "${themedir}/metacity-1"
-  cp -ur "metacity-theme-1${theme}.xml"                                                 "${themedir}/metacity-1/metacity-theme-1.xml"
+  cp -ur "metacity-theme-1${theme}.xml"                                               "${themedir}/metacity-1/metacity-theme-1.xml"
 
   cd "${themedir}/metacity-1"
   ln -s metacity-theme-1.xml metacity-theme-2.xml
@@ -137,19 +137,19 @@ install() {
   # Install xfwm4 Theme
   mkdir -p                                                                            "${themedir}/xfwm4"
   cd "${SRC_DIR}/xfwm4"
-  cp -ur "assets${color}${theme}"/*.png                                                 "${themedir}/xfwm4"
+  cp -ur "assets${color}${theme}"/*.png                                               "${themedir}/xfwm4"
 
   if [[ "${color}" == '-light' ]] ; then
-    cp -ur "themerc${color}"                                                            "${themedir}/xfwm4/themerc"
+    cp -ur "themerc${color}"                                                          "${themedir}/xfwm4/themerc"
   else
-    cp -ur "themerc${theme}"                                                            "${themedir}/xfwm4/themerc"
+    cp -ur "themerc${theme}"                                                          "${themedir}/xfwm4/themerc"
   fi
 
   # Install openbox Theme
   mkdir -p                                                                            "${themedir}/openbox-3"
   cd "${SRC_DIR}/openbox-3"
   cp -ur *.xbm                                                                        "${themedir}/openbox-3"
-  cp -ur "themerc${ELSE_DARK}${theme}"                                                  "${themedir}/openbox-3/themerc"
+  cp -ur "themerc${ELSE_DARK}${theme}"                                                "${themedir}/openbox-3/themerc"
 
   # Install Unity Theme
   mkdir -p                                                                            "${themedir}/unity"
@@ -176,8 +176,8 @@ install_gdm() {
   local GDM_THEME_DIR="${1}/${2}${3}${4}"
   local YARU_GDM_THEME_DIR="$SHELL_THEME_FOLDER/Yaru/${2}${3}${4}"
 
-  [[ ${color} == '-dark' ]] && local ELSE_DARK="""${color}"""
-  [[ ${color} == '-light' ]] && local ELSE_LIGHT="""${color}"""
+  [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}"
+  [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}"
 
   echo
   echo "Installing ${2}${3}${4} gdm theme..."
@@ -223,16 +223,16 @@ install_gdm() {
     mkdir -p                                                                             "$YARU_GDM_THEME_DIR"/gnome-shell
     mkdir -p                                                                             "$YARU_GDM_THEME_DIR"/gnome-shell/Yaru
     cp -r "$SRC_DIR"/gnome-shell/{icons,pad-osd.css}                                     "$YARU_GDM_THEME_DIR"/gnome-shell
-    cp -r "$SRC_DIR"/gnome-shell/gnome-shell""${ELSE_DARK}${theme}"".css                     "$YARU_GDM_THEME_DIR"/gnome-shell/gdm3.css
-    cp -r "$SRC_DIR"/gnome-shell/gnome-shell""${ELSE_DARK}${theme}"".css                     "$YARU_GDM_THEME_DIR"/gnome-shell/Yaru/gnome-shell.css
+    cp -r "$SRC_DIR"/gnome-shell/gnome-shell"${ELSE_DARK}${theme}".css                 "$YARU_GDM_THEME_DIR"/gnome-shell/gdm3.css
+    cp -r "$SRC_DIR"/gnome-shell/gnome-shell"${ELSE_DARK}${theme}".css                 "$YARU_GDM_THEME_DIR"/gnome-shell/Yaru/gnome-shell.css
     cp -r "$SRC_DIR"/gnome-shell/common-assets                                           "$YARU_GDM_THEME_DIR"/gnome-shell/assets
-    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-arrow-left""${ELSE_DARK}"".svg              "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-arrow-left.svg
-    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-arrow-right""${ELSE_DARK}"".svg             "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-arrow-right.svg
-    cp -r "$SRC_DIR"/gnome-shell/assets/checkbox-off""${ELSE_DARK}"".svg                     "$YARU_GDM_THEME_DIR"/gnome-shell/assets/checkbox-off.svg
-    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-today""${ELSE_DARK}"".svg                   "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-today.svg
-    cp -r "$SRC_DIR"/gnome-shell/assets/checkbox""${theme}"".svg                             "$YARU_GDM_THEME_DIR"/gnome-shell/assets/checkbox.svg
-    cp -r "$SRC_DIR"/gnome-shell/assets/more-results""${theme}"".svg                         "$YARU_GDM_THEME_DIR"/gnome-shell/assets/more-results.svg
-    cp -r "$SRC_DIR"/gnome-shell/assets/toggle-on""${theme}"".svg                            "$YARU_GDM_THEME_DIR"/gnome-shell/assets/toggle-on.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-arrow-left"${ELSE_DARK}".svg          "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-arrow-left.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-arrow-right"${ELSE_DARK}".svg         "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-arrow-right.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/checkbox-off"${ELSE_DARK}".svg                 "$YARU_GDM_THEME_DIR"/gnome-shell/assets/checkbox-off.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/calendar-today"${ELSE_DARK}".svg               "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-today.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/checkbox"${theme}".svg                         "$YARU_GDM_THEME_DIR"/gnome-shell/assets/checkbox.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/more-results"${theme}".svg                     "$YARU_GDM_THEME_DIR"/gnome-shell/assets/more-results.svg
+    cp -r "$SRC_DIR"/gnome-shell/assets/toggle-on"${theme}".svg                        "$YARU_GDM_THEME_DIR"/gnome-shell/assets/toggle-on.svg
 
     cd "$YARU_GDM_THEME_DIR"/gnome-shell
     mv -f assets/no-events.svg no-events.svg

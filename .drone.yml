@@ -11,3 +11,4 @@ steps:
           - apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
           - mkdir 'HI ME'
           - ./install.sh -d 'HI ME'
+          - find 'HI ME/'
