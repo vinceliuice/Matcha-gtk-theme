@@ -1,0 +1,11 @@
+kind: pipeline
+type: docker
+name: matcha-testing
+
+steps:
+    - name: test
+      image: ubuntu
+      steps:
+          - DEBIAN_FRONTEND=noninteractive apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
+          - mkdir 'HI ME'
+          - ./install.sh -d 'HI ME'
