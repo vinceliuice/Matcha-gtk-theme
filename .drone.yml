@@ -6,6 +6,8 @@ steps:
     - name: test
       image: ubuntu
       commands:
-          - DEBIAN_FRONTEND=noninteractive apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
+          - export DEBIAN_FRONTEND=noninteractive
+          - apt-get update
+          - apt-get install gtk2-engines-murrine gtk2-engines-pixbuf -y
           - mkdir 'HI ME'
           - ./install.sh -d 'HI ME'
