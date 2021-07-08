@@ -85,7 +85,7 @@ install() {
   cp -ur "more-results${theme}.svg"                                                     "${themedir}/gnome-shell/assets/more-results.svg"
   cp -ur "toggle-on${theme}.svg"                                                        "${themedir}/gnome-shell/assets/toggle-on.svg"
 
-  cd ""${themedir}/gnome-shell""
+  cd "${themedir}/gnome-shell"
   mv -f assets/no-events.svg no-events.svg
   mv -f assets/process-working.svg process-working.svg
   mv -f assets/no-notifications.svg no-notifications.svg
