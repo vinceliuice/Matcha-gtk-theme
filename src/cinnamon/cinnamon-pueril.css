@@ -1307,7 +1307,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu-places-box {
   margin: auto;
   padding: 10px;
-  border: 0px solid red;
+  border: 0px solid rgba(0, 0, 0, 0);
 }
 
 .menu-places-button {
@@ -1367,7 +1367,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu-category-button-hover {
-  background-color: red;
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #273134;
+  background-color: white;
+  border: 1px solid #cfd6e6;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
   border-radius: 2px;
 }
 

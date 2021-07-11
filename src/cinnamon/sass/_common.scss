@@ -1118,11 +1118,10 @@ StScrollBar {
   }
 
   &-places {
-
     &-box {
       margin: auto;
       padding: 10px;
-      border: 0px solid red;
+      border: 0px solid rgba(0,0,0,0);
     }
 
     &-button { padding: 10px; }
@@ -1160,7 +1159,7 @@ StScrollBar {
       @include button(hover);
     }
     &-hover {
-      background-color: red;
+      @include button(hover);
       border-radius: 2px;
     }
     &-greyed {
