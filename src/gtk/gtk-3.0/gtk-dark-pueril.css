@@ -1756,8 +1756,16 @@ headerbar.default-decoration button.titlebutton {
 
 .titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
   border-radius: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  min-width: 120px;
+  padding: 0 0;
+}
+
+.titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) label {
+  padding-right: 10px;
+}
+
+.titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) image {
+  padding-left: 10px;
 }
 
 window.background > box.vertical > headerbar:not(.titlebar) {
@@ -6256,6 +6264,17 @@ tabbox > tab button:active, tabbox > tab button:active:hover {
 
 .geary-main-window > deck > overlay > .geary-main-layout statusbar {
   padding: 0 6px;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable {
+  background-color: #262626;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom-width: 0;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {

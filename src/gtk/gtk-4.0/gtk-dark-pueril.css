@@ -1809,6 +1809,10 @@ spinbutton:not(.vertical) {
   border-spacing: 0;
 }
 
+spinbutton:not(.vertical) > text {
+  padding: 6px 0 6px 12px;
+}
+
 spinbutton:not(.vertical) > button.image-button.up:not(.flat),
 spinbutton:not(.vertical) > button.image-button.down:not(.flat) {
   min-height: 16px;
@@ -5805,7 +5809,7 @@ window {
 window.csd {
   border-radius: 3px 3px 3px 3px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25), 0 8px 8px 0 rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.25);
-  margin: 6px;
+  margin: 0;
 }
 
 window.csd:backdrop {
@@ -7324,6 +7328,17 @@ tabbox > tab button:active, tabbox > tab button:active:hover {
 
 .geary-main-window > deck > overlay > .geary-main-layout statusbar {
   padding: 0 6px;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable {
+  background-color: #262626;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom-width: 0;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {

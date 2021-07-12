@@ -1143,6 +1143,7 @@ spinbutton {
 
     > text {
       @extend %spinbutton_horz_entry;
+      padding: 6px 0 6px 12px;
     }
 
     > button.image-button.up:not(.flat),
@@ -4419,8 +4420,7 @@ window {
                 0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
                 0 0 0 1px $borders_color;
 
-    // this is used for the resize cursor area
-    margin: 6px;
+    margin: 0;
 
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents don't
