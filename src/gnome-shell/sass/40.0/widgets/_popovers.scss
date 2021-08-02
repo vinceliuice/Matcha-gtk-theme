@@ -10,7 +10,7 @@ $popover_arrow_height: 12px;
   -arrow-border-color: transparent;
   -arrow-base: $popover_arrow_height * 2;
   -arrow-rise: $popover_arrow_height / 2;
-  -arrow-box-shadow: 0 1px 3px rgba(0,0,0,0.5); // dreaming bugzilla #689995
+  -arrow-box-shadow: 0 1px 3px rgba(black, 0.35); // dreaming bugzilla #689995
 }
 
 // container of the popover menu
