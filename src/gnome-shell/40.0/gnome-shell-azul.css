@@ -1837,7 +1837,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button {
   font-weight: bold;
-  color: #ddd;
+  color: #dddddd;
   -natural-hpadding: 12px;
   -minimum-hpadding: 6px;
   transition-duration: 150ms;
@@ -3198,56 +3198,58 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-align: center;
 }
 
-#dashtodockContainer.straight-corner #dash, #dashtodockContainer.shrink.straight-corner #dash {
-  border-radius: 0;
-  border-left: 0;
-  border-right: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
+#dashtodockContainer.top.shrink #dash, #dashtodockContainer.top.shrink:overview #dash, #dashtodockContainer.top.straight-corner #dash, #dashtodockContainer.top.shrink.straight-corner #dash, #dashtodockContainer.top.extended #dash, #dashtodockContainer.top.extended:overview #dash {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-#dashtodockContainer.straight-corner #dash .dash-background, #dashtodockContainer.shrink.straight-corner #dash .dash-background {
+#dashtodockContainer.top.shrink #dash .dash-background, #dashtodockContainer.top.shrink:overview #dash .dash-background, #dashtodockContainer.top.straight-corner #dash .dash-background, #dashtodockContainer.top.shrink.straight-corner #dash .dash-background, #dashtodockContainer.top.extended #dash .dash-background, #dashtodockContainer.top.extended:overview #dash .dash-background {
   border-radius: 0;
-  margin-bottom: 0;
+  margin: 0 !important;
 }
 
-#dashtodockContainer.extended.top #dash, #dashtodockContainer.extended.bottom #dash, #dashtodockContainer.extended.right #dash, #dashtodockContainer.extended.left #dash {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0 0;
+#dashtodockContainer.bottom.shrink #dash, #dashtodockContainer.bottom.shrink:overview #dash, #dashtodockContainer.bottom.straight-corner #dash, #dashtodockContainer.bottom.shrink.straight-corner #dash, #dashtodockContainer.bottom.extended #dash, #dashtodockContainer.bottom.extended:overview #dash {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-#dashtodockContainer.extended.top #dash .dash-background, #dashtodockContainer.extended.bottom #dash .dash-background, #dashtodockContainer.extended.right #dash .dash-background, #dashtodockContainer.extended.left #dash .dash-background {
+#dashtodockContainer.bottom.shrink #dash .dash-background, #dashtodockContainer.bottom.shrink:overview #dash .dash-background, #dashtodockContainer.bottom.straight-corner #dash .dash-background, #dashtodockContainer.bottom.shrink.straight-corner #dash .dash-background, #dashtodockContainer.bottom.extended #dash .dash-background, #dashtodockContainer.bottom.extended:overview #dash .dash-background {
   border-radius: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 !important;
+}
+
+#dashtodockContainer.left.shrink #dash, #dashtodockContainer.left.shrink:overview #dash, #dashtodockContainer.left.straight-corner #dash, #dashtodockContainer.left.shrink.straight-corner #dash, #dashtodockContainer.left.extended #dash, #dashtodockContainer.left.extended:overview #dash {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.left.shrink #dash .dash-background, #dashtodockContainer.left.shrink:overview #dash .dash-background, #dashtodockContainer.left.straight-corner #dash .dash-background, #dashtodockContainer.left.shrink.straight-corner #dash .dash-background, #dashtodockContainer.left.extended #dash .dash-background, #dashtodockContainer.left.extended:overview #dash .dash-background {
+  border-radius: 0;
+  margin: 0 !important;
+}
+
+#dashtodockContainer.right.shrink #dash, #dashtodockContainer.right.shrink:overview #dash, #dashtodockContainer.right.straight-corner #dash, #dashtodockContainer.right.shrink.straight-corner #dash, #dashtodockContainer.right.extended #dash, #dashtodockContainer.right.extended:overview #dash {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.right.shrink #dash .dash-background, #dashtodockContainer.right.shrink:overview #dash .dash-background, #dashtodockContainer.right.straight-corner #dash .dash-background, #dashtodockContainer.right.shrink.straight-corner #dash .dash-background, #dashtodockContainer.right.extended #dash .dash-background, #dashtodockContainer.right.extended:overview #dash .dash-background {
+  border-radius: 0;
+  margin: 0 !important;
 }
 
 #dashtodockContainer.left #dash, #dashtodockContainer.right #dash {
-  margin-top: 0;
-  padding: 0 0;
+  margin-top: 0 !important;
+  padding: 10px !important;
 }
 
 #dashtodockContainer.left #dash .dash-background, #dashtodockContainer.right #dash .dash-background {
-  margin-bottom: 0;
-  border-radius: 9px;
+  margin-bottom: 0 !important;
+  padding: 10px !important;
 }
 
-#dashtodockContainer.left .dash-item-container .app-well-app, #dashtodockContainer.left .show-apps, #dashtodockContainer.right .dash-item-container .app-well-app, #dashtodockContainer.right .show-apps {
-  padding: 6px;
-}
-
-#dashtodockContainer.left #dash {
-  margin-left: 6px;
-}
-
-#dashtodockContainer.right #dash {
-  margin-right: 6px;
+#dashtodockContainer.left #dash .dash-item-container .app-well-app, #dashtodockContainer.left #dash .show-apps, #dashtodockContainer.right #dash .dash-item-container .app-well-app, #dashtodockContainer.right #dash .show-apps {
+  padding: 1.5px 6px !important;
 }
 
 #dashtodockContainer #dash {
@@ -3259,8 +3261,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dashtodockContainer .dash-background {
-  color: #efefef;
-  background-color: rgba(49, 52, 65, 0.9);
+  color: #dddddd;
+  background-color: rgba(27, 29, 36, 0.9);
 }
 
 #dashtodockContainer:overview #dash {

@@ -33,6 +33,9 @@ $system_bg_color: lighten(#1b2224, 5%); //neutralize the HIG color
 @if $color=='aliz' or $color=='pueril' { $system_bg_color: lighten(#222222, 5%); }
 @if $color=='azul' { $system_bg_color: lighten(#1b1d24, 5%); }
 
+$panel_bg_color: darken($system_bg_color, 5%);
+$panel_fg_color: #dddddd;
+
 $osd_fg_color: #efefef;
 $osd_text_color: white;
 $osd_bg_color: lighten($system_bg_color, 5%);

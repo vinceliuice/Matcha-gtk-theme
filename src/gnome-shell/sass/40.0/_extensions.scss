@@ -31,38 +31,22 @@
     text-align: center;
   }
 
-  &.straight-corner #dash,
-  &.shrink.straight-corner #dash {
-    border-radius: 0;
-    border-left: 0;
-    border-right: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-
-    .dash-background {
-      border-radius: 0;
-      margin-bottom: 0;
-    }
-  }
-
-  &.extended.top,
-  &.extended.bottom,
-  &.extended.right,
-  &.extended.left {
-    #dash {
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 0 0;
+  @each $_pos, $b_pos in (top, bottom),
+                                   (bottom, top),
+                                   (left, right),
+                                   (right, left) {
+    &.#{$_pos}.shrink #dash,
+    &.#{$_pos}.shrink:overview #dash,
+    &.#{$_pos}.straight-corner #dash,
+    &.#{$_pos}.shrink.straight-corner #dash,
+    &.#{$_pos}.extended #dash,
+    &.#{$_pos}.extended:overview #dash {
+      margin: 0 !important;
+      padding: 0 !important;
 
       .dash-background {
         border-radius: 0;
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 0;
-        margin-bottom: 0;
+        margin: 0 !important;
       }
     }
   }
@@ -70,26 +54,18 @@
   &.left,
   &.right {
     #dash {
-      margin-top: 0;
-      padding: 0 0;
+      margin-top: 0 !important;
+      padding: $dash_padding !important;
 
-      .dash-background { // default-mode
-        margin-bottom: 0;
-        border-radius: $base_border_radius + $base_spacing;
+      .dash-background {
+        margin-bottom: 0 !important;
+        padding: $dash_padding !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        padding: $dash_spacing $base_padding !important;
       }
     }
-
-    .dash-item-container .app-well-app, .show-apps {
-      padding: $base_padding;
-    }
-  }
-
-  &.left #dash {
-    margin-left: $base_padding;
-  }
-
-  &.right #dash {
-    margin-right: $base_padding;
   }
 
   #dash { // default-mode
@@ -101,8 +77,8 @@
   }
 
   .dash-background {
-    color: $osd_fg_color;
-    background-color: rgba($osd_bg_color, 0.9);
+    color: $panel_fg_color;
+    background-color: rgba($panel_bg_color, 0.9);
   }
 
   &:overview #dash { // overview-mode #1
