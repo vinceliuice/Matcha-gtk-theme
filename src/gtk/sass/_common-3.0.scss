@@ -2832,7 +2832,50 @@ frame > border.flat,
 
 scrolledwindow {
   viewport.frame { // avoid double borders when viewport inside scrolled window
-    border-style: none;
+    border: none;
+
+    .frame {
+      border: none;
+
+      > textview {
+        border-radius: 2px;
+        background: none;
+
+        > text {
+          border-radius: 2px;
+          border: 1px solid $borders_color;
+        }
+      }
+    }
+
+    > box.vertical list.content.view {
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+    }
+
+    > box.vertical list.frame {
+      border-radius: 2px;
+      padding: 0;
+
+      > row.activatable {
+        &:first-child { border-radius: 2px 2px 0 0; }
+        &:last-child { border-radius: 0 0 2px 2px; }
+      }
+
+      list {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        background: none;
+
+        > row.activatable {
+          &, &:first-child, &:last-child {
+            border-radius: 0;
+          }
+        }
+      }
+    }
   }
 
   // This is used by GtkScrolledWindow, when content is touch-dragged past boundaries.
@@ -2875,13 +2918,16 @@ separator {
 list {
   background-color: $base_color;
   border-color: $borders_color;
-  border-radius: 2px;
 
-  row {
-    padding: 2px;
+  row { padding: 2px; }
 
-    &:first-child { border-radius: 2px 2px 0 0; }
-    &:last-child { border-radius: 0 0 2px 2px; }
+  &.content:not(.conversation-listbox) {
+    border-radius: 2px;
+
+    > row {
+      &:first-child { border-radius: 2px 2px 0 0; }
+      &:last-child { border-radius: 0 0 2px 2px; }
+    }
   }
 }
 

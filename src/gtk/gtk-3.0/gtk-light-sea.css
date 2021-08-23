@@ -3814,7 +3814,51 @@ frame > border.flat,
 }
 
 scrolledwindow viewport.frame {
-  border-style: none;
+  border: none;
+}
+
+scrolledwindow viewport.frame .frame {
+  border: none;
+}
+
+scrolledwindow viewport.frame .frame > textview {
+  border-radius: 2px;
+  background: none;
+}
+
+scrolledwindow viewport.frame .frame > textview > text {
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+scrolledwindow viewport.frame > box.vertical list.content.view {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+scrolledwindow viewport.frame > box.vertical list.frame {
+  border-radius: 2px;
+  padding: 0;
+}
+
+scrolledwindow viewport.frame > box.vertical list.frame > row.activatable:first-child {
+  border-radius: 2px 2px 0 0;
+}
+
+scrolledwindow viewport.frame > box.vertical list.frame > row.activatable:last-child {
+  border-radius: 0 0 2px 2px;
+}
+
+scrolledwindow viewport.frame > box.vertical list.frame list {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  background: none;
+}
+
+scrolledwindow viewport.frame > box.vertical list.frame list > row.activatable, scrolledwindow viewport.frame > box.vertical list.frame list > row.activatable:first-child, scrolledwindow viewport.frame > box.vertical list.frame list > row.activatable:last-child {
+  border-radius: 0;
 }
 
 scrolledwindow overshoot.top {
@@ -3920,18 +3964,21 @@ separator {
 list {
   background-color: #ffffff;
   border-color: rgba(0, 0, 0, 0.15);
-  border-radius: 2px;
 }
 
 list row {
   padding: 2px;
 }
 
-list row:first-child {
+list.content:not(.conversation-listbox) {
+  border-radius: 2px;
+}
+
+list.content:not(.conversation-listbox) > row:first-child {
   border-radius: 2px 2px 0 0;
 }
 
-list row:last-child {
+list.content:not(.conversation-listbox) > row:last-child {
   border-radius: 0 0 2px 2px;
 }
 
@@ -6428,6 +6475,8 @@ dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame
 
 .nemo-window .nemo-places-sidebar .places-treeview {
   background-color: #f7f7f7;
+  -NemoPlacesTreeView-disk-full-bg-color: #d1d1d1;
+  -NemoPlacesTreeView-disk-full-fg-color: #d64646;
 }
 
 .nemo-window .nemo-places-sidebar .places-treeview:selected .sidebar-icon, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover .sidebar-icon {

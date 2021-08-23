@@ -28,8 +28,8 @@
         .sidebar-icon { color: inherit; }
       }
 
-      // -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
-      // -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);
+      -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
+      -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);
     }
   }
 
