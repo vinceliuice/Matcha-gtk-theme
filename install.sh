@@ -182,7 +182,12 @@ install_gdm() {
   echo
   echo "Installing ${2}${3}${4} gdm theme..."
 
-  if [[ -f "$GS_THEME_FILE" ]] && command -v glib-compile-resources >/dev/null ; then
+  if ! command -v glib-compile-resources >/dev/null ; then
+    echo "glib-compile-resources not found! Exit."
+    exit 1
+  fi
+
+  if [[ -f "$GS_THEME_FILE" ]] ; then
     echo "Installing '$GS_THEME_FILE'..."
     cp -an "$GS_THEME_FILE" "$GS_THEME_FILE.bak"
     glib-compile-resources \
