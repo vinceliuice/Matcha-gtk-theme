@@ -606,7 +606,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 3px;
   margin: 4px 0;
-  box-shadow: none !important;
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -647,7 +646,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 3px;
   margin: 4px 0;
-  box-shadow: none !important;
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -697,13 +695,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 3px;
   margin: 4px 0;
-  box-shadow: none !important;
   color: #363636;
   background-color: rgba(0, 0, 0, 0.04);
   border-color: transparent;
   text-shadow: 0 1px rgba(255, 255, 255, 0.3);
   icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
   padding: 6px;
+  box-shadow: none;
 }
 
 .calendar:focus {
@@ -866,13 +864,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 3px;
   margin: 4px 0;
-  box-shadow: none !important;
   color: #363636;
   background-color: rgba(0, 0, 0, 0.04);
   border-color: transparent;
   text-shadow: 0 1px rgba(255, 255, 255, 0.3);
   icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
   padding: 12px;
+  box-shadow: none;
 }
 
 .events-button:focus {
@@ -924,13 +922,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 3px;
   margin: 4px 0;
-  box-shadow: none !important;
   color: #363636;
   background-color: rgba(0, 0, 0, 0.04);
   border-color: transparent;
   text-shadow: 0 1px rgba(255, 255, 255, 0.3);
   icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
   padding: 12px;
+  box-shadow: none;
 }
 
 .world-clocks-button:focus {
@@ -999,13 +997,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 3px;
   margin: 4px 0;
-  box-shadow: none !important;
   color: #363636;
   background-color: rgba(0, 0, 0, 0.04);
   border-color: transparent;
   text-shadow: 0 1px rgba(255, 255, 255, 0.3);
   icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
   padding: 12px;
+  box-shadow: none;
 }
 
 .weather-button:focus {
@@ -1102,7 +1100,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 3px;
   margin: 4px 0;
-  box-shadow: none !important;
   color: #363636;
   background-color: rgba(0, 0, 0, 0.04);
   border-color: transparent;
@@ -1131,6 +1128,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-color: transparent;
   text-shadow: none;
   icon-shadow: none;
+  box-shadow: none;
+}
+
+.popup-menu .message {
   box-shadow: none;
 }
 
@@ -1319,10 +1320,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .notification-banner {
   min-height: 64px;
   width: 34em;
-  margin: 5px;
+  margin: 6px;
   border-radius: 3px;
   border: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .notification-banner, .notification-banner:hover, .notification-banner:focus {

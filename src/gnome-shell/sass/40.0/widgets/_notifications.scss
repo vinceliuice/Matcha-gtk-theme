@@ -7,10 +7,10 @@ $notification_banner_width: 34em;
 .notification-banner {
   min-height: $notification_banner_height;
   width: $notification_banner_width;
-  margin: 5px;
+  margin: 6px;
   border-radius: $base_border_radius;
   border: none;
-  box-shadow: 0 3px 6px rgba(black, 0.35);
+  box-shadow: 0 3px 6px rgba(black, 0.15);
 
   &, &:hover, &:focus {
     color: $fg_color;

@@ -31,6 +31,8 @@
 .message {
   @include notification_bubble;
 
+  .popup-menu & { box-shadow: none; }
+
   // icon container
   .message-icon-bin {
     padding: ($base_padding * 3) 0 ($base_padding * 3) ($base_padding * 2);

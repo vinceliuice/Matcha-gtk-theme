@@ -60,6 +60,7 @@
 .calendar {
   @include notification_bubble;
   padding: $base_padding;
+  box-shadow: none;
 
   // month
   .calendar-month-label {
@@ -186,6 +187,7 @@
 .events-button {
   @include notification_bubble;
   padding: $base_padding * 2;
+  box-shadow: none;
 
   .events-box {
     spacing: $base_spacing;
@@ -212,6 +214,7 @@
 .world-clocks-button {
   @include notification_bubble;
   padding: $base_padding * 2;
+  box-shadow: none;
 
   .world-clocks-grid {
     spacing-rows: $base_spacing;
@@ -254,6 +257,7 @@
 .weather-button {
   @include notification_bubble;
   padding: $base_padding * 2;
+  box-shadow: none;
 
   .weather-box {
     spacing: $base_spacing + $base_margin;

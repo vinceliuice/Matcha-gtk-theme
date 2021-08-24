@@ -156,7 +156,6 @@ stage {
   border: none;
   border-radius: $base_border_radius;
   margin: $base_margin 0;
-  box-shadow: none !important;
 
   @if $flat {
     @include button(undecorated);
