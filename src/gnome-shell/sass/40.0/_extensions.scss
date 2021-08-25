@@ -35,12 +35,15 @@
                          (bottom, top),
                          (left, right),
                          (right, left) {
-    &.#{$_pos}.straight-corner #dash,
-    &.#{$_pos}.shrink.straight-corner #dash,
-    &.#{$_pos}.extended #dash,
+    &.#{$_pos}.straight-corner,
+    &.#{$_pos}.shrink.straight-corner,
+    &.#{$_pos}.extended,
     &.#{$_pos}.shrink.extended {
-      margin: 0 !important;
-      padding: 0 !important;
+      &, #dash {
+        margin: 0 !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+      }
 
       .dash-background {
         margin: 0 !important;
@@ -54,97 +57,87 @@
     }
   }
 
-  &.extended #dash,
-  &.straight-corner #dash {
+  &.extended,
+  &.straight-corner {
     .dash-background {
       border-radius: 0;
     }
   }
 
   &.shrink {
-    #dash {
-      .dash-background {
-        padding: 0 0 !important;
-        border-radius: $base_border_radius;
-      }
+    .dash-background {
+      border-radius: $base_border_radius + $base_padding / 2;
+    }
 
-      .dash-item-container .app-well-app, .show-apps {
-        margin: 0 !important;
-        padding: 0 0 0 !important;
-      }
+    .dash-item-container .app-well-app, .show-apps {
+      margin: 0 !important;
     }
   }
 
   &.shrink.extended {
-    #dash {
-      .dash-background {
-        border-radius: 0;
-      }
+    .dash-background {
+      border-radius: 0;
     }
   }
 
   &.left,
   &.right {
-    #dash {
-      .dash-item-container .app-well-app {
-        padding: $dash_spacing $base_padding !important;
-      }
-
-      .show-apps {
-        padding-bottom: $base_padding !important;
-      }
+    .dash-item-container .app-well-app, .show-apps {
+      padding: $dash_spacing $base_padding !important;
     }
 
-    &.shrink #dash, &.shrink.extended {
+    .dash-background {
+      margin-bottom: 0 !important;
+    }
+
+    &.shrink, &.shrink.extended {
+      .dash-background {
+        padding: $base_margin / 2 $base_margin !important;
+      }
+
       .dash-item-container .app-well-app, .show-apps {
         margin: 0 !important;
-        padding: 0 0 0 !important;
+        padding: $base_margin / 2 0 !important;
       }
     }
 
-    &.extended #dash,
-    &.straight-corner #dash {
+    &.extended,
+    &.straight-corner {
       .dash-item-container .app-well-app {
         padding: $dash_spacing $dash_padding !important;
       }
 
       .show-apps {
-        padding: $dash_padding !important;
+        padding: $dash_spacing $dash_padding $dash_padding * 2 !important;
       }
     }
   }
 
   &.top,
   &.bottom {
-    #dash {
-      .dash-background {
-        padding: $dash_padding ($dash_padding - $dash_spacing) !important;
-      }
+    .dash-background {
+      padding: $dash_padding ($dash_padding - $dash_spacing) !important;
     }
 
-    &.shrink #dash {
+    &.shrink {
       .dash-background {
-        padding: 0 0 !important;
+        padding: $base_margin $base_margin / 2 !important;
       }
 
       .dash-item-container .app-well-app, .show-apps {
         margin: 0 !important;
-        padding: 0 0 $dash_bottom_margin !important;
+        padding: 0 $base_margin / 2 $dash_bottom_margin !important;
       }
     }
 
-    &.extended #dash,
-    &.straight-corner #dash {
+    &.extended,
+    &.straight-corner {
       .dash-separator {
         margin: 0 ($dash_spacing + ($dash_padding / 2)) !important;
       }
 
-      .dash-item-container .app-well-app {
+      .dash-item-container .app-well-app, .show-apps {
         padding: $dash_padding $dash_spacing !important;
-      }
-
-      .show-apps {
-        padding: $dash_padding !important;
       }
     }
   }
