@@ -129,6 +129,11 @@ flowbox flowboxchild:selected {
   outline-offset: -2px;
 }
 
+flowbox flowboxchild:focus {
+  background-image: image(rgba(203, 191, 191, 0.05));
+  background-clip: border-box;
+}
+
 label.separator {
   color: #cbbfbf;
 }
@@ -1625,7 +1630,7 @@ searchbar > revealer > box {
   border-width: 0 0 1px;
 }
 
-actionbar {
+actionbar > revealer > box {
   padding: 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.25);
   background-color: #1a1a1a;

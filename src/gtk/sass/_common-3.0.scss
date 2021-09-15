@@ -130,6 +130,11 @@ flowbox {
 
       outline-offset: -2px;
     }
+
+    &:focus {
+      background-image: image(rgba($fg_color, 0.05));
+      background-clip: border-box;
+    }
   }
 }
 
@@ -1157,9 +1162,11 @@ searchbar {
 }
 
 actionbar {
-  padding: 6px;
-  border-top: 1px solid $borders_color;
-  background-color: darken($bg_color, 3%);
+  > revealer > box {
+    padding: 6px;
+    border-top: 1px solid $borders_color;
+    background-color: darken($bg_color, 3%);
+  }
 }
 
 //
