@@ -1265,23 +1265,23 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.sta
   box-shadow: none;
 }
 
-.linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .budgie-settings-window buttonbox.inline-toolbar button, spinbutton:not(.vertical) button, spinbutton:not(.vertical) entry, .linked:not(.vertical) > entry, .linked:not(.vertical) > entry:focus, .inline-toolbar button, .inline-toolbar button:backdrop, .linked:not(.vertical) > button, .linked:not(.vertical) > button:hover, .linked:not(.vertical) > button:active, .linked:not(.vertical) > button:checked, toolbar.inline-toolbar toolbutton > button.flat, .inline-toolbar toolbutton > button.flat {
+.linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .budgie-settings-window buttonbox.inline-toolbar button, viewswitcher button, spinbutton:not(.vertical) button, spinbutton:not(.vertical) entry, .linked:not(.vertical) > entry, .linked:not(.vertical) > entry:focus, .inline-toolbar button, .inline-toolbar button:backdrop, .linked:not(.vertical) > button, .linked:not(.vertical) > button:hover, .linked:not(.vertical) > button:active, .linked:not(.vertical) > button:checked, toolbar.inline-toolbar toolbutton > button.flat, .inline-toolbar toolbutton > button.flat {
   border-radius: 0;
   border-right-style: none;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:first-child, spinbutton:not(.vertical) button:first-child, spinbutton:not(.vertical) entry:first-child, .linked:not(.vertical) > entry:first-child, .inline-toolbar button:first-child, .inline-toolbar button:first-child:backdrop, .linked:not(.vertical) > button:first-child {
+.budgie-settings-window buttonbox.inline-toolbar button:first-child, viewswitcher button:first-child, spinbutton:not(.vertical) button:first-child, spinbutton:not(.vertical) entry:first-child, .linked:not(.vertical) > entry:first-child, .inline-toolbar button:first-child, .inline-toolbar button:first-child:backdrop, .linked:not(.vertical) > button:first-child {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:last-child, spinbutton:not(.vertical) button:last-child, spinbutton:not(.vertical) entry:last-child, .linked:not(.vertical) > entry:last-child, .inline-toolbar button:last-child, .inline-toolbar button:last-child:backdrop, .linked:not(.vertical) > button:last-child {
+.budgie-settings-window buttonbox.inline-toolbar button:last-child, viewswitcher button:last-child, spinbutton:not(.vertical) button:last-child, spinbutton:not(.vertical) entry:last-child, .linked:not(.vertical) > entry:last-child, .inline-toolbar button:last-child, .inline-toolbar button:last-child:backdrop, .linked:not(.vertical) > button:last-child {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-right-style: solid;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:only-child, spinbutton:not(.vertical) button:only-child, spinbutton:not(.vertical) entry:only-child, .linked:not(.vertical) > entry:only-child, .inline-toolbar button:only-child, .inline-toolbar button:only-child:backdrop, .linked:not(.vertical) > button:only-child {
+.budgie-settings-window buttonbox.inline-toolbar button:only-child, viewswitcher button:only-child, spinbutton:not(.vertical) button:only-child, spinbutton:not(.vertical) entry:only-child, .linked:not(.vertical) > entry:only-child, .inline-toolbar button:only-child, .inline-toolbar button:only-child:backdrop, .linked:not(.vertical) > button:only-child {
   border-radius: 3px;
   border-style: solid;
 }
@@ -1726,7 +1726,7 @@ headerbar.default-decoration button.titlebutton {
   border-radius: 0;
   box-shadow: none;
   border: none;
-  margin: 0 0 0 0;
+  margin: 0;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #F0544C 0%, transparent 0%) 0 0 0/0 0 0;
 }
 
@@ -1765,12 +1765,12 @@ headerbar.default-decoration button.titlebutton {
   padding: 0 0;
 }
 
-.titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) label {
-  padding-right: 10px;
+.titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) > stack > box {
+  padding: 0 12px;
 }
 
-.titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) image {
-  padding-left: 10px;
+.titlebar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) > stack > box image {
+  margin-top: 4px;
 }
 
 window.background > box.vertical > headerbar:not(.titlebar) {
@@ -4782,6 +4782,25 @@ stackswitcher button.text-button {
 
 stackswitcher button.circular {
   min-width: 0;
+}
+
+viewswitcher button > stack > box {
+  padding: 6px 12px;
+}
+
+viewswitcher button > stack > box.narrow {
+  font-size: 10px;
+}
+
+viewswitcher button:active, viewswitcher button:active:hover, viewswitcher button:checked {
+  background-color: #434141;
+  color: #cbbfbf;
+  border-color: rgba(0, 0, 0, 0.25);
+  background-clip: padding-box;
+}
+
+viewswitcher button:active + button, viewswitcher button:active:hover + button, viewswitcher button:checked + button {
+  border-left-color: rgba(0, 0, 0, 0.25);
 }
 
 *:drop(active):focus,

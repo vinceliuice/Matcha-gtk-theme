@@ -1265,7 +1265,7 @@ headerbar,
   border-radius: 0;
   box-shadow: none;
   border: none;
-  margin: 0 0 0 0;
+  margin: 0;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                 $selected_bg_color 0%,
                                 transparent 0%)
@@ -1317,8 +1317,11 @@ headerbar,
       padding: 0 0;
       @extend %viewswitcher_button;
 
-      label { padding-right: 10px; }
-      image { padding-left: 10px; }
+      > stack > box {
+        padding: 0 12px;
+
+        image { margin-top: 4px; }
+      }
     }
   }
 }
@@ -3629,7 +3632,6 @@ button.circular-button {
 .keycap {
   min-width: 16px;
   min-height: 20px;
-
   padding: 3px 6px 4px 6px;
 
   color: $fg_color;
@@ -3642,6 +3644,25 @@ button.circular-button {
 stackswitcher button {
   &.text-button { min-width: 80px; }
   &.circular { min-width: 0; }
+}
+
+viewswitcher button {
+  @extend %linked;
+
+  > stack > box {
+    padding: 6px 12px;
+
+    &.narrow { font-size: 10px; }
+  }
+
+  &:active, &:active:hover, &:checked {
+    background-color: mix($fg_color, $button_bg, 15%);
+    color: $fg_color;
+    border-color: $borders_color;
+    background-clip: if($variant=='light', border-box, padding-box);
+
+    + button { border-left-color: if($variant=='light', rgba(black, 0.2), $borders_color); }
+  }
 }
 
 //
