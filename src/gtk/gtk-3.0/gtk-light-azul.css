@@ -9044,6 +9044,7 @@ window#whiskermenu-window > frame > stack button:checked, window#whiskermenu-win
   background-color: #3498db;
   color: #ffffff;
   border-color: rgba(0, 0, 0, 0.2);
+  background-clip: border-box;
 }
 
 window#whiskermenu-window > frame > stack button:disabled {

@@ -178,6 +178,10 @@ window#whiskermenu-window {
         background-color: $selected_bg_color;
         color: $selected_fg_color;
         border-color: $dark_menu_border;
+
+        @if $header == 'light' {
+          background-clip: border-box;
+        }
       }
 
       &:disabled {
@@ -241,10 +245,9 @@ window#whiskermenu-window {
 }
 
 //
-//  * Thunar *
+//  Thunar
 //
 window.thunar {
-
   paned.horizontal > separator {
     background-image: image($solid_borders_color);
   }
