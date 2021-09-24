@@ -79,9 +79,13 @@ button.gtkstyle-fallback { // For Cinnamon system setting
 }
 
 .view, %view {
-  color: rgba($text_color, 1);
+  color: $text_color;
   background-color: $base_color;
-  &:hover { color: $fg_color; }
+
+  &:hover {
+    color: $fg_color;
+    background-color: mix($fg_color, $base_color, 8%);
+  }
 
   &:selected {
     @extend %selected_items;
@@ -1816,7 +1820,7 @@ treeview.view {
     -GtkTreeView-expander-size: 16;
   }
 
-  @extend %row_activatable;
+  // @extend %view;
 
   border-left-color: rgba($fg_color, 0.15);   // this is actually the tree lines color,
   border-top-color: rgba(black, 0.1);         // while this is the grid lines color, better then nothing
