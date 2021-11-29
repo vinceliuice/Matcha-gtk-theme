@@ -3,8 +3,6 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Entries */
-#urlbar.megabar #urlbar-input-container,
-#urlbar:not(.megabar),
 #searchbar,
 #search-box,
 .findbar-textbox {
@@ -18,25 +16,27 @@
 	margin: 0 !important;
 	padding: 4px 8px !important;
 	box-sizing: border-box !important;
+	transition: all .2s ease;
 }
 
-#urlbar.megabar #urlbar-input-container,
-#urlbar:not(.megabar),
 #searchbar {
-	padding: 0 6px !important;
+	padding: 0 !important;
+	border: none !important;
 	background: var(--gnome-header-entry-background) !important;
-	border: 1px solid var(--gnome-header-entry-border-color) !important;
 	color: var(--gnome-header-entry-color) !important;
 	fill: var(--gnome-header-entry-color) !important;
+	outline: 1px solid var(--gnome-header-entry-border-color) !important;
+	outline-offset: -1px;
 }
 
 /* Entries focused */
-#urlbar:not(.megabar)[focused],
 #searchbar:focus-within,
-#search-box[focused],
+#search-box[focused], 
 .findbar-textbox[focused],
 .findbar-textbox:focus {
-	border-color: var(--gnome-focused-urlbar-border-color) !important;
+	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
+	outline-offset: -2px;
+	transition: all .1s ease;
 }
 
 /* Inactive window entries */
@@ -47,9 +47,7 @@
 	color: var(--gnome-inactive-entry-color) !important;
 }
 
-#searchbar:-moz-window-inactive,
-#urlbar.megabar #urlbar-input-container:-moz-window-inactive,
-#urlbar:not(.megabar):-moz-window-inactive {
+#searchbar:-moz-window-inactive {
 	background: var(--gnome-header-inactive-entry-background) !important;
 	border-color: var(--gnome-header-inactive-entry-border-color) !important;
 	color: var(--gnome-header-inactive-entry-color) !important;
@@ -68,11 +66,11 @@
 }
 
 /* Entries fixes */
-#urlbar-container, #search-container {
+#search-container {
 	padding: 0 !important;
 	margin: 0 3px !important;
 }
-#urlbar, #searchbar {
+#searchbar {
 	margin: 0 3px !important;
 	padding: 0 !important;
 }

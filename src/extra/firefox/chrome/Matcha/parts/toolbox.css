@@ -130,3 +130,9 @@ toolbarbutton.bookmark-item:not(.subviewbutton)[open="true"] .toolbarbutton-icon
 .notificationbox-stack[notificationside="bottom"] notification {
 	border-top: 1px solid var(--gnome-toolbar-border-color) !important;
 }
+
+/* bookmark-item */
+#personal-toolbar-empty-description, #PersonalToolbar .toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton) {
+	margin: 0 2px 2px !important;
+	padding: 3px 6px !important;
+}

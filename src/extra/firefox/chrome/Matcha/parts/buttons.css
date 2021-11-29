@@ -40,24 +40,25 @@
 	background: var(--gnome-button-background) !important;
 	border: 1px solid var(--gnome-button-border-color) !important;
 	border-radius: 2px !important;
-	padding: 0 4px !important;
+	padding: 0 6px !important;
 	max-height: 28px !important;
 	min-height: 28px !important;
 	min-width: 28px !important;
 	color: var(--gnome-toolbar-color) !important;
 	font: menu !important;
+	transition: all .2s ease;
+}
+
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton) {
+	margin: 0 2px !important;
+	min-width: 36px !important;
+	--toolbarbutton-inner-padding: 0 !important;
 }
 
 /* Buttons with margins */
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
 .notification-button {
 	margin: 0 3px !important;
-}
-#TabsToolbar .toolbarbutton-1 {
-	margin: 2px 3px 2px !important;
-}
-.close-icon:not(.tab-close-button) {
-	margin-left: 6px !important;
 }
 
 /* Text buttons */
@@ -182,10 +183,10 @@ menulist[open] .menulist-label-box,
 	opacity: 1 !important;
 }
 
-#nav-bar toolbarbutton:not(#urlbar-zoom-button)[disabled] image,
+/*#nav-bar toolbarbutton:not(#urlbar-zoom-button)[disabled] image,*/
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled] image,
 #context-navigation menuitem[disabled] image {
-	opacity: .4 !important;
+	opacity: 0.45 !important;
 }
 
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled]:hover {

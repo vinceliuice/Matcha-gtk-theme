@@ -6,12 +6,19 @@
 /* Style menus */
 menupopup {
 	-moz-appearance: none !important;
+	--panel-background: transparent !important;
+	--panel-border-color: transparent !important;
+	--arrowpanel-border-radius: 3px !important;
+	--arrowpanel-background: var(--gnome-menu-background) !important;
+	--arrowpanel-border-color: var(--gnome-menu-border-color) !important;
 	background: var(--gnome-menu-background) !important;
 	border: 1px solid var(--gnome-menu-border-color) !important;
 	border-radius: 2px;
 	padding: 4px 0 !important;
 	color: var(--gnome-toolbar-color) !important;
+	margin: 0;
 }
+
 menupopup menupopup {
 	margin: -5px 0 0 -4px;
 }
@@ -32,6 +39,37 @@ menuitem[type="checkbox"] image, menuitem[type="radio"] image {
 
 menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 	background: transparent !important;
+}
+
+panel {
+	--panel-background: var(--gnome-menu-background) !important;
+	--panel-border-color: var(--gnome-menu-border-color) !important;
+}
+
+:is(menupopup, panel)[type="arrow"] {
+	--panel-border-radius: 3px !important;
+	--panel-padding: 4px !important;
+}
+
+:is(panel, menupopup)::part(content) {
+	border: none !important;
+}
+
+#PlacesToolbar menupopup[placespopup="true"]::part(content), #PlacesToolbar menupopup[placespopup="true"]::part(arrowscrollbox), #PlacesToolbar menupopup {
+	background: none !important;
+	padding: 3px 4px 6px !important;
+	margin: 0 0 0 -6px !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+#PlacesToolbar menuitem, #PlacesToolbar menu, .subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
+	appearance: none;
+	margin: 1px 6px !important;
+	min-height: 24px;
+	padding: 4px 8px !important;
+	border-radius: 2px !important;
+	background-color: transparent;
 }
 
 /* Adjust popovers position */
