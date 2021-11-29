@@ -1820,7 +1820,7 @@ window.thunar toolbar entry:disabled, window.thunar .inline-toolbar entry:disabl
   background-color: rgba(255, 255, 255, 0.85);
 }
 
-window.thunar toolbar entry selection:focus, window.thunar .inline-toolbar entry selection:focus, .nemo-window .primary-toolbar entry selection:focus, headerbar entry selection:focus {
+window.thunar toolbar entry selection, window.thunar .inline-toolbar entry selection, .nemo-window .primary-toolbar entry selection, headerbar entry selection {
   background-color: #ffffff;
   color: #97BB72;
 }
