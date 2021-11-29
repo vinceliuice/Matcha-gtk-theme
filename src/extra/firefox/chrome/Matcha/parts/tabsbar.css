@@ -227,6 +227,8 @@ tab[selected]:-moz-window-inactive {
 	margin-block: 0 !important;
 	border-radius: 0 !important;
 	padding: 0 12px !important;
+	transition: all 200ms ease !important;
+	box-shadow: inset 0 -3px transparent !important;
 }
 
 /*Align personal bookmarks v89 */
@@ -243,10 +245,9 @@ tab[selected]:-moz-window-inactive {
 .tab-background[selected=true] {
 	background-color: var(--gnome-tabbar-tab-active-background) !important;
 	background-image: none !important;
-	border: 0 !important;
+	border: none !important;
 	border-image: none !important;
-	box-shadow: none !important;
-	border-bottom: 2px solid var(--gnome-tabbar-tab-active-border-bottom-color) !important;
+	box-shadow: inset 0 -3px var(--gnome-tabbar-tab-active-border-bottom-color) !important;
 }
 .tab-background[selected=true]:-moz-window-inactive {
 	background-color: var(--gnome-inactive-tabbar-tab-active-background) !important;
@@ -265,7 +266,7 @@ tab[selected]:-moz-window-inactive {
 :root:not(:-moz-window-inactive) .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]) {
 	background-color: var(--gnome-tabbar-tab-hover-background) !important;
 	border-image: none !important;
-	border-bottom: 2px solid var(--gnome-tabbar-tab-hover-border-bottom-color) !important;
+	box-shadow: inset 0 -3px var(--gnome-tabbar-tab-hover-border-bottom-color) !important;
 }
 
 /* Tabs scroll buttons hover */
