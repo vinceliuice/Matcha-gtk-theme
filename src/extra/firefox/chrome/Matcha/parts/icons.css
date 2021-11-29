@@ -50,6 +50,7 @@ menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
 :root[tabsintitlebar] #titlebar .titlebar-close:active .toolbarbutton-icon,
 :root[tabsintitlebar] #titlebar #titlebar-close:active .toolbarbutton-icon {
 	list-style-image: url("../icons/window-close-active-symbolic.svg") !important;
+	filter: none !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-max .toolbarbutton-icon,
 :root[tabsintitlebar] #titlebar #titlebar-max .toolbarbutton-icon {
