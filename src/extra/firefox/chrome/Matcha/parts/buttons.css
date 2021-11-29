@@ -77,6 +77,7 @@
 .dialog-button {
 	padding: 2px 16px !important;
 	text-align: center !important;
+	transition: all .2s ease;
 }
 .subviewbutton.panel-subview-footer label {
 	text-align: center !important;

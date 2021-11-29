@@ -101,6 +101,7 @@ tab[selected]:-moz-window-inactive {
 /* Prevent tab icons size breaking */
 .tab-icon-image, .tab-icon-sound, .tab-throbber, .tab-throbber-fallback, .tab-close-button {
 	min-width: 16px;
+	transition: all .2s ease !important;
 }
 
 /* Adjust tab label width */
