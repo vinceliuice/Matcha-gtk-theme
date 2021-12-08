@@ -5,18 +5,11 @@
 
 /* Style menus */
 menupopup {
-	-moz-appearance: none !important;
-	--panel-background: transparent !important;
-	--panel-border-color: transparent !important;
+	--panel-background: var(--gnome-menu-background) !important;
+	--panel-border-color: var(--gnome-menu-border-color) !important;
 	--arrowpanel-border-radius: 3px !important;
 	--arrowpanel-background: var(--gnome-menu-background) !important;
 	--arrowpanel-border-color: var(--gnome-menu-border-color) !important;
-	background: var(--gnome-menu-background) !important;
-	border: 1px solid var(--gnome-menu-border-color) !important;
-	border-radius: 2px;
-	padding: 4px 0 !important;
-	color: var(--gnome-toolbar-color) !important;
-	margin: 0;
 }
 
 menupopup menupopup {
