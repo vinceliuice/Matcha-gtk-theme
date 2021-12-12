@@ -54,30 +54,21 @@ $warning_fg_color: white;
 $error_fg_color: white;
 $success_color: #2eb398;
 $destructive_color: #db5b5b;
-$suggested_color: #2eb398;
+$suggested_color: $selected_bg_color;
 $destructive_fg_color: white;
 $suggested_fg_color: white;
-$progress_color: #2eb398;
+$progress_color: $selected_bg_color;
 
 @if $color=='aliz' {
-    $progress_color: #f0544c;
-    $success_color: #3498db;
-    $destructive_color: #db5b5b;
-    $suggested_color: #f0544c;
+  $success_color: #3498db;
 }
 
 @if $color=='azul' {
-    $progress_color: #4586D8;
-    $success_color: #2eb398;
-    $destructive_color: #db5b5b;
-    $suggested_color: #4586D8;
+  $success_color: #2eb398;
 }
 
 @if $color=='pueril' {
-  $progress_color: #97BB72;
   $success_color: #3498db;
-  $destructive_color: #db5b5b;
-  $suggested_color: #97BB72;
 }
 
 $drop_target_color: #F08437;

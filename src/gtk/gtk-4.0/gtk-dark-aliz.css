@@ -534,7 +534,7 @@ entry progress > trough > progress {
   background-image: none;
   border-radius: 0;
   border-width: 0 0 2px;
-  border-color: #f0544c;
+  border-color: #F0544C;
   border-style: solid;
   box-shadow: none;
 }
@@ -894,8 +894,8 @@ popover.background.touch-selection button.flat:active, popover.background.magnif
 button.suggested-action {
   background-clip: border-box;
   color: white;
-  background-color: #f0544c;
-  border-color: #f0544c;
+  background-color: #F0544C;
+  border-color: #F0544C;
 }
 
 
@@ -903,7 +903,7 @@ button.suggested-action.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
-  color: #f0544c;
+  color: #F0544C;
 }
 
 
@@ -2436,7 +2436,7 @@ headerbar menubutton > button {
 }
 
 headerbar entry progress {
-  border-color: #f0544c;
+  border-color: #F0544C;
   background-image: none;
   background-color: transparent;
 }
@@ -2595,15 +2595,15 @@ headerbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error {
 headerbar button.suggested-action {
   background-clip: border-box;
   color: white;
-  background-color: #f0544c;
-  border-color: #f0544c;
+  background-color: #F0544C;
+  border-color: #F0544C;
 }
 
 headerbar button.suggested-action.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
-  color: #f0544c;
+  color: #F0544C;
 }
 
 headerbar button.suggested-action:hover {
@@ -3042,8 +3042,8 @@ columnview.view.progressbar,
 treeview.view.progressbar {
   color: #ffffff;
   border-radius: 3px;
-  background-color: #f0544c;
-  background-image: image(#f0544c);
+  background-color: #F0544C;
+  background-image: image(#F0544C);
 }
 
 columnview.view.progressbar:selected, columnview.view.progressbar:selected:focus,
@@ -4310,7 +4310,7 @@ progressbar.osd > progress {
 }
 
 progressbar > trough > progress {
-  background-color: #f0544c;
+  background-color: #F0544C;
   border: none;
   border-radius: 3px;
   box-shadow: none;
@@ -5354,11 +5354,11 @@ infobar.info > revealer > box selection, infobar.info:backdrop > revealer > box 
 }
 
 infobar.question > revealer > box, infobar.question:backdrop > revealer > box {
-  background-color: #f0544c;
+  background-color: #F0544C;
 }
 
 infobar.question > revealer > box selection, infobar.question:backdrop > revealer > box selection {
-  color: #f0544c;
+  color: #F0544C;
 }
 
 infobar.warning > revealer > box, infobar.warning:backdrop > revealer > box {
