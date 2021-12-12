@@ -264,7 +264,9 @@ window.thunar {
         box-shadow: none;
       }
 
-      &:selected, &:selected:hover, &:active:hover { @extend %selected_items; }
+      &:selected, &:selected:hover, &:active:hover {
+        background-color: mix($fg_color, $bg_color, 15%);
+      }
     }
   }
 

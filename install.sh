@@ -66,24 +66,24 @@ install() {
   # Install GNOME Shell Theme
   mkdir -p                                                                            "${themedir}/gnome-shell"
   cd "${SRC_DIR}/gnome-shell"
-  cp -ur pad-osd.css                                                                  "${themedir}/gnome-shell"
-  cp -ur icons                                                                        "${themedir}/gnome-shell"
-  cp -ur common-assets                                                                "${themedir}/gnome-shell/assets"
+  cp -r pad-osd.css                                                                   "${themedir}/gnome-shell"
+  cp -r icons                                                                         "${themedir}/gnome-shell"
+  cp -r common-assets                                                                 "${themedir}/gnome-shell/assets"
 
   if [[ "${GS_VERSION:-}" == 'new' ]]; then
-    cp -ur "40.0/gnome-shell${ELSE_DARK}${theme}.css"                                 "${themedir}/gnome-shell/gnome-shell.css"
+    cp -r "40.0/gnome-shell${ELSE_DARK}${theme}.css"                                  "${themedir}/gnome-shell/gnome-shell.css"
   else
-    cp -ur "3.28/gnome-shell${ELSE_DARK}${theme}.css"                                 "${themedir}/gnome-shell/gnome-shell.css"
+    cp -r "3.28/gnome-shell${ELSE_DARK}${theme}.css"                                  "${themedir}/gnome-shell/gnome-shell.css"
   fi
 
   cd "${SRC_DIR}/gnome-shell/assets"
-  cp -ur "calendar-arrow-left${ELSE_DARK}.svg"                                        "${themedir}/gnome-shell/assets/calendar-arrow-left.svg"
-  cp -ur "calendar-arrow-right${ELSE_DARK}.svg"                                       "${themedir}/gnome-shell/assets/calendar-arrow-right.svg"
-  cp -ur "checkbox-off${ELSE_DARK}.svg"                                               "${themedir}/gnome-shell/assets/checkbox-off.svg"
-  cp -ur "calendar-today${ELSE_DARK}.svg"                                             "${themedir}/gnome-shell/assets/calendar-today.svg"
-  cp -ur "checkbox${theme}.svg"                                                       "${themedir}/gnome-shell/assets/checkbox.svg"
-  cp -ur "more-results${theme}.svg"                                                   "${themedir}/gnome-shell/assets/more-results.svg"
-  cp -ur "toggle-on${theme}.svg"                                                      "${themedir}/gnome-shell/assets/toggle-on.svg"
+  cp -r "calendar-arrow-left${ELSE_DARK}.svg"                                         "${themedir}/gnome-shell/assets/calendar-arrow-left.svg"
+  cp -r "calendar-arrow-right${ELSE_DARK}.svg"                                        "${themedir}/gnome-shell/assets/calendar-arrow-right.svg"
+  cp -r "checkbox-off${ELSE_DARK}.svg"                                                "${themedir}/gnome-shell/assets/checkbox-off.svg"
+  cp -r "calendar-today${ELSE_DARK}.svg"                                              "${themedir}/gnome-shell/assets/calendar-today.svg"
+  cp -r "checkbox${theme}.svg"                                                        "${themedir}/gnome-shell/assets/checkbox.svg"
+  cp -r "more-results${theme}.svg"                                                    "${themedir}/gnome-shell/assets/more-results.svg"
+  cp -r "toggle-on${theme}.svg"                                                       "${themedir}/gnome-shell/assets/toggle-on.svg"
 
   cd "${themedir}/gnome-shell"
   mv -f assets/no-events.svg no-events.svg
@@ -93,24 +93,24 @@ install() {
   # Install GTK+ 2.0 Theme
   mkdir -p                                                                            "${themedir}/gtk-2.0"
   cd "${SRC_DIR}/gtk-2.0"
-  cp -ur {apps.rc,main.rc,panel.rc,xfce-notify.rc}                                    "${themedir}/gtk-2.0"
-  cp -ur "gtkrc${color}${theme}"                                                      "${themedir}/gtk-2.0/gtkrc"
-  cp -ur assets${ELSE_DARK}${theme}                                                   "${themedir}/gtk-2.0/assets"
-  cp -ur "menubar-toolbar${ELSE_DARK}.rc"                                             "${themedir}/gtk-2.0/menubar-toolbar.rc"
+  cp -r {apps.rc,main.rc,panel.rc,xfce-notify.rc}                                     "${themedir}/gtk-2.0"
+  cp -r "gtkrc${color}${theme}"                                                       "${themedir}/gtk-2.0/gtkrc"
+  cp -r assets${ELSE_DARK}${theme}                                                    "${themedir}/gtk-2.0/assets"
+  cp -r "menubar-toolbar${ELSE_DARK}.rc"                                              "${themedir}/gtk-2.0/menubar-toolbar.rc"
 
   # Install GTK+ 3.0 Theme
   mkdir -p                                                                            "${themedir}/gtk-3.0"
   cd "${SRC_DIR}/gtk"
-  cp -ur "assets${theme}"                                                             "${themedir}/gtk-3.0/assets"
-  cp -ur "gtk-3.0/gtk${color}${theme}.css"                                            "${themedir}/gtk-3.0/gtk.css"
-  cp -ur "gtk-3.0/gtk-dark${theme}.css"                                               "${themedir}/gtk-3.0/gtk-dark.css"
+  cp -r "assets${theme}"                                                              "${themedir}/gtk-3.0/assets"
+  cp -r "gtk-3.0/gtk${color}${theme}.css"                                             "${themedir}/gtk-3.0/gtk.css"
+  cp -r "gtk-3.0/gtk-dark${theme}.css"                                                "${themedir}/gtk-3.0/gtk-dark.css"
 
-  cp -ur "thumbnail${ELSE_DARK}${theme}.png"                                          "${themedir}/gtk-3.0/thumbnail.png"
+  cp -r "thumbnail${ELSE_DARK}${theme}.png"                                           "${themedir}/gtk-3.0/thumbnail.png"
 
   # Install GTK+ 4.0 Theme
   mkdir -p                                                                            "${themedir}/gtk-4.0"
-  cp -ur "gtk-4.0/gtk${color}${theme}.css"                                            "${themedir}/gtk-4.0/gtk.css"
-  cp -ur "gtk-4.0/gtk-dark${theme}.css"                                               "${themedir}/gtk-4.0/gtk-dark.css"
+  cp -r "gtk-4.0/gtk${color}${theme}.css"                                             "${themedir}/gtk-4.0/gtk.css"
+  cp -r "gtk-4.0/gtk-dark${theme}.css"                                                "${themedir}/gtk-4.0/gtk-dark.css"
   cd "${themedir}/gtk-4.0"
   ln -sf ../gtk-3.0/assets  assets
   ln -sf ../gtk-3.0/thumbnail.png thumbnail.png
@@ -118,18 +118,18 @@ install() {
   # Install CINNAMON Theme
   mkdir -p                                                                            "${themedir}/cinnamon"
   cd "${SRC_DIR}/cinnamon"
-  cp -ur "cinnamon${ELSE_DARK}${theme}.css"                                           "${themedir}/cinnamon/cinnamon.css"
-  cp -ur "thumbnail${ELSE_DARK}${theme}.png"                                          "${themedir}/cinnamon/thumbnail.png"
+  cp -r "cinnamon${ELSE_DARK}${theme}.css"                                            "${themedir}/cinnamon/cinnamon.css"
+  cp -r "thumbnail${ELSE_DARK}${theme}.png"                                           "${themedir}/cinnamon/thumbnail.png"
 
   cd "${SRC_DIR}/cinnamon/assets${theme}"
-  cp -ur common-assets                                                                "${themedir}/cinnamon"
-  cp -ur "assets${ELSE_DARK}"                                                         "${themedir}/cinnamon/assets"
+  cp -r common-assets                                                                 "${themedir}/cinnamon"
+  cp -r "assets${ELSE_DARK}"                                                          "${themedir}/cinnamon/assets"
 
   # Install Metacity Theme
   mkdir -p                                                                            "${themedir}/metacity-1"
   cd "${SRC_DIR}/metacity-1"
-  cp -ur {thumbnail.png,*.svg,metacity-theme-3.xml}                                   "${themedir}/metacity-1"
-  cp -ur "metacity-theme-1${theme}.xml"                                               "${themedir}/metacity-1/metacity-theme-1.xml"
+  cp -r {thumbnail.png,*.svg,metacity-theme-3.xml}                                    "${themedir}/metacity-1"
+  cp -r "metacity-theme-1${theme}.xml"                                                "${themedir}/metacity-1/metacity-theme-1.xml"
 
   cd "${themedir}/metacity-1"
   ln -s metacity-theme-1.xml metacity-theme-2.xml
@@ -137,29 +137,49 @@ install() {
   # Install xfwm4 Theme
   mkdir -p                                                                            "${themedir}/xfwm4"
   cd "${SRC_DIR}/xfwm4"
-  cp -ur "assets${color}${theme}"/*.png                                               "${themedir}/xfwm4"
+  cp -r "assets${color}${theme}"/*.png                                                "${themedir}/xfwm4"
 
   if [[ "${color}" == '-light' ]] ; then
-    cp -ur "themerc${color}"                                                          "${themedir}/xfwm4/themerc"
+    cp -r "themerc${color}"                                                           "${themedir}/xfwm4/themerc"
   else
-    cp -ur "themerc${theme}"                                                          "${themedir}/xfwm4/themerc"
+    cp -r "themerc${theme}"                                                           "${themedir}/xfwm4/themerc"
+  fi
+
+  # Install xfwm4 hdpi Theme
+  mkdir -p                                                                            "${themedir}-hdpi/xfwm4"
+  cp -r "assets${color}${theme}-hdpi"/*.png                                           "${themedir}-hdpi/xfwm4"
+
+  if [[ "${color}" == '-light' ]] ; then
+    cp -r "themerc${color}"                                                           "${themedir}-hdpi/xfwm4/themerc"
+  else
+    cp -r "themerc${theme}"                                                           "${themedir}-hdpi/xfwm4/themerc"
+  fi
+
+  # Install xfwm4 xhdpi Theme
+  mkdir -p                                                                            "${themedir}-xhdpi/xfwm4"
+  cp -r "assets${color}${theme}-xhdpi"/*.png                                          "${themedir}-xhdpi/xfwm4"
+
+  if [[ "${color}" == '-light' ]] ; then
+    cp -r "themerc${color}"                                                           "${themedir}-xhdpi/xfwm4/themerc"
+  else
+    cp -r "themerc${theme}"                                                           "${themedir}-xhdpi/xfwm4/themerc"
   fi
 
   # Install openbox Theme
   mkdir -p                                                                            "${themedir}/openbox-3"
   cd "${SRC_DIR}/openbox-3"
-  cp -ur *.xbm                                                                        "${themedir}/openbox-3"
-  cp -ur "themerc${ELSE_DARK}${theme}"                                                "${themedir}/openbox-3/themerc"
+  cp -r *.xbm                                                                         "${themedir}/openbox-3"
+  cp -r "themerc${ELSE_DARK}${theme}"                                                 "${themedir}/openbox-3/themerc"
 
   # Install Unity Theme
   mkdir -p                                                                            "${themedir}/unity"
   cd "${SRC_DIR}"
-  cp -ur unity                                                                        "${themedir}"
+  cp -r unity                                                                         "${themedir}"
 
   # Install Plank Theme
   mkdir -p                                                                            "${themedir}/plank"
   cd "${SRC_DIR}"
-  cp -ur plank                                                                        "${themedir}"
+  cp -r plank                                                                         "${themedir}"
 }
 
 # Backup and install files related to GDM theme

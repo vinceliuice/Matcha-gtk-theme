@@ -19,17 +19,23 @@
     &.frame { border-width: 0; }
 
     .places-treeview {
+      -NemoPlacesTreeView-disk-full-bg-color: mix($fg_color, $bg_color, 15%); // Can't use translucent colors
+      -NemoPlacesTreeView-disk-full-fg-color: lighten($destructive_color, 15%);
+      -NemoPlacesTreeView-disk-full-bar-width: 2px;
+      -NemoPlacesTreeView-disk-full-bar-radius: 0;
+      -NemoPlacesTreeView-disk-full-bottom-padding: 1px; // There is already hard-coded 1px bottom-padding
+      -NemoPlacesTreeView-disk-full-max-length: 80px;
+
       @extend %row_activatable;
       background-color: $bg_color;
+      padding-top: 3px;
+      padding-bottom: 3px;
 
       &:selected, &:selected:hover {
         @extend %selected_items;
 
         .sidebar-icon { color: inherit; }
       }
-
-      -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
-      -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);
     }
   }
 
