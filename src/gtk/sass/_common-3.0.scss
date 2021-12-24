@@ -2068,13 +2068,13 @@ menu,
   // overflow buttons
 
   > arrow {
-//    @include button(undecorated);
+    // @include button(undecorated);
     min-width: 16px;
     min-height: 16px;
     padding: 4px;
     background-color: $_menu_bg;
     border-radius: 0;
-//    border: 1px solid $borders_color;
+    // border: 1px solid $borders_color;
 
     &.top {
       margin-top: -6px;
@@ -2848,20 +2848,6 @@ scrolledwindow {
   viewport.frame { // avoid double borders when viewport inside scrolled window
     border: none;
 
-    .frame {
-      border: none;
-
-      > textview {
-        border-radius: 2px;
-        background: none;
-
-        > text {
-          border-radius: 2px;
-          border: 1px solid $borders_color;
-        }
-      }
-    }
-
     > box.vertical list.content.view {
       border-top-left-radius: 2px;
       border-top-right-radius: 2px;
@@ -3065,7 +3051,6 @@ calendar {
 //
 
 messagedialog { // Message Dialog styling
-
   &.csd .titlebar {
     min-height: 20px;
     background-color: $bg_color;

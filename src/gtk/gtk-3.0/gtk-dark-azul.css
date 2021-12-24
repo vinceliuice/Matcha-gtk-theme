@@ -3824,20 +3824,6 @@ scrolledwindow viewport.frame {
   border: none;
 }
 
-scrolledwindow viewport.frame .frame {
-  border: none;
-}
-
-scrolledwindow viewport.frame .frame > textview {
-  border-radius: 2px;
-  background: none;
-}
-
-scrolledwindow viewport.frame .frame > textview > text {
-  border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-}
-
 scrolledwindow viewport.frame > box.vertical list.content.view {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
@@ -5693,11 +5679,11 @@ window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.ti
   border-radius: 0;
 }
 
-window.background.org-gnome-Calendar .week-view weekgrid event.color-light, window.background.org-gnome-Calendar .week-view weekgrid event.color-light > stack > grid > label {
+window.background.org-gnome-Calendar event.color-light, window.background.org-gnome-Calendar event.color-light > stack > grid > label {
   color: rgba(0, 0, 0, 0.75);
 }
 
-window.background.org-gnome-Calendar .week-view weekgrid event.color-dark, window.background.org-gnome-Calendar .week-view weekgrid event.color-dark > stack > grid > label {
+window.background.org-gnome-Calendar event.color-dark, window.background.org-gnome-Calendar event.color-dark > stack > grid > label {
   color: white;
 }
 
