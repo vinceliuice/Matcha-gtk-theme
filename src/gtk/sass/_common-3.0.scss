@@ -3755,7 +3755,7 @@ headerbar,
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
 
         &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$header_asset_suffix}.png'),
-                                                        url('assets/titlebutton-#{$k}#{$m}#{$header_asset_suffix}@2.png')); }
+                                                     url('assets/titlebutton-#{$k}#{$m}#{$header_asset_suffix}@2.png')); }
       }
     }
   }
