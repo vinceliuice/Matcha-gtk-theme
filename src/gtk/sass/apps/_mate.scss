@@ -30,6 +30,10 @@ MsdOsdWindow.background.osd {
   }
 }
 
+.osd image:selected {
+  background: $selected_bg_color;
+}
+
 //
 // Mate/Gnome Flashback Panel
 //
