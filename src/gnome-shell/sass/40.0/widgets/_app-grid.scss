@@ -103,6 +103,7 @@ $app_grid_fg_color: #fff;
     margin-bottom: 18px;
   }
 }
+
 .app-folder-dialog-container {
   padding: 12px;
   width: 620px;
@@ -113,7 +114,7 @@ $app_grid_fg_color: #fff;
 .app-well-app-running-dot {
   height: 5px;
   width: 5px;
-  border-radius:5px;
+  border-radius: 100px;
   background-color: $osd_fg_color;
   margin-bottom: 1px;
 }
@@ -139,7 +140,7 @@ $app_grid_fg_color: #fff;
   .page-indicator-icon {
     width: 10px;
     height: 10px;
-    border-radius: 10px; // the same as height&width
+    border-radius: 100px; // the same as height&width
     background-color: white;
   }
 }
