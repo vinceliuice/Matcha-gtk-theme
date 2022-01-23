@@ -2310,7 +2310,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-well-app-running-dot {
   height: 5px;
   width: 5px;
-  border-radius: 5px;
+  border-radius: 100px;
   background-color: #efefef;
   margin-bottom: 1px;
 }
@@ -2335,7 +2335,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .page-indicator .page-indicator-icon {
   width: 10px;
   height: 10px;
-  border-radius: 10px;
+  border-radius: 100px;
   background-color: white;
 }
 
