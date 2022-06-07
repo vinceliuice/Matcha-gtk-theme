@@ -88,7 +88,7 @@ stage {
 }
 
 .button:insensitive {
-  color: #969696;
+  color: #b2b2b2;
   border-color: #e2e2e2;
   background-color: #f9f9f9;
   box-shadow: none;
@@ -125,7 +125,7 @@ stage {
 }
 
 .popup-menu .button:insensitive {
-  color: #969696;
+  color: #b2b2b2;
   border-color: transparent;
   background-color: rgba(54, 54, 54, 0.01);
   box-shadow: none;
@@ -154,10 +154,11 @@ stage {
   border-width: 1px;
   border-left-width: 0;
   border-bottom-width: 0;
+  margin: 0;
 }
 
 .modal-dialog .modal-dialog-linked-button:insensitive, .hotplug-notification-item:insensitive, .notification-banner .notification-button:insensitive {
-  color: #969696;
+  color: #b2b2b2;
   border-color: #e2e2e2;
   background-color: #f9f9f9;
   box-shadow: none;
@@ -204,7 +205,7 @@ stage {
 }
 
 .popup-menu-content, .candidate-popup-content {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   border: solid #cfcfcf;
@@ -247,7 +248,7 @@ StEntry:focus {
 }
 
 StEntry:insensitive {
-  color: #969696;
+  color: #b2b2b2;
   border-color: #f9f9f9;
   box-shadow: none;
 }
@@ -423,7 +424,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .search-entry StLabel.hint-text {
-  color: #969696;
+  color: #b2b2b2;
 }
 
 .popup-menu-content, .candidate-popup-content {
@@ -812,7 +813,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar .calendar-nonwork-day {
-  color: #969696;
+  color: #b2b2b2;
 }
 
 .calendar .calendar-today {
@@ -1075,16 +1076,38 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Message List */
 .message-list {
   width: 31.5em;
-  padding: 0 12px;
+  padding: 0;
+  border: none;
+}
+
+.message-list:ltr {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  border-right-width: 0;
+}
+
+.message-list:rtl {
+  margin-right: 0;
+  margin-left: 0;
+  padding-left: 0;
+  border-left-width: 0;
 }
 
 .message-list .message-list-placeholder {
   spacing: 12px;
 }
 
+.message-list .message-list-placeholder > StIcon {
+  icon-size: 3.27em;
+  margin-bottom: 12px;
+  -st-icon-style: symbolic;
+}
+
 .message-list-sections {
   spacing: 6px;
-  margin: 0 16px;
+  margin: 0 12px 0 16px;
+  padding-bottom: 6px;
 }
 
 .message-list-section,
@@ -1138,11 +1161,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin {
-  padding: 18px 0 18px 12px;
+  padding: 18px;
+}
+
+.message .message-icon-bin:ltr {
+  padding-right: 6px;
 }
 
 .message .message-icon-bin:rtl {
-  padding: 18px 12px 18px 0;
+  padding-left: 6px;
 }
 
 .message .message-icon-bin > StIcon {
@@ -1156,12 +1183,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-content {
-  padding: 14px;
   spacing: 4px;
+  padding: 9px;
+  margin-bottom: 8px;
 }
 
 .message .message-title {
   font-weight: bold;
+  padding-top: 0.57em;
 }
 
 .message .message-secondary-bin {
@@ -1185,7 +1214,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message .message-close-button {
   color: #555555;
-  border-radius: 100px;
+  border-radius: 1000px;
   width: 24px;
   height: 24px;
   padding: 0;
@@ -1211,34 +1240,37 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Media Controls */
 .message-media-control {
-  padding: 12px 1.64em;
-  color: #101010;
+  padding: 0 18px;
+  margin: 20px 0;
+  border-radius: 1000px;
+  color: #555555;
+  border: none;
 }
 
 .message-media-control:hover {
-  background-color: #fafafa;
+  background-color: rgba(54, 54, 54, 0.1);
   color: #363636;
 }
 
 .message-media-control:active {
-  background-color: #e8e8e8;
+  background-color: rgba(54, 54, 54, 0.2);
   color: #363636;
 }
 
 .message-media-control:insensitive {
-  color: black;
+  color: #bdbdbd;
 }
 
 .message-media-control:last-child:ltr {
-  border-radius: 0 5px 5px 0;
+  margin-right: 12px;
 }
 
 .message-media-control:last-child:rtl {
-  border-radius: 5px 0 0 5px;
+  margin-left: 12px;
 }
 
 .media-message-cover-icon {
-  icon-size: 2.18em !important;
+  icon-size: 3.27em !important;
   border-radius: 3px;
 }
 
@@ -1248,6 +1280,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: 1px solid transparent;
   border-radius: 3px;
   icon-size: 2.18em !important;
+  padding: 12px;
 }
 
 .candidate-popup-content {
@@ -1669,7 +1702,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .no-networks-label {
-  color: #969696;
+  color: #b2b2b2;
 }
 
 .no-networks-box {
@@ -2875,7 +2908,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .login-dialog .modal-dialog-button:insensitive,
 .unlock-dialog .modal-dialog-button:insensitive {
-  color: #969696;
+  color: #b2b2b2;
   border-color: #e2e2e2;
   background-color: #f9f9f9;
   box-shadow: none;
@@ -2924,7 +2957,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .login-dialog .modal-dialog-button:default:insensitive,
 .unlock-dialog .modal-dialog-button:default:insensitive {
-  color: #969696;
+  color: #b2b2b2;
   border-color: #e2e2e2;
   background-color: #f9f9f9;
   box-shadow: none;
@@ -3440,7 +3473,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .openweather-provider:insensitive {
-  color: #969696;
+  color: #b2b2b2;
   border-color: #e2e2e2;
   background-color: #f9f9f9;
   box-shadow: none;
@@ -3461,7 +3494,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .openweather-current-databox-captions {
   background: none;
-  color: #969696;
+  color: #b2b2b2;
 }
 
 .openweather-forecast-icon, .openweather-forecast-summary {

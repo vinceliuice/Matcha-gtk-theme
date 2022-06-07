@@ -88,7 +88,7 @@ stage {
 }
 
 .button:insensitive {
-  color: #818388;
+  color: #66686e;
   border-color: #14161b;
   background-color: #22242d;
   box-shadow: none;
@@ -125,7 +125,7 @@ stage {
 }
 
 .popup-menu .button:insensitive {
-  color: #818388;
+  color: #66686e;
   border-color: transparent;
   background-color: rgba(221, 221, 221, 0.01);
   box-shadow: none;
@@ -154,10 +154,11 @@ stage {
   border-width: 1px;
   border-left-width: 0;
   border-bottom-width: 0;
+  margin: 0;
 }
 
 .modal-dialog .modal-dialog-linked-button:insensitive, .hotplug-notification-item:insensitive, .notification-banner .notification-button:insensitive {
-  color: #818388;
+  color: #66686e;
   border-color: #14161b;
   background-color: #22242d;
   box-shadow: none;
@@ -204,7 +205,7 @@ stage {
 }
 
 .popup-menu-content, .candidate-popup-content {
-  background-color: #1b1d24;
+  background-color: #1b1d24 !important;
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   border: solid #101115;
@@ -247,7 +248,7 @@ StEntry:focus {
 }
 
 StEntry:insensitive {
-  color: #818388;
+  color: #66686e;
   border-color: #22242d;
   box-shadow: none;
 }
@@ -423,7 +424,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .search-entry StLabel.hint-text {
-  color: #818388;
+  color: #66686e;
 }
 
 .popup-menu-content, .candidate-popup-content {
@@ -812,7 +813,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar .calendar-nonwork-day {
-  color: #818388;
+  color: #66686e;
 }
 
 .calendar .calendar-today {
@@ -1075,16 +1076,38 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Message List */
 .message-list {
   width: 31.5em;
-  padding: 0 12px;
+  padding: 0;
+  border: none;
+}
+
+.message-list:ltr {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  border-right-width: 0;
+}
+
+.message-list:rtl {
+  margin-right: 0;
+  margin-left: 0;
+  padding-left: 0;
+  border-left-width: 0;
 }
 
 .message-list .message-list-placeholder {
   spacing: 12px;
 }
 
+.message-list .message-list-placeholder > StIcon {
+  icon-size: 3.27em;
+  margin-bottom: 12px;
+  -st-icon-style: symbolic;
+}
+
 .message-list-sections {
   spacing: 6px;
-  margin: 0 16px;
+  margin: 0 12px 0 16px;
+  padding-bottom: 6px;
 }
 
 .message-list-section,
@@ -1138,11 +1161,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin {
-  padding: 18px 0 18px 12px;
+  padding: 18px;
+}
+
+.message .message-icon-bin:ltr {
+  padding-right: 6px;
 }
 
 .message .message-icon-bin:rtl {
-  padding: 18px 12px 18px 0;
+  padding-left: 6px;
 }
 
 .message .message-icon-bin > StIcon {
@@ -1156,12 +1183,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-content {
-  padding: 14px;
   spacing: 4px;
+  padding: 9px;
+  margin-bottom: 8px;
 }
 
 .message .message-title {
   font-weight: bold;
+  padding-top: 0.57em;
 }
 
 .message .message-secondary-bin {
@@ -1185,7 +1214,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message .message-close-button {
   color: #aaaaaa;
-  border-radius: 100px;
+  border-radius: 1000px;
   width: 24px;
   height: 24px;
   padding: 0;
@@ -1211,34 +1240,37 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Media Controls */
 .message-media-control {
-  padding: 12px 1.64em;
-  color: #b7b7b7;
+  padding: 0 18px;
+  margin: 20px 0;
+  border-radius: 1000px;
+  color: #aaaaaa;
+  border: none;
 }
 
 .message-media-control:hover {
-  background-color: #3c4050;
+  background-color: rgba(221, 221, 221, 0.1);
   color: #dddddd;
 }
 
 .message-media-control:active {
-  background-color: #2c303b;
+  background-color: rgba(221, 221, 221, 0.2);
   color: #dddddd;
 }
 
 .message-media-control:insensitive {
-  color: #777777;
+  color: #54565c;
 }
 
 .message-media-control:last-child:ltr {
-  border-radius: 0 5px 5px 0;
+  margin-right: 12px;
 }
 
 .message-media-control:last-child:rtl {
-  border-radius: 5px 0 0 5px;
+  margin-left: 12px;
 }
 
 .media-message-cover-icon {
-  icon-size: 2.18em !important;
+  icon-size: 3.27em !important;
   border-radius: 3px;
 }
 
@@ -1248,6 +1280,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: 1px solid transparent;
   border-radius: 3px;
   icon-size: 2.18em !important;
+  padding: 12px;
 }
 
 .candidate-popup-content {
@@ -1669,7 +1702,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .no-networks-label {
-  color: #818388;
+  color: #66686e;
 }
 
 .no-networks-box {
@@ -2881,7 +2914,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .login-dialog .modal-dialog-button:insensitive,
 .unlock-dialog .modal-dialog-button:insensitive {
-  color: #818388;
+  color: #66686e;
   border-color: #14161b;
   background-color: #22242d;
   box-shadow: none;
@@ -2930,7 +2963,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .login-dialog .modal-dialog-button:default:insensitive,
 .unlock-dialog .modal-dialog-button:default:insensitive {
-  color: #818388;
+  color: #66686e;
   border-color: #14161b;
   background-color: #22242d;
   box-shadow: none;
@@ -3446,7 +3479,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .openweather-provider:insensitive {
-  color: #818388;
+  color: #66686e;
   border-color: #14161b;
   background-color: #22242d;
   box-shadow: none;
@@ -3467,7 +3500,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .openweather-current-databox-captions {
   background: none;
-  color: #818388;
+  color: #66686e;
 }
 
 .openweather-forecast-icon, .openweather-forecast-summary {

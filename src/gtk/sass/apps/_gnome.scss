@@ -73,51 +73,123 @@ terminal-window,
   }
 }
 
-.nautilus-window headerbar {
-  .path-bar-box {
-    margin: 6px 0 4px 0;
-    border-radius: 3px;
+%nautilus_dir_buttons {
+  border-radius: 2px;
+  border: none;
+
+  &:hover {
     color: $header_fg;
-    background-color: transparent;
+    background-color: rgba($header_fg, 0.1);
+  }
 
-    .path-bar {
-      button.flat.text-button.toggle,
-      button.flat.image-button.text-button.toggle {
-        @extend %pathbar_box_button;
+  &:active {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.2);
+  }
 
-        &, &:hover, &:checked, &:active, &:disabled {
-          margin-top: 0;
-          margin-bottom: 0;
-          padding: 0 6px 4px 6px;
-          min-height: 24px;
-          border-radius: 0;
-        }
-      }
-    }
+  &:checked {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.15);
+  }
+}
 
-    .linked.nautilus-path-bar { // for ≥ 3.31.90
-      button.text-button,
-      button.image-button.text-button {
-        @extend %pathbar_box_button;
-
-        &:not(:only-child):last-child {
-          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                        $selected_bg_color 100%,
-                                        transparent 0%)
-                                        0 0 2 / 0 0 2px;
-        }
-      }
-    }
-
-    &.width-maximized {
-      border: 1px solid $borders_color;
-      background-color: rgba($header_fg, 0.06);
-    }
-
-    // workaround for 3.30.1
-    &.background.frame {
-      border: none;
+.nautilus-window {
+  headerbar.titlebar {
+    .path-bar-box {
+      margin: 6px 0 4px 0;
+      border-radius: 3px;
+      color: $header_fg;
       background-color: transparent;
+
+      .path-bar {
+        button.flat.text-button.toggle,
+        button.flat.image-button.text-button.toggle {
+          @extend %pathbar_box_button;
+
+          &, &:hover, &:checked, &:active, &:disabled {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0 6px 4px 6px;
+            min-height: 24px;
+            border-radius: 0;
+          }
+        }
+      }
+
+      .linked.nautilus-path-bar { // for ≥ 3.31.90
+        button.text-button,
+        button.image-button.text-button {
+          @extend %pathbar_box_button;
+
+          &:not(:only-child):last-child {
+            border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                          $selected_bg_color 100%,
+                                          transparent 0%)
+                                          0 0 2 / 0 0 2px;
+          }
+        }
+      }
+
+      &.width-maximized {
+        border: 1px solid $borders_color;
+        background-color: rgba($header_fg, 0.06);
+      }
+
+      // workaround for 3.30.1
+      &.background.frame {
+        border: none;
+        background-color: transparent;
+      }
+    }
+
+    &.windowhandle .linked.nautilus-path-bar {
+      background-color: rgba($header_fg, 0.06);
+      border-radius: 2px;
+      margin: 6px 0;
+      border: none;
+
+      > button.popup {
+        margin-top: 0;
+        margin-bottom: 0;
+        @extend %nautilus_dir_buttons;
+      }
+
+      .path-buttons-box {
+        padding: 0;
+
+        > box > button {
+          margin: 0;
+          @extend %nautilus_dir_buttons;
+
+          > box > label.dim-label {
+            color: rgba($header_fg, 0.85);
+
+            &:hover, &:active, &:checked {
+              color: $header_fg;
+            }
+          }
+
+          &:hover {
+            color: $header_fg;
+            background-color: rgba($header_fg, 0.1);
+          }
+
+          &:active, &:checked {
+            color: $header_fg;
+            background-color: rgba($header_fg, 0.2);
+          }
+
+          &.current-dir {
+            color: $header_fg;
+
+            &:hover, &:active {
+              background: none;
+              box-shadow: none;
+              border-image: none;
+            }
+          }
+        }
+      }
     }
   }
 }

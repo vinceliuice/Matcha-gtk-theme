@@ -430,7 +430,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu-content, .candidate-popup-content {
   padding: 6px 0;
   margin: 0 4px 10px 8px;
-  color: #dddddd;
+  color: #dddddd !important;
 }
 
 .popup-menu-item {
@@ -438,40 +438,40 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px;
   margin: 0;
   border-radius: 0;
-  color: #aaaaaa;
+  color: #aaaaaa !important;
 }
 
 .popup-menu-item:ltr {
-  padding-right: 1.75em;
-  padding-left: 0;
+  padding-right: 24px !important;
+  padding-left: 12px !important;
 }
 
 .popup-menu-item:rtl {
-  padding-right: 0;
-  padding-left: 1.75em;
+  padding-left: 24px !important;
+  padding-right: 12px !important;
 }
 
 .popup-menu-item:checked {
   box-shadow: inset 0 1px #151515;
   border: none;
   border-image: none;
-  background-color: rgba(0, 0, 0, 0.15);
-  color: #dddddd;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  color: #dddddd !important;
 }
 
-.popup-menu-item.selected {
-  color: #ffffff;
-  background-color: #7ea951;
+.popup-menu-item.selected, .popup-menu-item:hover, .popup-menu-item:focus {
+  color: #ffffff !important;
+  background-color: #7ea951 !important;
   border-image: none;
 }
 
 .popup-menu-item:active {
-  background-color: #719749;
-  color: #ffffff;
+  background-color: #719749 !important;
+  color: #ffffff !important;
 }
 
 .popup-menu-item:insensitive {
-  color: rgba(221, 221, 221, 0.5);
+  color: rgba(221, 221, 221, 0.5) !important;
 }
 
 .popup-inactive-menu-item {
@@ -488,7 +488,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-sub-menu {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15) !important;
   border-image: none;
   box-shadow: inset 0 -1px #151515;
   border: none;
@@ -510,16 +510,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-separator-menu-item {
   padding: 0;
+  margin: 6px;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
   height: 1px;
-  margin: 6px 64px;
+  margin: 6px 32px;
   background-color: #151515;
 }
 
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
-  margin: 0 64px 0 32px;
+  margin: 0 32px 0 0;
 }
 
 .background-menu {
@@ -537,14 +538,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
+.aggregate-menu .popup-menu-item > :first-child:ltr {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.aggregate-menu .popup-menu-item > :first-child:rtl {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:ltr {
-  padding-left: 14px;
-  margin-left: 1.09em;
+  padding-left: 12px !important;
+  margin-left: 3px !important;
 }
 
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
-  padding-right: 14px;
-  margin-right: 1.09em;
+  padding-right: 12px !important;
+  margin-right: 3px !important;
 }
 
 .system-menu-action {
@@ -568,7 +579,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .system-menu-action > StIcon {
-  icon-size: 16px;
+  icon-size: 1.09em;
 }
 
 /* Date/Time Menu */
@@ -1714,17 +1725,30 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-align: center;
   font-weight: bold;
   spacing: 12px;
-  margin: 32px;
+  padding: 12px 18px;
+  margin-bottom: 4em;
   min-width: 64px;
   min-height: 64px;
 }
 
+.osd-window > * {
+  spacing: 8px;
+}
+
 .osd-window StIcon {
-  icon-size: 6.54em;
+  icon-size: 2.18em;
 }
 
 .osd-window .osd-monitor-label {
   font-size: 3em;
+}
+
+.osd-window StLabel:ltr {
+  margin-right: 6px;
+}
+
+.osd-window StLabel:rtl {
+  margin-left: 6px;
 }
 
 .osd-window .level {
@@ -1996,7 +2020,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px 12px;
 }
 
-.window-close {
+.window-close, .screenshot-ui-close-button {
   background-color: #3c3c3c;
   color: #efefef;
   border-radius: 1000px;
@@ -2008,16 +2032,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("assets/window-close-symbolic.svg");
 }
 
-.window-close StIcon {
+.window-close StIcon, .screenshot-ui-close-button StIcon {
   color: white;
   icon-size: 1px;
 }
 
-.window-close:hover {
+.window-close:hover, .screenshot-ui-close-button:hover {
   background-color: #626262;
 }
 
-.window-close:active {
+.window-close:active, .screenshot-ui-close-button:active {
   color: rgba(239, 239, 239, 0.8);
   background-color: #2f2f2f;
 }
@@ -3209,6 +3233,228 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #unlockDialogNotifications StButton#vhandle:active, #unlockDialogNotifications StButton#hhandle:active {
   background-color: rgba(126, 169, 81, 0.5);
+}
+
+.screenshot-ui-show-pointer-button, .screenshot-ui-type-button {
+  background-color: transparent;
+  border: none;
+}
+
+.screenshot-ui-show-pointer-button:hover, .screenshot-ui-type-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.screenshot-ui-show-pointer-button:active, .screenshot-ui-type-button:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.icon-label-button-container {
+  spacing: 6px;
+}
+
+.icon-label-button-container StIcon {
+  icon-size: 32px;
+}
+
+.screenshot-ui-panel {
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 4em;
+  spacing: 12px;
+  color: #efefef;
+  background-color: #222222;
+  border: 1px solid #090909;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+.screenshot-ui-close-button {
+  padding: 6px !important;
+}
+
+.screenshot-ui-close-button.left {
+  margin-left: 8px;
+}
+
+.screenshot-ui-close-button.right {
+  margin-right: 8px;
+}
+
+.screenshot-ui-type-button {
+  min-width: 48px;
+  padding: 12px 18px !important;
+  border-radius: 6px;
+}
+
+.screenshot-ui-capture-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 1000px;
+  border: 4px white;
+  padding: 4px;
+}
+
+.screenshot-ui-capture-button .screenshot-ui-capture-button-circle {
+  background-color: white;
+  transition-duration: 200ms;
+  border-radius: 1000px;
+}
+
+.screenshot-ui-capture-button .screenshot-ui-capture-button-circle:hover, .screenshot-ui-capture-button .screenshot-ui-capture-button-circle:focus {
+  background-color: rgba(221, 221, 221, 0.1);
+}
+
+.screenshot-ui-capture-button:hover .screenshot-ui-capture-button-circle, .screenshot-ui-capture-button:focus .screenshot-ui-capture-button-circle {
+  background-color: #d9d9d9;
+}
+
+.screenshot-ui-capture-button:active .screenshot-ui-capture-button-circle {
+  background-color: gray;
+}
+
+.screenshot-ui-capture-button:cast .screenshot-ui-capture-button-circle {
+  background-color: #ff8080;
+}
+
+.screenshot-ui-capture-button:cast:hover .screenshot-ui-capture-button-circle, .screenshot-ui-capture-button:cast:focus .screenshot-ui-capture-button-circle {
+  background-color: #ff9a9a;
+}
+
+.screenshot-ui-capture-button:cast:active .screenshot-ui-capture-button-circle {
+  background-color: #ff5c5c;
+}
+
+.screenshot-ui-shot-cast-container {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 1000px;
+  padding: 3px;
+  spacing: 3px;
+}
+
+.screenshot-ui-shot-cast-container:ltr {
+  margin-left: 0px;
+}
+
+.screenshot-ui-shot-cast-container:rtl {
+  margin-right: 0px;
+}
+
+.screenshot-ui-shot-cast-button {
+  padding: 6px 12px;
+  background-color: transparent;
+  border-radius: 1000px;
+}
+
+.screenshot-ui-shot-cast-button:hover, .screenshot-ui-shot-cast-button:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.screenshot-ui-shot-cast-button:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.screenshot-ui-shot-cast-button:checked {
+  background-color: white;
+  color: black;
+}
+
+.screenshot-ui-shot-cast-button StIcon {
+  icon-size: 16px;
+}
+
+.screenshot-ui-show-pointer-button {
+  border-radius: 1000px;
+  padding: 12px !important;
+}
+
+.screenshot-ui-show-pointer-button StIcon {
+  icon-size: 16px;
+}
+
+.screenshot-ui-area-indicator-shade {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.screenshot-ui-area-selector .screenshot-ui-area-indicator-shade {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.screenshot-ui-area-selector .screenshot-ui-area-indicator-selection {
+  border: 2px white;
+}
+
+.screenshot-ui-area-selector-handle {
+  border-radius: 1000px;
+  background-color: white;
+  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2);
+  width: 24px;
+  height: 24px;
+}
+
+.screenshot-ui-window-selector {
+  background-color: #3c3c3c;
+}
+
+.screenshot-ui-window-selector .screenshot-ui-window-selector-window-container {
+  margin: 100px;
+}
+
+.screenshot-ui-window-selector:primary-monitor .screenshot-ui-window-selector-window-container {
+  margin-bottom: 200px;
+}
+
+.screenshot-ui-window-selector-window-border {
+  transition-duration: 200ms;
+  border-radius: 3px;
+  border: 6px transparent;
+}
+
+.screenshot-ui-window-selector-check {
+  transition-duration: 200ms;
+  color: transparent;
+  border-radius: 1000px;
+  border-width: 12px;
+  icon-size: 24px;
+}
+
+.screenshot-ui-window-selector-window:hover .screenshot-ui-window-selector-window-border {
+  border-color: #577538;
+}
+
+.screenshot-ui-window-selector-window:checked .screenshot-ui-window-selector-window-border {
+  border-color: #7ea951;
+  background-color: rgba(126, 169, 81, 0.2);
+}
+
+.screenshot-ui-window-selector-window:checked .screenshot-ui-window-selector-check {
+  color: white;
+  background-color: #7ea951;
+}
+
+.screenshot-ui-screen-selector {
+  transition-duration: 200ms;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.screenshot-ui-screen-selector:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.screenshot-ui-screen-selector:active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.screenshot-ui-screen-selector:checked {
+  background-color: transparent;
+  border: 2px white;
+}
+
+.screenshot-ui-tooltip {
+  color: #efefef;
+  background-color: #3c3c3c;
+  border-radius: 1000px;
+  padding: 6px 12px;
+  text-align: center;
+  -y-offset: 24px;
 }
 
 .bottom #dashtodockDashScrollview,

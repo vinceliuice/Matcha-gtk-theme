@@ -47,7 +47,7 @@ $osd_outer_borders_color: transparentize(white, 0.84);
 $shadow_color: if($variant == 'light', rgba(0,0,0,0.1), rgba(0,0,0,0.2));
 
 //insensitive state derived colors
-$insensitive_fg_color: mix($fg_color, $bg_color, 50%);
+$insensitive_fg_color: mix($fg_color, $bg_color, 35%);
 $insensitive_bg_color: mix($bg_color, $base_color, 60%);
 $insensitive_borders_color: mix($borders_color, $base_color, 60%);
 

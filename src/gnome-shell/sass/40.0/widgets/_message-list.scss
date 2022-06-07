@@ -4,14 +4,29 @@
 // main list
 .message-list {
   width: 31.5em;
-  padding: 0 $base_padding * 2;
+  padding: 0;
+  border: none;
 
-  .message-list-placeholder { spacing: 12px; }
+  // padding and margins to account for scrollbar
+  &:ltr { margin-left: 0; margin-right: 0; padding-right: 0; border-right-width: 0; }
+  &:rtl { margin-right: 0; margin-left: 0; padding-left: 0; border-left-width: 0; }
+
+  .message-list-placeholder {
+    spacing: 12px;
+
+    // icon size and color
+    > StIcon {
+      icon-size: $base_icon_size * 3; // 48px
+      margin-bottom: $base_margin * 3;
+      -st-icon-style: symbolic;
+    }
+  }
 }
 
 .message-list-sections {
   spacing: $base_spacing;
-  margin: 0 $base_margin * 4; // to account for scrollbar
+  margin: 0 $base_margin * 3 0 $base_margin * 4; // to account for scrollbar
+  padding-bottom: $base_padding;
 }
 
 .message-list-section,
@@ -35,15 +50,14 @@
 
   // icon container
   .message-icon-bin {
-    padding: ($base_padding * 3) 0 ($base_padding * 3) ($base_padding * 2);
+    padding: $base_padding * 3;
 
-    &:rtl {
-      padding: ($base_padding * 3) ($base_padding * 2) ($base_padding * 3) 0;
-    }
+    &:ltr { padding-right: $base_padding; }
+    &:rtl { padding-left: $base_padding; }
 
     // icon size and color
     > StIcon {
-      icon-size: $base_icon_size*2; // 32px
+      icon-size: $base_icon_size * 2; // 32px
       -st-icon-style: symbolic;
     }
 
@@ -56,13 +70,15 @@
 
   // content
   .message-content {
-    padding: $base_padding + $base_margin * 2;
     spacing: 4px;
+    padding: $base_padding * 1.5;
+    margin-bottom: $base_margin * 2;
   }
 
   // title
   .message-title {
     font-weight: bold;
+    padding-top: 0.57em;
   }
 
   // secondary container in title box
@@ -76,15 +92,15 @@
       /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
       padding-bottom: 0.13em;
 
-      &:ltr { text-align: right };
-      &:rtl { text-align: left };
+      &:ltr { text-align: right; }
+      &:rtl { text-align: left; }
     }
   }
 
   // close button
   .message-close-button {
     color: $alt_fg_color;
-    border-radius: 100px;
+    border-radius: $circular_radius;
     width: 24px;
     height: 24px;
     padding: 0;
@@ -113,30 +129,33 @@
 
 /* Media Controls */
 .message-media-control {
-  padding: $base_padding * 2 1.64em; // $base_padding * 4 = 24px
-  color: darken($fg_color, 15%);
+  padding: 0 $base_padding * 3;
+  margin: $base_padding * 3 + 2px 0;
+  border-radius: $circular_radius;
+  color: $alt_fg_color;
+  border: none;
 
   // uses $hover_bg_color since the media controls are in a notification_bubble
   &:hover {
-    background-color: lighten($hover_bg_color, 5%);
+    background-color: rgba($fg_color, 0.1);
     color: $fg_color;
   }
 
   &:active {
-    background-color: darken($hover_bg_color, 2%);
+    background-color: rgba($fg_color, 0.2);
     color: $fg_color;
   }
 
-  &:insensitive { color: darken($fg_color,40%); }
+  &:insensitive { color: mix($alt_fg_color, $bg_color, 35%);; }
 
   // fix border-radius for last button
-  &:last-child:ltr { border-radius: 0 $base_border_radius+2 $base_border_radius+2 0; }
-  &:last-child:rtl { border-radius: $base_border_radius+2 0 0 $base_border_radius+2; }
+  &:last-child:ltr { margin-right: $base_margin * 3; }
+  &:last-child:rtl { margin-left: $base_margin * 3; }
 }
 
 // album-art
 .media-message-cover-icon {
-  icon-size: $base_icon_size*2 !important; // 48px
+  icon-size: $base_icon_size * 3 !important; // 48px
   border-radius: $base_border_radius;
 
   // when there is no artwork
@@ -146,5 +165,6 @@
     border: 1px solid transparent;
     border-radius: $base_border_radius;
     icon-size: $base_icon_size * 2 !important;
+    padding: $base_padding * 2;
   }
 }
