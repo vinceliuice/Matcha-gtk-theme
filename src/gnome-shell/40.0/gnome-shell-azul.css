@@ -332,7 +332,7 @@ StEntry StLabel.hint-text {
   -slider-handle-border-color: #cfcfcf;
 }
 
-.popup-menu-item.selected .slider {
+.popup-menu-item.selected .slider, .popup-menu-item:hover .slider, .popup-menu-item:focus .slider {
   color: #ffffff;
   -slider-background-color: rgba(0, 0, 0, 0.2);
   -slider-active-background-color: #ffffff;

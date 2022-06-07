@@ -22,7 +22,9 @@ $slider_size: 15px;
   -slider-handle-border-width: 0;
   -slider-handle-border-color: if($variant == 'light', $borders_color, $fg_color);
 
-  .popup-menu-item.selected & {
+  .popup-menu-item.selected &,
+  .popup-menu-item:hover &,
+  .popup-menu-item:focus & {
     color: $selected_fg_color;
     -slider-background-color: rgba(black, 0.2);
     -slider-active-background-color: $selected_fg_color;
