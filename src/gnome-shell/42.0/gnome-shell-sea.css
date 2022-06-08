@@ -1722,13 +1722,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* OSD */
 .osd-window {
+  font-weight: 700;
+  font-size: 11pt;
   text-align: center;
   font-weight: bold;
   spacing: 12px;
   padding: 12px 18px;
   margin-bottom: 4em;
-  min-width: 64px;
-  min-height: 64px;
 }
 
 .osd-window > * {
@@ -1752,12 +1752,26 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .osd-window .level {
+  margin-bottom: 4px;
   height: 8px;
+  min-width: 10.9em;
   -barlevel-height: 8px;
   -barlevel-background-color: rgba(239, 239, 239, 0.3);
   -barlevel-active-background-color: #efefef;
   -barlevel-overdrive-color: #e01b24;
   -barlevel-overdrive-separator-width: 3px;
+}
+
+.osd-window .level:first-child {
+  margin-bottom: 0px;
+}
+
+.osd-window .level:ltr {
+  margin-right: 6px;
+}
+
+.osd-window .level:rtl {
+  margin-left: 6px;
 }
 
 /* Pad OSD */

@@ -4,13 +4,13 @@ $osd_levelbar_height: 8px;
 
 .osd-window {
   @extend %osd_panel;
+  font-weight: 700;
+  @include fontsize(11);
   text-align: center;
   font-weight: bold;
   spacing: $base_padding * 2; // 12px
   padding: $base_padding * 2 $base_padding * 3;
   margin-bottom: 4em;
-  min-width: 64px;
-  min-height: 64px;
 
   & > * { spacing: 8px; }
 
@@ -26,12 +26,18 @@ $osd_levelbar_height: 8px;
   }
 
   .level {
+    margin-bottom: 4px;
+    &:first-child { margin-bottom: 0px; }
+
     height: $osd_levelbar_height;
+    min-width:$base_icon_size * 10;
     -barlevel-height: $osd_levelbar_height;
     -barlevel-background-color: transparentize($osd_fg_color, if($variant=='light', 0.7, 0.9));
     -barlevel-active-background-color: $osd_fg_color;
     -barlevel-overdrive-color: $destructive_color;
     -barlevel-overdrive-separator-width: 3px;
+    &:ltr { margin-right: 6px; }
+    &:rtl { margin-left: 6px; }
   }
 }
 
