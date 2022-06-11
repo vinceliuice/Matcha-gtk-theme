@@ -13,16 +13,17 @@
 //
 // Mate OSD Window
 //
+
 MsdOsdWindow.background.osd {
   border-radius: 2px;
   border: 1px solid darken($osd_bg_color, 8%);
 
   .progressbar {
-    background-color: $selected_bg_color;
+    background-color: $progress_color;
     border: none;
-    border-color: red;
     border-radius: 5px;
   }
+
   .trough {
     background-color: darken($osd_bg_color, 5%);
     border: none;
@@ -449,31 +450,14 @@ window#MyControlCenter > frame > box.horizontal {
 }
 
 //
-//  * Mate-MediaControl-OSD *
-///
+//  Mate OSD
+//
 
-// OSDs are much blurred?
-MsdOsdWindow {
-  &.background.osd {
-    border-radius: 2px;
-    border: 1px solid $osd_borders_color;
-    background-color: $osd_bg_color;
-    box-shadow: none;
+WnckWindow.background.osd {
+  border-radius: 3px;
 
-    // FIXME: seems images have inverted fore/back colours?
-    image { color: $osd_fg_color; }
-
-    .trough {
-      border-radius: 0;
-      border: none;
-      background-color: rgba($osd_fg_color, 0.2);
-    }
-
-    .progressbar {
-      border-radius: 0;
-      border: none;
-      background-color: $success_color;
-    }
+  image:selected {
+    background-color: $selected_bg_color;
   }
 }
 

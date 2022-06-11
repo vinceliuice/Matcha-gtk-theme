@@ -7160,7 +7160,6 @@ MsdOsdWindow.background.osd {
 MsdOsdWindow.background.osd .progressbar {
   background-color: #2eb398;
   border: none;
-  border-color: red;
   border-radius: 5px;
 }
 
@@ -7567,26 +7566,11 @@ window#MyControlCenter > frame > box.horizontal > widget > scrolledwindow.frame 
   background-color: #f7f7f7;
 }
 
-MsdOsdWindow.background.osd {
-  border-radius: 2px;
-  border: 1px solid rgba(204, 204, 204, 0.95);
-  background-color: rgba(242, 242, 242, 0.95);
-  box-shadow: none;
+WnckWindow.background.osd {
+  border-radius: 3px;
 }
 
-MsdOsdWindow.background.osd image {
-  color: #303d41;
-}
-
-MsdOsdWindow.background.osd .trough {
-  border-radius: 0;
-  border: none;
-  background-color: rgba(48, 61, 65, 0.2);
-}
-
-MsdOsdWindow.background.osd .progressbar {
-  border-radius: 0;
-  border: none;
+WnckWindow.background.osd image:selected {
   background-color: #2eb398;
 }
 
