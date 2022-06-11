@@ -7565,11 +7565,11 @@ window#MyControlCenter > frame > box.horizontal > widget > scrolledwindow.frame 
   background-color: #222222;
 }
 
-WnckWindow.background.osd {
+.background.osd {
   border-radius: 3px;
 }
 
-WnckWindow.background.osd image:selected {
+.background.osd image:selected {
   background-color: #97BB72;
 }
 
