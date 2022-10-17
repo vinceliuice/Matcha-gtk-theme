@@ -280,6 +280,8 @@ window.background.chromium {
       margin: 0 4px; // unset margins
       padding: 0;
       color: transparent; // hide stock icons
+      background-color: transparent;
+      border: none;
     }
   }
 
