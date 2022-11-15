@@ -95,8 +95,8 @@ stage {
   border-radius: $base_border_radius;
   border-style: solid;
   border-width: 1px;
-  min-height: 22px;
-  padding: $base_padding * 0.5 $base_padding * 4;
+  min-height: 20px;
+  padding: $base_padding $base_padding * 2;
 
   @include button(normal);
   &:focus { @include button(focus);}

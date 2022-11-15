@@ -29,9 +29,9 @@ $error_color: #ff8080;
 $success_color: if($variant == 'light', #33d17a, darken(#33d17a, 10%));
 $destructive_color: if($variant == 'light', #e01b24, darken(#e01b24, 10%));
 
-$system_bg_color: lighten(#1b2224, 5%); //neutralize the HIG color
-@if $color=='aliz' or $color=='pueril' { $system_bg_color: lighten(#222222, 5%); }
-@if $color=='azul' { $system_bg_color: lighten(#1b1d24, 5%); }
+$system_bg_color: darken(#1b2224, 2%); //neutralize the HIG color
+@if $color=='aliz' or $color=='pueril' { $system_bg_color: darken(#222222, 2%); }
+@if $color=='azul' { $system_bg_color: darken(#1b1d24, 2%); }
 
 $panel_bg_color: darken($system_bg_color, 5%);
 $panel_fg_color: #dddddd;
