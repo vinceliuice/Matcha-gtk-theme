@@ -22,8 +22,6 @@
 
   &:ltr { margin-right: $base_margin * 2; border-left-width: 1px; }
   &:rtl { margin-left: $base_margin * 2; border-right-width: 1px; }
-  .datemenu-displays-section {
-  }
 
   .datemenu-displays-box {
     spacing: $base_spacing;
@@ -86,7 +84,7 @@
     height: 32px;
     width: 32px;
     margin: 2px;
-    border-radius: 1000px;
+    border-radius: $circular_radius;
     border: none;
     &:hover, &:focus { @include button(flat-hover); }
     &:active { @include button(flat-active); }
@@ -97,15 +95,20 @@
   .calendar-day-base {
     @include fontsize($base_font_size - 2);
     text-align: center;
-    width: $calendar_day_size;
-    height: $calendar_day_size;
+    width: $calendar_day_size !important;
+    height: $calendar_day_size !important;
     padding: 0;
-    margin: 0 2px;
-    border-radius: 100%;
+    margin: 3px;
+    border-radius: $circular_radius;
     border: none; //avoid jumparound due to today
     font-feature-settings: "tnum";
-    &:hover, &:focus { background-color: rgba($fg_color, 0.1); }
-    &:active,&:selected {
+
+    &:hover, &:focus {
+      background-color: rgba($fg_color, 0.1);
+      box-shadow: none;
+    }
+
+    &:active, &:selected {
       color: $fg_color;
       background-color: rgba($fg_color, 0.15);
     }
@@ -130,8 +133,6 @@
     border-left-width: 1px;
   }
 
-  .calendar-work-day {}
-
   .calendar-nonwork-day {
     color: $insensitive_fg_color;
   }
@@ -143,12 +144,12 @@
     background-color: $selected_bg_color;
     color: $selected_fg_color;
 
-    &:hover,&:focus {
+    &:hover, &:focus {
       background-color:lighten($selected_bg_color, 3%);
       color: $selected_fg_color;
     }
 
-    &:active,&:selected {
+    &:active, &:selected {
       background-color: $selected_bg_color;
       color: $selected_fg_color;
 
@@ -168,18 +169,19 @@
   }
 
   .calendar-other-month-day {
-    color: transparentize($fg_color ,0.5);
+    color: transparentize($fg_color, 0.5);
   }
 
   .calendar-week-number {
     @include fontsize($base_font_size - 4);
     font-weight: bold;
-    height: 1.8em;
-    width: 2.3em;
-    border-radius: 2px;
-    margin: 6px;
-    background-color: darken($bg_color, 2%);
-    color: lighten($fg_color, 5%);
+    height: 12px !important;
+    width: 12px !important;
+    padding: 8px;
+    margin: 5px 3px;
+    border-radius: $base_border_radius;
+    background-color: rgba($fg_color, 0.05);
+    color: $alt_fg_color;
   }
 }
 

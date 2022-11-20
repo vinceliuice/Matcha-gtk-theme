@@ -69,12 +69,7 @@ install() {
   cp -r pad-osd.css                                                                   "${themedir}/gnome-shell"
   cp -r icons                                                                         "${themedir}/gnome-shell"
   cp -r common-assets                                                                 "${themedir}/gnome-shell/assets"
-
-  if [[ "${GS_VERSION:-}" == 'new' ]]; then
-    cp -r "40.0/gnome-shell${ELSE_DARK}${theme}.css"                                  "${themedir}/gnome-shell/gnome-shell.css"
-  else
-    cp -r "3.28/gnome-shell${ELSE_DARK}${theme}.css"                                  "${themedir}/gnome-shell/gnome-shell.css"
-  fi
+  cp -r "${GS_VERSION}/gnome-shell${ELSE_DARK}${theme}.css"                           "${themedir}/gnome-shell/gnome-shell.css"
 
   cd "${SRC_DIR}/gnome-shell/assets"
   cp -r "calendar-arrow-left${ELSE_DARK}.svg"                                         "${themedir}/gnome-shell/assets/calendar-arrow-left.svg"
@@ -196,8 +191,8 @@ install_gdm() {
   local GDM_THEME_DIR="${1}/${2}${3}${4}"
   local YARU_GDM_THEME_DIR="$SHELL_THEME_FOLDER/Yaru/${2}${3}${4}"
 
-  [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}"
-  [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}"
+  [[ "${color}" == '-dark' ]] && local ELSE_DARK="${color}"
+  [[ "${color}" == '-light' ]] && local ELSE_LIGHT="${color}"
 
   echo
   echo "Installing ${2}${3}${4} gdm theme..."
@@ -245,12 +240,12 @@ install_gdm() {
     rm -rf "$UBUNTU_YARU_THEME_FILE"
     rm -rf "$YARU_GDM_THEME_DIR" && mkdir -p "$YARU_GDM_THEME_DIR"
 
-    mkdir -p                                                                             "$YARU_GDM_THEME_DIR"/gnome-shell
-    mkdir -p                                                                             "$YARU_GDM_THEME_DIR"/gnome-shell/Yaru
-    cp -r "$SRC_DIR"/gnome-shell/{icons,pad-osd.css}                                     "$YARU_GDM_THEME_DIR"/gnome-shell
+    mkdir -p                                                                           "$YARU_GDM_THEME_DIR"/gnome-shell
+    mkdir -p                                                                           "$YARU_GDM_THEME_DIR"/gnome-shell/Yaru
+    cp -r "$SRC_DIR"/gnome-shell/{icons,pad-osd.css}                                   "$YARU_GDM_THEME_DIR"/gnome-shell
     cp -r "$SRC_DIR"/gnome-shell/gnome-shell"${ELSE_DARK}${theme}".css                 "$YARU_GDM_THEME_DIR"/gnome-shell/gdm3.css
     cp -r "$SRC_DIR"/gnome-shell/gnome-shell"${ELSE_DARK}${theme}".css                 "$YARU_GDM_THEME_DIR"/gnome-shell/Yaru/gnome-shell.css
-    cp -r "$SRC_DIR"/gnome-shell/common-assets                                           "$YARU_GDM_THEME_DIR"/gnome-shell/assets
+    cp -r "$SRC_DIR"/gnome-shell/common-assets                                         "$YARU_GDM_THEME_DIR"/gnome-shell/assets
     cp -r "$SRC_DIR"/gnome-shell/assets/calendar-arrow-left"${ELSE_DARK}".svg          "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-arrow-left.svg
     cp -r "$SRC_DIR"/gnome-shell/assets/calendar-arrow-right"${ELSE_DARK}".svg         "$YARU_GDM_THEME_DIR"/gnome-shell/assets/calendar-arrow-right.svg
     cp -r "$SRC_DIR"/gnome-shell/assets/checkbox-off"${ELSE_DARK}".svg                 "$YARU_GDM_THEME_DIR"/gnome-shell/assets/checkbox-off.svg
@@ -343,12 +338,16 @@ while [[ $# -gt 0 ]]; do
       ;;
     -s|--gnome-shell)
       case "${2}" in
-        new)
-          GS_VERSION=new
+        38)
+          GS_VERSION=3.28
           shift 2
           ;;
-        old)
-          GS_VERSION=old
+        40)
+          GS_VERSION=40.0
+          shift 2
+          ;;
+        42)
+          GS_VERSION=42.0
           shift 2
           ;;
         -*|--*)
@@ -434,15 +433,18 @@ done
 
 if [ -z "$GS_VERSION" ]; then
   if [[ "$(command -v gnome-shell)" ]]; then
+    gnome-shell --version
     SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-    if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
-      GS_VERSION="new"
+    if [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
+      GS_VERSION="42.0"
+    elif [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+      GS_VERSION="40.0"
     else
-      GS_VERSION="old"
+      GS_VERSION="3.28"
     fi
-  else
-    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-    GS_VERSION="new"
+    else
+      echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+      GS_VERSION="42.0"
   fi
 fi
 

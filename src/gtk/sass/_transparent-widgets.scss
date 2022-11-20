@@ -6,7 +6,7 @@ filechooser,
   paned > separator {
     background-image: _solid($dark_sidebar_border);
 
-    @if $variant=='light' and $header == 'dark' {
+    @if $variant == 'light' and $header == 'dark' {
       &:dir(ltr) { margin-left: -1px; }
       &:dir(rtl) { margin-right: -1px; }
     }

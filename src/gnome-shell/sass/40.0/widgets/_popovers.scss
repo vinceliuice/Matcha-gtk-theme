@@ -4,11 +4,11 @@ $popover_arrow_height: 12px;
 
 //.the popover itself
 .popup-menu-boxpointer {
-  -arrow-border-radius: $base_border_radius+4;
+  -arrow-border-radius: $modal_radius;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: $popover_arrow_height * 2;
+  -arrow-base: $popover_arrow_height;
   -arrow-rise: $popover_arrow_height / 2;
   -arrow-box-shadow: 0 1px 3px rgba(black, 0.35); // dreaming bugzilla #689995
 }
