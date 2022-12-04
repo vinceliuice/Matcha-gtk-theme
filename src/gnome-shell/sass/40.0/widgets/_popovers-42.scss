@@ -10,14 +10,14 @@ $popover_arrow_height: 12px;
   -arrow-border-color: transparent;
   -arrow-base: $popover_arrow_height;
   -arrow-rise: $popover_arrow_height / 2;
-  -arrow-box-shadow: 0 1px 3px rgba(black, 0.35); // dreaming bugzilla #689995
+  -arrow-box-shadow: none; // dreaming bugzilla #689995
 }
 
 // container of the popover menu
 .popup-menu {
   min-width: 15em;
   color: $fg_color;
-  padding: 0 0;
+  padding: 0;
   background: none;
   border-image: none;
   @include fontsize($base_font_size - 1);
@@ -67,8 +67,8 @@ $popover_arrow_height: 12px;
   border-radius: 0;
   color: $alt_fg_color !important;
 
-  &:ltr { padding-right: $base_padding * 4 !important; padding-left: $base_padding * 2 !important; }
-  &:rtl { padding-left: $base_padding * 4 !important; padding-right: $base_padding * 2 !important; }
+  &:ltr { padding-left: $base_padding * 2 !important; padding-right: $base_padding * 3 !important; }
+  &:rtl { padding-right: $base_padding * 2 !important; padding-left: $base_padding * 3 !important; }
 
   &:checked {
     box-shadow: inset 0 1px $borders_color;
@@ -90,6 +90,12 @@ $popover_arrow_height: 12px;
   }
 
   &:insensitive { color: transparentize($fg_color,0.5) !important; }
+
+  // add margin to switches in menu items
+  .toggle-switch {
+    &:ltr { margin-left: $base_margin; }
+    &:rtl { margin-right: $base_margin; }
+  }
 }
 
 // all icons and other graphical elements
@@ -101,7 +107,7 @@ $popover_arrow_height: 12px;
 
 // symbolic icons in popover
 .popup-menu-arrow,
-.popup-menu-icon { icon-size: $base_icon_size; }
+.popup-menu-icon { icon-size: $base_icon_size !important; }
 
 // popover submenus
 .popup-sub-menu {
@@ -111,29 +117,46 @@ $popover_arrow_height: 12px;
   border: none;
   border-radius: 0;
   margin: 0;
+
+  .popup-menu-ornament {
+    min-width: $base_icon_size !important;
+  }
 }
 
 // container for radio and check boxes
 .popup-menu-ornament {
+  @extend %heading;
   width: 1.2em;
+  text-align: center !important;
 
-  &:ltr { text-align: right };
-  &:rtl { text-align: left };
+  &:ltr { text-align: right; }
+  &:rtl { text-align: left; }
 }
 
 // separator
 .popup-separator-menu-item {
-  padding: 0;
-  margin: $base_spacing;
+  border: none !important;
+  padding: $base_padding 0 !important;
 
   .popup-separator-menu-item-separator {
-    //-margin-horizontal: 24px;
     height: 1px; //not really the whole box
-    margin: $base_spacing 32px;
     background-color: $borders_color;
+  }
 
-    .popup-sub-menu & { //submenu separators
-      margin: 0 32px 0 0;
+  .popup-menu-ornament {
+    width: 0 !important;
+  }
+
+  // separators in submenus
+  .popup-sub-menu & {
+    background-color: transparent;
+
+    // account for ornament
+    &:ltr { margin-right: 2.5em; }
+    &:rtl { margin-left: 2.5em; }
+
+    .popup-separator-menu-item-separator {
+      background-color: $borders_color;
     }
   }
 }
@@ -186,4 +209,21 @@ $popover_arrow_height: 12px;
   }
 
   & > StIcon { icon-size: $base_icon_size; }
+}
+
+// right-click (and panel) app menu
+.app-menu {
+  max-width: 27.25em;
+
+   // this is unneeded at the top-level in this menu, hide it
+  .popup-menu-ornament { width: 0 !important; }
+
+  .popup-inactive-menu-item:first-child {
+    // "Open Windows" label
+    > StLabel {
+      @extend %caption_heading;
+      &:ltr {margin-right: $base_margin * 2; }
+      &:rtl {margin-left: $base_margin * 2; }
+    }
+  }
 }

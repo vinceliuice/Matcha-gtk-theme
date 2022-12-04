@@ -126,7 +126,7 @@
   color: $fg_color !important;
   border-radius: $modal_radius !important;
   padding: $base_padding * 2 0 !important;
-  margin: $base_padding * 2 $base_padding * 3 + 1px 0 !important;
+  margin: $base_padding * 2 $base_padding * 3 0 $base_padding * 3.5 !important;
 
   .popup-menu-item {
     border-radius: 0 !important;

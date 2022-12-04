@@ -39,8 +39,15 @@ $dash_border_radius: $base_border_radius + $dash_padding;
 }
 
 // Dash Items
-.dash-item-container .app-well-app, .show-apps {
-  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+.dash-item-container {
+  .app-well-app, .show-apps {
+    padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+  }
+
+  // Show apps button
+  .show-apps {
+    @include overview-icon($osd_fg_color);
+  }
 }
 
 .dash-separator {
@@ -58,9 +65,4 @@ $dash_border_radius: $base_border_radius + $dash_padding;
   text-align: center;
   margin: 6px;
   -y-offset: $base_margin * 3; // distance from the dash edge
-}
-
-// Show apps button
-.show-apps {
-  @include overview-icon($osd_fg_color);
 }

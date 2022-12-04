@@ -132,16 +132,16 @@ stage {
 
   // radius is 2 pixel less to fit in bubble
   &:first-child {
-    border-radius: 0 0 0 $modal_radius - 2px;
+    border-radius: 0 0 0 $modal_radius !important;
   }
 
   &:last-child {
     border-right-width: 0;
-    border-radius: 0 0 $modal_radius - 2px 0;
+    border-radius: 0 0 $modal_radius 0 !important;
   }
 
   &:first-child:last-child {
-    border-radius: 0 0 $modal_radius - 2px $modal_radius - 2px;
+    border-radius: 0 0 $modal_radius $modal_radius !important;
   }
 }
 
@@ -177,3 +177,53 @@ stage {
     @include button(flat-active);
   }
 }
+
+/* General Typography */
+
+%large_title {
+  font-weight: 300;
+  @include fontsize(24);
+}
+
+%title_1 {
+  font-weight: 800;
+  @include fontsize(20);
+}
+
+%title_2 {
+  font-weight: 800;
+  @include fontsize(15);
+}
+
+%title_3 {
+  font-weight: 700;
+  @include fontsize(15);
+}
+
+%title_4 {
+  font-weight: 700;
+  @include fontsize(13);
+}
+
+%heading {
+  font-weight: 700;
+  @include fontsize(11);
+}
+
+%caption_heading {
+  font-weight: 700;
+  @include fontsize(9);
+}
+
+%caption {
+  font-weight: 400;
+  @include fontsize(9);
+}
+
+%smaller {
+  font-weight: 400;
+  @include fontsize(8);
+}
+
+%monospace {font-family: monospace;}
+%numeric { font-feature-settings: "tnum";}

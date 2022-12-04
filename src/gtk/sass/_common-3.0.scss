@@ -46,7 +46,6 @@ $header_asset_suffix: if($header == 'dark', '-dark', ''); // use dark assets in 
   border-radius: 2px; // menus background
 }
 
-
 *:disabled { -gtk-icon-effect: dim; }
 
 .gtkstyle-fallback {
@@ -1246,7 +1245,7 @@ headerbar,
     min-height: 28px;
     padding: 0 6px;
     background-color: opacify($header_bg, 1);
-    @if $header == 'light' { box-shadow: inset 0 1px $highlight; }
+    box-shadow: inset 0 1px $highlight;
 
     .tiled &,
     .maximized &,
@@ -2077,12 +2076,13 @@ menu,
     // border: 1px solid $borders_color;
 
     &.top {
-      margin-top: -6px;
+      margin-top: -4px;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
 
     &.bottom {
+      margin-top: 8px;
       margin-bottom: -12px;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
