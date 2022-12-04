@@ -1639,7 +1639,7 @@ actionbar > revealer > box {
 
 headerbar {
   min-height: 42px;
-  padding: 0 10px;
+  padding: 0 8px;
   color: #c6cbcf;
   background-color: #14161b;
 }

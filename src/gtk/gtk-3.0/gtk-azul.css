@@ -462,7 +462,7 @@ button separator {
 
 button:hover {
   color: #0b0c0f;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
   -gtk-icon-effect: highlight;
 }
@@ -786,7 +786,7 @@ button.font separator, button.file separator {
 
 .inline-toolbar toolbutton > button:hover {
   color: #0b0c0f;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -1639,7 +1639,7 @@ actionbar > revealer > box {
 
 headerbar {
   min-height: 42px;
-  padding: 0 10px;
+  padding: 0 8px;
   color: #c6cbcf;
   background-color: #1b1d24;
 }
@@ -4687,7 +4687,7 @@ colorswatch#add-color-button {
 
 colorswatch#add-color-button:hover {
   color: #0b0c0f;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -4720,7 +4720,7 @@ colorchooser .popover.osd {
 
 .scale-popup button:hover {
   color: #0b0c0f;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -6201,7 +6201,7 @@ popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport
 
 popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > row.activatable:hover {
   color: #0b0c0f;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -9503,7 +9503,7 @@ scale.warmth trough {
 
 #content_frame button:hover {
   color: #0b0c0f;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -9973,7 +9973,7 @@ filechooser actionbar button {
 
 filechooser actionbar button:hover {
   color: #0b0c0f;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 

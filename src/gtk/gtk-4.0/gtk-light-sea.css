@@ -680,7 +680,7 @@ button.flat:backdrop:disabled {
 
 button:hover {
   color: #060808;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
   background-clip: border-box;
   -gtk-icon-filter: brightness(1.2);
@@ -1671,7 +1671,7 @@ list > row button.image-button:not(.flat) {
 popover.menu box.circular-buttons button.circular.image-button.model:hover,
 list > row button.image-button:not(.flat):hover {
   color: #060808;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -2140,7 +2140,7 @@ toolbar.osd.right {
 
 .toolbar button:hover {
   color: #060808;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -5403,7 +5403,7 @@ searchbar .close {
 infobar .close:hover,
 searchbar .close:hover {
   color: #060808;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -5666,7 +5666,7 @@ colorswatch#add-color-button {
 
 colorswatch#add-color-button:hover {
   color: #060808;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
@@ -5734,7 +5734,7 @@ colorchooser .popover.osd {
 
 .scale-popup button:hover {
   color: #060808;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 

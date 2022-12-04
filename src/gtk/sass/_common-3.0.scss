@@ -27,7 +27,6 @@ $header_asset_suffix: if($header == 'dark', '-dark', ''); // use dark assets in 
   -gtk-outline-radius: 2px;
 }
 
-
 //
 // Base States
 //
@@ -1175,12 +1174,11 @@ actionbar {
 //
 // Headerbars
 //
-$_header_radius: if($variant=='light', 2px, 2px);
+$_header_radius: 2px;
 
-headerbar,
-%titlebar {
+headerbar {
   min-height: 42px;
-  padding: 0 10px;
+  padding: 0 6px;
   color: $header_fg;
   background-color: $header_bg;
 
@@ -1748,8 +1746,6 @@ headerbar {
       box-shadow: none;
     }
   }
-
-  // @extend %titlebar;
 }
 
 %header_separator {
