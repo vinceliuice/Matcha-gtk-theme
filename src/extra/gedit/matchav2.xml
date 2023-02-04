@@ -21,7 +21,7 @@
   <style name="bookmark"                    background="matcha2" />
   <style name="bracket-match"               foreground="matcha2" />
   <style name="bracket-mismatch"            foreground="matcha4" underline="true" />
-  <style name="current-line"                background="#eaeaea"/>
+  <style name="current-line"                background="#202020"/>
   <style name="cursor"                      foreground="matcha2" />
 
   <style name="search-match"                foreground="matcha2" background="matcha6" />
