@@ -6,8 +6,10 @@ DEST_DIR=
 # Destination directory
 if [ "$UID" -eq "$ROOT_UID" ]; then
   DEST_DIR="/usr/share/themes"
+  GTKSV_DIR="/usr/share/gtksourceview-3.0/styles"
 else
   DEST_DIR="$HOME/.themes"
+  GTKSV_DIR="$HOME/.local/share/gtksourceview-3.0/styles"
 fi
 
 REO_DIR="$(cd $(dirname "$0") && pwd)"
@@ -175,6 +177,11 @@ install() {
   mkdir -p                                                                            "${themedir}/plank"
   cd "${SRC_DIR}"
   cp -r plank                                                                         "${themedir}"
+
+  # Install GTKSourceView-3.0 Theme (for gtk+ text editors)
+  mkdir -p                                                                            "${GTKSV_DIR}/"
+  cd "${SRC_DIR}/extra/gtksourceview"
+  cp -r *.xml                                                                         "${GTKSV_DIR}/"
 }
 
 # Backup and install files related to GDM theme
