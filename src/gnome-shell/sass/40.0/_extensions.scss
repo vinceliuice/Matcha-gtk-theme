@@ -148,6 +148,8 @@
     .dash-background {
       color: $panel_fg_color;
       background-color: rgba($panel_bg_color, 0.9);
+      box-shadow: none !important;
+      border: none !important;
     }
 
     StWidget.focused .app-well-app-running-dot {

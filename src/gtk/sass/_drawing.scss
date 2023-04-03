@@ -3,6 +3,19 @@
   @return unquote("alpha(#{$c},#{$a})");
 }
 
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
+@function gtkshade($c,$s) {
+  @return unquote("shade(#{$c},#{$s})");
+}
+
+@function gtkcolor($c) {
+  @return unquote("@#{$c}");
+}
+
 // Animations
 @keyframes header_ripple_effect {
   from {
@@ -91,6 +104,7 @@
     color: $text_color;
     border-color: $entry_border;
     background-color: $entry_bg;
+    outline: none;
   }
 
   @if $t==focus {
@@ -100,6 +114,7 @@
     color: $text_color;
     border-color: $selected_bg_color;
     background-color: $entry_bg;
+    outline: none;
   }
 
   @if $t==insensitive {
@@ -201,6 +216,15 @@
   //
   // pushed button
   //
+    color: $selected_fg_color;
+    border-color: if($variant=='light', $selected_bg_color, $button_border);
+    background-color: $selected_bg_color;
+  }
+
+  @else if $t==checked {
+    //
+    // pushed button
+    //
     color: $selected_fg_color;
     border-color: if($variant=='light', $selected_bg_color, $button_border);
     background-color: $selected_bg_color;

@@ -39,15 +39,17 @@
 
   @if $t==normal {
     background-color: $base_color;
-    border-color: $borders_color;
-
+    border: 1px solid $borders_color;
   }
+
   @if $t==focus {
     background-color: $base_color;
-    border-color: $selected_borders_color;
+    border: 1px solid $selected_borders_color;
     box-shadow: none;
   }
+
   @if $t==hover { }
+
   @if $t==insensitive {
     color: $insensitive_fg_color;
     border-color: $insensitive_bg_color;
@@ -136,7 +138,7 @@
   // normal button
   @if $t==normal {
     color: $tc;
-    background-color: $c;
+    background-color: mix($tc, $c, if($variant == 'light', 5%, 3%));
     border-color: $borders_color;
     // @include draw_shadows($button_shadow);
     box-shadow: none;
@@ -247,12 +249,13 @@
   .overview-icon {
     @extend %icon_tile;
     color: $color;
+    // background-color: transparentize($color, .9);
   }
 
   &:hover,
   &:selected {
     .overview-icon {
-      background-color: transparentize($color, .9);
+      background-color: transparentize($color, .8);
     }
   }
 

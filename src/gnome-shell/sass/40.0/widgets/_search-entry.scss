@@ -6,26 +6,25 @@ $search_entry_height: 36px;
 %search_entry,
 .search-entry {
   width: $search_entry_width;
-  padding: $base_padding+1 $base_padding+3;
+  padding: $base_padding $base_padding * 1.5;
   border-radius: $search_entry_height * 0.5; // half the height
   color: rgba(white, 0.75);
   background-color: rgba(white, 0.10);
-  border-color: rgba(black, 0.65);
+  border: 2px solid transparent !important;
   margin-top: $base_spacing * 2;
   margin-bottom: $base_spacing;
 
   &:hover {
     background-color: rgba(white, 0.18);
-    border-color: rgba(black, 0.75);
+    border: 2px solid transparent !important;
     color: rgba(white, 0.85);
+    padding: $base_padding $base_padding * 1.5; // 1px less to account for wider border
   }
 
   &:focus {
     background-color: rgba(white, 0.15);
-    padding: $base_padding $base_padding+2; // 1px less to account for wider border
-    border-width: 2px;
-    border-style: solid;
-    border-color: $selected_bg_color;
+    padding: $base_padding $base_padding * 1.5; // 1px less to account for wider border
+    border: 2px solid $selected_bg_color !important;
     color: rgba(white, 0.85);
     box-shadow: none;
   }

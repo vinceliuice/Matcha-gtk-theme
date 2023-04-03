@@ -1,0 +1,274 @@
+
+%nautilus_dir_buttons {
+  border-radius: 2px;
+  border: none;
+  min-height: 22px;
+  min-width: 22px;
+  padding: 0 6px;
+
+  &:hover {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.1);
+  }
+
+  &:active {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.2);
+  }
+
+  &:checked {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.15);
+  }
+}
+
+%dark_sidebar_scrollbar {
+  border-color: darken($dark_sidebar_bg, 5%);
+
+  &.overlay-indicator:not(.dragging):not(.hovering) slider {
+    background-color: lighten($dark_sidebar_fg, 15%);
+    border: 1px solid rgba(black, 0.3);
+  }
+
+  slider {
+    background-color: rgba(lighten($dark_sidebar_fg, 15%), 0.7);
+
+    &:hover { background-color: lighten($dark_sidebar_fg, 20%); }
+    &:hover:active { background-color: $selected_bg_color; }
+
+    &:disabled { background-color: transparent; }
+  }
+
+  trough { background-color: darken($dark_sidebar_bg, 5%); }
+}
+
+.nautilus-window {
+  headerbar {
+    // * { // reset
+    //   margin-top: 0;
+    //   margin-bottom: 0;
+    // }
+
+    splitbutton {
+      border-radius: 2px;
+      border: 1px solid transparent;
+      padding: 0 1px;
+      min-height: 26px;
+
+      &:hover {
+        @include button(header-hover);
+      }
+
+      > button,
+      > menubutton > button {
+        @extend %nautilus_dir_buttons;
+        margin: 2px 1px;
+      }
+    }
+  }
+
+  .navigation-sidebar {
+    background-color: $dark_sidebar_bg;
+    color: $dark_sidebar_fg;
+    padding: 0;
+
+    & > row.sidebar-row {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      color: $dark_sidebar_fg;
+
+      .sidebar-icon { color: rgba($dark_sidebar_fg, 0.6); }
+
+      &.has-open-popup,
+      &:hover {
+        border-radius: 0;
+        background-color: rgba($dark_sidebar_fg, 0.15);
+        box-shadow: inset 3px 0 lighten($selected_bg_color, 10%);
+      }
+
+      &:disabled {
+        &, label, image { color: rgba($dark_sidebar_fg, 0.45); }
+      }
+
+      &:selected.has-open-popup,
+      &:selected, &:selected:hover, &:active:hover {
+        @extend %selected_items;
+        border-radius: 0;
+
+        label { color: $selected_fg_color; }
+
+        .sidebar-icon { color: inherit; }
+      }
+
+      &:not(:selected) button.sidebar-button {
+        color: $dark_sidebar_fg;
+
+        &:hover { @include button(header-hover); }
+        &:active { @include button(header-active); }
+
+        &:not(:hover):not(:active) > image { opacity: 0.5 };
+      }
+
+      &.sidebar-new-bookmark-row {
+        color: $selected_bg_color;
+
+        .sidebar-icon { color: inherit; }
+      }
+
+     &:backdrop { opacity: 0.75; }
+
+      &:drop(active):not(:disabled) {
+        &, label, .sidebar-icon { color: $drop_target_color; }
+
+        &:selected {
+          &, label, .sidebar-icon { color: $selected_fg_color; }
+          background-color: $drop_target_color;
+        }
+      }
+    }
+
+    separator { background-color: transparent; }
+
+    scrollbar { @extend %dark_sidebar_scrollbar }
+  }
+
+  @if $header == 'dark' and $variant == 'light' {
+    flap {
+      > separator {
+        background-color: transparent;
+        min-width: 0;
+      }
+    }
+  }
+}
+
+.nautilus-grid-view {
+  child.activatable {
+    border-radius: 3px;
+    border: 1px solid transparent;
+    color: $fg_color;
+
+    &:hover {
+      background-color: rgba($fg_color, 0.08);
+    }
+
+    &:active {
+      background-color: rgba($fg_color, 0.16);
+    }
+
+    &:selected {
+      background-color: rgba($selected_bg_color, 0.45);
+      border-color: $selected_bg_color;
+      color: mix($fg_color, $selected_bg_color, 50%);
+    }
+  }
+}
+
+.nautilus-list-view.view {
+  listview.view > row.activatable {
+    border-radius: 2px;
+    border: 1px solid transparent;
+    color: $fg_color;
+
+    &:hover {
+      background-color: rgba($fg_color, 0.08);
+    }
+
+    &:active {
+      background-color: rgba($fg_color, 0.16);
+    }
+
+    &:selected {
+      background-color: rgba($selected_bg_color, 0.45);
+      border-color: $selected_bg_color;
+      color: mix($fg_color, $selected_bg_color, 50%);
+    }
+  }
+}
+
+#NautilusViewCell {
+  clamp box {
+    margin: 0;
+    border-spacing: 0;
+  }
+}
+
+#NautilusQueryEditor { // search entry
+  border-spacing: 0;
+
+  > * { margin: 0; }
+
+  #NautilusQueryEditorTag {
+    > button {
+      margin: 0;
+    }
+  }
+
+  > menubutton > button {
+    min-width: 16px;
+    min-height: 16px;
+    -gtk-icon-size: 16px;
+    margin: 0;
+    padding: 3px;
+    border-radius: 999px;
+    border: none;
+
+    &:hover {
+      color: $header_fg;
+      background-color: rgba($header_fg, 0.1);
+    }
+  
+    &:active {
+      color: $header_fg;
+      background-color: rgba($header_fg, 0.2);
+    }
+  
+    &:checked {
+      color: $header_fg;
+      background-color: rgba($header_fg, 0.15);
+    }
+  }
+}
+
+#NautilusPathBar {
+  min-height: 0;
+  background-color: rgba($header_fg, 0.1);
+  border-radius: 3px;
+  margin: 6px 0;
+  padding: 0 1px;
+  border: 1px solid $header_border;
+  background-clip: padding-box;
+
+  #NautilusPathButton {
+    margin: 2px 1px;
+    @extend %nautilus_dir_buttons;
+
+    label.dim-label {
+      color: rgba($header_fg, 0.75);
+
+      &:hover, &:active, &:checked {
+        color: $header_fg;
+      }
+    }
+
+    &.current-dir {
+      color: $header_fg;
+
+      &:hover, &:active {
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  > menubutton {
+    margin: 0;
+
+    > button {
+      border: none;
+      margin: 2px 1px;
+      @extend %nautilus_dir_buttons;
+    }
+  }
+}

@@ -118,12 +118,10 @@ stage {
 // buttons in dialogs
 %bubble_button {
   @include button(normal, $shadow: none);
-  padding: $base_padding * 2;
-  border-style: solid;
-  border-width: 1px;
-  border-left-width: 0;
-  border-bottom-width: 0;
-  margin: 0;
+  padding: $base_padding * 2 !important;
+  min-height: 0;
+  border-top: 1px solid $borders_color !important;
+  margin: 0 !important;
 
   &:insensitive { @include button(insensitive, $shadow: none); }
   &:hover { @include button(hover, $shadow: none); }
@@ -132,16 +130,23 @@ stage {
 
   // radius is 2 pixel less to fit in bubble
   &:first-child {
+    border-left: none !important;
     border-radius: 0 0 0 $modal_radius !important;
   }
 
   &:last-child {
-    border-right-width: 0;
     border-radius: 0 0 $modal_radius 0 !important;
+    border-left: 1px solid $borders_color !important;
+    color: $selected_bg_color !important;
+
+    &:insensitive {
+      color: rgba($selected_bg_color, 0.35) !important;
+    }
   }
 
   &:first-child:last-child {
     border-radius: 0 0 $modal_radius $modal_radius !important;
+    border-left: none !important;
   }
 }
 
@@ -156,8 +161,9 @@ stage {
 // notification styling
 @mixin notification_bubble($flat: false) {
   border: none;
-  border-radius: $base_border_radius;
-  margin: $base_margin 0;
+  border-radius: $base_border_radius !important;
+  margin: $base_margin 0 !important;
+  box-shadow: none !important;
 
   @if $flat {
     @include button(undecorated);
