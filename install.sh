@@ -17,7 +17,7 @@ SRC_DIR="${REO_DIR}/src"
 
 THEME_NAME=Matcha
 COLOR_VARIANTS=('' '-light' '-dark')
-THEME_VARIANTS=('-aliz' '-azul' '-sea' '-pueril')
+THEME_VARIANTS=('-sea' '-aliz' '-azul' '-pueril')
 
 GS_VERSION=""
 
@@ -28,9 +28,10 @@ usage() {
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [standard|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-t, --theme VARIANTS" "Specify hue theme variant(s) [aliz|azul|sea|pueril] (Default: All variants)"
-  printf "  %-25s%s\n" "-s, --gnome-shell VERSION" "Set gnome-shell flavor, where new is version 40 or later, [new|old] (Default: Auto detect)"
+  printf "  %-25s%s\n" "-s, --gnome-shell VERSION" "Set gnome-shell flavor, where new is version 44.0 or later, [38|40|42|44] (Default: Auto detect)"
+  printf "  %-25s%s\n" "-l, --libadwaita" "Force all libadwaita app use linked gtk-4.0 theme"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
-  printf "  %-25s%s\n" "-r, --revert" "revert GDM theme, this option need root user authority! please run this with sudo"
+  printf "  %-25s%s\n" "-r, --remove" "Remove(Uninstall) themes"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
@@ -195,11 +196,16 @@ UBUNTU_NEW_THEME_FILE="/usr/share/gnome-shell/theme/gnome-shell.css"
 UBUNTU_YARU_THEME_FILE="/usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource"
 
 install_gdm() {
+  local dest="${1}"
+  local name="${2}"
+  local gcolor="${3}"
+  local theme="${4}"
+
   local GDM_THEME_DIR="${1}/${2}${3}${4}"
   local YARU_GDM_THEME_DIR="$SHELL_THEME_FOLDER/Yaru/${2}${3}${4}"
 
-  [[ "${color}" == '-dark' ]] && local ELSE_DARK="${color}"
-  [[ "${color}" == '-light' ]] && local ELSE_LIGHT="${color}"
+  [[ "${gcolor}" == '-dark' ]] && local ELSE_DARK="${gcolor}"
+  [[ "${gcolor}" == '-light' ]] && local ELSE_LIGHT="${gcolor}"
 
   echo
   echo "Installing ${2}${3}${4} gdm theme..."
@@ -312,15 +318,6 @@ revert_gdm() {
   fi
 }
 
-#  Install theme
-install_theme() {
-for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-  for theme in "${themes[@]:-${THEME_VARIANTS[@]}}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${theme}"
-  done
-done
-}
-
 while [[ $# -gt 0 ]]; do
   case "${1}" in
     -d|--dest)
@@ -339,9 +336,13 @@ while [[ $# -gt 0 ]]; do
       gdm='true'
       shift 1
       ;;
-    -r|--revert)
-      revert='true'
-      shift 1
+    -l|--libadwaita)
+      libadwaita='true'
+      shift
+      ;;
+    -r|--remove|-u|--uninstall)
+      remove='true'
+      shift
       ;;
     -s|--gnome-shell)
       case "${2}" in
@@ -355,6 +356,10 @@ while [[ $# -gt 0 ]]; do
           ;;
         42)
           GS_VERSION=42.0
+          shift 2
+          ;;
+        44)
+          GS_VERSION=44.0
           shift 2
           ;;
         -*|--*)
@@ -405,15 +410,21 @@ while [[ $# -gt 0 ]]; do
         case "${color}" in
           standard)
             colors+=("${COLOR_VARIANTS[0]}")
-            shift 1
+            lcolors+=("${COLOR_VARIANTS[0]}")
+            gcolors+=("${COLOR_VARIANTS[0]}")
+            shift
             ;;
           light)
             colors+=("${COLOR_VARIANTS[1]}")
-            shift 1
+            lcolors+=("${COLOR_VARIANTS[1]}")
+            gcolors+=("${COLOR_VARIANTS[1]}")
+            shift
             ;;
           dark)
             colors+=("${COLOR_VARIANTS[2]}")
-            shift 1
+            lcolors+=("${COLOR_VARIANTS[2]}")
+            gcolors+=("${COLOR_VARIANTS[2]}")
+            shift
             ;;
           -*|--*)
             break
@@ -442,7 +453,9 @@ if [ -z "$GS_VERSION" ]; then
   if [[ "$(command -v gnome-shell)" ]]; then
     gnome-shell --version
     SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-    if [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
+    if [[ "${SHELL_VERSION:-}" -ge "44" ]]; then
+      GS_VERSION="44.0"
+    elif [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
       GS_VERSION="42.0"
     elif [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
       GS_VERSION="40.0"
@@ -451,19 +464,103 @@ if [ -z "$GS_VERSION" ]; then
     fi
     else
       echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-      GS_VERSION="42.0"
+      GS_VERSION="44.0"
   fi
 fi
 
-if [[ "${gdm:-}" != 'true' && "${revert:-}" != 'true' ]]; then
-  install_theme
+uninstall() {
+  local dest="${1}"
+  local name="${2}"
+  local color="${3}"
+  local theme="${4}"
+
+  local THEME_DIR="${1}/${2}${3}${4}"
+
+  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
+}
+
+link_libadwaita() {
+  local dest="${1}"
+  local name="${2}"
+  local lcolor="${3}"
+  local theme="${4}"
+
+  local THEME_DIR="${1}/${2}${3}${4}"
+
+  echo -e "\nLink '$THEME_DIR/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita..."
+
+  mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
+  ln -sf "${THEME_DIR}/gtk-4.0/assets"                                          "${HOME}/.config/gtk-4.0/assets"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk.css"                                         "${HOME}/.config/gtk-4.0/gtk.css"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk-dark.css"                                    "${HOME}/.config/gtk-4.0/gtk-dark.css"
+}
+
+uninstall_link() {
+  rm -rf "${HOME}/.config/gtk-4.0"/{assets,gtk.css,gtk-dark.css}
+}
+
+link_theme() {
+  for lcolor in "${lcolors[@]-${COLOR_VARIANTS[2]}}"; do
+    for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
+      link_libadwaita "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${lcolor}" "${theme}"
+    done
+  done
+}
+
+install_theme() {
+  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+    for theme in "${themes[@]:-${THEME_VARIANTS[@]}}"; do
+      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${theme}"
+    done
+  done
+}
+
+uninstall_theme() {
+  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+    for theme in "${themes[@]:-${THEME_VARIANTS[@]}}"; do
+      uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${color}" "${theme}"
+    done
+  done
+}
+
+if [[ "${gdm:-}" != 'true' ]]; then
+  if [[ "${remove:-}" != 'true' ]]; then
+    install_theme
+
+    if [[ "$libadwaita" == 'true' ]]; then
+      uninstall_link && link_theme
+    fi
+  else
+    if [[ "$libadwaita" == 'true' ]]; then
+      uninstall_link
+      echo -e 'Remove libadwaita links...'
+    else
+      uninstall_theme
+    fi
+  fi
 fi
 
-if [[ "${gdm:-}" == 'true' && "${revert:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
-  install_theme && install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${theme}"
+if [[ "${gdm:-}" == 'true' && "${remove:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
+  if [[ "${#gcolors[@]}" -gt 1 ]]; then
+    echo -e 'Error: To install a gdm theme you can only select one color'
+    exit 1
+  fi
+
+  if [[ "${#themes[@]}" -gt 1 ]]; then
+    echo -e 'Error: To install a gdm theme you can only select one theme'
+    exit 1
+  fi
+
+  echo -e "\nNOTICE: Only GDM theme will installed..."
+
+  for gcolor in "${gcolors[@]-${COLOR_VARIANTS[2]}}"; do
+    for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
+      install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${gcolor}" "${theme}"
+    done
+  done
 fi
 
-if [[ "${gdm:-}" != 'true' && "${revert:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then
+if [[ "${gdm:-}" == 'true' && "${remove:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then
   revert_gdm
 fi
 
