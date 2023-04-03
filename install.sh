@@ -28,10 +28,10 @@ usage() {
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [standard|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-t, --theme VARIANTS" "Specify hue theme variant(s) [aliz|azul|sea|pueril] (Default: All variants)"
-  printf "  %-25s%s\n" "-s, --gnome-shell VERSION" "Set gnome-shell flavor, where new is version 44.0 or later, [38|40|42|44] (Default: Auto detect)"
+  printf "  %-25s%s\n" "-s, --gnome-shell" "Set gnome-shell flavor, where new is version 44.0 or later, [38|40|42|44] (Default: Auto detect)"
   printf "  %-25s%s\n" "-l, --libadwaita" "Force all libadwaita app use linked gtk-4.0 theme"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
-  printf "  %-25s%s\n" "-r, --remove" "Remove(Uninstall) themes"
+  printf "  %-25s%s\n" "-r, --remove" "Remove(Uninstall) themes/GDM/libadwaita"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 

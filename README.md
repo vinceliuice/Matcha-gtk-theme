@@ -45,17 +45,21 @@ Run
 
     ./install.sh
 
-Usage:  `./install.sh`  **[OPTIONS...]**
+Usage: ./install.sh [OPTIONS...]
 
-|  OPTIONS:     | |
-|:--------------|:-------------|
-| -d, --dest    | Specify theme destination directory (Default: $HOME/.themes) |
-| -n, --name    | Specify theme name (Default: Matcha) |
-| -c, --color   | Specify theme color variant(s) **[standard/light/dark]** (Default: All variants) |
-| -t, --theme   | Specify hue theme variant(s) **[aliz/azul/sea/pueril]** (Default: All variants) |
-| -g, --gdm     | Install GDM theme, this option need root user authority! please run this with sudo |
-| -r, --revert  | revert GDM theme, this option need root user authority! please run this with sudo |
-| -h, --help    | Show this help |
+OPTIONS:
+
+```sh
+  -d, --dest DIR           Specify theme destination directory (Default: /home/fedora/.themes)
+  -n, --name NAME          Specify theme name (Default: Matcha)
+  -c, --color VARIANTS     Specify theme color variant(s) [standard|dark] (Default: All variants)
+  -t, --theme VARIANTS     Specify hue theme variant(s) [aliz|azul|sea|pueril] (Default: All variants)
+  -s, --gnome-shell        Set gnome-shell flavor, where new is version 44.0 or later, [38|40|42|44] (Default: Auto detect)
+  -l, --libadwaita         Force all libadwaita app use linked gtk-4.0 theme
+  -g, --gdm                Install GDM theme, this option need root user authority! please run this with sudo
+  -r, --remove             Remove(Uninstall) themes/GDM/libadwaita
+  -h, --help               Show this help
+```
 
 ### Fix for flatpak apps
 
