@@ -33,8 +33,9 @@ stage {
 .workspace-switcher-container, .switcher-list, .resize-popup, .osd-window {
   color: #efefef;
   background-color: #2a2a2a;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 12px;
+  border: none;
 }
 
 .workspace-thumbnails .workspace-thumbnail {
@@ -55,6 +56,7 @@ stage {
   color: #363636;
   background-color: #ffffff;
   box-shadow: none;
+  border-radius: 5px;
   border: none;
 }
 
@@ -1773,7 +1775,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .modal-dialog {
-  border-radius: 5px;
   padding: 0 !important;
 }
 
@@ -2035,7 +2036,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-align: center;
   font-weight: bold;
   spacing: 12px;
-  padding: 12px 18px;
+  padding: 18px 24px;
   margin-bottom: 4em;
 }
 
@@ -2065,7 +2066,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: 160px;
   -barlevel-height: 8px;
   -barlevel-background-color: rgba(239, 239, 239, 0.3);
-  -barlevel-active-background-color: #efefef;
+  -barlevel-active-background-color: #F0544C;
   -barlevel-overdrive-color: #e01b24;
   -barlevel-overdrive-separator-width: 3px;
 }
