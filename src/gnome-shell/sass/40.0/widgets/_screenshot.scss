@@ -6,6 +6,7 @@
 
   &:hover { background-color: rgba(white, 0.1); }
   &:active { background-color: rgba(white, 0.2); }
+  &:checked { background-color: rgba(white, 0.15); }
 }
 
 .icon-label-button-container {

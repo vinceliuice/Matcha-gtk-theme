@@ -3681,6 +3681,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.screenshot-ui-show-pointer-button:checked, .screenshot-ui-type-button:checked {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
 .icon-label-button-container {
   spacing: 6px;
 }
