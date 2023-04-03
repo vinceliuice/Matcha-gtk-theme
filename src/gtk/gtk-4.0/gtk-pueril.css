@@ -3886,9 +3886,12 @@ scrollbar.horizontal button.up {
 }
 
 scrollbar > range > trough {
-  background: none;
+  background-color: transparent;
   padding: 0;
   margin: 0;
+  border: none;
+  outline: none;
+  border-radius: 0;
 }
 
 scrollbar > range > trough > slider {

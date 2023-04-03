@@ -2833,9 +2833,12 @@ scrollbar {
 
   // slider
   > range > trough {
-    background: none;
+    background-color: transparent;
     padding: 0;
     margin: 0;
+    border: none;
+    outline: none;
+    border-radius: 0;
 
     > slider {
       min-width: 6px;
