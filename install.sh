@@ -523,12 +523,21 @@ uninstall_theme() {
   done
 }
 
-if [[ "${gdm:-}" != 'true' && "${remove:-}" != 'true' ]]; then
-  install_theme
+if [[ "${gdm:-}" != 'true' ]]; then
+  if [[ "${remove:-}" != 'true' ]]; then
+    install_theme
 
-   if [[ "$libadwaita" == 'true' ]]; then
-     uninstall_link && link_theme
-   fi
+    if [[ "$libadwaita" == 'true' ]]; then
+      uninstall_link && link_theme
+    fi
+  else
+    if [[ "$libadwaita" == 'true' ]]; then
+      uninstall_link
+      echo -e 'Remove libadwaita links...'
+    else
+      uninstall_theme
+    fi
+  fi
 fi
 
 if [[ "${gdm:-}" == 'true' && "${remove:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
