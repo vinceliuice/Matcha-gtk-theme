@@ -249,6 +249,7 @@ stage {
 }
 
 /* Entries */
+.prompt-dialog-password-grid .prompt-dialog-password-entry,
 StEntry {
   border-radius: 3px;
   padding: 8px;
@@ -260,29 +261,34 @@ StEntry {
   selected-color: #ffffff !important;
 }
 
+.prompt-dialog-password-grid .prompt-dialog-password-entry:focus,
 StEntry:focus {
   background-color: #222222;
-  border: 1px solid #670d09;
+  border: 1px solid #ec271d;
   box-shadow: none;
 }
 
+.prompt-dialog-password-grid .prompt-dialog-password-entry:insensitive,
 StEntry:insensitive {
   color: #6c6c6c;
   border-color: #2a2a2a;
   box-shadow: none;
 }
 
+.prompt-dialog-password-grid .prompt-dialog-password-entry StIcon.capslock-warning,
 StEntry StIcon.capslock-warning {
   icon-size: 16px;
   warning-color: #f57900;
   padding: 0 4px;
 }
 
+.prompt-dialog-password-grid .prompt-dialog-password-entry StIcon.peek-password,
 StEntry StIcon.peek-password {
   icon-size: 16px;
   padding: 0 4px;
 }
 
+.prompt-dialog-password-grid .prompt-dialog-password-entry StLabel.hint-text,
 StEntry StLabel.hint-text {
   margin-left: 2px;
   color: rgba(221, 221, 221, 0.7);
@@ -1889,10 +1895,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .prompt-dialog-password-layout {
   spacing: 8px;
-}
-
-.prompt-dialog-password-entry {
-  width: 20em;
 }
 
 .prompt-dialog-error-label,
