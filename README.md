@@ -7,6 +7,12 @@ This theme is based on Arc gtk theme of horst3180. Thanks horst3180 sincerely fo
 
 horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 
+## Donate
+
+If you like my project, you can buy me a coffee:
+
+<span class="paypal"><a href="https://www.paypal.me/vinceliuice" title="Donate to this project using Paypal"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal donate button" /></a></span>
+
 ## Info
 
 ### GTK+ > 3.20
@@ -88,12 +94,6 @@ FreeBSD:
 Solus:
 
     sudo eopkg it matcha-gtk-theme
-
-### Firefox theme
-[Install Firefox theme](src/extra/firefox)
-
-#### Preview
-![Firefox-theme](src/extra/firefox/preview.png?raw=true)
 
 ## Icon theme for Matcha
 
