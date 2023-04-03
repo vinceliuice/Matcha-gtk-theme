@@ -306,7 +306,7 @@ StEntry StIcon.capslock-warning {
 }
 
 StEntry StIcon.peek-password {
-  icon-size: 1.09em;
+  icon-size: 16px;
   padding: 0 4px;
 }
 
@@ -555,7 +555,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-arrow,
 .popup-menu-icon {
-  icon-size: 1.09em !important;
+  icon-size: 16px !important;
 }
 
 .popup-sub-menu {
@@ -568,7 +568,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-sub-menu .popup-menu-ornament {
-  min-width: 1.09em !important;
+  min-width: 16px !important;
 }
 
 .popup-menu-ornament {
@@ -670,7 +670,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .system-menu-action > StIcon {
-  icon-size: 1.09em;
+  icon-size: 16px;
 }
 
 .app-menu {
@@ -720,6 +720,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0), 0 1px rgba(221, 221, 221, 0);
   text-shadow: none;
   icon-shadow: none;
+  color: #dddddd;
   box-shadow: none !important;
   padding: 9px;
 }
@@ -749,6 +750,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 2px rgba(36, 138, 118, 0.6) !important;
 }
 
+.datemenu-today-button .day-label {
+  color: #aaaaaa;
+}
+
 /* Calendar */
 .calendar {
   border-radius: 3px;
@@ -759,6 +764,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0), 0 1px rgba(221, 221, 221, 0);
   text-shadow: none;
   icon-shadow: none;
+  color: #dddddd;
   box-shadow: none !important;
   margin-top: 0;
 }
@@ -790,7 +796,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar .calendar-month-header .calendar-change-month-back StIcon,
 .calendar .calendar-month-header .calendar-change-month-forward StIcon {
-  icon-size: 1.09em;
+  icon-size: 16px;
 }
 
 .calendar .calendar-month-header .calendar-month-label {
@@ -1119,7 +1125,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-list .message-list-placeholder > StIcon {
-  icon-size: 3.27em;
+  icon-size: 48px;
   margin-bottom: 12px;
   -st-icon-style: symbolic;
 }
@@ -1213,8 +1219,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin > .fallback-app-icon {
-  width: 1.09em;
-  height: 1.09em;
+  width: 16px;
+  height: 16px;
 }
 
 .message .message-content {
@@ -1265,7 +1271,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-close-button StIcon {
-  icon-size: 1.09em;
+  icon-size: 16px;
 }
 
 .message .message-body {
@@ -1307,11 +1313,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-media-control StIcon {
-  icon-size: 1.09em;
+  icon-size: 16px;
 }
 
 .media-message-cover-icon {
-  icon-size: 3.27em !important;
+  icon-size: 48px !important;
   border-radius: 3px;
 }
 
@@ -1404,6 +1410,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 10.5px;
 }
 
+.quick-settings .icon-button StIcon, .quick-settings .background-app-item .close-button StIcon, .background-app-item .quick-settings .close-button StIcon, .quick-settings .button StIcon {
+  icon-size: 16px !important;
+}
+
 .quick-settings .icon-button, .quick-settings .background-app-item .close-button, .background-app-item .quick-settings .close-button {
   border-radius: 1000px;
   border: none;
@@ -1488,7 +1498,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .quick-toggle .quick-toggle-icon {
-  icon-size: 1.09em;
+  icon-size: 16px;
 }
 
 .quick-menu-toggle .quick-toggle {
@@ -1642,6 +1652,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .quick-settings-system-item .icon-button > StIcon, .quick-settings-system-item .background-app-item .close-button > StIcon, .background-app-item .quick-settings-system-item .close-button > StIcon {
   -st-icon-style: symbolic;
+  icon-size: 16px !important;
 }
 
 .quick-settings-system-item .power-item {
@@ -1682,7 +1693,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .background-apps-quick-toggle StIcon {
-  icon-size: 1.09em !important;
+  icon-size: 16px !important;
 }
 
 .background-app-item .popup-menu-icon {
@@ -1974,7 +1985,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .audio-selection-device-icon {
-  icon-size: 4.36em;
+  icon-size: 64px;
 }
 
 /* Welcome dialog */
@@ -2016,7 +2027,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .nm-dialog-header-icon {
-  icon-size: 2.18em;
+  icon-size: 32px;
 }
 
 .nm-dialog-header-hbox {
@@ -2042,7 +2053,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .nm-dialog-icon {
-  icon-size: 1.09em;
+  icon-size: 16px;
 }
 
 .nm-dialog-icons {
@@ -2073,7 +2084,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .osd-window StIcon {
-  icon-size: 2.18em;
+  icon-size: 32px;
 }
 
 .osd-window .osd-monitor-label {
@@ -2091,7 +2102,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .osd-window .level {
   margin-bottom: 4px;
   height: 8px;
-  min-width: 10.9em;
+  min-width: 160px;
   -barlevel-height: 8px;
   -barlevel-background-color: rgba(239, 239, 239, 0.1);
   -barlevel-active-background-color: #efefef;
@@ -2289,7 +2300,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button .system-status-icon {
-  icon-size: 1.09em;
+  icon-size: 16px;
   padding: 5px;
   margin: 0 4px;
 }
@@ -2444,7 +2455,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 
 .search-entry .search-entry-icon {
-  icon-size: 1.09em;
+  icon-size: 16px;
   padding: 0 4px;
   color: inherit;
 }
@@ -2915,7 +2926,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-size: contain;
   color: #efefef;
   border-radius: 99px;
-  icon-size: 4.36em;
+  icon-size: 64px;
 }
 
 .user-icon:hover {
@@ -2926,8 +2937,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(239, 239, 239, 0.05);
   border-radius: 99px;
   padding: 12px;
-  width: 2.725em;
-  height: 2.725em;
+  width: 40px;
+  height: 40px;
 }
 
 .user-icon.user-avatar {
@@ -2935,15 +2946,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .user-widget.vertical .user-icon {
-  icon-size: 6.54em;
+  icon-size: 96px;
 }
 
 .user-widget.vertical .user-icon StIcon {
   padding: 20px;
   padding-top: 18px;
   padding-bottom: 22px;
-  width: 5.995em;
-  height: 5.995em;
+  width: 88px;
+  height: 88px;
 }
 
 .lightbox {
@@ -3428,8 +3439,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .unlock-dialog .login-dialog-session-list-button {
   padding: 0;
   border-radius: 99px;
-  width: 2.18em;
-  height: 2.18em;
+  width: 32px;
+  height: 32px;
   border-color: #101415;
   background-color: #101415;
 }
@@ -3440,7 +3451,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .unlock-dialog .cancel-button StIcon,
 .unlock-dialog .switch-user-button StIcon,
 .unlock-dialog .login-dialog-session-list-button StIcon {
-  icon-size: 1.09em;
+  icon-size: 16px;
 }
 
 .login-dialog .caps-lock-warning-label,

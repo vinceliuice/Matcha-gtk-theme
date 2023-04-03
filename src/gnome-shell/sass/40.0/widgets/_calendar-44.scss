@@ -8,8 +8,8 @@
 // Calendar menu side column
 .datemenu-calendar-column {
   spacing: $base_padding;
-  &:ltr {padding-left: $base_padding;}
-  &:rtl {padding-right: $base_padding;}
+  &:ltr { padding-left: $base_padding; }
+  &:rtl { padding-right: $base_padding; }
   .datemenu-displays-box {spacing: $base_padding;}
 }
 
@@ -21,6 +21,7 @@
   // weekday label
   .day-label {
     @extend %heading;
+    color: $alt_fg_color;
   }
 
   // date label

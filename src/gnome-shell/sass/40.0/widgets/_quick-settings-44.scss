@@ -7,6 +7,10 @@
     min-height: 20px;
     min-width: 20px;
     padding: $base_padding * 1.75;
+
+    StIcon {
+      icon-size: $base_icon_size !important;
+    }
   }
 
   .icon-button {
@@ -222,7 +226,10 @@
     // color: $fg_color;
     @extend %button;
 
-    > StIcon { -st-icon-style: symbolic; }
+    > StIcon {
+      -st-icon-style: symbolic;
+      icon-size: $base_icon_size !important;
+    }
   }
 
   & .power-item {

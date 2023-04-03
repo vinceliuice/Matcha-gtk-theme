@@ -288,6 +288,7 @@
 
   @if $flat {
     @include button(undecorated);
+    color: $fg_color;
     box-shadow: none !important;
   } @else {
     @include button(normal);
