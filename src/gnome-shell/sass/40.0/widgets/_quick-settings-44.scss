@@ -20,12 +20,15 @@
   spacing-columns: $base_padding * 2;
 }
 
-.quick-toggle {
+.quick-toggle, .quick-menu-toggle {
   border-radius: $base_border_radius;
   min-width: 12em;
   max-width: 12em;
   min-height: 40px;
   border: none;
+}
+
+.quick-toggle {
   background-color: rgba($fg_color, if($variant == 'light', 0.08, 0.06)) !important;
   color: $alt_fg_color;
   text-shadow: none !important;
@@ -70,24 +73,71 @@
   &:ltr > StBoxLayout { padding-left: $base_padding * 2.5; }
   &:rtl > StBoxLayout { padding-right: $base_padding * 2.5; }
 
-  .quick-toggle-label { font-weight: bold; }
-  .quick-toggle-icon, .quick-toggle-arrow { icon-size: 16px; }
+  .quick-toggle-title { font-weight: bold; }
+
+  StBoxLayout > .quick-toggle-subtitle {
+    font-weight: normal;
+    font-size: 12px;
+  }
+
+  .quick-toggle-icon { icon-size: $base_icon_size; }
 }
 
 .quick-menu-toggle {
-  &:ltr > StBoxLayout { padding-right: 0; }
-  &:rtl > StBoxLayout { padding-left: 0; }
+  .quick-toggle {
+    min-width: auto;
+    max-width: auto;
+
+    &:ltr { border-radius: $base_border_radius 0 0 $base_border_radius; }
+    &:ltr > StBoxLayout { padding-right: $base_padding * 1.5; }
+    &:rtl { border-radius: 0 $base_border_radius $base_border_radius 0; }
+    &:rtr > StBoxLayout { padding-left: $base_padding * 1.5; }
+
+    &:ltr:last-child { border-radius: $base_border_radius; }
+    &:rtl:last-child { border-radius: $base_border_radius; }
+  }
 
   .quick-toggle-arrow {
-    background-color: rgba($fg_color, 0.06) !important;
-    padding: $base_padding $base_padding * 1.75;
+    background-color: rgba($fg_color, if($variant == 'light', 0.12, 0.10)) !important;
+    color: $alt_fg_color;
+    text-shadow: none !important;
 
-    &:active, &:checked {
-      background-color: rgba($fg_color, 0.12) !important;
+    &:hover {
+      background-color: rgba($fg_color, if($variant == 'light', 0.20, 0.18)) !important;
+      color: $fg_color;
     }
 
-    &:ltr { border-radius: 0 $base_border_radius $base_border_radius 0; }
-    &:rtl { border-radius: $base_border_radius 0 0 $base_border_radius; }
+    &:active {
+      background-color: rgba($fg_color, if($variant == 'light', 0.28, 0.26)) !important;
+      color: $fg_color;
+    }
+
+    &:checked {
+      background-color: $selected_bg_color !important;
+      color: $selected_fg_color;
+      text-shadow: none !important;
+
+      &:hover {
+        background-color: lighten($selected_bg_color, 5%) !important;
+        color: $selected_fg_color;
+        text-shadow: none !important;
+      }
+
+      &:active {
+        background-color: darken($selected_bg_color, 5%) !important;
+        color: $selected_fg_color;
+      }
+    }
+
+    &:ltr {
+      border-radius: 0 $base_border_radius $base_border_radius 0;
+      border-left-width: 0;
+    }
+
+    &:rtl {
+      border-radius: $base_border_radius 0 0 $base_border_radius;
+      border-right-width: 0;
+    }
   }
 }
 
@@ -100,7 +150,7 @@
     &:focus { @include button(focus); }
     min-height: 16px; // slider size
     padding: $base_padding;
-    border-radius: 16px;
+    border-radius: 99px;
   }
 
   .quick-toggle-icon {
@@ -110,6 +160,7 @@
   .icon-button {
     background-color: transparent;
     color: $fg_color !important;
+    padding: $base_padding;
 
     &:hover {
       background-color: rgba($fg_color, 0.06);
@@ -152,6 +203,14 @@
         color: $selected_fg_color;
       }
     }
+
+    & .title {
+      @extend %title_3;
+    }
+
+    & .subtitle {
+      @extend %caption_heading;
+    }
   }
 }
 
@@ -178,5 +237,42 @@
 }
 
 .nm-network-item {
-  .wireless-secure-icon { icon-size: 0.5 * 16px; }
+  .wireless-secure-icon { icon-size: 8px; }
+}
+
+.bt-device-item {
+  .popup-menu-icon { -st-icon-style: symbolic; }
+}
+
+.bt-menu-placeholder.popup-menu-item {
+  @extend %title_4;
+  text-align: center;
+
+  padding: 2em 4em;
+}
+
+.device-subtitle { color: transparentize($fg_color, 0.5); }
+
+// background apps
+
+.background-apps-quick-toggle {
+  min-height: 40px;
+  background-color: transparent;
+
+  & StIcon { icon-size: $base_icon_size !important; }
+}
+
+.background-app-item {
+  & .title { @extend %heading; }
+  & .subtitle { @extend %caption; }
+  & .popup-menu-icon {
+    icon-size: 32px !important;
+    -st-icon-style: regular !important;
+  }
+  & .close-button {
+    @extend .icon-button;
+    padding: $base_padding;
+  }
+
+  &.popup-inactive-menu-item { color: $fg_color; }
 }

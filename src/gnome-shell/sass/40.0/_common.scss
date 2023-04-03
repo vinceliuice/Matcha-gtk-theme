@@ -87,7 +87,13 @@ stage {
 %bubble_panel {
   color: $fg_color;
   background-color: $base_color;
-  border: 1px solid if($variant=='light', rgba(black, 0.6), rgba(black, 0.75));
+  box-shadow: none;
+
+  @if $variant == 'dark' {
+    border: 1px solid rgba(black, 0.75);
+  } @else {
+    border: none;
+  }
 }
 
 // button styling

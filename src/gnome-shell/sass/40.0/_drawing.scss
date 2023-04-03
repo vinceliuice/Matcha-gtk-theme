@@ -280,3 +280,20 @@
     }
   }
 }
+
+// styling for elements within popovers that look like notifications
+@mixin card($flat: false) {
+  border-radius: $base_border_radius;
+  margin: $base_margin;
+
+  @if $flat {
+    @include button(undecorated);
+    box-shadow: none !important;
+  } @else {
+    @include button(normal);
+  }
+
+  &:hover { @include button(hover); }
+  &:active { @include button(active); }
+  &:focus { @include button(focus); }
+}

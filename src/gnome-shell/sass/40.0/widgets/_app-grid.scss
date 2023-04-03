@@ -51,6 +51,8 @@ $app_icon_size: 96px;
   border-radius: $modal_radius * 1.5;
   background-color: rgba($system_bg_color, 1);
   padding: 8px !important;
+  box-shadow: none;
+  outline: none;
 
   .folder-name-container {
     padding: 24px 36px 0;

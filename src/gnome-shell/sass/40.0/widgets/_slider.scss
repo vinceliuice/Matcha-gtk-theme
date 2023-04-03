@@ -1,10 +1,11 @@
 /* Slider */
 
-$slider_size: 16px;
+$slider_size: 18px;
+$slider_border: if($variant == 'light', rgba(black, 0.2), rgba(black, 0.45));
 
 .slider {
-  height: $slider_size;
-  color: $selected_bg_color;
+  height: $slider_size + 2px;
+  color: lighten($base_color, 6%);
   // slider trough
   -barlevel-height: 4px; // has to be an odd number
   -barlevel-background-color: $borders_color; //background of the trough
@@ -19,8 +20,8 @@ $slider_size: 16px;
   -barlevel-overdrive-separator-width: 1px;
   // slider handler
   -slider-handle-radius: $slider_size * 0.5; // half the size of the size
-  -slider-handle-border-width: 0;
-  -slider-handle-border-color: if($variant == 'light', $borders_color, $fg_color);
+  -slider-handle-border-width: 1px;
+  -slider-handle-border-color: $slider_border;
 
   .popup-menu-item.selected &,
   .popup-menu-item:hover &,

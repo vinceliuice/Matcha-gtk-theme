@@ -54,7 +54,8 @@ stage {
 .modal-dialog {
   color: #363636;
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.6);
+  box-shadow: none;
+  border: none;
 }
 
 .quick-settings-system-item .icon-button, .button {
@@ -332,8 +333,8 @@ StEntry StLabel.hint-text {
 
 /* Slider */
 .slider {
-  height: 16px;
-  color: #97BB72;
+  height: 20px;
+  color: white;
   -barlevel-height: 4px;
   -barlevel-background-color: gainsboro;
   -barlevel-border-width: 0;
@@ -343,9 +344,9 @@ StEntry StLabel.hint-text {
   -barlevel-overdrive-color: #e01b24;
   -barlevel-overdrive-border-color: #ce1921;
   -barlevel-overdrive-separator-width: 1px;
-  -slider-handle-radius: 8px;
-  -slider-handle-border-width: 0;
-  -slider-handle-border-color: gainsboro;
+  -slider-handle-radius: 9px;
+  -slider-handle-border-width: 1px;
+  -slider-handle-border-color: rgba(0, 0, 0, 0.2);
 }
 
 .popup-menu-item.selected .slider, .popup-menu-item:hover .slider, .popup-menu-item:focus .slider {
@@ -2242,9 +2243,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
 }
 
-#panel .panel-button:active.clock-display .clock, #panel .panel-button:overview.clock-display .clock, #panel .panel-button:checked.clock-display .clock, #panel .panel-button:focus.clock-display .clock {
+#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:checked, #panel .panel-button.clock-display:focus {
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: inset 0 -2px #97BB72 !important;
+}
+
+#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:checked .clock, #panel .panel-button.clock-display:focus .clock {
+  background-color: transparent;
+  box-shadow: none !important;
 }
 
 #panel .panel-button .system-status-icon {
@@ -2262,11 +2268,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
-#panel .panel-button#panelActivities {
+#panel #panelActivities.panel-button {
   -natural-hpadding: 18px;
 }
 
-#panel.unlock-screen .panel-button:hover.clock-display .clock, #panel.unlock-screen .panel-button:active.clock-display .clock, #panel.unlock-screen .panel-button:overview.clock-display .clock, #panel.unlock-screen .panel-button:focus.clock-display .clock, #panel.unlock-screen .panel-button:checked.clock-display .clock, #panel.login-screen .panel-button:hover.clock-display .clock, #panel.login-screen .panel-button:active.clock-display .clock, #panel.login-screen .panel-button:overview.clock-display .clock, #panel.login-screen .panel-button:focus.clock-display .clock, #panel.login-screen .panel-button:checked.clock-display .clock, #panel:overview .panel-button:hover.clock-display .clock, #panel:overview .panel-button:active.clock-display .clock, #panel:overview .panel-button:overview.clock-display .clock, #panel:overview .panel-button:focus.clock-display .clock, #panel:overview .panel-button:checked.clock-display .clock {
+#panel.unlock-screen .panel-button.clock-display:hover .clock, #panel.unlock-screen .panel-button.clock-display:active .clock, #panel.unlock-screen .panel-button.clock-display:overview .clock, #panel.unlock-screen .panel-button.clock-display:focus .clock, #panel.unlock-screen .panel-button.clock-display:checked .clock, #panel.login-screen .panel-button.clock-display:hover .clock, #panel.login-screen .panel-button.clock-display:active .clock, #panel.login-screen .panel-button.clock-display:overview .clock, #panel.login-screen .panel-button.clock-display:focus .clock, #panel.login-screen .panel-button.clock-display:checked .clock, #panel:overview .panel-button.clock-display:hover .clock, #panel:overview .panel-button.clock-display:active .clock, #panel:overview .panel-button.clock-display:overview .clock, #panel:overview .panel-button.clock-display:focus .clock, #panel:overview .panel-button.clock-display:checked .clock {
   box-shadow: none;
 }
 
@@ -2633,6 +2639,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 7.5px;
   background-color: #1d1d1d;
   padding: 8px !important;
+  box-shadow: none;
+  outline: none;
 }
 
 .app-folder-dialog .folder-name-container {
