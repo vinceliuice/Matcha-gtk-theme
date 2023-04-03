@@ -3,13 +3,13 @@
 
 // main list
 .message-list {
-  width: 29em;
-  border: solid $borders_color;
-  padding-top: $base_padding / 2;
+  width: 31.5em;
+  padding: 0;
+  border: none;
 
   // padding and margins to account for scrollbar
-  &:ltr { margin-left: 0; margin-right: 0; padding-right: $base_padding; border-right-width: 1px; }
-  &:rtl { margin-right: 0; margin-left: 0; padding-left: $base_padding; border-left-width: 1px; }
+  &:ltr { margin-left: 0; margin-right: 0; padding-right: 0; border-right-width: 0; }
+  &:rtl { margin-right: 0; margin-left: 0; padding-left: 0; border-left-width: 0; }
 
   .message-list-placeholder {
     spacing: 12px;
@@ -25,12 +25,8 @@
 
 .message-list-sections {
   spacing: $base_spacing;
-  margin: 0; // to account for scrollbar
+  margin: 0 $base_margin * 3 0 $base_margin * 4; // to account for scrollbar
   padding-bottom: $base_padding;
-
-  // to account for scrollbar
-  &:ltr { margin-right: $base_margin * 3; }
-  &:rtl { margin-left: $base_margin * 3; }
 }
 
 .message-list-section,
@@ -49,7 +45,6 @@
 // message bubbles
 .message {
   @include notification_bubble;
-  margin: $base_padding / 2 !important;
 
   .popup-menu & { box-shadow: none; }
 
@@ -135,8 +130,8 @@
 
 /* Media Controls */
 .message-media-control {
-  padding: $base_padding * 2 !important;
-  margin: $base_padding * 4 + 2px $base_padding / 2 !important;
+  padding: 0 $base_padding * 3;
+  margin: $base_padding * 3 + 4px 0;
   border-radius: $circular_radius;
   color: $alt_fg_color;
   border: none;
@@ -155,8 +150,8 @@
   &:insensitive { color: mix($alt_fg_color, $bg_color, 35%);; }
 
   // fix border-radius for last button
-  &:last-child:ltr { margin-right: $base_margin * 3 !important; }
-  &:last-child:rtl { margin-left: $base_margin * 3 !important; }
+  &:last-child:ltr { margin-right: $base_margin * 3; }
+  &:last-child:rtl { margin-left: $base_margin * 3; }
 }
 
 // album-art
@@ -166,8 +161,8 @@
 
   // when there is no artwork
   &.fallback {
-    color: rgba($fg_color, 0.65);
-    background-color: rgba($fg_color, 0.15);
+    color: $alt_fg_color;
+    background-color: rgba($fg_color, 0.1);
     border: 1px solid transparent;
     border-radius: $base_border_radius;
     icon-size: $base_icon_size * 2 !important;

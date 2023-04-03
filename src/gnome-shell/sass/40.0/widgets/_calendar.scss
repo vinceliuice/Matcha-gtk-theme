@@ -1,17 +1,27 @@
 /* Date/Time Menu */
 
+.clock-display-box {
+  spacing: 2px;
+
+  .clock {
+    padding-left: $base_padding * 2;
+    padding-right: $base_padding * 2;
+  }
+}
+
 // overall menu
 #calendarArea {
-  padding: 0 $base_padding;
+  padding: $base_padding 0;
 }
 
 // Calendar menu side column
 .datemenu-calendar-column {
   spacing: $base_spacing;
-  border: none;
+  border: 0 solid $bubble_borders_color;
+  padding: 0 $base_padding * 2;
 
-  &:ltr { padding-left: $base_padding; }
-  &:rtl { padding-right: $base_padding; }
+  &:ltr { margin-right: $base_margin * 2; border-left-width: 1px; }
+  &:rtl { margin-left: $base_margin * 2; border-right-width: 1px; }
 
   .datemenu-displays-box {
     spacing: $base_spacing;
@@ -47,8 +57,7 @@
 /* Calendar */
 .calendar {
   @include notification_bubble;
-  padding: $base_padding !important;
-  margin: 0 $base_margin * 2 !important;
+  padding: $base_padding;
   box-shadow: none;
 
   // month
@@ -56,6 +65,7 @@
     color: lighten($fg_color,5%);
     font-weight: bold;
     padding: 8px 0;
+    // &:focus {}
   }
 
   // prev/next month icons
@@ -66,7 +76,7 @@
 
   .calendar-change-month-back,
   .calendar-change-month-forward {
-    padding: 0;
+    padding: 0 0;
   }
 
   .pager-button {
@@ -92,12 +102,10 @@
     border-radius: $circular_radius;
     border: none; //avoid jumparound due to today
     font-feature-settings: "tnum";
-    color: $alt_fg_color;
 
     &:hover, &:focus {
       background-color: rgba($fg_color, 0.1);
       box-shadow: none;
-      color: $fg_color;
     }
 
     &:active, &:selected {
