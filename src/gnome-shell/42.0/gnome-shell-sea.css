@@ -1640,6 +1640,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 12px;
 }
 
+.quick-settings-system-item .icon-button {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 12px;
+}
+
 .quick-settings-system-item .icon-button > StIcon {
   -st-icon-style: symbolic;
 }

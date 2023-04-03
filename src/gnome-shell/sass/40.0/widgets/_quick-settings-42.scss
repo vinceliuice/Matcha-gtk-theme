@@ -160,6 +160,9 @@
     // background-color: $button_bg;
     // color: $fg_color;
     @extend %button;
+    min-height: 16px;
+    min-width: 16px;
+    padding: $base_padding * 2;
 
     > StIcon { -st-icon-style: symbolic; }
   }
