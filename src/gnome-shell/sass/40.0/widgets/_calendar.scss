@@ -1,31 +1,20 @@
 /* Date/Time Menu */
 
-.clock-display-box {
-  spacing: 2px;
-
-  .clock {
-    padding-left: $base_padding * 2;
-    padding-right: $base_padding * 2;
-  }
-}
-
 // overall menu
 #calendarArea {
-  padding: $base_padding 0;
+  padding: ($base_padding - $base_margin) ($base_padding + $base_margin) !important;
 }
 
 // Calendar menu side column
 .datemenu-calendar-column {
   spacing: $base_spacing;
-  border: 0 solid $bubble_borders_color;
-  padding: 0 $base_padding * 2;
+  border: none;
+  padding: 0;
 
-  &:ltr { margin-right: $base_margin * 2; border-left-width: 1px; }
-  &:rtl { margin-left: $base_margin * 2; border-right-width: 1px; }
+  &:ltr { padding-left: $base_margin * 2; margin: 0; }
+  &:rtl { padding-right: $base_margin * 2; margin: 0; }
 
-  .datemenu-displays-box {
-    spacing: $base_spacing;
-  }
+  .datemenu-displays-box { spacing: $base_padding; }
 }
 
 .events-section-title {
@@ -59,6 +48,7 @@
   @include notification_bubble;
   padding: $base_padding;
   box-shadow: none;
+  margin-top: 0 !important;
 
   // month
   .calendar-month-label {
@@ -76,7 +66,7 @@
 
   .calendar-change-month-back,
   .calendar-change-month-forward {
-    padding: 0 0;
+    padding: 2px;
   }
 
   .pager-button {
