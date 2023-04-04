@@ -425,6 +425,10 @@ button {
 
       &:active { transition: $button_transition; }
     }
+
+    &:disabled {
+      @include button(undecorated);
+    }
   }
 
   &:hover {

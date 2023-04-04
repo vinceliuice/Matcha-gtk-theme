@@ -8,10 +8,16 @@
 
   &:hover { transition: $button_transition; transition-duration: 350ms; }
   &:checked, &:active { transition: $button_transition; }
+
   &:hover { @include button('hover'); }
   &:active { @include button('active'); }
   &:checked { @include button('checked'); }
-  &:disabled { @include button('insensitive'); }
+  &:disabled {
+    label, & { color: $insensitive_fg_color; }
+
+    border-color: transparent;
+    background-color: transparent;
+  }
 }
 
 .budgie-container { background-color: transparent; }
@@ -21,7 +27,6 @@
 
   button {
     @extend %linked;
-    @extend %budgiebutton_flat;
   }
 }
 

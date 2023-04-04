@@ -462,6 +462,12 @@ button separator {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+#tasklist-button:disabled, .budgie-panel button.flat.launcher:disabled, button.budgie-menu-launcher:disabled, .budgie-popover > frame > box.vertical > box.vertical > scrolledwindow > viewport.frame > list > row.activatable button:disabled, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:disabled, tabbox > tab button:disabled, placessidebar row button.sidebar-button:disabled, button.flat:disabled {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+}
+
 button:hover {
   color: #0b0c0f;
   border-color: rgba(0, 0, 0, 0.25);
@@ -1310,7 +1316,7 @@ spinbutton.vertical button:only-child, spinbutton.vertical entry:only-child, .li
   border-style: solid;
 }
 
-.drop-shadow button, .raven .raven-header:not(.top) button.image-button, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button, .nemo-window .floating-bar button, calendar.button, .app-notification button.flat, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.flat:hover, button:link:hover, button:link:active, button:link:checked, button:visited:hover, button:visited:active, button:visited:checked, button:link, button:visited, menuitem.button.flat,
+.drop-shadow button, .raven .raven-header:not(.top) button.image-button, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .nemo-window .floating-bar button, calendar.button, .app-notification button.flat, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.flat:hover, button:link:hover, button:link:active, button:link:checked, button:visited:hover, button:visited:active, button:visited:checked, button:link, button:visited, menuitem.button.flat,
 modelbutton.flat {
   border-color: transparent;
   background-color: transparent;
@@ -7576,43 +7582,43 @@ window#MyControlCenter > frame > box.horizontal > widget > scrolledwindow.frame 
 /******************
  * Budgie Desktop *
  ******************/
-.drop-shadow button, .raven .raven-header:not(.top) button.image-button, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button {
+.drop-shadow button, .raven .raven-header:not(.top) button.image-button, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button) {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.drop-shadow button:hover, .raven .raven-header:not(.top) button.image-button:hover, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:hover {
+.drop-shadow button:hover, .raven .raven-header:not(.top) button.image-button:hover, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button) {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 350ms;
 }
 
-.drop-shadow button:checked, .raven .raven-header:not(.top) button.image-button:checked, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:checked, .drop-shadow button:active, .raven .raven-header:not(.top) button.image-button:active, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:active {
+.drop-shadow button:checked, .raven .raven-header:not(.top) button.image-button:checked, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .drop-shadow button:active, .raven .raven-header:not(.top) button.image-button:active, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button) {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.drop-shadow button:hover, .raven .raven-header:not(.top) button.image-button:hover, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:hover {
+.drop-shadow button:hover, .raven .raven-header:not(.top) button.image-button:hover, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button) {
   color: #0b0c0f;
   border-color: rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
-.drop-shadow button:active, .raven .raven-header:not(.top) button.image-button:active, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:active {
+.drop-shadow button:active, .raven .raven-header:not(.top) button.image-button:active, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button) {
   color: #ffffff;
   border-color: #3498db;
   background-color: #3498db;
 }
 
-.drop-shadow button:checked, .raven .raven-header:not(.top) button.image-button:checked, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:checked {
+.drop-shadow button:checked, .raven .raven-header:not(.top) button.image-button:checked, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button) {
   color: #ffffff;
   border-color: #3498db;
   background-color: #3498db;
 }
 
-.drop-shadow button:disabled, .raven .raven-header:not(.top) button.image-button:disabled, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:disabled {
-  border-color: rgba(0, 0, 0, 0.08);
-  background-color: rgba(252, 252, 252, 0.55);
+.drop-shadow button:disabled, .raven .raven-header:not(.top) button.image-button:disabled, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button) {
+  border-color: transparent;
+  background-color: transparent;
 }
 
-.drop-shadow button:disabled label, .raven .raven-header:not(.top) button.image-button:disabled label, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:disabled label, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button) label, .budgie-settings-window buttonbox.inline-toolbar button:disabled label, .drop-shadow button:disabled, .raven .raven-header:not(.top) button.image-button:disabled, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:disabled {
+.drop-shadow button:disabled label, .raven .raven-header:not(.top) button.image-button:disabled label, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:disabled label, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button) label, .drop-shadow button:disabled, .raven .raven-header:not(.top) button.image-button:disabled, .budgie-popover > frame > box.vertical > box.vertical > box.horizontal > button.image-button.toggle:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button) {
   color: rgba(43, 47, 59, 0.55);
 }
 
