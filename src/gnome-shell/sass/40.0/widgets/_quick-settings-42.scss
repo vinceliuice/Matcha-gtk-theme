@@ -4,7 +4,7 @@
   margin-top: $base_padding !important;
 
   .icon-button, .button {
-    padding: $base_padding * 1.5;
+    padding: $base_padding * 2;
   }
 
   .icon-button {
@@ -108,6 +108,9 @@
   .icon-button {
     background-color: transparent;
     color: $fg_color !important;
+    padding: $base_padding * 1.5 !important;
+    min-width: 16px;
+    min-width: 16px;
 
     &:hover {
       background-color: rgba($fg_color, 0.06);

@@ -5,14 +5,14 @@
 .message-list {
   width: 31.5em;
   padding: 0;
-  border: none;
+  border: solid $borders_color;
 
   // padding and margins to account for scrollbar
-  &:ltr { margin-left: 0; margin-right: 0; padding-right: 0; border-right-width: 0; }
-  &:rtl { margin-right: 0; margin-left: 0; padding-left: 0; border-left-width: 0; }
+  &:ltr { margin-left: 0; margin-right: $base_margin; padding-right: $base_padding; border-right-width: 1px; }
+  &:rtl { margin-right: 0; margin-left: $base_margin; padding-left: $base_padding; border-left-width: 1px; }
 
   .message-list-placeholder {
-    spacing: 12px;
+    spacing: $base_spacing * 2;
 
     // icon size and color
     > StIcon {
@@ -24,9 +24,13 @@
 }
 
 .message-list-sections {
-  spacing: $base_spacing;
-  margin: 0 $base_margin * 3 0 $base_margin * 4; // to account for scrollbar
-  padding-bottom: $base_padding;
+  spacing: $base_padding;
+  margin: 0;
+  padding: 0 2px $base_padding;
+
+  // to account for scrollbar
+  &:ltr { margin-right: $base_margin; }
+  &:rtl { margin-left: $base_margin; }
 }
 
 .message-list-section,

@@ -39,7 +39,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     font-weight: bold;
     color: $panel_fg_color;
     -natural-hpadding: $base_padding * 2;
-    -minimum-hpadding: $base_padding;
+    -minimum-hpadding: $base_padding * 2;
     transition-duration: 150ms;
     border: 0 none transparent;
     border-radius: 0;
@@ -83,14 +83,24 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     // status area icons
     .system-status-icon {
       icon-size: $base_icon_size;
-      padding: $base_padding - 1px;
-      margin: 0 $base_margin;
-    }
-
-    .panel-status-indicators-box .system-status-icon,
-    .panel-status-menu-box .system-status-icon {
+      padding: $base_padding;
       margin: 0;
     }
+
+    // .panel-status-indicators-box .system-status-icon,
+    // .panel-status-menu-box .system-status-icon {
+    //   margin: 0;
+    // }
+
+    // .panel-status-indicators-box,
+    // .panel-status-menu-box {
+    //   spacing: 0;
+    // }
+
+    // spacing between power icon and (optional) percentage label
+    // .power-status.panel-status-indicators-box {
+    //   spacing: 0;
+    // }
 
     // app menu icon
     .app-menu-icon {
@@ -101,6 +111,13 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     &#panelActivities {
       -natural-hpadding: $base_padding * 3;
     }
+  }
+
+  // Input indicators
+  Gjs_status_keyboard_InputSourceIndicator.panel-button, // Ibus
+  Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button { // Fcitx
+    -natural-hpadding: $base_padding * 3 !important;
+    -minimum-hpadding: $base_padding * 3 !important;
   }
 
   &.unlock-screen,
@@ -115,16 +132,6 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
         }
       }
     }
-  }
-
-  .panel-status-indicators-box,
-  .panel-status-menu-box {
-    spacing: 2px;
-  }
-
-  // spacing between power icon and (optional) percentage label
-  .power-status.panel-status-indicators-box {
-    spacing: 0;
   }
 
   // indicator for active

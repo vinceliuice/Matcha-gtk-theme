@@ -39,9 +39,13 @@
   .calendar-month-header {
 
     // prev/next month icons
-    .calendar-change-month-back StIcon,
-    .calendar-change-month-forward StIcon {
-      icon-size: $base_icon_size;
+    .calendar-change-month-back,
+    .calendar-change-month-forward {
+      padding: 2px;
+
+      StIcon {
+        icon-size: $base_icon_size;
+      }
     }
 
     // month label
@@ -98,7 +102,7 @@
   .calendar-day {
     font-weight: 600;
   }
-  .calendar-work-day {}
+
   .calendar-nonwork-day {color: $insensitive_fg_color;}
   .calendar-other-month-day {
     color: transparentize($fg_color, 0.5);

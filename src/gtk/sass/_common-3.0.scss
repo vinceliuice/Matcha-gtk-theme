@@ -425,6 +425,10 @@ button {
 
       &:active { transition: $button_transition; }
     }
+
+    &:disabled {
+      @include button(undecorated);
+    }
   }
 
   &:hover {
@@ -3013,12 +3017,12 @@ expander {
 calendar {
   color: $fg_color;
   border: 1px solid $borders_color;
-  border-radius: 0;
-  padding: 2px;
+  border-radius: 2px;
+  padding: 0 6px;
 
   &:selected {
     @extend %selected_items;
-    border-radius: 1.5px;
+    border-radius: 3px;
   }
 
   &.header {
