@@ -508,7 +508,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 6px;
   padding: 6px;
   margin: 0;
-  border-radius: 0;
+  border-radius: 0 !important;
   color: #aaaaaa !important;
 }
 
@@ -523,7 +523,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-item:checked {
-  box-shadow: inset 0 1px #151515;
+  box-shadow: inset 0 1px #151515 !important;
   border: none;
   border-image: none;
   background-color: rgba(0, 0, 0, 0.15) !important;
@@ -542,7 +542,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-item:insensitive {
-  color: rgba(221, 221, 221, 0.5) !important;
+  color: #6c6c6c !important;
 }
 
 .popup-menu-item .toggle-switch:ltr {
@@ -558,7 +558,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-inactive-menu-item:insensitive {
-  color: rgba(221, 221, 221, 0.5);
+  color: #6c6c6c;
 }
 
 .popup-menu-arrow,
@@ -569,14 +569,33 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-sub-menu {
   background-color: rgba(0, 0, 0, 0.15) !important;
   border-image: none;
-  box-shadow: inset 0 -1px #151515;
+  box-shadow: inset 0 -1px #151515 !important;
   border: none;
-  border-radius: 0;
+  border-radius: 0 !important;
   margin: 0;
 }
 
 .popup-sub-menu .popup-menu-ornament {
   min-width: 16px !important;
+}
+
+.popup-sub-menu .popup-menu-item {
+  border-radius: 0 !important;
+  border-top-width: 0;
+  background-color: transparent;
+}
+
+.popup-sub-menu .popup-menu-item:last-child {
+  border-radius: 0 !important;
+  border-bottom-width: 0;
+}
+
+.popup-sub-menu .popup-menu-section .popup-menu-item:last-child:hover, .popup-sub-menu .popup-menu-section .popup-menu-item:last-child:focus {
+  border-radius: 0 !important;
+}
+
+.popup-sub-menu .popup-menu-section:last-child .popup-menu-item:last-child {
+  border-radius: 0 !important;
 }
 
 .popup-menu-ornament {
@@ -1298,7 +1317,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Media Controls */
 .message-media-control {
   padding: 0 18px;
-  margin: 12px 0;
+  margin: 18px 0;
   border-radius: 3px;
   color: #dddddd;
 }
@@ -2297,12 +2316,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
 }
 
-#panel .panel-button:active.clock-display, #panel .panel-button:overview.clock-display, #panel .panel-button:checked.clock-display, #panel .panel-button:focus.clock-display {
+#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:checked, #panel .panel-button.clock-display:focus {
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: inset 0 -2px #ec271d !important;
 }
 
-#panel .panel-button:active.clock-display .clock, #panel .panel-button:overview.clock-display .clock, #panel .panel-button:checked.clock-display .clock, #panel .panel-button:focus.clock-display .clock {
+#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:checked .clock, #panel .panel-button.clock-display:focus .clock {
   background-color: transparent;
   box-shadow: none !important;
 }
@@ -2317,7 +2336,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
-#panel .panel-button#panelActivities {
+#panel #panelActivities.panel-button {
   -natural-hpadding: 18px;
 }
 
@@ -2327,7 +2346,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -minimum-hpadding: 18px !important;
 }
 
-#panel.unlock-screen .panel-button:hover.clock-display .clock, #panel.unlock-screen .panel-button:active.clock-display .clock, #panel.unlock-screen .panel-button:overview.clock-display .clock, #panel.unlock-screen .panel-button:focus.clock-display .clock, #panel.unlock-screen .panel-button:checked.clock-display .clock, #panel.login-screen .panel-button:hover.clock-display .clock, #panel.login-screen .panel-button:active.clock-display .clock, #panel.login-screen .panel-button:overview.clock-display .clock, #panel.login-screen .panel-button:focus.clock-display .clock, #panel.login-screen .panel-button:checked.clock-display .clock, #panel:overview .panel-button:hover.clock-display .clock, #panel:overview .panel-button:active.clock-display .clock, #panel:overview .panel-button:overview.clock-display .clock, #panel:overview .panel-button:focus.clock-display .clock, #panel:overview .panel-button:checked.clock-display .clock {
+#panel.unlock-screen .panel-button.clock-display:hover .clock, #panel.unlock-screen .panel-button.clock-display:active .clock, #panel.unlock-screen .panel-button.clock-display:overview .clock, #panel.unlock-screen .panel-button.clock-display:focus .clock, #panel.unlock-screen .panel-button.clock-display:checked .clock, #panel.login-screen .panel-button.clock-display:hover .clock, #panel.login-screen .panel-button.clock-display:active .clock, #panel.login-screen .panel-button.clock-display:overview .clock, #panel.login-screen .panel-button.clock-display:focus .clock, #panel.login-screen .panel-button.clock-display:checked .clock, #panel:overview .panel-button.clock-display:hover .clock, #panel:overview .panel-button.clock-display:active .clock, #panel:overview .panel-button.clock-display:overview .clock, #panel:overview .panel-button.clock-display:focus .clock, #panel:overview .panel-button.clock-display:checked .clock {
   box-shadow: none;
 }
 

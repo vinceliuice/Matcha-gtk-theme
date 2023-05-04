@@ -10,7 +10,7 @@
   spacing: $base_padding;
   &:ltr { padding-left: $base_padding; }
   &:rtl { padding-right: $base_padding; }
-  .datemenu-displays-box {spacing: $base_padding;}
+  .datemenu-displays-box { spacing: $base_padding; }
 }
 
 /* today button (the date) */
