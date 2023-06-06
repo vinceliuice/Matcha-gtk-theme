@@ -4587,43 +4587,44 @@ window {
   outline: none;
 
   &.csd {
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 0 3px 5px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.15)),
-                0 8px 8px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.15)),
-                0 0 0 1px $_wm_border;
-
     margin: 0;
+    border-radius: 3px;
+    transition: none;
+    box-shadow: 0 3px 5px if($variant == 'light', rgba(black, 0.15), rgba(black, 0.2)),
+                0 5px 12px if($variant == 'light', rgba(black, 0.15), rgba(black, 0.2)),
+                0 0 0 1px $_wm_border;
 
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents don't
       // change when we go to backdrop, to prevent jumping windows
-      box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
-                  0 3px 3px 0 if($variant == 'light', rgba(black, 0.06), rgba(black, 0.13)),
+      box-shadow: 0 3px 5px if($variant == 'light', rgba(black, 0.15), rgba(black, 0.2)),
+                  0 5px 12px if($variant == 'light', rgba(black, 0), rgba(black, 0)),
                   0 0 0 1px $_wm_border;
       transition: $backdrop_transition;
     }
 
-    &.dialog.message {
-      border-radius: 3px;
+    &.maximized,
+    &.fullscreen,
+    &.tiled,
+    &.tiled-top,
+    &.tiled-left,
+    &.tiled-right,
+    &.tiled-bottom {
+      border-radius: 0;
     }
 
-    &.solid-csd {
-      border: 1px solid $header_bg;
-      border-radius: 0;
-      margin: 0;
-      background-color: $header_bg;
+    &.maximized,
+    &.fullscreen {
       box-shadow: none;
     }
   }
 
-  &.maximized,
-  &.fullscreen,
-  &.tiled,
-  &.tiled-top,
-  &.tiled-left,
-  &.tiled-right,
-  &.tiled-bottom {
+  &.solid-csd {
+    border: 1px solid $header_bg;
     border-radius: 0;
+    margin: 0;
+    background-color: $header_bg;
+    box-shadow: none;
   }
 }
 

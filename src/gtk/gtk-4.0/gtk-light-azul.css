@@ -1306,15 +1306,15 @@ stacksidebar row.needs-attention > label:dir(rtl), stackswitcher > button.needs-
   box-shadow: none;
 }
 
-.linked.path-bar:not(.vertical) > button + button {
+.linked:not(.vertical).path-bar > button + button {
   border-left-style: none;
 }
 
-.linked.path-bar:not(.vertical) > button:hover:not(:checked):not(:active):not(:only-child):first-child:hover {
+.linked:not(.vertical).path-bar > button:hover:not(:checked):not(:active):not(:only-child):first-child:hover {
   box-shadow: none;
 }
 
-.linked.path-bar:not(.vertical) > button:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
+.linked:not(.vertical).path-bar > button:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
   box-shadow: none;
 }
 
@@ -1831,7 +1831,7 @@ list > row button.image-button:not(.flat):checked {
 }
 
 popover.menu box.circular-buttons button.suggested-action.circular.image-button.model,
-list > row button.image-button.suggested-action:not(.flat) {
+list > row button.image-button:not(.flat).suggested-action {
   background-clip: border-box;
   color: white;
   background-color: #3498db;
@@ -1839,20 +1839,20 @@ list > row button.image-button.suggested-action:not(.flat) {
 }
 
 popover.menu box.circular-buttons button.suggested-action.circular.image-button.model,
-list > row button.image-button.suggested-action:not(.flat) {
+list > row button.image-button:not(.flat).suggested-action {
   outline: 0 solid transparent;
   outline-offset: 4px;
 }
 
 popover.menu box.circular-buttons button.suggested-action.circular.image-button.model:focus:focus-visible,
-list > row button.image-button.suggested-action:not(.flat):focus:focus-visible {
+list > row button.image-button:not(.flat).suggested-action:focus:focus-visible {
   outline-color: rgba(0, 0, 0, 0.3);
   outline-width: 2px;
   outline-offset: -2px;
 }
 
 popover.menu box.circular-buttons button.destructive-action.circular.image-button.model,
-list > row button.image-button.destructive-action:not(.flat) {
+list > row button.image-button:not(.flat).destructive-action {
   background-clip: border-box;
   color: white;
   background-color: #db5b5b;
@@ -1860,13 +1860,13 @@ list > row button.image-button.destructive-action:not(.flat) {
 }
 
 popover.menu box.circular-buttons button.destructive-action.circular.image-button.model,
-list > row button.image-button.destructive-action:not(.flat) {
+list > row button.image-button:not(.flat).destructive-action {
   outline: 0 solid transparent;
   outline-offset: 4px;
 }
 
 popover.menu box.circular-buttons button.destructive-action.circular.image-button.model:focus:focus-visible,
-list > row button.image-button.destructive-action:not(.flat):focus:focus-visible {
+list > row button.image-button:not(.flat).destructive-action:focus:focus-visible {
   outline-color: rgba(0, 0, 0, 0.3);
   outline-width: 2px;
   outline-offset: -2px;
@@ -3201,13 +3201,13 @@ treeview.view:drop(active) {
   border-color: #30648b;
 }
 
-columnview.view.after:drop(active),
-treeview.view.after:drop(active) {
+columnview.view:drop(active).after,
+treeview.view:drop(active).after {
   border-top-style: none;
 }
 
-columnview.view.before:drop(active),
-treeview.view.before:drop(active) {
+columnview.view:drop(active).before,
+treeview.view:drop(active).before {
   border-bottom-style: none;
 }
 
@@ -3218,13 +3218,13 @@ treeview.view > dndtarget:drop(active) {
   border-color: #196090;
 }
 
-columnview.view > dndtarget.after:drop(active),
-treeview.view > dndtarget.after:drop(active) {
+columnview.view > dndtarget:drop(active).after,
+treeview.view > dndtarget:drop(active).after {
   border-top-style: none;
 }
 
-columnview.view > dndtarget.before:drop(active),
-treeview.view > dndtarget.before:drop(active) {
+columnview.view > dndtarget:drop(active).before,
+treeview.view > dndtarget:drop(active).before {
   border-bottom-style: none;
 }
 
@@ -3945,12 +3945,12 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > sli
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) > range > trough > slider {
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal > range > trough > slider {
   margin: 0 2px;
   min-width: 40px;
 }
 
-scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) > range > trough > slider {
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical > range > trough > slider {
   margin: 2px 0;
   min-height: 40px;
 }
@@ -4915,7 +4915,7 @@ row.activatable:selected:active {
   color: #2b2f3b;
 }
 
-row.activatable.has-open-popup:selected, row.activatable:selected:hover {
+row.activatable:selected.has-open-popup, row.activatable:selected:hover {
   background-color: rgba(26, 28, 36, 0.1352);
 }
 
@@ -5375,12 +5375,12 @@ filechooserbutton:drop(active) {
   background-color: #f7f7f7;
 }
 
-.sidebar:not(separator):dir(ltr), .sidebar.left:not(separator), .sidebar.left:not(separator):dir(rtl) {
+.sidebar:not(separator):dir(ltr), .sidebar:not(separator).left, .sidebar:not(separator).left:dir(rtl) {
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   border-left-style: none;
 }
 
-.sidebar:not(separator):dir(rtl), .sidebar.right:not(separator) {
+.sidebar:not(separator):dir(rtl), .sidebar:not(separator).right {
   border-left: 1px solid rgba(0, 0, 0, 0.15);
   border-right-style: none;
 }
@@ -5721,11 +5721,11 @@ windowcontrols {
   border-spacing: 6px;
 }
 
-windowcontrols.start:not(.empty):dir(ltr), windowcontrols.end:not(.empty):dir(rtl) {
+windowcontrols:not(.empty).start:dir(ltr), windowcontrols:not(.empty).end:dir(rtl) {
   margin-right: 7px;
 }
 
-windowcontrols.start:not(.empty):dir(rtl), windowcontrols.end:not(.empty):dir(ltr) {
+windowcontrols:not(.empty).start:dir(rtl), windowcontrols:not(.empty).end:dir(ltr) {
   margin-left: 7px;
 }
 
@@ -6081,30 +6081,31 @@ window {
 }
 
 window.csd {
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1), 0 8px 8px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.15);
   margin: 0;
+  border-radius: 3px;
+  transition: none;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
 window.csd:backdrop {
-  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0), 0 0 0 1px rgba(0, 0, 0, 0.15);
   transition: 200ms ease-out;
 }
 
-window.csd.dialog.message {
-  border-radius: 3px;
+window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-top, window.csd.tiled-left, window.csd.tiled-right, window.csd.tiled-bottom {
+  border-radius: 0;
 }
 
-window.csd.solid-csd {
+window.csd.maximized, window.csd.fullscreen {
+  box-shadow: none;
+}
+
+window.solid-csd {
   border: 1px solid #f2f2f2;
   border-radius: 0;
   margin: 0;
   background-color: #f2f2f2;
   box-shadow: none;
-}
-
-window.maximized, window.fullscreen, window.tiled, window.tiled-top, window.tiled-left, window.tiled-right, window.tiled-bottom {
-  border-radius: 0;
 }
 
 cursor-handle {
@@ -6463,7 +6464,7 @@ splitbutton.suggested-action > button:checked:hover, splitbutton.suggested-actio
   background-image: image(rgba(0, 0, 0, 0.05));
 }
 
-splitbutton.suggested-action > button.keyboard-activating:checked, splitbutton.suggested-action > menubutton > button.keyboard-activating:checked, splitbutton.destructive-action > button.keyboard-activating:checked, splitbutton.destructive-action > menubutton > button.keyboard-activating:checked, splitbutton.opaque > button.keyboard-activating:checked, splitbutton.opaque > menubutton > button.keyboard-activating:checked, menubutton.suggested-action > button.keyboard-activating:checked, menubutton.destructive-action > button.keyboard-activating:checked, menubutton.opaque > button.keyboard-activating:checked, button.suggested-action.keyboard-activating:checked, button.destructive-action.keyboard-activating:checked, button.opaque.keyboard-activating:checked, splitbutton.suggested-action > button:checked:active, splitbutton.suggested-action > menubutton > button:checked:active, splitbutton.destructive-action > button:checked:active, splitbutton.destructive-action > menubutton > button:checked:active, splitbutton.opaque > button:checked:active, splitbutton.opaque > menubutton > button:checked:active, menubutton.suggested-action > button:checked:active, menubutton.destructive-action > button:checked:active, menubutton.opaque > button:checked:active, button.suggested-action:checked:active, button.destructive-action:checked:active, button.opaque:checked:active {
+splitbutton.suggested-action > button:checked.keyboard-activating, splitbutton.suggested-action > menubutton > button:checked.keyboard-activating, splitbutton.destructive-action > button:checked.keyboard-activating, splitbutton.destructive-action > menubutton > button:checked.keyboard-activating, splitbutton.opaque > button:checked.keyboard-activating, splitbutton.opaque > menubutton > button:checked.keyboard-activating, menubutton.suggested-action > button:checked.keyboard-activating, menubutton.destructive-action > button:checked.keyboard-activating, menubutton.opaque > button:checked.keyboard-activating, button.suggested-action:checked.keyboard-activating, button.destructive-action:checked.keyboard-activating, button.opaque:checked.keyboard-activating, splitbutton.suggested-action > button:checked:active, splitbutton.suggested-action > menubutton > button:checked:active, splitbutton.destructive-action > button:checked:active, splitbutton.destructive-action > menubutton > button:checked:active, splitbutton.opaque > button:checked:active, splitbutton.opaque > menubutton > button:checked:active, menubutton.suggested-action > button:checked:active, menubutton.destructive-action > button:checked:active, menubutton.opaque > button:checked:active, button.suggested-action:checked:active, button.destructive-action:checked:active, button.opaque:checked:active {
   background-image: image(rgba(0, 0, 0, 0.3));
 }
 
@@ -6848,7 +6849,7 @@ row.entry.activatable.focused {
   outline: 2px solid #3498db;
 }
 
-row.entry.activatable.focused:not(:selected):hover, row.entry.activatable.focused:not(:selected):active {
+row.entry:not(:selected).activatable.focused:hover, row.entry:not(:selected).activatable.focused:active {
   background-color: transparent;
 }
 
@@ -7585,15 +7586,15 @@ preferencesgroup > box button.background-preview-button.toggle:checked {
   color: rgba(46, 49, 61, 0.45);
 }
 
-.nautilus-window .navigation-sidebar > row.sidebar-row.has-open-popup:selected, .nautilus-window .navigation-sidebar > row.sidebar-row:selected, .nautilus-window .navigation-sidebar > row.sidebar-row:selected:hover, .nautilus-window .navigation-sidebar > row.sidebar-row:active:hover {
+.nautilus-window .navigation-sidebar > row.sidebar-row:selected.has-open-popup, .nautilus-window .navigation-sidebar > row.sidebar-row:selected, .nautilus-window .navigation-sidebar > row.sidebar-row:selected:hover, .nautilus-window .navigation-sidebar > row.sidebar-row:active:hover {
   border-radius: 0;
 }
 
-.nautilus-window .navigation-sidebar > row.sidebar-row.has-open-popup:selected label, .nautilus-window .navigation-sidebar > row.sidebar-row:selected label, .nautilus-window .navigation-sidebar > row.sidebar-row:selected:hover label, .nautilus-window .navigation-sidebar > row.sidebar-row:active:hover label {
+.nautilus-window .navigation-sidebar > row.sidebar-row:selected.has-open-popup label, .nautilus-window .navigation-sidebar > row.sidebar-row:selected label, .nautilus-window .navigation-sidebar > row.sidebar-row:selected:hover label, .nautilus-window .navigation-sidebar > row.sidebar-row:active:hover label {
   color: #ffffff;
 }
 
-.nautilus-window .navigation-sidebar > row.sidebar-row.has-open-popup:selected .sidebar-icon, .nautilus-window .navigation-sidebar > row.sidebar-row:selected .sidebar-icon, .nautilus-window .navigation-sidebar > row.sidebar-row:selected:hover .sidebar-icon, .nautilus-window .navigation-sidebar > row.sidebar-row:active:hover .sidebar-icon {
+.nautilus-window .navigation-sidebar > row.sidebar-row:selected.has-open-popup .sidebar-icon, .nautilus-window .navigation-sidebar > row.sidebar-row:selected .sidebar-icon, .nautilus-window .navigation-sidebar > row.sidebar-row:selected:hover .sidebar-icon, .nautilus-window .navigation-sidebar > row.sidebar-row:active:hover .sidebar-icon {
   color: inherit;
 }
 
