@@ -3,9 +3,10 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 #urlbar {
-	--urlbar-height: 30.00px !important;
-	--urlbar-min-height: 30.00px !important;
-	--urlbar-toolbar-height: 30.00px !important;
+	--urlbar-height: 28px !important;
+	--urlbar-min-height: 28px !important;
+	--urlbar-container-height: 28px !important;
+	--urlbar-toolbar-height: 28px !important;
 	--urlbar-icon-border-radius: 1000px !important;
 	--urlbar-icon-padding: 6px !important;
 }
@@ -23,7 +24,7 @@ toolbarspring {
 	color: var(--gnome-header-entry-color) !important;
 	fill: var(--gnome-header-entry-color) !important;
 	border-radius: 15px !important;
-	padding: 0 0 !important;
+	padding: 0 !important;
 	outline: 1px solid var(--gnome-header-entry-border-color) !important;
 	outline-offset: -1px;
 	transition: none;
@@ -35,11 +36,16 @@ toolbarspring {
 }
 
 #urlbar-background {
-	--urlbar-container-height: 30.00px !important;
+	--urlbar-container-height: 28px !important;
 	box-shadow: none !important;
 	border: none !important;
 	background: transparent !important;
 	border-radius: 15px !important;
+}
+
+#urlbar-container[breakout] {
+	position: relative;
+	min-height: 28px !important;
 }
 
 #urlbar[breakout][breakout-extend] {
@@ -51,18 +57,20 @@ toolbarspring {
 	background: var(--gnome-entry-background) !important;
 	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	outline-offset: -2px;
-	padding: 0 1px !important;
+	padding: 0 !important;
 	transition: all .1s ease;
 }
 
 #urlbar[breakout][breakout-extend][open] {
 	height: auto !important;
 	max-height: unset !important;
+	padding: 0 !important;
 }
 
 #urlbar[breakout][breakout-extend] #urlbar-input-container {
-	height: 30px !important;
-	max-height: 30px !important;
+	height: 28px !important;
+	max-height: 28px !important;
+	min-height: 28px !important;
 	padding: 0 !important;
 }
 
@@ -152,5 +160,5 @@ toolbarspring {
 }
 
 .urlbar-page-action, #urlbar-go-button, .search-go-button {
-	padding: 0 6px !important;
+	padding: 3px 8px 3px 4px !important;
 }

@@ -5,9 +5,14 @@
 
 /* Headerbar */
 #nav-bar {
-	padding: 6px 3px !important;
+	min-height: 0 !important;
+	padding: 6px !important;
 	color: var(--gnome-headerbar-color) !important;
 	background: var(--gnome-headerbar-background) !important;
+}
+
+#nav-bar-customization-target {
+	min-height: 0 !important;
 }
 
 /* Headerbar CSD colors */

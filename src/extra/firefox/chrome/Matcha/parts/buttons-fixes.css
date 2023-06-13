@@ -72,8 +72,10 @@
 
 /* Remove Burger button's left separator */
 #PanelUI-button {
+	height: 28px !important;
 	border: 0 !important;
 	margin: 0 !important;
+	padding: 0 !important;
 	padding-inline-start: 0 !important;
 }
 

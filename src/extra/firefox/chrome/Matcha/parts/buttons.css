@@ -50,7 +50,6 @@
 }
 
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton) {
-	margin: 0 2px !important;
 	min-width: 36px !important;
 	--toolbarbutton-inner-padding: 0 !important;
 }

@@ -4,12 +4,19 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Style menus */
-menupopup {
+menupopup, panel {
+	-moz-appearance: none !important;
 	--panel-background: var(--gnome-menu-background) !important;
+	--panel-border-radius: 3px !important;
+	--panel-padding: 6px !important;
+	--panel-shadow: var(--gnome-popover-shadow) !important;
+	--panel-shadow-margin: 3px !important;
+	--panel-separator-color: var(--gnome-popover-separator-color) !important;
 	--panel-border-color: var(--gnome-menu-border-color) !important;
 	--arrowpanel-border-radius: 3px !important;
 	--arrowpanel-background: var(--gnome-menu-background) !important;
-	--arrowpanel-border-color: var(--gnome-menu-border-color) !important;
+	--arrowpanel-border-color: transparent !important;
+	color: var(--gnome-toolbar-color) !important;
 }
 
 menupopup menupopup {
@@ -23,7 +30,6 @@ menubar > menu > menupopup {
 
 menuitem, menupopup menu {
 	-moz-appearance: none !important;
-	padding: 4px 8px !important;
 }
 
 menuitem[type="checkbox"] image, menuitem[type="radio"] image {
@@ -51,14 +57,14 @@ panel {
 #PlacesToolbar menupopup[placespopup="true"]::part(content), #PlacesToolbar menupopup[placespopup="true"]::part(arrowscrollbox), #PlacesToolbar menupopup {
 	background: none !important;
 	padding: 3px 4px 6px !important;
-	margin: 0 0 0 -6px !important;
+	margin: -5px 0 0 -8px !important;
 	border: none !important;
 	box-shadow: none !important;
 }
 
 #PlacesToolbar menuitem, #PlacesToolbar menu, .subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
 	appearance: none;
-	margin: 1px 6px !important;
+	margin: 0 !important;
 	min-height: 24px;
 	padding: 4px 8px !important;
 	border-radius: 2px !important;
