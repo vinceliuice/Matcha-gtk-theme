@@ -23,6 +23,10 @@ $header_asset_suffix: if($header == 'dark', '-dark', ''); // use dark assets in 
   }
 }
 
+#desktopwindow.background {
+  background-color: transparent;
+}
+
 dnd {
   color: $fg_color;
 }
