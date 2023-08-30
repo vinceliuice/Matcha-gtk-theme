@@ -30,6 +30,10 @@
   -gtk-icon-shadow: none;
 }
 
+#desktopwindow.background {
+  background-color: transparent;
+}
+
 dnd {
   color: #bbc3c8;
 }
