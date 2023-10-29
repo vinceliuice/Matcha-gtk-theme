@@ -1864,12 +1864,9 @@ window.thunar toolbar button:active, window.thunar .inline-toolbar button:active
 }
 
 window.thunar toolbar button:disabled, window.thunar .inline-toolbar button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled, .nemo-window .primary-toolbar button:disabled, headerbar button:disabled {
+  color: rgba(198, 203, 207, 0.45);
   background-color: transparent;
   border-color: transparent;
-}
-
-window.thunar toolbar button:disabled label, window.thunar .inline-toolbar button:disabled label, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled label, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled label, .nemo-window .primary-toolbar button:disabled label, headerbar button:disabled label, window.thunar toolbar button:disabled, window.thunar .inline-toolbar button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled, .nemo-window .primary-toolbar button:disabled, headerbar button:disabled {
-  color: rgba(198, 203, 207, 0.45);
 }
 
 window.thunar toolbar button:disabled:active, window.thunar .inline-toolbar button:disabled:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled:active, .nemo-window .primary-toolbar button:disabled:active, headerbar button:disabled:active, window.thunar toolbar button:disabled:checked, window.thunar .inline-toolbar button:disabled:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled:checked, .nemo-window .primary-toolbar button:disabled:checked, headerbar button:disabled:checked {
@@ -2110,12 +2107,9 @@ headerbar button.suggested-action:active, headerbar button.suggested-action:chec
 }
 
 headerbar button.suggested-action.flat:disabled, headerbar button.suggested-action:disabled {
+  color: rgba(198, 203, 207, 0.45);
   background-color: transparent;
   border-color: transparent;
-}
-
-headerbar button.suggested-action.flat:disabled label, headerbar button.suggested-action.flat:disabled, headerbar button.suggested-action:disabled label, headerbar button.suggested-action:disabled {
-  color: rgba(198, 203, 207, 0.45);
 }
 
 headerbar button.suggested-action:backdrop,
@@ -2152,12 +2146,9 @@ headerbar button.destructive-action:active, headerbar button.destructive-action:
 }
 
 headerbar button.destructive-action.flat:disabled, headerbar button.destructive-action:disabled {
+  color: rgba(198, 203, 207, 0.45);
   background-color: transparent;
   border-color: transparent;
-}
-
-headerbar button.destructive-action.flat:disabled label, headerbar button.destructive-action.flat:disabled, headerbar button.destructive-action:disabled label, headerbar button.destructive-action:disabled {
-  color: rgba(198, 203, 207, 0.45);
 }
 
 headerbar button.destructive-action:backdrop,

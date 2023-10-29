@@ -1561,14 +1561,14 @@ dialog.background.csd {
     border-width: 1px 0 0 1px;
   }
 
-    button {
-        border: none;
-        border-radius: 100px;
-        min-height: 0;
-        min-width: 0;
-        padding: 0;
-        margin-right: 6px;
-        -gtk-icon-shadow: none;
-        @extend %selected-button;
-    }
+  button {
+    border: none;
+    border-radius: 100px;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin-right: 6px;
+    -gtk-icon-shadow: none;
+    @extend %selected-button;
+  }
 }

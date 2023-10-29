@@ -25,30 +25,89 @@
 %dark_sidebar_scrollbar {
   border-color: darken($dark_sidebar_bg, 5%);
 
-  &.overlay-indicator:not(.dragging):not(.hovering) slider {
+  &.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider {
     background-color: lighten($dark_sidebar_fg, 15%);
     border: 1px solid rgba(black, 0.3);
   }
 
-  slider {
-    background-color: rgba(lighten($dark_sidebar_fg, 15%), 0.7);
+  > range > trough {
+    background-color: darken($dark_sidebar_bg, 5%);
 
-    &:hover { background-color: lighten($dark_sidebar_fg, 20%); }
-    &:hover:active { background-color: $selected_bg_color; }
+    > slider {
+      background-color: rgba(lighten($dark_sidebar_fg, 15%), 0.7);
+  
+      &:hover { background-color: lighten($dark_sidebar_fg, 20%); }
+      &:hover:active { background-color: $selected_bg_color; }
+  
+      &:disabled { background-color: transparent; }
+    }
+  }
+}
 
-    &:disabled { background-color: transparent; }
+%dark_sidebar_list {
+  > row {
+    color: $dark_sidebar_fg;
+
+    .sidebar-icon { color: rgba($dark_sidebar_fg, 0.75); }
+
+    &:hover {
+      background-color: $dark_sidebar_hover_color;
+      box-shadow: inset 3px 0 lighten($selected_bg_color, 10%);
+    }
+
+    &:active {
+      background-color: $dark_sidebar_active_color;
+      box-shadow: inset 3px 0 lighten($selected_bg_color, 10%);
+    }
+
+    &:selected {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+  
+      &:hover {
+        background-color: $alt_selected_bg_color;
+        color: $selected_fg_color;
+      }
+
+      .sidebar-icon { color: rgba($selected_fg_color, 0.75); }
+    }
+
+    &:disabled {
+      color: rgba($dark_sidebar_fg, 0.45);
+    }
+
+    &:not(:selected) button.sidebar-button {
+      color: $dark_sidebar_fg;
+
+      &:hover { @include button(header-hover); }
+      &:active { @include button(header-active); }
+
+      &:not(:hover):not(:active) > image { opacity: 0.5 };
+    }
+
+    &.sidebar-new-bookmark-row {
+      color: $selected_bg_color;
+
+      .sidebar-icon { color: inherit; }
+    }
+
+    &:backdrop { opacity: 0.75; }
+
+    &:drop(active):not(:disabled) {
+      color: $drop_target_color;
+
+      &:selected {
+        color: $selected_fg_color;
+        background-color: $drop_target_color;
+      }
+    }
   }
 
-  trough { background-color: darken($dark_sidebar_bg, 5%); }
+  separator { background-color: transparent; }
 }
 
 .nautilus-window {
   headerbar {
-    // * { // reset
-    //   margin-top: 0;
-    //   margin-bottom: 0;
-    // }
-
     splitbutton {
       border-radius: 2px;
       border: 1px solid transparent;
@@ -67,70 +126,28 @@
     }
   }
 
-  .navigation-sidebar {
+  flap .navigation-sidebar {
     background-color: $dark_sidebar_bg;
     color: $dark_sidebar_fg;
     padding: 0;
+    @extend %dark_sidebar_list;
 
-    & > row.sidebar-row {
+    > row.sidebar-row {
       margin: 0;
       border: none;
       border-radius: 0;
-      color: $dark_sidebar_fg;
-
-      .sidebar-icon { color: rgba($dark_sidebar_fg, 0.6); }
-
-      &.has-open-popup,
-      &:hover {
-        border-radius: 0;
-        background-color: rgba($dark_sidebar_fg, 0.15);
-        box-shadow: inset 3px 0 lighten($selected_bg_color, 10%);
-      }
-
-      &:disabled {
-        &, label, image { color: rgba($dark_sidebar_fg, 0.45); }
-      }
-
-      &:selected.has-open-popup,
-      &:selected, &:selected:hover, &:active:hover {
-        @extend %selected_items;
-        border-radius: 0;
-
-        label { color: $selected_fg_color; }
-
-        .sidebar-icon { color: inherit; }
-      }
-
-      &:not(:selected) button.sidebar-button {
-        color: $dark_sidebar_fg;
-
-        &:hover { @include button(header-hover); }
-        &:active { @include button(header-active); }
-
-        &:not(:hover):not(:active) > image { opacity: 0.5 };
-      }
-
-      &.sidebar-new-bookmark-row {
-        color: $selected_bg_color;
-
-        .sidebar-icon { color: inherit; }
-      }
-
-     &:backdrop { opacity: 0.75; }
-
-      &:drop(active):not(:disabled) {
-        &, label, .sidebar-icon { color: $drop_target_color; }
-
-        &:selected {
-          &, label, .sidebar-icon { color: $selected_fg_color; }
-          background-color: $drop_target_color;
-        }
-      }
     }
+  }
 
-    separator { background-color: transparent; }
+  .sidebar-pane .navigation-sidebar {
+    padding: 0;
+    @extend %dark_sidebar_list;
 
-    scrollbar { @extend %dark_sidebar_scrollbar }
+    > row.sidebar-row {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+    }
   }
 
   @if $header == 'dark' and $variant == 'light' {
@@ -139,6 +156,8 @@
         background-color: transparent;
         min-width: 0;
       }
+
+      scrollbar { @extend %dark_sidebar_scrollbar }
     }
   }
 }
@@ -165,7 +184,7 @@
   }
 }
 
-.nautilus-list-view.view {
+.nautilus-list-view {
   listview.view > row.activatable {
     border-radius: 2px;
     border: 1px solid transparent;
@@ -183,6 +202,15 @@
       background-color: rgba($selected_bg_color, 0.45);
       border-color: $selected_bg_color;
       color: mix($fg_color, $selected_bg_color, 50%);
+    }
+  }
+}
+
+.content-pane {
+  .nautilus-grid-view,
+  .nautilus-list-view {
+    &, .view {
+      background-color: transparent;
     }
   }
 }
@@ -269,6 +297,167 @@
       border: none;
       margin: 2px 1px;
       @extend %nautilus_dir_buttons;
+    }
+  }
+}
+
+// reset
+%content_pane_button {
+  &:hover {
+    color: $fg_color;
+    background-color: rgba($fg_color, 0.1);
+  }
+
+  &:active {
+    color: $fg_color;
+    background-color: rgba($fg_color, 0.2);
+  }
+
+  &:checked {
+    color: $fg_color;
+    background-color: rgba($fg_color, 0.15);
+  }
+}
+
+@if $variant == 'light' and $header == 'dark' {
+  .content-pane {
+    #NautilusQueryEditor { // search entry
+      > menubutton > button {
+        @extend %content_pane_button;
+      }
+    }
+  
+    #NautilusPathBar {
+      background-color: rgba($fg_color, 0.1);
+      border: 1px solid $borders_color;
+  
+      #NautilusPathButton {
+        @extend %content_pane_button;
+  
+        label.dim-label {
+          color: rgba($fg_color, 0.75);
+  
+          &:hover, &:active, &:checked {
+            color: $fg_color;
+          }
+        }
+  
+        &.current-dir {
+          color: $fg_color;
+        }
+      }
+  
+      > menubutton {
+        > button {
+          @extend %content_pane_button;
+        }
+      }
+    }
+  }
+}
+
+.nautilus-window .floating-bar {
+  padding: 1px;
+  background-color: $base_color;
+  color: $fg_color;
+  border-radius: 2px 2px 0 0;
+  border: 1px solid $borders_color;
+  box-shadow: none;
+
+  &.bottom.left {
+    border-top-left-radius: 0;
+    border-width: 1px 1px 0 0;
+  }
+
+  &.bottom.right {
+    border-top-right-radius: 0;
+    border-width: 1px 0 0 1px;
+  }
+
+  button {
+    border: none;
+    border-radius: 100px;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin-right: 6px;
+    -gtk-icon-shadow: none;
+    @extend %selected-button;
+  }
+}
+
+//
+// Gnome Calendar
+//
+
+datechooser {
+  .current-week {
+    background-color: rgba($fg_color, 0.05);
+  }
+
+  label.weeknum {
+    color: rgba($fg_color, 0.75);
+  }
+
+  label.weekday {
+    color: $insensitive_fg_color;
+  }
+
+  button.day {
+    border: none;
+
+    &:selected {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+    }
+  }
+
+  navigator > button.flat {
+    padding: 0;
+    min-height: 32px;
+    min-width: 32px;
+  }
+}
+
+agenda-view list.background {
+  background-color: transparent;
+}
+
+menubutton.flat.popup.sources-button {
+  margin: 0;
+
+  > button {
+    margin: 0;
+    border-radius: 0;
+    padding: 0 12px;
+
+    .title {
+      font-size: small;
+      font-weight: normal;
+    }
+
+    .title, .subtitle {
+      padding: 2px 0 2px 6px;
+    }
+
+    image.calendar-color-image {
+      -gtk-icon-size: 8px;
+    }
+  }
+}
+
+.sidebar-pane {
+  datechooser {
+    .current-week {
+      background-color: rgba($sidebar_pane_fg, 0.05);
+    }
+
+    label.weeknum {
+      color: rgba($sidebar_pane_fg, 0.75);
+    }
+
+    label.weekday {
+      color: rgba($sidebar_pane_fg, 0.45);
     }
   }
 }

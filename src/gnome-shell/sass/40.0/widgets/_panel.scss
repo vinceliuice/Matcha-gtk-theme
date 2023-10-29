@@ -110,6 +110,17 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
 
     &#panelActivities {
       -natural-hpadding: $base_padding * 3;
+
+      & StBoxLayout {
+        spacing: 5px;
+      }
+
+      & .workspace-dot {
+        border-radius: 999px;
+        min-width: 8px;
+        min-height: 8px;
+        background-color: $panel_fg_color;
+      }
     }
   }
 

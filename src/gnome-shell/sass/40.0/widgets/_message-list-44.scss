@@ -145,12 +145,12 @@
 
   // colors are lightened since the media controls are in a card
   &:hover {
-    background-color: lighten($hover_bg_color, 5%);
+    background-color: $hover_bg_color;
     color: $fg_color;
   }
 
   &:active {
-    background-color: lighten($active_bg_color, 5%);
+    background-color: $active_bg_color;
     color: $fg_color;
   }
 
@@ -169,14 +169,15 @@
 .media-message-cover-icon {
   icon-size: $base_icon_size * 3 !important; // 48px
   border-radius: $base_border_radius;
+  padding: 0;
 
   // when there is no artwork
   &.fallback {
-    color: darken($fg_color, 17%);
-    background-color: $bg_color;
-    border: 1px solid transparent;
+    color: rgba($fg_color, 0.75);
+    background-color: rgba($fg_color, 0.08);
+    border: none;
     border-radius: $base_border_radius;
     icon-size: 32px !important; // 32px
-    padding: ($base_padding * 2 + 2px); // 16px
+    padding: $base_padding * 1.5; // 16px
   }
 }

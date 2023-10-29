@@ -1650,7 +1650,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .audio-selection-device:hover, .audio-selection-device:focus {
-  background-color: #ededed;
+  background-color: rgba(54, 54, 54, 0.1);
 }
 
 .audio-selection-device:active {
@@ -1963,6 +1963,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button#panelActivities {
   -natural-hpadding: 18px;
+}
+
+#panel .panel-button#panelActivities StBoxLayout {
+  spacing: 5px;
+}
+
+#panel .panel-button#panelActivities .workspace-dot {
+  border-radius: 999px;
+  min-width: 8px;
+  min-height: 8px;
+  background-color: #dddddd;
 }
 
 #panel Gjs_status_keyboard_InputSourceIndicator.panel-button,

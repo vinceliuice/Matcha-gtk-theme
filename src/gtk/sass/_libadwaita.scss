@@ -841,9 +841,39 @@ viewswitcherbar actionbar > revealer > box {
 }
 
 // AdwViewSwitcherTitle
-viewswitchertitle viewswitcher {
-  margin-left: 12px;
-  margin-right: 12px;
+viewswitchertitle {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  viewswitcher {
+    margin-left: 12px;
+    margin-right: 12px;
+
+    &.narrow {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      button.toggle {
+        > stack > box {
+          &.narrow {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-spacing: 0;
+          }
+        }
+      }
+    }
+
+    &.wide {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  windowtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 // AdwIndicatorBin
@@ -1140,5 +1170,351 @@ preferencesgroup > box {
     &:checked {
       outline-color: $selected_bg_color;
     }
+  }
+}
+
+
+// Transition shadows
+flap,
+leaflet,
+navigation-view,
+overlay-split-view {
+  @include transition-shadows($borders_color);
+}
+
+toolbarview.undershoot-top scrolledwindow {
+  @include undershoot(top);
+}
+
+toolbarview.undershoot-bottom scrolledwindow {
+  @include undershoot(bottom);
+}
+
+// Sidebar
+.unfolded stacksidebar.sidebar { border: none; }
+
+%sidebar_pane_list {
+  > row {
+    color: $dark_sidebar_fg;
+
+    .sidebar-icon { color: rgba($dark_sidebar_fg, 0.6); }
+
+    &:hover {
+      color: $dark_sidebar_fg;
+      background-color: $dark_sidebar_hover_color;
+    }
+
+    &:active {
+      color: $dark_sidebar_fg;
+      background-color: $dark_sidebar_active_color;
+    }
+
+    &:selected {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+  
+      &:hover {
+        background-color: $alt_selected_bg_color;
+        color: $selected_fg_color;
+      }
+    }
+
+    &:disabled {
+      color: rgba($dark_sidebar_fg, 0.45);
+    }
+
+    &:not(:selected) button.sidebar-button {
+      color: $dark_sidebar_fg;
+
+      &:hover { @include button(header-hover); }
+      &:active { @include button(header-active); }
+
+      &:not(:hover):not(:active) > image { opacity: 0.5 };
+    }
+
+    &:backdrop { opacity: 0.75; }
+  }
+
+  separator { background-color: transparent; }
+}
+
+$sidebar_pane_bg: if($header == 'dark' and $variant == 'light', $header_bg, $dark_sidebar_bg);
+$sidebar_pane_fg: if($header == 'dark' and $variant == 'light', $header_fg, $dark_sidebar_fg);
+$sidebar_pane_bg_backdrop: if($header == 'dark' and $variant == 'light', $header_bg_backdrop, $bg_color);
+
+.sidebar-pane {
+  background-color: $sidebar_pane_bg;
+  color: $sidebar_pane_fg;
+
+  &:backdrop {
+    background-color: $sidebar_pane_bg_backdrop;
+    color: rgba($sidebar_pane_fg, 0.45);
+  }
+
+  .dim-label { color: rgba($sidebar_pane_fg, 0.45); }
+
+  .sidebar,
+  .toolbar,
+  .navigation-sidebar,
+  searchbar > revealer > box {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  headerbar {
+    background-color: transparent;
+    box-shadow: inset 0 1px $highlight;
+    border: none;
+    border-top-right-radius: 0;
+  }
+
+  .toolbar {
+    padding: 6px;
+  }
+
+  .navigation-sidebar {
+    @extend %sidebar_pane_list;
+  }
+
+  scrollbar { @extend %dark_sidebar_scrollbar; }
+
+  entry { @extend %header_entry; }
+
+  button { @extend %header_button; }
+
+  flap,
+  leaflet,
+  navigation-view,
+  overlay-split-view {
+    @include transition-shadows($dark_sidebar_border);
+  }
+
+  banner > revealer > widget {
+    background-color: gtkmix($selected_bg_color, $dark_sidebar_bg, 30%);
+    color: $dark_sidebar_fg;
+
+    &:backdrop {
+      background-color: gtkmix($selected_bg_color, $dark_sidebar_bg, 30%);
+    }
+  }
+
+  &:dir(ltr), &.end:dir(rtl) {
+    &, banner > revealer > widget {
+      box-shadow: none;
+      border-right: 1px solid $dark_sidebar_border;
+    }
+  }
+
+  &:dir(rtl), &.end:dir(ltr) {
+    &, banner > revealer > widget {
+      box-shadow: none;
+      border-left: 1px solid $dark_sidebar_border;
+    }
+  }
+}
+
+/* Middle pane in three-pane setups */
+.content-pane .sidebar-pane,
+.sidebar-pane .content-pane {
+  background-color: $base_color;
+  color: $text_color;
+
+  &:backdrop {
+    background-color: $base_color;
+    // transition: background-color $longer_duration $deceleration_curve;
+  }
+
+  flap,
+  leaflet,
+  navigation-view,
+  overlay-split-view {
+    @include transition-shadows($borders_color);
+  }
+
+  banner > revealer > widget {
+    background-color: gtkmix($selected_bg_color, $base_color, 30%);
+    color: $text_color;
+
+    &:backdrop {
+      background-color: gtkmix($selected_bg_color, $base_color, 30%);
+    }
+  }
+
+  &:dir(ltr), &.end:dir(rtl) {
+    &, banner > revealer > widget {
+      box-shadow: none;
+      border-right: 1px solid $borders_color;
+    }
+  }
+
+  &:dir(rtl), &.end:dir(ltr) {
+    &, banner > revealer > widget {
+      box-shadow: none;
+      border-left: 1px solid $borders_color;
+    }
+  }
+}
+
+.sidebar-pane,
+.content-pane,
+.content-pane .sidebar-pane,
+.sidebar-pane .content-pane {
+  toolbarview.undershoot-top scrolledwindow {
+    @include undershoot(top, $style: 'compact');
+  }
+
+  toolbarview.undershoot-bottom scrolledwindow {
+    @include undershoot(bottom, $style: 'compact');
+  }
+
+  scrolledwindow {
+    &.undershoot-top {
+      @include undershoot(top, $style: 'compact');
+    }
+
+    &.undershoot-bottom {
+      @include undershoot(bottom, $style: 'compact');
+    }
+
+    &.undershoot-start {
+      &:dir(ltr) { @include undershoot(left, $style: 'compact'); }
+      &:dir(rtl) { @include undershoot(right, $style: 'compact'); }
+    }
+
+    &.undershoot-end {
+      &:dir(ltr) { @include undershoot(right, $style: 'compact'); }
+      &:dir(rtl) { @include undershoot(left, $style: 'compact'); }
+    }
+  }
+}
+
+.sidebar-pane .sidebar-pane {
+  background-color: transparent;
+  color: inherit;
+}
+
+.content-pane {
+  background-color: $base_color;
+
+  &:backdrop {
+    background-color: $bg_color;
+  }
+
+  headerbar {
+    border-top-left-radius: 0;
+
+    @if $variant == 'light' and $header == 'dark' {
+      color: $text_color;
+
+      entry {
+        @include entry(normal);
+
+        &:focus-within {
+          @include entry(focus);
+        }
+
+        &:disabled { @include entry(insensitive); }
+
+        selection:focus-within {
+          background-color: $selected_bg_color;
+          color: $selected_fg_color;
+        }
+      }
+
+      button:not(.close):not(.maximize):not(.minimize) {
+        color: $text_color;
+
+        &:hover {
+          color: $fg_color;
+          background-color: rgba($fg_color, 0.12);
+        }
+
+        &:active, &:checked {
+          @include button(active);
+        }
+
+        &:disabled {
+          color: $insensitive_fg_color;
+      
+          &:active, &:checked {
+            @include button(insensitive-active);
+          }
+        }
+      }
+
+      viewswitcher {
+        button.toggle:not(.close):not(.maximize):not(.minimize) {
+          &:hover {
+            background-color: rgba($fg_color, 0.06);
+            color: $fg_color;
+          }
+
+          &:active {
+            background-color: rgba($fg_color, 0.16);
+            color: $fg_color;
+          }
+
+          &:checked {
+            background-color: rgba($fg_color, 0.08);
+            color: $fg_color;
+            box-shadow: inset 0 -3px $selected_bg_color;
+          }
+        }
+      }
+
+      windowcontrols {
+        button {
+          @each $k in ('close', 'maximize', 'minimize') {
+            @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+              &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}.png'),
+                                                           url('assets/titlebutton-#{$k}#{$m}@2.png'));
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &, &:backdrop {
+      background-color: transparent;
+      box-shadow: inset 0 1px $highlight;
+      border: none;
+    }
+  }
+
+  .fullscreen & headerbar windowcontrols,
+  .maximized & headerbar windowcontrols {
+    button {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+        &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#.png'),
+                                                        url('assets/titlebutton-restore#{$m}@2.png'));
+        }
+      }
+    }
+  }
+
+  toolbarview {
+    &, &.view {
+      background-color: transparent;
+    }
+
+    > stack, > box > stack.view {
+      background-color: transparent;
+    }
+  }
+}
+
+// Gnome >= 45.0
+.top-bar {
+  background: none;
+  box-shadow: none;
+
+  > windowhandle {
+    filter: none;
+  }
+
+  .collapse-spacing {
+    padding: 0;
   }
 }

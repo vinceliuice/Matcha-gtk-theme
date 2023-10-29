@@ -67,6 +67,7 @@
 
   $calendar_day_size: 3em;
 
+  .calendar-day,
   .calendar-day-base {
     text-align: center;
     margin: 2px;
@@ -75,18 +76,20 @@
     width: $calendar_day_size !important;
     border-radius: $circular_radius;
     transition-duration: 100ms;
+    color: $alt_fg_color;
     @extend %numeric;
     @extend %smaller;
 
     &:hover, &:focus {
       background-color: rgba($fg_color, 0.1);
-      box-shadow: none;
+      box-shadow: none !important;
       color: $fg_color;
     }
 
     &:active, &:selected {
       color: $fg_color;
       background-color: rgba($fg_color, 0.15);
+      box-shadow: none !important;
     }
 
     // day of week heading
@@ -101,11 +104,24 @@
 
   .calendar-day {
     font-weight: 600;
+
+    &.calendar-weekday {}
+
+    &.calendar-weekend {
+      color: $insensitive_fg_color;
+    }
+
+    &.calendar-other-month {
+      color: transparentize($insensitive_fg_color, 0.25) !important;
+      font-weight: normal;
+    }
   }
 
-  .calendar-nonwork-day {color: $insensitive_fg_color;}
+  .calendar-nonwork-day { color: $insensitive_fg_color; }
+
   .calendar-other-month-day {
     color: transparentize($fg_color, 0.5);
+
     &.calendar-nonwork-day {
       color: transparentize($insensitive_fg_color, 0.5);
     }
@@ -117,16 +133,18 @@
     font-weight: 800;
     color: $selected_fg_color !important;
 
-    &:hover,&:focus {
+    &:hover, &:focus {
       background-color:lighten($selected_bg_color, 3%);
       color: inherit;
+      box-shadow: none !important;
     }
 
-    &:active,&:selected {
+    &:active, &:selected {
       background-color: $selected_bg_color;
       color: inherit;
+      box-shadow: none !important;
 
-      &:hover,&:focus {
+      &:hover, &:focus {
         background-color:lighten($selected_bg_color, 3%);
         color: inherit;
       }
@@ -161,6 +179,7 @@
 
   .events-list {
     spacing: 2 * $base_padding;
+    color: $fg_color;
   }
 
   .events-title {
