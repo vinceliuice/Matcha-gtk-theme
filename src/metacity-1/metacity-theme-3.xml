@@ -61,10 +61,7 @@
 	<distance name="right_width" value="0" />
 	<distance name="left_titlebar_edge" value="0"/>
 	<distance name="right_titlebar_edge" value="0"/>
-	<distance name="title_vertical_pad" value="2"/> <!--
-							This needs to be 1 less then the
-							title_vertical_pad on normal state
-							or you'll have bigger buttons		-->
+	<distance name="title_vertical_pad" value="2"/>
 	<distance name="bottom_height" value="0" />
 </frame_geometry>
 
@@ -104,12 +101,12 @@
     <distance name="button_height" value="0"/>
 </frame_geometry>
 
-<frame_geometry name="modal" title_scale="small" hide_buttons="true" rounded_top_left="1" rounded_top_right="1" parent="small">
+<frame_geometry name="modal" title_scale="small" hide_buttons="false" rounded_top_left="1" rounded_top_right="1" parent="small">
 	<distance name="title_vertical_pad" value="5"/>
 </frame_geometry>
 
 <!--chromium save dialog-->
-<frame_geometry name="attached" title_scale="small" has_title="false"  hide_buttons="true" rounded_top_left="1" rounded_top_right="1" rounded_bottom_left="0" rounded_bottom_right="0" parent="normal">
+<frame_geometry name="attached" title_scale="small" has_title="false"  hide_buttons="false" rounded_top_left="1" rounded_top_right="1" rounded_bottom_left="0" rounded_bottom_right="0" parent="normal">
 	<distance name="title_vertical_pad" value="0"/>
 	<distance name="bottom_height" value="1"/>
 	<distance name="left_width" value="1"/>
