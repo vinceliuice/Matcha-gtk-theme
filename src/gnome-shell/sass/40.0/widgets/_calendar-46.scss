@@ -1,0 +1,280 @@
+/* Date/Time Menu */
+
+// overall menu
+#calendarArea {
+  padding: $base_margin $base_margin * 2;
+}
+
+.datemenu-popover {
+  border-radius: $base_border_radius + $base_padding;
+}
+
+// Calendar menu side column
+.datemenu-calendar-column {
+  spacing: $base_padding;
+  &:ltr { padding-left: $base_margin; }
+  &:rtl { padding-right: $base_margin; }
+  .datemenu-displays-box { spacing: $base_padding; }
+}
+
+/* today button (the date) */
+.datemenu-today-button {
+  @include card(flat);
+  padding: $base_padding * 1.5;
+
+  // weekday label
+  .day-label {
+    @extend %heading;
+    color: $alt_fg_color;
+  }
+
+  // date label
+  .date-label {
+    @extend %title_2;
+  }
+}
+
+/* Calendar */
+.calendar {
+  @include card(flat);
+  margin-top: 0;
+  padding: 0;
+
+  // month header
+  .calendar-month-header {
+    // prev/next month icons
+    .calendar-change-month-back StIcon,
+    .calendar-change-month-forward StIcon {
+      icon-size: $scalable_icon_size;
+    }
+
+    // month label
+    .calendar-month-label {
+      @extend %heading;
+      padding: 8px 0;
+      width: 10em;
+      border-radius: $circular_radius;
+      text-align: center;
+      color: $fg_color !important;
+      background-color: transparent;
+    }
+
+    .pager-button {
+      height: 2.6em;
+      width: 2.6em;
+      padding: 0;
+      margin: 2px;
+      border-radius: $circular_radius;
+      @include button(flat);
+      &:hover, &:focus { @include button(flat-hover); }
+      &:active { @include button(flat-active); }
+    }
+  }
+
+  $calendar_day_size: 3em;
+
+  .calendar-day {
+    @extend %numeric;
+    @extend %smaller;
+    @extend %flat_button;
+    margin: 2px;
+    padding: 0;
+    height: $calendar_day_size !important;
+    width: $calendar_day_size !important;
+    border-radius: $circular_radius;
+    transition-duration: 100ms;
+    color: $alt_fg_color;
+    font-weight: bold;
+    text-align: center;
+
+    &:hover, &:focus, &:active, &:selected {
+      box-shadow: none !important;
+    }
+
+    &.calendar-weekend {
+      color: $insensitive_fg_color;
+    }
+
+    &.calendar-other-month {
+      color: transparentize($fg_color, 0.5);
+      font-weight: normal;
+
+      &.calendar-weekend {
+        color: transparentize($fg_color, 0.5);
+      }
+    }
+
+    &.calendar-today {
+      @extend %default_button;
+      // override colors above for when today is a weekend
+      color: $selected_fg_color !important;
+
+      &.calendar-day-with-events {
+        background-image: url("resource:///org/gnome/shell/theme/calendar-today.svg") !important; // always use light asset with .default style
+      }
+    }
+
+    &.calendar-day-with-events {
+      background-image: if($variant == 'light', url("resource:///org/gnome/shell/theme/calendar-today-light.svg"),url("resource:///org/gnome/shell/theme/calendar-today.svg"));
+      background-size: contain;
+    }
+  }
+
+  // day of week heading
+  .calendar-day-heading {
+    @extend %numeric;
+    @extend %smaller;
+    @extend %flat_button;
+    font-weight: bold;
+    text-align: center;
+    margin: $base_margin;
+    padding: $base_padding * 0.5 $base_padding;
+    border-radius: $base_border_radius;
+  }
+
+  // week number style
+  .calendar-week-number {
+    @extend %smaller;
+    font-weight: bold;
+    font-feature-settings: "tnum";
+    text-align: center;
+    margin: $base_padding;
+    padding: 0 $base_padding;
+    border-radius: $base_border_radius * 0.5;
+    background-color: transparentize($insensitive_fg_color, .8);
+    color: $insensitive_fg_color;
+  }
+}
+
+// common style for the date menu widgets
+.events-button,
+.world-clocks-button,
+.weather-button {
+  @include card;
+}
+
+/* Events */
+.events-button {
+  .events-box {
+    // event title
+    .events-title {
+      @extend %heading;
+      color: $insensitive_fg_color;
+      padding-bottom: $base_padding;
+    }
+
+    // list of events
+    .events-list {
+      spacing: $base_padding;
+
+      // container for an event
+      .event-box {
+        spacing: $base_padding;
+        border-radius: $base_border_radius;
+
+        .event-summary {
+          @extend %heading;
+        }
+
+        .event-time {
+          @extend %numeric;
+          @extend %caption;
+          color: $insensitive_fg_color;
+        }
+      }
+
+      .event-placeholder {
+        color: $insensitive_fg_color;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// world clocks
+.world-clocks-button {
+  // title
+  .world-clocks-header {
+    @extend %heading;
+    color: $insensitive_fg_color;
+
+    // change style when no world clocks are configured
+    &.no-world-clocks {
+      color: $fg_color;
+    }
+  }
+
+  // clocks
+  .world-clocks-grid {
+    spacing-rows: $base_padding;
+    spacing-columns: $base_padding * 2;
+
+    // city label
+    .world-clocks-city {
+    }
+
+    // timezone time
+    .world-clocks-time {
+      @extend %numeric;
+      font-weight: bold;
+
+      &:ltr {text-align: right;}
+      &:rtl {text-align: left;}
+    }
+
+    // timezone offset label
+    .world-clocks-timezone {
+      @extend %numeric;
+      @extend %caption;
+      color: $insensitive_fg_color;
+    }
+  }
+}
+
+// weather
+.weather-button {
+  .weather-box {
+    spacing: $base_padding;
+
+    // header
+    .weather-header-box {
+      spacing: $base_padding;
+
+      .weather-header {
+        @extend %heading;
+        color: $insensitive_fg_color;
+
+         // change style when no location is configured
+        &.no-location {
+          color: $fg_color;
+        }
+
+        &.location {
+          font-weight: normal;
+        }
+      }
+    }
+
+    // weather items
+    .weather-grid {
+      spacing-rows: $base_padding;
+      spacing-columns: $base_padding * 2;
+
+      .weather-forecast-time {
+        @extend %numeric;
+        @include fontsize(10pt);
+        padding-top: 0.2em;
+        padding-bottom: 0.4em;
+      }
+      .weather-forecast-icon {
+        icon-size: $large_scalable_icon_size;
+        margin-bottom: $base_margin;
+      }
+
+      .weather-forecast-temp {
+        @extend %numeric;
+        font-weight: bold;
+      }
+    }
+  }
+}

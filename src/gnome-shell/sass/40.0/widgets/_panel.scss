@@ -51,6 +51,11 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
         border: 0 none transparent;
         border-radius: 0;
       }
+
+      &:active, &:overview, &:checked, &:focus {
+        background-color: rgba(#ffffff, 0.15) !important;
+        box-shadow: inset 0 -2px $selected_bg_color !important;
+      }
     }
 
     &:hover, &:active, &:overview, &:focus, &:checked {
@@ -63,21 +68,9 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
 
     &:active, &:overview, &:checked, &:focus {
-      &, &:hover {
-        background-color: rgba(#ffffff, 0.15);
-        box-shadow: inset 0 -2px $selected_bg_color !important;
-        text-shadow: none;
-      }
-
-      &.clock-display {
-        background-color: rgba(#ffffff, 0.15);
-        box-shadow: inset 0 -2px $selected_bg_color !important;
-
-        .clock {
-          background-color: transparent;
-          box-shadow: none !important;
-        }
-      }
+      background-color: rgba(#ffffff, 0.15);
+      box-shadow: inset 0 -2px $selected_bg_color !important;
+      text-shadow: none;
     }
 
     // status area icons

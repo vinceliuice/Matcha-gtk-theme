@@ -1,7 +1,13 @@
 // Drawing mixins
 
-// generic drawing of more complex things
+// Function to convert px values to em
+@function to_em($input, $base: 16px) {
+  // multiplied and divided by 1000 to make up for round() shortcoming
+  $em_value: ($input / $base) * 1.091 * 1000;
+  @return round($em_value) / 1000 * 1em;
+}
 
+// generic drawing of more complex things
 @function draw_widget_edge($c:$borders_edge) {
 // outer highlight "used" on most widgets
   @return 0 1px $c;
@@ -39,21 +45,26 @@
 
   @if $t==normal {
     background-color: $base_color;
-    border: 1px solid $borders_color;
+    border: 1px solid $borders_color !important;
+    box-shadow: none !important;
   }
 
   @if $t==focus {
     background-color: $base_color;
-    border: 1px solid $selected_borders_color;
-    box-shadow: none;
+    border: 1px solid $selected_borders_color !important;
+    box-shadow: none !important;
   }
 
-  @if $t==hover { }
+  @if $t==hover {
+    background-color: $base_color;
+    border: 1px solid $selected_borders_color !important;
+    box-shadow: none !important;
+  }
 
   @if $t==insensitive {
     color: $insensitive_fg_color;
-    border-color: $insensitive_bg_color;
-    box-shadow: none;
+    border: 1px solid $insensitive_bg_color !important;
+    box-shadow: none !important;
   }
 }
 
@@ -142,15 +153,15 @@
     border-color: $borders_color;
     // @include draw_shadows($button_shadow);
     box-shadow: none;
-    text-shadow: 0 1px $text_shadow_color;
-    icon-shadow: 0 1px $text_shadow_color;
+    text-shadow: none;
+    icon-shadow: none;
   }
 
   // focused button
   @if $t==focus {
     color: $tc;
-    text-shadow: 0 1px $text_shadow_color;
-    icon-shadow: 0 1px $text_shadow_color;
+    text-shadow: none;
+    icon-shadow: none;
     box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, 0.4) !important;
     //border-color: $selected_bg_color;
   }
@@ -161,14 +172,24 @@
     background-color: mix($tc, $c, if($variant == 'light', 10%, 6%));
     border-color: $borders_color;
     box-shadow: none;
-    text-shadow: 0 1px $text_shadow_color;
-    icon-shadow: 0 1px $text_shadow_color;
+    text-shadow: none;
+    icon-shadow: none;
   }
 
   // active button
   @else if $t==active {
     color: $tc;
     background-color: mix($tc, $c, if($variant == 'light', 15%, 10%));
+    border-color: $borders_color;
+    text-shadow: none;
+    icon-shadow: none;
+    box-shadow: none;
+  }
+
+  // checked button
+  @else if $t==checked {
+    color: $tc;
+    background-color: mix($tc, $c, if($variant == 'light', 12%, 8%));
     border-color: $borders_color;
     text-shadow: none;
     icon-shadow: none;
@@ -188,18 +209,18 @@
   // normal button
   @if $t==flat {
     color: $tc;
-    background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+    background-color: transparent;
     border-color: transparent;
     // box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
-    text-shadow: 0 1px $text_shadow_color;
-    icon-shadow: 0 1px $text_shadow_color;
+    text-shadow: none;
+    icon-shadow: none;
   }
 
   // focused button
   @if $t==flat-focus {
     color: $tc;
-    text-shadow: 0 1px $text_shadow_color;
-    icon-shadow: 0 1px $text_shadow_color;
+    text-shadow: none;
+    icon-shadow: none;
     box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, 0.4);
     //border-color: $selected_bg_color;
   }
@@ -209,14 +230,24 @@
     color: $tc;
     background-color: rgba($tc, 0.08);
     border-color: transparent;
-    text-shadow: 0 1px $text_shadow_color;
-    icon-shadow: 0 1px $text_shadow_color;
+    text-shadow: none;
+    icon-shadow: none;
   }
 
   // active button
   @else if $t==flat-active {
     color: $tc;
     background-color: rgba($tc, 0.15);
+    border-color: transparent;
+    text-shadow: none;
+    icon-shadow: none;
+    box-shadow: none;
+  }
+  
+  // active button
+  @else if $t==flat-checked {
+    color: $tc;
+    background-color: rgba($tc, 0.12);
     border-color: transparent;
     text-shadow: none;
     icon-shadow: none;
@@ -297,4 +328,40 @@
   &:hover { @include button(hover); }
   &:active { @include button(active); }
   &:focus { @include button(focus); }
+}
+
+// Helper mixin for button-like elements with an icon
+@mixin tile_button($fg:$system_fg_color, $bg:$system_bg_color, $raised: false, $system: true) {
+  //
+  // $fg: foreground color
+  // $bg: background color
+  //
+  // $raised: uses raised style, true or false
+  // $system: uses system styles, true or false
+  //
+
+  @extend %tile;
+
+  @if $raised {
+    @include button(normal, $tc:$fg, $c:$bg);
+    &:focus { @include button(focus, $tc:$fg, $c:$bg);}
+    &:hover { @include button(hover, $tc:$fg, $c:$bg);}
+    &:active { @include button(active, $tc:$fg, $c:$bg);}
+    &:highlighted,&:selected,
+    &:checked { @include button(checked, $tc:$fg, $c:$bg);}
+    &:insensitive { @include button(insensitive, $tc:$fg, $c:$bg);}
+  } @else {
+    @include button(flat, $tc:$fg, $c:$bg);
+    &:focus { @include button(flat-focus, $tc:$fg, $c:$bg);}
+    &:hover { @include button(flat-hover, $tc:$fg, $c:$bg);}
+    &:active { @include button(flat-active, $tc:$fg, $c:$bg);}
+    &:highlighted,&:selected,
+    &:checked { @include button(flat-checked, $tc:$fg, $c:$bg);}
+    &:insensitive { @include button(flat-insensitive, $tc:$fg, $c:$bg);}
+  }
+
+  &:drop {
+    background-color: transparentize($selected_bg_color, .8);
+    box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, .2);
+  }
 }

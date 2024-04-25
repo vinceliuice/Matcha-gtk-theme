@@ -1,0 +1,28 @@
+/* Notifications & Message Tray */
+
+$notification_banner_height: 64px;
+$notification_banner_width: 34em;
+
+// Banner notifications
+.notification-banner {
+  min-height: $notification_banner_height;
+  width: $notification_banner_width;
+  margin: 6px;
+  border-radius: $modal_radius;
+  box-shadow: 0 3px 6px rgba(black, 0.15);
+
+  &, &:hover, &:focus {
+    color: $fg_color;
+    background-color: $base_color;
+  }
+}
+
+.notification-buttons-bin {
+  spacing: 0;
+  border: none;
+  padding: 0 1px 0 0;
+}
+
+.notification-button {
+  @extend %bubble_button;
+}

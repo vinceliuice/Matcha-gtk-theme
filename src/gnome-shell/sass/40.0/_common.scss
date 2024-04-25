@@ -39,9 +39,22 @@ $circular_radius: 1000px;
 $base_font_size: 11;
 $text_shadow_color: if($variant == 'light', rgba(255,255,255,0.3), rgba(0,0,0,0.2));
 
-// icons
-//$base_icon_size: 1.09em;
+// Fixed icon sizes
 $base_icon_size: 16px;
+$medium_icon_size: $base_icon_size * 1.5; // 24px
+$large_icon_size: $base_icon_size * 2; // 32px
+
+// Scaled values
+// Used in elements that follow text scaling factors
+$scaled_padding: to_em(6px); // same as $base_padding
+
+// Used for symbolic icons that scale
+$scalable_icon_size: to_em(16px);
+$medium_scalable_icon_size: $scalable_icon_size * 1.5;
+$large_scalable_icon_size: $scalable_icon_size * 2;
+
+// animation definition
+$ease_out_quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 // Stage
 stage {
@@ -50,6 +63,23 @@ stage {
 }
 
 /* Common Stylings */
+%reset {
+  background: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+// icon tiles
+%tile {
+  border-radius: $base_border_radius * 2;
+  padding: $base_padding;
+  spacing: $base_padding;
+  text-align: center;
+  transition-duration: 100ms;
+}
 
 // Text
 %status_text {
@@ -102,53 +132,67 @@ stage {
   }
 }
 
+// common button styling
+%button_common {
+  border-radius: $base_border_radius;
+  padding: $base_padding * .5 $base_padding * 4;
+  font-weight: bold;
+  transition: border-width 300ms $ease_out_quad,
+              box-shadow 300ms $ease_out_quad;
+}
+
 // button styling
 %button {
-  border-radius: $base_border_radius;
-  border-style: solid;
-  border-width: 1px;
-  min-height: 20px;
-  padding: $base_padding $base_padding * 2;
-
+  @extend %button_common;
   @include button(normal);
   &:focus { @include button(focus);}
   &:hover { @include button(hover);}
   &:insensitive { @include button(insensitive);}
+  &:selected,
   &:active { @include button(active);}
+  &:checked { @include button(checked);}
 }
 
 %flat_button {
-  border: none;
-
-  @include button(flat-normal);
+  @include button(flat);
   &:focus { @include button(flat-focus);}
   &:hover { @include button(flat-hover);}
   &:insensitive { @include button(flat-insensitive);}
+  &:selected,
   &:active { @include button(flat-active);}
+  &:checked { @include button(flat-checked);}
+}
+
+%default_button {
+  @include button(normal, $c:$selected_bg_color, $tc:$selected_fg_color, $shadow: none);
+  &:focus { @include button(focus, $c:$selected_bg_color, $tc:$selected_fg_color, $shadow: none); }
+  &:hover { @include button(hover, $c:$selected_bg_color, $tc:$selected_fg_color, $shadow: none); }
+  &:insensitive { @include button(insensitive, $c:$selected_bg_color, $tc:$selected_fg_color, $shadow: none); }
+  &:active { @include button(active, $c:$selected_bg_color, $tc:$selected_fg_color, $shadow: none); }
 }
 
 // buttons in dialogs
 %bubble_button {
   @include button(normal, $shadow: none);
   padding: $base_padding * 2 !important;
-  min-height: 0;
+  border: none !important;
   border-top: 1px solid $borders_color !important;
-  margin: 0 !important;
+  border-left: 1px solid $borders_color !important;
 
   &:insensitive { @include button(insensitive, $shadow: none); }
   &:hover { @include button(hover, $shadow: none); }
   &:focus { @include button(focus, $shadow: none); }
   &:active { @include button(active, $shadow: none); }
+  &:checked { @include button(checked, $shadow: none);}
 
-  // radius is 2 pixel less to fit in bubble
-  &:first-child {
+  &:first-child:ltr {
     border-left: none !important;
-    border-radius: 0 0 0 $modal_radius !important;
+    border-radius: 0 0 0 $modal_radius;
   }
 
-  &:last-child {
-    border-radius: 0 0 $modal_radius 0 !important;
-    border-left: 1px solid $borders_color !important;
+  &:last-child:ltr {
+    border-radius: 0 0 $modal_radius 0;
+    margin-right: 0 !important;
     color: $selected_bg_color !important;
 
     &:insensitive {
@@ -156,10 +200,34 @@ stage {
     }
   }
 
+  &:first-child:rtl {
+    border-radius: 0 0 $modal_radius 0;
+    color: $selected_bg_color !important;
+
+    &:insensitive {
+      color: rgba($selected_bg_color, 0.35) !important;
+    }
+  }
+
+  &:last-child:rtl {
+    border-radius: 0 0 0 $modal_radius;
+    margin-left: 0 !important;
+  }
+
   &:first-child:last-child {
-    border-radius: 0 0 $modal_radius $modal_radius !important;
+    border-radius: 0 0 $modal_radius $modal_radius;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     border-left: none !important;
   }
+}
+
+// items in popover menus
+%menuitem {
+  font-weight: normal;
+  spacing: $base_padding;
+  transition-duration: 100ms;
+  padding: $base_padding * 1.5 $base_padding * 2;
 }
 
 %theme_dialogs {
@@ -168,6 +236,16 @@ stage {
   box-shadow: 0 2px 6px rgba(black, 0.15);
   border: solid $borders_color;
   border-width: if($variant == 'light', 0, 1px);
+}
+
+// tooltip
+%tooltip {
+  background-color: transparentize(black, 0.1);
+  border: 1px solid transparentize(white, 0.9);
+  color: white;
+  border-radius: $circular_radius;
+  padding: $base_padding $base_padding * 2;
+  text-align: center;
 }
 
 // notification styling
