@@ -94,12 +94,7 @@ stage {
   background-color: $osd_bg_color;
   border-radius: $modal_radius;
   padding: $base_padding * 2;
-
-  @if $variant == 'dark' {
-    border: 1px solid rgba(black, 0.75);
-  } @else {
-    border: none;
-  }
+  border: 1px solid rgba(black, 0.75);
 }
 
 // Overview panels

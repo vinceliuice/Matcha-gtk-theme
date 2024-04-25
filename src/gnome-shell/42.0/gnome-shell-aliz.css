@@ -35,7 +35,7 @@ stage {
   background-color: #2a2a2a;
   border-radius: 5px;
   padding: 12px;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.75);
 }
 
 .workspace-thumbnails .workspace-thumbnail {
@@ -2229,10 +2229,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 24px;
 }
 
+.switcher-list {
+  border-radius: 9px;
+}
+
 .switcher-list .item-box {
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 3px;
   border: 1px solid transparent;
+  background-color: transparent;
 }
 
 .switcher-list .item-box:outlined {
@@ -2240,8 +2245,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-list .item-box:selected {
-  background-color: rgba(239, 239, 239, 0.3);
-  color: #efefef;
+  background-color: #F0544C;
+  color: #ffffff;
 }
 
 .switcher-list .thumbnail-box {
