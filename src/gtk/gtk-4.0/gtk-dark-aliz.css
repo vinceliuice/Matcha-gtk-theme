@@ -2585,6 +2585,7 @@ headerbar popover > contents button:disabled:active label, headerbar popover > c
 headerbar {
   min-height: 42px;
   padding: 0;
+  margin: 0;
   color: #d0c8c8;
   border: none;
   background-color: #1a1a1a;
@@ -7146,6 +7147,10 @@ tabbar .box {
   min-height: 28px;
 }
 
+tabbar tabbox {
+  padding: 0;
+}
+
 tabbar tabbox > tabboxchild {
   border-radius: 0;
   margin-bottom: 0;
@@ -7883,6 +7888,149 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .top-bar .collapse-spacing {
   padding: 0;
+}
+
+themeselector,
+panelthemeselector {
+  margin: 9px;
+}
+
+themeselector checkbutton,
+panelthemeselector checkbutton {
+  padding: 1px;
+  min-height: 44px;
+  min-width: 44px;
+  background-clip: content-box;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+themeselector checkbutton radio,
+panelthemeselector checkbutton radio {
+  min-height: 16px;
+  min-width: 16px;
+  transform: translate(27px, 14px);
+  padding: 3px;
+}
+
+themeselector checkbutton radio, themeselector checkbutton radio:hover, themeselector checkbutton radio:disabled,
+panelthemeselector checkbutton radio,
+panelthemeselector checkbutton radio:hover,
+panelthemeselector checkbutton radio:disabled {
+  -gtk-icon-source: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+themeselector checkbutton radio:checked, themeselector checkbutton radio:checked:hover, themeselector checkbutton radio:active, themeselector checkbutton radio:active:hover,
+panelthemeselector checkbutton radio:checked,
+panelthemeselector checkbutton radio:checked:hover,
+panelthemeselector checkbutton radio:active,
+panelthemeselector checkbutton radio:active:hover {
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+  background-image: image(#F0544C);
+  background-color: #F0544C;
+  color: #ffffff;
+}
+
+themeselector checkbutton.follow:checked, themeselector checkbutton.light:checked, themeselector checkbutton.dark:checked,
+panelthemeselector checkbutton.follow:checked,
+panelthemeselector checkbutton.light:checked,
+panelthemeselector checkbutton.dark:checked {
+  box-shadow: inset 0 0 0 2px #F0544C;
+}
+
+themeselector checkbutton.light,
+panelthemeselector checkbutton.light {
+  background-color: #ffffff;
+}
+
+themeselector checkbutton.dark,
+panelthemeselector checkbutton.dark {
+  background-color: #202020;
+}
+
+themeselector checkbutton.follow,
+panelthemeselector checkbutton.follow {
+  background-image: linear-gradient(to bottom right, #fff 49.99%, #202020 50.01%);
+}
+
+themeswitcher {
+  padding: 6px;
+}
+
+themeswitcher .check {
+  min-height: 16px;
+  min-width: 16px;
+  background-color: #F0544C;
+  color: on(#F0544C);
+  padding: 2px;
+  border-radius: 100%;
+  margin: 3px;
+  -gtk-icon-size: 20px;
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/check-symbolic.svg")), -gtk-recolor(url("assets/scalable/check-symbolic@2.svg")));
+}
+
+themeswitcher .check:hover {
+  background-color: #f4817b;
+  color: on(#F0544C);
+}
+
+themeswitcher .check:active {
+  background-color: #F0544C;
+  color: on(#F0544C);
+}
+
+themeswitcher checkbutton radio {
+  padding: 0;
+  margin: 2px;
+  min-height: 48px;
+  min-width: 48px;
+}
+
+themeswitcher checkbutton radio, themeswitcher checkbutton radio:active, themeswitcher checkbutton radio:hover {
+  outline-color: rgba(0, 0, 0, 0.25);
+  outline-width: 1px;
+  outline-offset: -1px;
+  outline-style: solid;
+  box-shadow: none;
+}
+
+themeswitcher checkbutton radio, themeswitcher checkbutton radio:hover, themeswitcher checkbutton radio:active, themeswitcher checkbutton radio:checked, themeswitcher checkbutton radio:checked:hover {
+  -gtk-icon-source: none;
+  transition: none;
+  border: none;
+}
+
+themeswitcher checkbutton radio:checked, themeswitcher checkbutton radio:checked:hover, themeswitcher checkbutton radio:active, themeswitcher checkbutton radio:active:hover {
+  box-shadow: inset 0 0 0 2px #F0544C;
+}
+
+themeswitcher checkbutton.system radio, themeswitcher checkbutton.system radio:hover, themeswitcher checkbutton.system radio:active, themeswitcher checkbutton.system radio:checked, themeswitcher checkbutton.system radio:checked:hover {
+  background-image: linear-gradient(-45deg, #242424 49.99%, white 50.01%);
+  background-color: transparent;
+}
+
+themeswitcher checkbutton.light radio, themeswitcher checkbutton.light radio:hover, themeswitcher checkbutton.light radio:active, themeswitcher checkbutton.light radio:checked, themeswitcher checkbutton.light radio:checked:hover {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: white;
+}
+
+themeswitcher checkbutton.dark radio, themeswitcher checkbutton.dark radio:hover, themeswitcher checkbutton.dark radio:active, themeswitcher checkbutton.dark radio:checked, themeswitcher checkbutton.dark radio:checked:hover {
+  color: white;
+  background-image: image(#242424);
+  background-color: transparent;
+}
+
+floating-sheet > dimming {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+floating-sheet > sheet {
+  border-radius: 3px;
+  outline: none;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.65);
 }
 
 #NautilusPathBar > menubutton > button, #NautilusPathBar #NautilusPathButton, .nautilus-window headerbar splitbutton > button,

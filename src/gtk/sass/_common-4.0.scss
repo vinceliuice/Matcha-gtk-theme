@@ -1720,6 +1720,7 @@ $_header_radius: if($variant=='light', 2px, 2px);
 headerbar {
   min-height: 42px;
   padding: 0;
+  margin: 0;
   color: $header_fg;
   border: none;
   background-color: $header_bg;
