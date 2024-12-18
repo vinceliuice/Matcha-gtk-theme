@@ -32,6 +32,8 @@
     <file>pad-osd.css</file>
     <file>no-events.svg</file>
     <file>no-notifications.svg</file>
-    <file>process-working.svg</file>
+    <file>process-working-dark.svg</file>
+    <file>process-working-light.svg</file>
+    <file>gnome-shell-start.svg</file>
   </gresource>
 </gresources>

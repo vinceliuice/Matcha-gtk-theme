@@ -1,16 +1,1 @@
-<svg id="Foreground" width="26" height="26" enable-background="new 0 0 16 16" version="1.0" viewBox="0 0 18.909 18.909" xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <filter id="filter839" x="-.048" y="-.048" width="1.096" height="1.096" color-interpolation-filters="sRGB">
-   <feGaussianBlur stdDeviation="0.32"/>
-  </filter>
- </defs>
- <g transform="translate(1.8443 .64207)" opacity=".8"/>
- <circle cx="9.4545" cy="10.182" r="8" fill="#000000" filter="url(#filter839)" opacity=".1" stroke-width="0"/>
- <circle cx="9.4545" cy="9.4545" r="8" fill="#d8354a" stroke-width="0"/>
- <g transform="matrix(.72727 0 0 .72727 4.1762 2.7838)" fill="#000000"/>
- <g transform="matrix(.72727 0 0 .72727 4.2045 3.5383)" fill="#ffffff">
-  <g transform="translate(-41,-760)" fill="#ffffff">
-   <path d="m44.226 764.17h1c0.01037-1.2e-4 0.02079-4.6e-4 0.03125 0 0.25495 0.0112 0.50987 0.12858 0.6875 0.3125l2.2812 2.2812 2.3125-2.2812c0.26562-0.2305 0.44667-0.3055 0.6875-0.3125h1v1c0 0.28647-0.03434 0.55065-0.25 0.75l-2.2812 2.2812 2.25 2.25c0.18819 0.18817 0.28124 0.45345 0.28125 0.71875v1h-1c-0.2653-1e-5 -0.53059-0.0931-0.71875-0.28125l-2.2812-2.2812-2.2812 2.2812c-0.18816 0.18819-0.45346 0.28125-0.71875 0.28125h-1v-1c-3e-6 -0.26529 0.09306-0.53058 0.28125-0.71875l2.2812-2.25-2.2812-2.2812c-0.21074-0.19463-0.30316-0.46925-0.28125-0.75v-1z" color="#bebebe" enable-background="new" fill="#ffffff" style="block-progression:tb;text-decoration-line:none;text-indent:0;text-transform:none"/>
-  </g>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" enable-background="new 0 0 16 16" version="1.0" viewBox="0 0 18.909 18.909"><defs><filter id="a" width="1.096" height="1.096" x="-.048" y="-.048" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".32"/></filter></defs><circle cx="9.454" cy="10.182" r="8" filter="url(#a)" opacity=".1"/><circle cx="9.454" cy="9.454" r="8" fill="#d8354a"/><path fill="#fff" d="M44.226 764.17h1.031c.255.011.51.129.688.313l2.28 2.28 2.313-2.28c.266-.231.447-.306.688-.313h1v1c0 .286-.034.55-.25.75l-2.281 2.281 2.25 2.25c.188.188.281.454.281.719v1h-1c-.265 0-.53-.093-.719-.281l-2.28-2.282-2.282 2.282a1.01 1.01 0 0 1-.719.28h-1v-1c0-.264.093-.53.281-.718l2.282-2.25-2.282-2.281a.91.91 0 0 1-.28-.75z" color="#bebebe" enable-background="new" style="block-progression:tb;text-decoration-line:none;text-indent:0;text-transform:none" transform="translate(-25.614 -549.187)scale(.72727)"/></svg>
