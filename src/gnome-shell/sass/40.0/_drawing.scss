@@ -149,7 +149,7 @@
   // normal button
   @if $t==normal {
     color: $tc;
-    background-color: mix($tc, $c, if($variant == 'light', 5%, 3%));
+    background-color: $c;
     border-color: $borders_color;
     // @include draw_shadows($button_shadow);
     box-shadow: none;
@@ -169,7 +169,7 @@
   // hover button
   @else if $t==hover {
     color: $tc;
-    background-color: mix($tc, $c, if($variant == 'light', 10%, 6%));
+    background-color: mix($tc, $c, if($variant == 'light', 8%, 5%));
     border-color: $borders_color;
     box-shadow: none;
     text-shadow: none;
@@ -179,7 +179,7 @@
   // active button
   @else if $t==active {
     color: $tc;
-    background-color: mix($tc, $c, if($variant == 'light', 15%, 10%));
+    background-color: mix($tc, $c, if($variant == 'light', 12%, 10%));
     border-color: $borders_color;
     text-shadow: none;
     icon-shadow: none;
@@ -189,7 +189,7 @@
   // checked button
   @else if $t==checked {
     color: $tc;
-    background-color: mix($tc, $c, if($variant == 'light', 12%, 8%));
+    background-color: mix($tc, $c, if($variant == 'light', 8%, 5%));
     border-color: $borders_color;
     text-shadow: none;
     icon-shadow: none;
@@ -343,7 +343,7 @@
   @extend %tile;
 
   @if $raised {
-    @include button(normal, $tc:$fg, $c:$bg);
+    @include button(normal, $tc:$fg, $c: mix($fg, $bg, if($variant == 'light', 4%, 3%)));
     &:focus { @include button(focus, $tc:$fg, $c:$bg);}
     &:hover { @include button(hover, $tc:$fg, $c:$bg);}
     &:active { @include button(active, $tc:$fg, $c:$bg);}

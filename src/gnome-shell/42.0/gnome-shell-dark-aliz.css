@@ -69,7 +69,7 @@ stage {
 
 .quick-settings-system-item .icon-button, .icon-button, .button {
   color: #dddddd;
-  background-color: #282828;
+  background-color: #222222;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -85,7 +85,7 @@ stage {
 
 .icon-button:hover, .button:hover {
   color: #dddddd;
-  background-color: #2d2d2d;
+  background-color: #2b2b2b;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -112,7 +112,7 @@ stage {
 
 .icon-button:checked, .button:checked {
   color: #dddddd;
-  background-color: #313131;
+  background-color: #2b2b2b;
   border-color: #151515;
   text-shadow: none;
   icon-shadow: none;
@@ -171,7 +171,7 @@ stage {
 
 .icon-button.default, .button.default {
   color: #ffffff;
-  background-color: #ed2e24;
+  background-color: #ec271d;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -187,7 +187,7 @@ stage {
 
 .icon-button.default:hover, .button.default:hover {
   color: #ffffff;
-  background-color: #ed342b;
+  background-color: #ed3228;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -214,7 +214,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button, .hotplug-notification-item, .notification-banner .notification-button {
   color: #dddddd;
-  background-color: #282828;
+  background-color: #222222;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -236,7 +236,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button:hover, .hotplug-notification-item:hover, .notification-banner .notification-button:hover {
   color: #dddddd;
-  background-color: #2d2d2d;
+  background-color: #2b2b2b;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -261,7 +261,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button:checked, .hotplug-notification-item:checked, .notification-banner .notification-button:checked {
   color: #dddddd;
-  background-color: #313131;
+  background-color: #2b2b2b;
   border-color: #151515;
   text-shadow: none;
   icon-shadow: none;
@@ -1785,7 +1785,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .quick-settings-system-item .power-item:insensitive {
   color: #dddddd;
-  background-color: #282828;
+  background-color: #222222;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -2351,9 +2351,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -natural-hpadding: 12px;
   -minimum-hpadding: 12px;
   transition-duration: 150ms;
-  border: 0 none transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
   border-radius: 0;
   text-shadow: none;
+}
+
+#panel .panel-button.clock-display {
+  border: none;
+  border-bottom: 3px solid transparent !important;
 }
 
 #panel .panel-button.clock-display .clock {
@@ -2364,7 +2370,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:checked, #panel .panel-button.clock-display:focus {
   background-color: rgba(255, 255, 255, 0.15) !important;
-  box-shadow: inset 0 -2px #ec271d !important;
+  border-color: #ec271d !important;
+  box-shadow: none !important;
 }
 
 #panel .panel-button:hover, #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
@@ -2378,7 +2385,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:checked, #panel .panel-button:focus {
   background-color: rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0 -2px #ec271d !important;
+  border-color: #ec271d;
+  box-shadow: none !important;
   text-shadow: none;
 }
 
@@ -2414,7 +2422,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel.unlock-screen .panel-button:hover.clock-display .clock, #panel.unlock-screen .panel-button:active.clock-display .clock, #panel.unlock-screen .panel-button:overview.clock-display .clock, #panel.unlock-screen .panel-button:focus.clock-display .clock, #panel.unlock-screen .panel-button:checked.clock-display .clock, #panel.login-screen .panel-button:hover.clock-display .clock, #panel.login-screen .panel-button:active.clock-display .clock, #panel.login-screen .panel-button:overview.clock-display .clock, #panel.login-screen .panel-button:focus.clock-display .clock, #panel.login-screen .panel-button:checked.clock-display .clock, #panel:overview .panel-button:hover.clock-display .clock, #panel:overview .panel-button:active.clock-display .clock, #panel:overview .panel-button:overview.clock-display .clock, #panel:overview .panel-button:focus.clock-display .clock, #panel:overview .panel-button:checked.clock-display .clock {
-  box-shadow: none;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 #panel .screencast-indicator,
@@ -2940,7 +2949,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .page-navigation-arrow:hover > StIcon {
   color: #efefef;
-  background-color: rgba(73, 73, 73, 0.53);
+  background-color: rgba(69, 69, 69, 0.525);
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3107,7 +3116,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key {
   color: #dddddd;
-  background-color: #343434;
+  background-color: #2f2f2f;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3129,7 +3138,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key:hover, .keyboard-key:checked {
   color: #dddddd;
-  background-color: #393939;
+  background-color: #373737;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3153,7 +3162,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.default-key {
   color: #dddddd;
-  background-color: #343434;
+  background-color: #2f2f2f;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3162,7 +3171,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.default-key:hover, .keyboard-key.default-key:checked {
   color: #dddddd;
-  background-color: #393939;
+  background-color: #373737;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3180,7 +3189,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.enter-key {
   color: #ffffff;
-  background-color: #ed2e24;
+  background-color: #ec271d;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3189,7 +3198,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.enter-key:hover, .keyboard-key.enter-key:checked {
   color: #dddddd;
-  background-color: #ec3f36;
+  background-color: #ec3d34;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3226,7 +3235,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-subkeys .keyboard-key {
   color: #dddddd;
-  background-color: #343434;
+  background-color: #2f2f2f;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3243,7 +3252,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-subkeys .keyboard-key:hover, .keyboard-subkeys .keyboard-key:checked {
   color: #dddddd;
-  background-color: #393939;
+  background-color: #373737;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3471,7 +3480,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .login-dialog .modal-dialog-button:default,
 .unlock-dialog .modal-dialog-button:default {
   color: #ffffff;
-  background-color: #ed2e24;
+  background-color: #ec271d;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3483,7 +3492,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .unlock-dialog .modal-dialog-button:default:hover,
 .unlock-dialog .modal-dialog-button:default:focus {
   color: #ffffff;
-  background-color: #ed342b;
+  background-color: #ed3228;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -3994,6 +4003,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
 }
 
+#dashtodockContainer .dash-item-container {
+  background: transparent;
+}
+
+#dashtodockContainer .dash-item-container > StWidget {
+  background-size: contain;
+}
+
+#dashtodockContainer .dash-item-container .app-grid-running-dot {
+  margin: 2px !important;
+  offset-y: 0 !important;
+}
+
 #dashtodockContainer .number-overlay {
   color: white;
   background-color: rgba(0, 0, 0, 0.75);
@@ -4006,7 +4028,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
   border-radius: 1000px;
   margin: 2px 3px 5px;
-  padding: 0.2em 0.6em;
+  padding: 0.25em 0.6em;
   font-weight: bold;
   text-align: center;
 }
@@ -4023,7 +4045,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0;
 }
 
-#dashtodockContainer.top.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.top.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.straight-corner .show-apps, #dashtodockContainer.top.extended .dash-item-container .app-well-app, #dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.extended .show-apps {
+#dashtodockContainer.top.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.top.straight-corner .overview-tile,
+#dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.top.shrink.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.top.shrink.straight-corner .overview-tile,
+#dashtodockContainer.top.shrink.straight-corner .show-apps, #dashtodockContainer.top.extended .dash-item-container .app-well-app,
+#dashtodockContainer.top.extended .overview-tile,
+#dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.top.shrink.extended .overview-tile,
+#dashtodockContainer.top.shrink.extended .show-apps {
   margin: 0 !important;
 }
 
@@ -4039,7 +4069,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0;
 }
 
-#dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner .show-apps, #dashtodockContainer.bottom.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.extended .show-apps {
+#dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.straight-corner .overview-tile,
+#dashtodockContainer.bottom.straight-corner .show-apps, #dashtodockContainer.bottom.shrink.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.shrink.straight-corner .overview-tile,
+#dashtodockContainer.bottom.shrink.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.extended .overview-tile,
+#dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.shrink.extended .overview-tile,
+#dashtodockContainer.bottom.shrink.extended .show-apps {
   margin: 0 !important;
 }
 
@@ -4055,7 +4093,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0;
 }
 
-#dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.left.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.straight-corner .show-apps, #dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.extended .show-apps {
+#dashtodockContainer.left.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.left.straight-corner .overview-tile,
+#dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.left.shrink.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.left.shrink.straight-corner .overview-tile,
+#dashtodockContainer.left.shrink.straight-corner .show-apps, #dashtodockContainer.left.extended .dash-item-container .app-well-app,
+#dashtodockContainer.left.extended .overview-tile,
+#dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.left.shrink.extended .overview-tile,
+#dashtodockContainer.left.shrink.extended .show-apps {
   margin: 0 !important;
 }
 
@@ -4071,7 +4117,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0;
 }
 
-#dashtodockContainer.right.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .show-apps, #dashtodockContainer.right.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.straight-corner .show-apps, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.extended .show-apps {
+#dashtodockContainer.right.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.right.straight-corner .overview-tile,
+#dashtodockContainer.right.straight-corner .show-apps, #dashtodockContainer.right.shrink.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.right.shrink.straight-corner .overview-tile,
+#dashtodockContainer.right.shrink.straight-corner .show-apps, #dashtodockContainer.right.extended .dash-item-container .app-well-app,
+#dashtodockContainer.right.extended .overview-tile,
+#dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.right.shrink.extended .overview-tile,
+#dashtodockContainer.right.shrink.extended .show-apps {
   margin: 0 !important;
 }
 
@@ -4083,7 +4137,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 6px;
 }
 
-#dashtodockContainer.shrink .dash-item-container .app-well-app, #dashtodockContainer.shrink .show-apps {
+#dashtodockContainer.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.shrink .overview-tile,
+#dashtodockContainer.shrink .show-apps {
   margin: 0 !important;
 }
 
@@ -4103,12 +4159,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 2px 4px !important;
 }
 
-#dashtodockContainer.left.shrink .dash-item-container .app-well-app, #dashtodockContainer.left.shrink .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.extended .show-apps, #dashtodockContainer.right.shrink .dash-item-container .app-well-app, #dashtodockContainer.right.shrink .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.extended .show-apps {
+#dashtodockContainer.left.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.left.shrink .overview-tile,
+#dashtodockContainer.left.shrink .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.left.shrink.extended .overview-tile,
+#dashtodockContainer.left.shrink.extended .show-apps, #dashtodockContainer.right.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.right.shrink .overview-tile,
+#dashtodockContainer.right.shrink .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.right.shrink.extended .overview-tile,
+#dashtodockContainer.right.shrink.extended .show-apps {
   margin: 0 !important;
   padding: 2px 0 !important;
 }
 
-#dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .dash-item-container .app-well-app {
+#dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.extended .overview-tile, #dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .overview-tile, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.extended .overview-tile, #dashtodockContainer.right.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .overview-tile {
   padding: 1.5px 10px !important;
 }
 
@@ -4124,16 +4188,28 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 4px 2px !important;
 }
 
-#dashtodockContainer.top.shrink .dash-item-container .app-well-app, #dashtodockContainer.top.shrink .show-apps, #dashtodockContainer.bottom.shrink .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink .show-apps {
+#dashtodockContainer.top.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.top.shrink .overview-tile,
+#dashtodockContainer.top.shrink .show-apps, #dashtodockContainer.bottom.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.shrink .overview-tile,
+#dashtodockContainer.bottom.shrink .show-apps {
   margin: 0 !important;
-  padding: 0 2px 16px !important;
+  padding: 0 2px 12px !important;
 }
 
 #dashtodockContainer.top.extended .dash-separator, #dashtodockContainer.top.straight-corner .dash-separator, #dashtodockContainer.bottom.extended .dash-separator, #dashtodockContainer.bottom.straight-corner .dash-separator {
   margin: 0 6.5px !important;
 }
 
-#dashtodockContainer.top.extended .dash-item-container .app-well-app, #dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner .show-apps {
+#dashtodockContainer.top.extended .dash-item-container .app-well-app,
+#dashtodockContainer.top.extended .overview-tile,
+#dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.top.straight-corner .overview-tile,
+#dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.extended .overview-tile,
+#dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.straight-corner .overview-tile,
+#dashtodockContainer.bottom.straight-corner .show-apps {
   padding: 10px 1.5px !important;
 }
 
@@ -4148,6 +4224,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none !important;
 }
 
+#dashtodockContainer #dash StWidget.focused .app-grid-running-dot,
 #dashtodockContainer #dash StWidget.focused .app-well-app-running-dot {
   background-color: #ec271d;
 }
@@ -4160,6 +4237,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+#dashtodockContainer:overview #dash StWidget.focused .app-grid-running-dot,
 #dashtodockContainer:overview #dash StWidget.focused .app-well-app-running-dot {
   background-color: #ec271d;
 }
@@ -4196,6 +4274,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0;
 }
 
+.dash-label.bottom {
+  margin-bottom: 16px !important;
+}
+
 .dashtodock-app-well-preview-menu-item {
   padding: 1em 1em 0.5em 1em;
 }
@@ -4217,7 +4299,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: 500;
   border: 1px solid transparent !important;
   color: #dddddd;
-  background-color: #282828;
+  background-color: #222222;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;
@@ -4226,7 +4308,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .openweather-provider:hover {
   color: #dddddd;
-  background-color: #2d2d2d;
+  background-color: #2b2b2b;
   border-color: #151515;
   box-shadow: none;
   text-shadow: none;

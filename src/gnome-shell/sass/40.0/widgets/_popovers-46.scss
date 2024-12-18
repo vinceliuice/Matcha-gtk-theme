@@ -197,7 +197,7 @@ $popover_arrow_height: 12px;
 
   // lock screen, shutdown, etc. buttons
   .popup-menu-icon {
-    padding:0;
+    padding: 0;
     margin: 0 $base_margin;
     -st-icon-style: symbolic;
   }
@@ -218,6 +218,7 @@ $popover_arrow_height: 12px;
   border-radius: $circular_radius;
   padding: $base_padding * 2;
   border: none;
+  background-color: rgba($fg_color, 0.05);
   -st-icon-style: symbolic; // >= 3.29.90
 
   &:hover, &:focus {
@@ -243,11 +244,13 @@ $popover_arrow_height: 12px;
   .popup-menu-ornament { width: 0 !important; }
 
   .popup-inactive-menu-item:first-child {
+    padding: $base_padding $base_padding * 2 !important;
+
     // "Open Windows" label
     > StLabel {
       @extend %caption_heading;
-      &:ltr {margin-right: $base_margin * 2; }
-      &:rtl {margin-left: $base_margin * 2; }
+      &:ltr { margin-right: $base_margin * 2; }
+      &:rtl { margin-left: $base_margin * 2; }
     }
   }
 }

@@ -14,6 +14,17 @@
 #dashtodockContainer {
   background-color: transparent;
 
+  .dash-item-container { // actual parent container
+    background: transparent;
+
+    > StWidget { background-size: contain; }
+
+    .app-grid-running-dot {
+      margin: 2px !important;
+      offset-y: 0 !important;
+    }
+  }
+
   .number-overlay {
     color: white;
     background-color: rgba(black, 0.75);
@@ -26,7 +37,7 @@
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
     border-radius: 1000px;
     margin: 2px 3px 5px;
-    padding: 0.2em 0.6em;
+    padding: 0.25em 0.6em;
     font-weight: bold;
     text-align: center;
   }
@@ -51,7 +62,9 @@
         border-radius: 0;
       }
 
-      .dash-item-container .app-well-app, .show-apps {
+      .dash-item-container .app-well-app,
+      .overview-tile,
+      .show-apps {
         margin: 0 !important;
       }
     }
@@ -69,7 +82,9 @@
       border-radius: $base_border_radius + $base_padding / 2;
     }
 
-    .dash-item-container .app-well-app, .show-apps {
+    .dash-item-container .app-well-app,
+    .overview-tile,
+    .show-apps {
       margin: 0 !important;
     }
   }
@@ -95,7 +110,9 @@
         padding: $base_margin / 2 $base_margin !important;
       }
 
-      .dash-item-container .app-well-app, .show-apps {
+      .dash-item-container .app-well-app,
+      .overview-tile,
+      .show-apps {
         margin: 0 !important;
         padding: $base_margin / 2 0 !important;
       }
@@ -103,7 +120,7 @@
 
     &.extended,
     &.straight-corner {
-      .dash-item-container .app-well-app {
+      .dash-item-container .app-well-app, .overview-tile {
         padding: $dash_spacing $dash_padding !important;
       }
 
@@ -124,9 +141,11 @@
         padding: $base_margin $base_margin / 2 !important;
       }
 
-      .dash-item-container .app-well-app, .show-apps {
+      .dash-item-container .app-well-app,
+      .overview-tile,
+      .show-apps {
         margin: 0 !important;
-        padding: 0 $base_margin / 2 $dash_bottom_margin !important;
+        padding: 0 $base_margin / 2 $base_margin * 3 !important;
       }
     }
 
@@ -136,7 +155,9 @@
         margin: 0 ($dash_spacing + ($dash_padding / 2)) !important;
       }
 
-      .dash-item-container .app-well-app, .show-apps {
+      .dash-item-container .app-well-app,
+      .overview-tile,
+      .show-apps {
         padding: $dash_padding $dash_spacing !important;
       }
     }
@@ -152,6 +173,7 @@
       border: none !important;
     }
 
+    StWidget.focused .app-grid-running-dot,
     StWidget.focused .app-well-app-running-dot {
       background-color: $selected_bg_color;
     }
@@ -164,6 +186,7 @@
       background-color: $dash_background_color;
     }
 
+    StWidget.focused .app-grid-running-dot,
     StWidget.focused .app-well-app-running-dot {
       background-color: $selected_bg_color;
     }
@@ -217,6 +240,10 @@
   .metro .overview-icon {
     border-radius: 0;
   }
+}
+
+.dash-label.bottom {
+  margin-bottom: $dash_padding + $base_padding !important;
 }
 
 .dashtodock-app-well-preview-menu-item {

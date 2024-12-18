@@ -148,6 +148,18 @@ stage {
   &:checked { @include button(checked);}
 }
 
+%icon_button {
+  @extend %button_common;
+  @include button(normal, $c: rgba($fg_color, 0.03));
+
+  &:focus { @include button(focus);}
+  &:hover { @include button(hover);}
+  &:insensitive { @include button(insensitive);}
+  &:selected,
+  &:active { @include button(active);}
+  &:checked { @include button(checked);}
+}
+
 %flat_button {
   @include button(flat);
   &:focus { @include button(flat-focus);}
@@ -215,6 +227,20 @@ stage {
     margin-right: 0 !important;
     border-left: none !important;
   }
+}
+
+%float_bubble_button {
+  @extend %button_common;
+  @include button(normal);
+  padding: $base_padding * 2 !important;
+  border: 1px solid $borders_color;
+
+  &:focus { @include button(focus); box-shadow: inset 0 0 0 2px $borders_color !important; }
+  &:hover { @include button(hover);}
+  &:insensitive { @include button(insensitive);}
+  &:selected,
+  &:active { @include button(active);}
+  &:checked { @include button(checked);}
 }
 
 // items in popover menus

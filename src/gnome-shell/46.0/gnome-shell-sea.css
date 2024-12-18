@@ -76,12 +76,10 @@ stage {
   transition: border-width 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.quick-settings-system-item .icon-button, .quick-settings-system-item .message .message-header .message-expand-button, .message .message-header .quick-settings-system-item .message-expand-button,
-.quick-settings-system-item .message .message-header .message-close-button,
-.message .message-header .quick-settings-system-item .message-close-button, .icon-button, .background-app-item .close-button, .message .message-header .message-expand-button,
+.icon-button, .background-app-item .close-button, .message .message-header .message-expand-button,
 .message .message-header .message-close-button, .button {
   color: #363636;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -99,7 +97,7 @@ stage {
 .icon-button:hover, .background-app-item .close-button:hover, .message .message-header .message-expand-button:hover,
 .message .message-header .message-close-button:hover, .button:hover {
   color: #363636;
-  background-color: #ebebeb;
+  background-color: #efefef;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -120,7 +118,7 @@ stage {
 .message .message-header .message-close-button:selected, .button:selected, .icon-button:active, .background-app-item .close-button:active, .message .message-header .message-expand-button:active,
 .message .message-header .message-close-button:active, .button:active {
   color: #363636;
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -130,7 +128,73 @@ stage {
 .icon-button:checked, .background-app-item .close-button:checked, .message .message-header .message-expand-button:checked,
 .message .message-header .message-close-button:checked, .button:checked {
   color: #363636;
+  background-color: #efefef;
+  border-color: gainsboro;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none;
+}
+
+.quick-settings-system-item .icon-button, .quick-settings-system-item .background-app-item .close-button, .background-app-item .quick-settings-system-item .close-button, .quick-settings-system-item .message .message-header .message-expand-button, .message .message-header .quick-settings-system-item .message-expand-button,
+.quick-settings-system-item .message .message-header .message-close-button,
+.message .message-header .quick-settings-system-item .message-close-button {
+  color: #363636;
+  background-color: rgba(54, 54, 54, 0.03);
+  border-color: gainsboro;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.quick-settings-system-item .icon-button:focus, .quick-settings-system-item .background-app-item .close-button:focus, .background-app-item .quick-settings-system-item .close-button:focus, .quick-settings-system-item .message .message-header .message-expand-button:focus, .message .message-header .quick-settings-system-item .message-expand-button:focus,
+.quick-settings-system-item .message .message-header .message-close-button:focus,
+.message .message-header .quick-settings-system-item .message-close-button:focus {
+  color: #363636;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: inset 0 0 0 2px rgba(46, 179, 152, 0.6) !important;
+}
+
+.quick-settings-system-item .icon-button:hover, .quick-settings-system-item .background-app-item .close-button:hover, .background-app-item .quick-settings-system-item .close-button:hover, .quick-settings-system-item .message .message-header .message-expand-button:hover, .message .message-header .quick-settings-system-item .message-expand-button:hover,
+.quick-settings-system-item .message .message-header .message-close-button:hover,
+.message .message-header .quick-settings-system-item .message-close-button:hover {
+  color: #363636;
+  background-color: #efefef;
+  border-color: gainsboro;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.quick-settings-system-item .icon-button:insensitive, .quick-settings-system-item .background-app-item .close-button:insensitive, .background-app-item .quick-settings-system-item .close-button:insensitive, .quick-settings-system-item .message .message-header .message-expand-button:insensitive, .message .message-header .quick-settings-system-item .message-expand-button:insensitive,
+.quick-settings-system-item .message .message-header .message-close-button:insensitive,
+.message .message-header .quick-settings-system-item .message-close-button:insensitive {
+  color: #b2b2b2;
+  border-color: #eaeaea;
+  background-color: #f9f9f9;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.quick-settings-system-item .icon-button:selected, .quick-settings-system-item .background-app-item .close-button:selected, .background-app-item .quick-settings-system-item .close-button:selected, .quick-settings-system-item .message .message-header .message-expand-button:selected, .message .message-header .quick-settings-system-item .message-expand-button:selected,
+.quick-settings-system-item .message .message-header .message-close-button:selected,
+.message .message-header .quick-settings-system-item .message-close-button:selected, .quick-settings-system-item .icon-button:active, .quick-settings-system-item .background-app-item .close-button:active, .background-app-item .quick-settings-system-item .close-button:active, .quick-settings-system-item .message .message-header .message-expand-button:active, .message .message-header .quick-settings-system-item .message-expand-button:active,
+.quick-settings-system-item .message .message-header .message-close-button:active,
+.message .message-header .quick-settings-system-item .message-close-button:active {
+  color: #363636;
   background-color: #e7e7e7;
+  border-color: gainsboro;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none;
+}
+
+.quick-settings-system-item .icon-button:checked, .quick-settings-system-item .background-app-item .close-button:checked, .background-app-item .quick-settings-system-item .close-button:checked, .quick-settings-system-item .message .message-header .message-expand-button:checked, .message .message-header .quick-settings-system-item .message-expand-button:checked,
+.quick-settings-system-item .message .message-header .message-close-button:checked,
+.message .message-header .quick-settings-system-item .message-close-button:checked {
+  color: #363636;
+  background-color: #efefef;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -197,7 +261,7 @@ stage {
 .keyboard-brightness-level .button:checked, .calendar .calendar-day.calendar-today, .icon-button.default, .background-app-item .default.close-button, .message .message-header .default.message-expand-button,
 .message .message-header .default.message-close-button, .button.default {
   color: #ffffff;
-  background-color: #38b79d;
+  background-color: #2eb398;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -215,7 +279,7 @@ stage {
 .keyboard-brightness-level .button:hover:checked, .calendar .calendar-day.calendar-today:hover, .icon-button.default:hover, .background-app-item .default.close-button:hover, .message .message-header .default.message-expand-button:hover,
 .message .message-header .default.message-close-button:hover, .button.default:hover {
   color: #ffffff;
-  background-color: #43bba2;
+  background-color: #3fb9a0;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -235,7 +299,7 @@ stage {
 .keyboard-brightness-level .button:active:checked, .calendar .calendar-day.calendar-today:active, .icon-button.default:active, .background-app-item .default.close-button:active, .message .message-header .default.message-expand-button:active,
 .message .message-header .default.message-close-button:active, .button.default:active {
   color: #ffffff;
-  background-color: #4dbea7;
+  background-color: #47bca4;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -244,7 +308,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button, .hotplug-notification-item, .notification-button {
   color: #363636;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -266,7 +330,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button:hover, .hotplug-notification-item:hover, .notification-button:hover {
   color: #363636;
-  background-color: #ebebeb;
+  background-color: #efefef;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -282,7 +346,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button:active, .hotplug-notification-item:active, .notification-button:active {
   color: #363636;
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -291,7 +355,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button:checked, .hotplug-notification-item:checked, .notification-button:checked {
   color: #363636;
-  background-color: #e7e7e7;
+  background-color: #efefef;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -833,6 +897,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 1000px;
   padding: 12px;
   border: none;
+  background-color: rgba(54, 54, 54, 0.05);
   -st-icon-style: symbolic;
 }
 
@@ -858,6 +923,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-menu .popup-menu-ornament {
   width: 0 !important;
+}
+
+.app-menu .popup-inactive-menu-item:first-child {
+  padding: 6px 12px !important;
 }
 
 .app-menu .popup-inactive-menu-item:first-child > StLabel:ltr {
@@ -910,7 +979,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-today-button:hover {
   color: #363636;
-  background-color: #ebebeb;
+  background-color: #efefef;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -919,7 +988,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-today-button:active {
   color: #363636;
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -955,7 +1024,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar:hover {
   color: #363636;
-  background-color: #ebebeb;
+  background-color: #efefef;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -964,7 +1033,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar:active {
   color: #363636;
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -1089,7 +1158,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 3px;
   margin: 4px;
   color: #363636;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -1100,7 +1169,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button:hover,
 .weather-button:hover {
   color: #363636;
-  background-color: #ebebeb;
+  background-color: #efefef;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -1111,7 +1180,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button:active,
 .weather-button:active {
   color: #363636;
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -1286,7 +1355,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 3px;
   margin: 4px;
   color: #363636;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -1297,7 +1366,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message:hover {
   color: #363636;
-  background-color: #ebebeb;
+  background-color: #efefef;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -1306,7 +1375,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message:active {
   color: #363636;
-  background-color: #e1e1e1;
+  background-color: #e7e7e7;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -1824,7 +1893,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .quick-settings-system-item .power-item:insensitive {
   color: #363636;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -2356,9 +2425,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -natural-hpadding: 12px;
   -minimum-hpadding: 12px;
   transition-duration: 150ms;
-  border: 0 none transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
   border-radius: 0;
   text-shadow: none;
+}
+
+#panel .panel-button.clock-display {
+  border: none;
+  border-bottom: 3px solid transparent !important;
 }
 
 #panel .panel-button.clock-display .clock {
@@ -2369,7 +2444,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:checked, #panel .panel-button.clock-display:focus {
   background-color: rgba(255, 255, 255, 0.15) !important;
-  box-shadow: inset 0 -2px #2eb398 !important;
+  border-color: #2eb398 !important;
+  box-shadow: none !important;
 }
 
 #panel .panel-button:hover, #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
@@ -2383,7 +2459,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:checked, #panel .panel-button:focus {
   background-color: rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0 -2px #2eb398 !important;
+  border-color: #2eb398;
+  box-shadow: none !important;
   text-shadow: none;
 }
 
@@ -2419,7 +2496,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel.unlock-screen .panel-button:hover.clock-display .clock, #panel.unlock-screen .panel-button:active.clock-display .clock, #panel.unlock-screen .panel-button:overview.clock-display .clock, #panel.unlock-screen .panel-button:focus.clock-display .clock, #panel.unlock-screen .panel-button:checked.clock-display .clock, #panel.login-screen .panel-button:hover.clock-display .clock, #panel.login-screen .panel-button:active.clock-display .clock, #panel.login-screen .panel-button:overview.clock-display .clock, #panel.login-screen .panel-button:focus.clock-display .clock, #panel.login-screen .panel-button:checked.clock-display .clock, #panel:overview .panel-button:hover.clock-display .clock, #panel:overview .panel-button:active.clock-display .clock, #panel:overview .panel-button:overview.clock-display .clock, #panel:overview .panel-button:focus.clock-display .clock, #panel:overview .panel-button:checked.clock-display .clock {
-  box-shadow: none;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 #panel .screencast-indicator,
@@ -2678,7 +2756,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Dash */
 #dash {
-  margin-top: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 #dash .dash-background {
@@ -2760,7 +2839,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dash .dash-item-container .app-grid-running-dot {
-  margin-bottom: 21px;
+  offset-y: -12px;
 }
 
 #dash .dash-separator {
@@ -2855,7 +2934,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder {
   color: white;
-  background-color: #222829;
+  background-color: #202627;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -2871,7 +2950,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder:hover {
   color: white;
-  background-color: #2e3335;
+  background-color: #292f30;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -2880,7 +2959,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder:active {
   color: white;
-  background-color: #393e40;
+  background-color: #333839;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -2889,7 +2968,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder:highlighted, .app-folder:selected, .app-folder:checked {
   color: white;
-  background-color: #333839;
+  background-color: #292f30;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -2956,7 +3035,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-folder-dialog .message .message-header .message-close-button,
 .message .message-header .app-folder-dialog .message-close-button, .app-folder-dialog .background-app-item .close-button, .background-app-item .app-folder-dialog .close-button {
   color: white;
-  background-color: #383d3f;
+  background-color: #2e3335;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -2967,7 +3046,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-folder-dialog .message .message-header .message-close-button:hover,
 .message .message-header .app-folder-dialog .message-close-button:hover, .app-folder-dialog .background-app-item .close-button:hover, .background-app-item .app-folder-dialog .close-button:hover {
   color: white;
-  background-color: #434749;
+  background-color: #3f4345;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -2978,7 +3057,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-folder-dialog .message .message-header .message-close-button:active,
 .message .message-header .app-folder-dialog .message-close-button:active, .app-folder-dialog .background-app-item .close-button:active, .background-app-item .app-folder-dialog .close-button:active {
   color: white;
-  background-color: #4d5253;
+  background-color: #474b4d;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -3305,7 +3384,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key {
   color: #363636;
-  background-color: #ebebeb;
+  background-color: #f5f5f5;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3327,7 +3406,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key:hover, .keyboard-key:checked {
   color: #363636;
-  background-color: #e2e2e2;
+  background-color: #e6e6e6;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3336,7 +3415,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key:active {
   color: #363636;
-  background-color: #d8d8d8;
+  background-color: #dedede;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -3351,7 +3430,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.default-key {
   color: #363636;
-  background-color: #0c0e0f;
+  background-color: #0a0c0d;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3360,7 +3439,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.default-key:hover, .keyboard-key.default-key:checked {
   color: #363636;
-  background-color: #0e1011;
+  background-color: #0d0f10;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3369,7 +3448,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.default-key:active {
   color: #363636;
-  background-color: #101213;
+  background-color: #0f1112;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -3378,7 +3457,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.enter-key {
   color: #ffffff;
-  background-color: #38b79d;
+  background-color: #2eb398;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3387,7 +3466,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.enter-key:hover, .keyboard-key.enter-key:checked {
   color: #363636;
-  background-color: #32b198;
+  background-color: #32b49a;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3396,7 +3475,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.enter-key:active {
   color: #363636;
-  background-color: #2d9983;
+  background-color: #2d9d86;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -3424,7 +3503,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-subkeys .keyboard-key {
   color: #363636;
-  background-color: #ebebeb;
+  background-color: #f5f5f5;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3441,7 +3520,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-subkeys .keyboard-key:hover, .keyboard-subkeys .keyboard-key:checked {
   color: #363636;
-  background-color: #e2e2e2;
+  background-color: #e6e6e6;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3450,7 +3529,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-subkeys .keyboard-key:active {
   color: #363636;
-  background-color: #d8d8d8;
+  background-color: #dedede;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -3663,7 +3742,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .login-dialog .modal-dialog-button:default,
 .unlock-dialog .modal-dialog-button:default {
   color: #ffffff;
-  background-color: #38b79d;
+  background-color: #2eb398;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3675,7 +3754,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .unlock-dialog .modal-dialog-button:default:hover,
 .unlock-dialog .modal-dialog-button:default:focus {
   color: #ffffff;
-  background-color: #43bba2;
+  background-color: #3fb9a0;
   border-color: gainsboro;
   box-shadow: none;
   text-shadow: none;
@@ -3687,7 +3766,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .login-dialog .modal-dialog-button:default:active,
 .unlock-dialog .modal-dialog-button:default:active {
   color: #ffffff;
-  background-color: #4dbea7;
+  background-color: #47bca4;
   border-color: gainsboro;
   text-shadow: none;
   icon-shadow: none;
@@ -4170,4 +4249,409 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px 12px;
   text-align: center;
   -y-offset: 24px;
+}
+
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
+#dashtodockContainer {
+  background-color: transparent;
+}
+
+#dashtodockContainer .dash-item-container {
+  background: transparent;
+}
+
+#dashtodockContainer .dash-item-container > StWidget {
+  background-size: contain;
+}
+
+#dashtodockContainer .dash-item-container .app-grid-running-dot {
+  margin: 2px !important;
+  offset-y: 0 !important;
+}
+
+#dashtodockContainer .number-overlay {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+#dashtodockContainer .notification-badge {
+  color: #ffffff;
+  background-color: #2eb398;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 1000px;
+  margin: 2px 3px 5px;
+  padding: 0.25em 0.6em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#dashtodockContainer.top.straight-corner, #dashtodockContainer.top.straight-corner #dash, #dashtodockContainer.top.shrink.straight-corner, #dashtodockContainer.top.shrink.straight-corner #dash, #dashtodockContainer.top.extended, #dashtodockContainer.top.extended #dash, #dashtodockContainer.top.shrink.extended, #dashtodockContainer.top.shrink.extended #dash {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.top.straight-corner .dash-background, #dashtodockContainer.top.shrink.straight-corner .dash-background, #dashtodockContainer.top.extended .dash-background, #dashtodockContainer.top.shrink.extended .dash-background {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+}
+
+#dashtodockContainer.top.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.top.straight-corner .overview-tile,
+#dashtodockContainer.top.straight-corner .grid-search-result,
+#dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.top.shrink.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.top.shrink.straight-corner .overview-tile,
+#dashtodockContainer.top.shrink.straight-corner .show-apps, #dashtodockContainer.top.extended .dash-item-container .app-well-app,
+#dashtodockContainer.top.extended .overview-tile,
+#dashtodockContainer.top.extended .grid-search-result,
+#dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.top.shrink.extended .overview-tile,
+#dashtodockContainer.top.shrink.extended .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.bottom.straight-corner, #dashtodockContainer.bottom.straight-corner #dash, #dashtodockContainer.bottom.shrink.straight-corner, #dashtodockContainer.bottom.shrink.straight-corner #dash, #dashtodockContainer.bottom.extended, #dashtodockContainer.bottom.extended #dash, #dashtodockContainer.bottom.shrink.extended, #dashtodockContainer.bottom.shrink.extended #dash {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.bottom.straight-corner .dash-background, #dashtodockContainer.bottom.shrink.straight-corner .dash-background, #dashtodockContainer.bottom.extended .dash-background, #dashtodockContainer.bottom.shrink.extended .dash-background {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+}
+
+#dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.straight-corner .overview-tile,
+#dashtodockContainer.bottom.straight-corner .grid-search-result,
+#dashtodockContainer.bottom.straight-corner .show-apps, #dashtodockContainer.bottom.shrink.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.shrink.straight-corner .overview-tile,
+#dashtodockContainer.bottom.shrink.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.extended .overview-tile,
+#dashtodockContainer.bottom.extended .grid-search-result,
+#dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.shrink.extended .overview-tile,
+#dashtodockContainer.bottom.shrink.extended .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.left.straight-corner, #dashtodockContainer.left.straight-corner #dash, #dashtodockContainer.left.shrink.straight-corner, #dashtodockContainer.left.shrink.straight-corner #dash, #dashtodockContainer.left.extended, #dashtodockContainer.left.extended #dash, #dashtodockContainer.left.shrink.extended, #dashtodockContainer.left.shrink.extended #dash {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.left.straight-corner .dash-background, #dashtodockContainer.left.shrink.straight-corner .dash-background, #dashtodockContainer.left.extended .dash-background, #dashtodockContainer.left.shrink.extended .dash-background {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+}
+
+#dashtodockContainer.left.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.left.straight-corner .overview-tile,
+#dashtodockContainer.left.straight-corner .grid-search-result,
+#dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.left.shrink.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.left.shrink.straight-corner .overview-tile,
+#dashtodockContainer.left.shrink.straight-corner .show-apps, #dashtodockContainer.left.extended .dash-item-container .app-well-app,
+#dashtodockContainer.left.extended .overview-tile,
+#dashtodockContainer.left.extended .grid-search-result,
+#dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.left.shrink.extended .overview-tile,
+#dashtodockContainer.left.shrink.extended .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.right.straight-corner, #dashtodockContainer.right.straight-corner #dash, #dashtodockContainer.right.shrink.straight-corner, #dashtodockContainer.right.shrink.straight-corner #dash, #dashtodockContainer.right.extended, #dashtodockContainer.right.extended #dash, #dashtodockContainer.right.shrink.extended, #dashtodockContainer.right.shrink.extended #dash {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.right.straight-corner .dash-background, #dashtodockContainer.right.shrink.straight-corner .dash-background, #dashtodockContainer.right.extended .dash-background, #dashtodockContainer.right.shrink.extended .dash-background {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+}
+
+#dashtodockContainer.right.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.right.straight-corner .overview-tile,
+#dashtodockContainer.right.straight-corner .grid-search-result,
+#dashtodockContainer.right.straight-corner .show-apps, #dashtodockContainer.right.shrink.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.right.shrink.straight-corner .overview-tile,
+#dashtodockContainer.right.shrink.straight-corner .show-apps, #dashtodockContainer.right.extended .dash-item-container .app-well-app,
+#dashtodockContainer.right.extended .overview-tile,
+#dashtodockContainer.right.extended .grid-search-result,
+#dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.right.shrink.extended .overview-tile,
+#dashtodockContainer.right.shrink.extended .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.extended .dash-background, #dashtodockContainer.straight-corner .dash-background {
+  border-radius: 0;
+}
+
+#dashtodockContainer.shrink .dash-background {
+  border-radius: 6px;
+}
+
+#dashtodockContainer.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.shrink .overview-tile,
+#dashtodockContainer.shrink .grid-search-result,
+#dashtodockContainer.shrink .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.shrink.extended .dash-background {
+  border-radius: 0;
+}
+
+#dashtodockContainer.left .dash-item-container .app-well-app, #dashtodockContainer.left .show-apps, #dashtodockContainer.right .dash-item-container .app-well-app, #dashtodockContainer.right .show-apps {
+  padding: 2px 6px !important;
+}
+
+#dashtodockContainer.left .dash-background, #dashtodockContainer.right .dash-background {
+  margin-bottom: 0 !important;
+}
+
+#dashtodockContainer.left.shrink .dash-background, #dashtodockContainer.left.shrink.extended .dash-background, #dashtodockContainer.right.shrink .dash-background, #dashtodockContainer.right.shrink.extended .dash-background {
+  padding: 2px 4px !important;
+}
+
+#dashtodockContainer.left.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.left.shrink .overview-tile,
+#dashtodockContainer.left.shrink .grid-search-result,
+#dashtodockContainer.left.shrink .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.left.shrink.extended .overview-tile,
+#dashtodockContainer.left.shrink.extended .show-apps, #dashtodockContainer.right.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.right.shrink .overview-tile,
+#dashtodockContainer.right.shrink .grid-search-result,
+#dashtodockContainer.right.shrink .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app,
+#dashtodockContainer.right.shrink.extended .overview-tile,
+#dashtodockContainer.right.shrink.extended .show-apps {
+  margin: 0 !important;
+  padding: 2px 0 !important;
+}
+
+#dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.extended .overview-tile, #dashtodockContainer.left.extended .grid-search-result, #dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .overview-tile, #dashtodockContainer.left.straight-corner .grid-search-result, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.extended .overview-tile, #dashtodockContainer.right.extended .grid-search-result, #dashtodockContainer.right.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .overview-tile, #dashtodockContainer.right.straight-corner .grid-search-result {
+  padding: 2px 12px !important;
+}
+
+#dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.straight-corner .show-apps {
+  padding: 2px 12px 24px !important;
+}
+
+#dashtodockContainer.top .dash-background, #dashtodockContainer.bottom .dash-background {
+  padding: 12px 10px !important;
+}
+
+#dashtodockContainer.top.shrink .dash-background, #dashtodockContainer.bottom.shrink .dash-background {
+  padding: 4px 2px !important;
+}
+
+#dashtodockContainer.top.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.top.shrink .overview-tile,
+#dashtodockContainer.top.shrink .grid-search-result,
+#dashtodockContainer.top.shrink .show-apps, #dashtodockContainer.bottom.shrink .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.shrink .overview-tile,
+#dashtodockContainer.bottom.shrink .grid-search-result,
+#dashtodockContainer.bottom.shrink .show-apps {
+  margin: 0 !important;
+  padding: 0 2px 12px !important;
+}
+
+#dashtodockContainer.top.extended .dash-separator, #dashtodockContainer.top.straight-corner .dash-separator, #dashtodockContainer.bottom.extended .dash-separator, #dashtodockContainer.bottom.straight-corner .dash-separator {
+  margin: 0 8px !important;
+}
+
+#dashtodockContainer.top.extended .dash-item-container .app-well-app,
+#dashtodockContainer.top.extended .overview-tile,
+#dashtodockContainer.top.extended .grid-search-result,
+#dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.top.straight-corner .overview-tile,
+#dashtodockContainer.top.straight-corner .grid-search-result,
+#dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.extended .overview-tile,
+#dashtodockContainer.bottom.extended .grid-search-result,
+#dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app,
+#dashtodockContainer.bottom.straight-corner .overview-tile,
+#dashtodockContainer.bottom.straight-corner .grid-search-result,
+#dashtodockContainer.bottom.straight-corner .show-apps {
+  padding: 12px 2px !important;
+}
+
+#dashtodockContainer #dash {
+  background: none;
+}
+
+#dashtodockContainer #dash .dash-background {
+  color: #dddddd;
+  background-color: rgba(12, 15, 16, 0.9);
+  box-shadow: none !important;
+  border: none !important;
+}
+
+#dashtodockContainer #dash StWidget.focused .app-grid-running-dot,
+#dashtodockContainer #dash StWidget.focused .app-well-app-running-dot {
+  background-color: #2eb398;
+}
+
+#dashtodockContainer:overview #dash {
+  background: none;
+}
+
+#dashtodockContainer:overview #dash .dash-background {
+  background-color: #2e3335;
+}
+
+#dashtodockContainer:overview #dash StWidget.focused .app-grid-running-dot,
+#dashtodockContainer:overview #dash StWidget.focused .app-well-app-running-dot {
+  background-color: #2eb398;
+}
+
+#dashtodockContainer.opaque:overview #dash, #dashtodockContainer.transparent:overview #dash {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#dashtodockContainer.opaque:overview .dash-background, #dashtodockContainer.transparent:overview .dash-background {
+  background-color: transparent !important;
+}
+
+#dashtodockContainer.extended:overview #dash, #dashtodockContainer.opaque.extended:overview #dash, #dashtodockContainer.transparent.extended:overview #dash {
+  background: none;
+}
+
+#dashtodockContainer.running-dots .dash-item-container > StButton, #dashtodockContainer.dashtodock .dash-item-container > StButton {
+  transition-duration: 250ms;
+  background-size: contain;
+}
+
+#dashtodockContainer.shrink .dash-item-container > StButton, #dashtodockContainer.dashtodock .dash-item-container > StButton {
+  padding: 1px 2px;
+}
+
+#dashtodockContainer.extended .app-well-app .overview-icon,
+#dashtodockContainer.extended .show-apps .overview-icon, #dashtodockContainer.extended:overview .app-well-app .overview-icon,
+#dashtodockContainer.extended:overview .show-apps .overview-icon {
+  border-radius: 2px;
+}
+
+#dashtodockContainer .metro .overview-icon {
+  border-radius: 0;
+}
+
+.dash-label.bottom {
+  margin-bottom: 18px !important;
+}
+
+.dashtodock-app-well-preview-menu-item {
+  padding: 1em 1em 0.5em 1em;
+}
+
+#dashtodockPreviewSeparator.popup-separator-menu-item-horizontal {
+  width: 1px;
+  height: auto;
+  border-right-width: 1px;
+  margin: 32px 0;
+}
+
+.openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
+  border: 1px solid transparent !important;
+  background: none;
+}
+
+.openweather-provider {
+  padding: 0 16px;
+  font-weight: 500;
+  border: 1px solid transparent !important;
+  color: #363636;
+  background-color: #ffffff;
+  border-color: gainsboro;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-provider:hover {
+  color: #363636;
+  background-color: #efefef;
+  border-color: gainsboro;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-provider:focus {
+  color: #363636;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: inset 0 0 0 2px rgba(46, 179, 152, 0.6) !important;
+}
+
+.openweather-provider:active {
+  color: #363636;
+  background-color: #e7e7e7;
+  border-color: gainsboro;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none;
+}
+
+.openweather-provider:insensitive {
+  color: #b2b2b2;
+  border-color: #eaeaea;
+  background-color: #f9f9f9;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-current-icon, .openweather-current-summary, .openweather-current-summarybox {
+  background: none;
+  color: #363636;
+  -st-icon-style: symbolic;
+}
+
+.openweather-current-databox-values {
+  background: none;
+  color: #555555;
+}
+
+.openweather-current-databox-captions {
+  background: none;
+  color: #b2b2b2;
+}
+
+.openweather-forecast-icon, .openweather-forecast-summary {
+  background: none;
+  color: #555555;
+  -st-icon-style: symbolic;
+}
+
+.openweather-forecast-day {
+  background: none;
+  color: #363636;
+}
+
+.openweather-forecast-temperature {
+  background: none;
+  color: #555555;
+}
+
+.openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
+  color: #555555;
+  -st-icon-style: symbolic;
 }

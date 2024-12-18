@@ -1,0 +1,34 @@
+/* Check Boxes */
+
+// these are equal to the size of the SVG assets
+$check_height: 24px;
+$check_width: 24px;
+
+.check-box {
+  StBoxLayout { spacing: .8em; }
+  StBin {
+    width: $check_width;
+    height: $check_height;
+    background-image: url("assets/checkbox-off.svg");
+    padding: 0;
+  }
+  &:focus StBin {
+    background-image: url("assets/checkbox-off.svg");
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &:checked StBin {
+    background-image: url("assets/checkbox.svg");
+  }
+  &:focus:checked StBin {
+    background-image: url("assets/checkbox.svg");
+  }
+  StIcon {
+    icon-size: 0;
+    padding: 0;
+    color: transparent !important;
+    background-color: transparent !important;
+    border-radius: 0;
+    border: none !important;
+  }
+}

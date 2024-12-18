@@ -1,0 +1,21 @@
+/* Slider */
+
+$slider_size: 14px;
+
+.slider {
+  height: $slider_size + 2px;
+  color: $selected_bg_color;
+
+  // slider trough
+  -barlevel-height: 2px; // has to be an odd number
+  -barlevel-background-color: $borders_color; //background of the trough
+
+  // fill style
+  -barlevel-active-background-color: $selected_bg_color; //active trough fill
+
+  // overfill style (red in this case)
+  -barlevel-overdrive-color: $destructive_color;
+  -barlevel-overdrive-separator-width: 1px;
+  // slider handler
+  -slider-handle-radius: $slider_size * 0.5; // half the size of the size
+}
