@@ -1465,12 +1465,14 @@ $sidebar_pane_bg_backdrop: if($header == 'dark' and $variant == 'light', $header
         }
       }
 
-      windowcontrols {
-        button {
-          @each $k in ('close', 'maximize', 'minimize') {
-            @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-              &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}.png'),
-                                                           url('assets/titlebutton-#{$k}#{$m}@2.png'));
+      @if $variant == 'light' and $header == 'dark' {
+        windowcontrols {
+          button {
+            @each $k in ('close', 'maximize', 'minimize') {
+              @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+                &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}.png'),
+                                                             url('assets/titlebutton-#{$k}#{$m}@2.png'));
+                }
               }
             }
           }
@@ -1485,17 +1487,6 @@ $sidebar_pane_bg_backdrop: if($header == 'dark' and $variant == 'light', $header
     }
   }
 
-  .fullscreen & headerbar windowcontrols,
-  .maximized & headerbar windowcontrols {
-    button {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-        &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#.png'),
-                                                        url('assets/titlebutton-restore#{$m}@2.png'));
-        }
-      }
-    }
-  }
-
   toolbarview {
     &, &.view {
       background-color: transparent;
@@ -1503,6 +1494,19 @@ $sidebar_pane_bg_backdrop: if($header == 'dark' and $variant == 'light', $header
 
     > stack, > box > stack.view {
       background-color: transparent;
+    }
+  }
+}
+
+@if $variant == 'light' and $header == 'dark' {
+  .fullscreen .content-pane headerbar windowcontrols,
+  .maximized .content-pane headerbar windowcontrols {
+    button {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+        &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#.png'),
+                                                        url('assets/titlebutton-restore#{$m}@2.png'));
+        }
+      }
     }
   }
 }

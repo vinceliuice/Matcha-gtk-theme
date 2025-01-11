@@ -7972,28 +7972,32 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   border: none;
 }
 
-.fullscreen .content-pane headerbar windowcontrols button.maximize, .maximized .content-pane headerbar windowcontrols button.maximize {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore#.png"), url("assets/titlebutton-restore@2.png"));
-}
-
-.fullscreen .content-pane headerbar windowcontrols button.maximize:backdrop, .maximized .content-pane headerbar windowcontrols button.maximize:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop#.png"), url("assets/titlebutton-restore-backdrop@2.png"));
-}
-
-.fullscreen .content-pane headerbar windowcontrols button.maximize:hover, .maximized .content-pane headerbar windowcontrols button.maximize:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover#.png"), url("assets/titlebutton-restore-hover@2.png"));
-}
-
-.fullscreen .content-pane headerbar windowcontrols button.maximize:active, .maximized .content-pane headerbar windowcontrols button.maximize:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-active#.png"), url("assets/titlebutton-restore-active@2.png"));
-}
-
 .content-pane toolbarview, .content-pane toolbarview.view {
   background-color: transparent;
 }
 
 .content-pane toolbarview > stack, .content-pane toolbarview > box > stack.view {
   background-color: transparent;
+}
+
+.fullscreen .content-pane headerbar windowcontrols button.maximize,
+.maximized .content-pane headerbar windowcontrols button.maximize {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore#.png"), url("assets/titlebutton-restore@2.png"));
+}
+
+.fullscreen .content-pane headerbar windowcontrols button.maximize:backdrop,
+.maximized .content-pane headerbar windowcontrols button.maximize:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop#.png"), url("assets/titlebutton-restore-backdrop@2.png"));
+}
+
+.fullscreen .content-pane headerbar windowcontrols button.maximize:hover,
+.maximized .content-pane headerbar windowcontrols button.maximize:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover#.png"), url("assets/titlebutton-restore-hover@2.png"));
+}
+
+.fullscreen .content-pane headerbar windowcontrols button.maximize:active,
+.maximized .content-pane headerbar windowcontrols button.maximize:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-active#.png"), url("assets/titlebutton-restore-active@2.png"));
 }
 
 .top-bar {
