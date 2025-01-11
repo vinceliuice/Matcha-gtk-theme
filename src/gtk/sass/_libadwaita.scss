@@ -1586,7 +1586,7 @@ themeswitcher {
     min-height: 16px;
     min-width: 16px;
     background-color: $selected_bg_color;
-    color: on($selected_bg_color);
+    color: $selected_fg_color;
     padding: 2px;
     border-radius: 100%;
     margin: 3px;
@@ -1596,12 +1596,12 @@ themeswitcher {
 
     &:hover {
       background-color: lighten($selected_bg_color, 10%);
-      color: on($selected_bg_color);
+      color: $selected_fg_color;
     }
 
     &:active {
       background-color: $selected_bg_color;
-      color: on($selected_bg_color);
+      color: $selected_fg_color;
     }
   }
 

@@ -7948,7 +7948,7 @@ themeswitcher .check {
   min-height: 16px;
   min-width: 16px;
   background-color: #F0544C;
-  color: on(#F0544C);
+  color: #ffffff;
   padding: 2px;
   border-radius: 100%;
   margin: 3px;
@@ -7958,12 +7958,12 @@ themeswitcher .check {
 
 themeswitcher .check:hover {
   background-color: #f4817b;
-  color: on(#F0544C);
+  color: #ffffff;
 }
 
 themeswitcher .check:active {
   background-color: #F0544C;
-  color: on(#F0544C);
+  color: #ffffff;
 }
 
 themeswitcher checkbutton radio {
