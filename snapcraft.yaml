@@ -1,0 +1,62 @@
+name: gtk-theme-matcha
+base: core24
+version: '2025-01-22'
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+summary: Matcha GTK theme for GTK Snaps
+description: |
+  A snap that exports the Matcha GTK theme.
+grade: stable
+confinement: strict
+
+slots:
+  gtk-2-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/share/gtk2/Matcha-aliz
+        - $SNAP/share/gtk2/Matcha-azul
+        - $SNAP/share/gtk2/Matcha-pueril
+        - $SNAP/share/gtk2/Matcha-sea
+        - $SNAP/share/gtk2/Matcha-dark-aliz
+        - $SNAP/share/gtk2/Matcha-dark-azul
+        - $SNAP/share/gtk2/Matcha-dark-pueril
+        - $SNAP/share/gtk2/Matcha-dark-sea
+        - $SNAP/share/gtk2/Matcha-light-aliz
+        - $SNAP/share/gtk2/Matcha-light-azul
+        - $SNAP/share/gtk2/Matcha-light-pueril
+        - $SNAP/share/gtk2/Matcha-light-sea
+  gtk-3-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/share/themes/Matcha-aliz
+        - $SNAP/share/themes/Matcha-azul
+        - $SNAP/share/themes/Matcha-pueril
+        - $SNAP/share/themes/Matcha-sea
+        - $SNAP/share/themes/Matcha-dark-aliz
+        - $SNAP/share/themes/Matcha-dark-azul
+        - $SNAP/share/themes/Matcha-dark-pueril
+        - $SNAP/share/themes/Matcha-dark-sea
+        - $SNAP/share/themes/Matcha-light-aliz
+        - $SNAP/share/themes/Matcha-light-azul
+        - $SNAP/share/themes/Matcha-light-pueril
+        - $SNAP/share/themes/Matcha-light-sea
+parts:
+  matcha-gtk-theme:
+        plugin: nil
+        source: https://github.com/vinceliuice/Matcha-gtk-theme.git
+        source-type: git
+        source-depth: 1
+        override-build: |
+          craftctl default
+          mkdir -p $CRAFT_PART_INSTALL/share/gtk2
+          mkdir -p $CRAFT_PART_INSTALL/share/themes
+          ./install.sh -d $CRAFT_PART_INSTALL/share/gtk2
+          ./install.sh -d $CRAFT_PART_INSTALL/share/themes
+        stage:
+          - share/gtk2/*/gtk-2.0
+          - share/themes/*/gtk-3.0
+          - share/themes/*/gtk-4.0
