@@ -2617,7 +2617,7 @@ menu menuitem,
 .menu menuitem {
   min-height: 16px;
   min-width: 40px;
-  padding: 5px;
+  padding: 5px 8px;
   color: #2e313d;
 }
 
@@ -4992,11 +4992,14 @@ popover.emoji-picker {
 
 popover.emoji-picker entry {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 2px 2px 0 0;
   box-shadow: none;
   border-width: 0 0 1px 0;
   padding: 4px 12px;
+}
+
+popover.emoji-picker entry, popover.emoji-picker entry:focus {
+  background-color: transparent;
 }
 
 popover.emoji-picker scrolledwindow {

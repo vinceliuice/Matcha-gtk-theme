@@ -2025,7 +2025,7 @@ menu,
   menuitem {
     min-height: 16px;
     min-width: 40px;
-    padding: 5px;
+    padding: 5px 8px;
     color: $text_color;
 
     &:hover {
@@ -3794,12 +3794,15 @@ popover.emoji-picker {
 
   entry {
     border-bottom: 1px solid $borders_color;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-radius: 2px 2px 0 0;
     box-shadow: none;
     border-width: 0 0 1px 0;
     padding: 4px 12px;
     // margin: 2px 0 0 0;
+
+    &, &:focus {
+      background-color: transparent;
+    }
   }
 
   scrolledwindow { border-bottom: 1px solid $borders_color; }
