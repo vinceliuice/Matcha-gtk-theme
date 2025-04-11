@@ -123,7 +123,9 @@
   }
 }
 
-@mixin button($t, $c:$base_color, $tc:$fg_color, $edge: $borders_edge, $shadow: $shadow_color) {
+$button_bg_color: if($variant == 'light', $base_color, lighten($base_color, 3%));
+
+@mixin button($t, $c:$button_bg_color, $tc:$fg_color, $edge: $borders_edge, $shadow: $shadow_color) {
 //
 // Button drawing function
 //
@@ -162,7 +164,7 @@
     color: $tc;
     text-shadow: none;
     icon-shadow: none;
-    box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, 0.4) !important;
+    box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, 0.65) !important;
     //border-color: $selected_bg_color;
   }
 
@@ -323,6 +325,7 @@
     box-shadow: none !important;
   } @else {
     @include button(normal);
+    box-shadow: 0 1px 1px 0 rgba(black, 0.05);
   }
 
   &:hover { @include button(hover); }

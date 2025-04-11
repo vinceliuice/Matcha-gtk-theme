@@ -781,7 +781,7 @@ toolbar.inline-toolbar toolbutton {
     > button:checked + #{$_uncolored_button}:disabled,
     > button.suggested-action + #{$_uncolored_button}:disabled,
     > button.destructive-action + #{$_uncolored_button}:disabled,
-    > entry + #{$_uncolored_button}:disabled:not(:only-child), { box-shadow: none; }
+    > entry + #{$_uncolored_button}:disabled:not(:only-child) { box-shadow: none; }
   }
 
   @if $button_rules=='false' {
@@ -1770,15 +1770,14 @@ headerbar {
 // Pathbars
 //
 .path-bar button {
-
   &:hover { background-color: rgba($fg_color, 0.06); }
   &:checked, &:active {
     background-color: $selected_bg_color;
-    border-color: $selected_bg_color;
+    @if $variant == 'light' { border-color: $selected_bg_color; }
 
     &:hover{
       background-color: lighten($selected_bg_color, 5%);
-      border-color: lighten($selected_bg_color, 5%);
+      @if $variant == 'light' { border-color: lighten($selected_bg_color, 5%); }
     }
   }
 

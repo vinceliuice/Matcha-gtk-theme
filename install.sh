@@ -19,7 +19,7 @@ THEME_NAME=Matcha
 COLOR_VARIANTS=('' '-light' '-dark')
 THEME_VARIANTS=('-sea' '-aliz' '-azul' '-pueril')
 
-GS_VERSION=""
+SHELL_VERSION=""
 
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
@@ -28,7 +28,7 @@ usage() {
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [standard|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-t, --theme VARIANTS" "Specify hue theme variant(s) [sea|aliz|azul|pueril] (Default: All variants)"
-  printf "  %-25s%s\n" "-s, --gnome-shell" "Set gnome-shell flavor, where new is version 44.0 or later, [38|40|42|44] (Default: Auto detect)"
+  printf "  %-25s%s\n" "-s, --gnome-shell" "Set gnome-shell version flavor, [38|40|42|44|46|47|48] (Default: Auto detect)"
   printf "  %-25s%s\n" "-l, --libadwaita" "Force all libadwaita app use linked gtk-4.0 theme"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-r, --remove" "Remove(Uninstall) themes/GDM/libadwaita"
@@ -74,7 +74,7 @@ install() {
   cp -r *.svg                                                                         "${themedir}/gnome-shell"
   cp -r common-assets                                                                 "${themedir}/gnome-shell/assets"
   cp -r assets${ELSE_DARK}/*.svg                                                      "${themedir}/gnome-shell/assets"
-  cp -r "${GS_VERSION}/gnome-shell${ELSE_DARK}${theme}.css"                           "${themedir}/gnome-shell/gnome-shell.css"
+  cp -r "${SHELL_VERSION}/gnome-shell${ELSE_DARK}${theme}.css"                        "${themedir}/gnome-shell/gnome-shell.css"
 
   cd "${SRC_DIR}/gnome-shell/theme-assets"
   cp -r "checkbox${theme}.svg"                                                        "${themedir}/gnome-shell/assets/checkbox.svg"
@@ -340,27 +340,27 @@ while [[ $# -gt 0 ]]; do
     -s|--gnome-shell)
       case "${2}" in
         38)
-          GS_VERSION=3.28
+          SHELL_VERSION=38
           shift 2
           ;;
         40)
-          GS_VERSION=40.0
+          SHELL_VERSION=40
           shift 2
           ;;
         42)
-          GS_VERSION=42.0
+          SHELL_VERSION=42
           shift 2
           ;;
         44)
-          GS_VERSION=44.0
+          SHELL_VERSION=44
           shift 2
           ;;
         46)
-          GS_VERSION=46.0
+          SHELL_VERSION=46
           shift 2
           ;;
         47)
-          GS_VERSION=47.0
+          SHELL_VERSION=47
           shift 2
           ;;
         -*|--*)
@@ -372,7 +372,7 @@ while [[ $# -gt 0 ]]; do
           echo "Try '$0 --help' for more information."
           exit 1
           ;;
-        esac
+      esac
       ;;
     -t|--theme)
       shift
@@ -450,26 +450,17 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ -z "$GS_VERSION" ]]; then
+if [[ -z "$SHELL_VERSION" ]]; then
   if [[ "$(command -v gnome-shell)" ]]; then
     gnome-shell --version
     SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-    if [[ "${SHELL_VERSION:-}" -ge "47" ]]; then
-      GS_VERSION="47.0"
-    elif [[ "${SHELL_VERSION:-}" -ge "46" ]]; then
-      GS_VERSION="46.0"
-    elif [[ "${SHELL_VERSION:-}" -ge "44" ]]; then
-      GS_VERSION="44.0"
-    elif [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
-      GS_VERSION="42.0"
-    elif [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
-      GS_VERSION="40.0"
-    else
-      GS_VERSION="3.28"
+
+    if [[ "${SHELL_VERSION:-}" -lt "40" ]]; then
+      SHELL_VERSION="38"
     fi
   else
     echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-    GS_VERSION="47.0"
+    SHELL_VERSION="48"
   fi
 fi
 

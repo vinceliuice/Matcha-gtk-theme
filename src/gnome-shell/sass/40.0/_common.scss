@@ -232,7 +232,7 @@ stage {
 %float_bubble_button {
   @extend %button_common;
   @include button(normal);
-  padding: $base_padding * 2 !important;
+  padding: $base_padding * 1.5 !important;
   border: 1px solid $borders_color;
 
   &:focus { @include button(focus); box-shadow: inset 0 0 0 2px $borders_color !important; }

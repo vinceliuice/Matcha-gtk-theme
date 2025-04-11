@@ -752,6 +752,10 @@ preferencesgroup > box {
 viewswitcher {
   margin: 0;
 
+  headerbar & {
+    margin: -6px 0;
+  }
+
   button.toggle {
     &:hover {
       background-color: rgba($header_fg, 0.06);
@@ -795,8 +799,8 @@ viewswitcher {
     > stack > box {
       &.narrow {
         font-size: 0.75rem;
-        padding-top: 6px;
-        padding-bottom: 5px;
+        padding-top: 9px;
+        padding-bottom: 3px;
         border-spacing: 3px;
 
         > stack > label {
@@ -818,8 +822,6 @@ viewswitcherbar actionbar > revealer > box {
   padding: 0;
 
   viewswitcher {
-    margin-top: -1px;
-
     button.toggle {
       &:hover {
         background-color: rgba($fg_color, 0.06);
@@ -848,26 +850,6 @@ viewswitchertitle {
   viewswitcher {
     margin-left: 12px;
     margin-right: 12px;
-
-    &.narrow {
-      margin-top: 0;
-      margin-bottom: 0;
-
-      button.toggle {
-        > stack > box {
-          &.narrow {
-            padding-top: 0;
-            padding-bottom: 0;
-            border-spacing: 0;
-          }
-        }
-      }
-    }
-
-    &.wide {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
   }
 
   windowtitle {
@@ -1511,20 +1493,304 @@ $sidebar_pane_bg_backdrop: if($header == 'dark' and $variant == 'light', $header
   }
 }
 
-// Gnome >= 45.0
-.top-bar {
-  background: none;
-  box-shadow: none;
+//
+// AdwToolbarView
+//
+toolbarview {
+  > .top-bar,
+  > .bottom-bar {
+    searchbar,
+    actionbar {
+      > revealer > box {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+      }
+    }
 
-  > windowhandle {
-    filter: none;
+    .toolbar  {
+      background-color: transparent;
+    }
+
+    .collapse-spacing {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      headerbar {
+        min-height: 42px;
+
+        > windowhandle > box {
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+
+        &.default-decoration {
+          min-height: 28px;
+
+          > windowhandle > box {
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      searchbar,
+      actionbar {
+        > revealer > box {
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+      }
+
+      .toolbar  {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      tabbar {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &.raised {
+      background-color: transparent;
+      color: $header_fg;
+
+      &:backdrop {
+        background-color: transparent;
+      }
+    }
+
+    &:backdrop > windowhandle {
+      filter: none;
+    }
   }
 
-  .collapse-spacing {
+  > .bottom-bar {
     padding: 0;
+    border-spacing: 0;
+    box-shadow: inset 0 1px $borders_color;
+    background-color: color-mix(in srgb, black 5%, $bg_color);
+    color: $text_color;
+
+    &:backdrop {
+      background-color: $bg_color;
+      color: $insensitive_fg_color;
+    }
+
+    actionbar > revealer > box {
+      padding: 0;
+    }
+  }
+
+  > .top-bar.raised {
+    box-shadow: none;
+
+    &.border {
+      box-shadow: none;
+    }
+  }
+
+  > .bottom-bar.raised {
+    box-shadow: none;
+
+    &.border {
+      box-shadow: none;
+    }
   }
 }
 
+//
+// AdwBanner
+//
+banner {
+  > revealer > widget {
+    /* There are 2 more instances in _sidebars.css, keep in sync with that */
+    background-color: gtkmix($selected_bg_color, $bg_color, 30%);
+    color: $fg_color;
+    padding: 6px;
+
+    &:backdrop {
+      background-color: gtkmix($selected_bg_color, $bg_color, 15%);
+      transition: background-color $backdrop_transition;
+
+      > label, > button {
+        filter: opacity(.5);
+        transition: filter $backdrop_transition;
+      }
+    }
+  }
+}
+
+//
+// AdwToggleGroup
+//
+
+$toggle_transition: color 200ms $ease-out-quad,
+                    background 200ms $ease-out-quad,
+                    box-shadow 200ms $ease-out-quad;
+
+toggle-group {
+  background: $button_bg;
+  border: 1px solid $borders_color;
+  border-radius: 4px;
+  padding: 2px;
+  background-clip: if($variant=='light', border-box, padding-box);
+
+  &:disabled {
+    background-color: gtkalpha($button_bg, 0.45);
+  }
+
+  > toggle {
+    border-radius: 2px;
+    font-weight: bold;
+    min-width: 34px;
+    min-height: 28px;
+    @extend %flat_button;
+
+    &.image-button > image:disabled {
+      filter: opacity(0.55);
+    }
+
+    &.text-button {
+      min-width: 24px;
+      padding-left: 8px;
+      padding-right: 8px;
+
+      > label:disabled {
+        filter: opacity(0.55);
+      }
+    }
+
+    &.image-text-button {
+      min-width: 16px;
+      padding-left: 8px;
+      padding-right: 8px;
+
+      > buttoncontent > box > label {
+        padding: 0;
+      }
+
+      > buttoncontent > box > image:disabled,
+      > buttoncontent > box > label:disabled {
+        filter: opacity(0.55);
+      }
+    }
+
+    @include focus-ring($transition: $toggle_transition, $outer: true, $offset: 0);
+  }
+
+  &.vertical > toggle:not(.text-button):not(.image-text-button) {
+    min-width: 28px;
+  }
+
+  &.osd,
+  .osd & {
+    padding: 2px;
+  }
+
+  > separator {
+    transition: opacity 200ms $ease-out-quad;
+
+    &.horizontal {
+      margin: 3px 0;
+    }
+
+    &.vertical {
+      margin: 0 3px;
+    }
+
+    &.hidden {
+      opacity: 0;
+    }
+
+    &:disabled {
+      filter: Opacity(0.45);
+    }
+  }
+
+  &.round {
+    border-radius: 999px;
+
+    toggle {
+      border-radius: 999px;
+
+      &.text-button,
+      &.image-text-button {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+
+    separator {
+      &.horizontal {
+        margin: 6px 0;
+      }
+
+      &.vertical {
+        margin: 0 6px;
+      }
+    }
+  }
+
+  &.flat {
+    background: none;
+    color: inherit;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+
+    > toggle {
+      @include focus-ring($transition: $button_transition);
+    }
+
+    > separator {
+      background: none;
+    }
+  }
+}
+
+/*************************
+ * AdwInlineViewSwitcher *
+ *************************/
+
+inline-view-switcher > toggle-group {
+  &.icons > toggle {
+    min-width: 34px;
+  }
+
+  &.labels > toggle {
+    min-width: 12px;
+
+    > widget > indicatorbin {
+      padding-left: 8px;
+      padding-right: 8px;
+
+      > label {
+        padding: 0 6px;
+      }
+
+      > indicator, > mask {
+        transform: translateY(2px);
+      }
+    }
+  }
+
+  &.both > toggle {
+    min-width: 16px;
+
+    > widget > box {
+      padding-left: 12px;
+      padding-right: 12px;
+      border-spacing: 6px;
+    }
+  }
+}
+
+//
+// other
+//
 themeselector, // EditorThemeSelector
 panelthemeselector { // BuilderThemeSelector
   margin: 9px;

@@ -478,10 +478,10 @@ editablelabel > stack > text {
   @include entry(normal);
 }
 
-
 //
 // Buttons
 //
+
 // stuff for .needs-attention
 $_dot_color: if($variant=='light', $selected_bg_color,
                                    lighten($selected_bg_color,15%));
@@ -491,62 +491,84 @@ $_dot_color: if($variant=='light', $selected_bg_color,
   to { background-image: radial-gradient(farthest-side, $_dot_color 95%, transparentize($_dot_color, 1)); }
 }
 
-%button,
-button {
-  min-height: 22px;
-  min-width: 20px;
-  transition: $button_transition;
-  border: 1px solid;
-  border-radius: 3px;
-  padding: 2px 6px;
-  background-clip: if($variant=='light', border-box, padding-box);
+%button {
+  border-width: 1px;
+  border-style: solid;
   @include button(normal);
-  @include focus-ring();
 
-  @at-root %flat_button, &.flat {
-    @include button(undecorated);
-    // to avoid adiacent buttons borders clashing when transitioning, the transition on the normal state is set
-    // to none, while it's added back in the hover state, so the button decoration will fade in on hover, but
-    // it won't fade out when the pointer leave the button allocation area. To make the transition more evident
-    // in this case the duration is increased.
-    transition: none;
-
-    &:hover {
-      transition: $button_transition;
-      transition-duration: 350ms;
-    }
-
-    &:active,
-    &:checked { transition: $button_transition; }
-
-    &:backdrop, &:disabled, &:backdrop:disabled { @include button(undecorated); }
+  &, &:hover, &:active, &:checked, &:disabled {
+    background-clip: if($variant=='light', border-box, padding-box);
   }
 
   &:hover {
     @include button(hover);
+  }
+
+  &:active, &.keyboard-activating, &:checked {
+    @include button(active);
+  }
+
+  &:disabled {
+    @include button(insensitive);
+
+    &:active, &:checked {
+      @include button(insensitive-active);
+    }
+  }
+}
+
+%flat_button {
+  border-width: 1px;
+  border-style: solid;
+  @include button(undecorated);
+
+  &, &:hover, &:active, &:checked, &:disabled {
     background-clip: if($variant=='light', border-box, padding-box);
-    -gtk-icon-filter: brightness(1.2);
+  }
+
+  &:hover {
+    @include button(hover);
   }
 
   &:active, &:checked {
     @include button(active);
-    background-clip: if($variant=='light', border-box, padding-box);
+  }
+
+  &:disabled {
+    @include button(insensitive);
+    @include button(undecorated);
+  }
+}
+
+button {
+  min-height: 22px;
+  min-width: 20px;
+  transition: $button_transition;
+  border-radius: 3px;
+  padding: 2px 6px;
+  @include focus-ring();
+  @extend %button;
+
+  &:hover {
+    -gtk-icon-filter: brightness(1.2);
+  }
+
+  &:active, &:checked {
     transition-duration: 50ms;
 
     &:not(:disabled) label:disabled { color: inherit; opacity: 0.6; }
   }
 
-  &:active { color: $fg_color; }
-  &:active:hover, &:checked { color: $selected_fg_color; }
+  &.flat {
+    transition: none;
+    @extend %flat_button;
 
-  &.flat:disabled { @include button(undecorated); }
+    &:hover,
+    &:active,
+    &:checked { transition: $button_transition; }
 
-  &:disabled {
-    @include button(insensitive);
-    background-clip: if($variant=='light', border-box, padding-box);
-
-    &:active, &:checked {
-      @include button(insensitive-active);
+    &:hover {
+      transition-duration: 350ms;
     }
   }
 
@@ -570,10 +592,12 @@ button {
         padding-left: 8px;
         padding-right: 2px;
       }
+
       &:last-child {
         padding-right: 8px;
         padding-left: 2px;
       }
+
       &:only-child {
         padding-left: 8px;
         padding-right: 8px;
@@ -637,6 +661,7 @@ button {
       &:active, &:checked { @include button(osd-active); }
     }
   }
+
   .osd .linked:not(.vertical):not(.path-bar) > &:hover:not(:checked):not(:active):not(:only-child),
   .osd .linked:not(.vertical):not(.path-bar) > &:hover:not(:checked):not(:active) + &:not(:checked):not(:active) { box-shadow: none; }
 
@@ -1169,15 +1194,12 @@ button.link {
 %spinbutton_horz_entry {
   min-width: 28px;
   // reset all the other props since the spinbutton node is styled here
-  margin: 0;
   background: none;
-  background-color: transparent;
   border: none;
-  border-radius: 0;
   box-shadow: none;
+  border-radius: 0;
   padding: 6px;
-
-  &:backdrop:disabled { background-color: transparent; }
+  margin: 0;
 }
 
 spinbutton {
@@ -1189,7 +1211,6 @@ spinbutton {
 
     > text {
       @extend %spinbutton_horz_entry;
-      padding: 6px 0 6px 12px;
     }
 
     > button.image-button.up:not(.flat),
@@ -1482,7 +1503,6 @@ combobox {
   border-radius: 3px;
 }
 
-.toolbar,
 toolbar {
   @extend %toolbar;
 
@@ -1492,13 +1512,9 @@ toolbar {
 
   .osd & { background-color: transparent; }
 
-  button, entry, menubutton, splitbutton, spinbutton, .scale {
-    margin: 0;
-  }
-
   &.osd {
     padding: 8px;
-    border: none;
+    border: 1px solid $osd_borders_color;
     border-radius: 3px;
     background-color: rgba($osd_bg_color, 0.9);
     background-clip: padding-box;
@@ -1516,13 +1532,11 @@ toolbar {
 }
 
 // oldstyle toolbar buttons
-%theme_flat_button,
-.toolbar button,
-.toolbar menubutton > button {
+%theme_flat_button {
   @extend %undecorated_button;
 
   &:hover { @include button('hover'); }
-  &:active { @include button('active'); }
+  &:active, &.keyboard-activating { @include button('active'); }
   &:checked { @include button('checked'); }
   &:disabled { @include button('insensitive'); }
 }
@@ -1537,13 +1551,6 @@ searchbar > revealer > box {
   border-width: 0 0 1px;
   box-shadow: none;
   color: $text_color;
-
-  entry,
-  button,
-  menubutton,
-  splitbutton {
-    margin: 0;
-  }
 }
 
 actionbar > revealer > box {
@@ -1553,13 +1560,6 @@ actionbar > revealer > box {
   background-color: darken($bg_color, 3%);
   box-shadow: none;
   color: $text_color;
-
-  entry,
-  button,
-  menubutton,
-  splitbutton {
-    margin: 0;
-  }
 }
 
 //
@@ -1733,7 +1733,7 @@ headerbar {
   }
 
   > windowhandle > box {
-    padding: 0 6px;
+    padding: 6px;
 
     &,
     > box.start,
@@ -1762,27 +1762,6 @@ headerbar {
   }
 
   separator.titlebutton { @extend %header_separator; }
-
-  entry,
-  spinbutton,
-  button,
-  splitbutton,
-  stackswitcher,
-  separator:not(.sidebar) {
-    margin-top: 6px;
-    margin-bottom: 6px;
-  }
-
-  // Reset margins for buttons inside menubutton
-  entry > menubutton,
-  menubutton,
-  splitbutton,
-  splitbutton > menubutton,
-  spinbutton > button,
-  stackswitcher > button {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
 
   entry {
     @extend %header_entry;
@@ -1928,8 +1907,8 @@ headerbar {
   // Headerbar Spinbuttons
   spinbutton:not(.vertical) {
     &:focus-within {
-    color: $selected_fg_color;
-    caret-color: $selected_fg_color;
+      color: $selected_fg_color;
+      caret-color: $selected_fg_color;
     }
 
     button {
@@ -2042,52 +2021,9 @@ headerbar {
     }
   }
 
-  // Fixes split headerbars
-  separator:first-child + &,
-  &:first-child {
-    &, &:backdrop {
-      border-top-left-radius: 2px;
-    }
-  }
-
-  &:last-child {
-    &, &:backdrop {
-      border-top-right-radius: 2px;
-    }
-  }
-
-  stack & { // tackles the stacked headerbars case
-    &:first-child, &:last-child {
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
-    }
-  }
-
   &.titlebar headerbar:not(.titlebar) {
-    // Drop the background of non-titlebar nested headerbars. This is needed to
-    // work around headerbar sliding animation issues without refactoring
-    // Adwaita's support of titlebars and headerbars as it may break
-    // applications.
-    // See https://gitlab.gnome.org/GNOME/gtk/issues/1264 for more information.
     background: none;
     box-shadow: none;
-  }
-
-  window.tiled &,
-  window.tiled-top &,
-  window.tiled-right &,
-  window.tiled-bottom &,
-  window.tiled-left &,
-  window.maximized &,
-  window.fullscreen &,
-  window.solid-csd & {
-    &,
-    &:first-child,
-    &:last-child,
-    &:only-child {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
   }
 
   // Selectionmode
@@ -2116,11 +2052,6 @@ headerbar {
     .maximized & { background-color: opacify($selection_mode_bg, 1); }
   }
 
-  .tiled &, .tiled &:backdrop,
-  .maximized &, .maximized &:backdrop {
-    border-radius: 0; // squared corners when the window is max'd or tiled
-  }
-
   .maximized & {
     background-color: opacify($header_bg, 1);
     box-shadow: none;
@@ -2130,7 +2061,7 @@ headerbar {
 
   &.default-decoration {
     min-height: 28px;
-    padding: 0 6px;
+    padding: 0;
     background-color: opacify($header_bg, 1);
     @if $header == 'light' { box-shadow: inset 0 1px $highlight; }
 
@@ -2138,22 +2069,8 @@ headerbar {
     .maximized &,
     .fullscreen & { box-shadow: none; }
 
-    windowcontrols {
-      button,
-      menubutton {
-        border: none;
-        min-height: 22px;
-        min-width: 22px;
-        margin: 0;
-        padding: 0;
-      }
-
-      menubutton button {
-        min-height: 20px;
-        min-width: 20px;
-        margin: 0;
-        padding: 4px;
-      }
+    > windowhandle > box {
+      padding: 0 6px;
     }
   }
 
@@ -2192,8 +2109,6 @@ headerbar {
       box-shadow: none;
     }
   }
-
-  // @extend %titlebar;
 }
 
 %header_separator {
@@ -3534,16 +3449,10 @@ scrolledwindow {
 
 //vbox and hbox separators
 separator {
-  background-color: rgba(black, 0.1);
+  background-color: $borders_color;
   min-width: 1px;
   min-height: 1px;
   border: none;
-
-  &.sidebar {
-    background-color: rgba(black, 0.1);
-    min-width: 1px;
-    min-height: 1px;
-  }
 
   &.spacer {
     background-color: transparent;
@@ -3553,6 +3462,7 @@ separator {
 //
 // Lists
 //
+
 listview,
 list {
   background-color: $base_color;
@@ -3560,6 +3470,11 @@ list {
   border-radius: 2px;
   box-shadow: none;
   color: $fg_color;
+
+  .content-pane & {
+    background-color: if($variant =='light', $base_color, $bg_color);
+    background-clip: border-box;
+  }
 
   > row.expander { padding: 0px; }
   > row.expander .row-header { padding: 2px; }
@@ -3578,19 +3493,19 @@ list {
   }
 }
 
-list.boxed-list {
-  border: 1px solid $borders_color;
-
-  > row {
-    &:first-child { border-radius: 2px 2px 0 0; }
-    &:last-child { border-radius: 0 0 2px 2px; }
-  }
+listview > header {
+  @extend .heading;
+  padding: 2px;
+  padding-top: 18px;
+  padding-bottom: 6px;
 }
 
 %row_activatable {
   color: $text_color;
+  outline: none;
+  box-shadow: none;
 
-  &:hover {
+  &:hover, &.has-open-popup {
     background-color: $menu_hover_color;
     color: $fg_color;
   }
@@ -3610,8 +3525,9 @@ list.boxed-list {
   &:selected {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
+    outline: none;
 
-    &:hover {
+    &:hover, &.has-open-popup {
       background-color: $alt_selected_bg_color;
       color: $selected_fg_color;
     }
@@ -3621,19 +3537,6 @@ list.boxed-list {
 row {
   transition: none;
   @extend %row_activatable;
-
-  // &:hover {
-  //   transition: background-color 50ms $ease-out-quad;
-  // }
-
-  // &:hover, &:active {
-  //   transition: background-color 150ms $ease-out-quad;
-  // }
-
-  &:focus {
-    box-shadow: none;
-    outline: none;
-  }
 
   &:selected {
     button { @extend %selected-button; }
@@ -3646,6 +3549,7 @@ row {
       box-shadow: none;
       transition: none;
       animation: none;
+      outline: none;
     }
   }
 }
@@ -3707,6 +3611,453 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
 
     & > box {
       border-spacing: 12px;
+    }
+  }
+
+  > header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+// AdwActionRow
+row {
+  label.subtitle {
+    font-size: smaller;
+    @extend .dimmed;
+  }
+
+  > box.header {
+    margin-left: 12px;
+    margin-right: 12px;
+    border-spacing: 6px;
+    min-height: 50px;
+
+    > .icon:disabled {
+      filter: Opacity(0.45);
+    }
+
+    > box.title {
+      margin-top: 6px;
+      margin-bottom: 6px;
+      border-spacing: 3px;
+      padding: 0;
+
+      // Specificity bump for header bar
+      &,
+      > .title,
+      > .subtitle {
+        padding: 0;
+        font-weight: inherit;
+      }
+    }
+
+    > .prefixes,
+    > .suffixes {
+      border-spacing: 6px;
+
+      > .suffixes {
+        border-spacing: 6px;
+      }
+    }
+
+    > .icon,
+    > .prefixes {
+      &:dir(ltr) { margin-right: 6px; }
+      &:dir(rtl) { margin-left: 6px; }
+    }
+  }
+
+  &.property > box.header > box.title > {
+    .title {
+      font-size: smaller;
+      @extend .dimmed;
+    }
+
+    .subtitle {
+      font-size: inherit;
+      opacity: 1;
+    }
+  }
+
+  &.property.monospace {
+    font-family: inherit;
+    font-size: inherit;
+  }
+}
+
+// AdwEntryRow and AdwSpinRow
+row.entry {
+  &:disabled {
+    text {
+      opacity: 0.45;
+    }
+
+    .dimmed, .dim-label, .subtitle {
+      opacity: 1;
+    }
+  }
+
+  > box.header {
+    border-spacing: 0;
+    margin-left: 6px;
+    margin-right: 6px;
+
+    > .editable-area {
+      padding: 0 6px;
+
+      > .edit-icon, > .indicator {
+        min-width: 24px;
+        min-height: 24px;
+        padding: 5px;
+      }
+
+      > .edit-icon, > .indicator, > .apply-button {
+        &:dir(ltr) { margin-left: 6px; }
+        &:dir(rtl) { margin-right: 6px; }
+      }
+
+      > .edit-icon:disabled {
+        opacity: 0.55;
+      }
+
+      > .indicator {
+        opacity: 0.65;
+      }
+    }
+
+    > .prefixes {
+      &:dir(ltr) { margin-left: 6px; }
+      &:dir(rtl) { margin-right: 6px; }
+    }
+
+    > .suffixes {
+      &:dir(ltr) { margin-right: 6px; }
+      &:dir(rtl) { margin-left: 6px; }
+    }
+  }
+
+  &.monospace {
+    font-family: inherit;
+    font-size: inherit;
+  }
+}
+
+row.spin {
+  spinbutton {
+    border-spacing: 0;
+
+    &, &:focus {
+      outline: none;
+    }
+  }
+}
+
+$row_transition: background-color 200ms $ease-out-quad,
+                 background-image 200ms $ease-out-quad,
+                 border-radius 200ms $ease-out-quad;
+
+row.entry,
+row.spin {
+  @include focus-ring($offset: -1px, $transition: $row_transition);
+
+  &.activatable.focused {
+    outline-offset: -1px;
+  }
+
+  &:not(:selected).activatable.focused:hover,
+  &:not(:selected).activatable.focused:active {
+    background-color: transparent;
+  }
+
+  @each $e_type, $e_color in (error, $error_color), (warning, $warning_color), (success, $success_color) {
+    &.#{$e_type} {
+      color: $e_color;
+
+      .dimmed, .dim-label, .subtitle {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// AdwComboRow
+row.combo {
+  image.dropdown-arrow:disabled {
+    filter: Opacity(0.45);
+  }
+
+  listview.inline {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: inherit;
+
+    &, &:disabled {
+      background: none;
+      color: inherit;
+    }
+  }
+
+  popover > contents {
+    min-width: 120px;
+
+    .combo-searchbar {
+      margin: 6px;
+
+      + scrolledwindow {
+        @include undershoot(top);
+      }
+    }
+  }
+}
+
+@mixin margin-start($margin) {
+  &:dir(ltr) {
+    margin-left: $margin;
+  }
+
+  &:dir(rtl) {
+    margin-right: $margin;
+  }
+}
+
+%boxed_list_row {
+  @include focus-ring($offset: -1px, $transition: $row_transition);
+  border-bottom: 1px solid $borders_color;
+
+  &:not(:selected).activatable {
+    &:hover, &.has-open-popup {
+      background-color: $menu_hover_color;
+    }
+
+    &:active {
+      background-color: $menu_active_color;
+    }
+  }
+}
+
+%card_list {
+  background-color: $base_color;
+  border: 1px solid $borders_color;
+  border-radius: 2px;
+  box-shadow: none;
+  color: $fg_color;
+
+  .content-pane & {
+    background-color: if($variant =='light', $base_color, $bg_color);
+    background-clip: border-box;
+  }
+
+  &.suggested-action {
+    background-color: $suggested_color;
+    color: $suggested_fg_color;
+  }
+
+  &.destructive-action {
+    background-color: $destructive_color;
+    color: $destructive_fg_color;
+  }
+}
+
+row.expander {
+  // Drop transparent background on expander rows to let nested rows handle it,
+  // avoiding double highlights.
+  background: none;
+  padding: 0px;
+
+  > box > list {
+    background: none;
+    color: inherit;
+  }
+
+  list.nested {
+    background-color: gtkmix($base_color, $bg_color, 50%);
+    color: inherit;
+  }
+
+  list.nested > row {
+    @extend %boxed_list_row;
+  }
+
+  // AdwExpanderRow arrow rotation
+  image.expander-row-arrow {
+    @extend .dimmed;
+
+    transition: -gtk-icon-transform 200ms $ease-out-quad;
+    @include margin-start(3px);
+
+    &:dir(ltr) {
+      -gtk-icon-transform: rotate(0.5turn);
+    }
+
+    &:dir(rtl) {
+      -gtk-icon-transform: rotate(-0.5turn);
+    }
+
+    &:disabled {
+      filter: Opacity(0.45);
+    }
+  }
+
+  &:checked image.expander-row-arrow {
+    -gtk-icon-transform: rotate(0turn);
+    opacity: 1;
+
+    &:not(:disabled) {
+      color: $selected_bg_color;
+    }
+  }
+
+  .osd &:checked image.expander-row-arrow:not(:disabled) {
+    color: inherit;
+  }
+
+  &.property > box > list > row {
+    @extend .property;
+  }
+}
+
+// AdwButtonRow
+row.button {
+  > box {
+    margin-left: 12px;
+    margin-right: 12px;
+    border-spacing: 6px;
+    min-height: 40px;
+
+    > .icon:disabled {
+      filter: Opacity(0.45);
+    }
+  }
+
+  .title {
+    @extend .heading;
+  }
+
+  &.suggested-action {
+    background-color: $suggested_color;
+    color: $suggested_fg_color;
+
+    @include focus-ring($outer: true, $offset: 1px, $transition: $row_transition);
+
+    &:not(.expander):not(:selected).activatable {
+      &:hover, &.has-open-popup {
+        background-color: lighten($suggested_color, 10%);
+        background-image: none;
+      }
+
+      &:active {
+        background-color: darken($suggested_color, 3%);
+        background-image: none;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.45;
+
+      > box > .icon:disabled,
+      > box > label:disabled {
+        filter: none;
+      }
+    }
+  }
+
+  &.destructive-action {
+    background-color: $destructive_color;
+    color: $destructive_fg_color;
+
+    @include focus-ring($outer: true, $offset: 1px, $transition: $row_transition);
+
+    &:not(.expander):not(:selected).activatable {
+      &:hover, &.has-open-popup {
+        background-color: lighten($destructive_color, 10%);
+        background-image: none;
+      }
+
+      &:active {
+        background-color: darken($destructive_color, 3%);
+        background-image: none;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.45;
+
+      > box > .icon:disabled,
+      > box > label:disabled {
+        filter: none;
+      }
+    }
+  }
+}
+
+list.boxed-list {
+  @extend %card_list;
+
+  > row {
+    // Regular rows and expander header rows background
+    &, &.expander row.header {
+      @extend %boxed_list_row;
+    }
+
+    &.expander {
+      border: none;
+    }
+
+    // Rounded top
+    &:first-child {
+      &, &.expander row.header {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+      }
+    }
+
+    // Rounded bottom
+    &:last-child {
+      &,
+      &.expander:not(:checked),
+      &.expander:not(:checked) row.header,
+      &.expander:checked list.nested,
+      &.expander:checked list.nested > row:last-child {
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-bottom-width: 0;
+      }
+    }
+  }
+}
+
+list.boxed-list-separate {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: $fg_color;
+
+  > row {
+    @extend %card_list;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include focus-ring($offset: -1px, $transition: $row_transition);
+
+    &.expander {
+      row.header {
+        @extend %boxed_list_row;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+      }
+
+      &:not(:checked) row.header,
+      &.expander:checked list.nested,
+      &.expander:checked list.nested > row:last-child {
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-bottom: none;
+      }
     }
   }
 }
@@ -4082,10 +4433,15 @@ stacksidebar {
 placessidebar {
   > viewport.frame { border-style: none; }
 
+  .navigation-sidebar {
+    padding: 0;
+  }
+
   .navigation-sidebar > row {
     // Needs overriding of the GtkListBoxRow padding
     min-height: 28px;
     padding: 2px 2px 2px 10px;
+    border-radius: 0;
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump
     > revealer {
@@ -4343,7 +4699,7 @@ windowcontrols {
     @each $k in ('close', 'maximize', 'minimize') {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
         &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$header_asset_suffix}.png'),
-                                                        url('assets/titlebutton-#{$k}#{$m}#{$header_asset_suffix}@2.png')); }
+                                                     url('assets/titlebutton-#{$k}#{$m}#{$header_asset_suffix}@2.png')); }
       }
     }
   }

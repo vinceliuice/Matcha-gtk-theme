@@ -13,9 +13,13 @@ $switch_width: 52px;
 
   &:checked { background-image: url("assets/toggle-on.svg"); }
 
-  .popup-menu-item.selected & {
+  .popup-menu-item:hover &,
+  .popup-menu-item:selected & {
     background-image: url("assets/toggle-off.svg");
 
-    &:checked { background-image: url("assets/toggle-on.svg"); }
+    &:checked {
+      background-image: url("assets/toggle-on.svg");
+      box-shadow: inset 0 0 0 100px rgba(white, 0.35);
+    }
   }
 }

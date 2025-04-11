@@ -75,7 +75,7 @@ $popover_arrow_height: 12px;
     color: $fg_color !important;
   }
 
-  &.selected, &:hover, &:focus {
+  &:selected, &:hover, &:focus {
     color: $selected_fg_color !important;
     background-color: $selected_bg_color !important;
     border-image: none;

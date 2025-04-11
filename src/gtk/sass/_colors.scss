@@ -132,7 +132,7 @@ $menu_selected_color: if($variant == 'light', rgba(black, 0.08), rgba(white, 0.0
 $menu_active_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.12));
 
 $entry_bg: if($variant == 'light', $base_color, lighten($base_color, 0%));
-$entry_border: if($variant == 'light', $borders_color, darken($borders_color, 3%));
+$entry_border: $borders_color;
 
 $header_entry_bg: if($header == 'light', $entry_bg, rgba(lighten($header_bg, 22%), 0.42));
 $header_entry_border: if($header == 'light', $borders_color, rgba(darken($header_bg, 12%), 0.42));

@@ -111,8 +111,13 @@
     splitbutton {
       border-radius: 2px;
       border: 1px solid transparent;
-      padding: 0 1px;
-      min-height: 26px;
+      padding: 2px;
+      min-height: 22px;
+      border-spacing: 2px;
+
+      &, &:hover {
+        background-clip: if($variant=='light', border-box, padding-box);
+      }
 
       &:hover {
         @include button(header-hover);
@@ -121,7 +126,6 @@
       > button,
       > menubutton > button {
         @extend %nautilus_dir_buttons;
-        margin: 2px 1px;
       }
     }
   }
@@ -263,13 +267,11 @@
   min-height: 0;
   background-color: rgba($header_fg, 0.1);
   border-radius: 3px;
-  margin: 6px 0;
-  padding: 0 1px;
   border: 1px solid $header_border;
   background-clip: padding-box;
+  border-spacing: 2px;
 
   #NautilusPathButton {
-    margin: 2px 1px;
     @extend %nautilus_dir_buttons;
 
     label.dim-label {
@@ -291,11 +293,10 @@
   }
 
   > menubutton {
-    margin: 0;
+    padding: 2px;
 
     > button {
       border: none;
-      margin: 2px 1px;
       @extend %nautilus_dir_buttons;
     }
   }
