@@ -31,7 +31,7 @@ usage() {
   printf "  %-25s%s\n" "-s, --gnome-shell" "Set gnome-shell version flavor, [38|40|42|44|46|47|48] (Default: Auto detect)"
   printf "  %-25s%s\n" "-l, --libadwaita" "Force all libadwaita app use linked gtk-4.0 theme"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
-  printf "  %-25s%s\n" "-r, --remove" "Remove(Uninstall) themes/GDM/libadwaita"
+  printf "  %-25s%s\n" "-r, --remove" "Remove(Uninstall) GTK/GDM/libadwaita (themes)"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
