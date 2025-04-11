@@ -3403,14 +3403,15 @@ popover.menu modelbutton.flat {
   border-radius: 2px;
 }
 
-popover.menu modelbutton.flat:hover {
+popover.menu modelbutton.flat:hover, popover.menu modelbutton.flat:selected {
   background-color: rgba(0, 0, 0, 0.08);
   color: #323232;
 }
 
-popover.menu modelbutton.flat:active {
+popover.menu modelbutton.flat:active, popover.menu modelbutton.flat:selected:active {
   color: #323232;
   background-color: rgba(0, 0, 0, 0.15);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 popover.menu modelbutton.flat:disabled {
@@ -6409,12 +6410,12 @@ entry > text > selection:disabled, spinbutton:not(.vertical) > text > selection:
   color: #f8aaa6;
 }
 
-.view:selected:focus, .view:selected, textview > text:selected:focus, textview > text:selected, iconview:selected:focus, iconview:selected, popover.menu modelbutton.flat:selected {
+.view:selected:focus, .view:selected, textview > text:selected:focus, textview > text:selected, iconview:selected:focus, iconview:selected {
   background-color: rgba(0, 0, 0, 0.08);
   color: #323232;
 }
 
-.view:disabled:selected, textview > text:disabled:selected:focus, textview > text:disabled:selected, iconview:disabled:selected:focus, iconview:disabled:selected, popover.menu modelbutton.flat:disabled:selected {
+.view:disabled:selected, textview > text:disabled:selected:focus, textview > text:disabled:selected, iconview:disabled:selected:focus, iconview:disabled:selected {
   color: rgba(50, 50, 50, 0.55);
 }
 
