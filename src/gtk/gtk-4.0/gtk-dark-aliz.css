@@ -21,10 +21,6 @@
   background-color: #222222;
 }
 
-.background.csd {
-  border-radius: 2px;
-}
-
 .background:backdrop {
   text-shadow: none;
   -gtk-icon-shadow: none;
@@ -729,7 +725,7 @@ button:disabled:active label, button:disabled:active, button:disabled:checked la
   color: rgba(255, 255, 255, 0.8);
 }
 
-toggle-group > toggle, splitbutton.flat > button,
+.nautilus-list-view listview.view > row.activatable:selected button, toggle-group > toggle, splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.flat > button, placessidebar .navigation-sidebar > row button.sidebar-button, button.flat {
   border-width: 1px;
   border-style: solid;
@@ -738,27 +734,27 @@ splitbutton.flat > menubutton > button, menubutton.flat > button, placessidebar 
   background-image: none;
 }
 
-toggle-group > toggle, splitbutton.flat > button,
+.nautilus-list-view listview.view > row.activatable:selected button, toggle-group > toggle, splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.flat > button, placessidebar .navigation-sidebar > row button.sidebar-button, button.flat {
   background-clip: padding-box;
 }
 
-toggle-group > toggle:hover, splitbutton.flat > button:hover,
+.nautilus-list-view listview.view > row.activatable:selected button:hover, toggle-group > toggle:hover, splitbutton.flat > button:hover,
 splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, placessidebar .navigation-sidebar > row button.sidebar-button:hover, button.flat:hover {
   color: #a99595;
   border-color: rgba(0, 0, 0, 0.25);
   background-color: #404040;
 }
 
-toggle-group > toggle:active, splitbutton.flat > button:active,
-splitbutton.flat > menubutton > button:active, menubutton.flat > button:active, placessidebar .navigation-sidebar > row button.sidebar-button:active, button.flat:active, toggle-group > toggle:checked, splitbutton.flat > button:checked,
+.nautilus-list-view listview.view > row.activatable:selected button:active, toggle-group > toggle:active, splitbutton.flat > button:active,
+splitbutton.flat > menubutton > button:active, menubutton.flat > button:active, placessidebar .navigation-sidebar > row button.sidebar-button:active, button.flat:active, .nautilus-list-view listview.view > row.activatable:selected button:checked, toggle-group > toggle:checked, splitbutton.flat > button:checked,
 splitbutton.flat > menubutton > button:checked, menubutton.flat > button:checked, placessidebar .navigation-sidebar > row button.sidebar-button:checked, button.flat:checked {
   color: #ffffff;
   border-color: rgba(0, 0, 0, 0.25);
   background-color: #F0544C;
 }
 
-toggle-group > toggle:disabled, splitbutton.flat > button:disabled,
+.nautilus-list-view listview.view > row.activatable:selected button:disabled, toggle-group > toggle:disabled, splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled, placessidebar .navigation-sidebar > row button.sidebar-button:disabled, button.flat:disabled {
   border-color: rgba(0, 0, 0, 0.15);
   background-color: rgba(43, 43, 43, 0.55);
@@ -767,7 +763,7 @@ splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabl
   background-image: none;
 }
 
-toggle-group > toggle:disabled label, splitbutton.flat > button:disabled label, menubutton.flat > button:disabled label, placessidebar .navigation-sidebar > row button.sidebar-button:disabled label, button.flat:disabled label, toggle-group > toggle:disabled, splitbutton.flat > button:disabled,
+.nautilus-list-view listview.view > row.activatable:selected button:disabled label, toggle-group > toggle:disabled label, splitbutton.flat > button:disabled label, menubutton.flat > button:disabled label, placessidebar .navigation-sidebar > row button.sidebar-button:disabled label, button.flat:disabled label, .nautilus-list-view listview.view > row.activatable:selected button:disabled, toggle-group > toggle:disabled, splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled, placessidebar .navigation-sidebar > row button.sidebar-button:disabled, button.flat:disabled {
   color: rgba(203, 191, 191, 0.45);
 }
@@ -1670,8 +1666,8 @@ spinbutton.vertical.linked > text:only-child, .linked.vertical > spinbutton:only
 
 tabbar tab button.image-button:active,
 dnd tab button.image-button:active, tabbar tab button.image-button:hover,
-dnd tab button.image-button:hover, .app-notification button.flat, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.flat:hover, button.link, button.link:hover, button.link:active, button.link:checked, popover.menu box.circular-buttons button.circular.image-button.model,
-list > row button.image-button:not(.flat), modelbutton.flat {
+dnd tab button.image-button:hover, .app-notification button.flat, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.flat:hover, popover.menu modelbutton.flat, button.link, button.link:hover, button.link:active, button.link:checked, popover.menu box.circular-buttons button.circular.image-button.model,
+list > row button.image-button:not(.flat) {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -1736,47 +1732,6 @@ list > row button.image-button:not(.flat), modelbutton.flat {
   border-bottom-style: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-}
-
-modelbutton.flat {
-  min-height: 24px;
-  padding-left: 6px;
-  padding-right: 6px;
-  outline-offset: -3px;
-  border-radius: 2px;
-}
-
-modelbutton.flat:hover {
-  background-color: rgba(255, 255, 255, 0.07);
-  color: #cbbfbf;
-}
-
-modelbutton.flat:active {
-  color: #cbbfbf;
-  background-color: rgba(255, 255, 255, 0.12);
-}
-
-modelbutton.flat:disabled {
-  color: rgba(203, 191, 191, 0.45);
-}
-
-modelbutton.flat arrow {
-  background: none;
-  min-width: 16px;
-  min-height: 16px;
-  opacity: 0.3;
-}
-
-modelbutton.flat arrow:hover, modelbutton.flat arrow:selected, modelbutton.flat arrow:focus {
-  background: none;
-}
-
-modelbutton.flat arrow.left {
-  -gtk-icon-source: -gtk-icontheme("go-previous-symbolic");
-}
-
-modelbutton.flat arrow.right {
-  -gtk-icon-source: -gtk-icontheme("go-next-symbolic");
 }
 
 /* list buttons */
@@ -2363,6 +2318,7 @@ actionbar > revealer > box {
   color: #d0c8c8;
   border-color: rgba(0, 0, 0, 0.25);
   background-color: rgba(208, 200, 200, 0.18);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .sidebar-pane button:active, headerbar button:active, .sidebar-pane button:checked, headerbar button:checked {
@@ -2472,6 +2428,8 @@ headerbar {
   border: none;
   background-color: #1a1a1a;
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 headerbar:backdrop {
@@ -2912,23 +2870,13 @@ headerbar.selection-mode .selection-menu .arrow {
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-.maximized headerbar.selection-mode {
-  background-color: #f0544c;
-}
-
 .maximized headerbar {
-  background-color: #1a1a1a;
-  box-shadow: none;
-}
-
-.maximized headerbar:backdrop {
-  background-color: #272727;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.25);
 }
 
 headerbar.default-decoration {
   min-height: 28px;
   padding: 0;
-  background-color: #1a1a1a;
 }
 
 .tiled headerbar.default-decoration, .maximized headerbar.default-decoration, .fullscreen headerbar.default-decoration {
@@ -3433,14 +3381,6 @@ popover.menu accelerator:dir(rtl) {
   margin-right: 6px;
 }
 
-popover.menu radio {
-  border-color: rgba(0, 0, 0, 0.25);
-}
-
-popover.menu radio:active {
-  border-color: rgba(0, 0, 0, 0);
-}
-
 popover.menu arrow.left,
 popover.menu radio.left,
 popover.menu check.left {
@@ -3455,21 +3395,45 @@ popover.menu check.right {
   margin-right: -2px;
 }
 
-popover.menu modelbutton {
+popover.menu modelbutton.flat {
   min-height: 30px;
   min-width: 40px;
   padding: 0 6px;
+  outline-offset: -3px;
   border-radius: 2px;
 }
 
-popover.menu modelbutton:selected {
-  color: #b5abab;
+popover.menu modelbutton.flat:hover {
   background-color: rgba(255, 255, 255, 0.07);
+  color: #cbbfbf;
 }
 
-popover.menu modelbutton:selected:active {
+popover.menu modelbutton.flat:active {
   color: #cbbfbf;
   background-color: rgba(255, 255, 255, 0.12);
+}
+
+popover.menu modelbutton.flat:disabled {
+  color: rgba(203, 191, 191, 0.45);
+}
+
+popover.menu modelbutton.flat arrow {
+  background: none;
+  min-width: 16px;
+  min-height: 16px;
+  opacity: 0.3;
+}
+
+popover.menu modelbutton.flat arrow:hover, popover.menu modelbutton.flat arrow:selected, popover.menu modelbutton.flat arrow:focus {
+  background: none;
+}
+
+popover.menu modelbutton.flat arrow.left {
+  -gtk-icon-source: -gtk-icontheme("go-previous-symbolic");
+}
+
+popover.menu modelbutton.flat arrow.right {
+  -gtk-icon-source: -gtk-icontheme("go-next-symbolic");
 }
 
 popover.menu label.title {
@@ -3958,7 +3922,6 @@ check {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-dark.png"), url("assets/checkbox-unchecked-dark@2.png"));
 }
 
-.view check:selected,
 row:selected check,
 infobar check {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-selected.png"), url("assets/checkbox-unchecked-selected@2.png"));
@@ -3972,7 +3935,6 @@ check:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive-dark.png"), url("assets/checkbox-unchecked-insensitive-dark@2.png"));
 }
 
-.view check:disabled:selected,
 row:selected check:disabled,
 infobar check:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive-selected.png"), url("assets/checkbox-unchecked-insensitive-selected@2.png"));
@@ -3986,7 +3948,6 @@ check:indeterminate {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-dark.png"), url("assets/checkbox-mixed-dark@2.png"));
 }
 
-.view check:indeterminate:selected,
 row:selected check:indeterminate,
 infobar check:indeterminate {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-selected.png"), url("assets/checkbox-mixed-selected@2.png"));
@@ -4000,7 +3961,6 @@ check:indeterminate:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive-dark.png"), url("assets/checkbox-mixed-insensitive-dark@2.png"));
 }
 
-.view check:indeterminate:disabled:selected,
 row:selected check:indeterminate:disabled,
 infobar check:indeterminate:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive-selected.png"), url("assets/checkbox-mixed-insensitive-selected@2.png"));
@@ -4014,7 +3974,6 @@ check:checked {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-dark.png"), url("assets/checkbox-checked-dark@2.png"));
 }
 
-.view check:checked:selected,
 row:selected check:checked,
 infobar check:checked {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-selected.png"), url("assets/checkbox-checked-selected@2.png"));
@@ -4028,7 +3987,6 @@ check:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive-dark.png"), url("assets/checkbox-checked-insensitive-dark@2.png"));
 }
 
-.view check:checked:disabled:selected,
 row:selected check:checked:disabled,
 infobar check:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive-selected.png"), url("assets/checkbox-checked-insensitive-selected@2.png"));
@@ -4042,7 +4000,6 @@ radio {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-dark.png"), url("assets/radio-unchecked-dark@2.png"));
 }
 
-.view radio:selected,
 row:selected radio,
 infobar radio {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-selected.png"), url("assets/radio-unchecked-selected@2.png"));
@@ -4056,7 +4013,6 @@ radio:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-insensitive-dark.png"), url("assets/radio-unchecked-insensitive-dark@2.png"));
 }
 
-.view radio:disabled:selected,
 row:selected radio:disabled,
 infobar radio:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-insensitive-selected.png"), url("assets/radio-unchecked-insensitive-selected@2.png"));
@@ -4070,7 +4026,6 @@ radio:indeterminate {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-dark.png"), url("assets/radio-mixed-dark@2.png"));
 }
 
-.view radio:indeterminate:selected,
 row:selected radio:indeterminate,
 infobar radio:indeterminate {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-selected.png"), url("assets/radio-mixed-selected@2.png"));
@@ -4084,7 +4039,6 @@ radio:indeterminate:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive-dark.png"), url("assets/radio-mixed-insensitive-dark@2.png"));
 }
 
-.view radio:indeterminate:disabled:selected,
 row:selected radio:indeterminate:disabled,
 infobar radio:indeterminate:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive-selected.png"), url("assets/radio-mixed-insensitive-selected@2.png"));
@@ -4098,7 +4052,6 @@ radio:checked {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-dark.png"), url("assets/radio-checked-dark@2.png"));
 }
 
-.view radio:checked:selected,
 row:selected radio:checked,
 infobar radio:checked {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-selected.png"), url("assets/radio-checked-selected@2.png"));
@@ -4112,18 +4065,17 @@ radio:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-insensitive-dark.png"), url("assets/radio-checked-insensitive-dark@2.png"));
 }
 
-.view radio:checked:disabled:selected,
 row:selected radio:checked:disabled,
 infobar radio:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-insensitive-selected.png"), url("assets/radio-checked-insensitive-selected@2.png"));
 }
 
-.view.content-view.check:not(list) {
+checkbutton.selection-mode check {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-selectionmode-dark.png"), url("assets/checkbox-selectionmode-dark@2.png"));
   background-color: transparent;
 }
 
-.view.content-view.check:checked:not(list) {
+checkbutton.selection-mode check :checked {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-selectionmode-dark.png"), url("assets/checkbox-checked-selectionmode-dark@2.png"));
   background-color: transparent;
 }
@@ -6046,13 +5998,13 @@ windowcontrols button.minimize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark.png"), url("assets/titlebutton-restore-active-dark@2.png"));
 }
 
-.nautilus-window .floating-bar button, row:selected button, infobar.info > revealer > box > button, infobar.info:hover > revealer > box > button, infobar.info:backdrop > revealer > box > button, infobar.question > revealer > box > button, infobar.question:hover > revealer > box > button, infobar.question:backdrop > revealer > box > button, infobar.warning > revealer > box > button, infobar.warning:hover > revealer > box > button, infobar.warning:backdrop > revealer > box > button, infobar.error > revealer > box > button, infobar.error:hover > revealer > box > button, infobar.error:backdrop > revealer > box > button {
+.floating-bar button, row:selected button, infobar.info > revealer > box > button, infobar.info:hover > revealer > box > button, infobar.info:backdrop > revealer > box > button, infobar.question > revealer > box > button, infobar.question:hover > revealer > box > button, infobar.question:backdrop > revealer > box > button, infobar.warning > revealer > box > button, infobar.warning:hover > revealer > box > button, infobar.warning:backdrop > revealer > box > button, infobar.error > revealer > box > button, infobar.error:hover > revealer > box > button, infobar.error:backdrop > revealer > box > button {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.nautilus-window .floating-bar button.flat, row:selected button.flat, infobar.info > revealer > box > button.flat, infobar.question > revealer > box > button.flat, infobar.warning > revealer > box > button.flat, infobar.error > revealer > box > button.flat {
+.floating-bar button.flat, row:selected button.flat, infobar.info > revealer > box > button.flat, infobar.question > revealer > box > button.flat, infobar.warning > revealer > box > button.flat, infobar.error > revealer > box > button.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -6060,37 +6012,37 @@ windowcontrols button.minimize:active {
   background-color: rgba(255, 255, 255, 0);
 }
 
-.nautilus-window .floating-bar button.flat:disabled, row:selected button.flat:disabled, infobar.info > revealer > box > button.flat:disabled, infobar.question > revealer > box > button.flat:disabled, infobar.warning > revealer > box > button.flat:disabled, infobar.error > revealer > box > button.flat:disabled {
+.floating-bar button.flat:disabled, row:selected button.flat:disabled, infobar.info > revealer > box > button.flat:disabled, infobar.question > revealer > box > button.flat:disabled, infobar.warning > revealer > box > button.flat:disabled, infobar.error > revealer > box > button.flat:disabled {
   color: rgba(255, 255, 255, 0.42);
 }
 
-.nautilus-window .floating-bar button.flat:disabled label, row:selected button.flat:disabled label, infobar.info > revealer > box > button.flat:disabled label, infobar.question > revealer > box > button.flat:disabled label, infobar.warning > revealer > box > button.flat:disabled label, infobar.error > revealer > box > button.flat:disabled label {
+.floating-bar button.flat:disabled label, row:selected button.flat:disabled label, infobar.info > revealer > box > button.flat:disabled label, infobar.question > revealer > box > button.flat:disabled label, infobar.warning > revealer > box > button.flat:disabled label, infobar.error > revealer > box > button.flat:disabled label {
   color: rgba(255, 255, 255, 0.42);
 }
 
-.nautilus-window .floating-bar button:hover, row:selected button:hover, infobar.info > revealer > box > button:hover, infobar.question > revealer > box > button:hover, infobar.warning > revealer > box > button:hover, infobar.error > revealer > box > button:hover {
+.floating-bar button:hover, row:selected button:hover, infobar.info > revealer > box > button:hover, infobar.question > revealer > box > button:hover, infobar.warning > revealer > box > button:hover, infobar.error > revealer > box > button:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.8);
 }
 
-.nautilus-window .floating-bar button:active, row:selected button:active, infobar.info > revealer > box > button:active, infobar.question > revealer > box > button:active, infobar.warning > revealer > box > button:active, infobar.error > revealer > box > button:active, .nautilus-window .floating-bar button:checked, row:selected button:checked, infobar.info > revealer > box > button:checked, infobar.question > revealer > box > button:checked, infobar.warning > revealer > box > button:checked, infobar.error > revealer > box > button:checked {
+.floating-bar button:active, row:selected button:active, infobar.info > revealer > box > button:active, infobar.question > revealer > box > button:active, infobar.warning > revealer > box > button:active, infobar.error > revealer > box > button:active, .floating-bar button:checked, row:selected button:checked, infobar.info > revealer > box > button:checked, infobar.question > revealer > box > button:checked, infobar.warning > revealer > box > button:checked, infobar.error > revealer > box > button:checked {
   color: #F0544C;
   background-color: #ffffff;
   border-color: #ffffff;
 }
 
-.nautilus-window .floating-bar button:disabled, row:selected button:disabled, infobar.info > revealer > box > button:disabled, infobar.question > revealer > box > button:disabled, infobar.warning > revealer > box > button:disabled, infobar.error > revealer > box > button:disabled {
+.floating-bar button:disabled, row:selected button:disabled, infobar.info > revealer > box > button:disabled, infobar.question > revealer > box > button:disabled, infobar.warning > revealer > box > button:disabled, infobar.error > revealer > box > button:disabled {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.42);
 }
 
-.nautilus-window .floating-bar button:disabled label, row:selected button:disabled label, infobar.info > revealer > box > button:disabled label, infobar.question > revealer > box > button:disabled label, infobar.warning > revealer > box > button:disabled label, infobar.error > revealer > box > button:disabled label {
+.floating-bar button:disabled label, row:selected button:disabled label, infobar.info > revealer > box > button:disabled label, infobar.question > revealer > box > button:disabled label, infobar.warning > revealer > box > button:disabled label, infobar.error > revealer > box > button:disabled label {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.nautilus-window .floating-bar button:disabled:active, row:selected button:disabled:active, infobar.info > revealer > box > button:disabled:active, infobar.question > revealer > box > button:disabled:active, infobar.warning > revealer > box > button:disabled:active, infobar.error > revealer > box > button:disabled:active, .nautilus-window .floating-bar button:disabled:checked, row:selected button:disabled:checked, infobar.info > revealer > box > button:disabled:checked, infobar.question > revealer > box > button:disabled:checked, infobar.warning > revealer > box > button:disabled:checked, infobar.error > revealer > box > button:disabled:checked {
+.floating-bar button:disabled:active, row:selected button:disabled:active, infobar.info > revealer > box > button:disabled:active, infobar.question > revealer > box > button:disabled:active, infobar.warning > revealer > box > button:disabled:active, infobar.error > revealer > box > button:disabled:active, .floating-bar button:disabled:checked, row:selected button:disabled:checked, infobar.info > revealer > box > button:disabled:checked, infobar.question > revealer > box > button:disabled:checked, infobar.warning > revealer > box > button:disabled:checked, infobar.error > revealer > box > button:disabled:checked {
   color: #F0544C;
   background-color: rgba(255, 255, 255, 0.5);
   border-color: rgba(255, 255, 255, 0.42);
@@ -6457,12 +6409,12 @@ entry > text > selection:disabled, spinbutton:not(.vertical) > text > selection:
   color: #f8aaa6;
 }
 
-.view:selected:focus, .view:selected, textview > text:selected:focus, textview > text:selected, iconview:selected:focus, iconview:selected, modelbutton.flat:selected {
+.view:selected:focus, .view:selected, textview > text:selected:focus, textview > text:selected, iconview:selected:focus, iconview:selected, popover.menu modelbutton.flat:selected {
   background-color: rgba(255, 255, 255, 0.07);
   color: #cbbfbf;
 }
 
-.view:disabled:selected, textview > text:disabled:selected:focus, textview > text:disabled:selected, iconview:disabled:selected:focus, iconview:disabled:selected, modelbutton.flat:disabled:selected {
+.view:disabled:selected, textview > text:disabled:selected:focus, textview > text:disabled:selected, iconview:disabled:selected:focus, iconview:disabled:selected, popover.menu modelbutton.flat:disabled:selected {
   color: rgba(203, 191, 191, 0.45);
 }
 
@@ -6477,40 +6429,44 @@ popover.emoji-picker > contents {
 }
 
 .emoji-toolbar {
-  padding: 6px;
-  border-spacing: 6px;
+  padding: 0 6px;
+  border-spacing: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
 
+.emoji-toolbar > flowboxchild {
+  padding: 0 1px;
+}
+
 button.emoji-section {
-  border-color: transparent;
-  border-width: 3px;
-  border-style: solid none none;
+  border: none;
   border-radius: 0;
-  padding: 3px 0 0;
-  min-width: 32px;
-  min-height: 24px;
-  /* reset props inherited from the button style */
-  background: none;
+  padding: 0;
+  min-width: 42px;
+  min-height: 42px;
+  background-color: transparent;
+  background-image: none;
   box-shadow: none;
-  text-shadow: none;
 }
 
 button.emoji-section:hover {
-  border-color: rgba(203, 191, 191, 0.1);
-}
-
-button.emoji-section:focus {
-  background: none;
-}
-
-button.emoji-section:active {
   color: #cbbfbf;
+  box-shadow: inset 0 3px 0 0 rgba(203, 191, 191, 0.15);
+  background-color: rgba(255, 255, 255, 0.04);
+  background-image: none;
 }
 
-button.emoji-section:checked {
+button.emoji-section:active, button.emoji-section:active:hover {
   color: #cbbfbf;
-  border-color: #F0544C;
+  box-shadow: inset 0 3px 0 0 rgba(203, 191, 191, 0.15);
+  background-color: rgba(255, 255, 255, 0.07);
+  background-image: none;
+}
+
+button.emoji-section:checked, button.emoji-section:checked:hover {
+  color: #cbbfbf;
+  background-color: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 3px 0 0 #F0544C;
 }
 
 popover.emoji-picker emoji {
@@ -6544,7 +6500,7 @@ popover.entry-completion > contents {
 }
 
 statusbar {
-  padding: 6px 10px 6px 10px;
+  padding: 6px 10px;
 }
 
 avatar {
@@ -8798,10 +8754,22 @@ floating-sheet > sheet {
   color: #de8a86;
 }
 
+.nautilus-list-view columnview.view {
+  padding: 0 6px;
+}
+
+.nautilus-list-view listview.view {
+  padding: 0;
+  border-spacing: 3px;
+  margin: 0;
+}
+
 .nautilus-list-view listview.view > row.activatable {
   border-radius: 2px;
   border: 1px solid transparent;
   color: #cbbfbf;
+  padding: 0;
+  margin: 0;
 }
 
 .nautilus-list-view listview.view > row.activatable:hover {
@@ -8816,6 +8784,18 @@ floating-sheet > sheet {
   background-color: rgba(240, 84, 76, 0.45);
   border-color: #F0544C;
   color: #de8a86;
+}
+
+.nautilus-list-view listview.view > row.activatable:selected button {
+  color: #cbbfbf;
+}
+
+.nautilus-list-view listview.view > row.activatable > cell {
+  padding: 0;
+}
+
+.nautilus-list-view listview.view > row.activatable > cell > widget#NautilusViewCell {
+  padding: 3px 6px;
 }
 
 .content-pane .nautilus-grid-view, .content-pane .nautilus-grid-view .view,
@@ -8900,32 +8880,23 @@ floating-sheet > sheet {
   border: none;
 }
 
-.nautilus-window .floating-bar {
-  padding: 1px;
-  background-color: #262626;
-  color: #cbbfbf;
-  border-radius: 2px 2px 0 0;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  box-shadow: none;
+.floating-bar {
+  padding: 2px;
+  margin: 2px;
+  background-color: #F0544C;
+  color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
-.nautilus-window .floating-bar.bottom.left {
-  border-top-left-radius: 0;
-  border-width: 1px 1px 0 0;
-}
-
-.nautilus-window .floating-bar.bottom.right {
-  border-top-right-radius: 0;
-  border-width: 1px 0 0 1px;
-}
-
-.nautilus-window .floating-bar button {
+.floating-bar button {
   border: none;
   border-radius: 100px;
   min-height: 0;
   min-width: 0;
   padding: 0;
-  margin-right: 6px;
+  margin-right: 2px;
   -gtk-icon-shadow: none;
 }
 

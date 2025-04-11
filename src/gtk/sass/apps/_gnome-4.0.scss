@@ -189,23 +189,45 @@
 }
 
 .nautilus-list-view {
-  listview.view > row.activatable {
-    border-radius: 2px;
-    border: 1px solid transparent;
-    color: $fg_color;
+  columnview.view {
+    padding: 0 6px;
+  }
 
-    &:hover {
-      background-color: rgba($fg_color, 0.08);
-    }
+  listview.view {
+    padding: 0;
+    border-spacing: 3px;
+    margin: 0;
 
-    &:active {
-      background-color: rgba($fg_color, 0.16);
-    }
+    > row.activatable {
+      border-radius: 2px;
+      border: 1px solid transparent;
+      color: $fg_color;
+      padding: 0;
+      margin: 0;
+  
+      &:hover {
+        background-color: rgba($fg_color, 0.08);
+      }
+  
+      &:active {
+        background-color: rgba($fg_color, 0.16);
+      }
+  
+      &:selected {
+        background-color: rgba($selected_bg_color, 0.45);
+        border-color: $selected_bg_color;
+        color: mix($fg_color, $selected_bg_color, 50%);
 
-    &:selected {
-      background-color: rgba($selected_bg_color, 0.45);
-      border-color: $selected_bg_color;
-      color: mix($fg_color, $selected_bg_color, 50%);
+        button { color: $fg_color; @extend %flat_button; }
+      }
+
+      > cell {
+        padding: 0;
+
+        > widget#NautilusViewCell {
+          padding: 3px 6px;
+        }
+      }
     }
   }
 }
@@ -357,23 +379,14 @@
   }
 }
 
-.nautilus-window .floating-bar {
-  padding: 1px;
-  background-color: $base_color;
-  color: $fg_color;
-  border-radius: 2px 2px 0 0;
-  border: 1px solid $borders_color;
-  box-shadow: none;
-
-  &.bottom.left {
-    border-top-left-radius: 0;
-    border-width: 1px 1px 0 0;
-  }
-
-  &.bottom.right {
-    border-top-right-radius: 0;
-    border-width: 1px 0 0 1px;
-  }
+.floating-bar {
+  padding: 2px;
+  margin: 2px;
+  background-color: $selected_bg_color;
+  color: $selected_fg_color;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 2px 3px rgba(black, 0.1);
 
   button {
     border: none;
@@ -381,7 +394,7 @@
     min-height: 0;
     min-width: 0;
     padding: 0;
-    margin-right: 6px;
+    margin-right: 2px;
     -gtk-icon-shadow: none;
     @extend %selected-button;
   }
