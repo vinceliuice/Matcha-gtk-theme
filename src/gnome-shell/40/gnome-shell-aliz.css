@@ -60,7 +60,10 @@ stage {
   border: none;
 }
 
-.icon-button, .button {
+#LookingGlassDebugFlags .lg-debug-flag-button, #LookingGlassPropertyInspector .lg-obj-inspector-close-button,
+#LookingGlassPropertyInspector .lg-obj-inspector-button, #LookingGlassDialog > #Toolbar .lg-toolbar-button, .icon-button, .button {
+  border-width: 1px;
+  border-style: solid;
   border-radius: 3px;
   padding: 3px 24px;
   font-weight: bold;
@@ -212,6 +215,54 @@ stage {
   box-shadow: none;
 }
 
+#LookingGlassDebugFlags .lg-debug-flag-button, #LookingGlassPropertyInspector .lg-obj-inspector-close-button,
+#LookingGlassPropertyInspector .lg-obj-inspector-button, #LookingGlassDialog > #Toolbar .lg-toolbar-button {
+  color: #efefef;
+  background-color: #2a2a2a;
+  border-color: gainsboro;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+#LookingGlassDebugFlags .lg-debug-flag-button:focus, #LookingGlassPropertyInspector .lg-obj-inspector-close-button:focus,
+#LookingGlassPropertyInspector .lg-obj-inspector-button:focus, #LookingGlassDialog > #Toolbar .lg-toolbar-button:focus {
+  color: #efefef;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: inset 0 0 0 2px rgba(240, 84, 76, 0.35) !important;
+}
+
+#LookingGlassDebugFlags .lg-debug-flag-button:hover, #LookingGlassPropertyInspector .lg-obj-inspector-close-button:hover,
+#LookingGlassPropertyInspector .lg-obj-inspector-button:hover, #LookingGlassDialog > #Toolbar .lg-toolbar-button:hover {
+  color: #efefef;
+  background-color: #393939;
+  border-color: gainsboro;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+#LookingGlassDebugFlags .lg-debug-flag-button:insensitive, #LookingGlassPropertyInspector .lg-obj-inspector-close-button:insensitive,
+#LookingGlassPropertyInspector .lg-obj-inspector-button:insensitive, #LookingGlassDialog > #Toolbar .lg-toolbar-button:insensitive {
+  color: #b2b2b2;
+  border-color: #eaeaea;
+  background-color: #f9f9f9;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+#LookingGlassDebugFlags .lg-debug-flag-button:active, #LookingGlassPropertyInspector .lg-obj-inspector-close-button:active,
+#LookingGlassPropertyInspector .lg-obj-inspector-button:active, #LookingGlassDialog > #Toolbar .lg-toolbar-button:active {
+  color: #efefef;
+  background-color: #414141;
+  border-color: gainsboro;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none;
+}
+
 .modal-dialog .modal-dialog-linked-button, .hotplug-notification-item, .notification-banner .notification-button {
   color: #363636;
   background-color: #ffffff;
@@ -313,6 +364,25 @@ stage {
 }
 
 /* General Typography */
+#LookingGlassDebugFlags .lg-debug-flags-header, #LookingGlassExtensions .lg-extensions-none {
+  font-weight: 700;
+  font-size: 13pt;
+}
+
+#LookingGlassExtensions .lg-extension .lg-extension-name, #LookingGlassWindows .lg-window .lg-window-name, #LookingGlassPropertyInspector .lg-obj-inspector-title {
+  font-weight: 700;
+  font-size: 11pt;
+}
+
+.lg-completions-text {
+  font-weight: 400;
+  font-size: 9pt;
+}
+
+#LookingGlassDebugFlags .lg-debug-flag-button StLabel, #LookingGlassEvaluator .evaluator-results {
+  font-family: monospace;
+}
+
 /* WIDGETS */
 .shell-link {
   color: #ec271d;
@@ -336,9 +406,10 @@ StEntry {
   border-radius: 3px;
   padding: 8px;
   border-width: 1px;
+  border-style: solid;
   color: #363636;
   background-color: #ffffff;
-  border: 1px solid gainsboro !important;
+  border-color: gainsboro;
   box-shadow: none !important;
   selection-background-color: #F0544C !important;
   selected-color: #ffffff !important;
@@ -347,14 +418,14 @@ StEntry {
 .prompt-dialog-password-grid .prompt-dialog-password-entry:focus,
 StEntry:focus {
   background-color: #ffffff;
-  border: 1px solid #ee3e34 !important;
+  border-color: #ee3e34;
   box-shadow: none !important;
 }
 
 .prompt-dialog-password-grid .prompt-dialog-password-entry:insensitive,
 StEntry:insensitive {
   color: #b2b2b2;
-  border: 1px solid #f9f9f9 !important;
+  border-color: #f9f9f9;
   box-shadow: none !important;
 }
 
@@ -2967,16 +3038,26 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #LookingGlassDialog {
   background-color: #2a2a2a;
   spacing: 6px;
-  padding: 4px;
-  border: 1px solid rgba(239, 239, 239, 0.2);
-  border-radius: 3px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
   color: #efefef;
 }
 
 #LookingGlassDialog > #Toolbar {
-  border: none;
-  border-radius: 3px;
-  background-color: #2a2a2a;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 5px 5px 0 0;
+  background-color: #1d1d1d;
+  padding: 6px;
+  spacing: 6px;
+}
+
+#LookingGlassDialog > #Toolbar .lg-toolbar-button {
+  padding: 6px 12px;
+}
+
+#LookingGlassDialog > #Toolbar .lg-toolbar-button > StIcon {
+  icon-size: 16px;
 }
 
 #LookingGlassDialog .labels {
@@ -2985,23 +3066,26 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #LookingGlassDialog .notebook-tab {
   -natural-hpadding: 12px;
-  -minimum-hpadding: 6px;
+  -minimum-hpadding: 12px;
   font-weight: bold;
   color: #c9c9c9;
+  background: none;
   transition-duration: 100ms;
-  padding-left: .3em;
-  padding-right: .3em;
-  border-bottom-width: 2px;
+  padding: 6px 12px;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
 }
 
 #LookingGlassDialog .notebook-tab:hover {
   color: #efefef;
+  border-color: #b2b2b2;
+  background: none;
 }
 
 #LookingGlassDialog .notebook-tab:selected {
-  border-bottom-width: 2px;
-  box-shadow: inset 0 -2px 0 0 #f26a64;
+  border-color: #F0544C;
   color: #efefef;
+  background: none;
 }
 
 #LookingGlassDialog StBoxLayout#EvalBox {
@@ -3016,10 +3100,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .lg-dialog StEntry {
   background-color: rgba(54, 54, 54, 0.6);
   color: #efefef;
-  border-color: rgba(239, 239, 239, 0.2);
-  min-height: 22px;
+  border-color: rgba(0, 0, 0, 0.7);
+  min-height: 1.5em;
   selection-background-color: #F0544C;
   selected-color: #ffffff;
+}
+
+.lg-dialog StEntry:focus {
+  border-color: #F0544C;
 }
 
 .lg-dialog .shell-link {
@@ -3047,53 +3135,100 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .lg-completions-text {
-  font-size: .9em;
   font-style: italic;
 }
 
-.lg-obj-inspector-title {
-  spacing: 6px;
-}
-
-.lg-obj-inspector-button {
-  border: 1px solid rgba(0, 0, 0, 0.7);
-  padding: 4px;
-  border-radius: 3px;
-}
-
-.lg-obj-inspector-button:hover {
-  border: 1px solid #ffffff;
-}
-
-#lookingGlassExtensions {
-  padding: 4px;
-}
-
-.lg-extensions-list {
-  padding: 4px;
-  spacing: 6px;
-}
-
-.lg-extension {
-  border: 1px solid rgba(13, 13, 13, 0.7);
-  background-color: #363636;
-  border-radius: 3px;
-  padding: 4px;
-}
-
-.lg-extension-name {
-  font-weight: bold;
-}
-
-.lg-extension-meta {
-  spacing: 6px;
-}
-
 #LookingGlassPropertyInspector {
-  background: #2a2a2a;
+  background-color: #2a2a2a;
+  color: #efefef;
+  border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.7);
-  border-radius: 3px;
+  padding: 12px;
+}
+
+#LookingGlassPropertyInspector .lg-obj-inspector-title {
+  spacing: 4px;
+}
+
+#LookingGlassPropertyInspector .lg-obj-inspector-close-button,
+#LookingGlassPropertyInspector .lg-obj-inspector-button {
+  padding: 6px 12px;
+}
+
+#LookingGlassPropertyInspector .lg-obj-inspector-close-button {
+  margin: 4px;
   padding: 6px;
+  border-radius: 1000px;
+}
+
+#LookingGlassPropertyInspector .lg-obj-inspector-close-button > StIcon {
+  icon-size: 16px;
+}
+
+#LookingGlassEvaluator {
+  padding: 6px;
+}
+
+#LookingGlassEvaluator .evaluator-results {
+  spacing: 6px;
+}
+
+#LookingGlassExtensions .lg-extension, #LookingGlassWindows .lg-window {
+  background-color: #363636;
+  color: #efefef;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  padding: 12px;
+}
+
+#LookingGlassWindows {
+  padding: 6px;
+  spacing: 6px;
+}
+
+#LookingGlassWindows .lg-window {
+  margin: 0;
+}
+
+#LookingGlassExtensions .lg-extensions-list {
+  padding: 6px;
+  spacing: 6px;
+}
+
+#LookingGlassExtensions .lg-extension {
+  margin: 0;
+  spacing: 4px;
+}
+
+#LookingGlassExtensions .lg-extension .lg-extension-name {
+  color: #efefef !important;
+}
+
+#LookingGlassExtensions .lg-extension .lg-extension-meta {
+  spacing: 12px;
+}
+
+#LookingGlassExtensions .lg-extensions-none {
+  color: rgba(239, 239, 239, 0.5);
+}
+
+#LookingGlassActors {
+  padding: 6px;
+  spacing: 4px;
+}
+
+#LookingGlassDebugFlags .lg-debug-flags-header {
+  padding: 6px;
+  padding-top: 12px;
+}
+
+#LookingGlassDebugFlags .lg-debug-flag-button {
+  padding: 9px 12px;
+  margin-bottom: 6px;
+}
+
+#LookingGlassDebugFlags .lg-debug-flag-button StLabel {
+  font-weight: normal !important;
 }
 
 /* Login Dialog */
@@ -3108,6 +3243,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
 }
 
+.login-dialog StEntry,
+.unlock-dialog StEntry {
+  background-color: #151515;
+  color: #363636;
+}
+
 .login-dialog .modal-dialog-button-box,
 .unlock-dialog .modal-dialog-button-box {
   spacing: 3px;
@@ -3116,7 +3257,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .login-dialog .modal-dialog-button,
 .unlock-dialog .modal-dialog-button {
   padding: 4px 18px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   background-color: #151515;
   border-color: #151515;
   color: #efefef;

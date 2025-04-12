@@ -129,6 +129,8 @@ stage {
 
 // common button styling
 %button_common {
+  border-width: 1px;
+  border-style: solid;
   border-radius: $base_border_radius;
   padding: $base_padding * .5 $base_padding * 4;
   font-weight: bold;
@@ -176,6 +178,15 @@ stage {
   &:hover { @include button(hover, $c:$selected_bg_color, $tc:$selected_fg_color, $shadow: none); }
   &:insensitive { @include button(insensitive, $c:$selected_bg_color, $tc:$selected_fg_color, $shadow: none); }
   &:active { @include button(active, $c:$selected_bg_color, $tc:$selected_fg_color, $shadow: none); }
+}
+
+%osd_button {
+  @extend %button_common;
+  @include button(normal, $c:$osd_bg_color, $tc:$osd_fg_color);
+  &:focus { @include button(focus, $c:$osd_bg_color, $tc:$osd_fg_color); }
+  &:hover { @include button(hover, $c:$osd_bg_color, $tc:$osd_fg_color); }
+  &:insensitive { @include button(insensitive, $c:$osd_bg_color, $tc:$osd_fg_color); }
+  &:active { @include button(active, $c:$osd_bg_color, $tc:$osd_fg_color); }
 }
 
 // buttons in dialogs

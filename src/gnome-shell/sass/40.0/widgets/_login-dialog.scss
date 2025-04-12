@@ -14,22 +14,20 @@
   $_gdm_bg: $system_bg_color;
 
   StEntry {
-    @if $variant=='dark' {
-      $_gdm_entry_bg: darken($system_bg_color, 3%);
-      background-color: $_gdm_entry_bg;
-      color: $fg_color;
-    }
+    background-color: darken($_gdm_bg, 3%);
+    color: $fg_color;
   }
 
   .modal-dialog-button-box { spacing: 3px; }
   .modal-dialog-button {
     padding: 4px 18px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    background-color: darken($system_bg_color, 3%);
-    border-color: darken($system_bg_color, 3%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background-color: darken($_gdm_bg, 3%);
+    border-color: darken($_gdm_bg, 3%);
     color: $osd_fg_color;
 
     $_hover_c: lighten($_gdm_bg, 5%);
+
     &:hover, &:focus {
       background-color: $_hover_c;
       border-color: $_hover_c;

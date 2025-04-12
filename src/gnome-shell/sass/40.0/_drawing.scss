@@ -45,25 +45,25 @@
 
   @if $t==normal {
     background-color: $base_color;
-    border: 1px solid $borders_color !important;
+    border-color: $borders_color;
     box-shadow: none !important;
   }
 
   @if $t==focus {
     background-color: $base_color;
-    border: 1px solid $selected_borders_color !important;
+    border-color: $selected_borders_color;
     box-shadow: none !important;
   }
 
   @if $t==hover {
     background-color: $base_color;
-    border: 1px solid $selected_borders_color !important;
+    border-color: $selected_borders_color;
     box-shadow: none !important;
   }
 
   @if $t==insensitive {
     color: $insensitive_fg_color;
-    border: 1px solid $insensitive_bg_color !important;
+    border-color: $insensitive_bg_color;
     box-shadow: none !important;
   }
 }

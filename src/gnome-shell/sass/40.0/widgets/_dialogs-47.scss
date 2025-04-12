@@ -1,9 +1,5 @@
 /* Modal Dialogs */
 
-.headline {
-  @include fontsize($base_font_size + 1);
-}
-
 .modal-dialog {
   @extend %bubble_panel;
   padding: 0;
@@ -15,7 +11,10 @@
   }
 
   .modal-dialog-button-box {
-    padding: 0;
+    padding: $base_padding * 2;
+    border-top: 1px solid $borders_color;
+    background-color: $bg_color;
+    border-radius: 0 0 $modal_radius $modal_radius;
   }
 
   .modal-dialog-button,
@@ -27,13 +26,6 @@
 /* End Session Dialog */
 .end-session-dialog {
   width: 24em;
-
-  .modal-dialog-button-box {
-    padding: $base_padding * 2;
-    border-top: 1px solid $borders_color;
-    background-color: $bg_color;
-    border-radius: 0 0 $modal_radius $modal_radius;
-  }
 
   .end-session-dialog-battery-warning,
   .dialog-list-title {
@@ -101,6 +93,12 @@
     padding: $base_padding * 2 $base_padding * 3 $base_padding;
   }
 
+  .modal-dialog-button-box {
+    padding: 0;
+    border-top: none;
+    background: none;
+  }
+
   .run-dialog-entry {
     padding: $base_padding * 2 $base_padding * 1.5;
   }
@@ -113,13 +111,6 @@
 /* Password or Authentication Dialog */
 .prompt-dialog {
   width: 28em;
-
-  .modal-dialog-button-box {
-    padding: $base_padding * 2;
-    border-top: 1px solid $borders_color;
-    background-color: $bg_color;
-    border-radius: 0 0 $modal_radius $modal_radius;
-  }
 
   .prompt-dialog-password-grid {
     spacing-rows: $base_margin * 2;
