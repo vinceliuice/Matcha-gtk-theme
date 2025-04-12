@@ -453,10 +453,23 @@ done
 if [[ -z "$SHELL_VERSION" ]]; then
   if [[ "$(command -v gnome-shell)" ]]; then
     gnome-shell --version
+
     SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
 
-    if [[ "${SHELL_VERSION:-}" -lt "40" ]]; then
-      SHELL_VERSION="38"
+    if [[ "${SHELL_VERSION:-}" -ge "48" ]]; then
+      SHELL_VERSION="48"
+    elif [[ "${SHELL_VERSION:-}" -ge "47" ]]; then
+      SHELL_VERSION="47"
+    elif [[ "${SHELL_VERSION:-}" -ge "46" ]]; then
+      SHELL_VERSION="46"
+    elif [[ "${SHELL_VERSION:-}" -ge "44" ]]; then
+      SHELL_VERSION="44"
+    elif [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
+      SHELL_VERSION="42"
+    elif [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+      SHELL_VERSION="40"
+    else
+      SHELL_VERSION="3-28"
     fi
   else
     echo "'gnome-shell' not found, using styles for last gnome-shell version available."
