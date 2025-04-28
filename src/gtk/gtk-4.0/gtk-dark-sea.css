@@ -8980,12 +8980,14 @@ menubutton.flat.popup.sources-button > button image.calendar-color-image {
 @define-color selected_bg_color #2eb398;
 @define-color selected_fg_color #ffffff;
 @define-color insensitive_bg_color #1f282a;
-@define-color insensitive_fg_color alpha(rgba(204, 215, 212, 0.45), 0.5);
+@define-color insensitive_fg_color rgba(204, 215, 212, 0.45);
 @define-color insensitive_base_color #222b2e;
 @define-color theme_unfocused_fg_color #ccd7d4;
 @define-color theme_unfocused_text_color #abb9b6;
 @define-color theme_unfocused_bg_color #1b2224;
 @define-color theme_unfocused_base_color #222b2e;
+@define-color theme_unfocused_selected_bg_color #2eb398;
+@define-color theme_unfocused_selected_fg_color #ffffff;
 @define-color borders rgba(0, 0, 0, 0.25);
 @define-color unfocused_borders rgba(0, 0, 0, 0.25);
 @define-color warning_color #F27835;

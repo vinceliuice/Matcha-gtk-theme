@@ -88,10 +88,6 @@ button.gtkstyle-fallback { // For Cinnamon system setting
   &:selected {
     @extend %selected_items;
 
-    &:focus {
-      @extend %selected_items;
-    }
-
     &:hover { background-color: mix(black, $selected_bg_color, 10%); }
   }
 }
@@ -1828,13 +1824,11 @@ treeview.view {
   acceleditor > label { background-color: $selected_bg_color; }
 
   &:selected {
-    &, &:focus {
-      border-radius: 0;
-      border-left-color: mix($selected_fg_color, $selected_bg_color, 50%);
-      border-top-color: rgba($fg_color, 0.1);   // doesn't work unfortunately
+    border-radius: 0;
+    border-left-color: mix($selected_fg_color, $selected_bg_color, 50%);
+    border-top-color: rgba($fg_color, 0.1);   // doesn't work unfortunately
 
-      @extend %selected_items;
-    }
+    @extend %selected_items;
   }
 
   &:disabled {

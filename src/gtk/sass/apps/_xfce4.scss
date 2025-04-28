@@ -115,11 +115,14 @@ window#XfcePanelWindow.background.panel.xfce4-panel {
 
 XfdesktopIconView.view {
   border-radius: 2px;
-  background: transparent;
-  color: $selected_fg_color;
   text-shadow: $text_shadow;
 
-  &:active, &:checked {
+  &, &:hover {
+    background-color: transparent;
+    color: $selected_fg_color;
+  }
+
+  &:active, &:selected {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
     text-shadow: none;
@@ -293,13 +296,21 @@ window.thunar {
     }
   }
 
-  notebook {
-    // hide unneeded border
-    stack > scrolledwindow.frame.standard-view {
-      border-top-width: 0;
-      border-right-width: 0;
+  .frame.standard-view {
+    border-top-width: 0;
+    border-right-width: 0;
 
-      widget.view { border-radius: 2px; }
+    widget.view { border-radius: 2px; }
+
+    .view {
+      &:hover {
+        color: $fg_color;
+      }
+
+      &:selected {
+        color: $selected_fg_color;
+        background: $selected_bg_color;
+      }
     }
 
     // an allocation height of label node affects to close button's
