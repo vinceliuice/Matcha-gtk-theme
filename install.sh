@@ -162,6 +162,12 @@ install() {
   cp -r *.xbm                                                                         "${themedir}/openbox-3"
   cp -r "themerc${ELSE_DARK}${theme}"                                                 "${themedir}/openbox-3/themerc"
 
+  # Install labwc Theme
+  mkdir -p                                                                            "${themedir}/labwc"
+  cd "${SRC_DIR}/labwc"
+  cp -r assets${ELSE_LIGHT}${theme}/*.png                                             "${themedir}/labwc"
+  cp -r "themerc${ELSE_DARK}${ELSE_LIGHT}${theme}"                                    "${themedir}/labwc/themerc"
+
   # Install Unity Theme
   mkdir -p                                                                            "${themedir}/unity"
   cd "${SRC_DIR}"
