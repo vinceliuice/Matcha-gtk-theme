@@ -3960,6 +3960,7 @@ list row {
 
 list.content:not(.conversation-listbox) {
   border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 list.content:not(.conversation-listbox) > row:first-child {
@@ -3968,6 +3969,10 @@ list.content:not(.conversation-listbox) > row:first-child {
 
 list.content:not(.conversation-listbox) > row:last-child {
   border-radius: 0 0 2px 2px;
+}
+
+list.content:not(.conversation-listbox) > row:not(:first-child) {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 treeview.has-open-popup.view.sidebar.source-list, .panel popover .sidebar .has-open-popup.view, .budgie-popover.budgie-menu button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, row.has-open-popup.activatable, treeview.view.sidebar.source-list:hover, .panel popover .sidebar .view:hover, .budgie-popover.budgie-menu button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, row.activatable:hover {

@@ -2914,10 +2914,14 @@ list {
 
   &.content:not(.conversation-listbox) {
     border-radius: 2px;
+    border: 1px solid $borders_color;
 
     > row {
       &:first-child { border-radius: 2px 2px 0 0; }
       &:last-child { border-radius: 0 0 2px 2px; }
+      &:not(:first-child) {
+        border-top: 1px solid $borders_color;
+      }
     }
   }
 }
